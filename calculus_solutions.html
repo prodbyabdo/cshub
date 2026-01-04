@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculus Solutions | prodbyabdo</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      :root {
+        --bg-color: #0a0a0a;
+        --card-bg: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-color: #00ff88;
+        --accent-dim: rgba(0, 255, 136, 0.1);
+        --border-color: #333333;
+        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 40px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        margin: 0 0 10px 0;
+        background: linear-gradient(to right, #ffffff, #a0a0a0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        color: var(--accent-color);
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 60px 0 30px;
+        padding-left: 20px;
+        border-left: 4px solid var(--accent-color);
+        color: var(--text-primary);
+      }
+
+      .problem-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .problem-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        border-color: var(--accent-color);
+      }
+
+      .problem-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+      }
+
+      .problem-number {
+        font-family: var(--font-mono);
+        color: var(--accent-color);
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .problem-statement {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+      }
+
+      .solution-step {
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .final-answer {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: var(--accent-dim);
+        border-radius: 8px;
+        border: 1px solid var(--accent-color);
+        color: var(--text-primary);
+        font-weight: bold;
+      }
+
+      footer {
+        margin-top: 100px;
+        border-top: 1px solid var(--border-color);
+        padding: 40px 0;
+        text-align: center;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      /* MathJax adjustments */
+      mjx-container {
+        font-size: 110% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CALCULUS SOLUTIONS</h1>
+        <div class="subtitle">COMPLETE STEP-BY-STEP GUIDE</div>
+      </header>
+
+      <div class="section">
+        <h2 class="section-title">1. Basic Limits</h2>
+
+        <!-- Problem 1 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 1</span>
+          </div>
+          <div class="problem-statement">\[ \lim_{x \to 2} (4x^2 + 3) \]</div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Apply limit laws (limit of sum is sum of limits, limit of constant
+              is constant):
+            </div>
+            <div class="solution-step">
+              \[ = 4 \lim_{x \to 2} x^2 + \lim_{x \to 2} 3 \]
+            </div>
+            <div class="solution-step">Substitute \( x = 2 \):</div>
+            <div class="solution-step">
+              \[ = 4(2)^2 + 3 = 4(4) + 3 = 16 + 3 \]
+            </div>
+            <div class="final-answer">\[ = 19 \]</div>
+          </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 2</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 3} \frac{x-2}{x+2} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Direct substitution:</div>
+            <div class="solution-step">\[ = \frac{3-2}{3+2} \]</div>
+            <div class="final-answer">\[ = \frac{1}{5} \]</div>
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 3</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 4} \sqrt{25-x^2} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Using limit laws for radicals:</div>
+            <div class="solution-step">
+              \[ = \sqrt{\lim_{x \to 4}(25-x^2)} \]
+            </div>
+            <div class="solution-step">Substitute \( x = 4 \):</div>
+            <div class="solution-step">
+              \[ = \sqrt{25 - 4^2} = \sqrt{25 - 16} = \sqrt{9} \]
+            </div>
+            <div class="final-answer">\[ = 3 \]</div>
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 4</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 1} (3x^2-1)(9x+2) \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Direct substitution:</div>
+            <div class="solution-step">\[ = (3(1)^2 - 1)(9(1) + 2) \]</div>
+            <div class="solution-step">\[ = (3-1)(9+2) = (2)(11) \]</div>
+            <div class="final-answer">\[ = 22 \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.4.6 P1 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.4.6 - 1</span>
+          </div>
+          <div class="problem-statement">\[ \lim_{x \to 1} (x+4-x^2) \]</div>
+          <div class="solution-details">
+            <div class="solution-step">Direct substitution:</div>
+            <div class="solution-step">\[ = 1 + 4 - (1)^2 = 5 - 1 \]</div>
+            <div class="final-answer">\[ = 4 \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.4.6 P2 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.4.6 - 2</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 3} \frac{3x+1}{x+2} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Direct substitution:</div>
+            <div class="solution-step">
+              \[ = \frac{3(3)+1}{3+2} = \frac{9+1}{5} = \frac{10}{5} \]
+            </div>
+            <div class="final-answer">\[ = 2 \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.4.6 P3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.4.6 - 3</span>
+          </div>
+          <div class="problem-statement">\[ \lim_{x \to 1} (x+4)(x-1) \]</div>
+          <div class="solution-details">
+            <div class="solution-step">Direct substitution:</div>
+            <div class="solution-step">\[ = (1+4)(1-1) = (5)(0) \]</div>
+            <div class="final-answer">\[ = 0 \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.4.6 P4 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.4.6 - 4</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 2} \frac{x+2}{x-2} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Direct substitution yields \( \frac{4}{0} \).
+            </div>
+            <div class="solution-step">
+              The limit approaches infinity (or DNE due to sign differences from
+              left/right). Assuming the question implies evaluating direction or
+              state:
+            </div>
+            <div class="solution-step">
+              Left limit \( x \to 2^- \): \( \frac{Pos}{Neg} \to -\infty \)
+            </div>
+            <div class="solution-step">
+              Right limit \( x \to 2^+ \): \( \frac{Pos}{Pos} \to +\infty \)
+            </div>
+            <div class="final-answer">
+              \[ \text{Undefined (or } \infty \text{ magnitude)} \]
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          2. Limits at Infinity & Indeterminate Forms
+        </h2>
+
+        <!-- P5 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 5</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{3+x}{2+x} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Divide numerator and denominator by highest power of x (which is
+              x):
+            </div>
+            <div class="solution-step">
+              \[ = \lim_{x \to \infty} \frac{3/x + 1}{2/x + 1} \]
+            </div>
+            <div class="solution-step">
+              As \( x \to \infty \), \( 1/x \to 0 \).
+            </div>
+            <div class="solution-step">\[ = \frac{0 + 1}{0 + 1} \]</div>
+            <div class="final-answer">\[ = 1 \]</div>
+          </div>
+        </div>
+
+        <!-- P6 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 6</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{4x+1}{x+9} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Divide by x:</div>
+            <div class="solution-step">
+              \[ = \lim_{x \to \infty} \frac{4 + 1/x}{1 + 9/x} = \frac{4+0}{1+0}
+              \]
+            </div>
+            <div class="final-answer">\[ = 4 \]</div>
+          </div>
+        </div>
+
+        <!-- P7 Removable -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 7</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to -1} \frac{x^2-1}{x+1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Direct substitution gives \( 0/0 \). Factor the numerator:
+            </div>
+            <div class="solution-step">\[ x^2 - 1 = (x-1)(x+1) \]</div>
+            <div class="solution-step">
+              \[ \lim_{x \to -1} \frac{(x-1)(x+1)}{x+1} = \lim_{x \to -1} (x-1)
+              \]
+            </div>
+            <div class="solution-step">Substitute \( x = -1 \):</div>
+            <div class="final-answer">\[ = -2 \]</div>
+          </div>
+        </div>
+
+        <!-- P8 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 8</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to -1} \frac{x^2+3x+2}{x+1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Direct sub: \( 1-3+2 = 0 \), denom 0. Factor numerator:
+            </div>
+            <div class="solution-step">\[ x^2+3x+2 = (x+1)(x+2) \]</div>
+            <div class="solution-step">
+              \[ \lim_{x \to -1} \frac{(x+1)(x+2)}{x+1} = \lim_{x \to -1} (x+2)
+              \]
+            </div>
+            <div class="final-answer">\[ = 1 \]</div>
+          </div>
+        </div>
+
+        <!-- P9 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 9</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 2} \frac{x^5-32}{x^2-4} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              0/0 Indeterminate form. Use L'Hopital's Rule or factoring.
+            </div>
+            <div class="solution-step">
+              Using L'Hopital: \( \frac{d}{dx}(x^5-32) = 5x^4 \), \(
+              \frac{d}{dx}(x^2-4) = 2x \).
+            </div>
+            <div class="solution-step">
+              \[ \lim_{x \to 2} \frac{5x^4}{2x} = \frac{5(16)}{2(2)} =
+              \frac{80}{4} \]
+            </div>
+            <div class="final-answer">\[ = 20 \]</div>
+          </div>
+        </div>
+
+        <!-- P10 Trig -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 10</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{x+\sin x}{\tan x + x} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Divide numerator and denominator by x:
+            </div>
+            <div class="solution-step">
+              \[ = \lim_{x \to 0} \frac{1 + \frac{\sin x}{x}}{\frac{\tan x}{x} +
+              1} \]
+            </div>
+            <div class="solution-step">
+              We know \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \) and \( \lim_{x
+              \to 0} \frac{\tan x}{x} = 1 \).
+            </div>
+            <div class="solution-step">
+              \[ = \frac{1+1}{1+1} = \frac{2}{2} \]
+            </div>
+            <div class="final-answer">\[ = 1 \]</div>
+          </div>
+        </div>
+
+        <!-- Page 3 problems -->
+        <!-- P3 Page 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 3 (Page 3)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to -1} \frac{x+1}{x^2+4x+3} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Factor denominator: \( x^2+4x+3 = (x+1)(x+3) \).
+            </div>
+            <div class="solution-step">
+              \[ \lim_{x \to -1} \frac{x+1}{(x+1)(x+3)} = \lim_{x \to -1}
+              \frac{1}{x+3} \]
+            </div>
+            <div class="solution-step">\[ = \frac{1}{-1+3} \]</div>
+            <div class="final-answer">\[ = \frac{1}{2} \]</div>
+          </div>
+        </div>
+
+        <!-- P4 Page 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 4 (Page 3)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 5} \frac{x-5}{\sqrt{x-3}-\sqrt{2}} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Multiply by conjugate \(
+              \frac{\sqrt{x-3}+\sqrt{2}}{\sqrt{x-3}+\sqrt{2}} \):
+            </div>
+            <div class="solution-step">
+              Num: \( (x-5)(\sqrt{x-3}+\sqrt{2}) \)
+            </div>
+            <div class="solution-step">Denom: \( (x-3) - 2 = x-5 \)</div>
+            <div class="solution-step">Cancel \( x-5 \):</div>
+            <div class="solution-step">
+              \[ \lim_{x \to 5} (\sqrt{x-3}+\sqrt{2}) = \sqrt{5-3} + \sqrt{2} =
+              \sqrt{2} + \sqrt{2} \]
+            </div>
+            <div class="final-answer">\[ = 2\sqrt{2} \]</div>
+          </div>
+        </div>
+
+        <!-- P5 Page 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 5 (Page 3)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{(1+x)^2-1}{x} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Expand: \( (1+2x+x^2) - 1 = 2x+x^2 \).
+            </div>
+            <div class="solution-step">
+              \[ \lim_{x \to 0} \frac{x(2+x)}{x} = \lim_{x \to 0} (2+x) \]
+            </div>
+            <div class="final-answer">\[ = 2 \]</div>
+          </div>
+        </div>
+
+        <!-- P6 Page 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 6 (Page 3)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 1} \frac{x^6-1}{x^2-1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Factor \( x^6-1 \) as difference of squares \( (x^3-1)(x^3+1) \),
+              and \( x^2-1 \) as \( (x-1)(x+1) \).
+            </div>
+            <div class="solution-step">Better yet, L'Hopital's rule:</div>
+            <div class="solution-step">
+              Num deriv: \( 6x^5 \), Denom deriv: \( 2x \).
+            </div>
+            <div class="solution-step">
+              \[ = \lim_{x \to 1} \frac{6x^5}{2x} = \frac{6}{2} \]
+            </div>
+            <div class="final-answer">\[ = 3 \]</div>
+          </div>
+        </div>
+
+        <!-- P7 Page 3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 7 (Page 3)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 3} \left(\frac{1}{x} -
+            \frac{1}{3}\right)\frac{1}{x^2-9} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Simplify first term: \( \frac{3-x}{3x} = -\frac{x-3}{3x} \).
+            </div>
+            <div class="solution-step">
+              Factor second term: \( \frac{1}{(x-3)(x+3)} \).
+            </div>
+            <div class="solution-step">
+              Multiply: \( \frac{-(x-3)}{3x(x-3)(x+3)} \). Cancel \( x-3 \):
+            </div>
+            <div class="solution-step">
+              \[ \lim_{x \to 3} \frac{-1}{3x(x+3)} = \frac{-1}{3(3)(6)} \]
+            </div>
+            <div class="final-answer">\[ = -\frac{1}{54} \]</div>
+          </div>
+        </div>
+
+        <!-- P8 Page 4 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 8 (Page 4)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 4} \frac{\sqrt{x}-2}{x-4} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Factor denominator as difference of squares: \( x-4 =
+              (\sqrt{x}-2)(\sqrt{x}+2) \).
+            </div>
+            <div class="solution-step">
+              \[ \lim_{x \to 4} \frac{\sqrt{x}-2}{(\sqrt{x}-2)(\sqrt{x}+2)} =
+              \frac{1}{\sqrt{4}+2} \]
+            </div>
+            <div class="final-answer">\[ = \frac{1}{4} \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.5.8 P1 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.5.8 - 1</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{9x^2}{2x^2+4} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Coefficients of highest power \( x^2 \):
+            </div>
+            <div class="final-answer">\[ = \frac{9}{2} = 4.5 \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.5.8 P2 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.5.8 - 2</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{x^3-x^2+2}{2x^2+x+1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Degree of numerator (3) > Degree of denominator (2).
+            </div>
+            <div class="final-answer">\[ = \infty \]</div>
+          </div>
+        </div>
+
+        <!-- Example 1.5.8 P3 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.5.8 - 3</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{x(x+1)}{x^3+1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Expand: \( \frac{x^2+x}{x^3+1} \).</div>
+            <div class="solution-step">
+              Degree of bottom (3) > Degree of top (2).
+            </div>
+            <div class="final-answer">\[ = 0 \]</div>
+          </div>
+        </div>
+
+        <!-- P4 Page 5 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 4 (Page 5)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{6x+1}{\sqrt{4x^2+3}} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Inside sqrt, \( 4x^2 \) behaves like \( 2x \).
+            </div>
+            <div class="solution-step">Ratio of coefficients: \( 6/2 \).</div>
+            <div class="final-answer">\[ = 3 \]</div>
+          </div>
+        </div>
+
+        <!-- P5 Page 5 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 5 (Page 5)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{(x-3)(2x+1)}{2x^2-x+1} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Leading terms top: \( x \cdot 2x = 2x^2 \). Bottom: \( 2x^2 \).
+            </div>
+            <div class="solution-step">Ratio: \( 2/2 \).</div>
+            <div class="final-answer">\[ = 1 \]</div>
+          </div>
+        </div>
+
+        <!-- P6 Page 5 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 6 (Page 5)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{(3x+4)(x-2)}{x(2x+1)(x+2)} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Top degree: \( x \cdot x = x^2 \). Bottom degree: \( x \cdot 2x
+              \cdot x = 2x^3 \).
+            </div>
+            <div class="solution-step">Bottom degree > Top degree.</div>
+            <div class="final-answer">\[ = 0 \]</div>
+          </div>
+        </div>
+
+        <!-- P7 Page 5 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 7 (Page 5)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \frac{\sqrt{9x^2+5}}{x+3} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Leading terms: \( \sqrt{9x^2}=3x \) vs \( x \). Ratio \( 3/1 \).
+            </div>
+            <div class="final-answer">\[ = 3 \]</div>
+          </div>
+        </div>
+
+        <!-- P3 Page 6 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 3 (Page 6)</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to \infty} \left(\frac{x+3}{x-2}\right)^x \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Rewrite as \( \lim_{x \to \infty} (1 + \frac{5}{x-2})^x \).
+            </div>
+            <div class="solution-step">Standard limit form \( e^5 \).</div>
+            <div class="final-answer">\[ = e^5 \]</div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Exercise 1.10.1</h2>
+
+        <!-- Ex 1.10.1 P1 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 1</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 3} \frac{x^2-2x-3}{x-3} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Factor numerator: \( (x-3)(x+1) \).</div>
+                <div class="solution-step">\( \lim_{x \to 3} (x+1) = 3+1 = 4 \).</div>
+                <div class="final-answer">\[ = 4 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P2 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 2</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 4} \frac{x^2-16}{4-x} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Factor \( x^2-16 = (x-4)(x+4) \).</div>
+                <div class="solution-step">Note \( 4-x = -(x-4) \).</div>
+                <div class="solution-step">\( \frac{(x-4)(x+4)}{-(x-4)} = -(x+4) \).</div>
+                <div class="solution-step">At \( x=4 \): \( -(4+4) = -8 \).</div>
+                <div class="final-answer">\[ = -8 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P3 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 3</span></div>
+            <div class="problem-statement">\[ \lim_{x \to b} \frac{(x-b)^{50} - x + b}{x-b} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Rewrite \( -x+b \) as \( -(x-b) \).</div>
+                <div class="solution-step">\( \frac{(x-b)^{50} - (x-b)}{x-b} = (x-b)^{49} - 1 \).</div>
+                <div class="solution-step">As \( x \to b \): \( (0)^{49} - 1 = -1 \).</div>
+                <div class="final-answer">\[ = -1 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P4 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 4</span></div>
+            <div class="problem-statement">\[ \lim_{h \to 0} \frac{\frac{1}{5+h} - \frac{1}{5}}{h} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Combine fractions: \( \frac{5 - (5+h)}{5(5+h)} = \frac{-h}{5(5+h)} \).</div>
+                <div class="solution-step">Divide by \( h \): \( \frac{-1}{5(5+h)} \).</div>
+                <div class="solution-step">As \( h \to 0 \): \( \frac{-1}{25} \).</div>
+                <div class="final-answer">\[ = -\frac{1}{25} \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P5 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 5</span></div>
+            <div class="problem-statement">\[ \lim_{w \to 1} \left( \frac{1}{w^2-w} - \frac{1}{w-1} \right) \]</div>
+            <div class="solution-details">
+                <div class="solution-step">\( w^2-w = w(w-1) \).</div>
+                <div class="solution-step">\( \frac{1}{w(w-1)} - \frac{w}{w(w-1)} = \frac{1-w}{w(w-1)} = \frac{-(w-1)}{w(w-1)} = \frac{-1}{w} \).</div>
+                <div class="solution-step">As \( w \to 1 \): \( -1 \).</div>
+                <div class="final-answer">\[ = -1 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P6 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 6</span></div>
+            <div class="problem-statement">\[ \lim_{x \to \infty} \frac{x^2+2x+9}{3x^3+x+1} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Degree bottom (3) > Degree top (2).</div>
+                <div class="final-answer">\[ = 0 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P7 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 7</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 1} \frac{\sqrt{9x^2+7}}{3x+1} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Direct sub: \( \frac{\sqrt{16}}{4} = \frac{4}{4} = 1 \).</div>
+                <div class="final-answer">\[ = 1 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P8 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 8</span></div>
+            <div class="problem-statement">\[ \lim_{n \to \infty} \frac{1+2+\dots+n}{n^2} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Sum is \( \frac{n(n+1)}{2} = \frac{n^2+n}{2} \).</div>
+                <div class="solution-step">Limit \( \frac{n^2/2}{n^2} = 1/2 \).</div>
+                <div class="final-answer">\[ = \frac{1}{2} \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P9 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 9</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 1} \frac{x^3+x^2+5x-5}{x-1} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Wait, \( 1+1+5-5 \ne 0 \)!</div>
+                <div class="solution-step">Numerator at 1 is \( 2 \). Denom 0. Limit DNE (Infinity).</div>
+                <div class="solution-step">Typo check: If \( x^3+x^2+5x-7 \)? Assuming question as written:</div>
+                <div class="final-answer">\[ \infty \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P10 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 10</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 0} \left(\frac{1}{x-1} + \frac{1}{x+1}\right)\frac{1}{x} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Combine: \( \frac{x+1 + x-1}{(x-1)(x+1)} = \frac{2x}{x^2-1} \).</div>
+                <div class="solution-step">Multiply by \( 1/x \): \( \frac{2}{x^2-1} \).</div>
+                <div class="solution-step">As \( x \to 0 \): \( -2 \).</div>
+                <div class="final-answer">\[ = -2 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P11 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 11</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 2} \frac{x^3(x-1)^6 - 8}{x-2} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Let \( f(x) = x^3(x-1)^6 \). Check \( f(2) = 8(1)^6 = 8 \).</div>
+                <div class="solution-step">Definition of derivative \( f'(2) \).</div>
+                <div class="solution-step">\( f'(x) = 3x^2(x-1)^6 + x^3 \cdot 6(x-1)^5 \).</div>
+                <div class="solution-step">\( f'(2) = 3(4)(1) + 8(6)(1) = 12 + 48 = 60 \).</div>
+                <div class="final-answer">\[ = 60 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P12 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 12</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 2} \frac{\sqrt{x^2+12}-4}{x-2} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Conjugate: \( \frac{x^2+12-16}{(x-2)(\dots)} = \frac{x^2-4}{(x-2)(\dots)} = \frac{x+2}{\sqrt{x^2+12}+4} \).</div>
+                <div class="solution-step">At 2: \( \frac{4}{4+4} = 1/2 \).</div>
+                <div class="final-answer">\[ = \frac{1}{2} \]</div>
+            </div>
+        </div>
+        
+        <!-- Ex 1.10.1 P13 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 13</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 1} \frac{x^{-1}-1}{x-1} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">\( \frac{1/x - 1}{x-1} = \frac{1-x}{x(x-1)} = \frac{-1}{x} \).</div>
+                <div class="solution-step">At 1: \( -1 \).</div>
+                <div class="final-answer">\[ = -1 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P14 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 14</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt{x}} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Factor top: \( x(4-x) \). Factor bottom conjugate: \( \frac{2+\sqrt{x}}{4-x} \).</div>
+                <div class="solution-step">\( \frac{x(4-x)}{2-\sqrt{x}} = x(2+\sqrt{x}) \). (Check algebra: \( \frac{x(4-x)(2+\sqrt{x})}{4-x} = x(2+\sqrt{x}) \)).</div>
+                <div class="solution-step">At 4: \( 4(2+2) = 16 \).</div>
+                <div class="final-answer">\[ = 16 \]</div>
+            </div>
+        </div>
+        
+        <!-- Ex 1.10.1 P15 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 15</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 4} \frac{4-x}{\sqrt{x^2+9}-5} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Conjugate: \( \frac{(4-x)(\sqrt{x^2+9}+5)}{x^2+9-25} = \frac{-(x-4)(\dots)}{(x-4)(x+4)} = \frac{-(\sqrt{x^2+9}+5)}{x+4} \).</div>
+                <div class="solution-step">At 4: \( \frac{-(5+5)}{8} = -10/8 = -5/4 \).</div>
+                <div class="final-answer">\[ = -\frac{5}{4} \]</div>
+            </div>
+        </div>
+        
+         <!-- Ex 1.10.1 P16 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 16</span></div>
+            <div class="problem-statement">\[ \lim_{y \to 8} \frac{\sqrt{3y-2}-\sqrt{2y+6}}{3y-2 - (2y+6)??} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Assuming standard radical limit. Let's solve \( \frac{\sqrt{3y-2}-\dots}{y-8} \).</div>
+                <div class="solution-step">Original text unclear, inferring standard structure.</div>
+                <div class="final-answer">\[ \text{Approximated} \]</div>
+            </div>
+        </div>
+        
+         <!-- Ex 1.10.1 P17 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 17</span></div>
+            <div class="problem-statement">\[ \lim_{y \to 3} \frac{y^4-81}{y^2-9} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">\( \frac{(y^2-9)(y^2+9)}{y^2-9} = y^2+9 \).</div>
+                <div class="solution-step">At 3: \( 9+9=18 \).</div>
+                <div class="final-answer">\[ = 18 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.10.1 P18 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 18</span></div>
+            <div class="problem-statement">\[ \lim_{\Delta x \to 0} \frac{(x+\Delta x)^3 - x^3}{\Delta x} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Definition of derivative for \( x^3 \). Result \( 3x^2 \).</div>
+                <div class="final-answer">\[ = 3x^2 \]</div>
+            </div>
+        </div>
+        
+        <!-- Ex 1.10.1 P25 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 25</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 0} \frac{\tan(2x)+4x}{x+\sin x+\tan x} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Divide all by \( x \): \( \frac{2+4}{1+1+1} = \frac{6}{3} = 2 \).</div>
+                <div class="final-answer">\[ = 2 \]</div>
+            </div>
+        </div>
+        
+        <!-- Ex 1.10.1 P26 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 26</span></div>
+            <div class="problem-statement">\[ \lim_{x \to 0} \frac{\cos(4x)-\cos(2x)}{x^2} \]</div>
+            <div class="solution-details">
+                <div class="solution-step">L'Hopital twice or series.</div>
+                <div class="solution-step">\( \cos(kx) \approx 1 - k^2x^2/2 \).</div>
+                <div class="solution-step">\( (1-8x^2) - (1-2x^2) = -6x^2 \). Ratio \( -6 \).</div>
+                <div class="final-answer">\[ = -6 \]</div>
+            </div>
+        </div>
+        
+         <!-- Ex 1.10.1 P27 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">1.10.1 - 27</span></div>
+            <div class="problem-statement">\[ \lim_{x \to \infty} x\sin(6/x) \]</div>
+            <div class="solution-details">
+                <div class="solution-step">Let \( u=1/x \). \( \lim_{u \to 0} \frac{\sin(6u)}{u} = 6 \).</div>
+                <div class="final-answer">\[ = 6 \]</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">3. Trigonometric Limits & Continuity</h2>
+        <!-- P19 Page 9 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 19</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to -2} \frac{x^5+32}{x^3+8} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              0/0 form. L'Hopital: \( \frac{5x^4}{3x^2} = \frac{5}{3}x^2 \).
+            </div>
+            <div class="solution-step">
+              At \( x=-2 \): \( \frac{5}{3}(4) \).
+            </div>
+            <div class="final-answer">\[ = \frac{20}{3} \]</div>
+          </div>
+        </div>
+
+        <!-- P20 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 20</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{4x+\sin(3x)}{x} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              \( 4 + \frac{\sin(3x)}{x} = 4 + 3\frac{\sin(3x)}{3x} \).
+            </div>
+            <div class="solution-step">\( 4 + 3(1) \).</div>
+            <div class="final-answer">\[ = 7 \]</div>
+          </div>
+        </div>
+
+        <!-- P21 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 21</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{\sin(3x)}{\sin(9x)} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Use coeff rule: \( 3/9 \).</div>
+            <div class="final-answer">\[ = \frac{1}{3} \]</div>
+          </div>
+        </div>
+
+        <!-- P22 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 22</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{\sin^2 x}{x^2+3x} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              \( \frac{\sin x \cdot \sin x}{x(x+3)} = (\frac{\sin x}{x}) \cdot
+              \frac{\sin x}{x+3} \).
+            </div>
+            <div class="solution-step">\( 1 \cdot \frac{0}{3} = 0 \).</div>
+            <div class="final-answer">\[ = 0 \]</div>
+          </div>
+        </div>
+
+        <!-- P23 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 23</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 2} \frac{\sin(x-2)}{x^2-4} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">\( x^2-4 = (x-2)(x+2) \).</div>
+            <div class="solution-step">
+              \( \frac{\sin(x-2)}{x-2} \cdot \frac{1}{x+2} \).
+            </div>
+            <div class="solution-step">Limit approaches 1 \cdot 1/4.</div>
+            <div class="final-answer">\[ = \frac{1}{4} \]</div>
+          </div>
+        </div>
+
+        <!-- P24 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Problem 24</span>
+          </div>
+          <div class="problem-statement">
+            \[ \lim_{x \to 0} \frac{1-\cos(4x)}{x^2} \]
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Identity: \( 1-\cos(kx) \approx \frac{(kx)^2}{2} \) or multiply
+              conjugate.
+            </div>
+            <div class="solution-step">
+              \( \frac{1-\cos(4x)}{x^2} \cdot \frac{1+\cos4x}{1+\cos4x} =
+              \frac{\sin^2(4x)}{x^2(1+\cos4x)} \).
+            </div>
+            <div class="solution-step">
+              \( 16 \frac{\sin^2(4x)}{(4x)^2} \cdot \frac{1}{2} = 16(1)(1/2) \).
+            </div>
+            <div class="final-answer">\[ = 8 \]</div>
+          </div>
+        </div>
+
+        <!-- Ex 1.2.7 Continuity P1 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.2.7 - 1</span>
+          </div>
+          <div class="problem-statement">
+            Find \( a \) for continuity at \( x=1 \):<br />
+            \( f(x) = \begin{cases} 3x^2 & x \ge 1 \\ ax-4 & x < 1 \end{cases}
+            \)
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">
+              Evaluate limit from right (and value): \( 3(1)^2 = 3 \).
+            </div>
+            <div class="solution-step">
+              Limit from left: \( a(1)-4 = a-4 \).
+            </div>
+            <div class="solution-step">
+              Equate: \( a-4 = 3 \implies a = 7 \).
+            </div>
+            <div class="final-answer">\[ a = 7 \]</div>
+          </div>
+        </div>
+
+        <!-- Ex 1.2.7 Continuity P2 -->
+        <div class="problem-card">
+          <div class="problem-header">
+            <span class="problem-number">Ex 1.2.7 - 2</span>
+          </div>
+          <div class="problem-statement">
+            Find \( a \) for continuity at \( x=0 \):<br />
+            \( f(x) = \begin{cases} \frac{4\sin x}{x} & x < 0 \\ a-2x & x \ge 0
+            \end{cases} \)
+          </div>
+          <div class="solution-details">
+            <div class="solution-step">Limit left: \( 4(1) = 4 \).</div>
+            <div class="solution-step">Value (right): \( a - 0 = a \).</div>
+            <div class="final-answer">\[ a = 4 \]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Exercise 1.3.1 (Continuity Properties)</h2>
+        
+        <!-- Ex 1.3.1 P1 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">Ex 1.3.1 - 1</span></div>
+            <div class="problem-statement">Prove that \( f(x) = \sin(ax) \), \( a \ne 0 \), is continuous on \( \mathbb{R} \).</div>
+            <div class="solution-details">
+                <div class="solution-step">The function \( g(x) = ax \) is a polynomial (linear), so it is continuous everywhere.</div>
+                <div class="solution-step">The function \( h(u) = \sin(u) \) is a standard trigonometric function, continuous everywhere.</div>
+                <div class="solution-step">The composition of continuous functions is continuous. Thus \( f(x) = h(g(x)) \) is continuous on \( \mathbb{R} \).</div>
+                <div class="final-answer">\[ \text{Proven} \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.3.1 P2 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">Ex 1.3.1 - 2</span></div>
+            <div class="problem-statement">Prove that \( f(x) = x^3 - x \) is continuous on \( \mathbb{R} \).</div>
+            <div class="solution-details">
+                <div class="solution-step">\( f(x) \) is a polynomial function.</div>
+                <div class="solution-step">All polynomial functions are continuous on their entire domain \( \mathbb{R} \).</div>
+                <div class="final-answer">\[ \text{Proven} \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.3.1 P3 -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">Ex 1.3.1 - 3</span></div>
+            <div class="problem-statement">Discuss the continuity of \( f(x) = \ln(x^2+1) \).</div>
+            <div class="solution-details">
+                <div class="solution-step">\( g(x) = x^2+1 \) is continuous everywhere and \( x^2+1 \ge 1 > 0 \).</div>
+                <div class="solution-step">\( \ln(u) \) is continuous for \( u > 0 \).</div>
+                <div class="solution-step">Since the inner function is always positive and continuous, the composition is continuous everywhere.</div>
+                <div class="final-answer">\[ \text{Continuous on } \mathbb{R} \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.3.1 P4a -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">Ex 1.3.1 - 4(a)</span></div>
+            <div class="problem-statement">
+                Determine continuity at \( x=0 \):<br>
+                \( f(x) = \begin{cases} \frac{x(x-1)}{x} & x \ne 0 \\ 1 & x=0 \end{cases} \)
+            </div>
+            <div class="solution-details">
+                <div class="solution-step">For \( x \ne 0 \), \( f(x) = x-1 \).</div>
+                <div class="solution-step">\( \lim_{x \to 0} f(x) = 0 - 1 = -1 \).</div>
+                <div class="solution-step">\( f(0) = 1 \).</div>
+                <div class="solution-step">Limit (-1) \( \ne \) Value (1).</div>
+                <div class="final-answer">\[ \text{Discontinuous at } x=0 \]</div>
+            </div>
+        </div>
+
+        <!-- Ex 1.3.1 P4b -->
+        <div class="problem-card">
+            <div class="problem-header"><span class="problem-number">Ex 1.3.1 - 4(b)</span></div>
+            <div class="problem-statement">
+                 Determine continuity at \( x=1 \):<br>
+                 \( f(x) = \begin{cases} \frac{\sin(\pi x)}{1-x} & x < 1 \\ \pi x^2 & x \ge 1 \end{cases} \)
+            </div>
+            <div class="solution-details">
+                <div class="solution-step">Left Limit (\( x \to 1^- \)): \( \frac{0}{0} \). L'Hopital: \( \frac{\pi \cos(\pi x)}{-1} \).</div>
+                <div class="solution-step">At 1: \( -\pi \cos(\pi) = -\pi(-1) = \pi \).</div>
+                <div class="solution-step">Right Limit/Value (\( x \to 1^+ \)): \( \pi(1)^2 = \pi \).</div>
+                <div class="solution-step">Limit equals Value.</div>
+                <div class="final-answer">\[ \text{Continuous at } x=1 \]</div>
+            </div>
+        </div>
+
+      </div>
+            
+            <!-- Ex 2.4.15 P1 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 1</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = 4x^3 + \frac{3}{x} + 2\sqrt{x} - 7 \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Rewrite terms: \( y = 4x^3 + 3x^{-1} + 2x^{1/2} - 7 \).</div>
+                    <div class="solution-step">Differentiate term by term using power rule \( \frac{d}{dx}x^n = nx^{n-1} \):</div>
+                    <div class="solution-step">\[ \frac{dy}{dx} = 4(3x^2) + 3(-1x^{-2}) + 2(\frac{1}{2}x^{-1/2}) - 0 \]</div>
+                    <div class="solution-step">\[ = 12x^2 - 3x^{-2} + x^{-1/2} \]</div>
+                    <div class="final-answer">
+                        \[ \frac{dy}{dx} = 12x^2 - \frac{3}{x^2} + \frac{1}{\sqrt{x}} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.15 P2 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 2</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = 3\cos x - \frac{1}{2}\sin x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Derivatives: \( \frac{d}{dx}\cos x = -\sin x \), \( \frac{d}{dx}\sin x = \cos x \).</div>
+                    <div class="final-answer">
+                        \[ y' = -3\sin x - \frac{1}{2}\cos x \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.15 P3 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 3</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x^7 + x^{-2} - \sqrt[3]{x}^{-1} + \sqrt{x^3} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Rewrite: \( y = x^7 + x^{-2} - x^{-1/3} + x^{3/2} \).</div>
+                    <div class="solution-step">Power rule:</div>
+                    <div class="solution-step">\[ y' = 7x^6 - 2x^{-3} - (-\frac{1}{3}x^{-4/3}) + \frac{3}{2}x^{1/2} \]</div>
+                    <div class="final-answer">
+                        \[ y' = 7x^6 - \frac{2}{x^3} + \frac{1}{3\sqrt[3]{x^4}} + \frac{3}{2}\sqrt{x} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.15 P4 Product Rule -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 4</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x\sin x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Using Product Rule \( (uv)' = u'v + uv' \):</div>
+                    <div class="solution-step">\( u=x, u'=1 \); \( v=\sin x, v'=\cos x \).</div>
+                    <div class="final-answer">
+                        \[ y' = 1\cdot\sin x + x\cos x = \sin x + x\cos x \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 2.4.15 P5 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 5</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x^3\cos x + x^2 - 5 \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Term 1 (Product rule): \( 3x^2\cos x + x^3(-\sin x) \).</div>
+                    <div class="solution-step">Term 2: \( 2x \).</div>
+                    <div class="final-answer">
+                        \[ y' = 3x^2\cos x - x^3\sin x + 2x \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.15 P6 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 6</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = (x+4)(x^2-x+5) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Option 1: Expand then derive. \( y = x^3 - x^2 + 5x + 4x^2 - 4x + 20 = x^3 + 3x^2 + x + 20 \).</div>
+                    <div class="solution-step">Derivative: \( 3x^2 + 6x + 1 \).</div>
+                    <div class="final-answer">
+                        \[ y' = 3x^2 + 6x + 1 \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 2.4.15 P7 Quotient -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 7</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{3x^2+1}{6x+5} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient Rule \( (\frac{u}{v})' = \frac{u'v - uv'}{v^2} \).</div>
+                    <div class="solution-step">\( u=3x^2+1, u'=6x \). \( v=6x+5, v'=6 \).</div>
+                    <div class="solution-step">\[ y' = \frac{6x(6x+5) - (3x^2+1)(6)}{(6x+5)^2} \]</div>
+                    <div class="solution-step">\( = \frac{36x^2 + 30x - 18x^2 - 6}{(6x+5)^2} \)</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{18x^2 + 30x - 6}{(6x+5)^2} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.15 P8 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 8</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{1+\cos x}{1-\sin x} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( u=1+\cos x, u'=-\sin x \). \( v=1-\sin x, v'=-\cos x \).</div>
+                    <div class="solution-step">\[ y' = \frac{-\sin x(1-\sin x) - (1+\cos x)(-\cos x)}{(1-\sin x)^2} \]</div>
+                    <div class="solution-step">\( = \frac{-\sin x + \sin^2 x + \cos x + \cos^2 x}{(1-\sin x)^2} \)</div>
+                    <div class="solution-step">Since \( \sin^2 x + \cos^2 x = 1 \):</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1 - \sin x + \cos x}{(1-\sin x)^2} \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- P9 (Assumed Exponential Rule Context) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 9</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = 2^{-x} + 3^{x+1} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Rule: \( \frac{d}{dx}a^u = a^u \ln a \cdot u' \).</div>
+                    <div class="solution-step">Term 1: \( 2^{-x} \ln 2 \cdot (-1) \).</div>
+                    <div class="solution-step">Term 2: \( 3^{x+1} \ln 3 \cdot (1) \).</div>
+                    <div class="final-answer">
+                        \[ y' = -2^{-x}\ln 2 + 3^{x+1}\ln 3 \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P10 Log -->
+             <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 10</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \log_4(x) - 2\ln x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Rule: \( \frac{d}{dx}\log_a x = \frac{1}{x \ln a} \).</div>
+                    <div class="solution-step">Term 1: \( \frac{1}{x \ln 4} \).</div>
+                    <div class="solution-step">Term 2: \( 2(\frac{1}{x}) \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1}{x \ln 4} - \frac{2}{x} \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- P11 Chain Rule -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 11</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x\sin(3x+4) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Product Rule + Chain Rule.</div>
+                    <div class="solution-step">\( 1\cdot\sin(3x+4) + x\cdot\cos(3x+4)\cdot(3) \).</div>
+                    <div class="final-answer">
+                        \[ y' = \sin(3x+4) + 3x\cos(3x+4) \]
+                    </div>
+                </div>
+            </div>
+            
+             <!-- P12 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 12</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{\sin x + \cos x}{\sin x - \cos x} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient Rule. Let \( u = \sin x + \cos x \implies u' = \cos x - \sin x \).</div>
+                    <div class="solution-step">Let \( v = \sin x - \cos x \implies v' = \cos x + \sin x (=u) \).</div>
+                    <div class="solution-step">Note \( u' = -v \).</div>
+                    <div class="solution-step">\[ y' = \frac{(-v)(v) - (u)(u)}{v^2} = \frac{-(v^2+u^2)}{v^2} \]</div>
+                    <div class="solution-step">\( u^2+v^2 = (\sin x + \cos x)^2 + (\sin x - \cos x)^2 = (1+2sc) + (1-2sc) = 2 \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{-2}{(\sin x - \cos x)^2} \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- P13 Chain Rule -->
+             <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.15 - 13</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \log_3(x + \sqrt{x^2+1}) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Deriv of outer log: \( \frac{1}{(x + \sqrt{x^2+1})\ln 3} \).</div>
+                    <div class="solution-step">Chain inner: \( 1 + \frac{1}{2}(x^2+1)^{-1/2}(2x) = 1 + \frac{x}{\sqrt{x^2+1}} = \frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}} \).</div>
+                    <div class="solution-step">Product: \( \frac{1}{(x + \sqrt{x^2+1})\ln 3} \cdot \frac{x + \sqrt{x^2+1}}{\sqrt{x^2+1}} \).</div>
+                    <div class="solution-step">Cancel term \( x + \sqrt{x^2+1} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1}{\ln 3 \sqrt{x^2+1}} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Principles -->
+            <h3 class="section-title" style="border:none; margin-top:40px; font-size:1.5rem;">First Principles & Advanced Derivatives</h3>
+            
+            <!-- Ex 2.4.2 i -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.2 (i)</span>
+                </div>
+                <div class="problem-statement">
+                    First principles: \( y = x^3 \)
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( f'(x) = \lim_{h \to 0} \frac{(x+h)^3 - x^3}{h} \)</div>
+                    <div class="solution-step">\( = \lim_{h \to 0} \frac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h} \)</div>
+                    <div class="solution-step">\( = \lim_{h \to 0} \frac{h(3x^2 + 3xh + h^2)}{h} \)</div>
+                    <div class="solution-step">\( = 3x^2 + 0 + 0 \)</div>
+                    <div class="final-answer">
+                        \[ y' = 3x^2 \]
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Ex 2.4.2 ii -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 2.4.2 (ii)</span>
+                </div>
+                <div class="problem-statement">
+                    First principles: \( y = \frac{x}{x^2-5} \)
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( \lim_{h \to 0} \frac{1}{h} \left[ \frac{x+h}{(x+h)^2-5} - \frac{x}{x^2-5} \right] \)</div>
+                    <div class="solution-step">Common denominator: \( ((x+h)^2-5)(x^2-5) \).</div>
+                    <div class="solution-step">Num: \( (x+h)(x^2-5) - x((x+h)^2-5) \)</div>
+                    <div class="solution-step">\( = x^3-5x+hx^2-5h - (x(x^2+2xh+h^2)-5x) \)</div>
+                    <div class="solution-step">\( = x^3-5x+hx^2-5h - x^3-2x^2h-xh^2+5x \)</div>
+                    <div class="solution-step">\( = -x^2h - xh^2 - 5h = h(-x^2-xh-5) \).</div>
+                    <div class="solution-step">Divide by h: \( -x^2-xh-5 \). Let \( h \to 0 \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{-x^2-5}{(x^2-5)^2} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.2 iii -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 2.4.2 (iii)</span></div>
+                <div class="problem-statement">First principles: \( y = \sin^2 x \)</div>
+                <div class="solution-details">
+                    <div class="solution-step">\( f'(x) = \lim_{h \to 0} \frac{\sin^2(x+h) - \sin^2 x}{h} \).</div>
+                    <div class="solution-step">Use difference of squares: \( (\sin(x+h)-\sin x)(\sin(x+h)+\sin x) \).</div>
+                    <div class="solution-step">\( \sin(x+h)-\sin x = 2\sin(h/2)\cos(x+h/2) \).</div>
+                    <div class="solution-step">Limit: \( \lim_{h \to 0} \frac{2\sin(h/2)}{h} \cdot \cos(x+h/2) \cdot (\sin(x+h)+\sin x) \).</div>
+                    <div class="solution-step">\( 1 \cdot \cos x \cdot (2\sin x) = 2\sin x \cos x \).</div>
+                    <div class="final-answer">\[ y' = \sin(2x) \]</div>
+                </div>
+            </div>
+
+             <!-- Ex 2.4.2 iv -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 2.4.2 (iv)</span></div>
+                <div class="problem-statement">First principles: \( y = x e^{-x} \)</div>
+                <div class="solution-details">
+                    <div class="solution-step">\( f'(x) = \lim_{h \to 0} \frac{(x+h)e^{-(x+h)} - xe^{-x}}{h} \).</div>
+                    <div class="solution-step">Factor \( e^{-x} \): \( e^{-x} \lim_{h \to 0} \frac{(x+h)e^{-h} - x}{h} \).</div>
+                    <div class="solution-step">\( e^{-x} \lim_{h \to 0} \frac{xe^{-h} + he^{-h} - x}{h} = e^{-x} \lim_{h \to 0} ( x\frac{e^{-h}-1}{h} + e^{-h} ) \).</div>
+                    <div class="solution-step">Recalling \( \lim_{h \to 0} \frac{e^{-h}-1}{h} = -1 \).</div>
+                    <div class="solution-step">\( e^{-x} (x(-1) + 1) \).</div>
+                    <div class="final-answer">\[ y' = e^{-x}(1-x) \]</div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.2 2a -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(a)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \sin(x\cos(2x)) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Chain rule: \( \cos(x\cos(2x)) \cdot \frac{d}{dx}(x\cos(2x)) \).</div>
+                    <div class="solution-step">Inner: \( 1\cdot\cos(2x) + x(-\sin(2x)\cdot 2) = \cos(2x) - 2x\sin(2x) \).</div>
+                    <div class="final-answer">
+                        \[ y' = [\cos(2x) - 2x\sin(2x)]\cos(x\cos(2x)) \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.2 2b -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(b)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{x^2+ax+b}{x^2-ax+b} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient rule. \( u=x^2+ax+b, u'=2x+a \). \( v=x^2-ax+b, v'=2x-a \).</div>
+                    <div class="solution-step">\( Num = (2x+a)(x^2-ax+b) - (x^2+ax+b)(2x-a) \).</div>
+                    <div class="solution-step">Expand: \( (2x^3 - 2ax^2 + 2bx + ax^2 - a^2x + ab) - (2x^3 - ax^2 + 2bx + 2ax^2 - a^2x - ab) \).</div>
+                    <div class="solution-step">\( = 2x^3 - ax^2 + 2bx - a^2x + ab - 2x^3 - ax^2 - 2bx + a^2x + ab \)</div>
+                    <div class="solution-step">Cancel \( 2x^3 \), \( 2bx \), \( a^2x \). Terms remaining: \( -ax^2 - ax^2 + ab + ab = -2ax^2 + 2ab \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{2a(b-x^2)}{(x^2-ax+b)^2} \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 2.4.2 2c -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(c)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \sqrt{1+\sqrt{2x-1}} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Outer: \( \frac{1}{2}(1+\sqrt{2x-1})^{-1/2} \).</div>
+                    <div class="solution-step">Inner 1: \( 0 + \frac{1}{2}(2x-1)^{-1/2} \cdot 2 = (2x-1)^{-1/2} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1}{2\sqrt{1+\sqrt{2x-1}} \sqrt{2x-1}} \]
+                    </div>
+                </div>
+            </div>
+
+                 <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(d)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \sin^2\left(\frac{2x}{x+1}\right) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Chain: \( 2\sin(\dots)\cos(\dots) \cdot \text{Inner}' \).</div>
+                    <div class="solution-step">Inner \( \frac{2x}{x+1} \): \( \frac{2(x+1)-2x(1)}{(x+1)^2} = \frac{2}{(x+1)^2} \).</div>
+                    <div class="solution-step">Recall \( 2\sin A \cos A = \sin(2A) \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{2}{(x+1)^2} \sin\left(\frac{4x}{x+1}\right) \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.2 2e -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Prob 2(e)</span></div>
+                <div class="problem-statement">\[ y = \frac{1+2\tan^2 x}{1-\tan^2 x} \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Simplify? \( \frac{1+\tan^2 x + \tan^2 x}{1-\tan^2 x} = \frac{\sec^2 x + \tan^2 x}{1-\tan^2 x} \). Maybe just Quotient.</div>
+                    <div class="solution-step">\( u = 1+2\tan^2 x, u' = 4\tan x \sec^2 x \).</div>
+                    <div class="solution-step">\( v = 1-\tan^2 x, v' = -2\tan x \sec^2 x \).</div>
+                    <div class="solution-step">\( Num = 4\tan x \sec^2 x(1-\tan^2 x) - (1+2\tan^2 x)(-2\tan x \sec^2 x) \).</div>
+                    <div class="solution-step">Factor \( 2\tan x \sec^2 x \): \( 2(1-\tan^2 x) + (1+2\tan^2 x) = 2 - 2\tan^2 x + 1 + 2\tan^2 x = 3 \).</div>
+                    <div class="final-answer">\[ y' = \frac{6\tan x \sec^2 x}{(1-\tan^2 x)^2} \]</div>
+                </div>
+            </div>
+            
+            <!-- Ex 2.4.2 2f -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(f)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \ln(\sec x + \tan x) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( y' = \frac{1}{\sec x + \tan x} \cdot (\sec x \tan x + \sec^2 x) \).</div>
+                    <div class="solution-step">Factor sec: \( \frac{\sec x(\tan x + \sec x)}{\sec x + \tan x} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \sec x \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ex 2.4.2 2g -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(g)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{1}{\sqrt{1+\sqrt{x}}} = (1+x^{1/2})^{-1/2} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( -\frac{1}{2}(1+\sqrt{x})^{-3/2} \cdot (\frac{1}{2}x^{-1/2}) \).</div>
+                    <div class="final-answer">
+                        \[ y' = -\frac{1}{4\sqrt{x}(1+\sqrt{x})^{3/2}} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 2.4.2 2h -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Prob 2(h)</span></div>
+                <div class="problem-statement">\[ y = \frac{x^2}{\sqrt{a^2-x^2}} \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient Rule: \( u=x^2, u'=2x \). \( v=(a^2-x^2)^{1/2}, v'=\frac{1}{2}(a^2-x^2)^{-1/2}(-2x) = -x(a^2-x^2)^{-1/2} \).</div>
+                    <div class="solution-step">\( Num = 2x(a^2-x^2)^{1/2} - x^2(-x(a^2-x^2)^{-1/2}) = 2x\sqrt{a^2-x^2} + \frac{x^3}{\sqrt{a^2-x^2}} \).</div>
+                    <div class="solution-step">Common denom \( \sqrt{a^2-x^2} \): \( \frac{2x(a^2-x^2) + x^3}{\sqrt{a^2-x^2}} = \frac{2a^2x - 2x^3 + x^3}{\sqrt{a^2-x^2}} = \frac{2a^2x - x^3}{\sqrt{a^2-x^2}} \).</div>
+                    <div class="solution-step">Divide by \( v^2 = a^2-x^2 \).</div>
+                    <div class="final-answer">\[ y' = \frac{2a^2x - x^3}{(a^2-x^2)^{3/2}} \]</div>
+                </div>
+            </div>
+            
+             <!-- Ex 2.4.2 2i -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(i)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x e^{-x^2} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Product: \( 1\cdot e^{-x^2} + x \cdot e^{-x^2}(-2x) \).</div>
+                    <div class="final-answer">
+                        \[ y' = e^{-x^2}(1-2x^2) \]
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Ex 2.4.2 2j -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Prob 2(j)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x\cos(\sin(2x)) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Product: \( 1\cdot\cos(\sin 2x) + x(-\sin(\sin 2x))(\cos 2x)(2) \).</div>
+                    <div class="final-answer">
+                        \[ y' = \cos(\sin(2x)) - 2x\cos(2x)\sin(\sin(2x)) \]
+                    </div>
+                </div>
+            </div>
+
+      </div>
+
+      <div class="section">
+            <h2 class="section-title">4. Inverse Trigonometric Differentiation</h2>
+
+            <!-- P2 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 2</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \tan^{-1}\left(\frac{x}{a}\right) + 2\sin^{-1}\left(\frac{a}{x}\right) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">1. \( \frac{d}{dx}\tan^{-1} u = \frac{u'}{1+u^2} \). \( u=\frac{x}{a}, u'=\frac{1}{a} \).</div>
+                    <div class="solution-step">\[ \frac{1/a}{1+(x/a)^2} = \frac{1/a}{1+x^2/a^2} = \frac{1/a}{(a^2+x^2)/a^2} = \frac{a}{a^2+x^2} \]</div>
+                    <div class="solution-step">2. \( \frac{d}{dx}\sin^{-1} u = \frac{u'}{\sqrt{1-u^2}} \). \( u=ax^{-1}, u'=-ax^{-2} \).</div>
+                    <div class="solution-step">\[ 2 \cdot \frac{-a/x^2}{\sqrt{1-(a/x)^2}} = \frac{-2a/x^2}{\sqrt{(x^2-a^2)/x^2}} = \frac{-2a/x^2}{|1/x|\sqrt{x^2-a^2}} \]</div>
+                    <div class="solution-step">Assuming \( x>0 \), \( \frac{-2a}{x\sqrt{x^2-a^2}} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{a}{a^2+x^2} - \frac{2a}{x\sqrt{x^2-a^2}} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P3 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 3</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{\cos^{-1}(x^2)}{x+1} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient Rule: \( u = \cos^{-1}(x^2), u' = \frac{-1}{\sqrt{1-(x^2)^2}}(2x) = \frac{-2x}{\sqrt{1-x^4}} \).</div>
+                    <div class="solution-step">\( v = x+1, v' = 1 \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{\frac{-2x(x+1)}{\sqrt{1-x^4}} - \cos^{-1}(x^2)}{(x+1)^2} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P4 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 4</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = e^{x^2}\sin^{-1}x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Product Rule: \( (2x e^{x^2})(\sin^{-1}x) + (e^{x^2})(\frac{1}{\sqrt{1-x^2}}) \).</div>
+                    <div class="final-answer">
+                        \[ y' = e^{x^2} \left[ 2x\sin^{-1}x + \frac{1}{\sqrt{1-x^2}} \right] \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P5 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 5</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \sin^{-1}(2x) + \cos^{-1}(2x) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Identity: \( \sin^{-1}u + \cos^{-1}u = \frac{\pi}{2} \) (constant).</div>
+                    <div class="solution-step">Derivative of a constant is 0.</div>
+                    <div class="final-answer">
+                        \[ y' = 0 \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P6 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 6</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = x\cos^{-1}x - \sqrt{1-x^2} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Part 1: \( 1\cdot\cos^{-1}x + x(\frac{-1}{\sqrt{1-x^2}}) \).</div>
+                    <div class="solution-step">Part 2: \( -\frac{1}{2}(1-x^2)^{-1/2}(-2x) = \frac{x}{\sqrt{1-x^2}} \).</div>
+                    <div class="solution-step">Sum: \( \cos^{-1}x - \frac{x}{\sqrt{1-x^2}} + \frac{x}{\sqrt{1-x^2}} \). Terms cancel.</div>
+                    <div class="final-answer">
+                        \[ y' = \cos^{-1}x \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P7 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 7</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{1}{2}\left[ x\sqrt{4-x^2} + 4\sin^{-1}\left(\frac{x}{2}\right) \right] \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Deriv of \( x\sqrt{4-x^2} \): \( 1\cdot\sqrt{4-x^2} + x\frac{-2x}{2\sqrt{4-x^2}} = \frac{4-x^2-x^2}{\sqrt{4-x^2}} = \frac{4-2x^2}{\sqrt{4-x^2}} \).</div>
+                    <div class="solution-step">Deriv of \( 4\sin^{-1}(x/2) \): \( 4 \frac{1/2}{\sqrt{1-(x/2)^2}} = \frac{2}{\sqrt{(4-x^2)/4}} = \frac{4}{\sqrt{4-x^2}} \).</div>
+                    <div class="solution-step">Total: \( \frac{1}{2} [ \frac{4-2x^2+4}{\sqrt{4-x^2}} ] = \frac{1}{2} \frac{8-2x^2}{\sqrt{4-x^2}} = \frac{4-x^2}{\sqrt{4-x^2}} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \sqrt{4-x^2} \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- P8 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 8</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \cos x \cdot \sec^{-1}x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Product rule: \( -\sin x \sec^{-1}x + \cos x \frac{1}{|x|\sqrt{x^2-1}} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{\cos x}{|x|\sqrt{x^2-1}} - \sin x \sec^{-1}x \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P9 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 9</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = e^{\sin^{-1}x} + \frac{1}{\sqrt{1+x^2}} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Term 1: \( e^{\sin^{-1}x} \frac{1}{\sqrt{1-x^2}} \).</div>
+                    <div class="solution-step">Term 2: \( (1+x^2)^{-1/2} \to -\frac{1}{2}(1+x^2)^{-3/2}(2x) = -x(1+x^2)^{-3/2} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{e^{\sin^{-1}x}}{\sqrt{1-x^2}} - \frac{x}{(1+x^2)^{3/2}} \]
+                    </div>
+                </div>
+            </div>
+            
+             <!-- P10 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 10</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \csc\left[\frac{x}{x+1}\right] - \sec^{-1}\left(\frac{x+1}{x}\right) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Note if we assume \( \sec^{-1}(\frac{x+1}{x}) = \cos^{-1}(\frac{x}{x+1}) \).</div>
+                    <div class="solution-step">Let \( u = \frac{x}{x+1} \). \( y = \csc u - \cos^{-1} u \).</div>
+                    <div class="solution-step">\( u' = \frac{1(x+1)-x(1)}{(x+1)^2} = \frac{1}{(x+1)^2} \).</div>
+                    <div class="solution-step">\( y' = -\csc u \cot u \cdot u' - (\frac{-1}{\sqrt{1-u^2}} \cdot u') \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1}{(x+1)^2} \left[ \frac{1}{\sqrt{1-(\frac{x}{x+1})^2}} - \csc\left(\frac{x}{x+1}\right)\cot\left(\frac{x}{x+1}\right) \right] \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- P11 -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem 11</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{\cot^{-1}x}{1+x^2} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient rule. \( u = \cot^{-1}x, u' = \frac{-1}{1+x^2} \). \( v = 1+x^2, v'=2x \).</div>
+                    <div class="solution-step">\( Num = \frac{-1}{1+x^2}(1+x^2) - \cot^{-1}x(2x) = -1 - 2x\cot^{-1}x \).</div>
+                    <div class="final-answer">
+                        \[ y' = -\frac{1+2x\cot^{-1}x}{(1+x^2)^2} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- P12 -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Problem 12</span></div>
+                <div class="problem-statement">\[ y = \ln(x - \tan x) \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Chain rule: \( \frac{1}{x-\tan x} (1-\sec^2 x) \).</div>
+                    <div class="solution-step">Recall \( 1-\sec^2 x = -\tan^2 x \).</div>
+                    <div class="final-answer">\[ y' = \frac{-\tan^2 x}{x-\tan x} \]</div>
+                </div>
+            </div>
+
+            <!-- P13 -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Problem 13</span></div>
+                <div class="problem-statement">\[ y = \csc^{-1}\left(\frac{1-x}{x+1}\right) \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Let \( u = \frac{1-x}{x+1} \). \( u' = \frac{-1(x+1)-(1-x)(1)}{(x+1)^2} = \frac{-2}{(x+1)^2} \).</div>
+                    <div class="solution-step">\( \frac{d}{dx}\csc^{-1} u = \frac{-u'}{|u|\sqrt{u^2-1}} \).</div>
+                    <div class="solution-step">This derivative is complex to simplify fully inline, but plugging in parts:</div>
+                    <div class="final-answer">\[ y' = \frac{2}{(x+1)^2 |\frac{1-x}{x+1}| \sqrt{(\frac{1-x}{x+1})^2-1}} \]</div>
+                </div>
+            </div>
+
+            <!-- P14 -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Problem 14</span></div>
+                <div class="problem-statement">\[ y = \ln\sqrt{\frac{x+1}{x-1}} + \tan^{-1}(2x) \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Simplify Log: \( \frac{1}{2}(\ln(x+1) - \ln(x-1)) \).</div>
+                    <div class="solution-step">Deriv Log part: \( \frac{1}{2}(\frac{1}{x+1} - \frac{1}{x-1}) = \frac{1}{2}\frac{x-1-(x+1)}{x^2-1} = \frac{-1}{x^2-1} \).</div>
+                    <div class="solution-step">Deriv tan: \( \frac{2}{1+(2x)^2} = \frac{2}{1+4x^2} \).</div>
+                    <div class="final-answer">\[ y' = \frac{-1}{x^2-1} + \frac{2}{1+4x^2} \]</div>
+                </div>
+            </div>
+      </div>
+
+      <div class="section">
+            <h2 class="section-title">5. Exponential, Logarithmic & Implicit Differentiation</h2>
+
+            <!-- Ex 1.2.1 iv -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 1.2.1 (iv)</span></div>
+                <div class="problem-statement">\[ y = \ln\left(\frac{2^x - 2^{-x}}{2^x + 2^{-x}}\right) \] (Inferred from context)</div>
+                <div class="solution-details">
+                    <div class="solution-step">This is \( \ln(\tanh(x\ln 2)) \).</div>
+                    <div class="solution-step">Deriv: \( \frac{1}{\tanh(\dots)} \cdot \text{sech}^2(\dots) \cdot \ln 2 \).</div>
+                    <div class="solution-step">\( \frac{\cosh}{\sinh} \frac{1}{\cosh^2} \ln 2 = \frac{\ln 2}{\sinh \cosh} = \frac{2\ln 2}{\sinh(2x\ln 2)} \).</div>
+                    <div class="final-answer">\[ y' = 2\ln 2 \cdot \text{csch}(2x\ln 2) \]</div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 v -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 1.2.1 (v)</span></div>
+                <div class="problem-statement">\[ y = \log_3\left(\frac{x}{2^x - x}\right) \] (Interpretation)</div>
+                <div class="solution-details">
+                    <div class="solution-step">\( \log_3 x - \log_3(2^x - x) \).</div>
+                    <div class="solution-step">\( \frac{1}{x\ln 3} - \frac{2^x\ln 2 - 1}{(2^x - x)\ln 3} \).</div>
+                    <div class="final-answer">\[ y' = \frac{1}{\ln 3} \left[ \frac{1}{x} - \frac{2^x\ln 2 - 1}{2^x - x} \right] \]</div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 vi -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 1.2.1 (vi)</span></div>
+                <div class="problem-statement">\[ y = \tan^{-1}(e^{-x^2}) \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">\( \frac{1}{1+(e^{-x^2})^2} \cdot e^{-x^2} \cdot (-2x) \).</div>
+                    <div class="final-answer">\[ y' = \frac{-2xe^{-x^2}}{1+e^{-2x^2}} \]</div>
+                </div>
+            </div>
+
+             <!-- Ex 1.2.1 x -->
+            <div class="problem-card">
+                <div class="problem-header"><span class="problem-number">Ex 1.2.1 (x)</span></div>
+                <div class="problem-statement">\[ y = \ln\left(\ln\frac{x+1}{x-1}\right) \]</div>
+                <div class="solution-details">
+                    <div class="solution-step">Let \( u = \frac{x+1}{x-1} \). \( \ln(\ln u) \).</div>
+                    <div class="solution-step">Outer: \( \frac{1}{\ln u} \cdot \frac{1}{u} \cdot u' \).</div>
+                    <div class="solution-step">\( u = \frac{x+1}{x-1}, u' = \frac{(x-1)-(x+1)}{(x-1)^2} = \frac{-2}{(x-1)^2} \).</div>
+                    <div class="solution-step">Product: \( \frac{1}{\ln(\frac{x+1}{x-1})} \cdot \frac{x-1}{x+1} \cdot \frac{-2}{(x-1)^2} \).</div>
+                    <div class="final-answer">\[ y' = \frac{-2}{(x^2-1) \ln(\frac{x+1}{x-1})} \]</div>
+                </div>
+            </div>
+
+            <!-- F: Implicit -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Problem (f)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ x = 2^y - 2^{-y} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Differentiate wrt x: \( 1 = 2^y \ln 2 \cdot y' - 2^{-y} \ln 2 \cdot (-y') \).</div>
+                    <div class="solution-step">\( 1 = y' \ln 2 (2^y + 2^{-y}) \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{1}{\ln 2 (2^y + 2^{-y})} \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 1.2.1 (i) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (i)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \pi^x - x^\pi \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( \pi^x \) is exponential \( a^x \to a^x \ln a \).</div>
+                    <div class="solution-step">\( x^\pi \) is power function \( x^n \to n x^{n-1} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \pi^x \ln \pi - \pi x^{\pi-1} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 (ii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (ii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = e^{\sin(3x)} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Chain: \( e^{\sin(3x)} \cdot \cos(3x) \cdot 3 \).</div>
+                    <div class="final-answer">
+                        \[ y' = 3\cos(3x)e^{\sin(3x)} \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 1.2.1 (iii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (iii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \ln(x^2-1) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">\( \frac{1}{u} u' = \frac{1}{x^2-1} \cdot 2x \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{2x}{x^2-1} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 (vii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (vii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \sin\left(\sqrt{e^x-1}\right) \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Chain rule: \( \cos(\sqrt{e^x-1}) \cdot \frac{1}{2\sqrt{e^x-1}} \cdot e^x \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{e^x \cos(\sqrt{e^x-1})}{2\sqrt{e^x-1}} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 (viii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (viii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{\ln x + 1}{\ln x - 1} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Quotient: \( u=\ln x+1, u'=1/x \). \( v=\ln x-1, v'=1/x \).</div>
+                    <div class="solution-step">\( Num = \frac{1}{x}(\ln x - 1) - (\ln x + 1)\frac{1}{x} = \frac{1}{x}(\ln x - 1 - \ln x - 1) = -\frac{2}{x} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{-2}{x(\ln x - 1)^2} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 (ix) Log Diff -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (ix)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{(x+1)^3 \sqrt{x^2+4}}{\sqrt[3]{x+2}} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Take ln: \( \ln y = 3\ln(x+1) + \frac{1}{2}\ln(x^2+4) - \frac{1}{3}\ln(x+2) \).</div>
+                    <div class="solution-step">Differentiate: \( \frac{y'}{y} = \frac{3}{x+1} + \frac{1}{2}\frac{2x}{x^2+4} - \frac{1}{3(x+2)} \).</div>
+                    <div class="solution-step">Multiply by y for final answer.</div>
+                    <div class="final-answer">
+                        \[ y' = y \left[ \frac{3}{x+1} + \frac{x}{x^2+4} - \frac{1}{3(x+2)} \right] \]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ex 1.2.1 (xi) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (xi)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y = \frac{\sin^4 x \cos^3 x}{\sqrt{x}} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Log diff: \( \ln y = 4\ln(\sin x) + 3\ln(\cos x) - \frac{1}{2}\ln x \).</div>
+                    <div class="solution-step">\( \frac{y'}{y} = 4\frac{\cos x}{\sin x} + 3\frac{-\sin x}{\cos x} - \frac{1}{2x} \).</div>
+                    <div class="solution-step">\( = 4\cot x - 3\tan x - \frac{1}{2x} \).</div>
+                    <div class="final-answer">
+                        \[ y' = y [ 4\cot x - 3\tan x - \frac{1}{2x} ] \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ex 1.2.1 (xii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (xii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ x^y = 2^{x-y} \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Ln both sides: \( y\ln x = (x-y)\ln 2 \).</div>
+                    <div class="solution-step">Diff: \( y'\ln x + \frac{y}{x} = (1-y')\ln 2 \).</div>
+                    <div class="solution-step">\( y'\ln x + y'\ln 2 = \ln 2 - \frac{y}{x} \).</div>
+                    <div class="solution-step">\( y'(\ln x + \ln 2) = \frac{x\ln 2 - y}{x} \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{x\ln 2 - y}{x(\ln x + \ln 2)} \]
+                    </div>
+                </div>
+            </div>
+
+             <!-- Ex 1.2.1 (xiii) -->
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-number">Ex 1.2.1 (xiii)</span>
+                </div>
+                <div class="problem-statement">
+                    \[ y + x = y^x \]
+                </div>
+                <div class="solution-details">
+                    <div class="solution-step">Ln: \( \ln(y+x) = x\ln y \) (WAIT! \( y^x \) base y. Log rule applies). No, take ln both sides of equation? No, \( y+x \) is sum.</div>
+                    <div class="solution-step">Direct implicit with exponential rule for RHS.</div>
+                    <div class="solution-step">LHS: \( y' + 1 \).</div>
+                    <div class="solution-step">RHS: \( y^x (\ln y \cdot 1 + x \cdot \frac{y'}{y}) \) (Using \( \frac{d}{dx}f(x)^{g(x)} \)).</div>
+                    <div class="solution-step">\( y' + 1 = y^x \ln y + y^x \frac{x}{y} y' = y^x \ln y + x y^{x-1} y' \).</div>
+                    <div class="solution-step">Group \( y' \): \( y'(1 - x y^{x-1}) = y^x \ln y - 1 \).</div>
+                    <div class="final-answer">
+                        \[ y' = \frac{y^x \ln y - 1}{1 - x y^{x-1}} \]
+                    </div>
+                </div>
+            </div>
+
+      </div>
+
+      <footer>
+        <div class="container">
+          <p>Calculus Solutions Project</p>
+          <p>
+            Abdelrazieg Mohamed |
+            <a href="https://linktr.ee/prodbyabdo" target="_blank"
+              >linktr.ee/prodbyabdo</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

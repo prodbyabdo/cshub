@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus I - Laws & Formulas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .section h2 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .section h3 {
+            color: #cccccc;
+            font-size: 1.3em;
+            margin: 20px 0 15px 0;
+            font-weight: 300;
+        }
+        
+        .formula-box {
+            background: #000000;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #666666;
+        }
+        
+        .important {
+            background: #0a0a0a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .theorem {
+            background: #0a0a0a;
+            border-left: 2px solid #888888;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #000000;
+            border: 1px solid #1a1a1a;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 300;
+        }
+        
+        th {
+            background: #0a0a0a;
+            color: #ffffff;
+            font-weight: 400;
+            border-bottom: 1px solid #333333;
+        }
+        
+        tr:hover {
+            background: #0f0f0f;
+        }
+        
+        .note {
+            background: #0a0a0a;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .note strong {
+            color: #ffffff;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 5px 0;
+            color: #cccccc;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            .container {
+                border: none;
+            }
+            header {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Calculus I Complete Reference</h1>
+            <p>All Laws, Theorems, and Formulas You Need</p>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
+                <p style="font-size: 0.85em; margin-top: 5px;">
+                    <a href="https://linktr.ee/prodbyabdo" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">linktr.ee/prodbyabdo</a>
+                </p>
+            </div>
+        </header>
+        
+        <div class="content">
+            <!-- LIMITS -->
+            <div class="section">
+                <h2>1. Limits</h2>
+                
+                <h3>Basic Limit Laws</h3>
+                <div class="formula-box">
+                    <p><strong>Definition:</strong></p>
+                    \[\lim_{x \to c} f(x) = L\]
+                    <p>means for each \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(0 < |x-c| < \delta\), then \(|f(x)-L| < \epsilon\)</p>
+                </div>
+                
+                <div class="formula-box theorem">
+                    <p><strong>Basic Limits:</strong></p>
+                    \[\lim_{x \to c} b = b\]
+                    \[\lim_{x \to c} x = c\]
+                    \[\lim_{x \to c} x^n = c^n\]
+                </div>
+                
+                <h3>Limit Properties</h3>
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Formula</th>
+                    </tr>
+                    <tr>
+                        <td>Scalar Multiple</td>
+                        <td>\(\lim_{x \to c} [bf(x)] = b\lim_{x \to c} f(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>Sum/Difference</td>
+                        <td>\(\lim_{x \to c} [f(x) \pm g(x)] = \lim_{x \to c} f(x) \pm \lim_{x \to c} g(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>Product</td>
+                        <td>\(\lim_{x \to c} [f(x) \cdot g(x)] = \lim_{x \to c} f(x) \cdot \lim_{x \to c} g(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>Quotient</td>
+                        <td>\(\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)}\), if \(\lim_{x \to c} g(x) \neq 0\)</td>
+                    </tr>
+                    <tr>
+                        <td>Power</td>
+                        <td>\(\lim_{x \to c} [f(x)]^n = \left[\lim_{x \to c} f(x)\right]^n\)</td>
+                    </tr>
+                </table>
+                
+                <h3>Important Limit Theorems</h3>
+                
+                <div class="formula-box important">
+                    <p><strong>Cauchy's Theorem:</strong></p>
+                    \[\lim_{x \to a} \frac{x^n - a^n}{x - a} = na^{n-1}\]
+                </div>
+                
+                <div class="formula-box important">
+                    <p><strong>General Cauchy:</strong></p>
+                    \[\lim_{x \to a} \frac{x^n - a^n}{x^m - a^m} = \frac{n}{m}a^{n-m}\]
+                </div>
+                
+                <div class="formula-box important">
+                    <p><strong>Special Case:</strong></p>
+                    \[\lim_{x \to a} \frac{x - a}{x^m - a^m} = \frac{1}{m}a^{1-m}\]
+                </div>
+                
+                <h3>Trigonometric Limits</h3>
+                <div class="formula-box important">
+                    \[\lim_{x \to 0} \frac{\sin x}{x} = 1\]
+                    \[\lim_{x \to 0} \frac{\tan x}{x} = 1\]
+                    \[\lim_{x \to 0} \frac{\sin ax}{ax} = 1\]
+                    \[\lim_{x \to 0} \frac{\tan ax}{ax} = 1\]
+                    \[\lim_{x \to 0} \frac{1-\cos x}{x^2} = \frac{1}{2}\]
+                </div>
+                
+                <h3>Exponential Limits</h3>
+                <div class="formula-box important">
+                    <p><strong>The Number e:</strong></p>
+                    \[e = \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = \lim_{n \to 0} (1+n)^{\frac{1}{n}}\]
+                </div>
+                
+                <div class="formula-box important">
+                    <p><strong>General Exponential Limit:</strong></p>
+                    \[\lim_{x \to \infty} \left(1 + \frac{\alpha}{x}\right)^x = e^\alpha\]
+                </div>
+            </div>
+            
+            <!-- CONTINUITY -->
+            <div class="section">
+                <h2>2. Continuity</h2>
+                
+                <div class="formula-box theorem">
+                    <p><strong>Definition of Continuity at a Point:</strong></p>
+                    <p>A function \(f\) is continuous at \(c\) if:</p>
+                    <ol>
+                        <li>\(f(c)\) is defined</li>
+                        <li>\(\lim_{x \to c} f(x)\) exists</li>
+                        <li>\(f(c) = \lim_{x \to c} f(x)\)</li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box theorem">
+                    <p><strong>Alternative Definition:</strong></p>
+                    \[\lim_{h \to 0} [f(c+h) - f(c)] = 0\]
+                </div>
+                
+                <div class="note">
+                    <strong>Important:</strong> If \(f\) is differentiable at \(c\), then \(f\) is continuous at \(c\).
+                </div>
+            </div>
+            
+            <!-- DIFFERENTIATION -->
+            <div class="section">
+                <h2>3. Differentiation Rules</h2>
+                
+                <h3>Definition of Derivative</h3>
+                <div class="formula-box important">
+                    \[f'(x) = \frac{dy}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\]
+                </div>
+                
+                <h3>Basic Derivative Rules</h3>
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(c\) (constant)</td>
+                        <td>\(0\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(x^n\)</td>
+                        <td>\(nx^{n-1}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(cf(x)\)</td>
+                        <td>\(cf'(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(f(x) \pm g(x)\)</td>
+                        <td>\(f'(x) \pm g'(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(f(x) \cdot g(x)\)</td>
+                        <td>\(f'(x)g(x) + f(x)g'(x)\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\frac{f(x)}{g(x)}\)</td>
+                        <td>\(\frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}\)</td>
+                    </tr>
+                </table>
+                
+                <div class="formula-box important">
+                    <p><strong>Chain Rule:</strong></p>
+                    \[\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)\]
+                </div>
+            </div>
+            
+            <!-- TRIGONOMETRIC DERIVATIVES -->
+            <div class="section">
+                <h2>4. Trigonometric Functions</h2>
+                
+                <h3>Derivatives</h3>
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(\sin x\)</td>
+                        <td>\(\cos x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos x\)</td>
+                        <td>\(-\sin x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan x\)</td>
+                        <td>\(\sec^2 x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cot x\)</td>
+                        <td>\(-\csc^2 x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec x\)</td>
+                        <td>\(\sec x \tan x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc x\)</td>
+                        <td>\(-\csc x \cot x\)</td>
+                    </tr>
+                </table>
+                
+                <h3>General Forms with Chain Rule</h3>
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(\sin[u(x)]\)</td>
+                        <td>\(u'(x)\cos[u(x)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos[u(x)]\)</td>
+                        <td>\(-u'(x)\sin[u(x)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan[u(x)]\)</td>
+                        <td>\(u'(x)\sec^2[u(x)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cot[u(x)]\)</td>
+                        <td>\(-u'(x)\csc^2[u(x)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec[u(x)]\)</td>
+                        <td>\(u'(x)\sec[u(x)]\tan[u(x)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc[u(x)]\)</td>
+                        <td>\(-u'(x)\csc[u(x)]\cot[u(x)]\)</td>
+                    </tr>
+                </table>
+                
+                <h3>Properties</h3>
+                <div class="formula-box">
+                    <p><strong>Symmetry:</strong></p>
+                    \[\sin(-x) = -\sin(x)\]
+                    \[\cos(-x) = \cos(x)\]
+                    \[\tan(-x) = -\tan(x)\]
+                </div>
+                
+                <div class="formula-box">
+                    <p><strong>Periodicity:</strong></p>
+                    \[\sin(x + 2\pi) = \sin(x)\]
+                    \[\cos(x + 2\pi) = \cos(x)\]
+                    \[\tan(x + \pi) = \tan(x)\]
+                </div>
+            </div>
+            
+            <!-- INVERSE TRIG -->
+            <div class="section">
+                <h2>5. Inverse Trigonometric Functions</h2>
+                
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                        <th>Domain</th>
+                        <th>Range</th>
+                    </tr>
+                    <tr>
+                        <td>\(\sin^{-1} x\)</td>
+                        <td>\(\frac{1}{\sqrt{1-x^2}}\)</td>
+                        <td>\([-1, 1]\)</td>
+                        <td>\([-\frac{\pi}{2}, \frac{\pi}{2}]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos^{-1} x\)</td>
+                        <td>\(-\frac{1}{\sqrt{1-x^2}}\)</td>
+                        <td>\([-1, 1]\)</td>
+                        <td>\([0, \pi]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan^{-1} x\)</td>
+                        <td>\(\frac{1}{1+x^2}\)</td>
+                        <td>\(\mathbb{R}\)</td>
+                        <td>\((-\frac{\pi}{2}, \frac{\pi}{2})\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cot^{-1} x\)</td>
+                        <td>\(-\frac{1}{1+x^2}\)</td>
+                        <td>\(\mathbb{R}\)</td>
+                        <td>\((0, \pi)\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec^{-1} x\)</td>
+                        <td>\(\frac{1}{|x|\sqrt{x^2-1}}\)</td>
+                        <td>\((-\infty,-1] \cup [1,\infty)\)</td>
+                        <td>\([0,\frac{\pi}{2}) \cup (\frac{\pi}{2},\pi]\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc^{-1} x\)</td>
+                        <td>\(-\frac{1}{|x|\sqrt{x^2-1}}\)</td>
+                        <td>\((-\infty,-1] \cup [1,\infty)\)</td>
+                        <td>\([-\frac{\pi}{2},0) \cup (0,\frac{\pi}{2}]\)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- EXPONENTIAL AND LOGARITHMIC -->
+            <div class="section">
+                <h2>6. Exponential and Logarithmic Functions</h2>
+                
+                <h3>Exponential Functions</h3>
+                <div class="formula-box important">
+                    <p><strong>Series Expansion of \(e^x\):</strong></p>
+                    \[e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!}\]
+                </div>
+                
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(e^x\)</td>
+                        <td>\(e^x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(a^x\)</td>
+                        <td>\(a^x \ln a\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(e^{u(x)}\)</td>
+                        <td>\(u'(x)e^{u(x)}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(a^{u(x)}\)</td>
+                        <td>\(u'(x)a^{u(x)}\ln a\)</td>
+                    </tr>
+                </table>
+                
+                <h3>Logarithmic Functions</h3>
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(\ln x\)</td>
+                        <td>\(\frac{1}{x}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\log_a x\)</td>
+                        <td>\(\frac{1}{x \ln a}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\ln[u(x)]\)</td>
+                        <td>\(\frac{u'(x)}{u(x)}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\log_a[u(x)]\)</td>
+                        <td>\(\frac{u'(x)}{u(x)\ln a}\)</td>
+                    </tr>
+                </table>
+                
+                <h3>Logarithm Properties</h3>
+                <div class="formula-box">
+                    \[\ln(xy) = \ln x + \ln y\]
+                    \[\ln\left(\frac{x}{y}\right) = \ln x - \ln y\]
+                    \[\ln(x^n) = n\ln x\]
+                    \[\log_a 1 = 0\]
+                    \[\log_a a = 1\]
+                    \[\log_a b = \frac{1}{\log_b a}\]
+                </div>
+                
+                <h3>Derivative of \([f(x)]^{g(x)}\)</h3>
+                <div class="formula-box important">
+                    <p>For \(y = [f(x)]^{g(x)}\):</p>
+                    <ol>
+                        <li>Take \(\ln\) of both sides: \(\ln y = g(x)\ln f(x)\)</li>
+                        <li>Differentiate: \(\frac{y'}{y} = g'(x)\ln f(x) + g(x)\frac{f'(x)}{f(x)}\)</li>
+                        <li>Solve for \(y'\): \(y' = y\left[g'(x)\ln f(x) + g(x)\frac{f'(x)}{f(x)}\right]\)</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- QUICK REFERENCE -->
+            <div class="section">
+                <h2>7. Quick Reference - All Derivatives</h2>
+                
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>\(c\)</td>
+                        <td>\(0\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(x^n\)</td>
+                        <td>\(nx^{n-1}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sin x\)</td>
+                        <td>\(\cos x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos x\)</td>
+                        <td>\(-\sin x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan x\)</td>
+                        <td>\(\sec^2 x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cot x\)</td>
+                        <td>\(-\csc^2 x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec x\)</td>
+                        <td>\(\sec x \tan x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc x\)</td>
+                        <td>\(-\csc x \cot x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sin^{-1} x\)</td>
+                        <td>\(\frac{1}{\sqrt{1-x^2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos^{-1} x\)</td>
+                        <td>\(-\frac{1}{\sqrt{1-x^2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan^{-1} x\)</td>
+                        <td>\(\frac{1}{1+x^2}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cot^{-1} x\)</td>
+                        <td>\(-\frac{1}{1+x^2}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(e^x\)</td>
+                        <td>\(e^x\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(a^x\)</td>
+                        <td>\(a^x \ln a\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\ln x\)</td>
+                        <td>\(\frac{1}{x}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\log_a x\)</td>
+                        <td>\(\frac{1}{x\ln a}\)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="note">
+                <strong>💡 Study Tips:</strong>
+                <ul>
+                    <li>Practice the limit theorems - they're foundational!</li>
+                    <li>Memorize the trig derivatives - they come up constantly</li>
+                    <li>Chain rule is your friend - use it everywhere</li>
+                    <li>For complex functions, use logarithmic differentiation</li>
+                    <li>Always check domains and ranges for inverse functions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
