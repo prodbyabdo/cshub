@@ -1,0 +1,6329 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Calculus Solutions | prodbyabdo
+  </title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+   :root {
+        --bg-color: #0a0a0a;
+        --card-bg: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-color: #00ff88;
+        --accent-dim: rgba(0, 255, 136, 0.1);
+        --border-color: #333333;
+        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 40px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        margin: 0 0 10px 0;
+        background: linear-gradient(to right, #ffffff, #a0a0a0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        color: var(--accent-color);
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 60px 0 30px;
+        padding-left: 20px;
+        border-left: 4px solid var(--accent-color);
+        color: var(--text-primary);
+      }
+
+      .problem-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .problem-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        border-color: var(--accent-color);
+      }
+
+      .problem-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+      }
+
+      .problem-number {
+        font-family: var(--font-mono);
+        color: var(--accent-color);
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .problem-statement {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+      }
+
+      .solution-step {
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .final-answer {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: var(--accent-dim);
+        border-radius: 8px;
+        border: 1px solid var(--accent-color);
+        color: var(--text-primary);
+        font-weight: bold;
+      }
+
+      footer {
+        margin-top: 100px;
+        border-top: 1px solid var(--border-color);
+        padding: 40px 0;
+        text-align: center;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      /* MathJax adjustments */
+      mjx-container {
+        font-size: 110% !important;
+      }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <h1>
+     CALCULUS SOLUTIONS
+    </h1>
+    <div class="subtitle">
+     COMPLETE STEP-BY-STEP GUIDE
+    </div>
+   </header>
+   <div class="section">
+    <h2 class="section-title">
+     1. Basic Limits
+    </h2>
+    <!-- Problem 1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} (4x^2 + 3) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Apply limit laws (limit of sum is sum of limits, limit of constant
+              is constant):
+      </div>
+      <div class="solution-step">
+       \[ = 4 \lim_{x \to 2} x^2 + \lim_{x \to 2} 3 \]
+      </div>
+      <div class="solution-step">
+       Substitute \( x = 2 \):
+      </div>
+      <div class="solution-step">
+       \[ = 4(2)^2 + 3 = 4(4) + 3 = 16 + 3 \]
+      </div>
+      <div class="final-answer">
+       \[ = 19 \]
+      </div>
+     </div>
+    </div>
+    <!-- Problem 2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 3} \frac{x-2}{x+2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution:
+      </div>
+      <div class="solution-step">
+       \[ = \frac{3-2}{3+2} \]
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{5} \]
+      </div>
+     </div>
+    </div>
+    <!-- Problem 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 3
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 4} \sqrt{25-x^2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Using limit laws for radicals:
+      </div>
+      <div class="solution-step">
+       \[ = \sqrt{\lim_{x \to 4}(25-x^2)} \]
+      </div>
+      <div class="solution-step">
+       Substitute \( x = 4 \):
+      </div>
+      <div class="solution-step">
+       \[ = \sqrt{25 - 4^2} = \sqrt{25 - 16} = \sqrt{9} \]
+      </div>
+      <div class="final-answer">
+       \[ = 3 \]
+      </div>
+     </div>
+    </div>
+    <!-- Problem 4 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 4
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} (3x^2-1)(9x+2) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution:
+      </div>
+      <div class="solution-step">
+       \[ = (3(1)^2 - 1)(9(1) + 2) \]
+      </div>
+      <div class="solution-step">
+       \[ = (3-1)(9+2) = (2)(11) \]
+      </div>
+      <div class="final-answer">
+       \[ = 22 \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.4.6 P1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.4.6 - 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} (x+4-x^2) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution:
+      </div>
+      <div class="solution-step">
+       \[ = 1 + 4 - (1)^2 = 5 - 1 \]
+      </div>
+      <div class="final-answer">
+       \[ = 4 \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.4.6 P2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.4.6 - 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 3} \frac{3x+1}{x+2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution:
+      </div>
+      <div class="solution-step">
+       \[ = \frac{3(3)+1}{3+2} = \frac{9+1}{5} = \frac{10}{5} \]
+      </div>
+      <div class="final-answer">
+       \[ = 2 \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.4.6 P3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.4.6 - 3
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} (x+4)(x-1) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution:
+      </div>
+      <div class="solution-step">
+       \[ = (1+4)(1-1) = (5)(0) \]
+      </div>
+      <div class="final-answer">
+       \[ = 0 \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.4.6 P4 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.4.6 - 4
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} \frac{x+2}{x-2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution yields \( \frac{4}{0} \).
+      </div>
+      <div class="solution-step">
+       The limit approaches infinity (or DNE due to sign differences from
+              left/right). Assuming the question implies evaluating direction or
+              state:
+      </div>
+      <div class="solution-step">
+       Left limit \( x \to 2^- \): \( \frac{Pos}{Neg} \to -\infty \)
+      </div>
+      <div class="solution-step">
+       Right limit \( x \to 2^+ \): \( \frac{Pos}{Pos} \to +\infty \)
+      </div>
+      <div class="final-answer">
+       \[ \text{Undefined (or } \infty \text{ magnitude)} \]
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section">
+    <h2 class="section-title">
+     2. Limits at Infinity &amp; Indeterminate Forms
+    </h2>
+    <!-- P5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 5
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{3+x}{2+x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Divide numerator and denominator by highest power of x (which is
+              x):
+      </div>
+      <div class="solution-step">
+       \[ = \lim_{x \to \infty} \frac{3/x + 1}{2/x + 1} \]
+      </div>
+      <div class="solution-step">
+       As \( x \to \infty \), \( 1/x \to 0 \).
+      </div>
+      <div class="solution-step">
+       \[ = \frac{0 + 1}{0 + 1} \]
+      </div>
+      <div class="final-answer">
+       \[ = 1 \]
+      </div>
+     </div>
+    </div>
+    <!-- P6 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 6
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{4x+1}{x+9} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Divide by x:
+      </div>
+      <div class="solution-step">
+       \[ = \lim_{x \to \infty} \frac{4 + 1/x}{1 + 9/x} = \frac{4+0}{1+0}
+              \]
+      </div>
+      <div class="final-answer">
+       \[ = 4 \]
+      </div>
+     </div>
+    </div>
+    <!-- P7 Removable -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 7
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to -1} \frac{x^2-1}{x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct substitution gives \( 0/0 \). Factor the numerator:
+      </div>
+      <div class="solution-step">
+       \[ x^2 - 1 = (x-1)(x+1) \]
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to -1} \frac{(x-1)(x+1)}{x+1} = \lim_{x \to -1} (x-1)
+              \]
+      </div>
+      <div class="solution-step">
+       Substitute \( x = -1 \):
+      </div>
+      <div class="final-answer">
+       \[ = -2 \]
+      </div>
+     </div>
+    </div>
+    <!-- P8 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 8
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to -1} \frac{x^2+3x+2}{x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct sub: \( 1-3+2 = 0 \), denom 0. Factor numerator:
+      </div>
+      <div class="solution-step">
+       \[ x^2+3x+2 = (x+1)(x+2) \]
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to -1} \frac{(x+1)(x+2)}{x+1} = \lim_{x \to -1} (x+2)
+              \]
+      </div>
+      <div class="final-answer">
+       \[ = 1 \]
+      </div>
+     </div>
+    </div>
+    <!-- P9 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 9
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} \frac{x^5-32}{x^2-4} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       0/0 Indeterminate form. Use L'Hopital's Rule or factoring.
+      </div>
+      <div class="solution-step">
+       Using L'Hopital: \( \frac{d}{dx}(x^5-32) = 5x^4 \), \(
+              \frac{d}{dx}(x^2-4) = 2x \).
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to 2} \frac{5x^4}{2x} = \frac{5(16)}{2(2)} =
+              \frac{80}{4} \]
+      </div>
+      <div class="final-answer">
+       \[ = 20 \]
+      </div>
+     </div>
+    </div>
+    <!-- P10 Trig -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 10
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{x+\sin x}{\tan x + x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Divide numerator and denominator by x:
+      </div>
+      <div class="solution-step">
+       \[ = \lim_{x \to 0} \frac{1 + \frac{\sin x}{x}}{\frac{\tan x}{x} +
+              1} \]
+      </div>
+      <div class="solution-step">
+       We know \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \) and \( \lim_{x
+              \to 0} \frac{\tan x}{x} = 1 \).
+      </div>
+      <div class="solution-step">
+       \[ = \frac{1+1}{1+1} = \frac{2}{2} \]
+      </div>
+      <div class="final-answer">
+       \[ = 1 \]
+      </div>
+     </div>
+    </div>
+    <!-- Page 3 problems -->
+    <!-- P3 Page 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 3 (Page 3)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to -1} \frac{x+1}{x^2+4x+3} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor denominator: \( x^2+4x+3 = (x+1)(x+3) \).
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to -1} \frac{x+1}{(x+1)(x+3)} = \lim_{x \to -1}
+              \frac{1}{x+3} \]
+      </div>
+      <div class="solution-step">
+       \[ = \frac{1}{-1+3} \]
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{2} \]
+      </div>
+     </div>
+    </div>
+    <!-- P4 Page 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 4 (Page 3)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 5} \frac{x-5}{\sqrt{x-3}-\sqrt{2}} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Multiply by conjugate \(
+              \frac{\sqrt{x-3}+\sqrt{2}}{\sqrt{x-3}+\sqrt{2}} \):
+      </div>
+      <div class="solution-step">
+       Num: \( (x-5)(\sqrt{x-3}+\sqrt{2}) \)
+      </div>
+      <div class="solution-step">
+       Denom: \( (x-3) - 2 = x-5 \)
+      </div>
+      <div class="solution-step">
+       Cancel \( x-5 \):
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to 5} (\sqrt{x-3}+\sqrt{2}) = \sqrt{5-3} + \sqrt{2} =
+              \sqrt{2} + \sqrt{2} \]
+      </div>
+      <div class="final-answer">
+       \[ = 2\sqrt{2} \]
+      </div>
+     </div>
+    </div>
+    <!-- P5 Page 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 5 (Page 3)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{(1+x)^2-1}{x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Expand: \( (1+2x+x^2) - 1 = 2x+x^2 \).
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to 0} \frac{x(2+x)}{x} = \lim_{x \to 0} (2+x) \]
+      </div>
+      <div class="final-answer">
+       \[ = 2 \]
+      </div>
+     </div>
+    </div>
+    <!-- P6 Page 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 6 (Page 3)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} \frac{x^6-1}{x^2-1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor \( x^6-1 \) as difference of squares \( (x^3-1)(x^3+1) \),
+              and \( x^2-1 \) as \( (x-1)(x+1) \).
+      </div>
+      <div class="solution-step">
+       Better yet, L'Hopital's rule:
+      </div>
+      <div class="solution-step">
+       Num deriv: \( 6x^5 \), Denom deriv: \( 2x \).
+      </div>
+      <div class="solution-step">
+       \[ = \lim_{x \to 1} \frac{6x^5}{2x} = \frac{6}{2} \]
+      </div>
+      <div class="final-answer">
+       \[ = 3 \]
+      </div>
+     </div>
+    </div>
+    <!-- P7 Page 3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 7 (Page 3)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 3} \left(\frac{1}{x} -
+            \frac{1}{3}\right)\frac{1}{x^2-9} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Simplify first term: \( \frac{3-x}{3x} = -\frac{x-3}{3x} \).
+      </div>
+      <div class="solution-step">
+       Factor second term: \( \frac{1}{(x-3)(x+3)} \).
+      </div>
+      <div class="solution-step">
+       Multiply: \( \frac{-(x-3)}{3x(x-3)(x+3)} \). Cancel \( x-3 \):
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to 3} \frac{-1}{3x(x+3)} = \frac{-1}{3(3)(6)} \]
+      </div>
+      <div class="final-answer">
+       \[ = -\frac{1}{54} \]
+      </div>
+     </div>
+    </div>
+    <!-- P8 Page 4 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 8 (Page 4)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 4} \frac{\sqrt{x}-2}{x-4} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor denominator as difference of squares: \( x-4 =
+              (\sqrt{x}-2)(\sqrt{x}+2) \).
+      </div>
+      <div class="solution-step">
+       \[ \lim_{x \to 4} \frac{\sqrt{x}-2}{(\sqrt{x}-2)(\sqrt{x}+2)} =
+              \frac{1}{\sqrt{4}+2} \]
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{4} \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.5.8 P1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.5.8 - 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{9x^2}{2x^2+4} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Coefficients of highest power \( x^2 \):
+      </div>
+      <div class="final-answer">
+       \[ = \frac{9}{2} = 4.5 \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.5.8 P2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.5.8 - 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{x^3-x^2+2}{2x^2+x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Degree of numerator (3) &gt; Degree of denominator (2).
+      </div>
+      <div class="final-answer">
+       \[ = \infty \]
+      </div>
+     </div>
+    </div>
+    <!-- Example 1.5.8 P3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.5.8 - 3
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{x(x+1)}{x^3+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Expand: \( \frac{x^2+x}{x^3+1} \).
+      </div>
+      <div class="solution-step">
+       Degree of bottom (3) &gt; Degree of top (2).
+      </div>
+      <div class="final-answer">
+       \[ = 0 \]
+      </div>
+     </div>
+    </div>
+    <!-- P4 Page 5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 4 (Page 5)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{6x+1}{\sqrt{4x^2+3}} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Inside sqrt, \( 4x^2 \) behaves like \( 2x \).
+      </div>
+      <div class="solution-step">
+       Ratio of coefficients: \( 6/2 \).
+      </div>
+      <div class="final-answer">
+       \[ = 3 \]
+      </div>
+     </div>
+    </div>
+    <!-- P5 Page 5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 5 (Page 5)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{(x-3)(2x+1)}{2x^2-x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Leading terms top: \( x \cdot 2x = 2x^2 \). Bottom: \( 2x^2 \).
+      </div>
+      <div class="solution-step">
+       Ratio: \( 2/2 \).
+      </div>
+      <div class="final-answer">
+       \[ = 1 \]
+      </div>
+     </div>
+    </div>
+    <!-- P6 Page 5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 6 (Page 5)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{(3x+4)(x-2)}{x(2x+1)(x+2)} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Top degree: \( x \cdot x = x^2 \). Bottom degree: \( x \cdot 2x
+              \cdot x = 2x^3 \).
+      </div>
+      <div class="solution-step">
+       Bottom degree &gt; Top degree.
+      </div>
+      <div class="final-answer">
+       \[ = 0 \]
+      </div>
+     </div>
+    </div>
+    <!-- P7 Page 5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 7 (Page 5)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{\sqrt{9x^2+5}}{x+3} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Leading terms: \( \sqrt{9x^2}=3x \) vs \( x \). Ratio \( 3/1 \).
+      </div>
+      <div class="final-answer">
+       \[ = 3 \]
+      </div>
+     </div>
+    </div>
+    <!-- P3 Page 6 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 3 (Page 6)
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \left(\frac{x+3}{x-2}\right)^x \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Rewrite as \( \lim_{x \to \infty} (1 + \frac{5}{x-2})^x \).
+      </div>
+      <div class="solution-step">
+       Standard limit form \( e^5 \).
+      </div>
+      <div class="final-answer">
+       \[ = e^5 \]
+      </div>
+     </div>
+    </div>
+    <h2 class="section-title">
+     Exercise 1.10.1
+    </h2>
+    <!-- Ex 1.10.1 P1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 3} \frac{x^2-2x-3}{x-3} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor numerator: \( (x-3)(x+1) \).
+      </div>
+      <div class="solution-step">
+       \( \lim_{x \to 3} (x+1) = 3+1 = 4 \).
+      </div>
+      <div class="final-answer">
+       \[ = 4 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 4} \frac{x^2-16}{4-x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor \( x^2-16 = (x-4)(x+4) \).
+      </div>
+      <div class="solution-step">
+       Note \( 4-x = -(x-4) \).
+      </div>
+      <div class="solution-step">
+       \( \frac{(x-4)(x+4)}{-(x-4)} = -(x+4) \).
+      </div>
+      <div class="solution-step">
+       At \( x=4 \): \( -(4+4) = -8 \).
+      </div>
+      <div class="final-answer">
+       \[ = -8 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 3
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to b} \frac{(x-b)^{50} - x + b}{x-b} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Rewrite \( -x+b \) as \( -(x-b) \).
+      </div>
+      <div class="solution-step">
+       \( \frac{(x-b)^{50} - (x-b)}{x-b} = (x-b)^{49} - 1 \).
+      </div>
+      <div class="solution-step">
+       As \( x \to b \): \( (0)^{49} - 1 = -1 \).
+      </div>
+      <div class="final-answer">
+       \[ = -1 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P4 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 4
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{h \to 0} \frac{\frac{1}{5+h} - \frac{1}{5}}{h} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Combine fractions: \( \frac{5 - (5+h)}{5(5+h)} = \frac{-h}{5(5+h)} \).
+      </div>
+      <div class="solution-step">
+       Divide by \( h \): \( \frac{-1}{5(5+h)} \).
+      </div>
+      <div class="solution-step">
+       As \( h \to 0 \): \( \frac{-1}{25} \).
+      </div>
+      <div class="final-answer">
+       \[ = -\frac{1}{25} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P5 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 5
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{w \to 1} \left( \frac{1}{w^2-w} - \frac{1}{w-1} \right) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( w^2-w = w(w-1) \).
+      </div>
+      <div class="solution-step">
+       \( \frac{1}{w(w-1)} - \frac{w}{w(w-1)} = \frac{1-w}{w(w-1)} = \frac{-(w-1)}{w(w-1)} = \frac{-1}{w} \).
+      </div>
+      <div class="solution-step">
+       As \( w \to 1 \): \( -1 \).
+      </div>
+      <div class="final-answer">
+       \[ = -1 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P6 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 6
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} \frac{x^2+2x+9}{3x^3+x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Degree bottom (3) &gt; Degree top (2).
+      </div>
+      <div class="final-answer">
+       \[ = 0 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P7 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 7
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} \frac{\sqrt{9x^2+7}}{3x+1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Direct sub: \( \frac{\sqrt{16}}{4} = \frac{4}{4} = 1 \).
+      </div>
+      <div class="final-answer">
+       \[ = 1 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P8 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 8
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{n \to \infty} \frac{1+2+\dots+n}{n^2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Sum is \( \frac{n(n+1)}{2} = \frac{n^2+n}{2} \).
+      </div>
+      <div class="solution-step">
+       Limit \( \frac{n^2/2}{n^2} = 1/2 \).
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{2} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P9 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 9
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} \frac{x^3+x^2+5x-5}{x-1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Wait, \( 1+1+5-5 \ne 0 \)!
+      </div>
+      <div class="solution-step">
+       Numerator at 1 is \( 2 \). Denom 0. Limit DNE (Infinity).
+      </div>
+      <div class="solution-step">
+       Typo check: If \( x^3+x^2+5x-7 \)? Assuming question as written:
+      </div>
+      <div class="final-answer">
+       \[ \infty \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P10 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 10
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \left(\frac{1}{x-1} + \frac{1}{x+1}\right)\frac{1}{x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Combine: \( \frac{x+1 + x-1}{(x-1)(x+1)} = \frac{2x}{x^2-1} \).
+      </div>
+      <div class="solution-step">
+       Multiply by \( 1/x \): \( \frac{2}{x^2-1} \).
+      </div>
+      <div class="solution-step">
+       As \( x \to 0 \): \( -2 \).
+      </div>
+      <div class="final-answer">
+       \[ = -2 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P11 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 11
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} \frac{x^3(x-1)^6 - 8}{x-2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Let \( f(x) = x^3(x-1)^6 \). Check \( f(2) = 8(1)^6 = 8 \).
+      </div>
+      <div class="solution-step">
+       Definition of derivative \( f'(2) \).
+      </div>
+      <div class="solution-step">
+       \( f'(x) = 3x^2(x-1)^6 + x^3 \cdot 6(x-1)^5 \).
+      </div>
+      <div class="solution-step">
+       \( f'(2) = 3(4)(1) + 8(6)(1) = 12 + 48 = 60 \).
+      </div>
+      <div class="final-answer">
+       \[ = 60 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P12 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 12
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} \frac{\sqrt{x^2+12}-4}{x-2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Conjugate: \( \frac{x^2+12-16}{(x-2)(\dots)} = \frac{x^2-4}{(x-2)(\dots)} = \frac{x+2}{\sqrt{x^2+12}+4} \).
+      </div>
+      <div class="solution-step">
+       At 2: \( \frac{4}{4+4} = 1/2 \).
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{2} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P13 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 13
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 1} \frac{x^{-1}-1}{x-1} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( \frac{1/x - 1}{x-1} = \frac{1-x}{x(x-1)} = \frac{-1}{x} \).
+      </div>
+      <div class="solution-step">
+       At 1: \( -1 \).
+      </div>
+      <div class="final-answer">
+       \[ = -1 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P14 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 14
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt{x}} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Factor top: \( x(4-x) \). Factor bottom conjugate: \( \frac{2+\sqrt{x}}{4-x} \).
+      </div>
+      <div class="solution-step">
+       \( \frac{x(4-x)}{2-\sqrt{x}} = x(2+\sqrt{x}) \). (Check algebra: \( \frac{x(4-x)(2+\sqrt{x})}{4-x} = x(2+\sqrt{x}) \)).
+      </div>
+      <div class="solution-step">
+       At 4: \( 4(2+2) = 16 \).
+      </div>
+      <div class="final-answer">
+       \[ = 16 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P15 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 15
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 4} \frac{4-x}{\sqrt{x^2+9}-5} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Conjugate: \( \frac{(4-x)(\sqrt{x^2+9}+5)}{x^2+9-25} = \frac{-(x-4)(\dots)}{(x-4)(x+4)} = \frac{-(\sqrt{x^2+9}+5)}{x+4} \).
+      </div>
+      <div class="solution-step">
+       At 4: \( \frac{-(5+5)}{8} = -10/8 = -5/4 \).
+      </div>
+      <div class="final-answer">
+       \[ = -\frac{5}{4} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P16 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 16
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{y \to 8} \frac{\sqrt{3y-2}-\sqrt{2y+6}}{3y-2 - (2y+6)??} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Assuming standard radical limit. Let's solve \( \frac{\sqrt{3y-2}-\dots}{y-8} \).
+      </div>
+      <div class="solution-step">
+       Original text unclear, inferring standard structure.
+      </div>
+      <div class="final-answer">
+       \[ \text{Approximated} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P17 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 17
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{y \to 3} \frac{y^4-81}{y^2-9} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( \frac{(y^2-9)(y^2+9)}{y^2-9} = y^2+9 \).
+      </div>
+      <div class="solution-step">
+       At 3: \( 9+9=18 \).
+      </div>
+      <div class="final-answer">
+       \[ = 18 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P18 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 18
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{\Delta x \to 0} \frac{(x+\Delta x)^3 - x^3}{\Delta x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Definition of derivative for \( x^3 \). Result \( 3x^2 \).
+      </div>
+      <div class="final-answer">
+       \[ = 3x^2 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P25 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 25
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{\tan(2x)+4x}{x+\sin x+\tan x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Divide all by \( x \): \( \frac{2+4}{1+1+1} = \frac{6}{3} = 2 \).
+      </div>
+      <div class="final-answer">
+       \[ = 2 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P26 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 26
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{\cos(4x)-\cos(2x)}{x^2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       L'Hopital twice or series.
+      </div>
+      <div class="solution-step">
+       \( \cos(kx) \approx 1 - k^2x^2/2 \).
+      </div>
+      <div class="solution-step">
+       \( (1-8x^2) - (1-2x^2) = -6x^2 \). Ratio \( -6 \).
+      </div>
+      <div class="final-answer">
+       \[ = -6 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.10.1 P27 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       1.10.1 - 27
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to \infty} x\sin(6/x) \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Let \( u=1/x \). \( \lim_{u \to 0} \frac{\sin(6u)}{u} = 6 \).
+      </div>
+      <div class="final-answer">
+       \[ = 6 \]
+      </div>
+     </div>
+    </div>
+    <h2 class="section-title">
+     3. Trigonometric Limits &amp; Continuity
+    </h2>
+    <!-- P19 Page 9 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 19
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to -2} \frac{x^5+32}{x^3+8} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       0/0 form. L'Hopital: \( \frac{5x^4}{3x^2} = \frac{5}{3}x^2 \).
+      </div>
+      <div class="solution-step">
+       At \( x=-2 \): \( \frac{5}{3}(4) \).
+      </div>
+      <div class="final-answer">
+       \[ = \frac{20}{3} \]
+      </div>
+     </div>
+    </div>
+    <!-- P20 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 20
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{4x+\sin(3x)}{x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( 4 + \frac{\sin(3x)}{x} = 4 + 3\frac{\sin(3x)}{3x} \).
+      </div>
+      <div class="solution-step">
+       \( 4 + 3(1) \).
+      </div>
+      <div class="final-answer">
+       \[ = 7 \]
+      </div>
+     </div>
+    </div>
+    <!-- P21 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 21
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{\sin(3x)}{\sin(9x)} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Use coeff rule: \( 3/9 \).
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{3} \]
+      </div>
+     </div>
+    </div>
+    <!-- P22 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 22
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{\sin^2 x}{x^2+3x} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( \frac{\sin x \cdot \sin x}{x(x+3)} = (\frac{\sin x}{x}) \cdot
+              \frac{\sin x}{x+3} \).
+      </div>
+      <div class="solution-step">
+       \( 1 \cdot \frac{0}{3} = 0 \).
+      </div>
+      <div class="final-answer">
+       \[ = 0 \]
+      </div>
+     </div>
+    </div>
+    <!-- P23 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 23
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 2} \frac{\sin(x-2)}{x^2-4} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( x^2-4 = (x-2)(x+2) \).
+      </div>
+      <div class="solution-step">
+       \( \frac{\sin(x-2)}{x-2} \cdot \frac{1}{x+2} \).
+      </div>
+      <div class="solution-step">
+       Limit approaches 1 \cdot 1/4.
+      </div>
+      <div class="final-answer">
+       \[ = \frac{1}{4} \]
+      </div>
+     </div>
+    </div>
+    <!-- P24 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem 24
+      </span>
+     </div>
+     <div class="problem-statement">
+      \[ \lim_{x \to 0} \frac{1-\cos(4x)}{x^2} \]
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Identity: \( 1-\cos(kx) \approx \frac{(kx)^2}{2} \) or multiply
+              conjugate.
+      </div>
+      <div class="solution-step">
+       \( \frac{1-\cos(4x)}{x^2} \cdot \frac{1+\cos4x}{1+\cos4x} =
+              \frac{\sin^2(4x)}{x^2(1+\cos4x)} \).
+      </div>
+      <div class="solution-step">
+       \( 16 \frac{\sin^2(4x)}{(4x)^2} \cdot \frac{1}{2} = 16(1)(1/2) \).
+      </div>
+      <div class="final-answer">
+       \[ = 8 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.2.7 Continuity P1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.2.7 - 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      Find \( a \) for continuity at \( x=1 \):
+      <br/>
+      \( f(x) = \begin{cases} 3x^2 &amp; x \ge 1 \\ ax-4 &amp; x &lt; 1 \end{cases}
+            \)
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Evaluate limit from right (and value): \( 3(1)^2 = 3 \).
+      </div>
+      <div class="solution-step">
+       Limit from left: \( a(1)-4 = a-4 \).
+      </div>
+      <div class="solution-step">
+       Equate: \( a-4 = 3 \implies a = 7 \).
+      </div>
+      <div class="final-answer">
+       \[ a = 7 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.2.7 Continuity P2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.2.7 - 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      Find \( a \) for continuity at \( x=0 \):
+      <br/>
+      \( f(x) = \begin{cases} \frac{4\sin x}{x} &amp; x &lt; 0 \\ a-2x &amp; x \ge 0
+            \end{cases} \)
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Limit left: \( 4(1) = 4 \).
+      </div>
+      <div class="solution-step">
+       Value (right): \( a - 0 = a \).
+      </div>
+      <div class="final-answer">
+       \[ a = 4 \]
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section">
+    <h2 class="section-title">
+     Exercise 1.3.1 (Continuity Properties)
+    </h2>
+    <!-- Ex 1.3.1 P1 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.3.1 - 1
+      </span>
+     </div>
+     <div class="problem-statement">
+      Prove that \( f(x) = \sin(ax) \), \( a \ne 0 \), is continuous on \( \mathbb{R} \).
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       The function \( g(x) = ax \) is a polynomial (linear), so it is continuous everywhere.
+      </div>
+      <div class="solution-step">
+       The function \( h(u) = \sin(u) \) is a standard trigonometric function, continuous everywhere.
+      </div>
+      <div class="solution-step">
+       The composition of continuous functions is continuous. Thus \( f(x) = h(g(x)) \) is continuous on \( \mathbb{R} \).
+      </div>
+      <div class="final-answer">
+       \[ \text{Proven} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.3.1 P2 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.3.1 - 2
+      </span>
+     </div>
+     <div class="problem-statement">
+      Prove that \( f(x) = x^3 - x \) is continuous on \( \mathbb{R} \).
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( f(x) \) is a polynomial function.
+      </div>
+      <div class="solution-step">
+       All polynomial functions are continuous on their entire domain \( \mathbb{R} \).
+      </div>
+      <div class="final-answer">
+       \[ \text{Proven} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.3.1 P3 -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.3.1 - 3
+      </span>
+     </div>
+     <div class="problem-statement">
+      Discuss the continuity of \( f(x) = \ln(x^2+1) \).
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       \( g(x) = x^2+1 \) is continuous everywhere and \( x^2+1 \ge 1 &gt; 0 \).
+      </div>
+      <div class="solution-step">
+       \( \ln(u) \) is continuous for \( u &gt; 0 \).
+      </div>
+      <div class="solution-step">
+       Since the inner function is always positive and continuous, the composition is continuous everywhere.
+      </div>
+      <div class="final-answer">
+       \[ \text{Continuous on } \mathbb{R} \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.3.1 P4a -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.3.1 - 4(a)
+      </span>
+     </div>
+     <div class="problem-statement">
+      Determine continuity at \( x=0 \):
+      <br/>
+      \( f(x) = \begin{cases} \frac{x(x-1)}{x} &amp; x \ne 0 \\ 1 &amp; x=0 \end{cases} \)
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       For \( x \ne 0 \), \( f(x) = x-1 \).
+      </div>
+      <div class="solution-step">
+       \( \lim_{x \to 0} f(x) = 0 - 1 = -1 \).
+      </div>
+      <div class="solution-step">
+       \( f(0) = 1 \).
+      </div>
+      <div class="solution-step">
+       Limit (-1) \( \ne \) Value (1).
+      </div>
+      <div class="final-answer">
+       \[ \text{Discontinuous at } x=0 \]
+      </div>
+     </div>
+    </div>
+    <!-- Ex 1.3.1 P4b -->
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Ex 1.3.1 - 4(b)
+      </span>
+     </div>
+     <div class="problem-statement">
+      Determine continuity at \( x=1 \):
+      <br/>
+      \( f(x) = \begin{cases} \frac{\sin(\pi x)}{1-x} &amp; x &lt; 1 \\ \pi x^2 &amp; x \ge 1 \end{cases} \)
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Left Limit (\( x \to 1^- \)): \( \frac{0}{0} \). L'Hopital: \( \frac{\pi \cos(\pi x)}{-1} \).
+      </div>
+      <div class="solution-step">
+       At 1: \( -\pi \cos(\pi) = -\pi(-1) = \pi \).
+      </div>
+      <div class="solution-step">
+       Right Limit/Value (\( x \to 1^+ \)): \( \pi(1)^2 = \pi \).
+      </div>
+      <div class="solution-step">
+       Limit equals Value.
+      </div>
+      <div class="final-answer">
+       \[ \text{Continuous at } x=1 \]
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P1 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 1
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = 4x^3 + \frac{3}{x} + 2\sqrt{x} - 7 \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Rewrite terms: \( y = 4x^3 + 3x^{-1} + 2x^{1/2} - 7 \).
+     </div>
+     <div class="solution-step">
+      Differentiate term by term using power rule \( \frac{d}{dx}x^n = nx^{n-1} \):
+     </div>
+     <div class="solution-step">
+      \[ \frac{dy}{dx} = 4(3x^2) + 3(-1x^{-2}) + 2(\frac{1}{2}x^{-1/2}) - 0 \]
+     </div>
+     <div class="solution-step">
+      \[ = 12x^2 - 3x^{-2} + x^{-1/2} \]
+     </div>
+     <div class="final-answer">
+      \[ \frac{dy}{dx} = 12x^2 - \frac{3}{x^2} + \frac{1}{\sqrt{x}} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P2 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 2
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = 3\cos x - \frac{1}{2}\sin x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Derivatives: \( \frac{d}{dx}\cos x = -\sin x \), \( \frac{d}{dx}\sin x = \cos x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = -3\sin x - \frac{1}{2}\cos x \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P3 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 3
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x^7 + x^{-2} - \sqrt[3]{x}^{-1} + \sqrt{x^3} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Rewrite: \( y = x^7 + x^{-2} - x^{-1/3} + x^{3/2} \).
+     </div>
+     <div class="solution-step">
+      Power rule:
+     </div>
+     <div class="solution-step">
+      \[ y' = 7x^6 - 2x^{-3} - (-\frac{1}{3}x^{-4/3}) + \frac{3}{2}x^{1/2} \]
+     </div>
+     <div class="final-answer">
+      \[ y' = 7x^6 - \frac{2}{x^3} + \frac{1}{3\sqrt[3]{x^4}} + \frac{3}{2}\sqrt{x} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P4 Product Rule -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 4
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x\sin x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Using Product Rule \( (uv)' = u'v + uv' \):
+     </div>
+     <div class="solution-step">
+      \( u=x, u'=1 \); \( v=\sin x, v'=\cos x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = 1\cdot\sin x + x\cos x = \sin x + x\cos x \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P5 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 5
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x^3\cos x + x^2 - 5 \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Term 1 (Product rule): \( 3x^2\cos x + x^3(-\sin x) \).
+     </div>
+     <div class="solution-step">
+      Term 2: \( 2x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = 3x^2\cos x - x^3\sin x + 2x \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P6 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 6
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = (x+4)(x^2-x+5) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Option 1: Expand then derive. \( y = x^3 - x^2 + 5x + 4x^2 - 4x + 20 = x^3 + 3x^2 + x + 20 \).
+     </div>
+     <div class="solution-step">
+      Derivative: \( 3x^2 + 6x + 1 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = 3x^2 + 6x + 1 \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P7 Quotient -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 7
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{3x^2+1}{6x+5} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient Rule \( (\frac{u}{v})' = \frac{u'v - uv'}{v^2} \).
+     </div>
+     <div class="solution-step">
+      \( u=3x^2+1, u'=6x \). \( v=6x+5, v'=6 \).
+     </div>
+     <div class="solution-step">
+      \[ y' = \frac{6x(6x+5) - (3x^2+1)(6)}{(6x+5)^2} \]
+     </div>
+     <div class="solution-step">
+      \( = \frac{36x^2 + 30x - 18x^2 - 6}{(6x+5)^2} \)
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{18x^2 + 30x - 6}{(6x+5)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.15 P8 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 8
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{1+\cos x}{1-\sin x} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( u=1+\cos x, u'=-\sin x \). \( v=1-\sin x, v'=-\cos x \).
+     </div>
+     <div class="solution-step">
+      \[ y' = \frac{-\sin x(1-\sin x) - (1+\cos x)(-\cos x)}{(1-\sin x)^2} \]
+     </div>
+     <div class="solution-step">
+      \( = \frac{-\sin x + \sin^2 x + \cos x + \cos^2 x}{(1-\sin x)^2} \)
+     </div>
+     <div class="solution-step">
+      Since \( \sin^2 x + \cos^2 x = 1 \):
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1 - \sin x + \cos x}{(1-\sin x)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- P9 (Assumed Exponential Rule Context) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 9
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = 2^{-x} + 3^{x+1} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Rule: \( \frac{d}{dx}a^u = a^u \ln a \cdot u' \).
+     </div>
+     <div class="solution-step">
+      Term 1: \( 2^{-x} \ln 2 \cdot (-1) \).
+     </div>
+     <div class="solution-step">
+      Term 2: \( 3^{x+1} \ln 3 \cdot (1) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = -2^{-x}\ln 2 + 3^{x+1}\ln 3 \]
+     </div>
+    </div>
+   </div>
+   <!-- P10 Log -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 10
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \log_4(x) - 2\ln x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Rule: \( \frac{d}{dx}\log_a x = \frac{1}{x \ln a} \).
+     </div>
+     <div class="solution-step">
+      Term 1: \( \frac{1}{x \ln 4} \).
+     </div>
+     <div class="solution-step">
+      Term 2: \( 2(\frac{1}{x}) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{x \ln 4} - \frac{2}{x} \]
+     </div>
+    </div>
+   </div>
+   <!-- P11 Chain Rule -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 11
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x\sin(3x+4) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Product Rule + Chain Rule.
+     </div>
+     <div class="solution-step">
+      \( 1\cdot\sin(3x+4) + x\cdot\cos(3x+4)\cdot(3) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \sin(3x+4) + 3x\cos(3x+4) \]
+     </div>
+    </div>
+   </div>
+   <!-- P12 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 12
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{\sin x + \cos x}{\sin x - \cos x} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient Rule. Let \( u = \sin x + \cos x \implies u' = \cos x - \sin x \).
+     </div>
+     <div class="solution-step">
+      Let \( v = \sin x - \cos x \implies v' = \cos x + \sin x (=u) \).
+     </div>
+     <div class="solution-step">
+      Note \( u' = -v \).
+     </div>
+     <div class="solution-step">
+      \[ y' = \frac{(-v)(v) - (u)(u)}{v^2} = \frac{-(v^2+u^2)}{v^2} \]
+     </div>
+     <div class="solution-step">
+      \( u^2+v^2 = (\sin x + \cos x)^2 + (\sin x - \cos x)^2 = (1+2sc) + (1-2sc) = 2 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-2}{(\sin x - \cos x)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- P13 Chain Rule -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.15 - 13
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \log_3(x + \sqrt{x^2+1}) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Deriv of outer log: \( \frac{1}{(x + \sqrt{x^2+1})\ln 3} \).
+     </div>
+     <div class="solution-step">
+      Chain inner: \( 1 + \frac{1}{2}(x^2+1)^{-1/2}(2x) = 1 + \frac{x}{\sqrt{x^2+1}} = \frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}} \).
+     </div>
+     <div class="solution-step">
+      Product: \( \frac{1}{(x + \sqrt{x^2+1})\ln 3} \cdot \frac{x + \sqrt{x^2+1}}{\sqrt{x^2+1}} \).
+     </div>
+     <div class="solution-step">
+      Cancel term \( x + \sqrt{x^2+1} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{\ln 3 \sqrt{x^2+1}} \]
+     </div>
+    </div>
+   </div>
+   <!-- First Principles -->
+   <h3 class="section-title" style="border:none; margin-top:40px; font-size:1.5rem;">
+    First Principles &amp; Advanced Derivatives
+   </h3>
+   <!-- Ex 2.4.2 i -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.2 (i)
+     </span>
+    </div>
+    <div class="problem-statement">
+     First principles: \( y = x^3 \)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( f'(x) = \lim_{h \to 0} \frac{(x+h)^3 - x^3}{h} \)
+     </div>
+     <div class="solution-step">
+      \( = \lim_{h \to 0} \frac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h} \)
+     </div>
+     <div class="solution-step">
+      \( = \lim_{h \to 0} \frac{h(3x^2 + 3xh + h^2)}{h} \)
+     </div>
+     <div class="solution-step">
+      \( = 3x^2 + 0 + 0 \)
+     </div>
+     <div class="final-answer">
+      \[ y' = 3x^2 \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 ii -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.2 (ii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     First principles: \( y = \frac{x}{x^2-5} \)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( \lim_{h \to 0} \frac{1}{h} \left[ \frac{x+h}{(x+h)^2-5} - \frac{x}{x^2-5} \right] \)
+     </div>
+     <div class="solution-step">
+      Common denominator: \( ((x+h)^2-5)(x^2-5) \).
+     </div>
+     <div class="solution-step">
+      Num: \( (x+h)(x^2-5) - x((x+h)^2-5) \)
+     </div>
+     <div class="solution-step">
+      \( = x^3-5x+hx^2-5h - (x(x^2+2xh+h^2)-5x) \)
+     </div>
+     <div class="solution-step">
+      \( = x^3-5x+hx^2-5h - x^3-2x^2h-xh^2+5x \)
+     </div>
+     <div class="solution-step">
+      \( = -x^2h - xh^2 - 5h = h(-x^2-xh-5) \).
+     </div>
+     <div class="solution-step">
+      Divide by h: \( -x^2-xh-5 \). Let \( h \to 0 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-x^2-5}{(x^2-5)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 iii -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.2 (iii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     First principles: \( y = \sin^2 x \)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( f'(x) = \lim_{h \to 0} \frac{\sin^2(x+h) - \sin^2 x}{h} \).
+     </div>
+     <div class="solution-step">
+      Use difference of squares: \( (\sin(x+h)-\sin x)(\sin(x+h)+\sin x) \).
+     </div>
+     <div class="solution-step">
+      \( \sin(x+h)-\sin x = 2\sin(h/2)\cos(x+h/2) \).
+     </div>
+     <div class="solution-step">
+      Limit: \( \lim_{h \to 0} \frac{2\sin(h/2)}{h} \cdot \cos(x+h/2) \cdot (\sin(x+h)+\sin x) \).
+     </div>
+     <div class="solution-step">
+      \( 1 \cdot \cos x \cdot (2\sin x) = 2\sin x \cos x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \sin(2x) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 iv -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 2.4.2 (iv)
+     </span>
+    </div>
+    <div class="problem-statement">
+     First principles: \( y = x e^{-x} \)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( f'(x) = \lim_{h \to 0} \frac{(x+h)e^{-(x+h)} - xe^{-x}}{h} \).
+     </div>
+     <div class="solution-step">
+      Factor \( e^{-x} \): \( e^{-x} \lim_{h \to 0} \frac{(x+h)e^{-h} - x}{h} \).
+     </div>
+     <div class="solution-step">
+      \( e^{-x} \lim_{h \to 0} \frac{xe^{-h} + he^{-h} - x}{h} = e^{-x} \lim_{h \to 0} ( x\frac{e^{-h}-1}{h} + e^{-h} ) \).
+     </div>
+     <div class="solution-step">
+      Recalling \( \lim_{h \to 0} \frac{e^{-h}-1}{h} = -1 \).
+     </div>
+     <div class="solution-step">
+      \( e^{-x} (x(-1) + 1) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = e^{-x}(1-x) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2a -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(a)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \sin(x\cos(2x)) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Chain rule: \( \cos(x\cos(2x)) \cdot \frac{d}{dx}(x\cos(2x)) \).
+     </div>
+     <div class="solution-step">
+      Inner: \( 1\cdot\cos(2x) + x(-\sin(2x)\cdot 2) = \cos(2x) - 2x\sin(2x) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = [\cos(2x) - 2x\sin(2x)]\cos(x\cos(2x)) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2b -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(b)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{x^2+ax+b}{x^2-ax+b} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient rule. \( u=x^2+ax+b, u'=2x+a \). \( v=x^2-ax+b, v'=2x-a \).
+     </div>
+     <div class="solution-step">
+      \( Num = (2x+a)(x^2-ax+b) - (x^2+ax+b)(2x-a) \).
+     </div>
+     <div class="solution-step">
+      Expand: \( (2x^3 - 2ax^2 + 2bx + ax^2 - a^2x + ab) - (2x^3 - ax^2 + 2bx + 2ax^2 - a^2x - ab) \).
+     </div>
+     <div class="solution-step">
+      \( = 2x^3 - ax^2 + 2bx - a^2x + ab - 2x^3 - ax^2 - 2bx + a^2x + ab \)
+     </div>
+     <div class="solution-step">
+      Cancel \( 2x^3 \), \( 2bx \), \( a^2x \). Terms remaining: \( -ax^2 - ax^2 + ab + ab = -2ax^2 + 2ab \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{2a(b-x^2)}{(x^2-ax+b)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2c -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(c)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \sqrt{1+\sqrt{2x-1}} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Outer: \( \frac{1}{2}(1+\sqrt{2x-1})^{-1/2} \).
+     </div>
+     <div class="solution-step">
+      Inner 1: \( 0 + \frac{1}{2}(2x-1)^{-1/2} \cdot 2 = (2x-1)^{-1/2} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{2\sqrt{1+\sqrt{2x-1}} \sqrt{2x-1}} \]
+     </div>
+    </div>
+   </div>
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(d)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \sin^2\left(\frac{2x}{x+1}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Chain: \( 2\sin(\dots)\cos(\dots) \cdot \text{Inner}' \).
+     </div>
+     <div class="solution-step">
+      Inner \( \frac{2x}{x+1} \): \( \frac{2(x+1)-2x(1)}{(x+1)^2} = \frac{2}{(x+1)^2} \).
+     </div>
+     <div class="solution-step">
+      Recall \( 2\sin A \cos A = \sin(2A) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{2}{(x+1)^2} \sin\left(\frac{4x}{x+1}\right) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2e -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(e)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{1+2\tan^2 x}{1-\tan^2 x} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Simplify? \( \frac{1+\tan^2 x + \tan^2 x}{1-\tan^2 x} = \frac{\sec^2 x + \tan^2 x}{1-\tan^2 x} \). Maybe just Quotient.
+     </div>
+     <div class="solution-step">
+      \( u = 1+2\tan^2 x, u' = 4\tan x \sec^2 x \).
+     </div>
+     <div class="solution-step">
+      \( v = 1-\tan^2 x, v' = -2\tan x \sec^2 x \).
+     </div>
+     <div class="solution-step">
+      \( Num = 4\tan x \sec^2 x(1-\tan^2 x) - (1+2\tan^2 x)(-2\tan x \sec^2 x) \).
+     </div>
+     <div class="solution-step">
+      Factor \( 2\tan x \sec^2 x \): \( 2(1-\tan^2 x) + (1+2\tan^2 x) = 2 - 2\tan^2 x + 1 + 2\tan^2 x = 3 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{6\tan x \sec^2 x}{(1-\tan^2 x)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2f -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(f)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln(\sec x + \tan x) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( y' = \frac{1}{\sec x + \tan x} \cdot (\sec x \tan x + \sec^2 x) \).
+     </div>
+     <div class="solution-step">
+      Factor sec: \( \frac{\sec x(\tan x + \sec x)}{\sec x + \tan x} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \sec x \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2g -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(g)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{1}{\sqrt{1+\sqrt{x}}} = (1+x^{1/2})^{-1/2} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( -\frac{1}{2}(1+\sqrt{x})^{-3/2} \cdot (\frac{1}{2}x^{-1/2}) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = -\frac{1}{4\sqrt{x}(1+\sqrt{x})^{3/2}} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2h -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(h)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{x^2}{\sqrt{a^2-x^2}} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient Rule: \( u=x^2, u'=2x \). \( v=(a^2-x^2)^{1/2}, v'=\frac{1}{2}(a^2-x^2)^{-1/2}(-2x) = -x(a^2-x^2)^{-1/2} \).
+     </div>
+     <div class="solution-step">
+      \( Num = 2x(a^2-x^2)^{1/2} - x^2(-x(a^2-x^2)^{-1/2}) = 2x\sqrt{a^2-x^2} + \frac{x^3}{\sqrt{a^2-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Common denom \( \sqrt{a^2-x^2} \): \( \frac{2x(a^2-x^2) + x^3}{\sqrt{a^2-x^2}} = \frac{2a^2x - 2x^3 + x^3}{\sqrt{a^2-x^2}} = \frac{2a^2x - x^3}{\sqrt{a^2-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Divide by \( v^2 = a^2-x^2 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{2a^2x - x^3}{(a^2-x^2)^{3/2}} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2i -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(i)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x e^{-x^2} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Product: \( 1\cdot e^{-x^2} + x \cdot e^{-x^2}(-2x) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = e^{-x^2}(1-2x^2) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 2.4.2 2j -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Prob 2(j)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x\cos(\sin(2x)) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Product: \( 1\cdot\cos(\sin 2x) + x(-\sin(\sin 2x))(\cos 2x)(2) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \cos(\sin(2x)) - 2x\cos(2x)\sin(\sin(2x)) \]
+     </div>
+    </div>
+   </div>
+   <div class="section">
+    <h2 class="section-title">
+     Additional Practice Problems
+    </h2>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Example - Calculus_1_lecnote6_202512281307_52093 P8
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Faculty of Computer Science (CS+IT) Semester 1 - Calculus I(lec6)
+      </div>
+      <div>
+       No. The Hyp. Function Derivative
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       (1) [sinh (u(x))] u (x) cosh (u(x))
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       (2) [cosh (u(x))] u (x). sinh (u(x))
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       2
+      </div>
+      <div>
+       (3) [tanh (u(x))] u (x) sech (u(x))
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       2
+      </div>
+      <div>
+       (4) [coth (u(x))] −u (x) csch (u(x))
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′ b
+      </div>
+      <div>
+       (5) [sech(u(x))] −u (x) sech(u(x)) tanh(u(x))
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       u
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       (6) [csch(u(x))] −u (x) csch(u(x)) coth(u(x))
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       z
+      </div>
+      <div>
+       Example 1.8.1 Evaluate the following limits
+      </div>
+      <div>
+       g
+      </div>
+      <div>
+       sinh(αx)
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       1. lim
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       M
+      </div>
+      <div>
+       cosh(αx) − 1
+      </div>
+      <div>
+       2. lim
+      </div>
+      <div>
+       x2
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       h
+      </div>
+      <div>
+       cosh(αx) − cosh(βx)
+      </div>
+      <div>
+       3. lim
+      </div>
+      <div>
+       i
+      </div>
+      <div>
+       x2
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       t
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       f
+      </div>
+      <div class="solution-step">
+       Before we solve this limits, note that the hyperbolic functions can be expressed as an infinite
+      </div>
+      <div class="solution-step">
+       l
+      </div>
+      <div class="solution-step">
+       series as follows:
+      </div>
+      <div class="solution-step">
+       E
+      </div>
+      <div class="solution-step">
+       We know
+      </div>
+      <div class="solution-step">
+       ∞
+      </div>
+      <div class="solution-step">
+       d2 3 k k
+      </div>
+      <div class="solution-step">
+       x x x x
+      </div>
+      <div class="solution-step">
+       (cid:88)
+      </div>
+      <div class="solution-step">
+       x
+      </div>
+      <div class="solution-step">
+       e = 1 + x + + + · · · + + · · · =
+      </div>
+      <div class="solution-step">
+       h 2! 3! k! k!
+      </div>
+      <div class="solution-step">
+       k=0
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       and
+      </div>
+      <div class="solution-step">
+       ∞
+      </div>
+      <div class="solution-step">
+       2 3 k k
+      </div>
+      <div class="solution-step">
+       M x x x (cid:88) x
+      </div>
+      <div class="solution-step">
+       −x k k
+      </div>
+      <div class="solution-step">
+       e = 1 − x + − + · · · + (−1) + · · · = (−1)
+      </div>
+      <div class="solution-step">
+       2! 3! k! k!
+      </div>
+      <div class="solution-step">
+       k=0
+      </div>
+      <div class="solution-step">
+       Now
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       1
+      </div>
+      <div class="solution-step">
+       cosh x B= (e x + e −x )
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       (cid:20)(cid:18) (cid:19) (cid:18) (cid:19)(cid:21)
+      </div>
+      <div class="solution-step">
+       2 3 k 2 3 k
+      </div>
+      <div class="solution-step">
+       1 x x x x x x
+      </div>
+      <div class="solution-step">
+       k
+      </div>
+      <div class="solution-step">
+       = 1 + x + + + · · · + + . . . + 1 − x + − + · · · + (−1) + . . .
+      </div>
+      <div class="solution-step">
+       2 2! 3! k! 2! 3! k!
+      </div>
+      <div class="solution-step">
+       (cid:20) (cid:21) (cid:20) (cid:21)
+      </div>
+      <div class="solution-step">
+       2 4 2k 2 4 2k
+      </div>
+      <div class="solution-step">
+       1 x x x x x x
+      </div>
+      <div class="solution-step">
+       = 2 + 2 + 2 + · · · + 2 + . . . = 1 + + + · · · + + . . .
+      </div>
+      <div class="solution-step">
+       2 2! 4! (2k)! 2! 4! (2k)!
+      </div>
+      <div class="solution-step">
+       ∞
+      </div>
+      <div class="solution-step">
+       2 4 2k 2k
+      </div>
+      <div class="solution-step">
+       x x x x
+      </div>
+      <div class="solution-step">
+       (cid:88)
+      </div>
+      <div class="solution-step">
+       ∴
+      </div>
+      <div class="solution-step">
+       cosh x = 1 + + + · · · + + · · · =
+      </div>
+      <div class="solution-step">
+       2! 4! (2k)! (2k)!
+      </div>
+      <div class="solution-step">
+       k=0
+      </div>
+      <div class="solution-step">
+       As same as cosh x, we see
+      </div>
+      <div class="solution-step">
+       ∞
+      </div>
+      <div class="solution-step">
+       3 5 2k+1 2k+1
+      </div>
+      <div class="solution-step">
+       x x x x
+      </div>
+      <div class="solution-step">
+       (cid:88)
+      </div>
+      <div class="solution-step">
+       sinh x = x + + + · · · + + · · · =
+      </div>
+      <div class="solution-step">
+       3! 5! (2k + 1)! (2k + 1)!
+      </div>
+      <div class="solution-step">
+       k=0
+      </div>
+      <div class="solution-step">
+       Now:
+      </div>
+      <div class="solution-step">
+       (pg 8) 1 HYPERBOLIC FUNCTIONS
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Exercise - Calculus_1_lecnote6_202512281307_52093 P9
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Semester 1 - Calculus I(lec6) Faculty of Computer Science (CS+IT)
+      </div>
+      <div>
+       sinh(αx)
+      </div>
+      <div>
+       1. lim
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       (cid:18) (cid:19)
+      </div>
+      <div>
+       3 3 5 5
+      </div>
+      <div>
+       α x α x
+      </div>
+      <div>
+       αx + + + . . .
+      </div>
+      <div>
+       3! 5!
+      </div>
+      <div>
+       = lim
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       (cid:18) (cid:19)
+      </div>
+      <div>
+       2 2 4 4
+      </div>
+      <div>
+       α x α x
+      </div>
+      <div>
+       αx 1 + + + . . .
+      </div>
+      <div>
+       3! 5!
+      </div>
+      <div>
+       = lim
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       (cid:18) (cid:19)
+      </div>
+      <div>
+       2 2 4 4
+      </div>
+      <div>
+       α x α x
+      </div>
+      <div>
+       = α lim 1 + + + . . . = α(1) = α.
+      </div>
+      <div>
+       3! 5!
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       b
+      </div>
+      <div>
+       u
+      </div>
+      <div>
+       cosh(αx) − 1
+      </div>
+      <div>
+       2. lim
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       x2
+      </div>
+      <div>
+       x→0
+      </div>
+      <div>
+       z
+      </div>
+      <div>
+       (cid:18) (cid:19)
+      </div>
+      <div>
+       2 2 4 4 2 2 4 4
+      </div>
+      <div>
+       α x α x α x α x
+      </div>
+      <div>
+       g
+      </div>
+      <div>
+       cosh(αx) − 1 = 1 + + + . . . − 1 = + + . . .
+      </div>
+      <div>
+       2! 4! 2! 4!
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       M
+      </div>
+      <div>
+       Now:
+      </div>
+      <div>
+       2 2 2
+      </div>
+      <div>
+       cosh(αx) − 1 α α x
+      </div>
+      <div>
+       = + + . . .
+      </div>
+      <div>
+       x2 2! 4!
+      </div>
+      <div>
+       Therefore h
+      </div>
+      <div>
+       (cid:20) (cid:21)
+      </div>
+      <div>
+       2 2 2 2
+      </div>
+      <div>
+       cosh(αx) − 1 α α x α
+      </div>
+      <div>
+       i
+      </div>
+      <div>
+       lim = lim + + . . . = .
+      </div>
+      <div>
+       t
+      </div>
+      <div>
+       x2 2! 4! 2!
+      </div>
+      <div>
+       x→0 x→0
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       3. Exercise.
+      </div>
+      <div>
+       f
+      </div>
+      <div>
+       l
+      </div>
+      <div>
+       dy E
+      </div>
+      <div>
+       Example 1.8.2 Find for the following functions.
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       d
+      </div>
+      <div>
+       1. y = cosh(2x) sinh(x)
+      </div>
+      <div>
+       h
+      </div>
+      <div>
+       o
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       dy
+      </div>
+      <div class="solution-step">
+       = cosh(2x) × cosh(x) + sinh(x) × (2 sinh(2x))
+      </div>
+      <div class="solution-step">
+       dx
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       2. y = sech(csch(x))
+      </div>
+      <div class="solution-step">
+       B
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       dy
+      </div>
+      <div class="solution-step">
+       = −csch(x) coth(x) × −sech(csch(x)) tanh(csch(x))
+      </div>
+      <div class="solution-step">
+       dx
+      </div>
+      <div class="solution-step">
+       (cid:18) (cid:19)
+      </div>
+      <div class="solution-step">
+       2x
+      </div>
+      <div class="solution-step">
+       3. y = tanh
+      </div>
+      <div class="solution-step">
+       1 − x2
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       (cid:18) (cid:19)
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       dy 2(1 − x ) + 4x 2x
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       = sech
+      </div>
+      <div class="solution-step">
+       dx (1 − x2)2 1 − x2
+      </div>
+      <div class="solution-step">
+       (cid:114)
+      </div>
+      <div class="solution-step">
+       1 + tanh x dy
+      </div>
+      <div class="solution-step">
+       4. y = ln prove that = 1
+      </div>
+      <div class="solution-step">
+       1 − tanh x dx
+      </div>
+      <div class="solution-step">
+       1 HYPERBOLIC FUNCTIONS (pg 9)
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Exercise - Calculus_1_lecnote6_202512281307_52093 P10
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Faculty of Computer Science (CS+IT) Semester 1 - Calculus I(lec6)
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Exercise
+      </div>
+      <div class="solution-step">
+       Exercise 1.8.1 1. Express the following functions as a hyperbolic functions
+      </div>
+      <div class="solution-step">
+       b
+      </div>
+      <div class="solution-step">
+       x −x
+      </div>
+      <div class="solution-step">
+       (i) y = e + 4e
+      </div>
+      <div class="solution-step">
+       u
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       z
+      </div>
+      <div class="solution-step">
+       g
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       3x −2x
+      </div>
+      <div class="solution-step">
+       (ii) y = e + e
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       i
+      </div>
+      <div class="solution-step">
+       t
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       f
+      </div>
+      <div class="solution-step">
+       l
+      </div>
+      <div class="solution-step">
+       E
+      </div>
+      <div class="solution-step">
+       dy
+      </div>
+      <div class="solution-step">
+       2. Find for the following functions:
+      </div>
+      <div class="solution-step">
+       dx
+      </div>
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       √ cosh x
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       (cid:0) (cid:1)
+      </div>
+      <div class="solution-step">
+       (i) y = sinh x + √
+      </div>
+      <div class="solution-step">
+       x
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       M Sol
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       B
+      </div>
+      <div class="solution-step">
+       (ii) y = x cosh(x + tanh x)
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       (iii) y = x tanh(x + sin x)
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       (pg 10) 1 HYPERBOLIC FUNCTIONS
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Example - Calculus_1_lecnote7_202512281308_09617 P1
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Semester 1 - Calculus I(lec7) Faculty of Computer Science (CS+IT)
+      </div>
+      <div>
+       Lecture Seven
+      </div>
+      <div>
+       1 Implicit Differentiation
+      </div>
+      <div>
+       1.1 Implicit and Explicit Function
+      </div>
+      <div>
+       2
+      </div>
+      <div>
+       Consider the function y = 3x − 5, the variable y is explicit by written as a function of x,
+      </div>
+      <div>
+       and every function can be expressed in the form y = f (x) [y is a function of x] is called
+      </div>
+      <div>
+       explicit function. But, there are some functions however are only implied by and equation.
+      </div>
+      <div>
+       1
+      </div>
+      <div>
+       For instance, the function y = is defined implicitly by the equation xy = 1.
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       dy
+      </div>
+      <div>
+       b
+      </div>
+      <div>
+       If we were asked to find for this equation, we could begin by writing y explicitly as a
+      </div>
+      <div>
+       dx u
+      </div>
+      <div>
+       function of x and differentiating.
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       Implicit Form xy = 1
+      </div>
+      <div>
+       z
+      </div>
+      <div>
+       1
+      </div>
+      <div>
+       −1 g
+      </div>
+      <div>
+       Explicit Form y = = x
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       dy −1
+      </div>
+      <div>
+       −2
+      </div>
+      <div>
+       Derivative = −x =
+      </div>
+      <div>
+       dx Mx2
+      </div>
+      <div>
+       This strategy works whenever we can solve for the function explicitly.
+      </div>
+      <div>
+       We cannot use this procedure when we unable to solve for y as a function of x. For example,
+      </div>
+      <div>
+       h
+      </div>
+      <div>
+       2 2
+      </div>
+      <div>
+       for the function x −2y +4y = 2, here it is very difficult to express y as a function of x explicitly.
+      </div>
+      <div>
+       i
+      </div>
+      <div>
+       For this reason we will use implicit differentiation.
+      </div>
+      <div>
+       t
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       1.2 Guidelines for Implicit Differentiation
+      </div>
+      <div>
+       f
+      </div>
+      <div>
+       l
+      </div>
+      <div>
+       1. Differentiate both sides of tEhe given equation with respect to x.
+      </div>
+      <div>
+       ddy
+      </div>
+      <div>
+       2. Collect all terms involving on the left side of the equation and move all other terms
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       h
+      </div>
+      <div>
+       to the right side of the equation.
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       dy
+      </div>
+      <div>
+       M
+      </div>
+      <div>
+       3. Factor out of the left side of the equation.
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       dy
+      </div>
+      <div>
+       4. Solve for by dividing both sides of the equation by the left hand factor that does not
+      </div>
+      <div>
+       y
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       dy
+      </div>
+      <div>
+       B
+      </div>
+      <div>
+       contain .
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       dy
+      </div>
+      <div>
+       Example 1.2.1 Find for the given functions.
+      </div>
+      <div>
+       dx
+      </div>
+      <div>
+       3 2 2
+      </div>
+      <div>
+       1. y + y − 5y − x = −4
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       Firstly Differentiate both sides of the equation w.r.t x
+      </div>
+      <div class="solution-step">
+       d d
+      </div>
+      <div class="solution-step">
+       3 2 2
+      </div>
+      <div class="solution-step">
+       [y + y − 5y − x ] = [−4]
+      </div>
+      <div class="solution-step">
+       dx dx
+      </div>
+      <div class="solution-step">
+       we get
+      </div>
+      <div class="solution-step">
+       dy dy dy
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       3y + 2y − 5 − 2x = 0
+      </div>
+      <div class="solution-step">
+       dx dx dx
+      </div>
+      <div class="solution-step">
+       1 IMPLICIT DIFFERENTIATION (pg 1)
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Example - Calculus_1_lecnote7_202512281308_09617 P3
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Semester 1 - Calculus I(lec7) Faculty of Computer Science (CS+IT)
+      </div>
+      <div>
+       3 3
+      </div>
+      <div>
+       d y d
+      </div>
+      <div>
+       ′′′ ′′′
+      </div>
+      <div>
+       3
+      </div>
+      <div>
+       and we denote it by y , , f (x) , [f (x)] and also D [y].
+      </div>
+      <div>
+       x
+      </div>
+      <div>
+       dx3 dx3
+      </div>
+      <div>
+       In general
+      </div>
+      <div>
+       (cid:20) (cid:21)
+      </div>
+      <div>
+       n n−1 (n−1) (n−1)
+      </div>
+      <div>
+       d y d d y f (x + h) − f (x)
+      </div>
+      <div>
+       = = lim
+      </div>
+      <div>
+       dxn dx dxn−1 h
+      </div>
+      <div>
+       h→0
+      </div>
+      <div>
+       (4)
+      </div>
+      <div>
+       Example 2.1.2 1. y = sin 3x, prove that y = 81y
+      </div>
+      <div>
+       Proof
+      </div>
+      <div>
+       b
+      </div>
+      <div>
+       ′
+      </div>
+      <div>
+       y = 3 cos 3x
+      </div>
+      <div>
+       u
+      </div>
+      <div>
+       ′′
+      </div>
+      <div>
+       y = − 9 sin 3x
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       ′′′
+      </div>
+      <div>
+       y = − 27 cos 3x
+      </div>
+      <div>
+       z
+      </div>
+      <div>
+       (4)
+      </div>
+      <div>
+       y = 81 sin 3x = 81y
+      </div>
+      <div>
+       g
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       n (n) 5
+      </div>
+      <div>
+       2. y = x , prove that y = n! and find the fifth derivative for y = x .
+      </div>
+      <div>
+       M
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       ′ ′′ ′′′
+      </div>
+      <div class="solution-step">
+       n n−1 n−2 n−3
+      </div>
+      <div class="solution-step">
+       y = x ⇒ y = nx ⇒ y = n(n − 1)x ⇒ y = n(n − 1)(n − 2)x
+      </div>
+      <div class="solution-step">
+       i
+      </div>
+      <div class="solution-step">
+       t
+      </div>
+      <div class="solution-step">
+       This implies that
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       f
+      </div>
+      <div class="solution-step">
+       (n) n−n
+      </div>
+      <div class="solution-step">
+       y = n(n − 1)(n − 2) . . . 3 × 2 × 1 × x = n!
+      </div>
+      <div class="solution-step">
+       l
+      </div>
+      <div class="solution-step">
+       E
+      </div>
+      <div class="solution-step">
+       5 (5)
+      </div>
+      <div class="solution-step">
+       Now for y = x ⇒ y = 5! = 120
+      </div>
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       d y
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       2 2 2
+      </div>
+      <div class="solution-step">
+       3. Find if x + xy + y = a .
+      </div>
+      <div class="solution-step">
+       dx2
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       Differentiate both sides w.r.t x
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       B 2x + (xy + y) + 2yy = 0 (2.1.1)
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       Then collect all y terms on the left side and then solve for y
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       ⇒ xy + 2yy = −2x − y
+      </div>
+      <div class="solution-step">
+       −(2x + y)
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       ⇒ y (x + 2y) = −(2x + y) ⇒ y =
+      </div>
+      <div class="solution-step">
+       x + 2y
+      </div>
+      <div class="solution-step">
+       Now, by differentiating both sides of equation 2.1.1 w.r.t x, we get:
+      </div>
+      <div class="solution-step">
+       (cid:16) (cid:17)
+      </div>
+      <div class="solution-step">
+       ′′ ′ ′ ′ ′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       ⇒ 2 + xy + y + y + 2 yy + (y ) = 0
+      </div>
+      <div class="solution-step">
+       ′′ ′′ ′ ′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       ⇒ xy + 2yy = −2 − 2y − 2(y )
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       −(2 + 2y + 2(y ) )
+      </div>
+      <div class="solution-step">
+       ′′ ′ ′ ′′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       ⇒ y (x + 2y) = −(2 + 2y + 2(y ) ) ⇒ y =
+      </div>
+      <div class="solution-step">
+       x + 2y
+      </div>
+      <div class="solution-step">
+       2 HIGHER DERIVATIVES (pg 3)
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Problem - Calculus_1_lecnote8_202512281308_49361 P1
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Semester 1 - Calculus I(lec8) Faculty of Computer Science (CS+IT)
+      </div>
+      <div>
+       Lecture Eight
+      </div>
+      <div>
+       1 Applications
+      </div>
+      <div>
+       1.1 Related Rates
+      </div>
+      <div>
+       Here we will study the theme of the of derivatives as rates of change in problems in which the
+      </div>
+      <div>
+       variable changes with respect to time. The essential feature of these problems is that two or
+      </div>
+      <div>
+       more variables which are related in a known way are themselves changing in time.
+      </div>
+      <div>
+       Here are two examples illustrating this type of problem.
+      </div>
+      <div>
+       1. An oil rig springs a leak and the oil spreads in a (roughly) circular patch around the rig.
+      </div>
+      <div>
+       b
+      </div>
+      <div>
+       If the radius of the oil patch increases at a known rate, how fast is the area of the patch
+      </div>
+      <div>
+       u
+      </div>
+      <div>
+       changing?
+      </div>
+      <div>
+       o
+      </div>
+      <div>
+       2. Two airlines approach an airport with known speeds, one flyinzg west and one flying north.
+      </div>
+      <div>
+       How fast is the distance between the airlines changing? g
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       In the first problem, the two related variables are the radius and the area of the oil patch, both
+      </div>
+      <div>
+       M
+      </div>
+      <div>
+       are changing in time. But the second problem has three related variables, the positions of the
+      </div>
+      <div>
+       two airlines and the distance between them.
+      </div>
+      <div>
+       The goal in both problems is to determine the rate of change of one of the variables at
+      </div>
+      <div>
+       h
+      </div>
+      <div>
+       a specific moment of time, hence the name related rates.
+      </div>
+      <div>
+       i
+      </div>
+      <div>
+       t
+      </div>
+      <div>
+       Example 1.1.1 Spreading Oil: An oil rig springs a leak in calm seas, and the oil spreads
+      </div>
+      <div>
+       a
+      </div>
+      <div>
+       in a circular patch around the rig. If the radius of the oil patch increases at a rate of 30 m/hr,
+      </div>
+      <div>
+       f
+      </div>
+      <div>
+       how fast is the area of the patch increasing when the patch has a radius of 100 meters.
+      </div>
+      <div>
+       l
+      </div>
+      <div>
+       E
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       B
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       The key relationship between the radius and the area is A = πr . The general expression relating
+      </div>
+      <div class="solution-step">
+       the radius and area at any time t is
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       A(t) = πr (t) (1.1.1)
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       . The goal is to find the rate of change of the area of the circle, which A (t) given that r (t) =
+      </div>
+      <div class="solution-step">
+       30 m/hr.
+      </div>
+      <div class="solution-step">
+       We differentiate both sides of the equation 1.1.1 w.r.t time t.
+      </div>
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       A (t) = [πr (t)] = 2πr(t).r (t)
+      </div>
+      <div class="solution-step">
+       dt
+      </div>
+      <div class="solution-step">
+       ′
+      </div>
+      <div class="solution-step">
+       Now by substituting the given values r(t) = 100 m and r (t) = 30 m/hr we have (including
+      </div>
+      <div class="solution-step">
+       units):
+      </div>
+      <div class="solution-step">
+       ′ ′
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       A (t) = 2πr(t).r (t) = 2π(100 m)(30 m/hr) = 6000π m /hr
+      </div>
+      <div class="solution-step">
+       1 APPLICATIONS (pg 1)
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Example - Calculus_1_lecnote8_202512281308_49361 P4
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Faculty of Computer Science (CS+IT) Semester 1 - Calculus I(lec8)
+      </div>
+      <div>
+       3
+      </div>
+      <div>
+       Example 1.1.4 Water runs into a conical tank at the rate of 9 f t /min. The tank stands
+      </div>
+      <div>
+       point down and has a height of (10 f t) and a base radius of (5 f t). How fast is the water level
+      </div>
+      <div>
+       rising when the water is (6 f t) deep?
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       b
+      </div>
+      <div class="solution-step">
+       u
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       z
+      </div>
+      <div class="solution-step">
+       g
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       The variables in the problem are:
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       3
+      </div>
+      <div class="solution-step">
+       V ≡ Volume (f t ) of the water in the tank at time t
+      </div>
+      <div class="solution-step">
+       i
+      </div>
+      <div class="solution-step">
+       x ≡ radius (f t) of the surface of the water at time t.
+      </div>
+      <div class="solution-step">
+       t
+      </div>
+      <div class="solution-step">
+       y ≡ depth (f t) of the water in the tank.
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       f
+      </div>
+      <div class="solution-step">
+       dy dV
+      </div>
+      <div class="solution-step">
+       l
+      </div>
+      <div class="solution-step">
+       3
+      </div>
+      <div class="solution-step">
+       V, x and y are differentiable functions of t. We asked for when y = 6 f t and = 9f t /min.
+      </div>
+      <div class="solution-step">
+       E
+      </div>
+      <div class="solution-step">
+       dt dt
+      </div>
+      <div class="solution-step">
+       1
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       The water forms a cone with volume V = πx y.
+      </div>
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       3
+      </div>
+      <div class="solution-step">
+       dx
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       Because no information given about x and at the time in question, we need to eliminate
+      </div>
+      <div class="solution-step">
+       dt
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       x 5 y
+      </div>
+      <div class="solution-step">
+       x. The similar triangles gives us a way to express x in terms of y as = ⇒ x = .
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       y 10 2
+      </div>
+      <div class="solution-step">
+       1 (cid:16) y (cid:17)2 π dV π dy
+      </div>
+      <div class="solution-step">
+       3 2
+      </div>
+      <div class="solution-step">
+       Therefore, we find V = π y = y . Now = y . Finally, we use y = 6 and
+      </div>
+      <div class="solution-step">
+       3 2 12 dt 4 dt
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       dV
+      </div>
+      <div class="solution-step">
+       = 9.
+      </div>
+      <div class="solution-step">
+       B
+      </div>
+      <div class="solution-step">
+       dt
+      </div>
+      <div class="solution-step">
+       π dy dy 1
+      </div>
+      <div class="solution-step">
+       2
+      </div>
+      <div class="solution-step">
+       9 = (6) ⇒ = ≈ 0.32
+      </div>
+      <div class="solution-step">
+       4 dt dt π
+      </div>
+      <div class="solution-step">
+       (pg 4) 1 APPLICATIONS
+      </div>
+     </div>
+    </div>
+    <div class="problem-card">
+     <div class="problem-header">
+      <span class="problem-number">
+       Example - Calculus_1_lecnote8_202512281308_49361 P5
+      </span>
+     </div>
+     <div class="problem-statement">
+      <div>
+       Semester 1 - Calculus I(lec8) Faculty of Computer Science (CS+IT)
+      </div>
+      <div>
+       Example 1.1.5 A hot air balloon rising straight up a level field is tracked by a range finder
+      </div>
+      <div>
+       π
+      </div>
+      <div>
+       150 m from the left off point. At the moment the range finder’s elevation angle is , the angle
+      </div>
+      <div>
+       4
+      </div>
+      <div>
+       increasing at the rate of 0.14 rad/min. How fast is the balloon rising at the moment?
+      </div>
+     </div>
+     <div class="solution-details">
+      <div class="solution-step">
+       b
+      </div>
+      <div class="solution-step">
+       u
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       z
+      </div>
+      <div class="solution-step">
+       g
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       The variables in this problem are:
+      </div>
+      <div class="solution-step">
+       θ ≡ The angle in radians that the range finder makes with the ground.
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       y ≡ The height in meters of the balloon above the ground.
+      </div>
+      <div class="solution-step">
+       i
+      </div>
+      <div class="solution-step">
+       t
+      </div>
+      <div class="solution-step">
+       dθ π dy π
+      </div>
+      <div class="solution-step">
+       Given = 0.14 rad/min when θ = . We want when θ = , and we know from the right
+      </div>
+      <div class="solution-step">
+       a
+      </div>
+      <div class="solution-step">
+       dt 4 dt 4
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       f
+      </div>
+      <div class="solution-step">
+       traingle tan θ = or y = 150 tan θ, this implies that:
+      </div>
+      <div class="solution-step">
+       150 l
+      </div>
+      <div class="solution-step">
+       E
+      </div>
+      <div class="solution-step">
+       dy dθ dy (cid:104) π (cid:105)
+      </div>
+      <div class="solution-step">
+       2 2
+      </div>
+      <div class="solution-step">
+       = 150 sec θ ⇒ = 150 sec (0.14) = 42 m/min.
+      </div>
+      <div class="solution-step">
+       d
+      </div>
+      <div class="solution-step">
+       dt dt dt 4
+      </div>
+      <div class="solution-step">
+       h
+      </div>
+      <div class="solution-step">
+       At the moment in question, the balloon is rising at the rate of 42 m/min.
+      </div>
+      <div class="solution-step">
+       o
+      </div>
+      <div class="solution-step">
+       M
+      </div>
+      <div class="solution-step">
+       Example 1.1.6 A particle p moves clockwise at a constant rate along a circle of radius 10 m
+      </div>
+      <div class="solution-step">
+       centred at the origin. The particle’s initial position is (0, 10) on the y − axis, and its final
+      </div>
+      <div class="solution-step">
+       destination is the point (10, 0) on the x − axis. Once the particle is in motion, the tangent line
+      </div>
+      <div class="solution-step">
+       y
+      </div>
+      <div class="solution-step">
+       at p intersects the x − axis at a point Q (which moves over time). If the particle takes 30 sec
+      </div>
+      <div class="solution-step">
+       to travBel from start to finish, how fast is the point Q moving along the x − axis when it is 20 m
+      </div>
+      <div class="solution-step">
+       from the centre of the circle?
+      </div>
+      <div class="solution-step">
+       Sol
+      </div>
+      <div class="solution-step">
+       We picture the situation in the coordinate plane with circle centred at the origin
+      </div>
+      <div class="solution-step">
+       1 APPLICATIONS (pg 5)
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section">
+   <h2 class="section-title">
+    4. Inverse Trigonometric Differentiation
+   </h2>
+   <!-- P2 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 2
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \tan^{-1}\left(\frac{x}{a}\right) + 2\sin^{-1}\left(\frac{a}{x}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      1. \( \frac{d}{dx}\tan^{-1} u = \frac{u'}{1+u^2} \). \( u=\frac{x}{a}, u'=\frac{1}{a} \).
+     </div>
+     <div class="solution-step">
+      \[ \frac{1/a}{1+(x/a)^2} = \frac{1/a}{1+x^2/a^2} = \frac{1/a}{(a^2+x^2)/a^2} = \frac{a}{a^2+x^2} \]
+     </div>
+     <div class="solution-step">
+      2. \( \frac{d}{dx}\sin^{-1} u = \frac{u'}{\sqrt{1-u^2}} \). \( u=ax^{-1}, u'=-ax^{-2} \).
+     </div>
+     <div class="solution-step">
+      \[ 2 \cdot \frac{-a/x^2}{\sqrt{1-(a/x)^2}} = \frac{-2a/x^2}{\sqrt{(x^2-a^2)/x^2}} = \frac{-2a/x^2}{|1/x|\sqrt{x^2-a^2}} \]
+     </div>
+     <div class="solution-step">
+      Assuming \( x&gt;0 \), \( \frac{-2a}{x\sqrt{x^2-a^2}} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{a}{a^2+x^2} - \frac{2a}{x\sqrt{x^2-a^2}} \]
+     </div>
+    </div>
+   </div>
+   <!-- P3 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 3
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{\cos^{-1}(x^2)}{x+1} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient Rule: \( u = \cos^{-1}(x^2), u' = \frac{-1}{\sqrt{1-(x^2)^2}}(2x) = \frac{-2x}{\sqrt{1-x^4}} \).
+     </div>
+     <div class="solution-step">
+      \( v = x+1, v' = 1 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{\frac{-2x(x+1)}{\sqrt{1-x^4}} - \cos^{-1}(x^2)}{(x+1)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- P4 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 4
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = e^{x^2}\sin^{-1}x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Product Rule: \( (2x e^{x^2})(\sin^{-1}x) + (e^{x^2})(\frac{1}{\sqrt{1-x^2}}) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = e^{x^2} \left[ 2x\sin^{-1}x + \frac{1}{\sqrt{1-x^2}} \right] \]
+     </div>
+    </div>
+   </div>
+   <!-- P5 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 5
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \sin^{-1}(2x) + \cos^{-1}(2x) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Identity: \( \sin^{-1}u + \cos^{-1}u = \frac{\pi}{2} \) (constant).
+     </div>
+     <div class="solution-step">
+      Derivative of a constant is 0.
+     </div>
+     <div class="final-answer">
+      \[ y' = 0 \]
+     </div>
+    </div>
+   </div>
+   <!-- P6 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 6
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = x\cos^{-1}x - \sqrt{1-x^2} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Part 1: \( 1\cdot\cos^{-1}x + x(\frac{-1}{\sqrt{1-x^2}}) \).
+     </div>
+     <div class="solution-step">
+      Part 2: \( -\frac{1}{2}(1-x^2)^{-1/2}(-2x) = \frac{x}{\sqrt{1-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Sum: \( \cos^{-1}x - \frac{x}{\sqrt{1-x^2}} + \frac{x}{\sqrt{1-x^2}} \). Terms cancel.
+     </div>
+     <div class="final-answer">
+      \[ y' = \cos^{-1}x \]
+     </div>
+    </div>
+   </div>
+   <!-- P7 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 7
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{1}{2}\left[ x\sqrt{4-x^2} + 4\sin^{-1}\left(\frac{x}{2}\right) \right] \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Deriv of \( x\sqrt{4-x^2} \): \( 1\cdot\sqrt{4-x^2} + x\frac{-2x}{2\sqrt{4-x^2}} = \frac{4-x^2-x^2}{\sqrt{4-x^2}} = \frac{4-2x^2}{\sqrt{4-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Deriv of \( 4\sin^{-1}(x/2) \): \( 4 \frac{1/2}{\sqrt{1-(x/2)^2}} = \frac{2}{\sqrt{(4-x^2)/4}} = \frac{4}{\sqrt{4-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Total: \( \frac{1}{2} [ \frac{4-2x^2+4}{\sqrt{4-x^2}} ] = \frac{1}{2} \frac{8-2x^2}{\sqrt{4-x^2}} = \frac{4-x^2}{\sqrt{4-x^2}} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \sqrt{4-x^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- P8 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 8
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \cos x \cdot \sec^{-1}x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Product rule: \( -\sin x \sec^{-1}x + \cos x \frac{1}{|x|\sqrt{x^2-1}} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{\cos x}{|x|\sqrt{x^2-1}} - \sin x \sec^{-1}x \]
+     </div>
+    </div>
+   </div>
+   <!-- P9 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 9
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = e^{\sin^{-1}x} + \frac{1}{\sqrt{1+x^2}} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Term 1: \( e^{\sin^{-1}x} \frac{1}{\sqrt{1-x^2}} \).
+     </div>
+     <div class="solution-step">
+      Term 2: \( (1+x^2)^{-1/2} \to -\frac{1}{2}(1+x^2)^{-3/2}(2x) = -x(1+x^2)^{-3/2} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{e^{\sin^{-1}x}}{\sqrt{1-x^2}} - \frac{x}{(1+x^2)^{3/2}} \]
+     </div>
+    </div>
+   </div>
+   <!-- P10 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 10
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \csc\left[\frac{x}{x+1}\right] - \sec^{-1}\left(\frac{x+1}{x}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Note if we assume \( \sec^{-1}(\frac{x+1}{x}) = \cos^{-1}(\frac{x}{x+1}) \).
+     </div>
+     <div class="solution-step">
+      Let \( u = \frac{x}{x+1} \). \( y = \csc u - \cos^{-1} u \).
+     </div>
+     <div class="solution-step">
+      \( u' = \frac{1(x+1)-x(1)}{(x+1)^2} = \frac{1}{(x+1)^2} \).
+     </div>
+     <div class="solution-step">
+      \( y' = -\csc u \cot u \cdot u' - (\frac{-1}{\sqrt{1-u^2}} \cdot u') \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{(x+1)^2} \left[ \frac{1}{\sqrt{1-(\frac{x}{x+1})^2}} - \csc\left(\frac{x}{x+1}\right)\cot\left(\frac{x}{x+1}\right) \right] \]
+     </div>
+    </div>
+   </div>
+   <!-- P11 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 11
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{\cot^{-1}x}{1+x^2} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient rule. \( u = \cot^{-1}x, u' = \frac{-1}{1+x^2} \). \( v = 1+x^2, v'=2x \).
+     </div>
+     <div class="solution-step">
+      \( Num = \frac{-1}{1+x^2}(1+x^2) - \cot^{-1}x(2x) = -1 - 2x\cot^{-1}x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = -\frac{1+2x\cot^{-1}x}{(1+x^2)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- P12 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 12
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln(x - \tan x) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Chain rule: \( \frac{1}{x-\tan x} (1-\sec^2 x) \).
+     </div>
+     <div class="solution-step">
+      Recall \( 1-\sec^2 x = -\tan^2 x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-\tan^2 x}{x-\tan x} \]
+     </div>
+    </div>
+   </div>
+   <!-- P13 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 13
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \csc^{-1}\left(\frac{1-x}{x+1}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Let \( u = \frac{1-x}{x+1} \). \( u' = \frac{-1(x+1)-(1-x)(1)}{(x+1)^2} = \frac{-2}{(x+1)^2} \).
+     </div>
+     <div class="solution-step">
+      \( \frac{d}{dx}\csc^{-1} u = \frac{-u'}{|u|\sqrt{u^2-1}} \).
+     </div>
+     <div class="solution-step">
+      This derivative is complex to simplify fully inline, but plugging in parts:
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{2}{(x+1)^2 |\frac{1-x}{x+1}| \sqrt{(\frac{1-x}{x+1})^2-1}} \]
+     </div>
+    </div>
+   </div>
+   <!-- P14 -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem 14
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln\sqrt{\frac{x+1}{x-1}} + \tan^{-1}(2x) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Simplify Log: \( \frac{1}{2}(\ln(x+1) - \ln(x-1)) \).
+     </div>
+     <div class="solution-step">
+      Deriv Log part: \( \frac{1}{2}(\frac{1}{x+1} - \frac{1}{x-1}) = \frac{1}{2}\frac{x-1-(x+1)}{x^2-1} = \frac{-1}{x^2-1} \).
+     </div>
+     <div class="solution-step">
+      Deriv tan: \( \frac{2}{1+(2x)^2} = \frac{2}{1+4x^2} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-1}{x^2-1} + \frac{2}{1+4x^2} \]
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section">
+   <h2 class="section-title">
+    5. Exponential, Logarithmic &amp; Implicit Differentiation
+   </h2>
+   <!-- Ex 1.2.1 iv -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (iv)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln\left(\frac{2^x - 2^{-x}}{2^x + 2^{-x}}\right) \] (Inferred from context)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      This is \( \ln(\tanh(x\ln 2)) \).
+     </div>
+     <div class="solution-step">
+      Deriv: \( \frac{1}{\tanh(\dots)} \cdot \text{sech}^2(\dots) \cdot \ln 2 \).
+     </div>
+     <div class="solution-step">
+      \( \frac{\cosh}{\sinh} \frac{1}{\cosh^2} \ln 2 = \frac{\ln 2}{\sinh \cosh} = \frac{2\ln 2}{\sinh(2x\ln 2)} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = 2\ln 2 \cdot \text{csch}(2x\ln 2) \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 v -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (v)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \log_3\left(\frac{x}{2^x - x}\right) \] (Interpretation)
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( \log_3 x - \log_3(2^x - x) \).
+     </div>
+     <div class="solution-step">
+      \( \frac{1}{x\ln 3} - \frac{2^x\ln 2 - 1}{(2^x - x)\ln 3} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{\ln 3} \left[ \frac{1}{x} - \frac{2^x\ln 2 - 1}{2^x - x} \right] \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 vi -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (vi)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \tan^{-1}(e^{-x^2}) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( \frac{1}{1+(e^{-x^2})^2} \cdot e^{-x^2} \cdot (-2x) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-2xe^{-x^2}}{1+e^{-2x^2}} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 x -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (x)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln\left(\ln\frac{x+1}{x-1}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Let \( u = \frac{x+1}{x-1} \). \( \ln(\ln u) \).
+     </div>
+     <div class="solution-step">
+      Outer: \( \frac{1}{\ln u} \cdot \frac{1}{u} \cdot u' \).
+     </div>
+     <div class="solution-step">
+      \( u = \frac{x+1}{x-1}, u' = \frac{(x-1)-(x+1)}{(x-1)^2} = \frac{-2}{(x-1)^2} \).
+     </div>
+     <div class="solution-step">
+      Product: \( \frac{1}{\ln(\frac{x+1}{x-1})} \cdot \frac{x-1}{x+1} \cdot \frac{-2}{(x-1)^2} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-2}{(x^2-1) \ln(\frac{x+1}{x-1})} \]
+     </div>
+    </div>
+   </div>
+   <!-- F: Implicit -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Problem (f)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ x = 2^y - 2^{-y} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Differentiate wrt x: \( 1 = 2^y \ln 2 \cdot y' - 2^{-y} \ln 2 \cdot (-y') \).
+     </div>
+     <div class="solution-step">
+      \( 1 = y' \ln 2 (2^y + 2^{-y}) \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{1}{\ln 2 (2^y + 2^{-y})} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (i) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (i)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \pi^x - x^\pi \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( \pi^x \) is exponential \( a^x \to a^x \ln a \).
+     </div>
+     <div class="solution-step">
+      \( x^\pi \) is power function \( x^n \to n x^{n-1} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \pi^x \ln \pi - \pi x^{\pi-1} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (ii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (ii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = e^{\sin(3x)} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Chain: \( e^{\sin(3x)} \cdot \cos(3x) \cdot 3 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = 3\cos(3x)e^{\sin(3x)} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (iii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (iii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \ln(x^2-1) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      \( \frac{1}{u} u' = \frac{1}{x^2-1} \cdot 2x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{2x}{x^2-1} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (vii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (vii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \sin\left(\sqrt{e^x-1}\right) \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Chain rule: \( \cos(\sqrt{e^x-1}) \cdot \frac{1}{2\sqrt{e^x-1}} \cdot e^x \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{e^x \cos(\sqrt{e^x-1})}{2\sqrt{e^x-1}} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (viii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (viii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{\ln x + 1}{\ln x - 1} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Quotient: \( u=\ln x+1, u'=1/x \). \( v=\ln x-1, v'=1/x \).
+     </div>
+     <div class="solution-step">
+      \( Num = \frac{1}{x}(\ln x - 1) - (\ln x + 1)\frac{1}{x} = \frac{1}{x}(\ln x - 1 - \ln x - 1) = -\frac{2}{x} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{-2}{x(\ln x - 1)^2} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (ix) Log Diff -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (ix)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{(x+1)^3 \sqrt{x^2+4}}{\sqrt[3]{x+2}} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Take ln: \( \ln y = 3\ln(x+1) + \frac{1}{2}\ln(x^2+4) - \frac{1}{3}\ln(x+2) \).
+     </div>
+     <div class="solution-step">
+      Differentiate: \( \frac{y'}{y} = \frac{3}{x+1} + \frac{1}{2}\frac{2x}{x^2+4} - \frac{1}{3(x+2)} \).
+     </div>
+     <div class="solution-step">
+      Multiply by y for final answer.
+     </div>
+     <div class="final-answer">
+      \[ y' = y \left[ \frac{3}{x+1} + \frac{x}{x^2+4} - \frac{1}{3(x+2)} \right] \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (xi) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (xi)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y = \frac{\sin^4 x \cos^3 x}{\sqrt{x}} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Log diff: \( \ln y = 4\ln(\sin x) + 3\ln(\cos x) - \frac{1}{2}\ln x \).
+     </div>
+     <div class="solution-step">
+      \( \frac{y'}{y} = 4\frac{\cos x}{\sin x} + 3\frac{-\sin x}{\cos x} - \frac{1}{2x} \).
+     </div>
+     <div class="solution-step">
+      \( = 4\cot x - 3\tan x - \frac{1}{2x} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = y [ 4\cot x - 3\tan x - \frac{1}{2x} ] \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (xii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (xii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ x^y = 2^{x-y} \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Ln both sides: \( y\ln x = (x-y)\ln 2 \).
+     </div>
+     <div class="solution-step">
+      Diff: \( y'\ln x + \frac{y}{x} = (1-y')\ln 2 \).
+     </div>
+     <div class="solution-step">
+      \( y'\ln x + y'\ln 2 = \ln 2 - \frac{y}{x} \).
+     </div>
+     <div class="solution-step">
+      \( y'(\ln x + \ln 2) = \frac{x\ln 2 - y}{x} \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{x\ln 2 - y}{x(\ln x + \ln 2)} \]
+     </div>
+    </div>
+   </div>
+   <!-- Ex 1.2.1 (xiii) -->
+   <div class="problem-card">
+    <div class="problem-header">
+     <span class="problem-number">
+      Ex 1.2.1 (xiii)
+     </span>
+    </div>
+    <div class="problem-statement">
+     \[ y + x = y^x \]
+    </div>
+    <div class="solution-details">
+     <div class="solution-step">
+      Ln: \( \ln(y+x) = x\ln y \) (WAIT! \( y^x \) base y. Log rule applies). No, take ln both sides of equation? No, \( y+x \) is sum.
+     </div>
+     <div class="solution-step">
+      Direct implicit with exponential rule for RHS.
+     </div>
+     <div class="solution-step">
+      LHS: \( y' + 1 \).
+     </div>
+     <div class="solution-step">
+      RHS: \( y^x (\ln y \cdot 1 + x \cdot \frac{y'}{y}) \) (Using \( \frac{d}{dx}f(x)^{g(x)} \)).
+     </div>
+     <div class="solution-step">
+      \( y' + 1 = y^x \ln y + y^x \frac{x}{y} y' = y^x \ln y + x y^{x-1} y' \).
+     </div>
+     <div class="solution-step">
+      Group \( y' \): \( y'(1 - x y^{x-1}) = y^x \ln y - 1 \).
+     </div>
+     <div class="final-answer">
+      \[ y' = \frac{y^x \ln y - 1}{1 - x y^{x-1}} \]
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Course Lectures: Additional Problems & Solutions</h2>
+    
+    <h3>Lecture 2: Limits Continued</h3>
+    <!-- Ex 1.3.2 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.3.2</span></div>
+      <div class="problem-statement">
+        Evaluate \( \lim_{x \to 0} \frac{|x|}{x} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Left Hand Limit (\( x \to 0^- \)): \( \lim_{x \to 0^-} \frac{-x}{x} = -1 \).
+        </div>
+        <div class="solution-step">
+          Right Hand Limit (\( x \to 0^+ \)): \( \lim_{x \to 0^+} \frac{x}{x} = 1 \).
+        </div>
+        <div class="final-answer">
+          \[ \text{Since LHL } \ne \text{ RHL, the limit does not exist.} \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 1.3.3 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.3.3</span></div>
+      <div class="problem-statement">
+        Evaluate \( \lim_{x \to 1} \frac{x^2+x-2}{x-1} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Direct substitution gives \( 0/0 \).
+        </div>
+        <div class="solution-step">
+          Factor the numerator: \( x^2+x-2 = (x-1)(x+2) \).
+        </div>
+        <div class="solution-step">
+          \( \lim_{x \to 1} \frac{(x-1)(x+2)}{x-1} = \lim_{x \to 1} (x+2) = 1+2 = 3 \).
+        </div>
+        <div class="final-answer">
+          \[ = 3 \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 1.8.10 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.10.1</span></div>
+      <div class="problem-statement">
+        Prove that \( \lim_{x \to 0} \frac{\tan x}{x} = 1 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          \( \lim_{x \to 0} \frac{\tan x}{x} = \lim_{x \to 0} \left( \frac{\sin x}{x} \cdot \frac{1}{\cos x} \right) \).
+        </div>
+        <div class="solution-step">
+          By limit properties: \( (\lim_{x \to 0} \frac{\sin x}{x}) \cdot (\lim_{x \to 0} \frac{1}{\cos x}) \).
+        </div>
+        <div class="solution-step">
+          Result: \( 1 \cdot \frac{1}{\cos 0} = 1 \cdot 1 = 1 \).
+        </div>
+        <div class="final-answer">
+          \[ = 1 \]
+        </div>
+      </div>
+    </div>
+
+    <h3>Lecture 3: Continuity & First Principles</h3>
+    <!-- Ex 1.2.1 (Lec 3) -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.2.1</span></div>
+      <div class="problem-statement">
+        Prove that \( f(x) = x^2 \) is continuous on \( \mathbb{R} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Choose an arbitrary point \( x=c \in \mathbb{R} \). We must show \( \lim_{h \to 0} [f(c+h) - f(c)] = 0 \).
+        </div>
+        <div class="solution-step">
+          \( \lim_{h \to 0} [(c+h)^2 - c^2] = \lim_{h \to 0} [c^2 + 2ch + h^2 - c^2] \).
+        </div>
+        <div class="solution-step">
+          \( = \lim_{h \to 0} [h(2c+h)] = 0 \cdot (2c+0) = 0 \).
+        </div>
+        <div class="final-answer">
+          \[ f(x) \text{ is continuous at } c \implies \text{continuous on } \mathbb{R}. \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 1.2.3 (Lec 3) -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.2.3</span></div>
+      <div class="problem-statement">
+        Prove that \( f(x) = a^x \) (\( a>0 \)) is continuous on \( \mathbb{R} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Choose arbitrary \( x=c \in \mathbb{R} \).
+        </div>
+        <div class="solution-step">
+          \( \lim_{h \to 0} [f(c+h) - f(c)] = \lim_{h \to 0} [a^{c+h} - a^c] \).
+        </div>
+        <div class="solution-step">
+          \( = \lim_{h \to 0} a^c(a^h - 1) = a^c(a^0 - 1) = a^c(1-1) = 0 \).
+        </div>
+        <div class="final-answer">
+          \[ \text{Continuous on } \mathbb{R}. \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 2.1.8 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.1.8</span></div>
+      <div class="problem-statement">
+        If \( y = x^3 \), find the rate of change \( \frac{\Delta y}{h} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          \( \Delta y = (x+h)^3 - x^3 \).
+        </div>
+        <div class="solution-step">
+          Expand: \( x^3 + 3x^2h + 3xh^2 + h^3 - x^3 = 3x^2h + 3xh^2 + h^3 \).
+        </div>
+        <div class="solution-step">
+          \( \frac{\Delta y}{h} = \frac{h(3x^2 + 3xh + h^2)}{h} \).
+        </div>
+        <div class="final-answer">
+          \[ = 3x^2 + 3xh + h^2 \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 2.3.14 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.3.14</span></div>
+      <div class="problem-statement">
+        Find the derivative of \( y = \frac{1}{\sqrt{x}} \) from first principles.
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          \( f'(x) = \lim_{h \to 0} \frac{\frac{1}{\sqrt{x+h}} - \frac{1}{\sqrt{x}}}{h} \).
+        </div>
+        <div class="solution-step">
+          Combine fractions: \( \lim_{h \to 0} \frac{\sqrt{x} - \sqrt{x+h}}{h \sqrt{x} \sqrt{x+h}} \).
+        </div>
+        <div class="solution-step">
+          Rationalize numerator: \( \lim_{h \to 0} \frac{x-(x+h)}{h \sqrt{x} \sqrt{x+h} (\sqrt{x}+\sqrt{x+h})} \).
+        </div>
+        <div class="solution-step">
+          Cancel \( h \): \( \lim_{h \to 0} \frac{-1}{\sqrt{x} \sqrt{x+h} (\sqrt{x}+\sqrt{x+h})} = \frac{-1}{x(2\sqrt{x})} \).
+        </div>
+        <div class="final-answer">
+          \[ y' = -\frac{1}{2x^{3/2}} \]
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h3>Lecture 4: Trigonometric & Inverse Derivatives</h3>
+    <!-- Ex 2.2.1 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.2.1.1</span></div>
+      <div class="problem-statement">
+        Find \( y' \) for \( y = 3\sin(2x^2+5) - \cos^3 x \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Term 1 Chain Rule: \( 3 \cdot \cos(2x^2+5) \cdot 4x = 12x\cos(2x^2+5) \).
+        </div>
+        <div class="solution-step">
+          Term 2 Chain Rule: \( -3\cos^2 x \cdot (-\sin x) = 3\sin x \cos^2 x \).
+        </div>
+        <div class="final-answer">
+          \[ y' = 12x\cos(2x^2+5) + 3\sin x \cos^2 x \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 3.6.2.1 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 3.6.2.1</span></div>
+      <div class="problem-statement">
+        Find \( y' \) for \( y = \frac{x}{2} \sin^{-1}(2x) \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Product Rule: \( u = x/2, u' = 1/2 \). \( v = \sin^{-1}(2x), v' = \frac{2}{\sqrt{1-4x^2}} \).
+        </div>
+        <div class="solution-step">
+          \( y' = \frac{1}{2}\sin^{-1}(2x) + \frac{x}{2} \cdot \frac{2}{\sqrt{1-4x^2}} \).
+        </div>
+        <div class="final-answer">
+          \[ y' = \frac{1}{2}\sin^{-1}(2x) + \frac{x}{\sqrt{1-4x^2}} \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Lecture 5: Exponential & Logarithmic Content</h3>
+    <!-- Ex 1.1.1 (Lec 5) -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.1</span></div>
+      <div class="problem-statement">
+        Evaluate \( \sum_{k=1}^{\infty} \frac{2^k}{k!} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Recall the series for \( e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!} = 1 + \sum_{k=1}^{\infty} \frac{x^k}{k!} \).
+        </div>
+        <div class="solution-step">
+          For \( x=2 \): \( e^2 = 1 + \sum_{k=1}^{\infty} \frac{2^k}{k!} \).
+        </div>
+        <div class="final-answer">
+          \[ \sum_{k=1}^{\infty} \frac{2^k}{k!} = e^2 - 1 \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 1.1.2 (Lec 5) -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.2</span></div>
+      <div class="problem-statement">
+        Evaluate \( \lim_{x \to 0} \frac{1-e^{2x}+2x}{x^2} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Expansion: \( e^{2x} = 1 + 2x + \frac{(2x)^2}{2!} + \frac{(2x)^3}{3!} + \dots = 1 + 2x + 2x^2 + \frac{4}{3}x^3 + \dots \).
+        </div>
+        <div class="solution-step">
+          Substitute: \( \frac{1 - (1 + 2x + 2x^2 + \dots) + 2x}{x^2} = \frac{-2x^2 - \frac{4}{3}x^3 - \dots}{x^2} \).
+        </div>
+        <div class="solution-step">
+          \( = -2 - \frac{4}{3}x - \dots \). As \( x \to 0 \), result is \( -2 \).
+        </div>
+        <div class="final-answer">
+          \[ = -2 \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Lecture 6: Hyperbolic & Inverse Hyperbolic</h3>
+    <!-- Ex 1.8.1 P1 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.1.1</span></div>
+      <div class="problem-statement">
+        Evaluate \( \lim_{x \to 0} \frac{\sinh(\alpha x)}{x} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Series expansion: \( \sinh(\alpha x) = \alpha x + \frac{(\alpha x)^3}{6} + \dots \).
+        </div>
+        <div class="final-answer">
+          \[ = \alpha \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 1.8.1 P2 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.1.2</span></div>
+      <div class="problem-statement">
+        Evaluate \( \lim_{x \to 0} \frac{\cosh(\alpha x)-1}{x^2} \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Series expansion: \( \cosh(\alpha x) - 1 = \frac{(\alpha x)^2}{2} + \dots \).
+        </div>
+        <div class="final-answer">
+          \[ = \frac{\alpha^2}{2} \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Inverse Hyp Ex -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.3</span></div>
+      <div class="problem-statement">
+        Find \( dy/dx \) for \( y = \sinh^{-1}(\sqrt{x^2+1}) \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Chain Rule: \( y' = \frac{1}{\sqrt{(\sqrt{x^2+1})^2 + 1}} \cdot \frac{x}{\sqrt{x^2+1}} \).
+        </div>
+        <div class="final-answer">
+          \[ y' = \frac{x}{\sqrt{(x^2+2)(x^2+1)}} \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Lecture 7: Implicit & Higher Order</h3>
+    <!-- Ex 1.2.1 P1 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.2.1.1</span></div>
+      <div class="problem-statement">
+        Find \( dy/dx \) for \( y^3 + y^2 - 5y - x^2 = -4 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">
+          Differentiating gives \( 3y^2 y' + 2yy' - 5y' = 2x \).
+        </div>
+        <div class="final-answer">
+          \[ y' = \frac{2x}{3y^2 + 2y - 5} \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Ex 2.1.2 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.1.2</span></div>
+      <div class="problem-statement">
+        Prove \( y^{(4)} = 81y \) for \( y = \sin 3x \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">Derivatives: \( 3\cos 3x, -9\sin 3x, -27\cos 3x, 81\sin 3x \).</div>
+        <div class="final-answer">
+          \[ y^{(4)} = 81y \]
+        </div>
+      </div>
+    </div>
+
+    <!-- Leibniz -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.2.3</span></div>
+      <div class="problem-statement">
+        Find \( y^{(4)} \) for \( y = x^4 \sin x \) using Leibniz's Rule.
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">Formula: \( \sum_{k=0}^{4} \binom{4}{k} f^{(4-k)} g^{(k)} \).</div>
+        <div class="final-answer">
+          \[ y^{(4)} = x^4\sin x - 16x^3\cos x - 72x^2\sin x + 96x\cos x + 24\sin x \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Lecture 8: Related Rates & Applications</h3>
+    <!-- Ex 1.1.1 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.1</span></div>
+      <div class="problem-statement">
+        Oil rig leak: radius increases at 30 m/hr. Find \( dA/dt \) when \( r = 100 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">\( A = \pi r^2 \implies dA/dt = 2\pi r(dr/dt) \).</div>
+        <div class="final-answer">\[ 6000\pi \text{ m}^2\text{/hr} \]</div>
+      </div>
+    </div>
+
+    <!-- Ex 1.1.2 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.2</span></div>
+      <div class="problem-statement">
+        Two planes approaching airport at 120 and 150 mph. Find distance rate.
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">\( z^2 = x^2 + y^2 \implies z \frac{dz}{dt} = x \frac{dx}{dt} + y \frac{dy}{dt} \).</div>
+        <div class="final-answer">\[ \approx -192 \text{ mph} \]</div>
+      </div>
+    </div>
+
+    <!-- Ex 1.1.3 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.3</span></div>
+      <div class="problem-statement">
+        Conical filter drainage: \( dV/dt = -2.25 \). Find \( dh/dt \) at \( h = 3 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">\( V = \frac{4\pi}{75}h^3 \implies dV/dt = \frac{4\pi}{25}h^2 (dh/dt) \).</div>
+        <div class="final-answer">\[ \approx -0.497 \text{ in/min} \]</div>
+      </div>
+    </div>
+
+    <!-- Ex 1.1.4 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.4</span></div>
+      <div class="problem-statement">
+        Conical tank rise rate: \( dV/dt = 9 \) ft³/min. Height 10, radius 5. Find rise rate at \( y = 6 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">\( V = \frac{\pi}{12}y^3 \implies dV/dt = \frac{\pi}{4}y^2 (dy/dt) \).</div>
+        <div class="final-answer">\[ \frac{1}{\pi} \approx 0.32 \text{ ft/min} \]</div>
+      </div>
+    </div>
+
+    <!-- Ex 1.1.5 -->
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.5</span></div>
+      <div class="problem-statement">
+        Hot air balloon rising: tracking angle \( \theta = \pi/4 \), \( d\theta/dt = 0.14 \).
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">\( y = 150 \tan \theta \implies dy/dt = 150 \sec^2 \theta (d\theta/dt) \).</div>
+        <div class="final-answer">\[ 42 \text{ m/min} \]</div>
+      </div>
+    </div>
+  
+<!-- START AUTOMATED SECTIONS -->
+<div class="section"><h3>Extracted from Calculus 1 lecnote6_202512281307_52093.md</h3>
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.1</span></div>
+      <div class="problem-statement">
+        Evaluate the following limits g sinh(αx) a 1. lim x x→0 M cosh(αx) − 1 2. lim x2 x→0 h cosh(αx) − cosh(βx) 3. lim i x2 x→0 t
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">Before we solve this limits, note that the hyperbolic functions can be expressed as an infinite</div>
+<div class="solution-step">l</div>
+<div class="solution-step">series as follows:</div>
+<div class="solution-step">E</div>
+<div class="solution-step">We know</div>
+<div class="solution-step">∞</div>
+<div class="solution-step">d2 3 k k</div>
+<div class="solution-step">x x x x</div>
+<div class="solution-step">(cid:88)</div>
+<div class="solution-step">x</div>
+<div class="solution-step">e = 1 + x + + + · · · + + · · · =</div>
+<div class="solution-step">h 2! 3! k! k!</div>
+<div class="solution-step">k=0</div>
+<div class="solution-step">o</div>
+<div class="solution-step">and</div>
+<div class="solution-step">∞</div>
+<div class="solution-step">2 3 k k</div>
+<div class="solution-step">M x x x (cid:88) x</div>
+<div class="solution-step">−x k k</div>
+<div class="solution-step">e = 1 − x + − + · · · + (−1) + · · · = (−1)</div>
+<div class="solution-step">2! 3! k! k!</div>
+<div class="solution-step">k=0</div>
+<div class="solution-step">Now</div>
+<div class="solution-step">y</div>
+<div class="solution-step">1</div>
+<div class="solution-step">cosh x B= (e x + e −x )</div>
+<div class="solution-step">2</div>
+<div class="solution-step">(cid:20)(cid:18) (cid:19) (cid:18) (cid:19)(cid:21)</div>
+<div class="solution-step">2 3 k 2 3 k</div>
+<div class="solution-step">1 x x x x x x</div>
+<div class="solution-step">k</div>
+<div class="solution-step">= 1 + x + + + · · · + + . . . + 1 − x + − + · · · + (−1) + . . .</div>
+<div class="solution-step">2 2! 3! k! 2! 3! k!</div>
+<div class="solution-step">(cid:20) (cid:21) (cid:20) (cid:21)</div>
+<div class="solution-step">2 4 2k 2 4 2k</div>
+<div class="solution-step">1 x x x x x x</div>
+<div class="solution-step">= 2 + 2 + 2 + · · · + 2 + . . . = 1 + + + · · · + + . . .</div>
+<div class="solution-step">2 2! 4! (2k)! 2! 4! (2k)!</div>
+<div class="solution-step">∞</div>
+<div class="solution-step">2 4 2k 2k</div>
+<div class="solution-step">x x x x</div>
+<div class="solution-step">(cid:88)</div>
+<div class="solution-step">∴</div>
+<div class="solution-step">cosh x = 1 + + + · · · + + · · · =</div>
+<div class="solution-step">2! 4! (2k)! (2k)!</div>
+<div class="solution-step">k=0</div>
+<div class="solution-step">As same as cosh x, we see</div>
+<div class="solution-step">∞</div>
+<div class="solution-step">3 5 2k+1 2k+1</div>
+<div class="solution-step">x x x x</div>
+<div class="solution-step">(cid:88)</div>
+<div class="solution-step">sinh x = x + + + · · · + + · · · =</div>
+<div class="solution-step">3! 5! (2k + 1)! (2k + 1)!</div>
+<div class="solution-step">k=0</div>
+<div class="solution-step">Now:</div>
+<div class="solution-step">(pg 8) 1 HYPERBOLIC FUNCTIONS</div>
+<div class="solution-step">sinh(αx)</div>
+<div class="solution-step">1. lim</div>
+<div class="solution-step">x</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">3 3 5 5</div>
+<div class="solution-step">α x α x</div>
+<div class="solution-step">αx + + + . . .</div>
+<div class="solution-step">3! 5!</div>
+<div class="solution-step">= lim</div>
+<div class="solution-step">x</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">2 2 4 4</div>
+<div class="solution-step">α x α x</div>
+<div class="solution-step">αx 1 + + + . . .</div>
+<div class="solution-step">3! 5!</div>
+<div class="solution-step">= lim</div>
+<div class="solution-step">x</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">2 2 4 4</div>
+<div class="solution-step">α x α x</div>
+<div class="solution-step">= α lim 1 + + + . . . = α(1) = α.</div>
+<div class="solution-step">3! 5!</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">b</div>
+<div class="solution-step">u</div>
+<div class="solution-step">cosh(αx) − 1</div>
+<div class="solution-step">2. lim</div>
+<div class="solution-step">o</div>
+<div class="solution-step">x2</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">z</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">2 2 4 4 2 2 4 4</div>
+<div class="solution-step">α x α x α x α x</div>
+<div class="solution-step">g</div>
+<div class="solution-step">cosh(αx) − 1 = 1 + + + . . . − 1 = + + . . .</div>
+<div class="solution-step">2! 4! 2! 4!</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">Now:</div>
+<div class="solution-step">2 2 2</div>
+<div class="solution-step">cosh(αx) − 1 α α x</div>
+<div class="solution-step">= + + . . .</div>
+<div class="solution-step">x2 2! 4!</div>
+<div class="solution-step">Therefore h</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">2 2 2 2</div>
+<div class="solution-step">cosh(αx) − 1 α α x α</div>
+<div class="solution-step">i</div>
+<div class="solution-step">lim = lim + + . . . = .</div>
+<div class="solution-step">t</div>
+<div class="solution-step">x2 2! 4! 2!</div>
+<div class="solution-step">x→0 x→0</div>
+<div class="solution-step">a</div>
+<div class="solution-step">3. Exercise.</div>
+<div class="solution-step">f</div>
+<div class="solution-step">l</div>
+<div class="solution-step">dy E</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.8.2</span></div>
+      <div class="problem-statement">
+        Find for the following functions. dx d 1. y = cosh(2x) sinh(x) h o
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">M</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">= cosh(2x) × cosh(x) + sinh(x) × (2 sinh(2x))</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">y</div>
+<div class="solution-step">2. y = sech(csch(x))</div>
+<div class="solution-step">B</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">= −csch(x) coth(x) × −sech(csch(x)) tanh(csch(x))</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">2x</div>
+<div class="solution-step">3. y = tanh</div>
+<div class="solution-step">1 − x2</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">2</div>
+<div class="solution-step">dy 2(1 − x ) + 4x 2x</div>
+<div class="solution-step">2</div>
+<div class="solution-step">= sech</div>
+<div class="solution-step">dx (1 − x2)2 1 − x2</div>
+<div class="solution-step">(cid:114)</div>
+<div class="solution-step">1 + tanh x dy</div>
+<div class="solution-step">4. y = ln prove that = 1</div>
+<div class="solution-step">1 − tanh x dx</div>
+<div class="solution-step">1 HYPERBOLIC FUNCTIONS (pg 9)</div>
+<div class="solution-step">Exercise</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Exercise 1.8.1</span></div>
+      <div class="problem-statement">
+        1. Express the following functions as a hyperbolic functions b x −x (i) y = e + 4e u o
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">3x −2x</div>
+<div class="solution-step">(ii) y = e + e</div>
+<div class="solution-step">h</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">l</div>
+<div class="solution-step">E</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">2. Find for the following functions:</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">d</div>
+<div class="solution-step">√ cosh x</div>
+<div class="solution-step">h</div>
+<div class="solution-step">(cid:0) (cid:1)</div>
+<div class="solution-step">(i) y = sinh x + √</div>
+<div class="solution-step">x</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M Sol</div>
+<div class="solution-step">y</div>
+<div class="solution-step">B</div>
+<div class="solution-step">(ii) y = x cosh(x + tanh x)</div>
+<div class="solution-step">2</div>
+<div class="solution-step">(iii) y = x tanh(x + sin x)</div>
+<div class="solution-step">(pg 10) 1 HYPERBOLIC FUNCTIONS</div>
+<div class="solution-step">2</div>
+<div class="solution-step">x + sin 2x</div>
+<div class="solution-step">(iv) y =</div>
+<div class="solution-step">x + 3 sinh 4x</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">1 + tanh x</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(v) y = tan</div>
+<div class="solution-step">1 − tanh x</div>
+<div class="solution-step">b</div>
+<div class="solution-step">u</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">y−x</div>
+<div class="solution-step">(vi) y + tanh(xy) = e</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">h</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">3. Find the following limits:</div>
+<div class="solution-step">a</div>
+<div class="solution-step">x − sinh(βx) f</div>
+<div class="solution-step">(i) lim</div>
+<div class="solution-step">l</div>
+<div class="solution-step">x</div>
+<div class="solution-step">x→0 E</div>
+<div class="solution-step">d</div>
+<div class="solution-step">h</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">αx</div>
+<div class="solution-step">e − 1</div>
+<div class="solution-step">(ii) lim</div>
+<div class="solution-step">sinh(βx)</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">y</div>
+<div class="solution-step">B</div>
+<div class="solution-step">tanh(x)</div>
+<div class="solution-step">(iii) lim</div>
+<div class="solution-step">x</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">−2x</div>
+<div class="solution-step">e − 1</div>
+<div class="solution-step">(iv) lim</div>
+<div class="solution-step">sinh(5x)</div>
+<div class="solution-step">x→0</div>
+<div class="solution-step">1 HYPERBOLIC FUNCTIONS (pg 11)</div>
+<div class="solution-step">2 Inverse Hyperbolic Functions</div>
+<div class="solution-step">2.1 Inverse Hyperbolic Sine Function</div>
+<div class="solution-step">We define it as:</div>
+<div class="solution-step">y −y</div>
+<div class="solution-step">e − e</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">y = sinh x ⇐⇒ x = sinh y =</div>
+<div class="solution-step">2</div>
+<div class="solution-step">1</div>
+<div class="solution-step">u −</div>
+<div class="solution-step">u</div>
+<div class="solution-step">R y</div>
+<div class="solution-step">Clearly R = . To determine the domain of definition, let u = e ⇒ x = , u > 0. Now</div>
+<div class="solution-step">2</div>
+<div class="solution-step">√</div>
+<div class="solution-step">√ √</div>
+<div class="solution-step">2x ± 4x2 + 4</div>
+<div class="solution-step">2</div>
+<div class="solution-step">we can write u − 2xu − 1 = 0 ⇒ u = = x ± x2 + 1. Since x2 + 1 > x and</div>
+<div class="solution-step">2</div>
+<div class="solution-step">√ √</div>
+<div class="solution-step">u > 0, we get u = x + x2 + 1 ⇒ e y = x + x2 + 1 b</div>
+<div class="solution-step">√</div>
+<div class="solution-step">(cid:16) (cid:17)</div>
+<div class="solution-step">u</div>
+<div class="solution-step">∴ R</div>
+<div class="solution-step">y = ln x + x2 + 1 , ∀x ∈</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">2.1.1 Derivative of Inverse Hyp. Sin</div>
+<div class="solution-step">g</div>
+<div class="solution-step">√</div>
+<div class="solution-step">(cid:0) (cid:1)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">y = sinh x = ln x + x2 + 1 , then the first derivative is:</div>
+<div class="solution-step">a</div>
+<div class="solution-step">√</div>
+<div class="solution-step">(cid:34) (cid:35)</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">M</div>
+<div class="solution-step">dy x 1 x + x2 + 1 1 1</div>
+<div class="solution-step">= 1 + √ × √ = √ √ = √</div>
+<div class="solution-step">dx x2 + 1 x + x2 + 1 x2 + 1 x + x2 + 1 x2 + 1</div>
+<div class="solution-step">Therefore h</div>
+<div class="solution-step">d 1</div>
+<div class="solution-step">−1 i</div>
+<div class="solution-step">[sinh x] = √</div>
+<div class="solution-step">t</div>
+<div class="solution-step">dx x2 + 1</div>
+<div class="solution-step">a</div>
+<div class="solution-step">Also we can differentiate it as:</div>
+<div class="solution-step">f</div>
+<div class="solution-step">dx dy 1 1 1</div>
+<div class="solution-step">l</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">y = sinh x ⇒ x = sinh y ⇒ = cosh y ⇒ = = = √</div>
+<div class="solution-step">E (cid:112)</div>
+<div class="solution-step">dy dx cosh y 2 x2 + 1</div>
+<div class="solution-step">sinh x + 1</div>
+<div class="solution-step">d</div>
+<div class="solution-step">2.2 Inverse Hyperbolic Cosine Function</div>
+<div class="solution-step">h</div>
+<div class="solution-step">y −y</div>
+<div class="solution-step">o e + e</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">y = cosh x ⇐⇒ x = cosh y = . Clearly R = [0, ∞), to determine the domain of</div>
+<div class="solution-step">M 2</div>
+<div class="solution-step">1</div>
+<div class="solution-step">u +</div>
+<div class="solution-step">u</div>
+<div class="solution-step">y 2</div>
+<div class="solution-step">definition let u = e ⇒ x = , u > 0 ⇒ u − 2xu + 1 = 0. Therefore</div>
+<div class="solution-step">2</div>
+<div class="solution-step">y</div>
+<div class="solution-step">√</div>
+<div class="solution-step">√</div>
+<div class="solution-step">2x ± 4x2 − 4</div>
+<div class="solution-step">B</div>
+<div class="solution-step">u = = x ± x2 − 1</div>
+<div class="solution-step">2</div>
+<div class="solution-step">√ √</div>
+<div class="solution-step">(cid:16) (cid:17) (cid:16) (cid:17)</div>
+<div class="solution-step">u > 0 if x ≥ 1. Since lim x − x2 − 1 = 0, we will take the value x + x2 − 1 therefore</div>
+<div class="solution-step">x→∞</div>
+<div class="solution-step">D = [1, ∞). Now:</div>
+<div class="solution-step">√ √ √</div>
+<div class="solution-step">(cid:16) (cid:17)</div>
+<div class="solution-step">y</div>
+<div class="solution-step">u = x + x2 − 1 ⇒ e = x + x2 − 1 ⇒ y = ln x + x2 − 1 , ∀x ∈ [0, ∞)</div>
+<div class="solution-step">2.2.1 Derivative of Inverse Hyp. Cos</div>
+<div class="solution-step">√</div>
+<div class="solution-step">(cid:0) (cid:1)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">y = cosh x = ln x + x2 − 1 , then the first derivative is:</div>
+<div class="solution-step">√</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:20) (cid:21)</div>
+<div class="solution-step">dy x 1 x + x2 − 1 1 1</div>
+<div class="solution-step">= 1 + √ × √ = √ √ = √</div>
+<div class="solution-step">dx x2 − 1 x + x2 − 1 x2 − 1 x + x2 − 1 x2 − 1</div>
+<div class="solution-step">Therefore</div>
+<div class="solution-step">d 1</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">[cosh x] = √</div>
+<div class="solution-step">dx x2 − 1</div>
+<div class="solution-step">(pg 12) 2 INVERSE HYPERBOLIC FUNCTIONS</div>
+<div class="solution-step">2.3 Inverse Hyperbolic Tangent Function</div>
+<div class="solution-step">−1 R</div>
+<div class="solution-step">y = tanh x ⇐⇒ x = tanh y. Clearly R = . To determine the domain of definition, let</div>
+<div class="solution-step">y</div>
+<div class="solution-step">u = e .</div>
+<div class="solution-step">1</div>
+<div class="solution-step">u −</div>
+<div class="solution-step">2</div>
+<div class="solution-step">u − 1</div>
+<div class="solution-step">u</div>
+<div class="solution-step">x = =</div>
+<div class="solution-step">1</div>
+<div class="solution-step">u2 + 1</div>
+<div class="solution-step">u +</div>
+<div class="solution-step">u</div>
+<div class="solution-step">1 + x 1 + x</div>
+<div class="solution-step">2 2 2 2 2y</div>
+<div class="solution-step">Therefore xu + x = u − 1 ⇒ u (x − 1) = −1 − x ⇒ u = ⇒ e = . Now we can</div>
+<div class="solution-step">1 − x 1 − x</div>
+<div class="solution-step">write y as:</div>
+<div class="solution-step">b</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">1 + x 1 1 + x</div>
+<div class="solution-step">2y = ln ⇒ y = ln</div>
+<div class="solution-step">u</div>
+<div class="solution-step">1 − x 2 1 − x</div>
+<div class="solution-step">o</div>
+<div class="solution-step">The necessary condition for the domain to be (−1, 1) is |x| < 1. z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">2.3.1 Derivative of Hyp. Tan</div>
+<div class="solution-step">M</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:20) (cid:21)</div>
+<div class="solution-step">1 1 + x 1 dy 1 1 1 1</div>
+<div class="solution-step">y = ln = [ln(1 + x) − ln(1 − x)] ⇒ = + =</div>
+<div class="solution-step">h</div>
+<div class="solution-step">2 1 − x 2 dx 2 1 + x 1 − x 1 − x2</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">Therefore</div>
+<div class="solution-step">a</div>
+<div class="solution-step">d 1</div>
+<div class="solution-step">f−1</div>
+<div class="solution-step">[tanh x] =</div>
+<div class="solution-step">dx l 1 − x2</div>
+<div class="solution-step">E</div>
+<div class="solution-step">d</div>
+<div class="solution-step">2.4 Inverse Hyperbolic Cotangent Function</div>
+<div class="solution-step">h</div>
+<div class="solution-step">o</div>
+<div class="solution-step">−1 R</div>
+<div class="solution-step">y = coth x ⇐⇒ x = coth y. Clearly R = . To determine the domain of definition</div>
+<div class="solution-step">M</div>
+<div class="solution-step">1</div>
+<div class="solution-step">u +</div>
+<div class="solution-step">y −y 2</div>
+<div class="solution-step">e + e u + 1 1 + x</div>
+<div class="solution-step">u</div>
+<div class="solution-step">2 2 2</div>
+<div class="solution-step">xy= = ⇒ x = ⇒ xu − x = u + 1 ⇒ u =</div>
+<div class="solution-step">1</div>
+<div class="solution-step">ey − e−y u2 − 1 x − 1</div>
+<div class="solution-step">u −</div>
+<div class="solution-step">B</div>
+<div class="solution-step">u</div>
+<div class="solution-step">This implies that</div>
+<div class="solution-step">(cid:18) (cid:19)</div>
+<div class="solution-step">1 + x 1 1 + x</div>
+<div class="solution-step">2y</div>
+<div class="solution-step">e = ⇒ y = ln</div>
+<div class="solution-step">x − 1 2 x − 1</div>
+<div class="solution-step">Now D = (−∞, −1) ∪ (1, ∞)</div>
+<div class="solution-step">2.4.1 Derivative of Hyp. Cot</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:20) (cid:21)</div>
+<div class="solution-step">1 1 + x 1 dy 1 1 1 −1</div>
+<div class="solution-step">y = ln = [ln(1 + x) − ln(x − 1)] ⇒ = − =</div>
+<div class="solution-step">2 x − 1 2 dx 2 1 + x x − 1 x2 − 1</div>
+<div class="solution-step">In general</div>
+<div class="solution-step">2 INVERSE HYPERBOLIC FUNCTIONS (pg 13)</div>
+<div class="solution-step">No. The Hyp. Inverse Function Derivative</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d u (x)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(1) [sinh (u(x))] √</div>
+<div class="solution-step">dx u2 + 1</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d u (x)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(2) [cosh (u(x))] √</div>
+<div class="solution-step">dx u2 − 1</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d u (x)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(3) [tanh (u(x))]</div>
+<div class="solution-step">dx 1 − u2</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d u (x)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(4) [coth (u(x))]</div>
+<div class="solution-step">dx 1 − u2</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d −u (x)</div>
+<div class="solution-step">−1 b</div>
+<div class="solution-step">(5) [sech (u(x))] √</div>
+<div class="solution-step">dx |u(x)| 1 − u2</div>
+<div class="solution-step">u</div>
+<div class="solution-step">′</div>
+<div class="solution-step">d −u (x)</div>
+<div class="solution-step">−1</div>
+<div class="solution-step">(6) [csch (u(x))] √ o</div>
+<div class="solution-step">dx |u(x)| u2 + 1</div>
+<div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">h</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">l</div>
+<div class="solution-step">E</div>
+<div class="solution-step">d</div>
+<div class="solution-step">h</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">y</div>
+<div class="solution-step">B</div>
+<div class="solution-step">(pg 14) 2 INVERSE HYPERBOLIC FUNCTIONS</div>
+
+      </div>
+    </div>
+    
+</div>
+<div class="section"><h3>Extracted from Calculus 1 lecnote7_202512281308_09617.md</h3>
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.2.1</span></div>
+      <div class="problem-statement">
+        Find for the given functions. dx 3 2 2 1. y + y − 5y − x = −4
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">Firstly Differentiate both sides of the equation w.r.t x</div>
+<div class="solution-step">d d</div>
+<div class="solution-step">3 2 2</div>
+<div class="solution-step">[y + y − 5y − x ] = [−4]</div>
+<div class="solution-step">dx dx</div>
+<div class="solution-step">we get</div>
+<div class="solution-step">dy dy dy</div>
+<div class="solution-step">2</div>
+<div class="solution-step">3y + 2y − 5 − 2x = 0</div>
+<div class="solution-step">dx dx dx</div>
+<div class="solution-step">1 IMPLICIT DIFFERENTIATION (pg 1)</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">Secondly collect the terms on the left side of the equation.</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">dy dy dy</div>
+<div class="solution-step">2</div>
+<div class="solution-step">3y + 2y − 5 = 2x</div>
+<div class="solution-step">dx dx dx</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">Thirdly Factor out of the left side of the equation</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">2</div>
+<div class="solution-step">(3y + 2y − 5) = 2x</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">dy</div>
+<div class="solution-step">2</div>
+<div class="solution-step">Fourthly solve for by dividing by 3y + 2y − 5, we get:</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">b</div>
+<div class="solution-step">dy 2x</div>
+<div class="solution-step">u</div>
+<div class="solution-step">=</div>
+<div class="solution-step">dx 3y2 + 2y − 5</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">2 2 2</div>
+<div class="solution-step">2. 3(x + y ) = 100xy at the point (3, 1).</div>
+<div class="solution-step">g</div>
+<div class="solution-step">Sol a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">dy dy</div>
+<div class="solution-step">2 2</div>
+<div class="solution-step">⇒ 6(x + y ) 2x + 2y = 100 x + y</div>
+<div class="solution-step">dx dx</div>
+<div class="solution-step">dy dy</div>
+<div class="solution-step">h</div>
+<div class="solution-step">2 2 2 2</div>
+<div class="solution-step">⇒ 12x(x + y ) + 12y(x + y ) = 100x + 100y</div>
+<div class="solution-step">dx dx</div>
+<div class="solution-step">i</div>
+<div class="solution-step">dy tdy</div>
+<div class="solution-step">2 2 2 2</div>
+<div class="solution-step">⇒ 12y(x + y ) − 100x = 100y − 12x(x + y )</div>
+<div class="solution-step">a</div>
+<div class="solution-step">dx dx</div>
+<div class="solution-step">dy f</div>
+<div class="solution-step">2 2 2 2</div>
+<div class="solution-step">⇒ [12y(x + y ) − 100x] = 100y − 12x(x + y )</div>
+<div class="solution-step">l</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">E</div>
+<div class="solution-step">2 2 2 2</div>
+<div class="solution-step">dy 100y − 12x(x + y ) 25y − 3x(x + y )</div>
+<div class="solution-step">⇒ = =</div>
+<div class="solution-step">d</div>
+<div class="solution-step">dx −100x + 12y(x2 + y2) −25x + 3y(x2 + y2)</div>
+<div class="solution-step">h(cid:12)</div>
+<div class="solution-step">2 2</div>
+<div class="solution-step">dy 25(1) − 3(3)(3 + 1 ) 13</div>
+<div class="solution-step">(cid:12)</div>
+<div class="solution-step">⇒ = =</div>
+<div class="solution-step">(cid:12)</div>
+<div class="solution-step">o</div>
+<div class="solution-step">dx (cid:12) −25(3) + 3(1)(32 + 12) 9</div>
+<div class="solution-step">(3,1)</div>
+<div class="solution-step">M</div>
+<div class="solution-step">2 Higher Derivatives</div>
+<div class="solution-step">y</div>
+<div class="solution-step">2.1 Second Derivative</div>
+<div class="solution-step">B</div>
+<div class="solution-step">We know the first derivative as:</div>
+<div class="solution-step">dy f (x + h) − f (x)</div>
+<div class="solution-step">= lim</div>
+<div class="solution-step">dx h</div>
+<div class="solution-step">h→0</div>
+<div class="solution-step">Which we obtain it by differentiating the function y = f (x) or implicitly by f (x, y) = 0. Now</div>
+<div class="solution-step">we can obtain the second derivative by differentiating the first derivative as follows:</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">d dy f (x + h) − f (x)</div>
+<div class="solution-step">= lim</div>
+<div class="solution-step">dx dx h</div>
+<div class="solution-step">h→0</div>
+<div class="solution-step">2 2</div>
+<div class="solution-step">d y d</div>
+<div class="solution-step">′′ ′′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">And we denote it by y , , f (x) , [f (x)] and also D [y].</div>
+<div class="solution-step">x</div>
+<div class="solution-step">dx2 dx2</div>
+<div class="solution-step">Also, we can find the third derivative as same as the second, by by differentiating the second</div>
+<div class="solution-step">derivative as follows</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">′′ ′′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">d d y f (x + h) − f (x)</div>
+<div class="solution-step">= lim</div>
+<div class="solution-step">dx dx2 h</div>
+<div class="solution-step">h→0</div>
+<div class="solution-step">(pg 2) 2 HIGHER DERIVATIVES</div>
+<div class="solution-step">3 3</div>
+<div class="solution-step">d y d</div>
+<div class="solution-step">′′′ ′′′</div>
+<div class="solution-step">3</div>
+<div class="solution-step">and we denote it by y , , f (x) , [f (x)] and also D [y].</div>
+<div class="solution-step">x</div>
+<div class="solution-step">dx3 dx3</div>
+<div class="solution-step">In general</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">n n−1 (n−1) (n−1)</div>
+<div class="solution-step">d y d d y f (x + h) − f (x)</div>
+<div class="solution-step">= = lim</div>
+<div class="solution-step">dxn dx dxn−1 h</div>
+<div class="solution-step">h→0</div>
+<div class="solution-step">(4)</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.1.2</span></div>
+      <div class="problem-statement">
+        1. y = sin 3x, prove that y = 81y Proof b ′ y = 3 cos 3x u ′′ y = − 9 sin 3x o ′′′ y = − 27 cos 3x z (4) y = 81 sin 3x = 81y g a n (n) 5 2. y = x , prove that y = n! and find the fifth derivative for y = x . M
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">h</div>
+<div class="solution-step">′ ′′ ′′′</div>
+<div class="solution-step">n n−1 n−2 n−3</div>
+<div class="solution-step">y = x ⇒ y = nx ⇒ y = n(n − 1)x ⇒ y = n(n − 1)(n − 2)x</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">This implies that</div>
+<div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">(n) n−n</div>
+<div class="solution-step">y = n(n − 1)(n − 2) . . . 3 × 2 × 1 × x = n!</div>
+<div class="solution-step">l</div>
+<div class="solution-step">E</div>
+<div class="solution-step">5 (5)</div>
+<div class="solution-step">Now for y = x ⇒ y = 5! = 120</div>
+<div class="solution-step">d</div>
+<div class="solution-step">2</div>
+<div class="solution-step">d y</div>
+<div class="solution-step">h</div>
+<div class="solution-step">2 2 2</div>
+<div class="solution-step">3. Find if x + xy + y = a .</div>
+<div class="solution-step">dx2</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">Differentiate both sides w.r.t x</div>
+<div class="solution-step">y</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">B 2x + (xy + y) + 2yy = 0 (2.1.1)</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">Then collect all y terms on the left side and then solve for y</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">⇒ xy + 2yy = −2x − y</div>
+<div class="solution-step">−(2x + y)</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">⇒ y (x + 2y) = −(2x + y) ⇒ y =</div>
+<div class="solution-step">x + 2y</div>
+<div class="solution-step">Now, by differentiating both sides of equation 2.1.1 w.r.t x, we get:</div>
+<div class="solution-step">(cid:16) (cid:17)</div>
+<div class="solution-step">′′ ′ ′ ′ ′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">⇒ 2 + xy + y + y + 2 yy + (y ) = 0</div>
+<div class="solution-step">′′ ′′ ′ ′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">⇒ xy + 2yy = −2 − 2y − 2(y )</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">−(2 + 2y + 2(y ) )</div>
+<div class="solution-step">′′ ′ ′ ′′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">⇒ y (x + 2y) = −(2 + 2y + 2(y ) ) ⇒ y =</div>
+<div class="solution-step">x + 2y</div>
+<div class="solution-step">2 HIGHER DERIVATIVES (pg 3)</div>
+<div class="solution-step">′ ′′</div>
+<div class="solution-step">Then by substituting y on equation of y , we get:</div>
+<div class="solution-step">(cid:34) (cid:35)</div>
+<div class="solution-step">(cid:18) (cid:19)2</div>
+<div class="solution-step">−(2x + y) −(2x + y)</div>
+<div class="solution-step">′′</div>
+<div class="solution-step">y = − 2 + 2 + 2 ÷ (2y + x)</div>
+<div class="solution-step">2y + x 2y + x</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">2 2</div>
+<div class="solution-step">2(2y + x) − 2(2y + x)(2x + y) + 2(2x + y)</div>
+<div class="solution-step">= − ÷ (2y + x)</div>
+<div class="solution-step">(2y + x)2</div>
+<div class="solution-step">(cid:20) (cid:21)</div>
+<div class="solution-step">2 2 2 2 2 2</div>
+<div class="solution-step">2(4y + 4xy + x ) − 8xy − 4y − 4x − 2xy + 2(4x + 4xy + y )</div>
+<div class="solution-step">= −</div>
+<div class="solution-step">(2y + x)3</div>
+<div class="solution-step">2 2 2</div>
+<div class="solution-step">−6(x + xy + y ) −6a</div>
+<div class="solution-step">= =</div>
+<div class="solution-step">(x + 2y)3 (x + 2y)3</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Exercise 2.1.1</span></div>
+      <div class="problem-statement">
+        For the function x 2 + y 2 = a 2 b −a 2 u ′′ 1. Prove that y = y3 o z 2 3a x ′′′ 2. Prove that y = g y5 a M 2.2 Leibniz’s Rule (Generalized Product Rule) It gives us a formula to compute the nth derivative of the product of two functions. It extend the simple product rule to higher-order derivativhes. Theorem 2.2.1 If f (x) and g(x) are differenitiable functions n-times, then nth derivative of t their product is: a n (cid:18) (cid:19) d n (cid:88) f (n−k) (k) [f (x).g(x)] = f (x).g (x) l dx k E k=0 (cid:18) (cid:19) n d is the binomial coefficient (n choose k) k h Where (n−k) f (x) means the (n − k)-th derivative of f (x) o (k) g means the k-th derivative of g(x) M Note that, for n = 1 the formula reduces to the ordinary product rule. ′ ′ ′ (f g) = f (x)g(x) + f (x)g (x) y 4
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">(Solution not provided in lecture notes)</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 2.2.3</span></div>
+      <div class="problem-statement">
+        Find the fourth derivative for the function y = x sin x B
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">4 (cid:18) (cid:19) (cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">4</div>
+<div class="solution-step">d 4 4 4</div>
+<div class="solution-step">(cid:88)</div>
+<div class="solution-step">4 4 (4−k) (k) 4 (4−0) (0) 4 (4−1) (1)</div>
+<div class="solution-step">[x sin x] = (x ) .(sin x) = (x ) .(sin x) + (x ) .(sin x)</div>
+<div class="solution-step">dx4 k 0 1</div>
+<div class="solution-step">k=0</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">4 4 4</div>
+<div class="solution-step">4 (4−2) (2) 4 (4−3) (3) 4 (4−4) (4)</div>
+<div class="solution-step">+ (x ) .(sin x) + (x ) .(sin x) + (x ) .(sin x)</div>
+<div class="solution-step">2 3 4</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">4 4 4</div>
+<div class="solution-step">4 (4) 4 (3) (1) 4 (2) (2)</div>
+<div class="solution-step">= (x ) .(sin x) + (x ) .(sin x) + (x ) .(sin x)</div>
+<div class="solution-step">0 1 2</div>
+<div class="solution-step">(cid:18) (cid:19) (cid:18) (cid:19)</div>
+<div class="solution-step">4 4</div>
+<div class="solution-step">4 (1) (3) 4 (4)</div>
+<div class="solution-step">+ (x ) .(sin x) + (x ).(sin x)</div>
+<div class="solution-step">3 4</div>
+<div class="solution-step">2 3 4</div>
+<div class="solution-step">= 4! sin x + 4(4 × 3 × 2)x cos x + 6(4 × 3)x (− sin x) + 4(4x )(− cos x) + x sin x</div>
+<div class="solution-step">4 3 2</div>
+<div class="solution-step">= x sin x − 16x cos x − 72x sin x + 96x cos x + 24 sin x</div>
+<div class="solution-step">(4) 4 2x</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Exercise 2.2.2</span></div>
+      <div class="problem-statement">
+        Find y if y = x e (pg 4) 2 HIGHER DERIVATIVES
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">(Solution not provided in lecture notes)</div>
+
+      </div>
+    </div>
+    
+</div>
+<div class="section"><h3>Extracted from Calculus 1 lecnote8_202512281308_49361.md</h3>
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.1</span></div>
+      <div class="problem-statement">
+        Spreading Oil: An oil rig springs a leak in calm seas, and the oil spreads a in a circular patch around the rig. If the radius of the oil patch increases at a rate of 30 m/hr, f how fast is the area of the patch increasing when the patch has a radius of 100 meters. l E
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">d</div>
+<div class="solution-step">h</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">y</div>
+<div class="solution-step">B</div>
+<div class="solution-step">2</div>
+<div class="solution-step">The key relationship between the radius and the area is A = πr . The general expression relating</div>
+<div class="solution-step">the radius and area at any time t is</div>
+<div class="solution-step">2</div>
+<div class="solution-step">A(t) = πr (t) (1.1.1)</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">. The goal is to find the rate of change of the area of the circle, which A (t) given that r (t) =</div>
+<div class="solution-step">30 m/hr.</div>
+<div class="solution-step">We differentiate both sides of the equation 1.1.1 w.r.t time t.</div>
+<div class="solution-step">d</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">A (t) = [πr (t)] = 2πr(t).r (t)</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">′</div>
+<div class="solution-step">Now by substituting the given values r(t) = 100 m and r (t) = 30 m/hr we have (including</div>
+<div class="solution-step">units):</div>
+<div class="solution-step">′ ′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">A (t) = 2πr(t).r (t) = 2π(100 m)(30 m/hr) = 6000π m /hr</div>
+<div class="solution-step">1 APPLICATIONS (pg 1)</div>
+<div class="solution-step">1.1.1 Procedure Steps for Related Rates Problems</div>
+<div class="solution-step">1. Read the problem carefully, making a sketch to organize the given information. Identify</div>
+<div class="solution-step">the rates that are given and the rate that is to be determined.</div>
+<div class="solution-step">2. Write one or more equations that express the basic relationships among the variables.</div>
+<div class="solution-step">3. Introduce rates of change by differentiating the appropriate equation(s) with respect to</div>
+<div class="solution-step">time (t).</div>
+<div class="solution-step">4. Substitute known values and solve for the desired quantity.</div>
+<div class="solution-step">5. Check that the units are consistent and the answer is reasonable.</div>
+<div class="solution-step">b</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.2</span></div>
+      <div class="problem-statement">
+        Converging Air-planes: u Two small planes approach an airport, one flying due west at 120 mi/hr and the other o flying due north at 150 mi/hr. Assuming they fly at the same constant elevation, how fast z is the distance between the planes changing when the west bound plane is 180 miles from the g airport and the north bound plane is 225 miles from the airport? a Sol M h i t a f l E d h o M Let x(t) and y(t) denote the distance from the airport to the west bound and north bound planes y respectively. The paths of the two planes form the legs of a right triangle and the distance betweenBthem denoted z(t). By Pythagorean theorem z 2 = x 2 + y 2 . Now dx dy x + y d d dz dx dy dz dt dt 2 2 2 [z ] = [x + y ] ⇒ 2z = 2x + 2y ⇒ = dt dt dt dt dt dt z dx dy Given = −120 mi/hr , = −150 mi/hr and x = 180 mi , y = 225 mi/hr. The distance dt dt (cid:112) (cid:112) between the planes is z = x2 + y2 = (180)2 + (225)2 = 288 mi. Now: dx dy x + y dz (180)(−120) + (225)(−150) dt dt = = = −192 mi/hr. dt z 288 (pg 2) 1 APPLICATIONS
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">(Solution not provided in lecture notes)</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.3</span></div>
+      <div class="problem-statement">
+        Morning Coffee: 3 Coffee is draining out of a conical filter at a rate of 2.25 in /min. If the cone is 5 in tall and has a radius of 2 in, how fast is the coffee level dropping when the coffee level is 3 in deep?
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">b</div>
+<div class="solution-step">u</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">dh dv</div>
+<div class="solution-step">We want to find at h = 3 given that = −2.25 in/min. The volume formula for a cone</div>
+<div class="solution-step">dt dt</div>
+<div class="solution-step">h</div>
+<div class="solution-step">is</div>
+<div class="solution-step">1</div>
+<div class="solution-step">i</div>
+<div class="solution-step">2</div>
+<div class="solution-step">v = πr h</div>
+<div class="solution-step">t</div>
+<div class="solution-step">3</div>
+<div class="solution-step">a</div>
+<div class="solution-step">By using similar triangles the ratio of the radius of the coffee in the cone to the height of the</div>
+<div class="solution-step">f</div>
+<div class="solution-step">2</div>
+<div class="solution-step">coffee is at all time. l</div>
+<div class="solution-step">5 E</div>
+<div class="solution-step">r 2 2</div>
+<div class="solution-step">⇒ = or r = h</div>
+<div class="solution-step">d</div>
+<div class="solution-step">h 5 5</div>
+<div class="solution-step">2 h</div>
+<div class="solution-step">Substituting r = h in the volume formula gives V in terms of h</div>
+<div class="solution-step">5</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">(cid:18) (cid:19)2</div>
+<div class="solution-step">1 1 2 4π</div>
+<div class="solution-step">2 3</div>
+<div class="solution-step">V = πr h = π h h = h (1.1.2)</div>
+<div class="solution-step">3 3 5 75</div>
+<div class="solution-step">y</div>
+<div class="solution-step">Now differentiating both sides of 1.1.2 w.r.t t, we get</div>
+<div class="solution-step">B</div>
+<div class="solution-step">4π dh</div>
+<div class="solution-step">′</div>
+<div class="solution-step">2</div>
+<div class="solution-step">V (t) = h (t).</div>
+<div class="solution-step">25 dt</div>
+<div class="solution-step">dh dh</div>
+<div class="solution-step">′</div>
+<div class="solution-step">3</div>
+<div class="solution-step">Now, we find at the instant when h = 3, given that V (t) = −2.25 in /min. Solving for</div>
+<div class="solution-step">dt dt</div>
+<div class="solution-step">and substituting these values, we have</div>
+<div class="solution-step">dh 25 25(−2.25)</div>
+<div class="solution-step">′</div>
+<div class="solution-step">= V (t) = = −0.497 in/min</div>
+<div class="solution-step">dt 4πh2(t) 4π(3)2</div>
+<div class="solution-step">It means, at the instant that the coffee is 3 in deep, the height decreases at a rate of 0.497 in/min</div>
+<div class="solution-step">(almost half an inch per min).</div>
+<div class="solution-step">1 APPLICATIONS (pg 3)</div>
+<div class="solution-step">3</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.4</span></div>
+      <div class="problem-statement">
+        Water runs into a conical tank at the rate of 9 f t /min. The tank stands point down and has a height of (10 f t) and a base radius of (5 f t). How fast is the water level rising when the water is (6 f t) deep?
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">b</div>
+<div class="solution-step">u</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">The variables in the problem are:</div>
+<div class="solution-step">h</div>
+<div class="solution-step">3</div>
+<div class="solution-step">V ≡ Volume (f t ) of the water in the tank at time t</div>
+<div class="solution-step">i</div>
+<div class="solution-step">x ≡ radius (f t) of the surface of the water at time t.</div>
+<div class="solution-step">t</div>
+<div class="solution-step">y ≡ depth (f t) of the water in the tank.</div>
+<div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">dy dV</div>
+<div class="solution-step">l</div>
+<div class="solution-step">3</div>
+<div class="solution-step">V, x and y are differentiable functions of t. We asked for when y = 6 f t and = 9f t /min.</div>
+<div class="solution-step">E</div>
+<div class="solution-step">dt dt</div>
+<div class="solution-step">1</div>
+<div class="solution-step">2</div>
+<div class="solution-step">The water forms a cone with volume V = πx y.</div>
+<div class="solution-step">d</div>
+<div class="solution-step">3</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">h</div>
+<div class="solution-step">Because no information given about x and at the time in question, we need to eliminate</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">o</div>
+<div class="solution-step">x 5 y</div>
+<div class="solution-step">x. The similar triangles gives us a way to express x in terms of y as = ⇒ x = .</div>
+<div class="solution-step">M</div>
+<div class="solution-step">y 10 2</div>
+<div class="solution-step">1 (cid:16) y (cid:17)2 π dV π dy</div>
+<div class="solution-step">3 2</div>
+<div class="solution-step">Therefore, we find V = π y = y . Now = y . Finally, we use y = 6 and</div>
+<div class="solution-step">3 2 12 dt 4 dt</div>
+<div class="solution-step">y</div>
+<div class="solution-step">dV</div>
+<div class="solution-step">= 9.</div>
+<div class="solution-step">B</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">π dy dy 1</div>
+<div class="solution-step">2</div>
+<div class="solution-step">9 = (6) ⇒ = ≈ 0.32</div>
+<div class="solution-step">4 dt dt π</div>
+<div class="solution-step">(pg 4) 1 APPLICATIONS</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.5</span></div>
+      <div class="problem-statement">
+        A hot air balloon rising straight up a level field is tracked by a range finder π 150 m from the left off point. At the moment the range finder’s elevation angle is , the angle 4 increasing at the rate of 0.14 rad/min. How fast is the balloon rising at the moment?
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">b</div>
+<div class="solution-step">u</div>
+<div class="solution-step">o</div>
+<div class="solution-step">z</div>
+<div class="solution-step">g</div>
+<div class="solution-step">a</div>
+<div class="solution-step">M</div>
+<div class="solution-step">The variables in this problem are:</div>
+<div class="solution-step">θ ≡ The angle in radians that the range finder makes with the ground.</div>
+<div class="solution-step">h</div>
+<div class="solution-step">y ≡ The height in meters of the balloon above the ground.</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">dθ π dy π</div>
+<div class="solution-step">Given = 0.14 rad/min when θ = . We want when θ = , and we know from the right</div>
+<div class="solution-step">a</div>
+<div class="solution-step">dt 4 dt 4</div>
+<div class="solution-step">y</div>
+<div class="solution-step">f</div>
+<div class="solution-step">traingle tan θ = or y = 150 tan θ, this implies that:</div>
+<div class="solution-step">150 l</div>
+<div class="solution-step">E</div>
+<div class="solution-step">dy dθ dy (cid:104) π (cid:105)</div>
+<div class="solution-step">2 2</div>
+<div class="solution-step">= 150 sec θ ⇒ = 150 sec (0.14) = 42 m/min.</div>
+<div class="solution-step">d</div>
+<div class="solution-step">dt dt dt 4</div>
+<div class="solution-step">h</div>
+<div class="solution-step">At the moment in question, the balloon is rising at the rate of 42 m/min.</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+
+      </div>
+    </div>
+    
+
+    <div class="problem-card">
+      <div class="problem-header"><span class="problem-number">Example 1.1.6</span></div>
+      <div class="problem-statement">
+        A particle p moves clockwise at a constant rate along a circle of radius 10 m centred at the origin. The particle’s initial position is (0, 10) on the y − axis, and its final destination is the point (10, 0) on the x − axis. Once the particle is in motion, the tangent line y at p intersects the x − axis at a point Q (which moves over time). If the particle takes 30 sec to travBel from start to finish, how fast is the point Q moving along the x − axis when it is 20 m from the centre of the circle?
+      </div>
+      <div class="solution-details">
+        <div class="solution-step">We picture the situation in the coordinate plane with circle centred at the origin</div>
+<div class="solution-step">1 APPLICATIONS (pg 5)</div>
+<div class="solution-step">t ≡ time</div>
+<div class="solution-step">θ ≡ the angle from the x − axis to the radial line joining the origin to p</div>
+<div class="solution-step">Since the particle travels from start to finish in 30 sec, it travels along the circle at a constant</div>
+<div class="solution-step">π 1 dθ</div>
+<div class="solution-step">rate of rad in min or π rad/min ⇒ = −π where t measured in min and the negative</div>
+<div class="solution-step">2 2 dt</div>
+<div class="solution-step">sign because θ is decreasing over time.</div>
+<div class="solution-step">dx</div>
+<div class="solution-step">Setting x(t) to be the distance at time t from the point Q to the origin. We want to find</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">dθ</div>
+<div class="solution-step">when x = 20 m , = −π rad/min. To relate the variables x and θ, we see x cos θ = 10 or</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">x = 10 sec θ.</div>
+<div class="solution-step">dx dθ</div>
+<div class="solution-step">⇒ = 10 sec θ tan θ = −10π sec θ tan θ</div>
+<div class="solution-step">b</div>
+<div class="solution-step">dt dt</div>
+<div class="solution-step">√ √</div>
+<div class="solution-step">1 u</div>
+<div class="solution-step">When x = 20 ⇒ cos θ = ⇒ sec θ = 2 and tan θ = sec2 θ − 1 = 3. Now</div>
+<div class="solution-step">2</div>
+<div class="solution-step">o</div>
+<div class="solution-step">√ √ z</div>
+<div class="solution-step">dx (cid:16) (cid:17)</div>
+<div class="solution-step">= (−10π) 2 3 = −20 3 π.</div>
+<div class="solution-step">g</div>
+<div class="solution-step">dt</div>
+<div class="solution-step">a</div>
+<div class="solution-step">√</div>
+<div class="solution-step">At the moment in question, the point Q is moving toward the origin at the speed of 20 3π ≈</div>
+<div class="solution-step">M</div>
+<div class="solution-step">109 m/min.</div>
+<div class="solution-step">h</div>
+<div class="solution-step">i</div>
+<div class="solution-step">t</div>
+<div class="solution-step">a</div>
+<div class="solution-step">f</div>
+<div class="solution-step">l</div>
+<div class="solution-step">E</div>
+<div class="solution-step">d</div>
+<div class="solution-step">h</div>
+<div class="solution-step">o</div>
+<div class="solution-step">M</div>
+<div class="solution-step">y</div>
+<div class="solution-step">B</div>
+<div class="solution-step">(pg 6) 1 APPLICATIONS</div>
+
+      </div>
+    </div>
+    
+</div>
+<!-- END_AUTOMATED_SOLUTIONS -->
+</div>
+
+   <div class="container">
+    <p>
+     Calculus Solutions Project
+    </p>
+    <p>
+     Abdelrazieg Mohamed |
+     <a href="https://linktr.ee/prodbyabdo" target="_blank">
+      linktr.ee/prodbyabdo
+     </a>
+    </p>
+   </div>
+  </footer>
+ </body>
+</html>

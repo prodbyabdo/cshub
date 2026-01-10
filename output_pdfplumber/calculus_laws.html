@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Calculus I - Laws &amp; Formulas
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  <style>
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .section h2 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .section h3 {
+            color: #cccccc;
+            font-size: 1.3em;
+            margin: 20px 0 15px 0;
+            font-weight: 300;
+        }
+        
+        .formula-box {
+            background: #000000;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #666666;
+        }
+        
+        .important {
+            background: #0a0a0a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .theorem {
+            background: #0a0a0a;
+            border-left: 2px solid #888888;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #000000;
+            border: 1px solid #1a1a1a;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 300;
+        }
+        
+        th {
+            background: #0a0a0a;
+            color: #ffffff;
+            font-weight: 400;
+            border-bottom: 1px solid #333333;
+        }
+        
+        tr:hover {
+            background: #0f0f0f;
+        }
+        
+        .note {
+            background: #0a0a0a;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .note strong {
+            color: #ffffff;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 5px 0;
+            color: #cccccc;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            .container {
+                border: none;
+            }
+            header {
+                background: white;
+                color: black;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <h1>
+     📚 Calculus I Complete Reference
+    </h1>
+    <p>
+     All Laws, Theorems, and Formulas You Need
+    </p>
+    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+     <p style="font-size: 0.9em; opacity: 0.8;">
+      Compiled by
+      <strong>
+       Abdelrazieg Mohamed
+      </strong>
+     </p>
+     <p style="font-size: 0.85em; margin-top: 5px;">
+      <a href="https://linktr.ee/prodbyabdo" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;" target="_blank">
+       linktr.ee/prodbyabdo
+      </a>
+     </p>
+    </div>
+   </header>
+   <div class="content">
+    <!-- LIMITS -->
+    <div class="section">
+     <h2>
+      1. Limits
+     </h2>
+     <h3>
+      Basic Limit Laws
+     </h3>
+     <div class="formula-box">
+      <p>
+       <strong>
+        Definition:
+       </strong>
+      </p>
+      \[\lim_{x \to c} f(x) = L\]
+      <p>
+       means for each \(\epsilon &gt; 0\), there exists \(\delta &gt; 0\) such that if \(0 &lt; |x-c| &lt; \delta\), then \(|f(x)-L| &lt; \epsilon\)
+      </p>
+     </div>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Basic Limits:
+       </strong>
+      </p>
+      \[\lim_{x \to c} b = b\]
+                    \[\lim_{x \to c} x = c\]
+                    \[\lim_{x \to c} x^n = c^n\]
+     </div>
+     <h3>
+      Limit Properties
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Property
+       </th>
+       <th>
+        Formula
+       </th>
+      </tr>
+      <tr>
+       <td>
+        Scalar Multiple
+       </td>
+       <td>
+        \(\lim_{x \to c} [bf(x)] = b\lim_{x \to c} f(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Sum/Difference
+       </td>
+       <td>
+        \(\lim_{x \to c} [f(x) \pm g(x)] = \lim_{x \to c} f(x) \pm \lim_{x \to c} g(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Product
+       </td>
+       <td>
+        \(\lim_{x \to c} [f(x) \cdot g(x)] = \lim_{x \to c} f(x) \cdot \lim_{x \to c} g(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Quotient
+       </td>
+       <td>
+        \(\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)}\), if \(\lim_{x \to c} g(x) \neq 0\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Power
+       </td>
+       <td>
+        \(\lim_{x \to c} [f(x)]^n = \left[\lim_{x \to c} f(x)\right]^n\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Important Limit Theorems
+     </h3>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Squeeze Theorem:
+       </strong>
+      </p>
+      <p>
+       If \( g(x) \le f(x) \le h(x) \) for all \( x \) in an open interval containing \( c \) (except possibly at \( c \)), and if:
+      </p>
+      \[\lim_{x \to c} g(x) = L = \lim_{x \to c} h(x)\]
+      <p>
+       Then: \(\lim_{x \to c} f(x) = L\)
+      </p>
+     </div>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        Cauchy's Theorem:
+       </strong>
+      </p>
+      \[\lim_{x \to a} \frac{x^n - a^n}{x - a} = na^{n-1}\]
+     </div>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        General Cauchy:
+       </strong>
+      </p>
+      \[\lim_{x \to a} \frac{x^n - a^n}{x^m - a^m} = \frac{n}{m}a^{n-m}\]
+     </div>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        Special Case:
+       </strong>
+      </p>
+      \[\lim_{x \to a} \frac{x - a}{x^m - a^m} = \frac{1}{m}a^{1-m}\]
+     </div>
+     <h3>
+      Trigonometric Limits
+     </h3>
+     <div class="formula-box important">
+      \[\lim_{x \to 0} \frac{\sin x}{x} = 1\]
+                    \[\lim_{x \to 0} \frac{\tan x}{x} = 1\]
+                    \[\lim_{x \to 0} \frac{\sin ax}{ax} = 1\]
+                    \[\lim_{x \to 0} \frac{\tan ax}{ax} = 1\]
+                    \[\lim_{x \to 0} \frac{1-\cos x}{x^2} = \frac{1}{2}\]
+     </div>
+     <h3>
+      Exponential Limits
+     </h3>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        The Number e:
+       </strong>
+      </p>
+      \[e = \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = \lim_{n \to 0} (1+n)^{\frac{1}{n}}\]
+     </div>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        General Exponential Limit:
+       </strong>
+      </p>
+      \[\lim_{x \to \infty} \left(1 + \frac{\alpha}{x}\right)^x = e^\alpha\]
+     </div>
+    </div>
+    <!-- CONTINUITY -->
+    <div class="section">
+     <h2>
+      2. Continuity
+     </h2>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Definition of Continuity at a Point:
+       </strong>
+      </p>
+      <p>
+       A function \(f\) is continuous at \(c\) if:
+      </p>
+      <ol>
+       <li>
+        \(f(c)\) is defined
+       </li>
+       <li>
+        \(\lim_{x \to c} f(x)\) exists
+       </li>
+       <li>
+        \(f(c) = \lim_{x \to c} f(x)\)
+       </li>
+      </ol>
+     </div>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Alternative Definition:
+       </strong>
+      </p>
+      \[\lim_{h \to 0} [f(c+h) - f(c)] = 0\]
+     </div>
+     <h3>
+      Continuous Functions
+     </h3>
+     <div class="note">
+      <p>
+       The following functions are continuous at every point in their domains:
+      </p>
+      <ul>
+       <li>
+        Polynomials
+       </li>
+       <li>
+        Rational functions (\( q(x) \neq 0 \))
+       </li>
+       <li>
+        Radical functions
+       </li>
+       <li>
+        Trigonometric functions
+       </li>
+       <li>
+        Exponential and Logarithmic functions
+       </li>
+      </ul>
+     </div>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Properties of Continuity:
+       </strong>
+      </p>
+      <p>
+       If \( f \) and \( g \) are continuous at \( c \), then the following are also continuous at \( c \):
+      </p>
+      <ul>
+       <li>
+        Scalar Multiple: \( bf \)
+       </li>
+       <li>
+        Sum/Difference: \( f \pm g \)
+       </li>
+       <li>
+        Product: \( fg \)
+       </li>
+       <li>
+        Quotient: \( f/g \) (if \( g(c) \neq 0 \))
+       </li>
+      </ul>
+     </div>
+     <div class="note">
+      <strong>
+       Important:
+      </strong>
+      If \(f\) is differentiable at \(c\), then \(f\) is continuous at \(c\).
+     </div>
+    </div>
+    <!-- DIFFERENTIATION -->
+    <div class="section">
+     <h2>
+      3. Differentiation Rules
+     </h2>
+     <h3>
+      Definition of Derivative
+     </h3>
+     <div class="formula-box important">
+      \[f'(x) = \frac{dy}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\]
+     </div>
+     <h3>
+      Basic Derivative Rules
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(c\) (constant)
+       </td>
+       <td>
+        \(0\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(x^n\)
+       </td>
+       <td>
+        \(nx^{n-1}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(cf(x)\)
+       </td>
+       <td>
+        \(cf'(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(f(x) \pm g(x)\)
+       </td>
+       <td>
+        \(f'(x) \pm g'(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(f(x) \cdot g(x)\)
+       </td>
+       <td>
+        \(f'(x)g(x) + f(x)g'(x)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\frac{f(x)}{g(x)}\)
+       </td>
+       <td>
+        \(\frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}\)
+       </td>
+      </tr>
+     </table>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        Chain Rule:
+       </strong>
+      </p>
+      \[\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)\]
+     </div>
+    </div>
+    <!-- TRIGONOMETRIC DERIVATIVES -->
+    <div class="section">
+     <h2>
+      4. Trigonometric Functions
+     </h2>
+     <h3>
+      Derivatives
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\sin x\)
+       </td>
+       <td>
+        \(\cos x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cos x\)
+       </td>
+       <td>
+        \(-\sin x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tan x\)
+       </td>
+       <td>
+        \(\sec^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cot x\)
+       </td>
+       <td>
+        \(-\csc^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sec x\)
+       </td>
+       <td>
+        \(\sec x \tan x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\csc x\)
+       </td>
+       <td>
+        \(-\csc x \cot x\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      General Forms with Chain Rule
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\sin[u(x)]\)
+       </td>
+       <td>
+        \(u'(x)\cos[u(x)]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cos[u(x)]\)
+       </td>
+       <td>
+        \(-u'(x)\sin[u(x)]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tan[u(x)]\)
+       </td>
+       <td>
+        \(u'(x)\sec^2[u(x)]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cot[u(x)]\)
+       </td>
+       <td>
+        \(-u'(x)\csc^2[u(x)]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sec[u(x)]\)
+       </td>
+       <td>
+        \(u'(x)\sec[u(x)]\tan[u(x)]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\csc[u(x)]\)
+       </td>
+       <td>
+        \(-u'(x)\csc[u(x)]\cot[u(x)]\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Properties
+     </h3>
+     <div class="formula-box">
+      <p>
+       <strong>
+        Symmetry:
+       </strong>
+      </p>
+      \[\sin(-x) = -\sin(x)\]
+                    \[\cos(-x) = \cos(x)\]
+                    \[\tan(-x) = -\tan(x)\]
+     </div>
+     <div class="formula-box">
+      <p>
+       <strong>
+        Periodicity:
+       </strong>
+      </p>
+      \[\sin(x + 2\pi) = \sin(x)\]
+                    \[\cos(x + 2\pi) = \cos(x)\]
+                    \[\tan(x + \pi) = \tan(x)\]
+     </div>
+    </div>
+    <!-- INVERSE TRIG -->
+    <div class="section">
+     <h2>
+      5. Inverse Trigonometric Functions
+     </h2>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+       <th>
+        Domain
+       </th>
+       <th>
+        Range
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\sin^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{\sqrt{1-x^2}}\)
+       </td>
+       <td>
+        \([-1, 1]\)
+       </td>
+       <td>
+        \([-\frac{\pi}{2}, \frac{\pi}{2}]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cos^{-1} x\)
+       </td>
+       <td>
+        \(-\frac{1}{\sqrt{1-x^2}}\)
+       </td>
+       <td>
+        \([-1, 1]\)
+       </td>
+       <td>
+        \([0, \pi]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tan^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{1+x^2}\)
+       </td>
+       <td>
+        \(\mathbb{R}\)
+       </td>
+       <td>
+        \((-\frac{\pi}{2}, \frac{\pi}{2})\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cot^{-1} x\)
+       </td>
+       <td>
+        \(-\frac{1}{1+x^2}\)
+       </td>
+       <td>
+        \(\mathbb{R}\)
+       </td>
+       <td>
+        \((0, \pi)\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sec^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{|x|\sqrt{x^2-1}}\)
+       </td>
+       <td>
+        \((-\infty,-1] \cup [1,\infty)\)
+       </td>
+       <td>
+        \([0,\frac{\pi}{2}) \cup (\frac{\pi}{2},\pi]\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\csc^{-1} x\)
+       </td>
+       <td>
+        \(-\frac{1}{|x|\sqrt{x^2-1}}\)
+       </td>
+       <td>
+        \((-\infty,-1] \cup [1,\infty)\)
+       </td>
+       <td>
+        \([-\frac{\pi}{2},0) \cup (0,\frac{\pi}{2}]\)
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!-- EXPONENTIAL AND LOGARITHMIC -->
+    <div class="section">
+     <h2>
+      6. Exponential and Logarithmic Functions
+     </h2>
+     <h3>
+      Exponential Functions
+     </h3>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        Series Expansion of \(e^x\):
+       </strong>
+      </p>
+      \[e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!}\]
+     </div>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(e^x\)
+       </td>
+       <td>
+        \(e^x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(a^x\)
+       </td>
+       <td>
+        \(a^x \ln a\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(e^{u(x)}\)
+       </td>
+       <td>
+        \(u'(x)e^{u(x)}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(a^{u(x)}\)
+       </td>
+       <td>
+        \(u'(x)a^{u(x)}\ln a\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Logarithmic Differentiation
+     </h3>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        General Formula for \( [f(x)]^{g(x)} \):
+       </strong>
+      </p>
+      \[ \frac{d}{dx} [f(x)]^{g(x)} = [f(x)]^{g(x)} \left[ g(x) \frac{f'(x)}{f(x)} + g'(x) \ln f(x) \right] \]
+     </div>
+     <h3>
+      Logarithmic Functions
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\ln x\)
+       </td>
+       <td>
+        \(\frac{1}{x}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\log_a x\)
+       </td>
+       <td>
+        \(\frac{1}{x \ln a}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\ln[u(x)]\)
+       </td>
+       <td>
+        \(\frac{u'(x)}{u(x)}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\log_a[u(x)]\)
+       </td>
+       <td>
+        \(\frac{u'(x)}{u(x)\ln a}\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Logarithm Properties
+     </h3>
+     <div class="formula-box">
+      \[\ln(xy) = \ln x + \ln y\]
+                    \[\ln\left(\frac{x}{y}\right) = \ln x - \ln y\]
+                    \[\ln(x^n) = n\ln x\]
+                    \[\log_a 1 = 0\]
+                    \[\log_a a = 1\]
+                    \[\log_a b = \frac{1}{\log_b a}\]
+     </div>
+    </div>
+    <div class="section">
+     <h3>
+      6.5 Hyperbolic Functions
+     </h3>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Identities &amp; Properties:
+       </strong>
+      </p>
+      \[\cosh^2 x - \sinh^2 x = 1, \quad 1 - \tanh^2 x = \text{sech}^2 x\]
+      <p>
+       <strong>
+        Odd/Even:
+       </strong>
+       \(\sinh(-x) = -\sinh x\) (Odd), \(\cosh(-x) = \cosh x\) (Even)
+      </p>
+      <p>
+       <strong>
+        Values at zero:
+       </strong>
+       \(\sinh(0) = 0, \quad \cosh(0) = 1\)
+      </p>
+      <p>
+       <strong>
+        Limits:
+       </strong>
+       \[\lim_{x \to \infty} \sinh x = \infty, \quad \lim_{x \to -\infty} \sinh x = -\infty\]
+       \[\lim_{x \to \infty} \cosh x = \infty, \quad \lim_{x \to -\infty} \cosh x = \infty\]
+      </p>
+      <p>
+       <strong>
+        Asymptotic Behavior:
+       </strong>
+       For large \(x\), \(\sinh x \approx \frac{1}{2}e^x\) and \(\cosh x \approx \frac{1}{2}e^x\).
+      </p>
+     </div>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Definition
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\sinh x\)
+       </td>
+       <td>
+        \(\frac{e^x - e^{-x}}{2}\)
+       </td>
+       <td>
+        \(\cosh x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cosh x\)
+       </td>
+       <td>
+        \(\frac{e^x + e^{-x}}{2}\)
+       </td>
+       <td>
+        \(\sinh x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tanh x\)
+       </td>
+       <td>
+        \(\frac{\sinh x}{\cosh x}\)
+       </td>
+       <td>
+        \(\text{sech}^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\coth x\)
+       </td>
+       <td>
+        \(\frac{\cosh x}{\sinh x}\)
+       </td>
+       <td>
+        \(-\text{csch}^2 x\)
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Inverse Hyperbolic Derivatives
+     </h3>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Logarithmic form
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(\sinh^{-1} x\)
+       </td>
+       <td>
+        \(\ln(x + \sqrt{x^2+1})\)
+       </td>
+       <td>
+        \(\frac{1}{\sqrt{x^2+1}}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cosh^{-1} x\)
+       </td>
+       <td>
+        \(\ln(x + \sqrt{x^2-1})\)
+       </td>
+       <td>
+        \(\frac{1}{\sqrt{x^2-1}}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tanh^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{2}\ln(\frac{1+x}{1-x})\)
+       </td>
+       <td>
+        \(\frac{1}{1-x^2}\)
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!-- HIGHER ORDER & IMPLICIT -->
+    <div class="section">
+     <h2>
+      7. Higher Derivatives &amp; Implicit Differentiation
+     </h2>
+     <div class="formula-box theorem">
+      <p>
+       <strong>
+        Implicit Differentiation Guidelines:
+       </strong>
+      </p>
+      <ol>
+       <li>
+        Differentiate both sides with respect to \(x\).
+       </li>
+       <li>
+        Collect all \(dy/dx\) terms on one side.
+       </li>
+       <li>
+        Factor out \(dy/dx\) and solve.
+       </li>
+      </ol>
+     </div>
+     <div class="formula-box important">
+      <p>
+       <strong>
+        Leibniz's Rule (Generalized Product Rule):
+       </strong>
+      </p>
+      \[ \frac{d^n}{dx^n}[f(x)g(x)] = \sum_{k=0}^{n} \binom{n}{k} f^{(n-k)}(x)g^{(k)}(x) \]
+     </div>
+    </div>
+    <!-- APPLICATIONS -->
+    <div class="section">
+     <h2>
+      8. Applications &amp; Related Rates
+     </h2>
+     <div class="formula-box note">
+      <p>
+       <strong>
+        Procedure for Related Rates:
+       </strong>
+      </p>
+      <ol>
+       <li>
+        Identify given rates and required rates.
+       </li>
+       <li>
+        Write equations relating variables.
+       </li>
+       <li>
+        Differentiate with respect to time (\(t\)).
+       </li>
+       <li>
+        Substitute known values and solve.
+       </li>
+      </ol>
+     </div>
+    </div>
+    <!-- QUICK REFERENCE -->
+    <div class="section">
+     <h2>
+      9. Quick Reference - All Derivatives
+     </h2>
+     <table>
+      <tr>
+       <th>
+        Function
+       </th>
+       <th>
+        Derivative
+       </th>
+      </tr>
+      <tr>
+       <td>
+        \(c\)
+       </td>
+       <td>
+        \(0\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(x^n\)
+       </td>
+       <td>
+        \(nx^{n-1}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sin x\)
+       </td>
+       <td>
+        \(\cos x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cos x\)
+       </td>
+       <td>
+        \(-\sin x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tan x\)
+       </td>
+       <td>
+        \(\sec^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cot x\)
+       </td>
+       <td>
+        \(-\csc^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sec x\)
+       </td>
+       <td>
+        \(\sec x \tan x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\csc x\)
+       </td>
+       <td>
+        \(-\csc x \cot x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sinh x\)
+       </td>
+       <td>
+        \(\cosh x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cosh x\)
+       </td>
+       <td>
+        \(\sinh x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tanh x\)
+       </td>
+       <td>
+        \(\text{sech}^2 x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\sin^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{\sqrt{1-x^2}}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cos^{-1} x\)
+       </td>
+       <td>
+        \(-\frac{1}{\sqrt{1-x^2}}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\tan^{-1} x\)
+       </td>
+       <td>
+        \(\frac{1}{1+x^2}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\cot^{-1} x\)
+       </td>
+       <td>
+        \(-\frac{1}{1+x^2}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(e^x\)
+       </td>
+       <td>
+        \(e^x\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(a^x\)
+       </td>
+       <td>
+        \(a^x \ln a\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\ln x\)
+       </td>
+       <td>
+        \(\frac{1}{x}\)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        \(\log_a x\)
+       </td>
+       <td>
+        \(\frac{1}{x\ln a}\)
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="note">
+     <strong>
+      💡 Study Tips:
+     </strong>
+     <ul>
+      <li>
+       Practice the limit theorems - they're foundational!
+      </li>
+      <li>
+       Memorize the trig derivatives - they come up constantly
+      </li>
+      <li>
+       Chain rule is your friend - use it everywhere
+      </li>
+      <li>
+       For complex functions, use logarithmic differentiation
+      </li>
+      <li>
+       Always check domains and ranges for inverse functions
+      </li>
+     </ul>
+    </div>
+    <div class="section">
+     <h2>
+      8. Additional Lecture Notes
+     </h2>
+
+        <h3>1.1 Hyperbolic Sine Function</h3>
+        <div class="formula-box">
+            x −x<br>
+e −<br>
+\[ y = \sinh  x = \]
+u −<br>
+\[ ⇒ y = , u > 0 ⇒ u − 2yu − 1 = 0 \]
+\[ \sqrt{} \]
+2y ± 4y2 + 4<br>
+\[ \sqrt{} \]
+\[ ⇒ u = = y ± y2 + 1 \]
+\[ \sqrt{} \sqrt{} \]
+\[ R = \]
+        </div>
+    
+
+        <h3>1.1.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic sine function is odd since<br>
+−x<br>
+e −<br>
+\[ \sinh  (−x) = \]
+() (cid:19)<br>
+x −x<br>
+e −<br>
+\[ = − = − \sinh  (x) \]
+e − e 1 − 1<br>
+\[ 2. \sinh  (0) = = = 0. \]
+o (cid:20) (cid:21)<br>
+x −x<br>
+e −<br>
+\[ 3. \lim  \sinh  x = \lim  → \]
+x→−∞ x→−∞<br>
+0 − ∞<br>
+→ − ∞.<br>
+(cid:20) (cid:21)<br>
+x −x<br>
+e −<br>
+\[ 4. \lim  \sinh  (x) = \lim  → \]
+x→∞ x→∞<br>
+∞ − 0<br>
+→ ∞<br>
+5. If x is large then e → 0 and this<br>
+\[ implies that \sinh  x → . \]
+6. If x is very small, then e → 0 and<br>
+\[ \sinh  x → − . \]
+        </div>
+    
+
+        <h3>1.2 Hyperbolic Cosine Function</h3>
+        <div class="formula-box">
+            x −x<br>
+e +<br>
+\[ y = \cosh  x = \]
+\[ and clearly D = . Now to determine the range, let u = \]
+u +<br>
+\[ ⇒ y = , u > 0 ⇒ u − 2yu + 1 = 0 \]
+\[ \sqrt{} \]
+2y ± 4y2 − 4<br>
+\[ \sqrt{} \]
+\[ ⇒ u = = y ± y2 − 1 \]
+\[ u > 0 if y > 0 and |y| ≥ 1, therefore the range will be R = [1, ∞) \]
+        </div>
+    
+
+        <h3>1.2.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic cosine function is even<br>
+−x<br>
+e +<br>
+\[ \cosh  (−x) = \]
+() (cid:19)<br>
+x −x<br>
+e +<br>
+\[ = = \cosh  (x) \]
+e + e 1 + 1<br>
+\[ 2. \cosh  (0) = = = 1. \]
+h (cid:20) (cid:21)<br>
+x −x<br>
+e +<br>
+\[ 3. \lim  \cosh  x = \lim  → \]
+x→−∞ x→−∞<br>
+0 + ∞<br>
+a → ∞.<br>
+l (cid:20) (cid:21)<br>
+x −x<br>
+e +<br>
+\[ 4. \lim  \cosh  (x) = \lim  → \]
+x→∞ x→∞<br>
+∞ + 0<br>
+→ ∞<br>
+o −x<br>
+5. If x is large then e → 0 and this<br>
+\[ implies that \cosh  x → . \]
+6. If x is very small, then e → 0 and<br>
+\[ \cosh  x → . \]
+        </div>
+    
+
+        <h3>1.3 Hyperbolic Tangent function</h3>
+        <div class="formula-box">
+            x −x 2x −2x<br>
+\[ \sinh  x e − e e − 1 1 − \]
+\[ y = \tanh  x = = = = \]
+\[ \cosh  x ex + ex e2x + 1 1 + e−2x \]
+\[ D = . Now for the range, let u = e , we get: \]
+(cid:114)<br>
+u − 1 y + 1 y + 1<br>
+\[ y = , u > 0 ⇒ u = ⇒ u = \]
+u2 + 1 1 − y 1 −<br>
+⇒ (y > −1) ∩ (y < 1)<br>
+⇒ (−1 < y < 1) ⇒ y ∈ (−1, 1)<br>
+\[ Or (y + 1 < 0) ∧ (1 − y < 0) ⇒ (y < −1) ∩ (y > 1) = ϕ. Therefore R = (−1, 1). \]
+        </div>
+    
+
+        <h3>1.3.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic tangent function is odd<br>
+\[ \sinh  (−x) \]
+\[ \tanh  (−x) = \]
+\[ \cosh  (−x) \]
+\[ − \sinh  (x) \]
+\[ = = − \tanh  (x) \]
+\[ \cosh  (x) \]
+e − e 1 − 1 0<br>
+\[ 2. \tanh  (0) = = = = 0. \]
+e0 + e0 1 + 1 2<br>
+(cid:20) (cid:21)<br>
+e − 1<br>
+\[ 3. \lim  \tanh  x = \lim  → \]
+e2x + 1<br>
+x→−∞ x→−∞<br>
+0 − 1<br>
+→ − 1.<br>
+0 + 1<br>
+(cid:20) (cid:21)<br>
+−2x<br>
+a 1 −<br>
+\[ 4. \lim  \tanh  (x) = \lim  → \]
+M 1 + e−2x<br>
+x→∞ x→∞<br>
+1 − 0<br>
+→ 1<br>
+1 + 0<br>
+\[ 5. If x is large then \tanh  (x) = \]
+x −−x x<br>
+e − e e − 0<br>
+→ → → 1.<br>
+ex + ex ex + 0 ex<br>
+\[ 6. If x is very small, then \tanh  (x) = \]
+x −−x −x −x<br>
+e − e 0 − e −e<br>
+→ → → − 1.<br>
+ex + ex 0 + e−x e−x<br>
+        </div>
+    
+
+        <h3>1.4 Hyperbolic Cotangent Function</h3>
+        <div class="formula-box">
+            x −x 2x −2x<br>
+\[ \cosh  x e + e e + 1 1 + \]
+\[ y = coth x = = = = \]
+\[ \sinh  x ex − ex e2x − 1 1 − e−2x \]
+\[ D = − {0}. Now for the range, let u = e , we get: \]
+(cid:114)<br>
+u + 1 y + 1 y + 1<br>
+\[ y = , u > 0 ⇒ u = ⇒ u = \]
+u2 − 1 y − 1 y − 1<br>
+\[ ⇒ (y > −1) ∩ (y > 1) = y > 1 \]
+⇒ y ∈ (1, ∞)<br>
+Or (y + 1 < 0) ∧ (y − 1 < 0)<br>
+\[ ⇒ (y < −1) ∩ (y < 1) = y < −1 \]
+⇒ y ∈ (−∞, −1)<br>
+        </div>
+    
+
+        <h3>1.4.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic cotangent function is odd<br>
+\[ \cosh  (−x) \]
+\[ coth (−x) = \]
+\[ \sinh  (−x) \]
+\[ \cosh  (x) \]
+\[ = = − coth (x) \]
+\[ − \sinh  (x) \]
+\[ 2. \lim  coth (x) = \lim  → \]
+\[ \tanh  (−h) \]
+x→0− h→0<br>
+1 −1<br>
+\[ − \lim  → → −∞. \]
+\[ \tanh  (h) 0 \]
+h→0<br>
+\[ 3. \lim  coth (x) = \lim  → \]
+\[ \tanh  (h) \]
+x→0+ h→0<br>
+\[ \lim  → → ∞. \]
+\[ \tanh  (h) 0 \]
+h→0<br>
+(cid:20) (cid:21)<br>
+e + 1<br>
+\[ 4. \lim  coth (x) = \lim  → \]
+e−2x − 1<br>
+x→−∞ x→∞<br>
+0 + 1<br>
+→ − 1<br>
+0 − 1<br>
+(cid:20) (cid:21)<br>
+−2x<br>
+1 +<br>
+\[ 5. \lim  coth (x) = \lim  → \]
+1 − e−2x<br>
+x→∞ x→∞<br>
+1 + 0<br>
+→ 1<br>
+1 − 0<br>
+        </div>
+    
+
+        <h3>1.5 Hyperbolic Secant Function</h3>
+        <div class="formula-box">
+            \[ y = sech(x) = = \]
+\[ \cosh  x ex + e−x \]
+\[ ⇒ y = = ⇒ yu − 2u + y = 0 ; y ̸= 0 \]
+u2 + 1<br>
+u +<br>
+\[ \sqrt{} \sqrt{} \]
+2 ± 4 − 4y2 1 ± 1 − y2<br>
+\[ ⇒ u = = \]
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+⇒ (y > 0) ∧ (y ≤ 1) ⇒ y ∈ (0, ∞) ∩ y ∈ [−1, 1]<br>
+⇒ y ∈ (0, 1]<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+\[ Or (y < 0) ∧ 1 ± 1 − y2 < 0 and its impossible, therefore R = (0, 1] \]
+        </div>
+    
+
+        <h3>1.5.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic secant function is even since<br>
+\[ sech(−x) = = = sech(x) \]
+\[ \cosh  (−x) \cosh  (x) \]
+\[ 2. \lim  sech(x) = \lim  = = 1 \]
+\[ \cosh  x 1 \]
+x→0 x→0<br>
+\[ 3. \lim  sech(x) = \lim  → → 0 \]
+\[ \cosh  x ∞ \]
+x→−∞ x→−∞<br>
+\[ 4. \lim  sech(x) = \lim  → → 0 \]
+\[ \cosh  x ∞ \]
+x→∞ x→∞<br>
+        </div>
+    
+
+        <h3>1.6 Hyperbolic Cosecant Function</h3>
+        <div class="formula-box">
+            \[ y = csch(x) = = \]
+\[ \sinh  x ex − e−x \]
+\[ ⇒ y = = ⇒ yu − 2u − y = 0 ; yo̸= 0 \]
+u2 − 1<br>
+u −<br>
+\[ \sqrt{} \sqrt{} \]
+2 ± 4 + 4y2 1 ± 1 + y2<br>
+\[ ⇒ u = = \]
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+1. Either (y > 0) ∧ 1 ± 1 + y2 > 0 , this implies that:<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+R+<br>
+(y > 0) ∧ 1 + 1 + y2 > 0 ⇒ y ∈<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+or (y > 0) ∧ 1 − 1 + y2 > 0<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+⇒ (y > 0) ∧ 1 + y2 < 1<br>
+and its impossible, thhus y ∈ +<br>
+(cid:16) o (cid:17)<br>
+\[ \sqrt{} \]
+2. Or (y < 0) ∧ 1 ± 1 + y2 < 0 , this implies that<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+(y < 0) ∧ 1 + 1 + y2 < 0<br>
+anBd its impossible. or<br>
+(cid:16) (cid:17)<br>
+\[ \sqrt{} \]
+(y < 0) ∧ 1 − 1 + y2 < 0 ⇒ y ∈<br>
+R+ R− R<br>
+\[ R = ∪ = − {0} \]
+        </div>
+    
+
+        <h3>1.6.1 Properties</h3>
+        <div class="formula-box">
+            1. The hyperbolic cosecant function is odd since<br>
+\[ csch(−x) = = = −csch(x) \]
+\[ \sinh  (−x) − \sinh  (x) \]
+1 1 −1<br>
+\[ 2. \lim  csch(x) = \lim  → − \lim  → = −∞. \]
+\[ \sinh  (−h) \sinh  (h) 0 \]
+x→0− h→0 h→0<br>
+\[ 3. \lim  csch(x) = \lim  → → ∞. \]
+\[ \sinh  (h) 0 \]
+x→0+ h→0<br>
+(cid:20) (cid:21)<br>
+\[ 4. \lim  csch(x) = \lim  → → 0 \]
+ex − e−x 0 − ∞<br>
+x→−∞ x→∞<br>
+(cid:20) (cid:21)<br>
+\[ 5. \lim  csch(x) = \lim  → → 0 \]
+ex − e−x ∞ − 0<br>
+x→∞ x→∞<br>
+        </div>
+    
+
+        <h3>1.7 Hyperbolic Functions Identities</h3>
+        <div class="formula-box">
+            \[ 1. ∀x ∈ , \cosh  x − \sinh  x = 1 \]
+(cid:20) (cid:21)2 (cid:20) (cid:21)2<br>
+x −x x −x 2x −2x 2x −2x<br>
+e + e e − e e + 2 + e − e + 2 − e 4<br>
+\[ − = = = 1 \]
+2 2 4 4<br>
+\[ ∀x ∈ , \sinh  xt= \cosh  x − 1 \]
+\[ ∀x ∈ , 1 − \tanh  x = sech (x) \]
+\[ ∀x ∈ , (x ̸= 0) coth (x) − 1 = csch (x) \]
+\[ ∀x ∈ , \cosh  x + \sinh  x = e . \]
+\[ 3. (i) \sinh  (x + y) = \sinh  x \cosh  y + \cosh  x \sinh \]
+x −x y −y x −x y −y<br>
+e − e e + e e + e e −<br>
+⇒ +<br>
+2 2 2 2<br>
+x+y x−y y−x −(x+y) x+y x−y y−x −(x+y)<br>
+e + e − e − e e − e + e −<br>
+⇒ +<br>
+(cid:2) (cid:3)<br>
+2 e x+y − e −(x+y) e x+y − e −(x+y)<br>
+\[ = = = \sinh (x + y) \]
+\[ (ii) \sinh (x − y) = \sinh  x \cosh  y − \cosh  x \sinh \]
+\[ (iii) \cosh (x ± y) = \cosh  x \cosh  y ± \sinh  x \sinh \]
+\[ \tanh  x ± \tanh \]
+\[ (iv) \tanh (x ± y) = \]
+\[ 1 ∓ \tanh  x \tanh \]
+\[ 4. (i) \sinh  2x = 2 \sinh (x) \cosh (x) \]
+2 2 2 2<br>
+\[ (ii) \cosh  2x = \cosh  x + \sinh  x = 2 \cosh  x − 1 = 2 \sinh  x − 1 \]
+        </div>
+    
+
+        <h3>1.8 Derivative of Hyperbolic Function</h3>
+        <div class="formula-box">
+            \[ 1. [\sinh  x] = \cosh \]
+(cid:20) (cid:21) (cid:20) (cid:21)<br>
+x −x x −x<br>
+d d e − e 1 d 1 e +<br>
+x −x x −x<br>
+\[ [\sinh  x] = = [e − e ] = [e + e ] = = \cosh \]
+dx dx 2 2 dx 2 2<br>
+\[ 2. [\cosh  x] = \sinh \]
+(cid:20) (cid:21) (cid:20) (cid:21)<br>
+d d e x + e −x 1 d 1 ze x − e −x<br>
+x −x x −x<br>
+\[ [\cosh  x] = = [e + e ] = [e − e ] = = \sinh \]
+dx dx 2 2 dx 2 2<br>
+\[ 3. [\tanh (x)] = sech (x) \]
+Phroof<br>
+(cid:20) (cid:21)<br>
+\[ d d \sinh  x \cosh  x \cosh  x − \sinh  x \sinh  x 1 \]
+\[ [\tanh (x)] = = a = = sech \]
+\[ dx dx \cosh  x \cosh  x \cosh \]
+\[ 4. [coth(x)] = csch (x) \]
+(cid:20) (cid:21)<br>
+\[ d Md \cosh  x \sinh  x \sinh  x − \cosh  x \cosh  x −1 \]
+\[ [coth(x)] = = = = −csch \]
+\[ dx dx \sinh  x \sinh  x \sinh \]
+\[ 5. [sech(x)] = −sech(x) \tanh (x) \]
+(cid:2) (cid:3)<br>
+−1 −2<br>
+\[ [sech(x)] = (\cosh  x) = −(\cosh  x) × \sinh  x = −sech(x) \tanh (x) \]
+\[ 6. [csch(x)] = −csch(x) coth(x) \]
+(cid:2) (cid:3)<br>
+−1 −2<br>
+\[ [csch(x)] = (\sinh  x) = −(\sinh  x) × \cosh  x = −csch(x) coth(x) \]
+No. The Hyp. Function Derivative<br>
+\[ (1) [\sinh  (u(x))] u (x) \cosh  (u(x)) \]
+\[ (2) [\cosh  (u(x))] u (x). \sinh  (u(x)) \]
+\[ (3) [\tanh  (u(x))] u (x) sech (u(x)) \]
+(4) [coth (u(x))] −u (x) csch (u(x))<br>
+′<br>
+\[ (5) [sech(u(x))] −u (x) sech(u(x)) \tanh (u(x)) \]
+(6) [csch(u(x))] −u (x) csch(u(x)) coth(u(x))<br>
+\[ Example 1.8.1 Evaluate the following \lim its \]
+\[ \sinh (αx) \]
+\[ 1. \lim  \]
+x→0<br>
+\[ \cosh (αx) − 1 \]
+\[ 2. \lim  \]
+x→0<br>
+\[ \cosh (αx) − \cosh (βx) \]
+\[ 3. \lim  \]
+x→0<br>
+\[ Before we solve this \lim its, note that the hyperbolic functions can be expressed as an infinite \]
+series as follows:<br>
+d2 3 k<br>
+x x x<br>
+(cid:88)<br>
+\[ e = 1 + x + + + · · · + + · · · = \]
+h 2! 3! k! k!<br>
+\[ k=0 \]
+2 3 k<br>
+M x x x (cid:88)<br>
+−x k<br>
+\[ e = 1 − x + − + · · · + (−1) + · · · = (−1) \]
+2! 3! k! k!<br>
+\[ k=0 \]
+\[ \cosh  x B= (e x + e −x ) \]
+(cid:20)() (cid:19) () (cid:19)(cid:21)<br>
+2 3 k 2 3<br>
+1 x x x x x<br>
+\[ = 1 + x + + + · · · + + . . . + 1 − x + − + · · · + (−1) + . . . \]
+2 2! 3! k! 2! 3! k!<br>
+(cid:20) (cid:21) (cid:20) (cid:21)<br>
+2 4 2k 2 4 2k<br>
+1 x x x x x<br>
+\[ = 2 + 2 + 2 + · · · + 2 + . . . = 1 + + + · · · + + . . . \]
+2 2! 4! (2k)! 2! 4! (2k)!<br>
+2 4 2k 2k<br>
+x x x<br>
+(cid:88)<br>
+\[ \cosh  x = 1 + + + · · · + + · · · = \]
+2! 4! (2k)! (2k)!<br>
+\[ k=0 \]
+\[ As same as \cosh  x, we see \]
+3 5 2k+1 2k+1<br>
+x x x<br>
+(cid:88)<br>
+\[ \sinh  x = x + + + · · · + + · · · = \]
+3! 5! (2k + 1)! (2k + 1)!<br>
+\[ k=0 \]
+\[ \sinh (αx) \]
+\[ 1. \lim  \]
+x→0<br>
+() (cid:19)<br>
+3 3 5 5<br>
+α x α<br>
+αx + + + . . .<br>
+3! 5!<br>
+\[ = \lim  \]
+x→0<br>
+() (cid:19)<br>
+2 2 4 4<br>
+α x α<br>
+αx 1 + + + . . .<br>
+3! 5!<br>
+\[ = \lim  \]
+x→0<br>
+() (cid:19)<br>
+2 2 4 4<br>
+α x α<br>
+\[ = α \lim  1 + + + . . . = α(1) = α. \]
+3! 5!<br>
+x→0<br>
+\[ \cosh (αx) − 1 \]
+\[ 2. \lim  \]
+x→0<br>
+() (cid:19)<br>
+2 2 4 4 2 2 4 4<br>
+α x α x α x α<br>
+\[ \cosh (αx) − 1 = 1 + + + . . . − 1 = + + . . . \]
+2! 4! 2! 4!<br>
+\[ \cosh (αx) − 1 α α \]
+\[ = + + . . . \]
+x2 2! 4!<br>
+(cid:20) (cid:21)<br>
+2 2 2 2<br>
+\[ \cosh (αx) − 1 α α x α \]
+\[ \lim  = \lim  + + . . . = . \]
+x2 2! 4! 2!<br>
+x→0 x→0<br>
+3. Exercise.<br>
+Example 1.8.2 Find for the following functions.<br>
+\[ 1. y = \cosh (2x) \sinh (x) \]
+\[ = \cosh (2x) × \cosh (x) + \sinh (x) × (2 \sinh (2x)) \]
+\[ 2. y = sech(csch(x)) \]
+\[ = −csch(x) coth(x) × −sech(csch(x)) \tanh (csch(x)) \]
+() (cid:19)<br>
+\[ 3. y = \tanh  \]
+1 − x2<br>
+() (cid:19)<br>
+dy 2(1 − x ) + 4x 2x<br>
+\[ = sech \]
+dx (1 − x2)2 1 − x2<br>
+(cid:114)<br>
+\[ 1 + \tanh  x dy \]
+\[ 4. y = ln prove that = 1 \]
+\[ 1 − \tanh  x dx \]
+Exercise<br>
+x −x<br>
+\[ (i) y = e + 4e \]
+3x −2x<br>
+\[ (ii) y = e + \]
+2. Find for the following functions:<br>
+\[ √ \cosh \]
+(cid:0) (cid:1)<br>
+\[ (i) y = \sinh  x + √ \]
+\[ (ii) y = x \cosh (x + \tanh  x) \]
+\[ (iii) y = x \tanh (x + sin x) \]
+x + sin 2x<br>
+\[ (iv) y = \]
+\[ x + 3 \sinh  4x \]
+(cid:20) (cid:21)<br>
+\[ 1 + \tanh \]
+\[ (v) y = tan \]
+\[ 1 − \tanh \]
+y−x<br>
+\[ (vi) y + \tanh (xy) = \]
+\[ 3. Find the following \lim its: \]
+\[ x − \sinh (βx) \]
+\[ (i) \lim  \]
+x→0 E<br>
+e − 1<br>
+\[ (ii) \lim  \]
+\[ \sinh (βx) \]
+x→0<br>
+\[ \tanh (x) \]
+\[ (iii) \lim  \]
+x→0<br>
+−2x<br>
+e − 1<br>
+\[ (iv) \lim  \]
+\[ \sinh (5x) \]
+x→0<br>
+2 Inverse Hyperbolic Functions<br>
+        </div>
+    
+
+        <h3>2.1 Inverse Hyperbolic Sine Function</h3>
+        <div class="formula-box">
+            y −y<br>
+e −<br>
+\[ y = \sinh  x ⇐⇒ x = \sinh  y = \]
+u −<br>
+√ √<br>
+2x ± 4x2 + 4<br>
+√ √<br>
+\[ u > 0, we get u = x + x2 + 1 ⇒ e y = x + x2 + 1 \]
+(cid:16) (cid:17)<br>
+∴ R<br>
+\[ y = ln x + x2 + 1 , ∀x ∈ \]
+        </div>
+    
+
+        <h3>2.1.1 Derivative of Inverse Hyp. Sin</h3>
+        <div class="formula-box">
+            (cid:0) (cid:1)<br>
+\[ y = \sinh  x = ln x + x2 + 1 , then the first derivative is: \]
+(cid:34) (cid:35)<br>
+() (cid:19)<br>
+dy x 1 x + x2 + 1 1 1<br>
+\[ = 1 + √ × √ = √ √ = √ \]
+dx x2 + 1 x + x2 + 1 x2 + 1 x + x2 + 1 x2 + 1<br>
+−1<br>
+\[ [\sinh  x] = √ \]
+dx x2 + 1<br>
+dx dy 1 1 1<br>
+\[ y = \sinh  x ⇒ x = \sinh  y ⇒ = \cosh  y ⇒ = = = √ \]
+\[ E \sqrt{} \]
+\[ dy dx \cosh  y 2 x2 + 1 \]
+\[ \sinh  x + 1 \]
+        </div>
+    
+
+        <h3>2.2 Inverse Hyperbolic Cosine Function</h3>
+        <div class="formula-box">
+            y −y<br>
+o e +<br>
+\[ y = \cosh  x ⇐⇒ x = \cosh  y = . Clearly R = [0, ∞), to determine the domain of \]
+u +<br>
+\[ definition let u = e ⇒ x = , u > 0 ⇒ u − 2xu + 1 = 0. Therefore \]
+2x ± 4x2 − 4<br>
+\[ u = = x ± x2 − 1 \]
+√ √<br>
+(cid:16) (cid:17) (cid:16) (cid:17)<br>
+\[ u > 0 if x ≥ 1. Since \lim  x − x2 − 1 = 0, we will take the value x + x2 − 1 therefore \]
+x→∞<br>
+\[ D = [1, ∞). Now: \]
+√ √ √<br>
+(cid:16) (cid:17)<br>
+\[ u = x + x2 − 1 ⇒ e = x + x2 − 1 ⇒ y = ln x + x2 − 1 , ∀x ∈ [0, ∞) \]
+        </div>
+    
+
+        <h3>2.2.1 Derivative of Inverse Hyp. Cos</h3>
+        <div class="formula-box">
+            (cid:0) (cid:1)<br>
+\[ y = \cosh  x = ln x + x2 − 1 , then the first derivative is: \]
+() (cid:19) (cid:20) (cid:21)<br>
+dy x 1 x + x2 − 1 1 1<br>
+\[ = 1 + √ × √ = √ √ = √ \]
+dx x2 − 1 x + x2 − 1 x2 − 1 x + x2 − 1 x2 − 1<br>
+\[ [\cosh  x] = √ \]
+dx x2 − 1<br>
+        </div>
+    
+
+        <h3>2.3 Inverse Hyperbolic Tangent Function</h3>
+        <div class="formula-box">
+            −1 R<br>
+\[ y = \tanh  x ⇐⇒ x = \tanh  y. Clearly R = . To determine the domain of definition, let \]
+\[ u = e . \]
+u −<br>
+u − 1<br>
+\[ x = = \]
+u2 + 1<br>
+u +<br>
+1 + x 1 +<br>
+2 2 2 2 2y<br>
+1 − x 1 −<br>
+write y as:<br>
+() (cid:19) () (cid:19)<br>
+1 + x 1 1 +<br>
+\[ 2y = ln ⇒ y = ln \]
+1 − x 2 1 −<br>
+        </div>
+    
+
+        <h3>2.3.1 Derivative of Hyp. Tan</h3>
+        <div class="formula-box">
+            () (cid:19) (cid:20) (cid:21)<br>
+1 1 + x 1 dy 1 1 1 1<br>
+\[ y = ln = [ln(1 + x) − ln(1 − x)] ⇒ = + = \]
+2 1 − x 2 dx 2 1 + x 1 − x 1 − x2<br>
+f−1<br>
+\[ [\tanh  x] = \]
+dx l 1 − x2<br>
+        </div>
+    
+
+        <h3>2.4 Inverse Hyperbolic Cotangent Function</h3>
+        <div class="formula-box">
+            −1 R<br>
+\[ y = coth x ⇐⇒ x = coth y. Clearly R = . To determine the domain of definition \]
+u +<br>
+y −y 2<br>
+e + e u + 1 1 +<br>
+\[ xy= = ⇒ x = ⇒ xu − x = u + 1 ⇒ u = \]
+ey − e−y u2 − 1 x − 1<br>
+u −<br>
+() (cid:19)<br>
+1 + x 1 1 +<br>
+\[ e = ⇒ y = ln \]
+x − 1 2 x − 1<br>
+        </div>
+    
+
+        <h3>2.4.1 Derivative of Hyp. Cot</h3>
+        <div class="formula-box">
+            () (cid:19) (cid:20) (cid:21)<br>
+1 1 + x 1 dy 1 1 1 −1<br>
+\[ y = ln = [ln(1 + x) − ln(x − 1)] ⇒ = − = \]
+2 x − 1 2 dx 2 1 + x x − 1 x2 − 1<br>
+No. The Hyp. Inverse Function Derivative<br>
+d u (x)<br>
+\[ (1) [\sinh  (u(x))] √ \]
+dx u2 + 1<br>
+d u (x)<br>
+\[ (2) [\cosh  (u(x))] √ \]
+dx u2 − 1<br>
+d u (x)<br>
+\[ (3) [\tanh  (u(x))] \]
+dx 1 − u2<br>
+d u (x)<br>
+(4) [coth (u(x))]<br>
+dx 1 − u2<br>
+d −u (x)<br>
+−1<br>
+(5) [sech (u(x))] √<br>
+dx |u(x)| 1 − u2<br>
+d −u (x)<br>
+(6) [csch (u(x))] √<br>
+dx |u(x)| u2 + 1<br>
+        </div>
+    
+
+        <h3>1.1 Implicit and Explicit Function</h3>
+        <div class="formula-box">
+            \[ and every function can be expressed in the form y = f (x) [y is a function of x] is called \]
+function of x and differentiating.<br>
+\[ Implicit Form xy = 1 \]
+−1<br>
+\[ Explicit Form y = = \]
+dy −1<br>
+\[ Derivative = −x = \]
+dx Mx2<br>
+        </div>
+    
+
+        <h3>1.2 Guidelines for Implicit Differentiation</h3>
+        <div class="formula-box">
+            3. Factor out of the left side of the equation.<br>
+contain .<br>
+Example 1.2.1 Find for the given functions.<br>
+\[ 1. y + y − 5y − x = −4 \]
+Firstly Differentiate both sides of the equation w.r.t<br>
+\[ [y + y − 5y − x ] = [−4] \]
+dy dy dy<br>
+\[ 3y + 2y − 5 − 2x = 0 \]
+dx dx dx<br>
+dy dy dy<br>
+\[ 3y + 2y − 5 = 2x \]
+dx dx dx<br>
+Thirdly Factor out of the left side of the equation<br>
+\[ (3y + 2y − 5) = 2x \]
+Fourthly solve for by dividing by 3y + 2y − 5, we get:<br>
+\[ = \]
+dx 3y2 + 2y − 5<br>
+\[ 2. 3(x + y ) = 100xy at the point (3, 1). \]
+() (cid:19) () (cid:19)<br>
+\[ ⇒ 6(x + y ) 2x + 2y = 100 x + \]
+2 2 2 2<br>
+\[ ⇒ 12x(x + y ) + 12y(x + y ) = 100x + 100y \]
+dy tdy<br>
+2 2 2 2<br>
+\[ ⇒ 12y(x + y ) − 100x = 100y − 12x(x + y ) \]
+2 2 2 2<br>
+\[ ⇒ [12y(x + y ) − 100x] = 100y − 12x(x + y ) \]
+2 2 2 2<br>
+dy 100y − 12x(x + y ) 25y − 3x(x + y )<br>
+\[ ⇒ = = \]
+dx −100x + 12y(x2 + y2) −25x + 3y(x2 + y2)<br>
+h(cid:12)<br>
+dy 25(1) − 3(3)(3 + 1 ) 13<br>
+(cid:12)<br>
+\[ ⇒ = = \]
+(cid:12)<br>
+dx (cid:12) −25(3) + 3(1)(32 + 12) 9<br>
+(3,1)<br>
+2 Higher Derivatives<br>
+        </div>
+    
+
+        <h3>2.1 Second Derivative</h3>
+        <div class="formula-box">
+            dy f (x + h) − f (x)<br>
+\[ = \lim  \]
+h→0<br>
+\[ Which we obtain it by differentiating the function y = f (x) or implicitly by f (x, y) = 0. Now \]
+(cid:20) (cid:21)<br>
+′ ′<br>
+d dy f (x + h) − f (x)<br>
+\[ = \lim  \]
+dx dx<br>
+h→0<br>
+′′ ′′<br>
+And we denote it by y , , f (x) , [f (x)] and also D [y].<br>
+dx2 dx2<br>
+derivative as follows<br>
+(cid:20) (cid:21)<br>
+′′ ′′<br>
+d d y f (x + h) − f (x)<br>
+\[ = \lim  \]
+dx dx2<br>
+h→0<br>
+′′′ ′′′<br>
+and we denote it by y , , f (x) , [f (x)] and also D [y].<br>
+dx3 dx3<br>
+(cid:20) (cid:21)<br>
+n n−1 (n−1) (n−1)<br>
+d y d d y f (x + h) − f (x)<br>
+\[ = = \lim  \]
+dxn dx dxn−1<br>
+h→0<br>
+(4)<br>
+\[ Example 2.1.2 1. y = sin 3x, prove that y = 81y \]
+\[ y = 3 cos 3x \]
+\[ y = − 9 sin 3x \]
+′′′<br>
+\[ y = − 27 cos 3x \]
+(4)<br>
+\[ y = 81 sin 3x = 81y \]
+n (n) 5<br>
+\[ 2. y = x , prove that y = n! and find the fifth derivative for y = x . \]
+′ ′′ ′′′<br>
+n n−1 n−2 n−3<br>
+\[ y = x ⇒ y = nx ⇒ y = n(n − 1)x ⇒ y = n(n − 1)(n − 2)x \]
+(n) n−n<br>
+\[ y = n(n − 1)(n − 2) . . . 3 × 2 × 1 × x = n! \]
+5 (5)<br>
+\[ 3. Find if x + xy + y = a . \]
+Differentiate both sides w.r.t<br>
+′ ′<br>
+\[ B 2x + (xy + y) + 2yy = 0 (2.1.1) \]
+′ ′<br>
+′ ′<br>
+\[ ⇒ xy + 2yy = −2x − \]
+−(2x + y)<br>
+′ ′<br>
+\[ ⇒ y (x + 2y) = −(2x + y) ⇒ y = \]
+x + 2y<br>
+(cid:16) (cid:17)<br>
+′′ ′ ′ ′ ′<br>
+\[ ⇒ 2 + xy + y + y + 2 yy + (y ) = 0 \]
+′′ ′′ ′ ′<br>
+\[ ⇒ xy + 2yy = −2 − 2y − 2(y ) \]
+′ ′<br>
+−(2 + 2y + 2(y ) )<br>
+′′ ′ ′ ′′<br>
+\[ ⇒ y (x + 2y) = −(2 + 2y + 2(y ) ) ⇒ y = \]
+x + 2y<br>
+′ ′′<br>
+(cid:34) (cid:35)<br>
+() (cid:19)2<br>
+−(2x + y) −(2x + y)<br>
+\[ y = − 2 + 2 + 2 ÷ (2y + x) \]
+2y + x 2y +<br>
+(cid:20) (cid:21)<br>
+2(2y + x) − 2(2y + x)(2x + y) + 2(2x + y)<br>
+\[ = − ÷ (2y + x) \]
+(2y + x)2<br>
+(cid:20) (cid:21)<br>
+2 2 2 2 2 2<br>
+2(4y + 4xy + x ) − 8xy − 4y − 4x − 2xy + 2(4x + 4xy + y )<br>
+\[ = − \]
+(2y + x)3<br>
+−6(x + xy + y ) −6a<br>
+\[ = = \]
+(x + 2y)3 (x + 2y)3<br>
+\[ Exercise 2.1.1 For the function x 2 + y 2 = a 2 \]
+−a 2<br>
+\[ 1. Prove that y = \]
+′′′<br>
+\[ 2. Prove that y = \]
+        </div>
+    
+
+        <h3>2.2 Leibniz’s Rule (Generalized Product Rule)</h3>
+        <div class="formula-box">
+            n () (cid:19)<br>
+(cid:88)<br>
+(n−k) (k)<br>
+\[ [f (x).g(x)] = f (x).g (x) \]
+\[ k=0 \]
+() (cid:19)<br>
+is the binomial coefficient (n choose k)<br>
+(n−k)<br>
+f (x) means the (n − k)-th derivative of f (x)<br>
+(k)<br>
+g means the k-th derivative of g(x)<br>
+′ ′ ′<br>
+\[ (f g) = f (x)g(x) + f (x)g (x) \]
+\[ Example 2.2.3 Find the fourth derivative for the function y = x sin \]
+4 () (cid:19) () (cid:19) () (cid:19)<br>
+d 4 4 4<br>
+(cid:88)<br>
+4 4 (4−k) (k) 4 (4−0) (0) 4 (4−1) (1)<br>
+\[ [x sin x] = (x ) .(sin x) = (x ) .(sin x) + (x ) .(sin x) \]
+dx4 k 0 1<br>
+\[ k=0 \]
+() (cid:19) () (cid:19) () (cid:19)<br>
+4 (4−2) (2) 4 (4−3) (3) 4 (4−4) (4)<br>
++ (x ) .(sin x) + (x ) .(sin x) + (x ) .(sin x)<br>
+() (cid:19) () (cid:19) () (cid:19)<br>
+4 (4) 4 (3) (1) 4 (2) (2)<br>
+\[ = (x ) .(sin x) + (x ) .(sin x) + (x ) .(sin x) \]
+() (cid:19) () (cid:19)<br>
+4 (1) (3) 4 (4)<br>
++ (x ) .(sin x) + (x ).(sin x)<br>
+\[ = 4! sin x + 4(4 × 3 × 2)x cos x + 6(4 × 3)x (− sin x) + 4(4x )(− cos x) + x sin \]
+\[ = x sin x − 16x cos x − 72x sin x + 96x cos x + 24 sin \]
+(4) 4 2x<br>
+\[ Exercise 2.2.2 Find y if y = x \]
+        </div>
+    
+
+        <h3>1.1 Related Rates</h3>
+        <div class="formula-box">
+            Here are two examples illustrating this type of problem.<br>
+changing?<br>
+How fast is the distance between the airlines changing?<br>
+two airlines and the distance between them.<br>
+a specific moment of time, hence the name related rates.<br>
+\[ A(t) = πr (t) (1.1.1) \]
+′ ′<br>
+\[ . The goal is to find the rate of change of the area of the circle, which A (t) given that r (t) = \]
+30 m/hr.<br>
+′ ′<br>
+\[ A (t) = [πr (t)] = 2πr(t).r (t) \]
+units):<br>
+′ ′<br>
+\[ A (t) = 2πr(t).r (t) = 2π(100 m)(30 m/hr) = 6000π m /hr \]
+        </div>
+    
+
+        <h3>1.1.1 Procedure Steps for Related Rates Problems</h3>
+        <div class="formula-box">
+            time (t).<br>
+Example 1.1.2 Converging Air-planes:<br>
+\[ betweenBthem denoted z(t). By Pythagorean theorem z 2 = x 2 + y 2 . Now \]
+x +<br>
+d d dz dx dy dz<br>
+\[ [z ] = [x + y ] ⇒ 2z = 2x + 2y ⇒ = \]
+dt dt dt dt dt dt<br>
+\[ Given = −120 mi/hr , = −150 mi/hr and x = 180 mi , y = 225 mi/hr. The distance \]
+\[ \sqrt{} \sqrt{} \]
+\[ between the planes is z = x2 + y2 = (180)2 + (225)2 = 288 mi. Now: \]
+x +<br>
+dz (180)(−120) + (225)(−150)<br>
+\[ = = = −192 mi/hr. \]
+dt z 288<br>
+Example 1.1.3 Morning Coffee:<br>
+\[ v = πr \]
+coffee is at all time.<br>
+\[ ⇒ = or r = \]
+\[ Substituting r = h in the volume formula gives V in terms of \]
+() (cid:19)2<br>
+1 1 2 4π<br>
+\[ V = πr h = π h h = h (1.1.2) \]
+3 3 5 75<br>
+\[ V (t) = h (t). \]
+and substituting these values, we have<br>
+dh 25 25(−2.25)<br>
+\[ = V (t) = = −0.497 in/min \]
+dt 4πh2(t) 4π(3)2<br>
+(almost half an inch per min).<br>
+rising when the water is (6 f t) deep?<br>
+V ≡ Volume (f t ) of the water in the tank at time<br>
+x ≡ radius (f t) of the surface of the water at time t.<br>
+y ≡ depth (f t) of the water in the tank.<br>
+\[ V, x and y are differentiable functions of t. We asked for when y = 6 f t and = 9f t /min. \]
+\[ Because no information given about x and at the time in question, we need to e\lim inate \]
+\[ x. The similar triangles gives us a way to express x in terms of y as = ⇒ x = . \]
+y 10 2<br>
+1 (cid:16) y (cid:17)2 π dV π dy<br>
+3 2 12 dt 4 dt<br>
+\[ = 9. \]
+π dy dy 1<br>
+\[ 9 = (6) ⇒ = ≈ 0.32 \]
+4 dt dt π<br>
+y ≡ The height in meters of the balloon above the ground.<br>
+dθ π dy π<br>
+\[ Given = 0.14 rad/min when θ = . We want when θ = , and we know from the right \]
+dt 4 dt 4<br>
+\[ traingle tan θ = or y = 150 tan θ, this implies that: \]
+dy dθ dy (cid:104) π (cid:105)<br>
+\[ = 150 sec θ ⇒ = 150 sec (0.14) = 42 m/min. \]
+dt dt dt 4<br>
+from the centre of the circle?<br>
+t ≡ time<br>
+π 1 dθ<br>
+\[ rate of rad in min or π rad/min ⇒ = −π where t measured in min and the negative \]
+2 2 dt<br>
+sign because θ is decreasing over time.<br>
+\[ when x = 20 m , = −π rad/min. To relate the variables x and θ, we see x cos θ = 10 or \]
+\[ x = 10 sec θ. \]
+\[ ⇒ = 10 sec θ tan θ = −10π sec θ tan θ \]
+√ √<br>
+\[ When x = 20 ⇒ cos θ = ⇒ sec θ = 2 and tan θ = sec2 θ − 1 = 3. Now \]
+√ √<br>
+dx (cid:16) (cid:17)<br>
+\[ = (−10π) 2 3 = −20 3 π. \]
+109 m/min.<br>
+        </div>
+    
+<!-- END_AUTOMATED_LAWS -->
+
+
+
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

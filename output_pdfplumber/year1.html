@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Year 1 Curriculum | prodbyabdo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0a0a0a;
+        --card-bg: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-color: #00ff88;
+        --accent-dim: rgba(0, 255, 136, 0.1);
+        --accent-hover: rgba(0, 255, 136, 0.2);
+        --border-color: #333333;
+        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        margin: 0 0 10px 0;
+        background: linear-gradient(to right, #ffffff, #a0a0a0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        color: var(--accent-color);
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+      
+      .nav-back {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-family: var(--font-mono);
+      }
+      .nav-back:hover { color: var(--accent-color); }
+
+      .semester-title {
+          font-size: 2rem;
+          color: var(--text-primary);
+          margin: 40px 0 20px 0;
+          padding-bottom: 10px;
+          border-bottom: 2px solid var(--border-color);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .subject-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .subject-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        background-color: var(--accent-dim);
+      }
+
+      .subject-code {
+          color: var(--accent-color);
+          font-family: var(--font-mono);
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+          font-weight: bold;
+      }
+
+      .subject-name {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 15px;
+      }
+
+      .card-actions {
+          display: flex;
+          gap: 10px;
+          margin-top: 15px;
+      }
+
+      .btn {
+          padding: 8px 12px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: 0.85rem;
+          text-align: center;
+          flex: 1;
+          transition: 0.2s;
+      }
+      
+      .btn:hover {
+          background: var(--accent-color);
+          color: #000;
+          border-color: var(--accent-color);
+      }
+      
+      .btn-primary {
+          background: var(--accent-dim);
+          color: var(--accent-color);
+          border-color: var(--accent-color);
+      }
+       .btn-primary:hover {
+          background: var(--accent-color);
+          color: #000;
+      }
+      
+      .btn-disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+      }
+      .btn-disabled:hover {
+          background: rgba(255,255,255,0.05);
+          color: var(--text-secondary);
+          border-color: var(--border-color);
+      }
+
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="nav-back">← Back to Home</a>
+    
+    <div class="container">
+      <header>
+        <h1>YEAR ONE</h1>
+        <div class="subtitle">Computer Science & Information Technology</div>
+      </header>
+
+      <!-- SEMESTER 1 -->
+      <div class="semester-title">Semester One</div>
+      <div class="grid">
+        
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">COM-111</div>
+                <div class="subject-name">Computer Applications</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">INF-112</div>
+                <div class="subject-name">Principles of Information Systems</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">HMS113</div>
+                <div class="subject-name">English for Specific Purpose I</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">MAT114</div>
+                <div class="subject-name">Calculus I</div>
+            </div>
+            <div class="card-actions">
+                <a href="calculus_laws.html" class="btn btn-primary">Laws</a>
+                <a href="calculus_solutions.html" class="btn btn-primary">Solutions</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">COM115</div>
+                <div class="subject-name">Introduction to Computer Science</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+        
+         <div class="subject-card">
+            <div>
+                <div class="subject-code">MAT116</div>
+                <div class="subject-name">Discrete Mathematics</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+        
+         <div class="subject-card">
+            <div>
+                <div class="subject-code">HMS117</div>
+                <div class="subject-name">Principles of Economic</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+      </div>
+
+
+      <!-- SEMESTER 2 -->
+      <div class="semester-title">Semester Two</div>
+      <div class="grid">
+          
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">COM121</div>
+                <div class="subject-name">File Management</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+        
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">COM122</div>
+                <div class="subject-name">Introduction to Databases</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+        
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">INF124</div>
+                <div class="subject-name">Computer Maintenance</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">HMS123</div>
+                <div class="subject-name">English for Specific Purpose II</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">HMS125</div>
+                <div class="subject-name">Principles of Accounting</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">COM126</div>
+                <div class="subject-name">Principles of Programming</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">MAT127</div>
+                <div class="subject-name">Algebra and Geometry</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <div>
+                <div class="subject-code">MAT128</div>
+                <div class="subject-name">Calculus II</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn btn-disabled">Resources</a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
