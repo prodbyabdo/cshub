@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculus Resources | prodbyabdo</title>
+    <title>CS Hub | prodbyabdo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,7 +37,7 @@
       }
 
       .container {
-        max-width: 800px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 60px 20px;
         flex: 1;
@@ -58,6 +58,7 @@
         margin: 0 0 15px 0;
         background: linear-gradient(to right, #ffffff, #a0a0a0);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
@@ -71,14 +72,8 @@
 
       .grid {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 30px;
-      }
-
-      @media (min-width: 600px) {
-        .grid {
-          grid-template-columns: 1fr 1fr;
-        }
       }
 
       .card {
@@ -105,6 +100,8 @@
         font-size: 3rem;
         margin-bottom: 20px;
         color: var(--accent-color);
+        font-family: var(--font-mono);
+        font-weight: 800;
       }
 
       .card-title {
@@ -143,36 +140,54 @@
   <body>
     <div class="container">
       <header>
-        <h1>CALCULUS RESOURCES</h1>
-        <div class="subtitle">Faculty of Computer Science (CS+IT)</div>
+        <h1>CS HUB</h1>
+        <div class="subtitle">National University - Faculty of CS & IT</div>
       </header>
 
       <div class="grid">
-        <a href="calculus_solutions.html" class="card">
-          <div class="card-icon">∑</div>
-          <div class="card-title">Solutions Manual</div>
+        <!-- YEAR 1 -->
+        <a href="year1.html" class="card">
+          <div class="card-icon">01</div>
+          <div class="card-title">Year 1</div>
           <div class="card-desc">
-            Complete step-by-step solutions for Limits, Continuity, and
-            Differentiation problems.
+            Foundation subjects: Calculus, Intro to CS, English.
           </div>
         </a>
 
-        <a href="calculus_laws.html" class="card">
-          <div class="card-icon">∫</div>
-          <div class="card-title">Laws & Formulas</div>
+        <!-- YEAR 2 -->
+        <a href="year2.html" class="card">
+          <div class="card-icon">02</div>
+          <div class="card-title">Year 2</div>
           <div class="card-desc">
-            Comprehensive cheat sheet for Calculus I laws, theorems, and
-            derivatives.
+            Core concepts: Data Structures, Algorithms, Architecture.
           </div>
         </a>
+
+        <!-- YEAR 3 -->
+        <a href="year3.html" class="card">
+          <div class="card-icon">03</div>
+          <div class="card-title">Year 3</div>
+          <div class="card-desc">
+            Advanced topics: OS, Networks, Software Engineering.
+          </div>
+        </a>
+        
+        <!-- YEAR 4 -->
+        <a href="year4.html" class="card">
+          <div class="card-icon">04</div>
+          <div class="card-title">Year 4</div>
+          <div class="card-desc">
+            Specialization: AI, Security, Graduation Project.
+          </div>
+        </a>
+
       </div>
     </div>
 
     <footer>
       <div class="footer-content">
-        <p>Calculus Project</p>
+        <p>Managed by Abdelrazieg Mohamed</p>
         <p>
-          Abdelrazieg Mohamed |
           <a href="https://linktr.ee/prodbyabdo" class="link" target="_blank"
             >linktr.ee/prodbyabdo</a
           >

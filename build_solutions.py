@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Configuration
 INPUT_DIR = Path(r"C:\Users\abdel\OneDrive\Desktop\PDFOCR\output_pdfplumber")
-SOLUTIONS_HTML_PATH = INPUT_DIR / "year1sem1calcsolutions.html"
+SOLUTIONS_HTML_PATH = Path("year1sem1calcsolutions.html")
 
 def extract_solutions(md_content):
     """
