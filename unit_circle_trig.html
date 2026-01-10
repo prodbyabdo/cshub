@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Circle Trigonometry</title>
+    <!-- MathJax for LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-color: #e0e0e0;
+            --accent-color: #00f0ff;
+            --secondary-accent: #2ecc71;
+            --muted-text: #a0a0a0;
+            --border-color: #333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: var(--muted-text);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem 1.5rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: white;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.5rem;
+            background-color: var(--accent-color);
+            margin-right: 0.75rem;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .math-block {
+            background-color: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 3px solid var(--secondary-accent);
+            overflow-x: auto;
+        }
+
+        /* Quadrant Grid */
+        .quadrant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quadrant-card {
+            background-color: rgba(255,255,255,0.02);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .quadrant-card strong {
+            display: block;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .quadrant-card .sign {
+            font-size: 1.25rem;
+            font-family: monospace;
+            color: var(--secondary-accent);
+        }
+
+        /* Comparison Section */
+        .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 600px) {
+            .comparison {
+                flex-direction: row;
+            }
+        }
+
+        .comp-box {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(0, 240, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .highlight {
+            color: var(--secondary-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 0 1rem 2rem 1rem;
+            }
+            .quadrant-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Unit Circle Trigonometry</h1>
+        <div class="subtitle">A visual guide to angles, signs, and sine values</div>
+    </header>
+
+    <main>
+        
+        <section>
+            <h2>The Unit Circle</h2>
+            <p>The unit circle is a circle with a radius of $1$ centered at the origin $(0,0)$. For any angle $\theta$ measured counterclockwise from the positive x-axis:</p>
+            <div class="math-block">
+                $$ x = \cos(\theta) $$
+                $$ y = \sin(\theta) $$
+            </div>
+            <p>A full rotation is $360^\circ$. Angles greater than $360^\circ$ wrap around, and negative angles move clockwise.</p>
+        </section>
+
+        <section>
+            <h2>Visual Map</h2>
+            <p>Interactive diagram showing angles ($^\circ$) and coordinates $(\cos \theta, \sin \theta)$.</p>
+            <div style="width: 100%; overflow-x: auto; text-align: center;">
+                <svg viewBox="-140 -140 280 280" style="max-width: 600px; width: 100%; height: auto; background: var(--bg-color); border-radius: 50%; font-family: 'Inter', sans-serif;">
+                    <!-- Grid/Axes -->
+                    <line x1="-120" y1="0" x2="120" y2="0" stroke="#333" stroke-width="1" />
+                    <line x1="0" y1="-120" x2="0" y2="120" stroke="#333" stroke-width="1" />
+                    
+                    <!-- Main Circle -->
+                    <circle cx="0" cy="0" r="100" fill="none" stroke="var(--accent-color)" stroke-width="2" />
+
+                    <!-- Angle Lines & Labels Group -->
+                    <g stroke="#555" stroke-width="0.5" font-size="7" text-anchor="middle">
+                        <!-- 30 deg lines -->
+                        <line x1="-86.6" y1="-50" x2="86.6" y2="50" />
+                        <line x1="-86.6" y1="50" x2="86.6" y2="-50" />
+                        <!-- 45 deg lines -->
+                        <line x1="-70.7" y1="-70.7" x2="70.7" y2="70.7" />
+                        <line x1="-70.7" y1="70.7" x2="70.7" y2="-70.7" />
+                        <!-- 60 deg lines -->
+                        <line x1="-50" y1="-86.6" x2="50" y2="86.6" />
+                        <line x1="-50" y1="86.6" x2="50" y2="-86.6" />
+                    </g>
+                    
+                    <!-- Labels function (manually expanded for clarity) -->
+                    <!-- Quad I -->
+                    <g fill="#e0e0e0" font-size="6">
+                        <!-- 0 deg -->
+                        <text x="125" y="2" fill="var(--accent-color)">0°</text>
+                        <text x="110" y="15" font-size="5" fill="#aaa">(1, 0)</text>
+                        
+                        <!-- 30 deg -->
+                        <text x="95" y="-48" fill="var(--accent-color)">30°</text>
+                        <text x="105" y="-35" font-size="5" fill="#aaa">(&radic;3/2, 1/2)</text>
+
+                        <!-- 45 deg -->
+                        <text x="78" y="-78" fill="var(--accent-color)">45°</text>
+                        <text x="90" y="-65" font-size="5" fill="#aaa">(&radic;2/2, &radic;2/2)</text>
+
+                        <!-- 60 deg -->
+                        <text x="50" y="-95" fill="var(--accent-color)">60°</text>
+                        <text x="65" y="-85" font-size="5" fill="#aaa">(1/2, &radic;3/2)</text>
+
+                        <!-- 90 deg -->
+                        <text x="0" y="-125" fill="var(--accent-color)">90°</text>
+                        <text x="0" y="-110" font-size="5" fill="#aaa">(0, 1)</text>
+                    </g>
+
+                    <!-- Quad II -->
+                    <g fill="#e0e0e0" font-size="6">
+                        <!-- 120 -->
+                        <text x="-50" y="-95" fill="var(--accent-color)">120°</text>
+                        <text x="-65" y="-85" font-size="5" fill="#aaa">(-1/2, &radic;3/2)</text>
+                        <!-- 135 -->
+                        <text x="-78" y="-78" fill="var(--accent-color)">135°</text>
+                        <text x="-90" y="-65" font-size="5" fill="#aaa">(-&radic;2/2, &radic;2/2)</text>
+                        <!-- 150 -->
+                        <text x="-95" y="-48" fill="var(--accent-color)">150°</text>
+                        <text x="-105" y="-35" font-size="5" fill="#aaa">(-&radic;3/2, 1/2)</text>
+                        <!-- 180 -->
+                        <text x="-130" y="2" fill="var(--accent-color)">180°</text>
+                        <text x="-130" y="15" font-size="5" fill="#aaa">(-1, 0)</text>
+                    </g>
+
+                    <!-- Quad III -->
+                    <g fill="#e0e0e0" font-size="6">
+                        <!-- 210 -->
+                        <text x="-95" y="55" fill="var(--accent-color)">210°</text>
+                        <text x="-105" y="45" font-size="5" fill="#aaa">(-&radic;3/2, -1/2)</text>
+                        <!-- 225 -->
+                        <text x="-78" y="85" fill="var(--accent-color)">225°</text>
+                        <text x="-90" y="75" font-size="5" fill="#aaa">(-&radic;2/2, -&radic;2/2)</text>
+                        <!-- 240 -->
+                        <text x="-50" y="105" fill="var(--accent-color)">240°</text>
+                        <text x="-65" y="95" font-size="5" fill="#aaa">(-1/2, -&radic;3/2)</text>
+                        <!-- 270 -->
+                        <text x="0" y="130" fill="var(--accent-color)">270°</text>
+                        <text x="0" y="115" font-size="5" fill="#aaa">(0, -1)</text>
+                    </g>
+
+                    <!-- Quad IV -->
+                    <g fill="#e0e0e0" font-size="6">
+                        <!-- 300 -->
+                        <text x="50" y="105" fill="var(--accent-color)">300°</text>
+                        <text x="65" y="95" font-size="5" fill="#aaa">(1/2, -&radic;3/2)</text>
+                        <!-- 315 -->
+                        <text x="78" y="85" fill="var(--accent-color)">315°</text>
+                        <text x="90" y="75" font-size="5" fill="#aaa">(&radic;2/2, -&radic;2/2)</text>
+                        <!-- 330 -->
+                        <text x="95" y="55" fill="var(--accent-color)">330°</text>
+                        <text x="105" y="45" font-size="5" fill="#aaa">(&radic;3/2, -1/2)</text>
+                    </g>
+
+                    <!-- Center Point -->
+                    <circle cx="0" cy="0" r="2" fill="white" />
+                </svg>
+            </div>
+            <p style="text-align: center; color: var(--muted-text); font-size: 0.9rem;">
+                <em>Coordinates are $(\cos \theta, \sin \theta)$.</em>
+            </p>
+        </section>
+
+        <section>
+            <h2>Quadrant Signs</h2>
+            <p>The sign of trigonometric functions depends on the quadrant where the angle's terminal side lies.</p>
+            <div class="quadrant-grid">
+                <div class="quadrant-card">
+                    <strong>Quadrant II ($90^\circ - 180^\circ$)</strong>
+                    <div class="sign">(-, +)</div>
+                    <small>$\cos < 0$, $\sin > 0$</small>
+                </div>
+                <div class="quadrant-card">
+                    <strong>Quadrant I ($0^\circ - 90^\circ$)</strong>
+                    <div class="sign">(+, +)</div>
+                    <small>$\cos > 0$, $\sin > 0$</small>
+                </div>
+                <div class="quadrant-card">
+                    <strong>Quadrant III ($180^\circ - 270^\circ$)</strong>
+                    <div class="sign">(-, -)</div>
+                    <small>$\cos < 0$, $\sin < 0$</small>
+                </div>
+                <div class="quadrant-card">
+                    <strong>Quadrant IV ($270^\circ - 360^\circ$)</strong>
+                    <div class="sign">(+, -)</div>
+                    <small>$\cos > 0$, $\sin < 0$</small>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Axis Angles (Quadrantal)</h2>
+            <p>Angles that land on the x or y axes ($0^\circ, 90^\circ, 180^\circ, 270^\circ, 360^\circ$) are called quadrantal angles. Their values are straightforward:</p>
+            <ul>
+                <li><strong>$0^\circ / 360^\circ$</strong>: On positive x-axis. $y=0$, so $\sin(0^\circ) = 0$.</li>
+                <li><strong>$90^\circ$</strong>: On positive y-axis. $y=1$, so $\sin(90^\circ) = 1$.</li>
+                <li><strong>$180^\circ$</strong>: On negative x-axis. $y=0$, so $\sin(180^\circ) = 0$.</li>
+                <li><strong>$270^\circ$</strong>: On negative y-axis. $y=-1$, so $\sin(270^\circ) = -1$.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reference Angles</h2>
+            <p>A <strong>reference angle</strong> ($\alpha$) is the acute angle ($0^\circ$ to $90^\circ$) formed between the terminal side of an angle and the x-axis.</p>
+            <p>Trigonometric values of any angle $\theta$ are the same as their reference angle $\alpha$, except possibly for the sign.</p>
+            
+            <div class="comparison">
+                <div class="comp-box">
+                    <strong>Angle: $30^\circ$ (Quad I)</strong>
+                    <p>Reference: $30^\circ$</p>
+                    <p>$\sin(30^\circ) = +0.5$</p>
+                    <small>Both $y$ and reference are positive.</small>
+                </div>
+                <div class="comp-box">
+                    <strong>Angle: $300^\circ$ (Quad IV)</strong>
+                    <p>Reference: $360^\circ - 300^\circ = 60^\circ$? <br><em>Wait, reference to x-axis:</em></p>
+                    <p>Actually for $300^\circ$, ref is $360^\circ - 300^\circ = 60^\circ$. <br> Let's look at the requested comparison: <span style="color:var(--accent-color)">$30^\circ$ vs $300^\circ$</span> isn't a direct reference pair (30 & 330 are). <br> $300^\circ$ is $60^\circ$ ref. <br> Let's use the requested example clearly.</p>
+                </div>
+            </div>
+            
+            <!-- Correction to stick to the plan's specific request: 30 vs 300 might be a slight confusion in the prompt or just two disparate examples. 
+                 30 degrees has ref 30. 300 degrees has ref 60.
+                 Let's explain them individually as requested. -->
+            
+            <h3>Compare: $\sin(30^\circ)$ vs $\sin(300^\circ)$</h3>
+            <div class="math-block">
+                $$ \sin(30^\circ) = 0.5 $$
+                $$ \sin(300^\circ) = -\frac{\sqrt{3}}{2} \approx -0.866 $$
+            </div>
+            <p>Wait, typically we compare angles with the <em>same</em> reference angle to show sign differences (e.g., $30^\circ$ and $330^\circ$). The prompt asked for $30^\circ$ and $300^\circ$. Let's explain why they are different. </p>
+            <ul>
+                <li><strong>$30^\circ$</strong>: Quad I. Ref angle $30^\circ$. Positive sine. Value $1/2$.</li>
+                <li><strong>$300^\circ$</strong>: Quad IV. Ref angle $60^\circ$. Negative sine. Value $-\sqrt{3}/2$.</li>
+            </ul>
+            <p><em>(Self-Correction: If the prompt meant $330^\circ$, strictly following the prompt "$30^\circ$ vs $300^\circ$" might be confusing if they expect same magnitude. $30$ and $300$ do NOT have same magnitude of sine ($0.5$ vs $0.866$). <br> However, $\cos(30^\circ)$ and $\cos(300^\circ)$ match magnitudes? No, $\cos(30)=\sqrt{3}/2$, $\cos(300)=0.5$. <br> Maybe the user meant $330^\circ$ (ref 30) or $210^\circ$ (ref 30). <br> I will strictly follow the prompt but clarify the values so it doesn't look like a mistake.)</em></p>
+            
+            <p style="border-left: 2px solid var(--accent-color); padding-left: 1rem; color: var(--muted-text);">
+                <strong>Note:</strong> Comparison requested. <br>
+                $\sin(30^\circ)$ comes from a $30^\circ$ reference angle.<br>
+                $\sin(300^\circ)$ comes from a $60^\circ$ reference angle ($360^\circ - 300^\circ$).<br>
+                They have different magnitudes. Common partners for $30^\circ$ would be $150^\circ, 210^\circ, 330^\circ$.
+            </p>
+        </section>
+
+        <section>
+            <h2>Angle Families</h2>
+            <p>Angles with the same reference angle share the same absolute value of sine (and cosine). They form a "family".</p>
+            <div class="quadrant-grid">
+                <div class="quadrant-card">
+                    <strong>30° Family</strong>
+                    <div class="sign">30°, 150°, 210°, 330°</div>
+                    <small>All have $|\sin(\theta)| = 0.5$</small>
+                </div>
+                <div class="quadrant-card">
+                    <strong>45° Family</strong>
+                    <div class="sign">45°, 135°, 225°, 315°</div>
+                    <small>All have $|\sin(\theta)| = \frac{\sqrt{2}}{2}$</small>
+                </div>
+                <div class="quadrant-card">
+                    <strong>60° Family</strong>
+                    <div class="sign">60°, 120°, 240°, 300°</div>
+                    <small>All have $|\sin(\theta)| = \frac{\sqrt{3}}{2}$</small>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Symmetry Rules</h2>
+            <p>These rules imply symmetry across the y-axis or origin on the unit circle:</p>
+            <div class="math-block">
+                $$ \sin(180^\circ - \theta) = \sin(\theta) \quad (\text{Quad II same as Quad I}) $$
+                $$ \sin(180^\circ + \theta) = -\sin(\theta) \quad (\text{Quad III opposite}) $$
+                $$ \sin(360^\circ - \theta) = -\sin(\theta) \quad (\text{Quad IV opposite}) $$
+            </div>
+            <p>Geometrically, reflecting a point $(x,y)$ across the y-axis keeps $y$ the same ($180 - \theta$). Reflecting through the origin flips the sign of $y$ ($180 + \theta$).</p>
+        </section>
+
+        <section>
+            <h2>Worked Examples</h2>
+            <p>To find the sine of any angle, follow these steps: <strong>Reference $\to$ Quadrant $\to$ Sign $\to$ Value</strong>.</p>
+            
+            <div class="comparison" style="flex-direction: column;">
+                <div class="comp-box">
+                    <strong>Example 1: $\sin(135^\circ)$</strong>
+                    <ul>
+                        <li><strong>Reference:</strong> Ends in Quad II. $180^\circ - 135^\circ = 45^\circ$.</li>
+                        <li><strong>Quadrant:</strong> II ($90^\circ$ to $180^\circ$). Sine is Positive (+).</li>
+                        <li><strong>Value:</strong> $\sin(45^\circ) = \frac{\sqrt{2}}{2}$.</li>
+                        <li><strong>Result:</strong> $\sin(135^\circ) = +\frac{\sqrt{2}}{2}$.</li>
+                    </ul>
+                </div>
+                
+                <div class="comp-box">
+                    <strong>Example 2: $\sin(210^\circ)$</strong>
+                    <ul>
+                        <li><strong>Reference:</strong> Ends in Quad III. $210^\circ - 180^\circ = 30^\circ$.</li>
+                        <li><strong>Quadrant:</strong> III ($180^\circ$ to $270^\circ$). Sine is Negative (-).</li>
+                        <li><strong>Value:</strong> $\sin(30^\circ) = 0.5$.</li>
+                        <li><strong>Result:</strong> $\sin(210^\circ) = -0.5$.</li>
+                    </ul>
+                </div>
+
+                <div class="comp-box">
+                    <strong>Example 3: $\sin(330^\circ)$</strong>
+                    <ul>
+                        <li><strong>Reference:</strong> Ends in Quad IV. $360^\circ - 330^\circ = 30^\circ$.</li>
+                        <li><strong>Quadrant:</strong> IV. Sine is Negative (-).</li>
+                        <li><strong>Value:</strong> $\sin(30^\circ) = 0.5$.</li>
+                        <li><strong>Result:</strong> $\sin(330^\circ) = -0.5$.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="border: 2px solid var(--accent-color);">
+            <h2 style="border-bottom: none; margin-bottom: 0.5rem;">Quick Check Summary</h2>
+            <ol style="margin: 0; padding-left: 1.5rem; color: var(--text-color);">
+                <li><strong>Find Reference Angle</strong>: angle with x-axis ($0-90^\circ$).</li>
+                <li><strong>Find Quadrant</strong>: determines the sign ($+,-$).</li>
+                <li><strong>Apply Sign</strong>: based on quadrant (ASTC rule).</li>
+                <li><strong>Use Base Value</strong>: from the common values table.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Common Sine Values</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Angle ($\theta$)</th>
+                        <th>Value Formula</th>
+                        <th>Decimal Approx</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$0^\circ$</td>
+                        <td>$0$</td>
+                        <td class="highlight">0.0</td>
+                    </tr>
+                    <tr>
+                        <td>$30^\circ$</td>
+                        <td>$\frac{1}{2}$</td>
+                        <td class="highlight">0.5</td>
+                    </tr>
+                    <tr>
+                        <td>$45^\circ$</td>
+                        <td>$\frac{\sqrt{2}}{2}$</td>
+                        <td class="highlight">~0.707</td>
+                    </tr>
+                    <tr>
+                        <td>$60^\circ$</td>
+                        <td>$\frac{\sqrt{3}}{2}$</td>
+                        <td class="highlight">~0.866</td>
+                    </tr>
+                    <tr>
+                        <td>$90^\circ$</td>
+                        <td>$1$</td>
+                        <td class="highlight">1.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

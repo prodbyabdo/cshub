@@ -1,15 +1,29 @@
-# System Files
-.DS_Store
-Thumbs.db
-Desktop.ini
+# Environments
+nougat_env/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs / Editors
+.vscode/
+.idea/
 
 # Logs
 *.log
 
-# Editor Directories
-.vscode/
-.idea/
+# Large Output Folders (Optional, un-comment if you want to exclude them)
+# output/
+# data/
 
-# Node Modules (if any future tooling is added)
+# Nested Repositories (Ignore the detailed pages repo)
+# output_pdfplumber/
+
+# Node Modules
 node_modules/
 package-lock.json
+
+# System
+.DS_Store
+Thumbs.db
+Desktop.ini

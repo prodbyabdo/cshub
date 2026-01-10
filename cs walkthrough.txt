@@ -1,0 +1,1396 @@
+2 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+National University
+5
+th Edtion July 2024 - June 2028
+Please see section on “Copyrights and Acknowledgement”. Apart From what has been
+stated in that section, no part of this publication may be reproduced or transmitted
+in any form or any means without permission from the President of the National
+University.
+Copy Right
+National Library Cataloging - Sudan
+38. 190624 National University N.p
+Prospectus National University/National University 3rd ed. - Khartoum:
+National University : 2015-06-05
+95 p.: ill: 30 cm
+ISBN: 978-99942-841-1-8
+1 National University-Sudan - Directory.
+A. Title
+B. Qurashi M. Ali (E.D)
+Disclaimer:
+Neither the National University, nor any of its administrators or staff, shall be liable
+to and person or entity with respect to any loss or damage, or alleged to be caused,
+by the information contained or omitted form this publication
+This is the 5th Edition of the PROSPECTUS of the National University-Sudan (NUSU). In this document registered students will nd information about the mission, vision and values of NUSU, and
+all programme details and activities. This edition includes both UNDERGRADUATE and GRADUATE course outlines. NUSU aims at high-class education in medical, technological and social sciences. This is reected in this comprehensive outline. It describes the basis of NUSU’s educational
+philosophies, programme objectives including the characteristics of the graduate, strategies and
+methods, degree structure, semester duration and credit hour load, and brief outline of content.
+This represent a narrow window into the complex organization of NUSU. More information on
+the rationale of modules, behavioural objectives, and assessment can be found in the curriculum
+of each Faculty. The calendars, year plans and timetables are issued for each semester with the
+exact dates for teaching sessions, other learning opportunities, assessment, feedback, and holidays.
+NUSU is now 19 years old. It is still developing, and trying to set traditions of availing all activities
+in its publications, that may remain relevant for 3-4 years, before new editions are issued. The
+councils and committees of NUSU, while compiling this, are drawing their experience from lo5
+Welcome
+Note from The President of NUSU
+[www.nu.edu.sd]
+4 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+cal and worldwide, up-to-date educational practices. Concurrently, other documents (Student
+Manual, Sta Handbook, Induction packages, and policies and procedures) are re-written and
+updated, in view of the emerging concerns about student welfare, environment, students with
+special needs, and virtual online educational resources.
+There is a strong focus on synergy between modern education, developmental needs, and employment market requirements. This has laid down a wide area of maneuvers in the choice of
+specic disciplines and modules. In each discipline, a detailed career advice has been added in
+this edition to show students the opportunities available if they choose to be employed or opt
+to start their own business to employ others.
+The reputability of NUSU has attracted students from about 25 countries and all continents.
+This representation requires quality of premises and services, as well as understanding of diversity, inclusiveness, and considerations for non-discrimination in the educational activities and
+campus life. International students and the Sudanese students whose families are living outside Sudan, receive special induction, supervision, and directives by the Deanship of Student
+Aairs, and regular courses shown in this prospectus as Sudanese Studies.
+It is my pleasure to invite all qualied students to join NUSU’s exciting new and innovative educational programmes. Students, parents, and sponsors are welcome to visit the campus. They will receive
+guidance from the HELP DESK at the Main Gate. They will be escorted to buildings and connected
+with the leadership of the university or faculties. Our primary target is to create guest satisfaction.
+Your comments and feedback are important for us to continue improvement to meet our goals.
+Last, but not least, we would like to invite our higher education colleagues, inside and outside
+the Sudan, to read this publication. Our special request: please have a critical look at this and
+show us our faults. You may suggest means of correcting them, and tell others about the positive and bright spots of this attempt. Your advice will be highly appreciated.
+Prof. Qurashi M. Ali PhD, MD, FRCPE
+President, Na琀椀onal University, Sudan
+www.nu.edu.sd
+7
+ACKNOWLEGEMENTS
+Worldwide, the overall innovations and their modications stem from the eorts of Professor
+Bashir Hamad. Every page of our documents could not be nalized, or brought to fruition,
+without his fatherly approval and comments or traces of his educational spirit. His direct and
+indirect contributions to the curriculum of this University and continuous encouragement are
+gratefully acknowledged, particularly those related to educational strategies, instruction, and
+evaluation. The following have reviewed and reorganized the nal versions of this prospectus:
+Prof. A/Rahman Eltom MD,PhD, Prof. A Rahman Biri MD FRCP, Prof. Elthami Abdul Mageed PhD,
+(medicine), Hassan M. Ali PhD, Dr. Ahmed Abusham PhD and Dr. Salah Ibrahim PhD, and Dr.
+Fatma Mukhtar MSc. (pharmacy), Dr. Kamal Khalil MD.Dr. Elfatih A Mageed MD (physiotherapy),
+Dr. M. A. Siddiq PhD. Prof. Awad Haj Ali PhD. (computer and health informatics program), Prof.
+Ibrahim Ghandor and Dr. Abdalla Darous, Dr. Enas Badawi PhD, Dr. Arif Aan (dentistry), Prof.
+Sayda H. Elsa MD, PhD and Dr. Nihal Mirza MD, Dr. M. Sirelkhatim, Dr. M. Abdelgadir, Dr. Maha
+Magoub (medical laboratory sciences), Dr.Abdel Moneim Saeed PhD, Dr. M. A. Elsheikh PhD
+Dr. Elsir Ali Saeed PhD, Dr. M. Elfadil PhD, Prof.Maha Esmeal (imaging technology), Prof. Awatif
+Ahmed PhD, and Ms. Fatma Bhruddin MSc, Dr. Sumia Ibrahim PhD (nursing and midwifery),
+Prof. Salih Faghiri PhD, Prof. Omer Elmagli PhD, and Prof. Hassan Kamal PhD, Dr. M. A. Osman,
+Dr. Mutaz Suliman, Dr. A Azim Almahal PhD, and Prof. A Gadir M. Ahmed PhD (management
+sciences). The contributions of Dr. Nadir Hasanain {Engineering) , Prof. A Latif Elboni and Dr.
+Ibrahim Mirghani (International Relations) are outstanding.The list, of those who, knowingly
+or unknowingly, contributed curricular details or ideas registered in Editor’s memory or documents, is exhaustive. Our thanks are to the following professors: A/Hameed Lut, M.Y. Sukkar,
+Elbagir Ali El Faki, Amir El Mubarak, Omar Abdul Aziz, Othman Taha, Othman Khalafalla, Ali
+Habbour, Omar A. Mirghani, Awadelseed Mustafa, Mubarak Majzoub, M. Awadalla Salih, Haz El
+Shazali, Jaafar M. Malik, Othman Hamour, Ali Karar, A/Alla A/Wahid, El Tayeb Abdul Rahman, Eisa
+Othman El Amin, Mamoun Homeida, Hassan M. Ahmed, Ali Abdul Rahman Barri, Ibrahim M. A/
+Rahim, Ahmed A. Muhammadani, Mukhtar El-Khatim, A/Rahman A/Hafeez, Sayed M. Ahmed,
+Awad A/Rahman El-Awad, M. Elamin El-Sharif, Kamal Zaki, A/Rahman El-Tom, Ghazi Salahuddin, Bakri Osman Saeed, Mohyddin Majzoub, Jamal Suleiman, Abbas ElKarib, ElGamri ElRadi,
+Salah M. Omer, Majid Mustafa, Muzamil Hassan A/Qadir, M. A/Rahim A/AAl, Khalid Musa, Bakri
+Musa Abdul Karim, Tahir Othman Ali, Omar Siddiq, Fathel Rahman Ahmed Ali, A.Moneim Sahal,
+Omar Habbal, Mickell Seedt, Ara Tekian, Margaret Uguroglu, Saleh A. Al Damegh, Zeinel Ab-
+6 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+deen Karar, A/Rahman Eltom, Ahmed Fahal, Kamal Qurashi, Ammar Khamis, Elamin I. Eneima,
+Elsheikh A Elobeid, Sara M. Husein, Abubakr Suliman, Elfatih A/Majeed, Mabyua Mustafa, Mustafa Idris, Amin O Sidahmed, Ammar Eltahir, Mr. Suleiman M. Dafa’Alla, Salah Faraj, and many
+more, we will add them as soon as we are reminded. There is no intention of omission of any
+eort or opinion.
+Most of the “Dentistry Curriculum” has been adapted, with permission, from experts all over the
+world, mainly deans and heads of departments in the Sudanese dental colleges, and institution in dental sciences. The outstanding eort of professors Ibrahim Ghandour, Yahya Eltayeb,
+Ibrahim Elkamil, Osman Elgindi, Ahmed Suliman, Abbas Ghariballa, Nadia A. Yahia, Elnur Ibrahim and the improvements made by Enas Badawi, Eman Khair, and Suha A/Gadir is gratefully
+acknowledged.
+The Engineering curriculum has been designed by committees headed by Dr. Nadir Hasanain
+as dean and head of civil department, and valuable contributions by Prof. Seifeldin Sadig. The
+International Relations and diplomatic studies curriculum has been written rst by Dr. Ibrahim
+Mirghani and has been edited and adapted to the national requirements by Prof. A Latif Albouni and Bakri A/Karim.
+The whole idea could not have seen the light without the encouragement of the Investors’ Corporation and Board of Trustees of the National University, who spend days every week responding
+to routine and emerging issues of nancing. On their behalf, I would like to thank the genius and
+friendly contribution of Mr. Zahir Twahry for his artistic preparation of the 3rd and 4th editions and
+other NUSU publications. The nal editing of most of the undergraduate manuscripts has been
+skillfully and patiently carried out by Prof. A Rahman Osman Beeri Former Secretary of Academic
+Aairs. The graduate prospectus has been compiled by Prof. M. M. A. Abulnur, Dean of Graduate
+Studies and Scientic Research, and Dr. M. Abd Al Kader and Dr. Hatem Al Rufaai.
+9
+ WHAT IS THE NATIONAL
+UNIVERSITY?
+1. MISSION, VISION AND VALUES
+The VISION of the National University is to be a world-class leading provider of private higher
+education in the Sudan, in the aspects of elegance of environment and structures, excellence
+of curricula and learning strategies, quality of management systems, commitment of investors and employees to customer satisfaction (students, relatives, and regulators), distinguished
+graduates in academic achievements, general ethical standards, and concern with professionalism and original research production.
+The MISSION is to: (1) constantly strive to provide ecient and best-in-class professionals, in
+their specialties, (2) meet and exceed our customer needs and expectations, and (3) stay ahead
+of the competition by creating safe and rewarding workplace facilities and innovating new
+quality output, services, and relationships in transparent, honest, and fair business.
+The VALUES are : (1) obligations to treat the public and one another with personal and professional
+integrity, consideration, and mutual respect, (2) commitment to honesty, truthfulness, respect for
+human dignity, and professional ethical behaviour, (3) fair treatment of all citizens and employees,
+with no discrimination on the basis of morphology or ideology (4) promotion of democratic values,
+hard work, perseverance, commitment to success, accepting responsibility and accountability for
+one’s conduct and obligations, and (5) creating and maintaining a respected reputation and positive
+image in the community as a trusted partner through excellent care of the individual and family, and
+responsibility towards the community and environmental problems and concerns.
+2. DOCUMENTS
+The legal documents of the University include: (1) the University Charter, (2) Academic Regulations
+(3) Rules of Activity and Conduct (4) Study Fees’ Regulations, (5) Employment Regulations, (6) National Employment Penalty Regulations, (7) Contracts and Salary Scale, (8) Job Descriptions, (9) Sta
+Handbook, (10) Students’ Manual, (11) Quality Manual, (12) Teaching, Learning and Assessment
+Policy, (13) Prospectus and Curricula, (14) Organizational Chart, (15) Committee Structure, (16) Logbooks of students’ skills and activities, (17) Year Plans, (18) Academic Calendars, (19) Programme
+Evaluation Forms, (20) Portfolio of Architectural and Structural Designs of Buildings, (21) External
+Examiners’ Appointment, Reporting and Response documents and (22) numerous policies and procedures in areas of quality, safety, and non-discrimination.
+8 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+3. BOARD OF TRUSTEES
+The Board of Trustees (BOT) is formed according to the Charter to include the investors, the academicians, the representative of the Ministry of Higher Education, and public gures of interest in education or eminent individuals involved in social accountability issues of universities. The current
+BOT is chaired by Dr. Taha Eltayeb A. Elimam, and includes in its membership: Prof. Qurashi M. Ali,
+Dr. Amin O. Sidahmed, Dr. M. Sirelkatim Ali, Prof. A-Rahman Osman Beeri, Prof. Osama A-rahman
+Elamin, Eng. M. Awadelkarim Elgasim, Dr. Saad Subahi, Dr. Elhadi Bakheet, Eng. Yousif A. Yousif, Prof.
+A-Moneim Algousi, Dr. Ismail Qurashi, Prof. Hassan M. Ali, Deans of faculties, and representatives
+appointed by the Ministry of Higher Education and approved by the President of the Sudan.
+4. RIGHTS
+4.1 GENDER RIGHTS
+Throughout this manual (and the webpage) every eort has been made to use he/she, his/
+her, him/her. It may not be possible to assure that this fair use has been consistent. Any such
+unintended mistake should be taken to mean both sexes. Females have been addressed in situations of special concerns, in gender-specic issues, mainly out of respect for their specialized
+roles.
+4.2 EXCLUSION OF LIABILITY AND DISCLAIMER
+Throughout this manual (and the webpage) every eort has been made to ensure that expert,
+accurate, and up-to-date guidance has been included. The administrative and academic authority continuously updates the NUSU data and academic regulations to satisfy the emerging needs, more quickly than publications would reect. Approved changes are shown at the
+ocial noticeboards of the University. Accordingly, neither the Ministry of Higher Education,
+nor the NUSU administration, shall be liable to any person or entity with respect to any loss
+or damage caused or alleged to be caused by the information contained or omitted from this
+manual (or the webpage).
+4.3 COPYRIGHTS
+a. The curriculum timetable and course details resemble many of those (or may contain parts)
+in other colleges in which the “President of NUSU” has been the main or essential member in the bodies responsible for curriculum design and evaluation. In many institutions he
+has been one of the driving forces for innovation. These institutions include: University of
+Gezira (Sudan), Sultan Qaboos University (Oman), Omdurman Islamic University, Alzaeim
+Al-Azhari University, University of Medical Science and Technology, African International
+University, National Ribat University, Al-Razi University (Sudan), and Al Qassim University
+(Saudi Arabia). Major innovations have been added to improve on the experience of the
+above institutions. This manual (and the webpage), in addition to comprehensive compilations in each program document (to be given to each student) is an entity of its own. Therefore, the total set of details, which is not available in any other institution so far, may not be
+copied or published without written permission from the National University- Sudan.
+b. The teaching material available in the webpage, and other published material in the University
+notes, is original and should not be reproduced for commercial use, in any form without written
+permission of the National University- Sudan. Non-protable teaching purposes are allowed.
+Our teachers and colleagues, who are mentioned in the “Acknowledgements”, are free to use
+this material because it is all from them, we could not single out what is ours from theirs.
+5. ENTRANCE REQUIREMENTS
+A. Applications must be through the Ministry of Higher Education (Sudan) Admission Directorate, based on passing a fresh Sudan (or equivalent) School Certicate or equivalent qualication (please see relevant booklets provided at that oce). Older 5-10 years’ School Certicates
+may be considered, if vacancies are there, and details are approved by the Admission Oce.
+The newly introduced online application dismiss disqualied applicants automatically.
+B. Direct applications are welcome, but will be entered online by the University to the Admission Directorate for approval.
+C. International applications will be processed similarly, but candidates are advised to follow
+the application procedure in the webpage, and wait for a response, before arriving in the
+Sudan. The NUSU Administration takes 5 working days (after receipt of application) to nalize acceptance. Electronic communication is preferred. For security reasons. A student who
+is granted acceptance by the NUSU will NOT be allowed by the Ministry of Internal Aairs to
+transfer to any other university after arrival, except after studying and passing, at least, one
+academic year..
+D. Mature students qualied with a previous health science professional degree may be considered. In this case early application is recommended (6 months before national intake
+in September every year), because of the time it may take for the approval of the School
+Certicate by Ministries of General Education and Higher Education, Sudan.
+E. Final decision on acceptance depends on the results of an interview to conrm if the student has the aptitude to join a specialty, and is free from physical and psychological inabilities that are not compatible with the responsibilities of a specic or hardship profession. But
+individuals with special needs are welcome and will nd NUSU a conducive environment of
+values against discrimination.
+F. Transfer NUSU from other universities may be considered for enrollment in Semesters 2, 3,
+4 or 5 only, based on the approval of the General Directorate of Admission in the Ministry of
+Higher Education.
+6. STAFF AND RECRUITMENT
+Academic and administrative sta interested in joining the National University-Sudan, may show
+their intention by lling the e-recruitment form included in the webpage. A response will be sent
+10 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+by e-mail within 48 hours, and further instructions will follow. Appointment of academic sta is
+based on academic excellence in the areas of research and teaching. Academic applicants with no
+research records or grants will not be considered for full-time positions in this university. Full- and
+part-time sta list may be looked up in Academic Sta section of the webpage.
+Applicants interested in joining other private educational institutions in the Sudan can reach
+them through our web-page. The employment conditions and salary scale are not (currently)
+available in this manual or website.
+7. LOCATION AND MAPS
+A. The Country: The best advantage of this National University is that it is located in Sudan,
+an Afro-Arab country with rich human and natural life resources. The inhabitants are either
+Arabs or Africans.. The Sudan educational institutions are known, worldwide, for their academic excellence, ethical heritage and professional teaching perfection. A Sudanese national, wherever he/she may be is unique in considerateness, courtesy, and hospitality. In
+almost 80% of the country, it is the safest in the world. A single lady can jog in Khartoum, or
+any other city, in the middle of the night unbothered. Sudanese abide voluntarily by strong
+moral codes and respect for females as foreigners. The media-nourished concepts of NorthSouth or West-East conicts have largely exaggerated the reality. The color of people has no
+signicance in this country, maybe the only country in the world where color has never and
+can never be a real cause of conict. Media are prototyping other countries’ dilemmas on
+a local setup that has got some developmental problems. It is interesting that the Arabs in
+this country are mainly non-white, and the non-Arabs are not necessarily black, contrary to
+what the media have publicized. The luckiest person in the world, any moment, is the one
+who has been received by a Sudanese host.
+Prot Sudan Khartoum
+B. The City: The capital is Khartoum, a city made up of three cities striding the White Nile, Blue
+Nile as they join to form the River Nile. This has given it unique panoramic landscapes and
+scenery. There are about 4-6 million inhabitants, mostly in traditional houses, known for
+their spacious yards. Khartoum city is the ocial capital crowded with governmental oces, ministries, embassies and international organizations. There are some auent districts
+where the price of a house may be as expensive as in New York or Tokyo, and other areas
+of modest housing. Therefore students have a wide range of choice. Transportation used to
+be a problem, now it is quite easy, but still, students are advised to nd accommodation as
+near as possible to the University premises.
+C. Premises and Environment : (See map). The National University permanent building is located
+in the Eastern part of Khartoum called Al Raqi District, near the Khartoum-Medani Highway,
+in an auent newly established residential area. This region has an interlacing and frequent
+network of transport, yet the wide roads give no impression of crowdedness, or noise pollution. This accessibility is an invaluable asset for an educational institution. The University block,
+a purpose-built structure, assumes a masterpiece of architectural innovation (see pictures). The
+National University is open to students and sta for 18 hours on weekdays and 6 hours on weekends. The library, self-directed learning facilities are available for registered students and sta.
+Limited access to research laboratories is allowed for certain students who are involved in sta’s
+research projects. Certain sport facilities (Basket- ball and volleyball) are within the premises.
+In-door recreational facilities are available in the Cafeteria. The source of pride for the University is the design of its beautiful, environmentally friendly, and durable facilities that support its
+mission. Students and employees are expected to respect and work towards achieving that.
+Directives from them to their visitors are very important to maintain and improve the level of
+standards of perfection we intend to reach. There are few similar, or near, buildings of excellence
+of space and quality, so far, in higher education institutions in the Sudan.
+A 10-oor teaching hospital building stands next to the main University block and accommodates over 300 beds with full tertiary care facilities. A 5-oor building accommodate the
+Faculty of Engineering. NUSU owns a 35000 M2 area in Albagair Suburban Area, in which a
+new campus is being built. It includes a rural hospital.
+8. PROGRAMME FEES
+A list of tuition fees is published by the MHESR every year. Private institutions keep updating
+such list, but a student accepted in one particular academic year will NOT be charged with
+the fees published for fresh students. Fees cover teaching and administrative activities of the
+University including laboratories and in-campus training. Accommodation and food subsidies
+are NOT included. Transportation to and from the University or o-campus training sites is
+NOT included, but the University tries to provide that for selected activities. Additional fees are
+variable for compensations of absence or failure. Students pay for all courses Training outside
+the campus and examinations [substitute or supplementary], scheduled in the Summer or Holidays, based on the credit hour load of the courses. Fees for such compensations are usually not
+published in Academic Calendar, but requested by students or their sponsors.
+12 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 13
+Background
+The Faculty of Computer Science and Information Technology at the National University of Sudan (NUSU-CS IT) strives to be a leading centre of excellence in education and research in the
+eld of computer science and information technology at both the national and international
+levels.
+The college focuses on producing competent and innovative graduates in the eld of computer science and information technology through distinguished educational programmes supported by scientic research and innovation. The college is committed to advancing scientic
+research in the eld of computer science and information technology, developing technology,
+and contributing to the progress of society.
+The college emphasises the importance of critical thinking, lifelong learning, and strong partnerships with academic and industrial institutions. The college upholds core values such as
+integrity, innovation, and respect, and seeks to maintain its leading role in advancing information technology in society.
+Since 2015, NUSU has been accredited by the British Accreditation Council (BAC). These accreditations have enhanced the institution’s international reputation and standing. To date,
+three cohorts have graduated.
+Our Vision
+The Faculty of Computer Science and Information Technology at the National University of Sudan (NUSU-CSIT) aims to establish itself as a premier centre of excellence in computer science
+and information technology education and research, both nationally and internationally. Its
+goal is to provide innovative, knowledge-based education and training in computer science
+and information technology that encourages critical thinking, creativity, and cultivates skilled
+and innovative IT professionals. The college is dedicated to promoting high-quality research
+in computer science and information technology and forging lasting collaborations with comCOMPUTER SCIENCE DEPARTMENTA
+14 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+munities, industry organisations, and academic partners to advance technology, innovation,
+and sustainable development.
+Our Mission
+The College of Computer Science and Information Technology at the National University of
+Sudan (NUSU-CSIT) is committed to fostering academic excellence, advancing scientic research in computer science and information technology, and promoting social responsibility
+within a student-centered educational environment. The college seeks to develop competent
+and innovative IT programmers dedicated to lifelong learning and knowledge-based practice.
+Graduates are expected to be innovative, critical thinkers who can respond to the technological needs of diverse communities and are equipped to tackle local, regional, and global
+technical challenges. In partnership with IT systems and the broader community, the college
+aims to make meaningful contributions to improving and developing information technology
+and promoting sustainable technological solutions.
+Our Values
+The core values of the College of Computer Science and Information Technology at the National University of Sudan (NUSU-CSIT) include:
+•	 A commitment to addressing community technology challenges and providing
+solutions with e昀昀ectiveness and responsibility.
+•	 Upholding hone猀琀y, truthfulness, and respect for user data privacy and rights in all
+actions.
+•	 Ensuring fair treatment for all people and 猀琀a昀昀, without discrimination based on
+ethnicity, appearance, religion, or ideology.
+•	 Promoting democratic principles, hard work, perseverance, dedication to success,
+and accepting responsibility and accountability for one’s conduct and obligations.
+•	 Maintaining a reputable and positive community image as a tru猀琀ed partner by
+providing innovative and secure technical solutions, while being prepared for
+accountability
+Our Objectives:
+•	 To graduate practitioners holding a Bachelor’s degree in Computer Science and
+Information Technology, who possess 猀琀rong technical skills and a communityoriented approach, along with ethical and professional commitments.
+•	 To enhance scienti昀椀c research in the 昀椀eld of computer science and information
+technology by leveraging the university’s facilities and communication capabilities.
+•	 To contribute to community development by providing technical services through
+its in猀琀itutions and collaborating organisations, thereby supporting overall societal
+well-being.
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 15
+•	 To participate in the design and implementation of technical programmes and
+projects by utilising the expertise of its speciali猀琀s and consultants.
+•	 To promote continuous education by organising local and international courses,
+workshops, and conferences aimed at improving the skills and e昀케ciency of IT
+professionals.
+•	 To ensure the availability of essential equipment and software to elevate the
+quality of IT services, through partnerships with relevant government agencies
+and organisations.
+Departments
+The faculty of Computer Science and Information Technology consists of two main departments:
+Department of Computer Science
+Focuses on studying the theoretical foundations and programming aspects of computer science.
+Department of Information Technology
+Focuses on studying computer applications, networks, and information systems.
+These departments work together to provide comprehensive and integrated technical education, aiming to graduate specialists in computer science and information technology who are
+capable of facing technical challenges in society.
+Administration
+Dr Mubark Alamin Almubark Dalil
+Faculty Dean
+Dr. Hiba omer ali
+Deputy Dean
+Mrs. Laila
+Registrar
+Computer Science Departmenta
+16 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Sta
+Name Academic Rank E-Mail
+Dr. AbdElrahman Mohammed Alamin Assistant Professor abdalrahman9546@gmail.com
+Dr. Bakhita Mohamed Bashir Nasir Assistant Professor tonanasir2018@gmail.com
+Dr. Mazen Rashad Assistant Professor —
+Dr. Mohamed Ahmed Elmubarak
+Mohamed Assistant Professor M.a.almobark@gmail.com
+Dr. Mubarak Elamin Elmubarak Daleel Assistant Professor mubarakdaleel99@nu.edu.sd
+Dr. Salaheldnn Deng Aljack Ashoul Assistant Professor aljacksalah3@gmail.com
+Dr. Wafa Mohmmed Mustsfa Ahmed Assistant Professor Wa2009fa@gmail.com
+Mr. Ahmed Abdelrahman Eltom Lecturer Ahmedeltom2282@gmail.com
+Mr. Amin Talha Hassan Talha Lecturer —
+Mr. Elemam Lecturer —
+Ms. Entisar Hussein Gadal Fireen Lecturer sicrtaria2@gmail.com
+Ms. Hajer AbdAlrhman Abdalhleem
+Mohamed Lecturer —
+Ms. Hiba Omer Ali Abdalla Lecturer Hibaomer31@gmail.com
+Ms. Marwa Eltigani Abubaker Ali Lecturer marwategani@gmail.com
+Mr. Mohamed Almojtaba Alamin Okasha Lecturer malmojtaba93@gmail.com
+Mr. Abdalrahman Mohmmed Hassan Teaching Assistant abdelrahman.ibrahim3217@gmail.
+com
+Ms. Baraa Badraldeen Ali Teaching Assistant azhanhb1234@gamil.com
+Ms. Hanadi Mohammed Ibrahim Teaching Assistant Hanohanadimohammed@gmail.
+com
+Ms. Remaz Abbas AbdAllah Teaching Assistant dr.remazabbas12@gmail.com
+Ms. Safana AbdElati AbdElfarag AbdElrasool Teaching Assistant Savannax120@gmail.com
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 17
+First Year - Semester One
+# Course Title Code Credit Hours
+1 Computer Applications COM-111 3
+2 Principles of Information Systems INF-112 3
+3 English for Speci昀椀c Purpose I HMS113 3
+4 Calculus I MAT114 3
+5 Introduction to Computer Science COM115 3
+6 Discrete Mathematics MAT116 3
+7 Principles of Economic HMS117 3
+21
+First Year - Semester Two
+# Course Title Code Credit Hours
+1 File Management COM121 3
+2 Introduction to Databases COM122 3
+3 Computer Maintenance INF124 2
+4 English for Speci昀椀c Purpose II HMS123 3
+5 Principles of Accounting HMS125 3
+6 Principles of Programming COM126 3
+7 Algebra and Geometry MAT127 3
+8 Calculus II MAT128 3
+23
+Computer Science Departmenta
+18 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Second Year-Semester Three
+# Course Title Code Credit Hours
+1 Digital Systems COM211 3
+2 Programming Methods (1) COM212 3
+3 Differential Equations MAT213 3
+4 Multimedia INT214 3
+5 Database Concepts COM215 3
+6 Statistics & Probabilities (1) MAT216 3
+7 System Analysis & Design (1) SYS217 3
+8 Numeric Computation (1) MAT218 3
+24
+Second Year-Semester Four
+# Course Title Code Credit Hours
+1 Computer architecture and organization COM221 3
+2 Human - Computer Interaction INT222 3
+3 Statistics & Probabilities (2) SYS223 3
+4 Database Programming COM224 3
+5 Algorithms and Data Structure COM225 3
+6 Numeric Computation (2) MAT226 3
+7 Operational Research MAT227 3
+8 Internet Technology INT228 3
+24
+Third Year- Semester Five
+# Course Title Code Credit Hours
+1 Programming Methods (2) (OOP) COM311 3
+2 Computer Networks and Communications INT312 3
+3 Database Applications SYS313 3
+4 Software Engineering (1) SWE314 3
+5 Visual Programming COM315 3
+6 Algorithms Analysis and Design COM316 3
+7 Compilers Design COM317 3
+21
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 19
+Third Year- Semester Six
+# Course Title Code Credit Hours
+1 Software Engineering (2) SWE321 3
+2 Operating Systems Concepts COM322 3
+3 Open Source Software & Technologies INT323 3
+4 Research Methodology HMS324 3
+5 Computer Graphics and Visualization COM325 3
+6 Data Mining COM326 3
+7 E-commerce INT327 3
+21
+Fourth Year - Semester Seven
+# Course Title Code Credit Hours
+1 Information Security INT411 3
+2 Parallel and Distributed Computing COM412 3
+3 IT Project Management INT413 3
+4 Arti昀椀cial Intelligence COM414 3
+5 Simulation and Modeling COM415 3
+6 Elective (1) COM416 3
+18
+Fourth Year - Semester Eight :
+# Course Title Code Credit Hours
+1 Mobile Device Programming Technologies INT421 3
+2 Professional Ethics HMS422 2
+3 Elective (2) HSC423 3
+4 Elective (3) HSC424 3
+5 Graduation Project COM425 6
+17
+Computer Science Departmenta
+20 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Course Outline
+Detailed behavioral objectives, skills, assignments and problems are listed in each course
+book. The lists are too extensive to be included below Courses in the curriculum timetable
+not outlined below are included in other programmed, or in the original document with the
+program coordinator.
+Semester One
+Title Code Semester/Duration Credits
+Calculus -1 MAT114 1/Longitudinal 3(2,2,0)
+This introductory calculus course covers dierentiation and integration of functions of one
+variable, with applications. Topics include: Concepts of Function, Limits and Continuity, Dierentiation Rules, Application to Graphing, Rates, Approximations, and Extremum Problems, The
+Fundamental Theorem of Calculus, Applications to dierentiation
+Title Code Semester/Duration Credits
+Introduction to computer science COM115 Longitudinal/1 (2,0,3)3
+The course provides students with a broad foundation in computer science. Topics include:
+introduction to digital technology, historical review; logic gates; binary, octal, and hexadecimal systems; computer architecture and basic components, internal and external interfaces,
+types of removable media; introduction to operating systems; programming Paradigms, basic
+programming concepts; concept of algorithm, representation, correctness and performance
+of algorithms; introduction to objects. The course equips students with basic problem solving
+skills and prepares them for taking the programming sequence subjects and other computer
+science disciplines.
+Title Code Semester/Duration Credits
+Discrete Mathematics MAT116 Longitudinal/1 (2,2,0)3
+Propositional Logic, Predicate Logic and Quantication, Methods of Proof, Sets and Functions,
+Arithmetic Algorithms, Growth of Functions, Computational Complexity of Algorithms, Integer properties and Matrices, Mathematical Induction, Recursion, Sequences and Summations,
+Program Correctness, Graphs and its Applications, Trees and its Applications, Languages and
+Grammars, Finite-State Machines, Automata and Language Recognition, Turing Machines
+Title Code Semester/Duration Credits
+Principles of Economics HMS117 Longitudinal/1 (3,0,0)3
+The course topics: Language of Economics, Types of Economies and Economic Systems and
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 21
+Institutions, The Graph – Tool of the Economist: A Math Review, Production Possibility Frontiers
+– Opportunity Costs and Eciency, The Market Economy – Supply and Demand Consumer
+and Producer Surplus, Elasticity of Supply and Demand, Individual Choice: The Theory Behind
+Demand, Theory of the Firm: Supply Production, and Costs, Perfect Competition, Monopoly,
+Monopolistic Competition, Oligopoly, and Strategic Pricing, Wage and Interest Determination,
+The Government in the Economy
+Semester Two
+Title Code Semester/Duration Credits
+Principles of Accounting HMS125 Longitudinal/2 (2,2,0)3
+Course Orientation: Overview of classroom policies and expectation, Introduction to Accounting and Business, Analysing Transactions, The Adjusting Process, Completing the Accounting
+Cycle, Accounting for Merchandising Businesses, Nature of Merchandising Business, Financial
+Statement s for a Merchandising Business, Merchandising Transactions, The Adjusting and
+Closing Process, The Periodic Inventory System, Inventories, Control of Inventory, Inventory
+Cost Flow Assumptions, Inventory Costing Methods,Reporting Merchandise Inventory in the
+Financial Statements, Estimating Inventory Cost, Cash, Bank Reconciliation and Petty Cash.
+Title Code Semester/Duration Credits
+Principles of Programming COM126 Longitudinal/2 (2,0,3)3
+•	 Computer structure and Algorithms (Computer structure. Low and high languages,
+Compiling, running and debugging)
+•	 The components of JAVA language (Types in JAVA, variables, assignment and
+conditional statements)
+•	 Loop statements (The FOR statement, the WHILE statement, the DO-WHILE statement
+and casting)
+•	 Arrays (Arrays declaration , multidimensional arrays, Class String and string methods.)
+•	 Methods in Java (Principles of procedural programming. Top-down design of a
+program, modulation, passing parameters to method, static methods)
+•	 Sorting and searching algorithms (Selection sort, insertion sort, bubble sort,Searching
+methods )
+•	 Recursion 1 (Recurrence as an alternative to iteration. Dierent kinds of recursion)
+•	 Recursion 2 (Recursion and arrays Towers of Hanoi problem)
+•	 Principles of object-oriented programming(OOP) (Class denition: attributes and
+methods, Constructors (copy, default), Setter and Getter methods, references to object,
+encapsulation)
+Computer Science Departmenta
+22 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+•	 Inheritance (Creating subclasses, overriding methods, class hierarchies)
+•	 Collections, composite objects, self referential objects (Dynamic data structures:stack,
+linked lists, two way linked list)
+•	 Advanced Input /Output: Streams and Files (Basic le manipulations in JAVA)
+•	 Review (Review on the whole material following above)
+Title Code Semester/Duration Credits
+Linear Algebra and Geometry MAT127 Longitudinal/2 (2,2,0)3
+This course cover: Linear equations and matrices,Vector spaces, Linear transformations.Inner
+products, orthogonalisation and projections, QR factorisations, reactions.Determinants. Eigen values and eigenvectors. Orthogonal transformations. Symmetric matrices and quadratic
+forms, canonical forms for conics and quadrics, principal axes, diagonalisation of a quadratic
+form by completing the square and Sylvester’s Law of Inertia. The Cayley-Hamilton Theorem.
+Jordan forms. Functions of matrices, Systems of ordinary dierential equations.
+Title Code Semester/Duration Credits
+Calculus-2 MAT128 Longitudinal/2 (2,2,0)3
+This introductory calculus course covers integration of functions of one variable, with applications. Topics include:
+•	 Concepts of Integration,
+•	 Denite and Indenite Integration
+•	 The Fundamental Theorem of Calculus
+•	 Applications to Geometry: Area, Volume, and Arc Length
+•	 Applications to Science: Average Values, Work, and Probability
+•	 Techniques of Integration
+•	 Approximation of Denite Integrals, Improper Integrals, and L’Hôspital’s Rule
+Semester Three
+Title Code Semester/Duration Credits
+Digital Systems COM211 Longitudinal/3 (2,2,0)3
+This course introduces students to the basic concepts of digital systems, including analysis and
+design. Both combinational and sequential logic will be covered. Students will gain experience
+with several levels of digital systems, from simple logic circuits to hardware description language and interface programming in C.
+The following topics will be covered:
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 23
+Number systems, Boolean algebra, Binary arithmetic, Logic gates, Programmable logic, Combinational logic and building blocks, Synchronous sequential circuit design, Latches, ip-ops,
+registers and counters , State machines, Verilog and C programming
+Title Code Semester/Duration Credits
+Programming Methods COM212 Longitudinal/3 (2,0,3)3
+•	 Review of control structure, functions, and primitive data type
+•	 Arrays, Multi-dimensional arrays, More about methods, Exceptions, Recursion, Classes &
+Objects, Inner classes. I/O techniques in java, File and other related classes( streams ).
+Strings, String processing and data representing in memory
+Title Code Semester/Duration Credits
+Dierential Equations MAT213 Longitudinal/3 (2,2,0)3
+•	 First-Order Dierential Equations
+•	 Separable Equations & Applications
+•	 Linear Equations & Applications
+•	 Second-Order Dierential Equations
+•	 Introduction
+•	 General Solutions
+•	 Homogeneous Equations
+•	 Free Mechanical Vibrations
+•	 Nonhomogeneous Equations
+•	 Forced Mechanical Vibrations
+•	 The Laplace Transform
+•	 Laplace Transform & Its Inverse
+•	 Transforms of Derivatives and IVPs
+•	 Shifting Theorems
+•	 Discontinuous Inputs
+Title Code Semester/Duration Credits
+Multimedia INT214 3/Longitudinal 3(2,0,3)
+Topics include Fundamentals of multimedia, media and data streams, sound/audio, image,
+graphics, video and animation, Topics in data compression including coding requirements,
+source, entropy, and hybrid coding, JPEG, H.261, MPEG, MP3 and etc, Computer technology
+issues such as communication architecture, multimedia workstations, cache systems, storage
+systems and optical storage, Multimedia operating system issues such as real-time operation,
+Computer Science Departmenta
+24 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+resource management, process management, le systems, and Multimedia networking, Multimedia synchronization, presentation requirements, reference model, and synchronization
+techniques, Multimedia database issues such as data organization, indexing and retrieval,
+Multimedia applications including digital libraries, system software, toolkits, conferencing
+paradigms, structured interaction support, and examples from video/audio/graphics conferencing, Latest Web technologies.
+Title Code Semester/Duration Credits
+Database Concepts COM215 Longitudinal/3 (2,0,3)3
+This course covers database design and the use of databases in applications, with a short introduction to the internals of relational database engines. It includes extensive coverage of
+the relational model, relational algebra, and SQL. The course also features database design
+and relational design principles based on dependencies and normal forms. Many additional
+key database topics from the design and application-building perspective are also covered,
+including indexes, views, transactions, and integrity constraints. Systems such as MapReduce
+framework and key-value stores will also be covered. There will be a programming project,
+which explores database design and management in web applications by utilizing appropriate features of SQL.
+Title Code Semester/Duration Credits
+Statistics and Probabilities MAT216 3/Longitudinal 3(2,2,0)
+Exploring Univariate Data:
+•	 Types of data, Mean and Median
+•	 Standard Deviation and Variance, Range, IQR and Finding Outliers
+•	 Graphs and Describing Di猀琀ributions
+Introduction to Probability:
+•	 Counting Techniques, Combinations and Permutations
+•	 Sets and Venn Diagrams
+•	 Basic Probability Models
+•	 General Probability Rules
+Discrete Distributions :
+•	 Random Variables
+•	 Binomial Di猀琀ributions
+•	 Geometric Di猀琀ributions
+Continuous Distributions :
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 25
+•	 Density Curves, The Normal Di猀琀ribution
+•	 Standard Normal Calculations
+•	 Sampling Di猀琀ribution of x and ˆp
+Bivariate Data :
+•	 Scatter Plots, Correlation
+•	 The Lea猀琀 Squares Regression Line, Residuals
+•	 Non-Linear Models
+•	 Relations in Categorical Data
+Title Code Semester/Duration Credits
+System Analysis and Design-1 SYS217 Longitudinal/3 (2,2,0)3
+This module introduces the students to the concepts and skills of system analysis and design. It
+includes expanded coverage of data ow diagrams, data dictionary, and process specications.
+•	 System Analysis Fundamentals
+•	 Information requirements analysis
+•	 The analysis process
+•	 The essentials of design
+•	 Software engineering and implementation
+Title Code Semester/Duration Credits
+Numeric Computation -1 MAT218 Longitudinal/3 (2,2,0)3
+Introduction
+Motivation and applications.
+Computation and Error Analysis
+Accuracy and precision; Truncation and round-o errors; Binary Number System;Error propagation.
+Linear Systems and Equations
+Matrix representation; Cramer’s rule;
+Gauss Elimination; Matrix Inversion; LU
+Decomposition; Iterative Methods;
+Relaxation Methods; Eigen Values.
+Algebraic Equations
+Bracketing methods: Bisection, ReguliFalsi; Open methods: Secant, Fixed point
+Computer Science Departmenta
+26 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+iteration, Newton-Raphson; Multivariate
+Newton’s method.
+Regression and Curve Fitting
+Linear regression; Least squares; Total
+Least Squares; Interpolation; Newton’s
+Dierence Formulae; Cubic Splines
+Semester Four
+Title Code Semester/Duration Credits
+Computer Architecture COM221 4/Longitudinal 3(2,0,3)
+Introduction, Hi猀琀ory
+Logical circuits
+•	 Boolean algebra;Combinational circuits;Fundamental and additional logical gates;
+Karnaugh maps;Decoders;Multiplexors;Adders; Number representation; ALU;
+Latches; Sequential analysis;Regi猀琀ers;
+Processors
+•	 Regi猀琀ers sets; ISA;Control unit; Modern architectures.
+Title Code Semester/Duration Credits
+Human-Computer Interaction INT222 Longitudinal/4 (2,0,3)3
+•	 What is Interaction Design?
+•	 Understanding and conceptualising interaction
+•	 Understanding users
+•	 The process of Interaction Design
+•	 Establishing requirements
+•	 Prototyping
+•	 Evaluation
+•	 Observing users
+•	 Emerging Trends
+•	 Student Group Presentations
+•	
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 27
+Title Code Semester/Duration Credits
+System Analysis and Design-2 SYS223 Longitudinal/4 (2,2,0)3
+Fundamental knowledge, methods and skills needed to analyze and design computer-based
+systems, the role of the systems analyst, the techniques employed and relationships that need
+to be maintained, utilization of the structured software development life cycle approach, process modeling, information modeling, system architecture modeling, Object-Oriented modeling using UML. A project is given that covers analysis and design phases of a relatively data-oriented business case with emphasis on data modeling (ER diagrams), process modeling (DFDs),
+and architectural system design issues (DD, HIPO, IPO.
+Title Code Semester/Duration Credits
+Database Programming COM224 Longitudinal/4 (2,0,3)3
+Data/Information & Processing; File based systems; Data Processing Modes; Types of Databases; Components of DBMS; History and objectives of the development of DBMS; Types of data
+models; Roles in the database environment; Database Architecture; Relational Algebra & Relational Calculus; Terminology of Relational Model; Associations/Relationships; Types of Keys;
+Data Integrity; Views; Indexes; Design & Administration; Database system development life
+cycle; Phases and types of database design; Data Administration & Database Administration;
+ER-Modeling using UML; Normalization; Handling Problematic & Redundant data; Functional
+Dependencies; Transitive Dependencies; Identifying Normal Forms; Writing SQL Commands;
+Creating & Indexing the Tables; Formatting Query Results into Reports; Usage of SQL-Plus.
+Title Code Semester/Duration Credits
+Data Structures and Algorithms COM225 Longitudinal/4 (2,0,3)3
+Introduction to Data Structures and Algorithms, Arrays, Sorting Algorithms, Searching Algorithms, Stacks, Stacks Applications, Queues Priorities Queues, Linked List, Double Linked List,
+Stacks and Queues Applications using Linked List, Introduction to Tree, Binary Tree.
+Title Code Semester/Duration Credits
+Numeric Computation -2 MAT226 4/Longitudinal 3(2,2,0)
+Introduction
+Numerical Dierentiation
+Numerical dierentiation; higher order formulae.
+Integration and Integral Equations
+Trapezoidal rules; Simpson’s rules; Quadrature.
+Computer Science Departmenta
+28 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+ODEs: Initial Value Problems
+Euler’s methods; Runge-Kutta methods;
+Predictor-corrector methods; Adaptive step size; Sti ODEs.
+ODEs: Boundary Value Problems
+Shooting method; Finite dierences;
+Over/Under Relaxation (SOR).
+PDEs
+Introduction to Partial Dierential Equations.
+Title Code Semester/Duration Credits
+Operations Research MAT227 Longitudinal/4 (2,2,0)3
+•	 Introduction to Operations Research (OR)
+•	 Introduction to Foundation mathematics and statistics
+•	 Linear Programming (LP), LP and allocation of resources, LP denition, Linearity
+requirement
+•	 Maximization Then Minimization problems.
+•	 Graphical LP Minimization solution, Introduction, Simplex method denition, formulating
+the Simplex model.
+•	 Linear Programming – Simplex Method for Maximizing.
+•	 Simplex maximizing example for similar limitations, Mixed limitations
+•	 Example containing mixed constraints, Minimization example for similar limitations.
+•	 Sensitivity Analysis: Changes in Objective Function, Changes in RHS, The Transportation
+Model
+•	 Basic Assumptions.
+•	 Solution Methods:
+ Feasible Solution: The Northwest Method, The Lowest Cost Method;
+ Optimal Solution: The Stepping Stone Method, Modied; Distribution
+ (MODI) Method.
+•	 The Assignment Model:- Basic Assumptions
+Title Code Semester/Duration Credits
+Internet Technologies INT228 4/Longitudinal 3(2,0,3)
+Introduction to HTML5:Introduction, Editing HTML5,First HTML5 example,W3C html5 val-
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 29
+idation service, Heading, linking, Images, Special Characters and Horizontal rules, Lists,
+Tables, Forms, Internal linking, Meta elements, New HTML5 Form input types, input and
+datalist elements and autocomplete attribute, Page structure elements, Introduction
+to Cascading Style Sheets: Inline styles, embedded style sheets, Positioning elements,
+Backgrounds, Elements Dimensions, Box model and text ows, Media types and media queries, Drop down menus, Text Shadows, Rounded corners, Color, Box shadows, Linear
+Gradients, Radial gradients, Multiple background images, Image Borders, Animation selectors,
+Transitions and Transformations, Java Script: Introduction to Scripting, Control Statements,
+Functions, Arrays, Objects, Javascript Event handling: Reviewing the load Event, Event mousemove and the event Object, Rollovers with mouseover and mouseout, Form Processing with
+focus and blur, More Form Processing with submit and reset, Event Bubbling, More Events
+Introduction to canvas : Canvas coordinate system, Rectangles, Using paths to draw lines,
+Drawing arcs and circles, Shadows, Quadratic curve, Bezier curves, Linear gradients, Radial
+Gradients, Images, image Manipulation, Patterns, Transformations, resizing the canvas to
+ll the browser, Alpha transparency, Compositing, Save and restore methods, Note on
+canvas SVG and Canvas 3D, Ajax-Enabled Rich Internet Applications with XML and JSON:
+Introduction, Rich Internet Applications (RIAs) with Ajax,history of Ajax, “Raw” Ajax Example Using the XMLHttpRequest Object,using XML and the DOM, Creating a Full-Scale
+Ajax-Enabled Application, Web Servers: Introduction, HTTP transactions, Multitier Application
+Architecture, Client-Side Scripting versus Server-Side Scripting, Accessing Web Servers,
+Apache, MySQLand PHP Installation, Microsoft IIS Express and Web Matrix, PHP: Introduction,
+simple PHP program, converting between data types, arithmetic operators, initializing and
+manipulating Arrays, String comparision, String Processing with Regular Expressions, Form
+Processing and Business Logic, Reading from a Database, Using Cookies, Dynamic Content
+Semester Five
+Title Code Semester/Duration Credits
+Object Oriented Programming COM311 Longitudinal/5 (2,0,3)3
+Denition of object oriented, Inheritance, Multiple inheritance, Encapsulation, Polymorphism,
+Introduction to Interfaces, Dealing with interfaces, Packages, Application cases, Graphical User
+Interface GUI, GUI Application .
+Title Code Semester/Duration Credits
+Computer Networks and Commu-
+ nications INT312 Longitudinal/5 (2,0,3)3
+Topics covered Basic concepts of networking, Network topologies, The concept of layered architecture modeling including OSI and the TCP/IP protocol suite. Client-server communications,
+Physical layer functionalities including signaling, modulation, multiplexing, line coding and synchronization. Transmission media. Network performance measures including throughput, delays
+are presented, Data vs. signaling rates, channel bandwidth and capacity, Link layer functionalities
+Computer Science Departmenta
+30 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+including frame synchronization, error detection and control including ARQ, ow control mechanisms including sliding windows, Circuit, packet and virtual circuit switching technologies, Local area network technologies including ETHERNET, Token Rings, Multiple-access schemes such
+as CSMA/CD, CSMA/CA and Token-passing. MAC addressing. Switched vs. shared ETHERNETs.
+Performance evaluation, including throughputs and delays. Internetworking devices including
+repeaters, bridges, switches, routers and gateways. Network layer protocols, including IP, ARP
+and ICMP. IP addressing schemes. Subnetting, Internet routing including protocols used in the
+Internet such as RIP, OSPF and BGP, Transport layer protocols including UDP and TCP. Ports and
+sockets. TCP connection establishment. Error, ow and congestion control in TCP, Applications
+layer protocols such as HTTP, FTP, DNS, SMTP, TELNET, Network security measures including encryption, authentication, data integrity and rewalls.
+Title Code Semester/Duration Credits
+Database Applications SYS313 5/Longitudinal 3(2,0,3)
+Covers object-relational database systems and using them in programming and in web
+applications. Topics include: Object-relational database systems. The relational data model.
+The PL-SQL language. SQL queries. Installing and using database systems. Using graphical user
+interfaces for database management. Programming database systems using database
+Middleware. Programming web-based database application using middleware.
+Title Code Semester/Duration Credits
+Software Engineering I SWE314 5/Longitudinal 3(2,0,3)
+What is software engineering? Software lifecycle and process models, Software engineering
+tools and programming environments, Overview of software project management, Software
+requirements specication, Software design, Using APIs, Software verication and validation,
+and Software evolution. Software engineering tools for modeling such as: Visual Paradigm
+UML or Rational Rose will be covered in lab extensively covering ow-oriented modeling, behavioral modeling, scenario-base modeling and class modeling.
+Title Code Semester/Duration Credits
+Visual Programming COM315 5/Longitudinal 3(2,0,3)
+•	 Course intro, syllabus, Intro to computing
+•	 Program design and implementation
+•	 Essential VB, variables, data types, commenting
+•	 Arithmetic operators and expressions
+•	 Decision Structures (ifs and select case)
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 31
+•	 Loops (while, for)
+•	 Loop applications (summation, counting)
+•	 Sub Procedures (val and ref parameters)
+•	 Functions (val and ref parmaters)
+•	 Strings
+•	 Arrays
+•	 More Arrays
+•	 Files
+•	 Databases
+•	 Course overview
+Title Code Semester/Duration Credits
+ Algorithms Analysis and Design COM316 Longitudinal/5 (2,2,0)3
+Introduction, Algorithm denition, Algorithm Analysis, Recurrence Relations, Design & Analysis of Algorithms: Divide and Conquer, Greedy Algorithm, Dynamic Programming, Lower
+Bound Theory, Sorting and Searching, NP-Complete Problems: Basic Concepts.
+Title Code Semester/Duration Credits
+Compliers Design COM317 5/Longitudinal 3(2,2,0)
+Specic topics covered in this course include:
+•	 Overview of compilation
+•	 Lexical analysis
+•	 Context-free grammars, top-down and bottom-up parsing, error recovery
+•	 Abstract syntax trees, symbol tables
+•	 Lexical scoping, types (primitive, record, arrays, references), type checking
+•	 Object-oriented type systems, subtyping, interfaces, traits
+•	 Three-address code and other intermediate representations
+•	 Code generation, data representation, memory management, object layout
+•	 Code transformation and optimization , Class hierarchy analysis
+•	 Dataow analysis , Register allocation
+•	 Run-time systems, just-in-time compilation, garbage collection
+Computer Science Departmenta
+32 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Semester Six
+Title Code Semester/Duration Credits
+Software Engineering II SWE321 Longitudinal/6 (2,0,3)3
+This course covers the software development process, from requirements elicitation and analysis, through specication and design, to implementation, integration, testing, and maintenance (evolution). A variety of concepts, principles, techniques, and tools are presented, encompassing topics such as software processes, project management, people management,
+software requirements, system models, architectural and detailed design, user interface design, programming practices, verication and validation, and software evolution. Although the
+emphasis will be on modern approaches some moretraditional software engineering techniques will also be discussed.
+Title Code Semester/Duration Credits
+Operating Systems COM322 Longitudinal/6 (2,0,3)3
+Overview: Background, Computer-system structures, Operating system structures.
+Process Management: Processes and threads, Process synchronization, Deadlocks, CPU scheduling.
+Storage Management: Memory management, Virtual memory, File-system interface, File-system implementation
+I/O Systems: I/O, Secondary-storage structure.
+ Distributed Systems: Network and distributed system structures, Distributed le systems, Distributed coordination
+Title Code Semester/Duration Credits
+Open Source software and
+technologies INT 323 6/Longitudinal 3(2,0,3)
+•	 Open Source Software: Denitions and History – Where Open Source is
+•	 Successful – Open Source: The Good, the Bad and the Ugly.
+•	 Five Immediate Open Source Opportunities – Five More Open Source
+•	 Opportunities.
+•	 Open Source Server Applications – Open Source Desktop Applications.
+•	 How Open Source Software is Developed – Managing System Implementation.
+•	 Application Architecture – The Cost of Open Source Systems.
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 33
+•	 Exploring the Android API:Perspective and architecture overview,Design philosophy,
+Anatomy of an Android Application,Application life cycle
+Title Code Semester/Duration Credits
+Computer Graphics COM325 6/Longitudinal 3(2,0,3)
+•	 Introduction: History of computer graphics, graphics architectures and software,
+imaging: pinhole camera, human vision, synthetic camera, modeling vs rendering
+•	 OpenGL: architecture, displaying simple two-dimensional geometric objects,
+positioning systems, working in a windowed environment
+•	 Color: Color perception, color models (RGB, CMY, HLS), color transformations. Color in
+OpenGL. RGB and Indexed color.
+•	 Input: working in a network environment, client-server computing; input measure,
+event, sample and request input, using callbacks, icking.
+•	 Geometric transformations: ane transformations (translation, rotation, scaling, shear),
+homogeneous coordinates, concatenation, current transformation and matrix stacks.
+•	 Three dimensional graphics: classical three dimensional viewing, specifying views,
+ane transformation in 3D, projective transformations.
+•	 Ray Tracing.
+•	 Shading: illumination and surface modeling, Phong shading model, polygon shading.
+•	 Rasterization: line drawing via Bresenham’s algorithm, clipping, polygonal ll, BitBlt.
+Introduction to hidden surface removal (z buer).
+•	 Discrete Techniques: buers, bitblt, reading and writing bitmaps and pixelmaps, texture
+mapping,compositing.
+•	 Advanced Topics.
+Title Code Semester/Duration Credits
+Scienti昀椀c Research Methodologies HMS324 6/Longitudinal 3(2,2,0)
+Research Techniques: Basic research and applied research, Data collection techniques, sampling techniques; Data processing; Research Methods: Subject selection, Subject restriction,
+Reference collection; Denition of the problem or the subject in details, Denition of solution
+techniques or analysis methods, Researching and performing practical works, Results; Reporting: Page set up, Sentence structure, Headings, Abbreviation formats, Figure and table formats,
+Table of references format. Computer application using SPSS is required.
+Title Code Semester/Duration Credits
+Data Mining COM326 6/Longitudinal 3(2,2,0)
+34 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Introduction to data mining (DM)
+Motivation for Data Mining - Data Mining-Denition and Functionalities – Classication of DM
+Systems - DM task primitives - Integration of a Data Mining system with a Database or a Data
+Warehouse - Issues in DM – KDD Process .
+ Data Pre-processing
+Why to pre-process data? - Data cleaning: Missing Values, Noisy Data - Data Integration and
+transformation - Data Reduction: Data cube aggregation, Dimensionality reduction - Data
+Compression - Numerosity Reduction - Data Mining Primitives - Languages and System Architectures: Task relevant data - Kind of Knowledge to be mined - Discretization and Concept
+Hierarchy.
+ Concept Description and Association Rule Mining
+What is concept description? - Data Generalization and summarization-based characterization - Attribute relevance - class comparisons Association Rule Mining: Market basket analysis
+- basic concepts - Finding frequent item sets: Apriori algorithm - generating rules – Improved
+Apriori algorithm – Incremental ARM – Associative Classication – Rule Mining
+Classication and Prediction
+What is classication and prediction? – Issues regarding Classication and prediction:
+Classication methods: Decision tree, Bayesian Classication, Rule based, CART, Neural Network
+Prediction methods: Linear and nonlinear regression, Logistic Regression
+Introduction of tools such as DB Miner /WEKA/DTREG DM Tools
+Title Code Semester/Duration Credits
+E-Commerce INT327 6/Longitudinal 3(2,2,0)
+This course focuses on electronic commerce applications, technologies, and tools which are
+used to conduct business on the World Wide Web. It reviews foundations of e-commerce, its
+infrastructure, current business models in business-to-customers (B2C) and business-to-business (B2B) transactions, security and quality assurance, web site design strategies, payment
+systems, and various issues—Internet marketing, legal, regulatory, technological, social, and
+ethical--which relate to electronic business, systems development issues, electronic data interchange, web-based marketing, e-supply chains, e-procurement, emarketplace, customer relationship management, and web-enabling mobile. A major part of the course will be devoted
+to hands-on practices covering client-side (front-end) and server-side (back-end) applications
+in web-based business information systems. Essentials of contemporary programming tools
+for e-commerce development such as HTML, XML, ASP (VB/JavaScript) ... will be explored.
+E-Business case 猀琀udies are used to demon猀琀rate the advantages and the challenges related to
+integrating ecommerce applications.
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 35
+Semester Seven
+Title Code Semester/Duration Credits
+Information security INT411 7/Longitudinal 3(2,2,0)
+Topics include Foundations: security mindset, essential concepts (policy, CIA, etc), Software
+security: vulnerabilities and protections, malware, program analysis, Practical cryptography:
+encryption, authentication, hashing, symmetric and asymmetric crypto Networks: wired and
+wireless networks, protocols, attacks and countermeasures, Applications and special topics:
+databases, web apps, privacy and anonymity, voting, public policy.
+Title Code Semester/Duration Credits
+Parallel and Distributed Computing COM412 7/Longitudinal 3(2,2,0)
+PART I: Synchronous Parallel Models and Algorithms
+•	 Overview of parallel models and analysis of parallel algorithms.
+•	 Combinational Circuits, Parallel computation using circuits.
+•	 The PRAM Model and several PRAM Algorithms will becdiscussed.
+•	 Interconnection Network Models such as linear arrays, 2D meshes, hyper cubes.
+•	 Models Using Buses including a recon
+•	 gurable mesh and a linear array with optimal buses.
+•	 The locally developed MSIMD model called MASC.
+•	 Asynchronous Parallel Models including SPMD, BSP and LogP.
+PART I I: Distributed Algorithms
+•	 Introduction, locality-sensitivity, distributed network models
+•	 Broadcast, convergecast, downcast, upcast
+•	 Tree constructions
+•	 Synchronizers
+•	 Vertex coloring, maximal independent sets, message routing
+•	 Locality-preserving representations
+•	 Applications of locality-preserving representations
+Computer Science Departmenta
+36 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Title Code Semester/Duration Credits
+IT Project Management INT413 Longitudinal/7 (2,2,0)3
+Introduction to project management concepts, tools, and techniques; project integration
+management; project planning, scope management, scheduling, budget control, human resource management, communication management, risk analysis and management, project
+quality management, and procurement management. MS-Project will be demonstrated and
+used as a tool for creating project management documents.
+Title Code Semester/Duration Credits
+Arti昀椀cial Intelligence COM414 7/Longitudinal 3(2,0,3)
+An introduction to the basic principles, techniques, and applications of Articial Intelligence.
+Coverage includes knowledge representation, logic, inference, problem solving, search algorithms, game theory, perception, learning, planning, and agent design. Students will experience
+programming in AI language tools. Potential areas of further exploration include expert systems,
+neural networks, fuzzy logic, robotics, natural language processing, and computer vision.
+Title Code Semester/Duration Credits
+Simulation and Modeling COM415 7/Longitudinal 3(2,0,3)
+1. Introduction: Course Logistics, Denitions of Modelling and Simulation, When to apply
+these techniques, Applications, Terminology & Components , Discrete vs. Continuous time
+and Process ow in simulation study.
+2. Simulation Examples: Queuing systems , Communications networks
+3. General Principles: Event -driven simulation, World Views, List processing.
+4. Simulation software: History,Selection process, Simulation in High Level Language (C, C++,
+Pascal, Fortran), Simulation packages (Matlab/Simulink), Interpreted vs. compiled simulators, Future trends
+5. Statistical models: Terminology and Concepts, Useful Statistical Models, Distributions.
+6. Queuing models: Characteristics, Performance Measures, Steady-State Behavior, Networks
+of Queues.
+7. Random Number Generation: Properties of Random Numbers, Generation of Pseudo-Random Numbers, Testing for Randomness, Pitfalls.
+Semester Eight
+Title Code Semester/Duration Credits
+ Mobile Device Programming
+technologies COM421 Longitudinal/8 (2,0,3)3
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 37
+•	 Introduction to Mobile Computing,
+•	 Mobile Platforms & Architectures,
+•	 Mobile Java – J2ME,
+•	 Android Operating Sy猀琀em: It is Architecture and its Programming
+Implementation using Eclipse, JDK and SDK.
+•	 iOS Operating Sy猀琀em,
+•	 Symbian S60 OS-Windows Phone 7,
+•	 Wireless Telecommunication,
+•	 Wireless Networks,
+•	 Mobile Security,
+•	 Mobile Databases,
+•	 Mobile Multimedia Services,
+•	 Emerging Mobile Technologies
+Title Code Semester/Duration Credits
+Computer Ethics HMS422 8/Longitudinal 2(2,0,0)
+This course introduces students to the topics of information technology ethics including:
+denitions, rules & policies of computer ethics, hacking, viruses, Internet ethics, freedom of
+expression on the Internet, computer professionals and social responsibilities, software copyright, intellectual property, software piracy, cyber law and privacy & security of computerized
+information.
+Topics:
+An Overview of Ethics, Ethics for IT Workers and IT Users, Computer and Internet Crime, Privacy, Intellectual Property, The Impact of Information Technology on Productivity and Quality of Life,
+Title Code Semester/Duration Credits
+Graduation Project COM425 8/Longitudinal 6(0,0,18)
+Students will identify an actual Computer related business problem and apply research principles and procedures to reach a solution. This includes development of a proposal, problem
+formulation as well as data collection and analysis culminating in a presentation of all steps
+used in the research process.
+An applied detailed research on a subject in a related eld should by conducted by the student as a prerequisite for graduation. Research structure and set up are supposed to strictly
+follow the scientic research methods and techniques in terms of: Denition of the problem
+or the subject in details, Denition of solution techniques or analysis methods, Researching
+and performing practical works, Results; Reporting: Page set up, Sentence structure, Headings,
+Abbreviation formats, Figure and table formats, Table of references format.
+COMPUTER SCIENCE DEPARTMENTA
+ELECTIVE COURSES
+Elective courses determine by the Faculty Management according to the strategic plan.
+Title Code Semester/Duration Credits
+Open Source Operating Systems COM4xx Longitudinal 3(2,0,3)
+The course covers Partitioning of hard-drives , Slackware OS Setup, Basic Linux Commands, Network Connectivity, Dual booting w/other O.S., Adding packages sets, Adding partitions, Adding
+more swap space, Opening User Accounts, Setting up Groups, Setting Permissions on Files &
+Directories, Groups and Permissions Exercise{graded}, Setting up Telnet Server, Using SSH, Setting up a PROFTPD server, Setting up a VSFTPD server, Conguring TCP forwarding, Starting the
+Apache Web Server, Default server web site, User’s web sites, Executing CGI scripts, Virtual Hosting,
+Protecting directories with hatches, Installing Apache from Scratch, Conguring an SSL Server.
+Title Code Semester/Duration Credits
+Knowledge Management COM4xx Longitudinal 3(2,0,3)
+The course covers Principles of Knowledge Management (Overview, Knowledge Management
+Solutions, etc.), Knowledge Management Technologies (Articial Intelligence, Digital Libraries,
+Repositories, etc.), Knowledge Management Systems (Knowledge Discovery Systems, Knowledge Capture Systems, Knowledge Sharing Systems, Knowledge Application Systems, etc.)
+Title Code Semester/Duration Credits
+Genetic Algorithms COM4xx Longitudinal 3(2,0,3)
+Basic concepts: representation, objective & evaluation functions, local vs global optima Traditional methods: hill climbing, simulated annealing, branch and bound Evolutionary approaches: Population-based Search: genetic algorithms and evolutionary computation, genetic
+programming, niching , crowding methods, island models, and co-evolution.
+Title Code Semester/Duration Credits
+Expert Systems COM4xx Longitudinal 3(2,0,3)
+Introduction to Expert Systems, Knowledge Acquisition, Knowledge Representation, Expert System Tools, LISP, CLIPS, Expert System Implementation, Expert System Testing
+Title Code Semester/Duration Credits
+Computer Network Programming COM4xx Longitudinal 3(2,0,3)
+Networking basics, protocol basics, Internet protocols, and socket programming. This is a project-oriented course. Students will be required to design and implement a layered protocol stack.
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 39
+Title Code Semester/Duration Credits
+Decision Support Systems COM4xx Longitudinal 3(2,0,3)
+Introduction to DSS, Expectations and DSS, Decision Making, Exploring the Range of DSS research, Knowledge Management, Project Proposals, Model Oriented DSS, Visualization-oriented DSS, Business intelligence and data warehousing, DSS user interfaces, New trends in DSS.
+Title Code Semester/Duration Credits
+Advanced Computer Network
+management COM4xx Longitudinal 3(2,0,3)
+The course covers Switching : Switch performance measures, Time and space switches, Modular switch design Packet switch and distributed Buer, Optical N/W : DWDM., High -speed Networks, IP forwarding Architectures, Overlay Model-CLIP, LANE, RSVP, Virtual Private Networks
+(VPN), MPLS support for VPN ,Network Management ,Case study : HP-Open View, Inter-vehicular communications andGPS, Network Monitoring and Tuning, Troubleshooting.
+Title Code Semester/Duration Credits
+Advanced Databases COM4xx Longitudinal 3(2,0,3)
+Introduction, Concepts and Denitions, Normalization Techniques , Data Mining and Data
+warehouse, Transaction Processing ,Concurrency Control, Distributed Databases, Database
+Security, Temporal database.
+Title Code Semester/Duration Credits
+Modern Trends in Computer
+Science COM4xx Longitudinal 3(2,0,3)
+The course topics will be tailored according to the emphasis of the course selected.
+Title Code Semester/Duration Credits
+Advanced Algorithms COM4xx Longitudinal 3(2,0,3)
+combinatorial algorithms (set cover, steiner tree and TSP, multiway cut, knapsack, minimum
+makespan scheduling), LP-Based algorithms (LP Duality, set cover via dual tting, LP rounding
+techniques, sparsest cut, facility location, semidenite programming and max-cut) and other
+topics including approximation algorithms based on algorithmic game theory, hardness of
+approximation and open problems.
+Title Code Semester/Duration Credits
+Cryptography COM4xx Longitudinal 3(2,0,3)
+Basic Security Concepts ,Basic Cryptography, Hash functions, Secret Key Cryptography , Public
+Key, Cryptography , Authentication ,Trusted Intermediaries ,Real-time Communication Security, Miscellaneous .
+COMPUTER SCIENCE DEPARTMENTA
+40 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+First Year - Semester One
+# Course Title Code Credit Hours
+1 Computer Applications COM-111 3
+2 Principles of Information Systems INF-112 3
+3 English for Speci昀椀c Purpose I ENG-113 3
+4 Calculus I MAT114 3
+5 Introduction to Information Technology INT 115 3
+6 Discrete Mathematics MAT116 3
+7 Principles of Economic HMS117 3
+8 Principles of Management HMS118 3
+24
+First Year - Semester Two
+# Course Title Code Credit Hours
+1 Computer Maintenance INF-121 2
+2 Computer Implementation in Business INF-122 3
+3 Calculus II MAT124 3
+4 English for Speci昀椀c Purpose II ENG-123 3
+5 Principles of Accounting HMS125 3
+6 Principles of Programming COM126 3
+7 Computer Equipment and Environments COM127 3
+8 Linear Algebra and Geometry MAT128 3
+23
+Second Year - Semester Three :
+# Course Title Code Credit Hours
+1 Digital Systems COM211 3
+2 Programming Methods COM212 3
+3 System analysis and design SYS213 3
+4 Multimedia Systems INT214 3
+5 Database Concepts COM215 3
+6 Statistics & Probability MAT216 3
+7 Management information systems SYS217 3
+8 Differential Equations MAT218 3
+24
+Second Year - Semester Four :
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 41
+# Course Title Code Credit Hours
+1 Communication Skills HMS221 3
+2 Human - Computer Interaction INT222 3
+3 Economic and Forecasting Models HMS223 3
+4 Database Programming COM224 3
+5 Algorithms and Data Structure COM225 3
+6 Applied Statistic MAT226 3
+7 Operational Research MAT227 3
+21
+Third Year - Semester Five
+# Course Title Code Credit Hours
+1 Database Applications SYS311 3
+2 Computer Networks and Communications INT312 3
+3 Software Project Management INT313 3
+4 Software Engineering (1) SWE 314 3
+5 Visual Programming COM315 3
+6 Decision support and Expert Systems SYS316 3
+7 Internet Technology (1) INT317 3
+21
+Third Year - Semester Six :
+# Course Title Code Credit Hours
+1 Software Engineering (2) SWE321 3
+2 Operating Systems Concepts COM322 3
+3 Network Security INT323 3
+4 Research Methodology HMS324 3
+5 Internet Technology (2) INT325 3
+6 Data Mining INT326 3
+7 E-commerce INT327 3
+21
+Fourth Year - Semester Seven :
+INFORMATION TECHNOLOGY DEPARTMENT
+42 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+# Course Title Code Credit Hours
+1 Information Security INT411 3
+2 Web Systems and Applications INT412 3
+3 Open Source Software & Technologies INT413 3
+4 Simulation and Modeling COM414 3
+5 Elective (1) INT415 3
+6 Elective (2) INT416 3
+18
+Fourth Year - Semester Eight
+# Course Title Code Credit Hours
+1 Cloud Computing INT421 3
+2 Mobile Device Programming Technologies INT422 3
+3 Professional Ethics HMS423 2
+4 Elective (3) INT424 3
+5 Elective (4) INT425 3
+6 Graduation Project INT426 6
+20
+Course Outline
+Detailed behavioral objectives, skills, assignments and problems are listed in each course
+book. The lists are too extensive to be included below Courses in the curriculum timetable
+not outlined below are included in other programmed, or in the original document with the
+program coordinator.
+Semester One
+Title Code Semester/Duration Credits
+Introduction to Information
+Technology INT115 1/ Longitudinal 3(2,0,3)
+The course provides students with a broad foundation in computer science. Topics include:
+introduction to digital technology, historical review; logic gates; binary, octal, and hexadecimal systems; computer architecture and basic components, internal and external interfaces,
+types of removable media; introduction to operating systems; programming paradigms, basic
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 43
+programming concepts; concept of algorithm, representation, correctness and performance
+of algorithms; introduction to objects. The course equips students with basic problem solving
+skills and prepares them for taking the programming sequence subjects and other computer
+science disciplines.
+Title Code Semester/Duration Credits
+Principles of Management HMS118 1/ Longitudinal 3(3,0,0)
+I. Introduction
+Denition of management, The role of managers, The evolution of management
+The origins of management, Scientic management, Human relations management, Operations, information, systems, and contingency management
+II. Organizational Environments and Cultures
+External environments, Internal environments, Ethics and social responsibility
+III. Management Functions
+A. Planning
+(Strategic planning, Tactical planning, Operational planning)
+B. Organizing
+(Corporate- level strategies, Industry -level strategies,Firm - level strategies, Managing human resource systems)
+C. Leading
+(Motivation, Leadership styles, Managing communications)
+D. Controlling
+(The control process, Control methods, Managing information, Managing service and manufacturing operations).
+Semester Two
+Title Code Semester/Duration Credits
+Computer equipment and environment COM127 1/ Longitudinal 3(2,0,3)
+Topic include: workplace health and safety procedures, computer work environment, manual
+handling techniques for ICT equipment, demonstrate safe use of a PC, pack/unpack and t
+static sensitive devices, duties of employers and employees, legal requirement for the use and
+disposal of hazardous substances, health and safety responsibilities of employees, safety factors to be considered while using a PC, diagnosis failures of ICT equipment, Apply preventative
+maintenance to ICT systems
+INFORMATION TECHNOLOGY DEPARTMENT
+44 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+Semester Three
+Title Code Semester/Duration Credits
+Management Information
+Systems SYS213 3/ Longitudinal 3(3,0,0)
+Topics include concept of Information Systems: Elements of Information Systems, Classications of Information Systems; Information Systems in Business Management: End User Information Systems, Oce Automation Systems, Electronic Communication Systems, Teleconference Systems, Electronic Printing Systems, Process of Image Systems; Business Information
+Systems: Marketing Information System, Production Information System, Human Resource
+Information System, Accounting Information System, Financial Information System; Decision
+Support Systems: Models of Decision Support Systems, Executive Information System, Arti-
+cial Intelligence and Expert Systems; Global Dimensions: Global Data, Security and Ethic Problems in Information Systems, Computer Crime.
+Semester Four
+Title Code Semester/Duration Credits
+Communication Skills HMS221 4/Longitudinal 3(2,2,0)
+Communication paradigms, perceptual processes, personal and professional relationships,
+description of communication, components of communication process, functions and types
+of communication, introduction to empathic communication, dierence between empty and
+sympathy, Process of empathic communication, components, skill of listening, improved of
+emphatic skill, importance of listening and understanding, organizational communication
+and communication process in organizations, types of communication in organizations, verbal
+communication, non-verbal communication, Written communication, preparation of CV. The
+course also includes materials related to verbal and non-verbal communication, communication technology, and the role communication plays in culture..
+Title Code Semester/Duration Credits
+Applied Statistics MAT226 4/Longitudinal 3(2,2,0)
+1. Describing data
+2. Simple regressions analyses, and how to interpret the results
+3. Discrete random variables and probability distribution.
+ (a) Expected values
+ (b) Variance, covariance
+ (c) Some common discrete distributions (binomial distribution, etc)
+4. Continuous random variables and probability distributions.
+ (a) Expected values
+ (b) Variance, covariance
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 45
+ (c) Normal distribution.
+5. Hypothesis testing
+Semester Five
+Title Code Semester/Duration Credits
+Software Project Management INT313 5/Longitudinal 3(2,0,3)
+Pre-requist Courses:
+Introduction to project management concepts, tools, and techniques; project integration
+management; project planning, scope management, scheduling, budget control, human resource management, communication management, risk analysis and management, project
+quality management, and procurement management. MS-Project will be demonstrated and
+used as a tool for creating project management documents.
+Title Code Semester/Duration Credits
+ Internet Technology-1 INT317 5/Longitudinal 3(2,0,3)
+•	 Introduction to HTML Internet
+•	 HTML color and links ,Hardware and Software ,HTML Tables
+•	 Essentials of Telecommunication HTML Tables
+•	 Web Software HTML Frames
+•	 Establishing a Web Site Photos and Forms
+•	 XML ,Internet Search Tools/CSS
+•	 Cascading Style Sheet Web Structure
+•	 Cascading Style Sheet Web Page Design
+•	 Cascading Style Sheet Web Page Design
+•	 Cascading Style Sheet Security
+•	 Present Project
+Semester Six
+Title Code Semester/Duration Credits
+Network Security INT323 6/Longitudinal 3(2,0,3)
+ Basic Security Concepts
+•	 Condentiality, integrity, availability
+•	 Security policies, security mechanisms, assurance
+ Basic Cryptography
+•	 Historical background
+•	 Transposition/Substitution, Caesar Cipher
+•	 Introduction to Symmetric crypto primitives, Asymmetric crypto primitives, and
+INFORMATION TECHNOLOGY DEPARTMENT
+46 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+•	 Hash functions
+ Secret Key Cryptography
+•	 Data Encryption Standard (DES), Advanced Encryption Standard (AES)
+•	 Encrypting large messages (ECB, CBC, OFB, CFB, CTR), Multiple Encryption DES (EDE)
+ Public Key Cryptography
+•	 Number theory: Euclidean algorithm, Euler Theorem, Fermat Theorem, Totent,
+functions, multiplicative and additive inverse
+•	 RSA, Selection of public and private keys
+ Authentication
+•	 Basic concepts of identication and authentication, Password authentication, Authentication
+protocols
+ Trusted Intermediaries
+Public Key infrastructures, Certication authorities and key distribution centers, Kerberos
+ Real-time Communication Security
+•	 IPsec: AH and ESP , IPsec: IKE , SSL/TLS
+•	 Firewall , Auditing and intrusion detection
+(Miscellaneous topics (1 lecture
+•	 Assurance and Evaluation of Secure Information Systems
+•	 Database Security (Security requirements in databases, Access control and authorization
+in databases, Inference control)
+•	 Malicious software
+•	 Administrating Security (Risk Analysis, Security Planning, Organizational Security Policies)
+Title Code Semester/Duration Credits
+ Decision Support Systems SYS324 Longitudinal/6 (2,2,0)3
+The course covers Introduction to DSS, Expectations and DSS, Decision Making, Exploring the
+Range of DSS research, Knowledge Management, Project Proposals, Model Oriented DSS, Visualization-oriented DSS, Business intelligence and data warehousing, DSS user interfaces, New
+trends in DSS.
+Title Code Semester/Duration Credits
+Internet Technologies-2 INT325 Longitudinal/6 (2,0,3)3
+Introduction to HTML5:Introduction, Editing HTML5,First HTML5 example,W3C html5 validation service, Heading, linking, Images, Special Characters and Horizontal rules, Lists,
+Tables, Forms, Internal linking, Meta elements, New HTML5 Form input types, input and
+datalist elements and autocomplete attribute, Page structure elements, Introduction
+to Cascading Style Sheets: Inline styles, embedded style sheets, Positioning elements,
+Backgrounds, Elements Dimensions, Box model and text ows, Media types and media que-
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 47
+ries, Drop down menus, Text Shadows, Rounded corners, Color, Box shadows, Linear
+Gradients, Radial gradients, Multiple background images, Image Borders, Animation selectors,
+Transitions and Transformations, Java Script: Introduction to Scripting, Control Statements,
+Functions, Arrays, Objects, Javascript Event handling: Reviewing the load Event, Event mousemove and the event Object, Rollovers with mouseover and mouseout, Form Processing with
+focus and blur, More Form Processing with submit and reset, Event Bubbling, More Events
+Introduction to canvas : Canvas coordinate system, Rectangles, Using paths to draw lines,
+Drawing arcs and circles, Shadows, Quadratic curve, Bezier curves, Linear gradients, Radial
+Gradients, Images, image Manipulation, Patterns, Transformations, resizing the canvas to
+ll the browser, Alpha transparency, Compositing, Save and restore methods, Note on
+canvas SVG and Canvas 3D, Ajax-Enabled Rich Internet Applications with XML and JSON:
+Introduction, Rich Internet Applications (RIAs) with Ajax,history of Ajax, “Raw” Ajax Example Using the XMLHttpRequest Object,using XML and the DOM, Creating a Full-Scale
+Ajax-Enabled Application, Web Servers: Introduction, HTTP transactions, Multitier Application
+Architecture, Client-Side Scripting versus Server-Side Scripting, Accessing Web Servers,
+Apache, MySQLand PHP Installation, Microsoft IIS Express and Web Matrix, PHP: Introduction,
+simple PHP program, converting between data types, arithmetic operators, initializing and
+manipulating Arrays, String comparision, String Processing with Regular Expressions, Form
+Processing and Business Logic, Reading from a Database, Using Cookies, Dynamic Content
+Semester Seven
+Title Code Semester/Duration Credits
+Web Systems and Applications INT 412 7/Longitudinal 3(2,0,3)
+Part I Basics
+Internet and Web Protocols ,Client-Server Architecture ,Web Software
+Part II Development Technologies
+ Active Server Pages,VBscript
+ Databases,Interfacing with Databases, Web Application Components
+Authentication, User Registration
+Searching, Uploading content, Emailing
+Part III Design Principles
+Web Application Design
+Performance and Reliability
+Web Application Infrastructure
+Title Code Semester/Duration Credits
+Open Source software and
+technologies INT 413 7/Longitudinal 3(2,0,3)
+INFORMATION TECHNOLOGY DEPARTMENT
+48 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+•	 Open Source Software: Denitions and History – Where Open Source is
+•	 Successful – Open Source: The Good, the Bad and the Ugly.
+•	 Five Immediate Open Source Opportunities – Five More Open Source Opportunities.
+•	 Open Source Server Applications – Open Source Desktop Applications.
+•	 How Open Source Software is Developed – Managing System Implementation.
+•	 Application Architecture – The Cost of Open Source Systems.
+•	 Exploring the Android API: Perspective and architecture overview, Design philosophy,
+Anatomy of an Android Application, Application life cycle
+Semester Eight
+Title Code Semester/Duration Credits
+Professional Ethics HMS422 8/Longitudinal 2(2,0,0)
+This course introduces students to the topics of information technology ethics including: denitions, rules & policies of computer ethics, hacking, viruses, Internet ethics, freedom of expression
+on the Internet, computer professionals and social responsibilities, software copyright, intellectual property, software piracy, cyber law and privacy & security of computerized information.
+Topics:
+An Overview of Ethics, Ethics for IT Workers and IT Users, Computer and Internet Crime, Privacy, Intellectual Property, The Impact of Information Technology on Productivity and Quality of Life,
+Title Code Semester/Duration Credits
+Cloud Computing INT423 8/ Longitudinal 3(2,2,0)
+Cloud Computing Basics-Overview, Applications, Intranets and the Cloud. Your Organization
+and Cloud Computing- Benets, Limitations, Security Concerns. Hardware and Infrastructure- Clients, Security, Network, Services. Software as a Service (Saas)-
+Understanding the Multitenant Nature of SaaS Solutions, Understanding SOA. Platform as a
+Service (PaaS)-IT Evolution Leading to the Cloud, Benets of Paas Solutions, Disadvantages of
+Paas Solutions. Infrastructure as a Service (Iaas)-Understanding IaaS, Improving Performance
+through Load Balancing, System and Storage Redundancy, Utilizing Cloud-Based NAS Devices,
+Advantages, Server Types. Identity as a Service (IDaaS)- Understanding Single Sign-On
+(SSO), OpenID, Mobile ID Management. Cloud Storage-Overview, Cloud Storage Providers.
+Virtualization-Understanding Virtualization, History, Leveraging Blade Servers, Server
+Virtualization, Data Storage Virtualization. Securing the Cloud- General Security Advantages
+of Cloud-Based Solutions, Introducing Business Continuity and Disaster Recovery. Disaster
+Recovery- Understanding the Threats. Service Oriented Architecture-Understanding SOA,
+Web Services Are Not Web Pages, Understanding Web Service Performance, Reuse and In-
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 49
+teroperability. Developing Applications-Google, Microsoft, Cast Iron Cloud, Bungee Connect,
+Development. Migrating to the Cloud-Cloud Services for Individuals, Cloud Services Aimed at
+the Mid-Market, Enterprise-Class Cloud Oerings, and Migration. Designing Cloud Based Solutions-System Requirements, Design Is a Give-and-Take Process. Coding Cloud Based Applications-Creating a Simple Yahoo Pipe, Using Google App Engine and creating a Windows Azure
+Application. Application Scalability-Load-Balancing Process, Designing for Scalability, Capacity Planning Versus Scalability, Scalability and Diminishing Returns and Performance Tuning.
+Title Code Semester/Duration Credits
+Graduation Project COM426 Longitudinal/8 (0,0,18)6
+Students will identify an actual Information technology related business problem and apply
+research principles and procedures to reach a solution. This includes development of a proposal, problem formulation as well as data collection and analysis culminating in a presentation of
+all steps used in the research process.
+An applied detailed research on a subject in a related eld should by conducted by the student as a prerequisite for graduation. Research structure and set up are supposed to strictly
+follow the scientic research methods and techniques in terms of: Denition of the problem
+or the subject in details, Denition of solution techniques or analysis methods, Researching
+and performing practical works, Results; Reporting: Page set up, Sentence structure, Headings,
+Abbreviation formats, Figure and table formats.
+ELECTIVE COURSES
+Elective courses determine by the Faculty Management according to the strategic plan.
+Title Code Semester/Duration Credits
+Knowledge Management INT4xx Longitudinal 3(2,0,3)
+The course covers Principles of Knowledge Management (Overview, Knowledge Management
+Solutions, etc.), Knowledge Management Technologies (Articial Intelligence, Digital Libraries,
+Repositories, etc.), Knowledge Management Systems (Knowledge Discovery Systems, Knowledge Capture Systems, Knowledge Sharing Systems, Knowledge Application Systems, etc.)
+Title Code Semester/Duration Credits
+Expert Systems INT4xx Longitudinal (2,0,3)3
+Introduction to Expert Systems, Knowledge Acquisition, Knowledge Representation, Expert System Tools, LISP, CLIPS, Expert System Implementation, Expert System Testing .
+Networking basics, protocol basics, Internet protocols, and socket programming. This is a projINFORMATION TECHNOLOGY DEPARTMENT
+50 UNDERGRADUATE & GRADUATE PROSPECTUS National University - Sudan
+ect-oriented course. Students will be required to design and implement a layered protocol stack.
+Title Code Semester/Duration Credits
+ Modern Trends in Information
+Technology INT4xx Longitudinal (2,0,3)3
+The contents of this course are depending on what topics will be selected. The topics are selected according to the current and updated computer technologies that can help the student
+in developing his nal project.
+Methods of instruction: this course base on seminars and practical work, students develop
+new project regarding this new technology, discuss the new topics, and present their projects
+in seminars.
+Title Code Semester/Duration Credits
+E-Commerce Advanced Technologies INT4xx Longitudinal (2,0,3)3
+•	 Welcome to the course and introduction. B2B issues.
+•	 Enterprise Resource Planning 1,2
+•	 Interorganizational Communication: Supply Chain & Collaborative Commerce
+•	 interorganizational Communication: Marketing & eCRM
+•	 Next 猀琀eps E-government: G2B, G2G and G2C
+•	 M-Commerce in enterprises, M-Commerce developments.
+•	 Strategies: multiplatform issues for e-commerce
+•	 Strategies: organisational resourcing
+•	 Implementing e-commerce in the enterprise
+•	 E-commerce Futures.
+COMPUTER SCIENCE & INFORMATION TECHNOLOGY 51
