@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Applications | CS Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --border-color: #333333;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
+        .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
+        
+        .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
+        .nav-back:hover { color: var(--accent-color); }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); }
+        .tab-btn {
+            background: none; border: none; color: var(--text-secondary); 
+            padding: 10px 20px; font-family: var(--font-mono); font-size: 1rem; cursor: pointer;
+            border-bottom: 2px solid transparent; transition: all 0.2s;
+        }
+        .tab-btn:hover { color: var(--text-primary); }
+        .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Content Styles */
+        h2 { color: var(--text-primary); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
+        h3 { color: var(--accent-color); margin-top: 30px; font-family: var(--font-mono); }
+        
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 15px;
+        }
+        .definition { display: grid; grid-template-columns: 150px 1fr; gap: 20px; }
+        .term { color: var(--accent-color); font-weight: bold; font-family: var(--font-mono); }
+        
+        .question-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); }
+        .question-text { font-weight: 600; margin-bottom: 10px; }
+        .options { list-style: none; padding: 0; }
+        .options li { margin-bottom: 5px; color: var(--text-secondary); }
+        
+        blockquote { border-left: 2px solid var(--border-color); margin: 0; padding-left: 15px; color: var(--text-secondary); }
+        
+        /* Matching specifics */
+        .matching-pair { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
+        <header>
+            <h1>Computer Applications</h1>
+            <div class="subtitle">COM-111 Resources & Study Guide</div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('lectures')">Lecture Notes</button>
+            <button class="tab-btn" onclick="openTab('definitions')">Definitions</button>
+            <button class="tab-btn" onclick="openTab('exam')">Mock Exam</button>
+        </div>
+
+        <!-- Lectures Tab -->
+        <div id="lectures" class="tab-content active">
+            <div class="card"><h3>Lecture 1: Intro & Generations</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"><br><br><p>OBJECTIVES AND INTENDED OUTCOMES</p><p>By the end of this lesson the learner is expected to:</p><ul><li></li></ul><p>Understand the concept of computer, data, and information.</p><ul><li></li></ul><p>Learn the characteristics of computers.</p><ul><li></li></ul><p>Learn the computers classification.</p><ul><li></li></ul><p>Learn the computer application</p><ul><li></li></ul><p>Learn the Computer Generations</p><ul><li></li></ul><br><br><br><p>Computer Definition</p><p>A computer is an electronic device through which</p><ul><li></li></ul><p>data can be stored, processed, and then retrieved</p><p>again when requested as information.</p><p>A computer consists of two main components:</p><ul><li></li></ul><p>Hardware.</p><ul><li></li></ul><p>Software.</p><ul><li></li></ul><br><br><br><p>Data, Information, and Knowledge</p><ul><li>Data is the facts fed to the computer in order to process it to benefit from it by</li></ul><p>the user.</p><ul><li>Information is data that has been processed and analyzed to provide knowledge</li></ul><p>to decision makers and help them achieve certain goals.</p><ul><li>Processing is performing some manipulations on the entered data to give the</li></ul><p>desired results by the program.</p><ul><li>storage-arrangement-classification-search-solving mathematical problems-graphics.</li><li>Knowledge is Awareness and understanding of a set of information</li></ul><br><br><br><p>Computer Characteristics</p><p>Computers differ in size and price and agree on the main characteristics:</p><ul><li></li><li>Super speed in carrying out operations.</li><li>Precision.</li><li>Storage possibility.</li><li>Multi-used</li></ul><br><br><br><p>Classification of Computers</p><p>Working Method</p><p>Type of Work</p><p>➢Analog</p><p>➢Single purpose</p><p>➢Digital</p><p>➢Multi-purpose</p><p>Memory Size</p><p>Super Computers Mainframe Computers</p><p>Mini Computers Micro Computers</p><p>جربلا➢</p><p>يبتكملا➢</p><br><br><br><p>Computer Applications</p><p>Computer use has become a measure of progress and development,</p><ul><li></li></ul><p>as it is used in all fields.</p><p>official departments and institutions.</p><ul><li></li></ul><p>Trade and financial affairs</p><ul><li></li></ul><p>Universities and educational institutions</p><ul><li></li></ul><p>Airlines Civil</p><ul><li></li></ul><p>architectural engineering as building design services</p><ul><li></li></ul><p>The field of health in the management of hospitals</p><ul><li></li></ul><br><br><br><p>Computer Generations</p><p>The modern computer took its shape with the arrival of</p><ul><li></li></ul><p>your time. It had been around 16th century when the</p><p>evolution of the computer started. The initial computer</p><p>faced many changes, obviously for the betterment. It</p><p>continuously improved itself in terms of speed, accuracy,</p><p>size, and price to urge the form of the fashionable day</p><p>computer. This long period is often conveniently divided</p><p>into the subsequent phases called computer generations:</p><br><br><br><p>Computer Generations</p><ul><li>First Generation Computers (1940-1956)</li><li>Second Generation Computers (1956-1963)</li><li>Third Generation Computers (1964-1971)</li><li>Fourth Generation Computers (1971-Present)</li><li>Fifth Generation Computers (Present and Beyond)</li></ul><br><br><br><p>First Generation Computers: Vacuum Tubes</p><p>(1940-1956)</p><p>The technology behind the primary generation computers</p><ul><li></li></ul><p>was a fragile glass device, which was called vacuum</p><p>tubes. These computers were very heavy and really large</p><p>in size. These weren’t very reliable and programming on</p><p>them was a really tedious task as they used low-level</p><p>programming language and used no OS. First-generation</p><p>computers were used for calculation, storage, and control</p><p>purpose. They were too bulky and large that they needed</p><p>a full room and consume rot of electricity.</p><br><br><br><p>Second Generation Computers: Transistors</p><p>(1956-1963)</p><ul><li>Second-generation computers used the technology of transistors rather than</li></ul><p>bulky vacuum tubes. Another feature was the core storage. A transistor may</p><p>be a device composed of semiconductor material that amplifies a sign or</p><p>opens or closes a circuit.</p><ul><li>Transistors were invented in Bell Labs. The use of transistors made it possible</li></ul><p>to perform powerfully and with due speed. It reduced the dimensions and</p><p>price and thankfully the warmth too, which was generated by vacuum tubes.</p><p>Central Processing Unit (CPU), memory, programming language and input, and</p><p>output units also came into the force within the second generation.</p><ul><li>Programming language was shifted from high level to programming language</li></ul><p>and made programming comparatively a simple task for programmers.</p><p>Languages used for programming during this era were FORTRAN (1956), ALGOL</p><p>(1958), and COBOL (1959).</p><br><br><br><p>Third Generation Computers: Integrated</p><p>Circuits. (1964-1971)</p><p>During the third generation, technology envisaged a shift from huge</p><ul><li></li></ul><p>transistors to integrated circuits, also referred to as IC. Here a variety</p><p>of transistors were placed on silicon chips, called semiconductors. The</p><p>most feature of this era’s computer was the speed and reliability. IC</p><p>was made from silicon and also called silicon chips.</p><p>A single IC, has many transistors, registers, and capacitors built on</p><ul><li></li></ul><p>one thin slice of silicon. The value size was reduced and memory</p><p>space and dealing efficiency were increased during this generation.</p><p>Programming was now wiped out Higher level languages like BASIC</p><p>(Beginners All-purpose Symbolic Instruction Code). Minicomputers find</p><p>their shape during this era.</p><br><br><br><p>Fourth Generation Computers: Micro-</p><p>processors (1971-Present)</p><ul><li>In 1971 First microprocessors were used, the large scale of integration LSI</li></ul><p>circuits built on one chip called microprocessors. The most advantage of this</p><p>technology is that one microprocessor can contain all the circuits required to</p><p>perform arithmetic, logic, and control functions on one chip.</p><ul><li>The computers using microchips were called microcomputers. This generation</li></ul><p>provided the even smaller size of computers, with larger capacities. That’s</p><p>not enough, then Very Large Scale Integrated (VLSI) circuits replaced LSI</p><p>circuits. The Intel 4004chip, developed in 1971, located all the components of</p><p>the pc from the central processing unit and memory to input/ output controls</p><p>on one chip and allowed the dimensions to reduce drastically.</p><ul><li>Technologies like multiprocessing, multiprogramming, time-sharing, operating</li></ul><p>speed, and virtual memory made it a more user-friendly and customary</p><p>device. The concept of private computers and computer networks came into</p><p>being within the fourth generation.</p><br><br><br><p>Fifth Generation Computers</p><ul><li>The technology behind the fifth generation of computers is AI. It allows</li></ul><p>computers to behave like humans. It is often seen in programs like voice</p><p>recognition, area of medicines, and entertainment. Within the field of games</p><p>playing also it’s shown remarkable performance where computers are capable</p><p>of beating human competitors.</p><ul><li>The speed is highest, size is that the smallest and area of use has remarkably</li></ul><p>increased within the fifth generation computers. Though not a hundred</p><p>percent AI has been achieved to date but keeping in sight the present</p><p>developments, it is often said that this dream also will become a reality very</p><p>soon.</p><ul><li>In order to summarize the features of varied generations of computers, it is</li></ul><p>often said that a big improvement has been seen as far because the speed</p><p>and accuracy of functioning care, but if we mention the dimensions, it’s being</p><p>small over the years. The value is additionally diminishing and reliability is in</p><p>fact increasing.</p><br><br><br></div></div><div class="card"><h3>Lecture 2: CPU, Memory & Storage</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"><br><br><p>OBJECTIVES AND INTENDED OUTCOMES</p><p>By the end of this lesson the learner is expected to:</p><ul><li></li></ul><p>Understand the concept of processor and processing.</p><ul><li></li></ul><p>Learn the function of Central Processing Unit )CPU).</p><ul><li></li></ul><p>Learn the function of control unit, and Arithmetic and Logic unit.</p><ul><li></li></ul><p>Learn the compare between RAM and ROM.</p><ul><li></li></ul><p>Understand how a CPU works.</p><ul><li></li></ul><p>Understand the concept of the main storage unit and secondary</p><ul><li></li></ul><p>storage units.</p><p>Learn about the different types of secondary storage units.</p><ul><li></li></ul><p>Learn about the storage.</p><ul><li></li></ul><br><br><br><p>2M ءeارmمحor ةyيفلخ</p><p>Memory</p><p>2CC ePءnUارtمraحl ةPيrفoلcخessing Unit</p><p>2O uءارtpمuحt ةUيnفلitخ 2In ءpارuمt حU nةيitفلخ</p><p>Central Processing Unit</p><p>Output Unit CPU Input Unit</p><p>2St ءoارraمgحe ة Uيفnلخits</p><p>Storage Units</p><br><br><br><ul><li>divided into :</li><li>Systems software</li><li>Application software.</li></ul><br><br><br><ul><li>The main components of a computer. It is a chip consisting</li></ul><p>of a large number of electronic circuits made of silicon.</p><ul><li>Its tasks:</li><li>Data analysis.</li><li>Sending instructions to the rest of the computer.</li><li>Carry out instructions.</li><li>Control of inputs and outputs.</li></ul><br><br><br><p>Central Processing Unit</p><p>Arithmetic and</p><p>Control unit</p><p>Logic (ALU)</p><p>( CU )</p><ul><li>It performs all arithmetic and • It controls all parts of the</li></ul><p>logical operations. computer and delivers instructions</p><p>from one part to another.</p><ul><li>The faster computer, the higher processor speed</li><li>Computer speed is measured in megahertz (MHz).</li></ul><br><br><br><p>The processor capacity can be measured by the temporal</p><ul><li></li></ul><p>speed: which refers to the number of operations that the</p><p>processor performs per second and is measured in</p><p>megahertz.</p><p>The processor communicates physically with other parts of</p><ul><li></li></ul><p>the computer through three types of buses :</p><p>Data Buses: Transfer data across the various units of the</p><ul><li></li></ul><p>computer</p><p>Addressing Buses : Transfer the addresses of the main</p><ul><li></li></ul><p>memory cells specified in the processor</p><p>Control Buses: Transfer commands to the console</p><ul><li></li></ul><br><br><br><ul><li>The ALU needs data to process it and instructions</li></ul><p>that specify the type of processing required, and the</p><p>ALU gets that from the main memory and uses the</p><p>main memory in four basic activities:</p><ul><li>Store the entered.</li><li>Store the interim results of operations.</li><li>Store the final results of the operation.</li><li>Store operations and operating orders.</li></ul><br><br><br><ul><li>Read Only Memory (ROM):</li><li>A computer memory that stores operating instructions</li></ul><p>for the device.</p><ul><li>It is permanent and cannot be erased or written on.</li><li>set by the device manufacturer.</li><li>Random Access Memory (RAM):</li><li>Memory starts with the computer running.</li><li>Temporary can be erased and written to.</li><li>Data is lost in the event of a power outage.</li><li>It is the mediator between the CPU and storage units.</li></ul><br><br><br><p>Difference between RAM & ROM</p><p>ROM RAM</p><p>Capacity Limited storage More storage</p><p>capacity capacity</p><p>Storage Type permanent temporary</p><p>Contents CPU instructions programs and</p><p>user data</p><p>Writing Once when setting At what time</p><p>up the device</p><p>reading every time you At what time</p><p>turn on the device</p><br><br><br><p>secondary storage units</p><p>Hard Disk:</p><ul><li></li></ul><p>Huge storage capacity.</p><ul><li></li></ul><p>High speed access to the data stored in it.</p><ul><li></li></ul><p>It is usually installed in the device and may be</p><ul><li></li></ul><p>connected from the outside.</p><p>Floppy Disk:</p><ul><li></li><li>Limited storage capacity of 1.4MB, low cost.</li></ul><p>Flash Memory:</p><ul><li></li><li>It has the ability to connect externally.</li><li>With large storage capabilities.</li><li>High cost.</li></ul><p>CD-ROM:</p><ul><li></li></ul><p>The data is stored using a laser.</p><ul><li></li></ul><p>The storage capacity of DVD discs is up to a number of</p><ul><li></li></ul><p>gigabytes.</p><br><br><br><p>IMG20095 External CD Drive cpu2</p><p>iomega_jazTIP scan0011 CD</p><p>diskonkey3</p><br><br><br><p>▪ In the past, it was the most used storage unit, now it has</p><p>been replaced by other storage unit.</p><p>▪ It is symbolized by (A).</p><br><br><br><p>▪ A technology that uses laser beams for storage.</p><p>▪ Now Read-Write discs.</p><br><br><br><p>▪ A technology that uses laser beams for storage.</p><p>▪ Its capacity is 6 times greater than the CD.</p><br><br><br><p>OBJECTIVES AND INTENDED OUTCOMES</p><p>By the end of this lesson the learner is expected to:</p><ul><li></li></ul><p>Understand the concept of the input and output devices.</p><ul><li></li></ul><p>Learn the function of input and output devices.</p><ul><li></li></ul><p>Learn the compare between deferent input and output devices.</p><ul><li></li></ul><p>Understand the appropriate way to enter and show various data.</p><ul><li></li></ul><br><br><br><p>Input units are mainly based on linking</p><p>computer users to the computers themselves,</p><p>as they are responsible for entering data and</p><p>programs into the computer's memory, and</p><p>they send those entered data to the computer</p><p>in a language readable by the computer itself.</p><br><br><br><p>scanners1 mice ky3</p><p>sait1L</p><p>ph2 pin1</p><p>scan0007 scan0002</p><br><br><br><p>The output units that receive the results and</p><p>display them in different forms.</p><br><br><br><p>IBM_NetVista@NetVista_X_Series</p><p>modem_lights_cycle_md_wht spk1</p><br><br><br><p>▪ The system box contains most of the computer's units.</p><p>▪ Connect to other computer units. Its most important parts:</p><p>▪ Motherboard</p><p>▪ Ports</p><p>▪ Power Supply</p><br><br><br><p>▪ Parallel ports > Printer, Serial ports > Mouse, USB ports.</p><p>▪ Expansion ports.</p><br><br><br><p>▪ Supplying the computer with electricity.</p><p>▪ There is a fan to reduce the heat of the generator.</p><br><br><br></div></div><div class="card"><h3>Lecture 4: Software Types</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"><br><br><p>OBJECTIVES AND INTENDED OUTCOMES</p><p>By the end of this lesson the learner is expected to:</p><ul><li></li></ul><p>Understand the concept of software, program, programming, and</p><ul><li></li></ul><p>programming languages.</p><p>Learn the types of software.</p><ul><li></li></ul><p>Learn the system software and application software.</p><ul><li></li></ul><p>Understand the concept of the software components,</p><ul><li></li></ul><br><br><br><p>Software</p><p>Software non-physical units that drive the computer to perform</p><ul><li></li></ul><p>tasks that are performed by the hardware components.</p><p>The software is divided into two parts:</p><ul><li></li></ul><p>System software</p><ul><li></li></ul><p>Translation software</p><ul><li></li></ul><p>Operating Systems</p><ul><li></li><li>Application software</li></ul><p>user programs</p><ul><li></li></ul><p>Packages software</p><ul><li></li></ul><br><br><br><p>system software</p><p>system software refers to the programs that manage the</p><ul><li></li></ul><p>computer. divided into:</p><p>Compiler Software: programs that convert a program written</p><ul><li></li></ul><p>in programming language into an executable program written</p><p>in machine language</p><p>Operating System: a set of basic programs that acts as an</p><ul><li></li></ul><p>interface between the computer user and computer</p><p>hardware, and controls the execution of programs.</p><ul><li>Ex: Mac , Windows, Linux...</li></ul><br><br><br><p>system software Cont..</p><p>The common management tasks that an operating system perform</p><ul><li></li></ul><p>include:</p><ul><li>File Management</li><li>User Management</li><li>Memory Management</li><li>Process Management</li><li>Device Management</li><li>Security Management</li><li>User Interface Management</li></ul><br><br><br><p>Application software</p><p>Application Software: Programs designed to perform a</p><ul><li></li></ul><p>specific task for users.</p><p>Divided into two types:</p><ul><li></li></ul><p>User Programs: Each user can write their own programs to solve a</p><ul><li></li></ul><p>specific issue using one of the programming languages.</p><p>Packages software: Developed by software production companies.</p><ul><li></li></ul><p>7</p><br><br><br><p>programs</p><p>Programs refer to instructions that are directed to a computer</p><ul><li></li></ul><p>for the purpose of performing a specific task, and computers</p><p>need programs to perform each task they perform.</p><p>Writing a program is called programming, and whoever does it is</p><ul><li></li></ul><p>called a programmer.</p><p>Programming It is preparing a plan to process a task and get the</p><ul><li></li></ul><p>desired results</p><p>A programming language is a system of notation for writing</p><ul><li></li></ul><p>computer programs. programming languages are text-based</p><p>formal languages.</p><br><br><br></div></div><div class="card"><h3>Lecture 5: Viruses & Security</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"><br><br><p>computer virus</p><ul><li></li></ul><p>A computer virus is a type of</p><p>computer program that, when</p><p>executed, replicates itself by</p><p>modifying other computer programs</p><p>and inserting its own code. If this</p><p>replication succeeds, the affected</p><p>areas are then said to be "infected"</p><p>with a computer virus, a metaphor</p><p>derived from biological viruses.</p><br><br><br><p>How viruses work</p><ul><li>Computer viruses generally require a host</li></ul><p>program.</p><ul><li>The virus writes its own code into the host program. When the</li></ul><p>program runs, the written virus program is executed first,</p><p>causing infection and damage.</p><p>3</p><br><br><br><p>Types of Viruses</p><p>(cid:0) Common types are:</p><p>(cid:0) Viruses: A virus is a small piece of software that</p><p>piggy backs on real programs.</p><p>(cid:0) E-mail viruses: An e-mail virus travels as an</p><p>attachment to e-mail messages, and usually</p><p>replicates itself by automatically mailing itself to</p><p>dozens of people in the victim's e-mail address</p><p>book.</p><p>4</p><br><br><br><p>Types of Viruses</p><ul><li>Worms: A worm is a small piece of software that uses</li></ul><p>computer networks and security holes to replicate itself.</p><ul><li>A computer worm does not need a host program, as it is</li></ul><p>an independent program or code chunk.</p><ul><li>can run independently and actively carry out attacks.</li></ul><p>5</p><br><br><br><p>Types of Viruses</p><p>Trojan horses: A Trojan horse is simply a</p><p>computer program. The program claims to do one</p><p>thing (it may claim to be a game) but instead</p><p>does damage when you run it (it may erase your</p><p>hard disk). Trojan horses have no way to replicate</p><p>automatically.</p><p>6</p><br><br><br><p>virus sources</p><p>(cid:0) Unknown source software</p><p>(cid:0) Downloading unauthorized software from the</p><p>Internet.</p><p>(cid:0) e-mail</p><p>(cid:0) Using infected devices and storing disk files</p><p>through them.</p><p>8</p><br><br><br><p>Prevention and treatment of the</p><p>virus</p><ul><li></li></ul><p>Antivirus software</p><ul><li></li></ul><p>For the effectiveness of anti-virus software, the list</p><p>of viruses in the program must be updated.</p><ul><li></li></ul><p>Do not open attachments in any email you do not</p><p>know was sent</p><ul><li></li></ul><p>Do not accept any file from someone you do not</p><p>know</p><ul><li></li></ul><p>Examine all programs downloaded from the</p><p>Internet</p><p>Norton Antivirus</p><br><br><br></div></div><div class="card"><h3>Lecture 6: Operating Systems</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"><br><br><p>Computer System Structure</p><p>Computer system can be divided into four components:</p><ul><li></li></ul><p>Hardware – provides basic computing resources</p><ul><li></li></ul><p>CPU, memory, I/O devices</p><ul><li></li></ul><p>Operating system</p><ul><li></li></ul><p>Controls and coordinates use of hardware among</p><ul><li></li></ul><p>various applications and users</p><p>Application programs –</p><ul><li></li></ul><p>Word processors, compilers, web browsers, database</p><ul><li></li></ul><p>systems, video games</p><p>Users</p><ul><li></li></ul><p>People, machines, other computers</p><ul><li></li></ul><br><br><br><p>What is an Operating System?</p><p>A program that acts as an intermediary between</p><ul><li></li></ul><p>a user of a computer and the computer</p><p>hardware</p><p>Operating system goals:</p><ul><li></li></ul><p>Execute user programs and make solving user</p><ul><li></li></ul><p>problems easier</p><p>Make the computer system convenient to use</p><ul><li></li></ul><p>Control computer hardware and provide it in</p><ul><li></li></ul><p>an efficient manner</p><br><br><br><p>What Operating Systems Do</p><p>Operating Systems whether is a</p><ul><li></li></ul><p>computer or a server provide</p><p>Hardware control and resource</p><p>utilization for users and</p><p>programs achieving optimization</p><p>, ease of use and high</p><p>performance .</p><br><br><br><p>What Operating Systems Do</p><p>OS is a resource allocator that</p><ul><li></li></ul><p>Manages all resources</p><ul><li></li></ul><p>Decides between conflicting</p><ul><li></li></ul><p>requests for efficient and fair</p><p>resource use</p><p>Controls execution of programs to</p><ul><li></li></ul><p>prevent errors and improper use of</p><p>the computer</p><br><br><br><p>What Operating Systems Do</p><p>User Operating System Interface – CLI</p><p>Command Line Interface (CLI) or</p><p>command interpreter allows direct</p><p>command entry</p><p>Sometimes implemented in</p><ul><li></li></ul><p>kernel, sometimes by systems</p><p>program</p><p>Primarily fetches a command</p><ul><li></li></ul><p>from user and executes it</p><br><br><br><p>What Operating Systems Do</p><p>User Operating System Interface - GUI</p><p>GUI known as graphical user interface is more</p><ul><li></li></ul><p>intuitive visually and all the new users always try</p><p>to pick this interface instead of CLI</p><p>Many common operations, such as copying and</p><ul><li></li></ul><p>pasting, can be performed by using just the</p><p>mouse.</p><br><br><br><p>What Operating Systems Do</p><p>User Operating System Interface - GUI</p><p>Icons and menus take the place of text</p><ul><li></li></ul><p>commands and do not have to be memorized.</p><p>It is also easier to switch between multiple</p><ul><li></li></ul><p>active tasks using a graphical interface. However,</p><p>advanced operations may only be accessible via</p><p>.</p><p>the command line</p><br><br><br><p>What Operating Systems Do</p><ul><li>OS manages computer memory,</li></ul><p>storage , I/O devices and processes.</p><ul><li>While OS interact with application in</li></ul><p>high language it interact with</p><p>Hardware with machine language.</p><ul><li>OSs work on various devices from</li></ul><p>Phones to computers and till servers</p><p>and mainframes.</p><br><br><br><p>Most used OSs</p><p>Microsoft Windows.</p><ul><li></li></ul><p>Linux</p><ul><li></li></ul><p>Apple IOS.</p><ul><li></li></ul><p>Aplle MacOS</p><ul><li></li></ul><p>Android.</p><ul><li></li></ul><p>Unix</p><ul><li></li></ul><br><br><br><p>Conclusion</p><p>OS act as a mediator between user and</p><ul><li></li></ul><p>computer hardware .</p><ul><li>It communicates with other parts of</li></ul><p>computer such as CPU , memory , storage</p><p>devices , input /output devices to insure</p><p>smooth performance and programs execution.</p><p>After OS is loaded into the computer</p><ul><li></li></ul><p>by a boot program it manages all</p><p>applications and control computer</p><p>hardware and resources sharing .</p><p>So without OS user would not be able</p><ul><li></li></ul><p>to use apps and hardware .</p><br><br><br><p>Types of Operating Systems</p><p>General purpose operating systems.</p><ul><li></li></ul><p>Embedded operating systems.</p><ul><li></li></ul><p>Mobile operating Systems.</p><ul><li></li></ul><p>Real time Operating Systems.</p><ul><li></li></ul><br><br><br><p>General Purpose Operating Systems</p><p>General purpose operating systems intends to</p><ul><li></li></ul><p>run a multitude of applications on a broad</p><p>selection of hardware enabling a user to run</p><p>multiple tasks and applications simultaneously .</p><p>It runs applications from accounting systems and</p><ul><li></li></ul><p>databases to web browsers.</p><p>General purpose operating systems focus on</p><ul><li></li></ul><p>process ( thread) and hardware management.</p><br><br><br><p>General Purpose Operating Systems</p><p>Windows</p><p>The most used OS today.</p><ul><li></li></ul><p>Closed Source operating system :</p><ul><li></li></ul><p>The software is protected rights and</p><ul><li></li></ul><p>payed license from Microsoft …the</p><p>software and its update and upgrade</p><p>can only be provided by Microsoft.</p><br><br><br><p>Windows Versions</p><p>Windows versions</p><p>Windows XP</p><ul><li></li></ul><p>Windows Vista</p><ul><li></li><li>Windows 7</li><li>Windows 8</li><li>Windows 10</li><li>…….</li></ul><br><br><br><p>General Purpose Operating Systems</p><p>LINUX</p><ul><li></li><li>Efficient fast-performing operating systems.</li><li>Open source operating system .</li><li>Source code is available for everyone or free .</li><li>Modification , update and upgrade is done by everyone</li></ul><p>everywhere.</p><ul><li>High security , functionality and stability.</li></ul><br><br><br><p>Linux Versions</p><p>Linux has many versions due</p><ul><li></li></ul><p>to its open source : ( more</p><p>than a thousand)</p><p>Ubuntu</p><ul><li></li></ul><p>Fedora</p><ul><li></li></ul><p>Kali</p><ul><li></li></ul><p>Backtrack</p><ul><li></li></ul><p>Red hat</p><ul><li></li></ul><br><br><br></div></div>
+        </div>
+
+        <!-- Definitions Tab -->
+        <div id="definitions" class="tab-content">
+            
+            <div class="card definition">
+                <div class="term">Computer</div>
+                <div class="desc">An electronic device through which data can be stored, processed, and then retrieved again when requested as information. It consists of Hardware and Software.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Data</div>
+                <div class="desc">The facts fed to the computer in order to process it to benefit from it by the user. data can be numbers, letters, symbols, images, or sounds.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Information</div>
+                <div class="desc">Data that has been processed and analyzed to provide knowledge to decision makers and help them achieve certain goals.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Processing</div>
+                <div class="desc">Performing some manipulations on the entered data to give the desired results by the program. This includes storage, arrangement, classification, search, and solving mathematical problems.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Knowledge</div>
+                <div class="desc">Awareness and understanding of a set of information.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">First Generation Computers (1940-1956)</div>
+                <div class="desc">Computers that used vacuum tubes. They were bulky, consumed lots of electricity, generated much heat, and used machine language.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Second Generation Computers (1956-1963)</div>
+                <div class="desc">Computers that used transistors. They were smaller, faster, cheaper, and used assembly/high-level languages like FORTRAN and COBOL.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Third Generation Computers (1964-1971)</div>
+                <div class="desc">Computers that used Integrated Circuits (ICs), or silicon chips. Introduction of minicomputers. drastically increased speed and reliability.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Fourth Generation Computers (1971-Present)</div>
+                <div class="desc">Computers using Microprocessors (LSI and VLSI). Components of the computer were located on a single chip. Introduction of personal computers (PCs) and networks.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Fifth Generation Computers</div>
+                <div class="desc">Computers based on Artificial Intelligence (AI), capable of voice recognition, learning behavior, and decision making.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Vacuum Tubes</div>
+                <div class="desc">Fragile glass devices used in First Generation computers. They were unreliable and large.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Transistors</div>
+                <div class="desc">Semiconductor devices that replaced vacuum tubes. They amplify signals or open/close circuits. Invented at Bell Labs.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Integrated Circuits (IC)</div>
+                <div class="desc">A silicon chip containing many transistors, registers, and capacitors. Replaced discrete transistors in Third Generation.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Microprocessor</div>
+                <div class="desc">A single chip containing all the circuits required to perform arithmetic, logic, and control functions. Used in Fourth Generation.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Hardware</div>
+                <div class="desc">The physical components of a computer system that you can touch (e.g., CPU, Monitor, Keyboard, Hard Disk).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Software</div>
+                <div class="desc">Non-physical programs and instructions that drive the computer to perform tasks.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">CPU (Central Processing Unit)</div>
+                <div class="desc">The "brain" of the computer. A chip consisting of electronic circuits that executes instructions, controls inputs/outputs, and processes data.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">ALU (Arithmetic and Logic Unit)</div>
+                <div class="desc">Part of the CPU that performs all arithmetic (add, sub, mul, div) and logical operations (AND, OR, NOT, comparisons).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">CU (Control Unit)</div>
+                <div class="desc">Part of the CPU that directs the flow of data and instructions within the computer. It controls all parts and delivers instructions.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Registers</div>
+                <div class="desc">High-speed storage locations inside the CPU for temporary data manipulation.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Data Bus</div>
+                <div class="desc">A set of wires that transfer data across the various units of the computer.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Addressing Bus</div>
+                <div class="desc">A set of wires that transfer the addresses of main memory cells specified by the processor.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Control Bus</div>
+                <div class="desc">A set of wires that transfer control commands from the CPU to other components.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Main Memory (Primary Storage)</div>
+                <div class="desc">Memory that the CPU accesses directly. Includes RAM and ROM.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">RAM (Random Access Memory)</div>
+                <div class="desc">Volatile temporary memory used by the computer to store data and programs currently in use. Data is lost when power is off. It has larger capacity than ROM but is temporary.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">ROM (Read Only Memory)</div>
+                <div class="desc">Non-volatile permanent memory that stores startup instructions (BIOS). Data is set by the manufacturer and cannot be erased or written to by normal users.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Secondary Storage</div>
+                <div class="desc">Non-volatile storage used to store data and programs permanently. Examples: Hard Disk, Floppy Disk, CD/DVD, Flash Memory.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Hard Disk (HDD)</div>
+                <div class="desc">A magnetic storage device with huge capacity and high access speed, usually installed inside the computer case.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Floppy Disk</div>
+                <div class="desc">An older magnetic storage medium with limited capacity (1.44 MB) and low speed.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Flash Memory</div>
+                <div class="desc">A portable solid-state storage device with large capacity and high speed, connects via USB.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">CD-ROM</div>
+                <div class="desc">Optical disc that stores data using laser technology.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Input Units</div>
+                <div class="desc">Devices used to enter data and instructions into the computer (e.g., Keyboard, Mouse, Scanner, Microphone).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Output Units</div>
+                <div class="desc">Devices that display or produce the results of processing (e.g., Monitor, Printer, Speaker).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">System Software</div>
+                <div class="desc">Programs that manage and control the computer hardware and provide a platform for application software. Includes Operating Systems and Compilers.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Application Software</div>
+                <div class="desc">Programs designed to help users perform specific tasks, such as writing documents (Word), playing games, or browsing the web.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Operating System (OS)</div>
+                <div class="desc">A suite of basic programs that acts as an interface between the user and the computer hardware. It manages memory, files, processes, and devices. Examples: Windows, Linux, macOS, Android.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Compiler</div>
+                <div class="desc">Translation software that converts a high-level programming language code into machine language (executable) code all at once.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Machine Language</div>
+                <div class="desc">The lowest-level programming language consisting of 0s and 1s, directly understood by the computer hardware.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">assembly Language</div>
+                <div class="desc">Low-level programming language that uses mnemonics (codes) instead of machine code.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">High-Level Language</div>
+                <div class="desc">Programming language that uses English-like words and is easier for humans to read and write (e.g., C++, Java, Python, BASIC).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Virus</div>
+                <div class="desc">A malicious program that replicates itself by modifying other programs/files. It requires a host program to spread.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Worm</div>
+                <div class="desc">A standalone malicious program that replicates itself over computer networks to consume resources. It does not need a host program.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Trojan Horse</div>
+                <div class="desc">A malicious program disguised as legitimate software. It does not replicate but opens a backdoor or causes damage when executed.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Antivirus Software</div>
+                <div class="desc">Programs designed to detect, prevent, and remove malicious software like viruses and worms.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">CLI (Command Line Interface)</div>
+                <div class="desc">A text-based user interface where users type commands to interact with the OS (e.g., DOS, Linux Terminal).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">GUI (Graphical User Interface)</div>
+                <div class="desc">A visual user interface that allows users to interact with the computer using graphical elements like icons, windows, and menus (e.g., Windows Desktop).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Motherboard</div>
+                <div class="desc">The main printed circuit board in a computer that connects all other components (CPU, Memory, Ports).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Power Supply Unit (PSU)</div>
+                <div class="desc">Component that converts mains AC electricity to low-voltage DC power for the internal components of a computer.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Ports</div>
+                <div class="desc">Physical docking points on a computer for connecting external devices (e.g., USB, HDMI, Audio jack).</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Artificial Intelligence (AI)</div>
+                <div class="desc">The simulation of human intelligence processes by machines, especially computer systems. Feature of 5th Generation computers.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Supercomputer</div>
+                <div class="desc">The fastest and most powerful type of computer, used for complex scientific calculations.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Mainframe</div>
+                <div class="desc">A large, powerful computer used by large organizations for bulk data processing and critical applications.</div>
+            </div>
+            
+            <div class="card definition">
+                <div class="term">Microcomputer</div>
+                <div class="desc">A small, relatively inexpensive computer with a microprocessor as its CPU. Includes Desktops, Laptops, Tablets.</div>
+            </div>
+            
+        </div>
+
+        <!-- Exam Tab -->
+        <div id="exam" class="tab-content">
+            <p># Computer Applications - 100 Question Mock Exam</p><h2>Part 1: True or False (25 Questions)</h2><p>*Indicate whether the following statements are True (T) or False (F).*</p><div class="question-card"><div class="question-text">1. A computer consists of only software components. ( )</div></div><div class="question-card"><div class="question-text">2. Information is data that has been processed and analyzed. ( )</div></div><div class="question-card"><div class="question-text">3. First-generation computers used Transistors. ( )</div></div><div class="question-card"><div class="question-text">4. RAM is permanent memory and retains data after power loss. ( )</div></div><div class="question-card"><div class="question-text">5. The CPU consists of the ALU and the Control Unit. ( )</div></div><div class="question-card"><div class="question-text">6. The Fourth Generation of computers introduced microprocessors. ( )</div></div><div class="question-card"><div class="question-text">7. Analog computers process discrete binary data. ( )</div></div><div class="question-card"><div class="question-text">8. A Worm virus needs a host program to replicate. ( )</div></div><div class="question-card"><div class="question-text">9. Linux is an example of a closed-source operating system. ( )</div></div><div class="question-card"><div class="question-text">10. The Control Unit (CU) performs arithmetic calculations. ( )</div></div><div class="question-card"><div class="question-text">11. ROM stands for Read Only Memory. ( )</div></div><div class="question-card"><div class="question-text">12. Application software manages the computer hardware directly. ( )</div></div><div class="question-card"><div class="question-text">13. A Trojan Horse replicates itself automatically across networks. ( )</div></div><div class="question-card"><div class="question-text">14. An Operating System acts as an intermediary between the user and hardware. ( )</div></div><div class="question-card"><div class="question-text">15. Data is facts fed to the computer for processing. ( )</div></div><div class="question-card"><div class="question-text">16. The Fifth Generation of computers focuses on Artificial Intelligence. ( )</div></div><div class="question-card"><div class="question-text">17. GUI stands for General User Interface. ( )</div></div><div class="question-card"><div class="question-text">18. Hard disks are considered primary memory (Main Memory). ( )</div></div><div class="question-card"><div class="question-text">19. Windows XP is a version of the Linux operating system. ( )</div></div><div class="question-card"><div class="question-text">20. Compilers convert high-level language programs into machine language. ( )</div></div><div class="question-card"><div class="question-text">21. Flash memory is a type of secondary storage. ( )</div></div><div class="question-card"><div class="question-text">22. Supercomputers are the least powerful type of computers. ( )</div></div><div class="question-card"><div class="question-text">23. E-mail viruses travel as attachments to messages. ( )</div></div><div class="question-card"><div class="question-text">24. CLI requires users to type commands manually. ( )</div></div><div class="question-card"><div class="question-text">25. Transistors were the main technology of the Second Generation. ( )</div><h2>Part 2: Multiple Choice (25 Questions)</h2><div>*Choose the correct answer.*</div></div><div class="question-card"><div class="question-text">26. Which generation of computers used Vacuum Tubes?</div><div style="margin-left: 20px; color: #a0a0a0;">a) First</div><div style="margin-left: 20px; color: #a0a0a0;">b) Second</div><div style="margin-left: 20px; color: #a0a0a0;">c) Third</div><div style="margin-left: 20px; color: #a0a0a0;">d) Fourth</div></div><div class="question-card"><div class="question-text">27. What does CPU stand for?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Central Program Unit</div><div style="margin-left: 20px; color: #a0a0a0;">b) Computer Processing Unit</div><div style="margin-left: 20px; color: #a0a0a0;">c) Central Processing Unit</div><div style="margin-left: 20px; color: #a0a0a0;">d) Control Processing Unit</div></div><div class="question-card"><div class="question-text">28. Which of the following is NOT an input unit?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Mouse</div><div style="margin-left: 20px; color: #a0a0a0;">b) Scanner</div><div style="margin-left: 20px; color: #a0a0a0;">c) Printer</div><div style="margin-left: 20px; color: #a0a0a0;">d) Keyboard</div></div><div class="question-card"><div class="question-text">29. Which component performs arithmetic and logical operations?</div><div style="margin-left: 20px; color: #a0a0a0;">a) CU</div><div style="margin-left: 20px; color: #a0a0a0;">b) ALU</div><div style="margin-left: 20px; color: #a0a0a0;">c) RAM</div><div style="margin-left: 20px; color: #a0a0a0;">d) ROM</div></div><div class="question-card"><div class="question-text">30. Which memory loses its data when the power is turned off?</div><div style="margin-left: 20px; color: #a0a0a0;">a) ROM</div><div style="margin-left: 20px; color: #a0a0a0;">b) Hard Disk</div><div style="margin-left: 20px; color: #a0a0a0;">c) RAM</div><div style="margin-left: 20px; color: #a0a0a0;">d) Flash Drive</div></div><div class="question-card"><div class="question-text">31. Example of System Software is:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Word Processor</div><div style="margin-left: 20px; color: #a0a0a0;">b) Video Game</div><div style="margin-left: 20px; color: #a0a0a0;">c) Operating System</div><div style="margin-left: 20px; color: #a0a0a0;">d) Database App</div></div><div class="question-card"><div class="question-text">32. The technology behind Third Generation computers was:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Transistors</div><div style="margin-left: 20px; color: #a0a0a0;">b) Vacuum Tubes</div><div style="margin-left: 20px; color: #a0a0a0;">c) Integrated Circuits (IC)</div><div style="margin-left: 20px; color: #a0a0a0;">d) AI</div></div><div class="question-card"><div class="question-text">33. Which virus type creates a standalone program that replicates using networks?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Trojan Horse</div><div style="margin-left: 20px; color: #a0a0a0;">b) Worm</div><div style="margin-left: 20px; color: #a0a0a0;">c) E-mail Virus</div><div style="margin-left: 20px; color: #a0a0a0;">d) Logic Bomb</div></div><div class="question-card"><div class="question-text">34. Windows 10 is developed by:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Apple</div><div style="margin-left: 20px; color: #a0a0a0;">b) Microsoft</div><div style="margin-left: 20px; color: #a0a0a0;">c) Linux Community</div><div style="margin-left: 20px; color: #a0a0a0;">d) IBM</div></div><div class="question-card"><div class="question-text">35. The user interface that uses icons and menus is called:</div><div style="margin-left: 20px; color: #a0a0a0;">a) CLI</div><div style="margin-left: 20px; color: #a0a0a0;">b) API</div><div style="margin-left: 20px; color: #a0a0a0;">c) GUI</div><div style="margin-left: 20px; color: #a0a0a0;">d) VDI</div></div><div class="question-card"><div class="question-text">36. Data processed to provide knowledge is called:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Facts</div><div style="margin-left: 20px; color: #a0a0a0;">b) Information</div><div style="margin-left: 20px; color: #a0a0a0;">c) Input</div><div style="margin-left: 20px; color: #a0a0a0;">d) Storage</div></div><div class="question-card"><div class="question-text">37. Which is an example of an Output Unit?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Microphone</div><div style="margin-left: 20px; color: #a0a0a0;">b) Speaker</div><div style="margin-left: 20px; color: #a0a0a0;">c) Joystick</div><div style="margin-left: 20px; color: #a0a0a0;">d) Barcode Reader</div></div><div class="question-card"><div class="question-text">38. The "brain" of the computer is the:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Monitor</div><div style="margin-left: 20px; color: #a0a0a0;">b) Hard Disk</div><div style="margin-left: 20px; color: #a0a0a0;">c) CPU</div><div style="margin-left: 20px; color: #a0a0a0;">d) Power Supply</div></div><div class="question-card"><div class="question-text">39. Transistors replaced vacuum tubes in which generation?</div><div style="margin-left: 20px; color: #a0a0a0;">a) First</div><div style="margin-left: 20px; color: #a0a0a0;">b) Second</div><div style="margin-left: 20px; color: #a0a0a0;">c) Third</div><div style="margin-left: 20px; color: #a0a0a0;">d) Fifth</div></div><div class="question-card"><div class="question-text">40. Which is NOT a characteristic of a computer?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Speed</div><div style="margin-left: 20px; color: #a0a0a0;">b) Precision</div><div style="margin-left: 20px; color: #a0a0a0;">c) Thinking capabilities (without AI)</div><div style="margin-left: 20px; color: #a0a0a0;">d) Storage</div></div><div class="question-card"><div class="question-text">41. One Megahertz (MHz) measures:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Storage Capacity</div><div style="margin-left: 20px; color: #a0a0a0;">b) Screen Resolution</div><div style="margin-left: 20px; color: #a0a0a0;">c) Processor Speed</div><div style="margin-left: 20px; color: #a0a0a0;">d) Internet Speed</div></div><div class="question-card"><div class="question-text">42. Which is an open-source operating system?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Windows</div><div style="margin-left: 20px; color: #a0a0a0;">b) iOS</div><div style="margin-left: 20px; color: #a0a0a0;">c) Linux</div><div style="margin-left: 20px; color: #a0a0a0;">d) MacOS</div></div><div class="question-card"><div class="question-text">43. Which storage has the smallest capacity?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Hard Disk</div><div style="margin-left: 20px; color: #a0a0a0;">b) DVD</div><div style="margin-left: 20px; color: #a0a0a0;">c) Floppy Disk</div><div style="margin-left: 20px; color: #a0a0a0;">d) Flash Memory</div></div><div class="question-card"><div class="question-text">44. A program that disguises itself as useful software but causes damage:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Worm</div><div style="margin-left: 20px; color: #a0a0a0;">b) Trojan Horse</div><div style="margin-left: 20px; color: #a0a0a0;">c) Macro Virus</div><div style="margin-left: 20px; color: #a0a0a0;">d) Anti-virus</div></div><div class="question-card"><div class="question-text">45. BASIC, FORTRAN, and COBOL are examples of:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Operating Systems</div><div style="margin-left: 20px; color: #a0a0a0;">b) Hardware</div><div style="margin-left: 20px; color: #a0a0a0;">c) Programming Languages</div><div style="margin-left: 20px; color: #a0a0a0;">d) Input Devices</div></div><div class="question-card"><div class="question-text">46. The physical components of a computer are called:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Software</div><div style="margin-left: 20px; color: #a0a0a0;">b) Firmware</div><div style="margin-left: 20px; color: #a0a0a0;">c) Hardware</div><div style="margin-left: 20px; color: #a0a0a0;">d) Malware</div></div><div class="question-card"><div class="question-text">47. Connecting a computer to a power source is the role of:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Motherboard</div><div style="margin-left: 20px; color: #a0a0a0;">b) Power Supply</div><div style="margin-left: 20px; color: #a0a0a0;">c) CPU Fan</div><div style="margin-left: 20px; color: #a0a0a0;">d) Bus</div></div><div class="question-card"><div class="question-text">48. Fourth Generation computers are based on:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Microprocessors</div><div style="margin-left: 20px; color: #a0a0a0;">b) Vacuum Tubes</div><div style="margin-left: 20px; color: #a0a0a0;">c) Transistors</div><div style="margin-left: 20px; color: #a0a0a0;">d) Gears</div></div><div class="question-card"><div class="question-text">49. Antivirus software is used to:</div><div style="margin-left: 20px; color: #a0a0a0;">a) Create viruses</div><div style="margin-left: 20px; color: #a0a0a0;">b) Prevent and remove viruses</div><div style="margin-left: 20px; color: #a0a0a0;">c) Speed up the internet</div><div style="margin-left: 20px; color: #a0a0a0;">d) Organize files</div></div><div class="question-card"><div class="question-text">50. Which bus transfers addresses of memory cells?</div><div style="margin-left: 20px; color: #a0a0a0;">a) Data Bus</div><div style="margin-left: 20px; color: #a0a0a0;">b) Control Bus</div><div style="margin-left: 20px; color: #a0a0a0;">c) Addressing Bus</div><div style="margin-left: 20px; color: #a0a0a0;">d) Universal Bus</div><h2>Part 3: Matching (25 Questions)</h2><p><i>Match the item in Column A with the correct description in Column B.</i></p><h4>Group 1: Generations</h4><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">51. First Generation</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">A. Integrated Circuits</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">52. Second Generation</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">B. Artificial Intelligence</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">53. Third Generation</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">C. Vacuum Tubes</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">54. Fourth Generation</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">D. Transistors</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">55. Fifth Generation</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">E. Microprocessors</td></tr><h4>Group 2: Components</h4><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">56. RAM</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">F. Performs math/logic operations</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">57. ROM</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">G. Directs data flow and instructions</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">58. ALU</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">H. Permanent startup instructions</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">59. CU</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">I. Temporary volatile memory</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">60. Hard Disk</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">J. Secondary storage with huge capacity</td></tr><h4>Group 3: Software</h4><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">61. Windows</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">K. Open-source OS</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">62. Linux</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">L. Closed-source, most used OS</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">63. Compiler</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">M. Malicious program requiring a host</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">64. Virus</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">N. Translates code to machine language</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">65. Application</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">O. User-specific programs (e.g., Games)</td></tr><h4>Group 4: Interfaces & Units</h4><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">66. GUI</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">P. Input unit</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">67. CLI</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">Q. Output unit</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">68. Scanner</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">R. Graphical User Interface</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">69. Monitor</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">S. Command Line Interface</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">70. Motherboard</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">T. Main circuit board connecting units</td></tr><h4>Group 5: General</h4><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">71. Data</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">U. Analysed data</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">72. Knowledge</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">V. Understanding of information</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">73. Information</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">W. Facts fed to computer</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">74. Super Computer</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">X. Fastest type of computer</td></tr><tr><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">75. Micro Computer</td><td style="padding: 8px; border-bottom: 1px solid #333; width: 50%;">Y. PC / Laptop type</td></tr><h2>Part 4: Short Answer (25 Questions)</h2><div>*Answer the following questions briefly.*</div></div><div class="question-card"><div class="question-text">76. Define a Computer.</div></div><div class="question-card"><div class="question-text">77. List three characteristics of modern computers.</div></div><div class="question-card"><div class="question-text">78. What is the difference between Data and Information?</div></div><div class="question-card"><div class="question-text">79. Name the two main components of a computer system.</div></div><div class="question-card"><div class="question-text">80. Explain the function of the ALU.</div></div><div class="question-card"><div class="question-text">81. What is the difference between RAM and ROM?</div></div><div class="question-card"><div class="question-text">82. List three examples of Secondary Storage.</div></div><div class="question-card"><div class="question-text">83. What is an Operating System?</div></div><div class="question-card"><div class="question-text">84. Give two examples of Operating Systems.</div></div><div class="question-card"><div class="question-text">85. What is the difference between System Software and Application Software?</div></div><div class="question-card"><div class="question-text">86. What is a Computer Virus?</div></div><div class="question-card"><div class="question-text">87. How does a Worm differ from a Virus?</div></div><div class="question-card"><div class="question-text">88. What is a Trojan Horse?</div></div><div class="question-card"><div class="question-text">89. List three types of viruses.</div></div><div class="question-card"><div class="question-text">90. What is the function of a Compiler?</div></div><div class="question-card"><div class="question-text">91. What technology was used in the First Generation of computers?</div></div><div class="question-card"><div class="question-text">92. What are the three buses used by the processor?</div></div><div class="question-card"><div class="question-text">93. Define Artificial Intelligence (in context of 5th generation).</div></div><div class="question-card"><div class="question-text">94. Name two input devices.</div></div><div class="question-card"><div class="question-text">95. Name two output devices.</div></div><div class="question-card"><div class="question-text">96. What is the main advantage of transistors over vacuum tubes?</div></div><div class="question-card"><div class="question-text">97. What is a CLI?</div></div><div class="question-card"><div class="question-text">98. Why do we need Antivirus software?</div></div><div class="question-card"><div class="question-text">99. What are the four components of a computer system structure (OS lecture)?</div></div><div class="question-card"><div class="question-text">100. What is the role of the Power Supply?</div><div>---</div><div># Answer Key</div><h2>Part 1: True or False</h2></div><div class="question-card"><div class="question-text">1. F (Hardware & Software)</div></div><div class="question-card"><div class="question-text">2. T</div></div><div class="question-card"><div class="question-text">3. F (Vacuum Tubes)</div></div><div class="question-card"><div class="question-text">4. F (Volatile/Temporary)</div></div><div class="question-card"><div class="question-text">5. T</div></div><div class="question-card"><div class="question-text">6. T</div></div><div class="question-card"><div class="question-text">7. F (Digital is discrete, Analog is continuous)</div></div><div class="question-card"><div class="question-text">8. F (Worms are standalone)</div></div><div class="question-card"><div class="question-text">9. F (Open Source)</div></div><div class="question-card"><div class="question-text">10. F (ALU does math)</div></div><div class="question-card"><div class="question-text">11. T</div></div><div class="question-card"><div class="question-text">12. F (OS manages hardware)</div></div><div class="question-card"><div class="question-text">13. F (Worms replicate, Trojans do not)</div></div><div class="question-card"><div class="question-text">14. T</div></div><div class="question-card"><div class="question-text">15. T</div></div><div class="question-card"><div class="question-text">16. T</div></div><div class="question-card"><div class="question-text">17. F (Graphical User Interface)</div></div><div class="question-card"><div class="question-text">18. F (Secondary)</div></div><div class="question-card"><div class="question-text">19. F (Windows)</div></div><div class="question-card"><div class="question-text">20. T</div></div><div class="question-card"><div class="question-text">21. T</div></div><div class="question-card"><div class="question-text">22. F (Largest/Most Powerful)</div></div><div class="question-card"><div class="question-text">23. T</div></div><div class="question-card"><div class="question-text">24. T</div></div><div class="question-card"><div class="question-text">25. T</div><h2>Part 2: Multiple Choice</h2></div><div class="question-card"><div class="question-text">26. a</div></div><div class="question-card"><div class="question-text">27. c</div></div><div class="question-card"><div class="question-text">28. c</div></div><div class="question-card"><div class="question-text">29. b</div></div><div class="question-card"><div class="question-text">30. c</div></div><div class="question-card"><div class="question-text">31. c</div></div><div class="question-card"><div class="question-text">32. c</div></div><div class="question-card"><div class="question-text">33. b</div></div><div class="question-card"><div class="question-text">34. b</div></div><div class="question-card"><div class="question-text">35. c</div></div><div class="question-card"><div class="question-text">36. b</div></div><div class="question-card"><div class="question-text">37. b</div></div><div class="question-card"><div class="question-text">38. c</div></div><div class="question-card"><div class="question-text">39. b</div></div><div class="question-card"><div class="question-text">40. c</div></div><div class="question-card"><div class="question-text">41. c</div></div><div class="question-card"><div class="question-text">42. c</div></div><div class="question-card"><div class="question-text">43. c</div></div><div class="question-card"><div class="question-text">44. b</div></div><div class="question-card"><div class="question-text">45. c</div></div><div class="question-card"><div class="question-text">46. c</div></div><div class="question-card"><div class="question-text">47. b</div></div><div class="question-card"><div class="question-text">48. a</div></div><div class="question-card"><div class="question-text">49. b</div></div><div class="question-card"><div class="question-text">50. c</div><h2>Part 3: Matching</h2><div>51. C</div><div>52. D</div><div>53. A</div><div>54. E</div><div>55. B</div><div>56. I</div><div>57. H</div><div>58. F</div><div>59. G</div><div>60. J</div><div>61. L</div><div>62. K</div><div>63. N</div><div>64. M</div><div>65. O</div><div>66. R</div><div>67. S</div><div>68. P</div><div>69. Q</div><div>70. T</div><div>71. W</div><div>72. V</div><div>73. U</div><div>74. X</div><div>75. Y</div><h2>Part 4: Short Answer</h2></div><div class="question-card"><div class="question-text">76. Electronic device that stores, processes, and retrieves data.</div></div><div class="question-card"><div class="question-text">77. Speed, Precision, Storage, Multi-use.</div></div><div class="question-card"><div class="question-text">78. Data is raw facts; Information is processed data.</div></div><div class="question-card"><div class="question-text">79. Hardware and Software.</div></div><div class="question-card"><div class="question-text">80. Performs arithmetic and logical operations.</div></div><div class="question-card"><div class="question-text">81. RAM is volatile (temporary), ROM is non-volatile (permanent).</div></div><div class="question-card"><div class="question-text">82. Hard Disk, Flash Memory, CD/DVD.</div></div><div class="question-card"><div class="question-text">83. Intermediary program between user and hardware; manages resources.</div></div><div class="question-card"><div class="question-text">84. Windows, Linux, macOS.</div></div><div class="question-card"><div class="question-text">85. System SW manages computer; Application SW performs user tasks.</div></div><div class="question-card"><div class="question-text">86. Malicious program that replicates by infecting other files.</div></div><div class="question-card"><div class="question-text">87. Worm is standalone and doesn't need a host; Virus attaches to a host.</div></div><div class="question-card"><div class="question-text">88. Malicious program disguised as legitimate software; does not replicate.</div></div><div class="question-card"><div class="question-text">89. Virus, Worm, Trojan.</div></div><div class="question-card"><div class="question-text">90. Translates high-level code to machine code.</div></div><div class="question-card"><div class="question-text">91. Vacuum Tubes.</div></div><div class="question-card"><div class="question-text">92. Data Bus, Addressing Bus, Control Bus.</div></div><div class="question-card"><div class="question-text">93. Simulation of human intelligence (voice recognition, decision making).</div></div><div class="question-card"><div class="question-text">94. Keyboard, Mouse, Scanner.</div></div><div class="question-card"><div class="question-text">95. Monitor, Printer, Speaker.</div></div><div class="question-card"><div class="question-text">96. Smaller, faster, cheaper, less heat, more reliable.</div></div><div class="question-card"><div class="question-text">97. Command Line Interface (text based).</div></div><div class="question-card"><div class="question-text">98. To detect, prevent, and remove malicious software.</div></div><div class="question-card"><div class="question-text">99. Hardware, OS, Application Programs, Users.</div></div><div class="question-card"><div class="question-text">100. Converts AC power to DC power for internal components.</div></div>
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            // Show target
+            document.getElementById(tabName).classList.add('active');
+            
+            // Highlight button (simple logic for now)
+            const buttons = document.querySelectorAll('.tab-btn');
+            if(tabName === 'lectures') buttons[0].classList.add('active');
+            if(tabName === 'definitions') buttons[1].classList.add('active');
+            if(tabName === 'exam') buttons[2].classList.add('active');
+        }
+    </script>
+</body>
+</html>
