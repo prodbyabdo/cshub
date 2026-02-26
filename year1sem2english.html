@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English for Specific Purpose II | CS Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --border-color: #333333;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-main); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        header { margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
+        .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
+        .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
+        .nav-back:hover { color: var(--accent-color); }
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .tab-btn { background: none; border: none; color: var(--text-secondary); padding: 10px 20px; font-family: var(--font-mono); font-size: 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn:hover { color: var(--text-primary); }
+        .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: var(--text-primary); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
+        h3 { color: var(--accent-color); margin-top: 30px; font-family: var(--font-mono); }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .definition { display: grid; grid-template-columns: 180px 1fr; gap: 20px; }
+        .term { color: var(--accent-color); font-weight: bold; font-family: var(--font-mono); font-size: 0.9rem; }
+        .question-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); }
+        .question-text { font-weight: 600; margin-bottom: 10px; }
+        .options { list-style: none; padding: 0; margin-left:20px; color:#a0a0a0; }
+        .options li { margin-bottom: 5px; color: var(--text-secondary); }
+        blockquote { border-left: 2px solid var(--border-color); margin: 0; padding-left: 15px; color: var(--text-secondary); }
+        .grammar-box { background: var(--accent-dim); border: 1px solid var(--accent-color); border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .grammar-box code { color: var(--accent-color); font-family: var(--font-mono); }
+        .example { color: var(--text-secondary); font-style: italic; margin-left: 20px; }
+        .section-divider { border: none; border-top: 1px solid var(--border-color); margin: 40px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px 12px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--accent-dim); color: var(--accent-color); font-family: var(--font-mono); font-size: 0.85rem; }
+        td { color: var(--text-secondary); }
+        .toggle-btn { background: var(--accent-dim); color: var(--accent-color); border: 1px solid var(--accent-color); padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: var(--font-mono); font-size: 0.9rem; margin: 15px 0; transition: 0.2s; }
+        .toggle-btn:hover { background: var(--accent-color); color: #000; }
+        .hidden { display: none; }
+        .tag { display: inline-block; background: var(--accent-dim); color: var(--accent-color); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: var(--font-mono); margin-right: 5px; }
+        ul { padding-left: 20px; }
+        ul li { color: var(--text-secondary); margin-bottom: 5px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }
+        .video-card { background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 10px; }
+        .video-title { font-weight: bold; color: var(--text-primary); }
+        .video-desc { font-size: 0.85rem; color: var(--text-secondary); flex-grow: 1; }
+        .watch-btn { display: inline-block; background: #ff0000; color: #fff; text-align: center; padding: 8px; border-radius: 4px; font-weight: bold; font-family: var(--font-mono); text-decoration: none; font-size: 0.85rem; transition: background 0.2s; }
+        .watch-btn:hover { background: #cc0000; text-decoration: none; }
+        .mock-section { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
+        <header>
+            <h1>English for Specific Purpose II</h1>
+            <div class="subtitle">HMS123 Resources & Expanded Study Guide</div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('grammar')">Grammar</button>
+            <button class="tab-btn" onclick="openTab('vocabulary')">Vocabulary</button>
+            <button class="tab-btn" onclick="openTab('guide')">Study Guide</button>
+            <button class="tab-btn" onclick="openTab('mock-exam')">Mock Exam</button>
+        </div>
+
+        <!-- ===== GRAMMAR TAB ===== -->
+        <div id="grammar" class="tab-content active">
+
+            <h2>The Passive Voice</h2>
+            <div class="grammar-box">
+                <p>In ESP, the passive voice is frequently used because the <strong>action</strong> or the <strong>result</strong> is more important than <em>who did it</em>.</p>
+                <strong>Form:</strong> <code>Object + be + past participle (+ by Agent)</code><br><br>
+                <span><strong>Active:</strong> The engineers <em>tested</em> the system.<br>
+                <strong>Passive:</strong> The system <em>was tested</em> (by the engineers).</span>
+            </div>
+
+            <hr class="section-divider">
+            <h2>Conditional Sentences (If-Clauses)</h2>
+            <table>
+                <tr><th>Type</th><th>Usage</th><th>Structure</th><th>Example</th></tr>
+                <tr><td>Zero</td><td>Facts, general truths</td><td>If + Present Simple, Present Simple</td><td>If you heat water to 100°C, it <strong>boils</strong>.</td></tr>
+                <tr><td>First</td><td>Real/possible future situations</td><td>If + Present Simple, will + verb</td><td>If the company reduces prices, sales <strong>will increase</strong>.</td></tr>
+                <tr><td>Second</td><td>Unreal/hypothetical present</td><td>If + Past Simple, would + verb</td><td>If I had more time, I <strong>would take</strong> another course.</td></tr>
+                <tr><td>Third</td><td>Unreal past (regrets/critiques)</td><td>If + Past Perfect, would have + past participle</td><td>If they had studied harder, they <strong>would have passed</strong>.</td></tr>
+            </table>
+
+            <hr class="section-divider">
+            <h2>Grammar: Present Perfect Continuous</h2>
+            <div class="grammar-box">
+                <strong>Form:</strong> <code>Subject + have/has + been + verb-ing</code><br>
+                <strong>Question:</strong> <code>Have/Has + subject + been + verb-ing?</code>
+            </div>
+            <div class="card">
+                <strong>Main Uses:</strong><br>
+                <p>- Action started in the past and continuing into the present.</p>
+                <p>- Action finished recently with visible results.</p>
+                <strong>⚠️ Note:</strong> Stative verbs (know, own, believe) are NOT used in continuous.<br>
+            </div>
+
+            <hr class="section-divider">
+            <h2>Phrases of Purpose</h2>
+            <table>
+                <tr><th>Structure</th><th>Form</th><th>Example</th></tr>
+                <tr><td>to + base verb</td><td>Simple intention</td><td>Engineers installed sensors <strong>to</strong> monitor temperature.</td></tr>
+                <tr><td>in order to + base verb</td><td>Formal</td><td>The firm conducted a study <strong>in order to</strong> reduce risk.</td></tr>
+                <tr><td>so as to + base verb</td><td>Formal written</td><td>The team encrypted data <strong>so as to</strong> protect information.</td></tr>
+                <tr><td>so that + clause</td><td>Different subject</td><td>The company lowered prices <strong>so that</strong> customers could afford it.</td></tr>
+                <tr><td>for + noun / -ing</td><td>Function/use</td><td>This platform is designed <strong>for</strong> data management.</td></tr>
+                <tr><td>for the purpose of + -ing</td><td>Very formal</td><td>Data was collected <strong>for the purpose of</strong> evaluating performance.</td></tr>
+                <tr><td>with the aim of + -ing</td><td>Strategy</td><td>The company expanded <strong>with the aim of</strong> increasing profits.</td></tr>
+                <tr><td>with a view to + -ing</td><td>Business/diplomatic</td><td>The firm entered negotiations <strong>with a view to</strong> forming a partnership.</td></tr>
+            </table>
+
+            <hr class="section-divider">
+            <h2>Classification Structures</h2>
+            <div class="card">
+                <strong>Key expressions:</strong>
+                <ul>
+                    <li><code>can be classified into</code></li>
+                    <li><code>can be divided into</code></li>
+                    <li><code>fall into</code></li>
+                    <li><code>consist of</code></li>
+                    <li><code>based on</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== VOCABULARY TAB ===== -->
+        <div id="vocabulary" class="tab-content">
+            
+            <h2>Diplomacy Terms</h2>
+            <div class="card definition"><div class="term">Declare</div><div>To state something officially, formally, and publicly.</div></div>
+            <div class="card definition"><div class="term">De Facto</div><div>Existing in reality, even if not legally recognised.</div></div>
+            <div class="card definition"><div class="term">De Jure</div><div>Existing by law or legally recognised.</div></div>
+            <div class="card definition"><div class="term">Defiance</div><div>Open resistance or refusal to obey authority.</div></div>
+            <div class="card definition"><div class="term">Deflect</div><div>To redirect attention, criticism, or pressure away from a sensitive issue.</div></div>
+            <div class="card definition"><div class="term">Delegation</div><div>A group of authorised representatives sent to negotiate or attend a conference.</div></div>
+            <div class="card definition"><div class="term">Deportment</div><div>A diplomat's manner, behaviour, and professional conduct.</div></div>
+            <div class="card definition"><div class="term">Diplomatic Immunity</div><div>Legal protection granted to diplomats, exempting them from certain laws of the host country.</div></div>
+            <div class="card definition"><div class="term">Persona Non Grata</div><div>Latin term meaning "an unwelcome person" — a diplomat who must leave the host country.</div></div>
+            <div class="card definition"><div class="term">Envoy</div><div>An official representative sent on a diplomatic mission.</div></div>
+            <div class="card definition"><div class="term">Ambassador</div><div>The highest-ranking diplomatic representative of a country.</div></div>
+            <div class="card definition"><div class="term">Consul</div><div>An official who assists citizens abroad and promotes trade relations.</div></div>
+            <div class="card definition"><div class="term">Bilateral Relations</div><div>Diplomatic relations between two countries.</div></div>
+            <div class="card definition"><div class="term">Multilateral Diplomacy</div><div>Diplomatic negotiations involving three or more states.</div></div>
+            <div class="card definition"><div class="term">Treaty</div><div>A formal and legally binding agreement between states.</div></div>
+            <div class="card definition"><div class="term">Sanctions</div><div>Penalties imposed by one country or group on another to influence behaviour.</div></div>
+            <div class="card definition"><div class="term">Mediation</div><div>The act of assisting two or more parties in reaching a peaceful agreement.</div></div>
+            <div class="card definition"><div class="term">Negotiation</div><div>A formal discussion aimed at reaching an agreement.</div></div>
+            <div class="card definition"><div class="term">Protocol</div><div>The accepted rules of diplomatic conduct and formal procedure.</div></div>
+            <div class="card definition"><div class="term">Ratify</div><div>To formally approve and confirm an agreement or treaty.</div></div>
+
+            <hr class="section-divider">
+            <h2>Academic Writing Verbs</h2>
+            <table>
+                <tr><th>Function</th><th>Verbs</th></tr>
+                <tr><td>Saying / Stating</td><td>articulate, comment, mention, maintain, note, point out, state, suggest, indicate</td></tr>
+                <tr><td>Thinking / Theorising</td><td>hypothesise, predict, theorise, conceptualise, understand</td></tr>
+                <tr><td>Showing / Proving</td><td>demonstrate, show, convey, support, substantiate, corroborate, verify, confirm</td></tr>
+                <tr><td>Researching</td><td>investigate, research, experiment, conduct, administer, observe</td></tr>
+                <tr><td>Arguing / Discussing</td><td>argue, challenge, compare, contradict, contrast, debate, defend, refute</td></tr>
+                <tr><td>Defining / Identifying</td><td>comprise, consist, constitute, embody, characterise, define, identify</td></tr>
+                <tr><td>Creating / Developing</td><td>create, construct, develop, generate, produce, evolve, manufacture</td></tr>
+                <tr><td>Analysing / Evaluating</td><td>analyse, examine, evaluate, scrutinise, criticise</td></tr>
+                <tr><td>Connecting Ideas</td><td>relate, connect, link, associate, correlate</td></tr>
+                <tr><td>Causing Change</td><td>affect, influence, transform</td></tr>
+            </table>
+
+            <hr class="section-divider">
+            <h2>Professional Vocabulary Bank</h2>
+            <div class="card">
+                <p>entrepreneurship, regulation, database, sustainability, algorithm, investment, logistics, diplomacy, prototype, compliance, artificial intelligence, stakeholder, tariff, automation, negotiation, infrastructure, cybersecurity, procurement, innovation, feasibility</p>
+            </div>
+            
+            <hr class="section-divider">
+            <h2>United Nations Core Lexicon</h2>
+            <div class="card">
+                <p>Second War, peace, New York, San Francisco, General Assembly, Security Council, members, veto, Secretary-General, five years, Hague, Member States, children's rights (UNICEF), cultural cooperation (UNESCO), global health (WHO), UNDP, resolution, ratify, 1948 Universal Declaration.</p>
+            </div>
+        </div>
+
+        <!-- ===== STUDY GUIDE TAB ===== -->
+        <div id="guide" class="tab-content">
+            
+            <h2>Exam Sections Breakdown</h2>
+            <div class="card">
+                <h3>1. Comprehensive Grammar</h3>
+                <p>Includes Present Perfect Continuous, Phrases of Purpose, Passive Voice, and the 4 types of Conditionals (Zero, First, Second, Third).</p>
+            </div>
+            <div class="card">
+                <h3>2. Professional Vocabulary Matching</h3>
+                <p>Matching academic verbs, UN terms, and professional ESP terminology to definitions or gap-fills.</p>
+            </div>
+            <div class="card">
+                <h3>3. Comprehension Matching</h3>
+                <p>Matching headings, statements, or definitions based on a short provided reading text related to Engineering, Business, or Diplomacy.</p>
+            </div>
+            <div class="card">
+                <h3>4. Writing: Summary (100 Words)</h3>
+                <p>You will be required to write a concise 100-word summary of a given text, demonstrating your ability to extract main points without copying verbatim.</p>
+            </div>
+
+            <hr class="section-divider">
+            <h2>Video Resources & Courses</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-title">Conditionals Masterclass</div>
+                    <div class="video-desc">Detailed walkthrough of Zero, First, Second, and Third conditionals.</div>
+                    <a href="https://www.youtube.com/results?search_query=Conditional+Sentences+English+Grammar" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                </div>
+                <div class="video-card">
+                    <div class="video-title">Passive Voice in Academics</div>
+                    <div class="video-desc">Learn when and how to appropriately use the passive voice.</div>
+                    <a href="https://www.youtube.com/results?search_query=Passive+Voice+in+Academic+Writing" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                </div>
+                <div class="video-card">
+                    <div class="video-title">Summary Writing Technique</div>
+                    <div class="video-desc">How to write a professional 100-word summary efficiently.</div>
+                    <a href="https://www.youtube.com/results?search_query=How+to+write+a+summary" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FULL EXAM TAB ===== -->
+        <div id="mock-exam" class="tab-content">
+            
+            <h2>FULL SIMULATED FINAL EXAM</h2>
+            <p style="color:var(--text-secondary); margin-bottom: 20px;">This massive mock exam tests all required grammar (including conditionals and passive voice), comprehensive vocabulary, reading comprehension, and summary writing skills.</p>
+
+            <div class="mock-section">
+                <h3>Section A: Advanced Grammar (15 Questions)</h3>
+                <div class="question-card">
+                    <div class="question-text">1. The manager usually _____ the weekly report on Monday.</div>
+                    <div class="options">a) prepares &nbsp; b) is preparing &nbsp; c) prepared &nbsp; d) has prepared</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">2. If they had studied harder, they _____ the exam.</div>
+                    <div class="options">a) pass &nbsp; b) will pass &nbsp; c) would pass &nbsp; d) would have passed</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">3. The engineer _____ the machine when it suddenly stopped.</div>
+                    <div class="options">a) repairs &nbsp; b) repaired &nbsp; c) was repairing &nbsp; d) has repaired</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">4. If the company reduces prices, sales _____.</div>
+                    <div class="options">a) increase &nbsp; b) will increase &nbsp; c) increased &nbsp; d) would increase</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">5. She is responsible _____ managing the project.</div>
+                    <div class="options">a) of &nbsp; b) for &nbsp; c) with &nbsp; d) to</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">6. If you heat water to 100°C, it _____.</div>
+                    <div class="options">a) boils &nbsp; b) will boil &nbsp; c) boiled &nbsp; d) would boil</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">7. She _____ here since 2022.</div>
+                    <div class="options">a) works &nbsp; b) worked &nbsp; c) has worked &nbsp; d) is working</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">8. If I had more time, I _____ another course.</div>
+                    <div class="options">a) take &nbsp; b) will take &nbsp; c) would take &nbsp; d) took</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">9. By this time tomorrow, we _____ travelling to Cairo.</div>
+                    <div class="options">a) are &nbsp; b) were &nbsp; c) will be &nbsp; d) have been</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">10. The new software _____ by the development team last night.</div>
+                    <div class="options">a) released &nbsp; b) was released &nbsp; c) had released &nbsp; d) is released</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">11. They _____ to fix the server issue all night, so they are exhausted.</div>
+                    <div class="options">a) tried &nbsp; b) have been trying &nbsp; c) try &nbsp; d) had tried</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">12. We automated the system _____ increase efficiency.</div>
+                    <div class="options">a) for &nbsp; b) in order to &nbsp; c) with a view to &nbsp; d) so that</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">13. The company lowered its prices _____ the customers could afford the software.</div>
+                    <div class="options">a) to &nbsp; b) so that &nbsp; c) for the purpose of &nbsp; d) with a view back</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">14. The data falls _____ three distinct categories.</div>
+                    <div class="options">a) into &nbsp; b) on &nbsp; c) around &nbsp; d) over</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">15. Which connector relies on the "-ing" form following it?</div>
+                    <div class="options">a) To &nbsp; b) In order to &nbsp; c) So as to &nbsp; d) With the aim of</div>
+                </div>
+            </div>
+
+            <div class="mock-section">
+                <h3>Section B: Vocabulary Application (15 Questions)</h3>
+                <div class="question-card">
+                    <div class="question-text">16. The company conducted a __________ study before starting the project in the new market.</div>
+                    <div class="options">a) logistics &nbsp; b) feasibility &nbsp; c) stakeholder &nbsp; d) tariff</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">17. Strong __________ measures protect sensitive data from hackers.</div>
+                    <div class="options">a) database &nbsp; b) compliance &nbsp; c) cybersecurity &nbsp; d) automation</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">18. The project manager communicated with each __________ to ensure everyone was aware of the timeline.</div>
+                    <div class="options">a) stakeholder &nbsp; b) regulation &nbsp; c) innovation &nbsp; d) algorithm</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">19. A diplomat who commits a serious offence may be declared ____________ and must leave the country.</div>
+                    <div class="options">a) Envoy &nbsp; b) De jure &nbsp; c) Persona Non Grata &nbsp; d) Protocol</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">20. Penalties imposed by one country on another to influence behaviour are called:</div>
+                    <div class="options">a) Mediation &nbsp; b) Treaties &nbsp; c) Sanctions &nbsp; d) Defiance</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">21. The UN organ heavily focused on maintaining international peace is the:</div>
+                    <div class="options">a) General Assembly &nbsp; b) WHO &nbsp; c) Security Council &nbsp; d) UNICEF</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">22. The power held by the 5 permanent members of the UN Security Council to block a resolution is called:</div>
+                    <div class="options">a) Veto &nbsp; b) Treaty power &nbsp; c) Deflect &nbsp; d) Resolution</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">23. Open resistance or refusal to obey authority is known as:</div>
+                    <div class="options">a) Deflect &nbsp; b) Consular action &nbsp; c) Defiance &nbsp; d) Ratification</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">24. Modern factories rely heavily on _____ to increase efficiency.</div>
+                    <div class="options">a) automation &nbsp; b) tariffs &nbsp; c) compliance &nbsp; d) diplomacy</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">25. Which of these terms refers to the accepted rules of diplomatic conduct?</div>
+                    <div class="options">a) Logistics &nbsp; b) Treaty &nbsp; c) Envoy &nbsp; d) Protocol</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">26. Foreign __________ develops emerging markets and improves local economies.</div>
+                    <div class="options">a) investment &nbsp; b) prototype &nbsp; c) tariff &nbsp; d) compliance</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">27. Existing in reality, even if not legally recognized, is defined by the term:</div>
+                    <div class="options">a) De jure &nbsp; b) Mediation &nbsp; c) De facto &nbsp; d) Ratify</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">28. A group of authorized representatives sent to attend a conference is a:</div>
+                    <div class="options">a) Delegation &nbsp; b) Automation &nbsp; c) Regulation &nbsp; d) Consul</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">29. The Universal Declaration of Human Rights was an important resolution adopted in the year:</div>
+                    <div class="options">a) 1945 &nbsp; b) 1948 &nbsp; c) 1955 &nbsp; d) 1970</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">30. When a country officially approves a treaty, it is said to __________ it.</div>
+                    <div class="options">a) ratify &nbsp; b) deflect &nbsp; c) mediate &nbsp; d) state</div>
+                </div>
+            </div>
+
+            <div class="mock-section">
+                <h3>Section C: Reading Comprehension (5 Questions)</h3>
+                <div class="card" style="background:var(--bg-color); border-left:4px solid var(--text-secondary);">
+                    <p><strong>Read the following passage and answer the questions below:</strong></p>
+                    <p style="margin-bottom: 10px;">In the modern era, cybersecurity has become a cornerstone of both international diplomacy and global business. As multinational corporations expand their operations globally, they rely heavily on databases, advanced algorithms, and automation to manage intricate supply chains. However, this increased digital connectivity brings significant vulnerabilities. In recent years, severe data breaches have frequently targeted both public infrastructure and private enterprises, exposing sensitive stakeholder information.</p>
+                    <p style="margin-bottom: 10px;">Consequently, foreign policy now heavily involves digital regulations and cybersecurity. Diplomats are often tasked with negotiating bilateral treaties specifically designed to combat international cyber threats, with the aim of establishing universal compliance standards. Furthermore, engineering and IT teams must constantly collaborate to build resilient prototypes and firewalls. If governments and businesses do not act cooperatively to protect digital information, the resulting instability could severely damage bilateral relations and disrupt global trade networks.</p>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">31. What is the main idea of the passage?</div>
+                    <div class="options">a) Cybersecurity is primarily a concern for private businesses.<br>b) Cybersecurity is now essential for both global business and international diplomacy.<br>c) Diplomats should stop negotiating treaties and focus entirely on technology.<br>d) Automation is the only way to prevent data breaches.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">32. According to the text, why do multinational corporations rely on databases and algorithms?</div>
+                    <div class="options">a) To combat international cyber threats.<br>b) To replace human diplomats in negotiations.<br>c) To manage their intricate supply chains.<br>d) To establish global compliance standards.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">33. What does the text state is a consequence of increased digital connectivity?</div>
+                    <div class="options">a) It eliminates the need for international trade.<br>b) It introduces significant vulnerabilities and the risk of data breaches.<br>c) It completely secures global logistics networks.<br>d) It reduces the need for diplomatic relations.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">34. What are diplomats tasked with doing to address these modern threats?</div>
+                    <div class="options">a) Negotiating bilateral treaties to combat cyber threats.<br>b) Writing advanced encryption algorithms for businesses.<br>c) Attacking public infrastructure.<br>d) Managing corporate supply chains directly.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">35. According to the final sentence, what could happen if governments and businesses do not cooperate?</div>
+                    <div class="options">a) Data breaches will stop completely.<br>b) IT teams will stop building prototypes.<br>c) Automation will take over the workforce.<br>d) Bilateral relations could be damaged and global trade disrupted.</div>
+                </div>
+            </div>
+
+            <div class="mock-section">
+                <h3>Section D: 100-Word Summary Task</h3>
+                <div class="card">
+                    <p style="color:var(--text-secondary); font-style:italic;"><strong>Instructions:</strong> Read the following text and write a summary of approximately 100 words in the text box provided. Focus on capturing the main idea without directly quoting long sentences.</p>
+                    <p><strong>Text:</strong> "United Nations peacekeeping operations are a vital instrument employed by the international community to navigate the difficult path from conflict to peace. While they cannot replace a political process, they provide security support and build the capacity of institutions. Today's multidimensional peacekeeping operations are called upon not only to maintain peace and security, but also to facilitate the political process, protect civilians, assist in the disarmament, demobilization and reintegration of former combatants, support the organization of elections, protect and promote human rights, and assist in restoring the rule of law. However, they frequently face challenges such as lack of funding and dangerous operational environments."</p>
+                    <textarea style="width:100%; height:150px; background:var(--bg-color); color:var(--text-primary); border:1px solid var(--border-color); padding:10px; font-family:var(--font-main); border-radius:5px; margin-top:15px;" placeholder="Type your 100-word summary here..."></textarea>
+                </div>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswers('mock-answers-full')">Submit & Show Key</button>
+            <div id="mock-answers-full" class="hidden card" style="border-left: 4px solid var(--accent-color); font-size: 0.95rem;">
+                <strong>Section A Answers (Grammar)</strong><br>
+                1. a (prepares - Present Simple for routine)<br>
+                2. d (would have passed - Third Conditional: 'had studied' -> 'would have passed')<br>
+                3. c (was repairing - Past Continuous interrupted by suddenly stopped)<br>
+                4. b (will increase - First Conditional: 'reduces' -> 'will increase')<br>
+                5. b (for - "responsible for")<br>
+                6. a (boils - Zero Conditional for scientific fact)<br>
+                7. c (has worked - action started in 2022 continuing to present)<br>
+                8. c (would take - Second Conditional: 'had' -> 'would take')<br>
+                9. c (will be - Future Continuous for an exact time tomorrow)<br>
+                10. b (was released - Passive Voice in the past tense)<br>
+                11. b (have been trying - Present Perfect Continuous for duration/exhaustion)<br>
+                12. b (in order to - followed by base verb)<br>
+                13. b (so that - followed by new subject 'the customers')<br>
+                14. a (into - structure is 'falls into')<br>
+                15. d (With the aim of - always followed by 'verb-ing')<br><br>
+
+                <strong>Section B Answers (Vocabulary)</strong><br>
+                16. b (feasibility)<br>
+                17. c (cybersecurity)<br>
+                18. a (stakeholder)<br>
+                19. c (Persona Non Grata)<br>
+                20. c (Sanctions)<br>
+                21. c (Security Council)<br>
+                22. a (Veto)<br>
+                23. c (Defiance)<br>
+                24. a (automation)<br>
+                25. d (Protocol)<br>
+                26. a (investment)<br>
+                27. c (De facto)<br>
+                28. a (Delegation)<br>
+                29. b (1948)<br>
+                30. a (ratify)<br><br>
+
+                <strong>Section C Answers (Comprehension)</strong><br>
+                31. b (The passage focuses on cybersecurity's role in both business and diplomacy)<br>
+                32. c (The text states they use them "to manage intricate supply chains")<br>
+                33. b (The text explicitly notes it "brings significant vulnerabilities")<br>
+                34. a (They negotiate treaties "designed to combat international cyber threats")<br>
+                35. d (Instability could "severely damage bilateral relations and disrupt global trade")<br><br>
+
+                <strong>Section D Example Summary Response</strong><br>
+                <p style="font-style:italic;">"UN peacekeeping operations are essential tools for transitioning nations from conflict to peace. While they do not replace political solutions, they provide critical security and infrastructural support. Modern peacekeepers perform diverse roles, including protecting civilians, restoring the rule of law, assisting in disarmament, and promoting human rights. Their efforts help stabilize governments and support elections. Despite their importance, these missions often struggle with severe funding shortages and are deployed in highly dangerous conditions." (74 words - a strong, concise summary extracting main concepts without losing the core meaning.)</p>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            
+            const tabs = ['grammar', 'vocabulary', 'guide', 'mock-exam'];
+            const idx = tabs.indexOf(tabName);
+            if (idx >= 0) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+        }
+        function toggleAnswers(id) {
+            const el = document.getElementById(id);
+            if(el) el.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
