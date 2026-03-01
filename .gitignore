@@ -12,12 +12,18 @@ __pycache__/
 # Logs
 *.log
 
-# Large Output Folders (Optional, un-comment if you want to exclude them)
-# output/
-# data/
-
-# Nested Repositories (Ignore the detailed pages repo)
-# output_pdfplumber/
+# Large / Non-Website Folders
+uni data/
+output/
+output_pdfplumber/
+output_pymupdf/
+output_math_tool/
+output_markdrop/
+data/
+math_doc_tool/
+program/
+pipeline/
+templates/
 
 # Node Modules
 node_modules/
@@ -28,5 +34,27 @@ package-lock.json
 Thumbs.db
 Desktop.ini
 
-# Script files
+# Script & Build files (not needed on the website)
 update_english_html.py
+generate_course.py
+test_template.py
+test_data.json
+test_output.html
+workspace_files.md
+cs walkthrough.txt
+import pdfplumber.py
+CODEBASE_ANALYSIS.md
+CALC_QUESTIONS_ONLY.md
+output.md
+TEST.HTML
+batch_process.py
+build_comp_page.py
+build_generic_page.py
+build_introcs_page.py
+build_laws.py
+build_solutions.py
+process_math_pdf.py
+reprocess_lectures.py
+test_solver_adhoc.py
+requirements.txt
+*.pyc
