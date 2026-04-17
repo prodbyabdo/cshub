@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Databases | CS Hub</title>
+    <title>Introduction to Database | CS Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         :root {
@@ -18,212 +18,268 @@
             --font-mono: "JetBrains Mono", monospace;
         }
         body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-main); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        header { margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        header { margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
         h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
         .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
         .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
         .nav-back:hover { color: var(--accent-color); }
+        .header-actions { margin-top: 16px; }
+        .pdf-btn { display: inline-block; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-family: var(--font-mono); border: 1px solid var(--accent-color); background: var(--accent-dim); color: var(--accent-color); }
+        .pdf-btn.disabled { border-color: var(--border-color); background: #1a1a1a; color: var(--text-secondary); cursor: not-allowed; pointer-events: none; }
         .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
         .tab-btn { background: none; border: none; color: var(--text-secondary); padding: 10px 20px; font-family: var(--font-mono); font-size: 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
         .tab-btn:hover { color: var(--text-primary); }
         .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
         .tab-content { display: none; animation: fadeIn 0.3s ease; }
         .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
-        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         h2 { color: var(--text-primary); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
-        h3 { color: var(--accent-color); margin-top: 25px; font-family: var(--font-mono); }
-        ul li, ol li { color: var(--text-secondary); margin-bottom: 6px; }
-        .answer { color: var(--accent-color); font-family: var(--font-mono); font-weight: bold; }
-        .pdf-btn { display: inline-block; padding: 10px 14px; border: 1px solid var(--accent-color); border-radius: 8px; color: var(--accent-color); text-decoration: none; background: var(--accent-dim); font-family: var(--font-mono); margin-top: 15px; }
-        .pdf-btn:hover { background: var(--accent-color); color: #000; }
-        .small { font-size: 0.9rem; color: var(--text-secondary); }
+        h3 { color: var(--accent-color); margin-top: 30px; font-family: var(--font-mono); }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .question-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-color); }
+        .question-text { font-weight: 600; margin-bottom: 10px; }
+        .options { color: var(--text-secondary); }
+        .section-divider { border: none; border-top: 1px solid var(--border-color); margin: 40px 0; }
+        ol, ul { padding-left: 20px; }
+        li { color: var(--text-secondary); margin-bottom: 8px; }
+        .answer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+        .answer-item { background: #171717; border: 1px solid var(--border-color); border-radius: 6px; padding: 10px 12px; font-family: var(--font-mono); color: var(--text-primary); }
+        .answer-item span { color: var(--accent-color); }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="year1.html" class="nav-back">← Back to Year 1</a>
         <header>
-            <h1>Introduction to Databases</h1>
-            <div class="subtitle">COM122 Resources, Final Exam, and Answer Sheet</div>
-            <a href="year1sem2introdbms_exam.pdf" target="_blank" class="pdf-btn">Open Exam PDF</a>
+            <h1>Introduction to Database</h1>
+            <div class="subtitle">COM122 Final Exam Prep</div>
+            <div class="header-actions">
+                <span class="pdf-btn disabled" aria-disabled="true">PDF (coming soon)</span>
+            </div>
         </header>
 
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('summary')">Subject Summary</button>
-            <button class="tab-btn" onclick="openTab('exam')">Final Exam</button>
-            <button class="tab-btn" onclick="openTab('answers')">Answer Sheet</button>
+            <button class="tab-btn" onclick="openTab('final-exam')">Final Exam</button>
+            <button class="tab-btn" onclick="openTab('answer-sheet')">Answer Sheet</button>
         </div>
 
         <div id="summary" class="tab-content active">
+            <h2>Subject Summary</h2>
             <div class="card">
-                <h3>Course Summary</h3>
+                <h3>DBMS Basics</h3>
                 <ul>
-                    <li><strong>DBMS:</strong> A software system that manages, stores, and retrieves data efficiently in a structured format.</li>
-                    <li><strong>Problems with file-based systems:</strong> Data Redundancy, Inconsistency, Difficult Access, Poor Security, Single-User Access, and No Backup/Recovery.</li>
-                    <li><strong>Six key components:</strong> Hardware, Software, Data, Procedures, Database Access Language, and People.</li>
-                    <li><strong>Operational Data vs Metadata:</strong> Operational Data is actual user data; Metadata is data about data.</li>
-                    <li><strong>Types of DBMS:</strong> RDBMS, NoSQL DBMS, and Cloud-Based Database.</li>
-                    <li><strong>Languages:</strong> DDL, DML, DCL, plus DQL for retrieval and TCL for transaction control.</li>
-                    <li><strong>Abstraction levels:</strong> Internal (Physical), Conceptual (Logical), External (View).</li>
-                    <li><strong>Normalization:</strong> Organizing data to reduce redundancy and anomalies.</li>
-                    <li><strong>Normal forms:</strong> 1NF (atomic values), 2NF (remove partial dependency), 3NF (remove transitive dependency), BCNF (every determinant is a candidate key).</li>
+                    <li>A DBMS is software that stores, organizes, secures, and retrieves data efficiently.</li>
+                    <li>Core goals include reduced redundancy, improved integrity, data sharing, and backup/recovery support.</li>
+                    <li>Examples include MySQL, PostgreSQL, Oracle Database, SQL Server, and MongoDB (NoSQL model).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Database Types</h3>
+                <ul>
+                    <li><strong>Relational databases:</strong> table-based schema, SQL querying, strong consistency.</li>
+                    <li><strong>Hierarchical/network models:</strong> parent-child or graph-like record relationships.</li>
+                    <li><strong>NoSQL databases:</strong> key-value, document, column-family, and graph systems for scale and flexibility.</li>
+                    <li><strong>Centralized vs distributed:</strong> single-site control versus replicated/partitioned multi-site systems.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>SQL Language Categories</h3>
+                <ul>
+                    <li><strong>DDL:</strong> CREATE, ALTER, DROP for schema definition.</li>
+                    <li><strong>DML:</strong> INSERT, UPDATE, DELETE for data manipulation.</li>
+                    <li><strong>DQL:</strong> SELECT for querying data.</li>
+                    <li><strong>DCL/TCL:</strong> GRANT, REVOKE, COMMIT, ROLLBACK for control and transactions.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Abstraction Levels</h3>
+                <ul>
+                    <li><strong>Physical level:</strong> storage structures, indexing, access paths.</li>
+                    <li><strong>Logical level:</strong> entities, relationships, constraints, schema design.</li>
+                    <li><strong>View level:</strong> user-specific virtual views and restricted presentation of data.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Normalization</h3>
+                <ul>
+                    <li><strong>1NF:</strong> remove repeating groups, enforce atomic values.</li>
+                    <li><strong>2NF:</strong> remove partial dependency on composite keys.</li>
+                    <li><strong>3NF:</strong> remove transitive dependency and keep non-key attributes dependent on the key.</li>
+                    <li>Normalization improves consistency and update reliability while balancing performance needs.</li>
                 </ul>
             </div>
         </div>
 
-        <div id="exam" class="tab-content">
-            <div class="card">
-                <h2>Section I: Multiple Choice Questions (40)</h2>
-                <ol>
-                    <li>Bridge between central database and clients? A Hardware B DBMS C Data Engine D Metadata</li>
-                    <li>Duplicate entries across files problem? A Inconsistency B Data Redundancy C Poor Security D Single-User Access</li>
-                    <li>Servers, disks, keyboards are: A Software B Procedures C Hardware D Data</li>
-                    <li>Component including DB engine and OS: A Software B Hardware C People D Procedures</li>
-                    <li>Data about data: A Operational Data B Metadata C Data Dictionary D Both B and C</li>
-                    <li>Manages security/performance/access: A Developers B End Users C DBA D Faculty Deans</li>
-                    <li>RDBMS organizes data into: A key-value B Tables C Objects D Graphs</li>
-                    <li>NoSQL example: A MySQL B Oracle C MongoDB D SQL Server</li>
-                    <li>Tree-like model: A Network B Hierarchical C Relational D Cloud</li>
-                    <li>Each child with multiple parents: A Hierarchical B Network C OODBMS D RDBMS</li>
-                    <li>Hosted on AWS/Azure/GCP: A Cloud-Based B NoSQL C Hierarchical D Traditional</li>
-                    <li>Schema definition language: A DML B DDL C DCL D TCL</li>
-                    <li>Remove all records including space allocation: A DELETE B DROP C TRUNCATE D REMOVE</li>
-                    <li>DML focuses on: A manipulating stored data B permissions C schema D transactions</li>
-                    <li>Provide privileges command: A REVOKE B GRANT C COMMIT D ALTER</li>
-                    <li>Retrieve only language: A DDL B DML C DQL D TCL</li>
-                    <li>Main DQL command: A INSERT B UPDATE C SELECT D DELETE</li>
-                    <li>Grades/schedules app domain: A Banking B Education C Healthcare D Social Media</li>
-                    <li>Undo transaction changes: A COMMIT B ROLLBACK C SAVEPOINT D GRANT</li>
-                    <li>Add more DB instances: A Vertical B Horizontal C Internal D Conceptual scaling</li>
-                    <li>Main purpose regarding user interaction: A expose all details B provide needed info C show files D remove hardware</li>
-                    <li>Lowest abstraction level: A Internal B Conceptual C External D View</li>
-                    <li>Describes stored data + relationships: A Physical B Conceptual C View D Internal</li>
-                    <li>Highest abstraction for users: A Logical B Physical C External/View D Conceptual</li>
-                    <li>Changes in storage without affecting logical schema: A Logical DI B Physical DI C Instance D Normalization</li>
-                    <li>Blueprint/structural design: A Database Schema B Data Engine C Query D Savepoint</li>
-                    <li>Common constraints include: A PK B FK C NOT NULL D All</li>
-                    <li>Complete runtime operational environment: A Schema B Instance C Metadata D Engine</li>
-                    <li>SQL data retrieval request: A Procedure B Query C Constraint D Normalization</li>
-                    <li>Processes/executes queries: A Data Dictionary B Data Engine C Physical Level D End User</li>
-                    <li>Organizing DB to minimize redundancy: A Normalization B Abstraction C Scaling D Encryption</li>
-                    <li>Normal form for atomic values: A 1NF B 2NF C 3NF D BCNF</li>
-                    <li>2NF removes: A repeating groups B partial dependencies C transitive dependencies D determinants</li>
-                    <li>3NF eliminates: A atomic values B partial dependencies C transitive dependencies D candidate keys</li>
-                    <li>BCNF rule determinant is: A Foreign key B Candidate key C Primary key D View</li>
-                    <li>Course code per timetable: A HMS-113 B CS-101 C DB-2024 D HMS-213</li>
-                    <li>Instructor: A Dr. Mubarak Elamin B Dr. Mazen Rashad C Prof. Ahmed Hassan D Dr. Eman Ahmed</li>
-                    <li>CL stands for: A Class Lecture B Computer Lab C Central Location D Core Lesson</li>
-                    <li>Lecture duration: A 60 min B 50 min C 45 min D 90 min</li>
-                    <li>Ensures integrity/consistency/security multi-user: A DBMS B File-based C RAM D SQL</li>
-                </ol>
+        <div id="final-exam" class="tab-content">
+            <h2>Final Exam</h2>
+            <h3>Section I: Multiple Choice Questions (40)</h3>
+            <div class="question-card"><div class="question-text">1. What does DBMS stand for?</div><div class="options">a) Data Backup Management System &nbsp; b) Database Management System &nbsp; c) Digital Base Mapping Service &nbsp; d) Data Binary Management Structure</div></div>
+            <div class="question-card"><div class="question-text">2. Which key uniquely identifies a record?</div><div class="options">a) Foreign key &nbsp; b) Composite key &nbsp; c) Candidate key &nbsp; d) Primary key</div></div>
+            <div class="question-card"><div class="question-text">3. Which SQL command retrieves records?</div><div class="options">a) SELECT &nbsp; b) INSERT &nbsp; c) CREATE &nbsp; d) ALTER</div></div>
+            <div class="question-card"><div class="question-text">4. Which language category includes CREATE TABLE?</div><div class="options">a) DML &nbsp; b) DDL &nbsp; c) DQL &nbsp; d) DCL</div></div>
+            <div class="question-card"><div class="question-text">5. Which normal form removes repeating groups?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) BCNF</div></div>
+            <div class="question-card"><div class="question-text">6. A foreign key is mainly used to:</div><div class="options">a) Encrypt records &nbsp; b) Link related tables &nbsp; c) Sort data automatically &nbsp; d) Drop duplicate rows</div></div>
+            <div class="question-card"><div class="question-text">7. Which operation removes all rows but keeps table structure?</div><div class="options">a) DELETE &nbsp; b) DROP &nbsp; c) TRUNCATE &nbsp; d) RENAME</div></div>
+            <div class="question-card"><div class="question-text">8. Which clause filters grouped data?</div><div class="options">a) WHERE &nbsp; b) ORDER BY &nbsp; c) HAVING &nbsp; d) LIMIT</div></div>
+            <div class="question-card"><div class="question-text">9. Which join returns matching rows from both tables only?</div><div class="options">a) LEFT JOIN &nbsp; b) RIGHT JOIN &nbsp; c) FULL JOIN &nbsp; d) INNER JOIN</div></div>
+            <div class="question-card"><div class="question-text">10. Which SQL statement adds a new row?</div><div class="options">a) INSERT &nbsp; b) UPDATE &nbsp; c) SELECT &nbsp; d) ALTER</div></div>
+            <div class="question-card"><div class="question-text">11. Entity-Relationship diagrams are used in:</div><div class="options">a) Physical backup &nbsp; b) Database design &nbsp; c) OS scheduling &nbsp; d) Firewall configuration</div></div>
+            <div class="question-card"><div class="question-text">12. Which normal form removes partial dependency?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) 4NF</div></div>
+            <div class="question-card"><div class="question-text">13. Which normal form removes transitive dependency?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) 5NF</div></div>
+            <div class="question-card"><div class="question-text">14. A transaction should satisfy:</div><div class="options">a) CPU principles &nbsp; b) ACID properties &nbsp; c) CRUD laws &nbsp; d) OOP rules</div></div>
+            <div class="question-card"><div class="question-text">15. Which ACID property ensures all-or-nothing execution?</div><div class="options">a) Consistency &nbsp; b) Atomicity &nbsp; c) Isolation &nbsp; d) Durability</div></div>
+            <div class="question-card"><div class="question-text">16. Which command undoes uncommitted transaction changes?</div><div class="options">a) SAVE &nbsp; b) COMMIT &nbsp; c) ROLLBACK &nbsp; d) REVOKE</div></div>
+            <div class="question-card"><div class="question-text">17. Which clause sorts query output?</div><div class="options">a) GROUP BY &nbsp; b) ORDER BY &nbsp; c) HAVING &nbsp; d) WHERE</div></div>
+            <div class="question-card"><div class="question-text">18. Which SQL function counts rows?</div><div class="options">a) SUM() &nbsp; b) AVG() &nbsp; c) COUNT() &nbsp; d) TOTAL()</div></div>
+            <div class="question-card"><div class="question-text">19. Which index structure is commonly used in DBMS?</div><div class="options">a) B-tree &nbsp; b) Stack &nbsp; c) Heap sort &nbsp; d) Queue list</div></div>
+            <div class="question-card"><div class="question-text">20. Which item defines constraints and tables?</div><div class="options">a) Instance &nbsp; b) Schema &nbsp; c) Session &nbsp; d) Trigger</div></div>
+            <div class="question-card"><div class="question-text">21. The view level in abstraction provides:</div><div class="options">a) File block layout &nbsp; b) User-specific data representation &nbsp; c) Query optimizer code &nbsp; d) Network protocol tuning</div></div>
+            <div class="question-card"><div class="question-text">22. Which SQL command changes existing table structure?</div><div class="options">a) UPDATE &nbsp; b) ALTER &nbsp; c) MODIFY ROW &nbsp; d) NEW TABLE</div></div>
+            <div class="question-card"><div class="question-text">23. Which model stores data as documents?</div><div class="options">a) Document model &nbsp; b) Relational model &nbsp; c) Hierarchical model &nbsp; d) Network model</div></div>
+            <div class="question-card"><div class="question-text">24. Which key references a primary key in another table?</div><div class="options">a) Alternate key &nbsp; b) Foreign key &nbsp; c) Super key &nbsp; d) Surrogate key</div></div>
+            <div class="question-card"><div class="question-text">25. What is data redundancy?</div><div class="options">a) Missing values &nbsp; b) Duplicate unnecessary data &nbsp; c) Encrypted data blocks &nbsp; d) Temporary indexes</div></div>
+            <div class="question-card"><div class="question-text">26. Which command removes database objects permanently?</div><div class="options">a) DROP &nbsp; b) TRUNCATE &nbsp; c) DELETE &nbsp; d) ERASE</div></div>
+            <div class="question-card"><div class="question-text">27. Which SQL statement updates existing data?</div><div class="options">a) INSERT &nbsp; b) UPDATE &nbsp; c) CREATE &nbsp; d) SELECT</div></div>
+            <div class="question-card"><div class="question-text">28. Which join preserves all rows from the left table?</div><div class="options">a) RIGHT JOIN &nbsp; b) CROSS JOIN &nbsp; c) LEFT JOIN &nbsp; d) SELF JOIN</div></div>
+            <div class="question-card"><div class="question-text">29. A composite key contains:</div><div class="options">a) One unique attribute &nbsp; b) Two or more attributes &nbsp; c) Only numeric data &nbsp; d) Encrypted columns</div></div>
+            <div class="question-card"><div class="question-text">30. Which SQL clause groups rows for aggregation?</div><div class="options">a) GROUP BY &nbsp; b) ORDER BY &nbsp; c) WHERE &nbsp; d) DISTINCT</div></div>
+            <div class="question-card"><div class="question-text">31. Which database type is best known for fixed table schema?</div><div class="options">a) Relational database &nbsp; b) Graph database &nbsp; c) Key-value database &nbsp; d) Document store</div></div>
+            <div class="question-card"><div class="question-text">32. Which SQL keyword removes duplicate output rows?</div><div class="options">a) UNIQUE &nbsp; b) PRIMARY &nbsp; c) DISTINCT &nbsp; d) FILTER</div></div>
+            <div class="question-card"><div class="question-text">33. Which isolation issue is prevented by proper transaction control?</div><div class="options">a) Dirty reads &nbsp; b) Zip compression &nbsp; c) Null references &nbsp; d) Batch sorting</div></div>
+            <div class="question-card"><div class="question-text">34. Which SQL function returns the highest value?</div><div class="options">a) MIN() &nbsp; b) TOP() &nbsp; c) MAX() &nbsp; d) UPPER()</div></div>
+            <div class="question-card"><div class="question-text">35. Which key concept defines relationship cardinality?</div><div class="options">a) One-to-one, one-to-many, many-to-many &nbsp; b) Simple and complex sorting &nbsp; c) Binary and decimal mapping &nbsp; d) Logical and physical backups</div></div>
+            <div class="question-card"><div class="question-text">36. Which SQL command saves a successful transaction permanently?</div><div class="options">a) COMMIT &nbsp; b) ROLLBACK &nbsp; c) RESTART &nbsp; d) MERGE</div></div>
+            <div class="question-card"><div class="question-text">37. What is the main purpose of normalization?</div><div class="options">a) Increase duplicate data &nbsp; b) Reduce redundancy and anomalies &nbsp; c) Replace indexes &nbsp; d) Disable constraints</div></div>
+            <div class="question-card"><div class="question-text">38. Which SQL permission command grants access rights?</div><div class="options">a) GRANT &nbsp; b) REVOKE &nbsp; c) ALLOW &nbsp; d) AUTHORIZE</div></div>
+            <div class="question-card"><div class="question-text">39. What does DML stand for?</div><div class="options">a) Data Markup Language &nbsp; b) Database Modeling Logic &nbsp; c) Data Manipulation Language &nbsp; d) Dynamic Machine Layer</div></div>
+            <div class="question-card"><div class="question-text">40. Which SQL query returns all columns from Students?</div><div class="options">a) GET ALL FROM Students; &nbsp; b) SELECT * FROM Students; &nbsp; c) SHOW Students ALL; &nbsp; d) FETCH COLUMNS Students;</div></div>
 
-                <h2>Section II: True / False (30)</h2>
-                <ol>
-                    <li>DBMS reduces redundancy through centralized control.</li>
-                    <li>Traditional file systems provide excellent backup/recovery.</li>
-                    <li>Metadata includes actual user data like name and age.</li>
-                    <li>Procedures are rules/instructions for effective DBMS use.</li>
-                    <li>End users build applications using the database.</li>
-                    <li>RDBMS uses primary keys to uniquely identify rows.</li>
-                    <li>NoSQL suits unstructured/semi-structured data.</li>
-                    <li>Hierarchical model is efficient for many-to-many relationships.</li>
-                    <li>In network model each child has only one parent.</li>
-                    <li>Cloud databases offer on-demand scalability.</li>
-                    <li>DDL means Data Distribution Language.</li>
-                    <li>DROP deletes DB objects.</li>
-                    <li>UPDATE is DML.</li>
-                    <li>DCL manages access permissions.</li>
-                    <li>COMMIT saves all transaction changes.</li>
-                    <li>Transactional apps need frequent reads and writes.</li>
-                    <li>Vertical scaling means adding more DB instances.</li>
-                    <li>Physical DI means logical schema changes don't affect external views.</li>
-                    <li>Database can serve as a single source of truth.</li>
-                    <li>Conceptual level focuses on hardware storage details.</li>
-                    <li>Different users can see customized DB views.</li>
-                    <li>Constraints are defined in table create/modify operations.</li>
-                    <li>Database instance includes memory/background processes.</li>
-                    <li>Data manipulation includes insert/delete/update.</li>
-                    <li>Normalization increases data redundancy.</li>
-                    <li>3NF eliminates transitive dependency.</li>
-                    <li>BCNF is weaker than 3NF.</li>
-                    <li>Final exam date is 18-04-2026.</li>
-                    <li>DQL is used to modify data.</li>
-                    <li>DDL includes CREATE, ALTER, DROP.</li>
-                </ol>
+            <hr class="section-divider">
 
-                <h2>Section III: Direct Short Questions (20)</h2>
-                <ol>
-                    <li>Define DBMS.</li>
-                    <li>List three problems with traditional file-based systems.</li>
-                    <li>What are the six key components of DBMS applications?</li>
-                    <li>Difference between Operational Data and Metadata.</li>
-                    <li>Identify three types of DBMS.</li>
-                    <li>What does RDBMS stand for?</li>
-                    <li>Function of GRANT command.</li>
-                    <li>Function of REVOKE command.</li>
-                    <li>Name three database languages.</li>
-                    <li>List four database applications.</li>
-                    <li>Define transactional applications.</li>
-                    <li>Two approaches to scaling.</li>
-                    <li>Three levels of database abstraction.</li>
-                    <li>What is logical data independence?</li>
-                    <li>Define database schema.</li>
-                    <li>List four common data constraints.</li>
-                    <li>What is a query?</li>
-                    <li>Define normalization.</li>
-                    <li>Key benefits of normalization.</li>
-                    <li>Rule for 1NF.</li>
-                </ol>
-            </div>
+            <h3>Section II: True / False (30)</h3>
+            <ol>
+                <li>DBMS helps reduce data redundancy and inconsistency.</li>
+                <li>A primary key can contain duplicate values.</li>
+                <li>SQL is used to interact with relational databases.</li>
+                <li>DDL commands are used for schema definition tasks.</li>
+                <li>DML commands include INSERT, UPDATE, and DELETE.</li>
+                <li>Normalization increases unnecessary data duplication.</li>
+                <li>1NF requires atomic values in each field.</li>
+                <li>2NF removes partial dependency.</li>
+                <li>3NF removes transitive dependency.</li>
+                <li>A foreign key cannot reference another table's primary key.</li>
+                <li>INNER JOIN returns only matching rows.</li>
+                <li>LEFT JOIN returns all rows from the left table.</li>
+                <li>COUNT() is an aggregate SQL function.</li>
+                <li>WHERE is used after GROUP BY in standard SQL order.</li>
+                <li>HAVING is used to filter grouped records.</li>
+                <li>A transaction must satisfy ACID properties.</li>
+                <li>Atomicity means a transaction is fully completed or fully rolled back.</li>
+                <li>COMMIT cancels all pending changes.</li>
+                <li>ROLLBACK permanently saves transaction changes.</li>
+                <li>View level shows only required data to specific users.</li>
+                <li>Schema refers to database structure definition.</li>
+                <li>NoSQL databases include document and key-value models.</li>
+                <li>DROP TABLE keeps data but removes indexes only.</li>
+                <li>TRUNCATE removes all rows quickly from a table.</li>
+                <li>ORDER BY sorts output rows.</li>
+                <li>DCL includes GRANT and REVOKE.</li>
+                <li>A candidate key can uniquely identify rows.</li>
+                <li>Normalization is unrelated to update anomalies.</li>
+                <li>Entity relationship diagrams are used in conceptual design.</li>
+                <li>SELECT is generally categorized under DQL.</li>
+            </ol>
+
+            <hr class="section-divider">
+
+            <h3>Section III: Short Questions (20)</h3>
+            <ol>
+                <li>Define DBMS and mention two major advantages.</li>
+                <li>Differentiate between a file system and a DBMS.</li>
+                <li>Explain the difference between primary key and foreign key.</li>
+                <li>Write the syntax to create a table named <code>Student</code> with three columns.</li>
+                <li>What is normalization? Why is it required?</li>
+                <li>Describe 1NF, 2NF, and 3NF with simple examples.</li>
+                <li>What are ACID properties in transactions?</li>
+                <li>Differentiate DDL, DML, DQL, DCL, and TCL with one command each.</li>
+                <li>What is a schema, and how is it different from an instance?</li>
+                <li>Explain INNER JOIN and LEFT JOIN.</li>
+                <li>What is an index? State one benefit and one drawback.</li>
+                <li>Define data abstraction and list its levels.</li>
+                <li>What is data integrity? Mention entity integrity and referential integrity.</li>
+                <li>Describe centralized and distributed databases.</li>
+                <li>What is a view in SQL and why is it useful?</li>
+                <li>Write SQL to insert one student record into a <code>Student</code> table.</li>
+                <li>Write SQL to update a student's department by roll number.</li>
+                <li>Write SQL to count the total students in each department.</li>
+                <li>Explain database backup and recovery in brief.</li>
+                <li>What is concurrency control and why is it needed?</li>
+            </ol>
         </div>
 
-        <div id="answers" class="tab-content">
+        <div id="answer-sheet" class="tab-content">
+            <h2>Answer Sheet</h2>
+            <h3>MCQ Key (40)</h3>
+            <div class="answer-grid">
+                <div class="answer-item">1. <span>b</span></div><div class="answer-item">2. <span>d</span></div><div class="answer-item">3. <span>a</span></div><div class="answer-item">4. <span>b</span></div><div class="answer-item">5. <span>a</span></div>
+                <div class="answer-item">6. <span>b</span></div><div class="answer-item">7. <span>c</span></div><div class="answer-item">8. <span>c</span></div><div class="answer-item">9. <span>d</span></div><div class="answer-item">10. <span>a</span></div>
+                <div class="answer-item">11. <span>b</span></div><div class="answer-item">12. <span>b</span></div><div class="answer-item">13. <span>c</span></div><div class="answer-item">14. <span>b</span></div><div class="answer-item">15. <span>b</span></div>
+                <div class="answer-item">16. <span>c</span></div><div class="answer-item">17. <span>b</span></div><div class="answer-item">18. <span>c</span></div><div class="answer-item">19. <span>a</span></div><div class="answer-item">20. <span>b</span></div>
+                <div class="answer-item">21. <span>b</span></div><div class="answer-item">22. <span>b</span></div><div class="answer-item">23. <span>a</span></div><div class="answer-item">24. <span>b</span></div><div class="answer-item">25. <span>b</span></div>
+                <div class="answer-item">26. <span>a</span></div><div class="answer-item">27. <span>b</span></div><div class="answer-item">28. <span>c</span></div><div class="answer-item">29. <span>b</span></div><div class="answer-item">30. <span>a</span></div>
+                <div class="answer-item">31. <span>a</span></div><div class="answer-item">32. <span>c</span></div><div class="answer-item">33. <span>a</span></div><div class="answer-item">34. <span>c</span></div><div class="answer-item">35. <span>a</span></div>
+                <div class="answer-item">36. <span>a</span></div><div class="answer-item">37. <span>b</span></div><div class="answer-item">38. <span>a</span></div><div class="answer-item">39. <span>c</span></div><div class="answer-item">40. <span>b</span></div>
+            </div>
+
+            <h3>True / False Key (30)</h3>
+            <div class="answer-grid">
+                <div class="answer-item">1. <span>True</span></div><div class="answer-item">2. <span>False</span></div><div class="answer-item">3. <span>True</span></div><div class="answer-item">4. <span>True</span></div><div class="answer-item">5. <span>True</span></div>
+                <div class="answer-item">6. <span>False</span></div><div class="answer-item">7. <span>True</span></div><div class="answer-item">8. <span>True</span></div><div class="answer-item">9. <span>True</span></div><div class="answer-item">10. <span>False</span></div>
+                <div class="answer-item">11. <span>True</span></div><div class="answer-item">12. <span>True</span></div><div class="answer-item">13. <span>True</span></div><div class="answer-item">14. <span>False</span></div><div class="answer-item">15. <span>True</span></div>
+                <div class="answer-item">16. <span>True</span></div><div class="answer-item">17. <span>True</span></div><div class="answer-item">18. <span>False</span></div><div class="answer-item">19. <span>False</span></div><div class="answer-item">20. <span>True</span></div>
+                <div class="answer-item">21. <span>True</span></div><div class="answer-item">22. <span>True</span></div><div class="answer-item">23. <span>False</span></div><div class="answer-item">24. <span>True</span></div><div class="answer-item">25. <span>True</span></div>
+                <div class="answer-item">26. <span>True</span></div><div class="answer-item">27. <span>True</span></div><div class="answer-item">28. <span>False</span></div><div class="answer-item">29. <span>True</span></div><div class="answer-item">30. <span>True</span></div>
+            </div>
+
+            <h3>Short-Answer Key (20)</h3>
             <div class="card">
-                <h2>Answer Sheet</h2>
-                <h3>Section I: MCQ Answers</h3>
-                <p class="small">1-40:</p>
-                <p class="answer">B, B, C, A, B, C, B, C, B, B, A, B, C, A, B, C, C, B, B, B, B, A, B, C, B, A, D, B, B, B, A, A, B, C, B, A, B, A, B, A</p>
-
-                <h3>Section II: True / False Answers</h3>
-                <p class="answer">TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE</p>
-
-                <h3>Section III: Direct Answers</h3>
                 <ol>
-                    <li>DBMS: A software system that manages, stores, and retrieves data efficiently in a structured format.</li>
-                    <li>Problems: Data Redundancy, Inconsistency, Difficult Access, Poor Security, Single-User Access, No Backup/Recovery.</li>
-                    <li>Hardware, Software, Data, Procedures, Database Access Language, People.</li>
-                    <li>Operational Data is actual user data; Metadata is data about data.</li>
-                    <li>RDBMS, NoSQL DBMS, Cloud-Based Database.</li>
-                    <li>Relational Database Management System.</li>
-                    <li>GRANT gives specific privileges to users (e.g., SELECT, INSERT).</li>
-                    <li>REVOKE removes previously granted privileges.</li>
-                    <li>DDL, DML, DCL.</li>
-                    <li>Banking, Healthcare, Education, Social Media.</li>
-                    <li>Apps with frequent insert/update/delete, requiring frequent read and write support.</li>
-                    <li>Horizontal scaling and vertical scaling.</li>
-                    <li>Internal (Physical), Conceptual (Logical), External (View).</li>
-                    <li>Changes in logical schema do not affect external views.</li>
-                    <li>A blueprint/structural design defining how data is organized.</li>
-                    <li>PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL.</li>
-                    <li>A request for retrieval/manipulation using SQL.</li>
-                    <li>Organizing database structure to minimize redundancy and dependency.</li>
-                    <li>Less duplication/inconsistency, easier maintenance, better organization, fewer anomalies.</li>
-                    <li>Remove repeating groups and keep fields atomic.</li>
+                    <li>A DBMS is software for creating and managing databases. Advantages include reduced redundancy and improved security/data sharing.</li>
+                    <li>A file system stores isolated files with duplication risk, while a DBMS provides centralized control, querying, concurrency, and integrity constraints.</li>
+                    <li>A primary key uniquely identifies each record in its own table. A foreign key references a primary key in another table to enforce relationships.</li>
+                    <li><code>CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(50), Department VARCHAR(30));</code></li>
+                    <li>Normalization organizes data to reduce redundancy and update anomalies, improving consistency and maintainability.</li>
+                    <li>1NF uses atomic fields; 2NF removes partial dependency on composite keys; 3NF removes transitive dependency on non-key attributes.</li>
+                    <li>ACID means Atomicity, Consistency, Isolation, and Durability, ensuring reliable transaction processing.</li>
+                    <li>DDL defines schema (CREATE), DML modifies data (UPDATE), DQL queries data (SELECT), DCL controls privileges (GRANT), TCL manages transactions (COMMIT).</li>
+                    <li>Schema is the structural blueprint of database objects. Instance is the current data state at a specific time.</li>
+                    <li>INNER JOIN returns only matching rows; LEFT JOIN returns all left-table rows plus matching right-table rows.</li>
+                    <li>An index is a fast lookup structure on columns. Benefit: faster search. Drawback: extra storage and slower writes.</li>
+                    <li>Data abstraction hides complexity at three levels: physical, logical, and view.</li>
+                    <li>Data integrity ensures correctness and consistency. Entity integrity requires non-null unique primary keys, and referential integrity requires valid foreign-key references.</li>
+                    <li>Centralized databases are managed at one location; distributed databases spread data across multiple sites with coordination.</li>
+                    <li>A view is a virtual table based on a query; it simplifies reporting and restricts sensitive data exposure.</li>
+                    <li><code>INSERT INTO Student (RollNo, Name, Department) VALUES (101, 'Amina', 'CS');</code></li>
+                    <li><code>UPDATE Student SET Department = 'IT' WHERE RollNo = 101;</code></li>
+                    <li><code>SELECT Department, COUNT(*) AS total_students FROM Student GROUP BY Department;</code></li>
+                    <li>Backup creates restorable copies of data; recovery restores database consistency after failure.</li>
+                    <li>Concurrency control coordinates simultaneous transactions to avoid conflicts like lost updates and dirty reads.</li>
                 </ol>
             </div>
         </div>
     </div>
 
     <script>
-        function openTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const buttons = document.querySelectorAll('.tab-btn');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            buttons.forEach(btn => btn.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+
+            const tabs = ['summary', 'final-exam', 'answer-sheet'];
+            const idx = tabs.indexOf(tabName);
+            if (idx >= 0) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
         }
     </script>
 </body>
