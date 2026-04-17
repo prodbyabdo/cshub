@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,41 +12,601 @@
             --card-bg: #111111;
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
+            --muted: #808080;
             --accent-color: #00ff88;
             --accent-dim: rgba(0, 255, 136, 0.1);
             --border-color: #333333;
             --font-main: "Inter", sans-serif;
             --font-mono: "JetBrains Mono", monospace;
+            --blue: #3b82f6;
+            --blue2: #60a5fa;
+            --red: #ef4444;
+            --green: #10b981;
+            --gold: #f59e0b;
+            --purple: #a855f7;
+            --accent: #00ff88;
         }
-        body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-main); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        header { margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
-        .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
-        .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
-        .nav-back:hover { color: var(--accent-color); }
-        .header-actions { margin-top: 16px; }
-        .pdf-btn { display: inline-block; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-family: var(--font-mono); border: 1px solid var(--accent-color); background: var(--accent-dim); color: var(--accent-color); }
-        .pdf-btn.disabled { border-color: var(--border-color); background: #1a1a1a; color: var(--text-secondary); cursor: not-allowed; pointer-events: none; }
-        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
-        .tab-btn { background: none; border: none; color: var(--text-secondary); padding: 10px 20px; font-family: var(--font-mono); font-size: 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
-        .tab-btn:hover { color: var(--text-primary); }
-        .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
-        .tab-content { display: none; animation: fadeIn 0.3s ease; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        h2 { color: var(--text-primary); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
-        h3 { color: var(--accent-color); margin-top: 30px; font-family: var(--font-mono); }
-        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
-        .question-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-color); }
-        .question-text { font-weight: 600; margin-bottom: 10px; }
-        .options { color: var(--text-secondary); }
-        .section-divider { border: none; border-top: 1px solid var(--border-color); margin: 40px 0; }
-        ol, ul { padding-left: 20px; }
-        li { color: var(--text-secondary); margin-bottom: 8px; }
-        .answer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
-        .answer-item { background: #171717; border: 1px solid var(--border-color); border-radius: 6px; padding: 10px 12px; font-family: var(--font-mono); color: var(--text-primary); }
-        .answer-item span { color: var(--accent-color); }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-primary); 
+            font-family: var(--font-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        header { 
+            margin-bottom: 32px; 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 20px; 
+        }
+        
+        h1 { 
+            margin: 0; 
+            font-size: 2.5rem; 
+            color: var(--accent-color); 
+            font-weight: 800; 
+        }
+        
+        .subtitle { 
+            color: var(--text-secondary); 
+            font-family: var(--font-mono); 
+            margin-top: 10px; 
+        }
+        
+        .nav-back { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--text-secondary); 
+            text-decoration: none; 
+            font-family: var(--font-mono); 
+        }
+        
+        .nav-back:hover { 
+            color: var(--accent-color); 
+        }
+        
+        .header-actions { 
+            margin-top: 16px; 
+        }
+        
+        .pdf-btn { 
+            display: inline-block; 
+            padding: 8px 14px; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-family: var(--font-mono); 
+            border: 1px solid var(--accent-color); 
+            background: var(--accent-dim); 
+            color: var(--accent-color); 
+        }
+        
+        .pdf-btn.disabled { 
+            border-color: var(--border-color); 
+            background: #1a1a1a; 
+            color: var(--text-secondary); 
+            cursor: not-allowed; 
+            pointer-events: none; 
+        }
+        
+        .tabs { 
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 30px; 
+            border-bottom: 1px solid var(--border-color); 
+            flex-wrap: wrap; 
+        }
+        
+        .tab-btn { 
+            background: none; 
+            border: none; 
+            color: var(--text-secondary); 
+            padding: 10px 20px; 
+            font-family: var(--font-mono); 
+            font-size: 1rem; 
+            cursor: pointer; 
+            border-bottom: 2px solid transparent; 
+            transition: all 0.2s; 
+        }
+        
+        .tab-btn:hover { 
+            color: var(--text-primary); 
+        }
+        
+        .tab-btn.active { 
+            color: var(--accent-color); 
+            border-bottom-color: var(--accent-color); 
+        }
+        
+        .tab-content { 
+            display: none; 
+            animation: fadeIn 0.3s ease; 
+        }
+        
+        .tab-content.active { 
+            display: block; 
+        }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        h2 { 
+            color: var(--text-primary); 
+            border-left: 4px solid var(--accent-color); 
+            padding-left: 15px; 
+            margin-top: 40px; 
+        }
+        
+        h3 { 
+            color: var(--accent-color); 
+            margin-top: 30px; 
+            font-family: var(--font-mono); 
+        }
+        
+        h4 {
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+        
+        .card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+        }
+        
+        .card.blue-glow {
+            border-color: rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, var(--card-bg) 100%);
+        }
+        
+        .card.red-glow {
+            border-color: rgba(239, 68, 68, 0.3);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, var(--card-bg) 100%);
+        }
+        
+        .card.green-glow {
+            border-color: rgba(16, 185, 129, 0.3);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--card-bg) 100%);
+        }
+        
+        .card.gold-glow {
+            border-color: rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, var(--card-bg) 100%);
+        }
+        
+        .card.purple-glow {
+            border-color: rgba(168, 85, 247, 0.3);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, var(--card-bg) 100%);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .dot-blue { background: var(--blue); }
+        .dot-red { background: var(--red); }
+        .dot-green { background: var(--green); }
+        .dot-gold { background: var(--gold); }
+        .dot-purple { background: var(--purple); }
+        .dot-accent { background: var(--accent); }
+        
+        .question-card { 
+            background: var(--card-bg); 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 12px; 
+            border: 1px solid var(--border-color); 
+        }
+        
+        .question-text { 
+            font-weight: 600; 
+            margin-bottom: 10px; 
+        }
+        
+        .options { 
+            color: var(--text-secondary); 
+            font-size: 0.95rem;
+        }
+        
+        .section-divider { 
+            border: none; 
+            border-top: 1px solid var(--border-color); 
+            margin: 40px 0; 
+        }
+        
+        .section-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin: 32px 0 20px 0;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        ol, ul { 
+            padding-left: 20px; 
+        }
+        
+        li { 
+            color: var(--text-secondary); 
+            margin-bottom: 8px; 
+        }
+        
+        .answer-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); 
+            gap: 12px; 
+        }
+        
+        .answer-item { 
+            background: #171717; 
+            border: 1px solid var(--border-color); 
+            border-radius: 6px; 
+            padding: 10px 12px; 
+            font-family: var(--font-mono); 
+            color: var(--text-primary); 
+        }
+        
+        .answer-item span { 
+            color: var(--accent-color); 
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .lang-block {
+            background: rgba(255,255,255,0.02);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--border-color);
+        }
+        
+        .def {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .highlight {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 12px 15px;
+            border-radius: 4px;
+            color: var(--text-primary);
+        }
+        
+        .clean {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .clean li {
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .clean li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .sheet {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+        
+        .sheet tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .sheet td, .sheet th {
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--text-secondary);
+        }
+        
+        .sheet thead {
+            background: rgba(0, 255, 136, 0.05);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 2px 4px 2px 0;
+            font-family: var(--font-mono);
+        }
+        
+        .badge-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--blue2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .badge-green {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .badge-purple {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        
+        .badge-gold {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .cmd {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        
+        .cmd.green {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.2);
+            color: var(--green);
+        }
+        
+        .cmd.red {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.2);
+            color: var(--red);
+        }
+        
+        .cmd.gold {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.2);
+            color: var(--gold);
+        }
+        
+        .cmd.purple {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.2);
+            color: var(--purple);
+        }
+        
+        .levels {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .level-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .level-tag {
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .lv-ext {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: var(--blue2);
+        }
+        
+        .lv-con {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: var(--gold);
+        }
+        
+        .lv-int {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: var(--red);
+        }
+        
+        .level-body {
+            padding: 10px 12px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .nf-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .nf-box {
+            flex: 1;
+            min-width: 140px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .nf-box h4 {
+            color: var(--accent);
+            margin: 0 0 6px 0;
+            font-size: 0.9rem;
+        }
+        
+        .nf-box p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .nf-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .step-list {
+            list-style: decimal;
+            padding-left: 24px;
+        }
+        
+        .step-list li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .key-pill {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+        }
+        
+        .key-pill .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .rel-diagram {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin: 15px 0;
+        }
+        
+        .rel-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--blue2);
+            font-size: 0.85rem;
+        }
+        
+        .rel-box.pk {
+            border-color: rgba(0, 255, 136, 0.3);
+            color: var(--accent);
+        }
+        
+        .rel-box.fk {
+            border-color: rgba(239, 68, 68, 0.3);
+            color: var(--red);
+        }
+        
+        .rel-line {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            min-width: 120px;
+        }
+        
+        .rel-line > span {
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+        
+        .rel-line > span:first-child {
+            margin-right: 10px;
+        }
+        
+        .rel-line > span:last-child {
+            margin-left: 10px;
+        }
+        
+        .rel-label {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: var(--font-mono);
+            color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -53,7 +614,7 @@
         <a href="year1.html" class="nav-back">← Back to Year 1</a>
         <header>
             <h1>Introduction to Database</h1>
-            <div class="subtitle">COM122 Final Exam Prep</div>
+            <div class="subtitle">HMS-113 · Final Exam Prep</div>
             <div class="header-actions">
                 <span class="pdf-btn disabled" aria-disabled="true">PDF (coming soon)</span>
             </div>
@@ -65,96 +626,316 @@
             <button class="tab-btn" onclick="openTab('answer-sheet')">Answer Sheet</button>
         </div>
 
+        <!-- ════════════════ SUMMARY TAB ════════════════ -->
         <div id="summary" class="tab-content active">
-            <h2>Subject Summary</h2>
-            <div class="card">
-                <h3>DBMS Basics</h3>
-                <ul>
-                    <li>A DBMS is software that stores, organizes, secures, and retrieves data efficiently.</li>
-                    <li>Core goals include reduced redundancy, improved integrity, data sharing, and backup/recovery support.</li>
-                    <li>Examples include MySQL, PostgreSQL, Oracle Database, SQL Server, and MongoDB (NoSQL model).</li>
-                </ul>
+            <h2>Course Overview</h2>
+            <p>Comprehensive study material covering 6 lectures + MS Access practical for HMS-113 Introduction to Database. <strong>Exam Date: 18 April 2026</strong></p>
+
+            <div class="section-title">Lecture 1 · DBMS Introduction &amp; File-Based Problems</div>
+            <div class="grid-2">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Definition of DBMS</div>
+                    <div class="def">
+                        DBMS (Database Management System) is a software system that manages, stores, and retrieves data efficiently in a structured format. Acts as a bridge between a central database and multiple clients.
+                    </div>
+                    <ul class="clean">
+                        <li>Connects database with multiple clients (applications and users)</li>
+                        <li>Enables efficient creation, update, and query of databases</li>
+                        <li>Ensures data integrity, consistency, and security</li>
+                        <li>Reduces data redundancy through centralized control</li>
+                        <li>Supports concurrent access and automatic backups</li>
+                    </ul>
+                </div>
+
+                <div class="card red-glow">
+                    <div class="card-title"><span class="dot dot-red"></span>Problems with File-Based Systems</div>
+                    <table class="sheet">
+                        <tr><td>Data Redundancy</td><td>Duplicate entries across files</td></tr>
+                        <tr><td>Inconsistency</td><td>Conflicting or outdated information</td></tr>
+                        <tr><td>Difficult Access</td><td>Manual file search required</td></tr>
+                        <tr><td>Poor Security</td><td>No control over data access</td></tr>
+                        <tr><td>Single-User Access</td><td>No collaboration support</td></tr>
+                        <tr><td>No Backup/Recovery</td><td>Data loss was permanent</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="card">
-                <h3>Database Types</h3>
-                <ul>
-                    <li><strong>Relational databases:</strong> table-based schema, SQL querying, strong consistency.</li>
-                    <li><strong>Hierarchical/network models:</strong> parent-child or graph-like record relationships.</li>
-                    <li><strong>NoSQL databases:</strong> key-value, document, column-family, and graph systems for scale and flexibility.</li>
-                    <li><strong>Centralized vs distributed:</strong> single-site control versus replicated/partitioned multi-site systems.</li>
-                </ul>
+
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span>Components of DBMS Applications</div>
+                <div class="grid-3">
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">1. Hardware</h4>
+                        <p>Physical devices like servers, disks, input-output devices. Stores and processes data.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">2. Software</h4>
+                        <p>DBMS software (MySQL, Oracle, PostgreSQL), OS, network software, application tools.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">3. Data</h4>
+                        <p><strong>Operational Data:</strong> Actual user data. <strong>Metadata:</strong> Data about data.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">4. Procedures</h4>
+                        <p>Instructions for setup, login, validation, backup, access control, reporting.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">5. Database Access Language</h4>
+                        <p><span class="cmd">DDL</span> CREATE, ALTER, DROP · <span class="cmd">DML</span> INSERT, UPDATE, DELETE</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">6. People</h4>
+                        <p><strong>DBAs</strong> manage security. <strong>Developers</strong> build apps. <strong>End Users</strong> use the system.</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>SQL Language Categories</h3>
-                <ul>
-                    <li><strong>DDL:</strong> CREATE, ALTER, DROP for schema definition.</li>
-                    <li><strong>DML:</strong> INSERT, UPDATE, DELETE for data manipulation.</li>
-                    <li><strong>DQL:</strong> SELECT for querying data.</li>
-                    <li><strong>DCL/TCL:</strong> GRANT, REVOKE, COMMIT, ROLLBACK for control and transactions.</li>
-                </ul>
+
+            <div class="section-title">Lectures 2 · Types of DBMS</div>
+            <div class="grid-3">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>1. Relational DBMS</div>
+                    <ul class="clean">
+                        <li>Organizes data into tables (relations)</li>
+                        <li>Uses SQL for querying</li>
+                        <li>Primary and foreign keys for relationships</li>
+                    </ul>
+                    <p style="margin-top: 8px; font-size: 0.85rem; color: var(--muted);">Examples: <span class="badge badge-blue">MySQL</span><span class="badge badge-blue">Oracle</span><span class="badge badge-blue">PostgreSQL</span></p>
+                </div>
+
+                <div class="card green-glow">
+                    <div class="card-title"><span class="dot dot-green"></span>2. NoSQL DBMS</div>
+                    <ul class="clean">
+                        <li>Handles large-scale data</li>
+                        <li>Non-relational formats (documents, key-value)</li>
+                        <li>Flexible schemas for unstructured data</li>
+                    </ul>
+                    <p style="margin-top: 8px; font-size: 0.85rem; color: var(--muted);">Examples: <span class="badge badge-green">MongoDB</span><span class="badge badge-green">Redis</span></p>
+                </div>
+
+                <div class="card purple-glow">
+                    <div class="card-title"><span class="dot dot-purple"></span>3. Object-Oriented DBMS</div>
+                    <ul class="clean">
+                        <li>Integrates OOP concepts</li>
+                        <li>Stores data as objects</li>
+                        <li>Ideal for complex data modeling</li>
+                    </ul>
+                    <p style="margin-top: 8px; font-size: 0.85rem; color: var(--muted);">Examples: <span class="badge badge-purple">ObjectDB</span><span class="badge badge-purple">db4o</span></p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Abstraction Levels</h3>
-                <ul>
-                    <li><strong>Physical level:</strong> storage structures, indexing, access paths.</li>
-                    <li><strong>Logical level:</strong> entities, relationships, constraints, schema design.</li>
-                    <li><strong>View level:</strong> user-specific virtual views and restricted presentation of data.</li>
-                </ul>
+
+            <div class="section-title">Lectures 3 &amp; 4 · Database Languages</div>
+            <div class="grid-2">
+                <div class="lang-block" style="border-left: 3px solid var(--blue); padding: 15px;">
+                    <h4 style="color: var(--blue2);">DDL — Data Definition Language</h4>
+                    <p>Deals with database schemas and structure definitions.</p>
+                    <div style="margin-top: 8px;">
+                        <span class="cmd">CREATE</span> Create database objects<br>
+                        <span class="cmd">ALTER</span> Modify existing structure<br>
+                        <span class="cmd">DROP</span> Delete objects<br>
+                        <span class="cmd">TRUNCATE</span> Remove all records
+                    </div>
+                </div>
+
+                <div class="lang-block" style="border-left: 3px solid var(--green); padding: 15px;">
+                    <h4 style="color: var(--green);">DML — Data Manipulation Language</h4>
+                    <p>Focuses on manipulating stored data.</p>
+                    <div style="margin-top: 8px;">
+                        <span class="cmd cmd-green">INSERT</span> Insert data<br>
+                        <span class="cmd cmd-green">UPDATE</span> Update existing data<br>
+                        <span class="cmd cmd-green">DELETE</span> Delete records<br>
+                        <span class="cmd cmd-green">MERGE</span> UPSERT operation
+                    </div>
+                </div>
+
+                <div class="lang-block" style="border-left: 3px solid var(--red); padding: 15px;">
+                    <h4 style="color: var(--red);">DCL — Data Control Language</h4>
+                    <p>Manages access permissions and security.</p>
+                    <div style="margin-top: 8px;">
+                        <span class="cmd cmd-red">GRANT</span> Give permissions<br>
+                        <span class="cmd cmd-red">REVOKE</span> Remove permissions
+                    </div>
+                </div>
+
+                <div class="lang-block" style="border-left: 3px solid var(--gold); padding: 15px;">
+                    <h4 style="color: var(--gold);">TCL — Transaction Control Language</h4>
+                    <p>Oversees transaction management.</p>
+                    <div style="margin-top: 8px;">
+                        <span class="cmd cmd-gold">COMMIT</span> Save changes<br>
+                        <span class="cmd cmd-gold">ROLLBACK</span> Undo changes<br>
+                        <span class="cmd cmd-gold">SAVEPOINT</span> Set rollback point
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Normalization</h3>
-                <ul>
-                    <li><strong>1NF:</strong> remove repeating groups, enforce atomic values.</li>
-                    <li><strong>2NF:</strong> remove partial dependency on composite keys.</li>
-                    <li><strong>3NF:</strong> remove transitive dependency and keep non-key attributes dependent on the key.</li>
-                    <li>Normalization improves consistency and update reliability while balancing performance needs.</li>
-                </ul>
+
+            <div class="section-title">Lecture 5 · Database Abstraction &amp; Levels</div>
+            <div class="grid-2">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Three Levels of Abstraction</div>
+                    <div class="levels">
+                        <div class="level-row">
+                            <div class="level-tag lv-ext">External<br/>(View)</div>
+                            <div class="level-body">Highest abstraction. User-specific data views customized by needs and permissions.</div>
+                        </div>
+                        <div class="level-row">
+                            <div class="level-tag lv-con">Conceptual<br/>(Logical)</div>
+                            <div class="level-body">Defines what data is stored and relationships. Independent of physical storage.</div>
+                        </div>
+                        <div class="level-row">
+                            <div class="level-tag lv-int">Internal<br/>(Physical)</div>
+                            <div class="level-body">Lowest level. Describes actual storage on hardware (files, indexes, access paths).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card purple-glow">
+                    <div class="card-title"><span class="dot dot-purple"></span>Data Independence</div>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">Changes at one abstraction level should not affect others.</p>
+                    <div class="lang-block" style="margin-bottom: 10px;">
+                        <h4 style="color: var(--purple);">Physical Independence</h4>
+                        <p>Storage changes don't affect logical schema.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--purple);">Logical Independence</h4>
+                        <p>Logical schema changes don't affect external views.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Lecture 6 · Normalization</div>
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span>Normalization Process</div>
+                <div class="def" style="margin-bottom: 12px;">
+                    Normalization is organizing a database to minimize redundancy and dependency by dividing complex tables into smaller, well-structured ones.
+                </div>
+                <div class="nf-flow">
+                    <div class="nf-box">
+                        <h4>1NF</h4>
+                        <p>Atomic values only</p>
+                    </div>
+                    <div class="nf-arrow">→</div>
+                    <div class="nf-box">
+                        <h4>2NF</h4>
+                        <p>No partial dependency</p>
+                    </div>
+                    <div class="nf-arrow">→</div>
+                    <div class="nf-box">
+                        <h4>3NF</h4>
+                        <p>No transitive dependency</p>
+                    </div>
+                    <div class="nf-arrow">→</div>
+                    <div class="nf-box">
+                        <h4>BCNF</h4>
+                        <p>All determinants are candidate keys</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Microsoft Access · Practical</div>
+            <div class="access-grid">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Creating Tables in Access</div>
+                    <ol class="step-list">
+                        <li>Open Access → Create blank database</li>
+                        <li>Create tab → Table Design</li>
+                        <li>Enter field names, data types, descriptions</li>
+                        <li>Set Primary Key</li>
+                        <li>Save the table</li>
+                        <li>Switch to Datasheet View to enter records</li>
+                    </ol>
+                </div>
+
+                <div class="card gold-glow">
+                    <div class="card-title"><span class="dot dot-gold"></span>Primary &amp; Foreign Keys</div>
+                    <div class="key-pill">
+                        <span class="icon">🔑</span>
+                        <span><strong>Primary Key (PK):</strong> Uniquely identifies each record. Cannot be NULL.</span>
+                    </div>
+                    <div class="key-pill" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2);">
+                        <span class="icon">🔗</span>
+                        <span><strong>Foreign Key (FK):</strong> References a Primary Key in another table.</span>
+                    </div>
+                </div>
+
+                <div class="card green-glow">
+                    <div class="card-title"><span class="dot dot-green"></span>Relationship Types</div>
+                    <div class="rel-diagram" style="margin-bottom: 12px;">
+                        <div class="rel-box pk">Table A (PK)</div>
+                        <div class="rel-line"><span></span> <div class="rel-label">1 : 1</div> <span></span></div>
+                        <div class="rel-box fk">Table B (FK)</div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">One-to-One: Each record in A relates to exactly one in B</p>
+                    
+                    <div class="rel-diagram">
+                        <div class="rel-box pk">Table A (PK)</div>
+                        <div class="rel-line"><span></span> <div class="rel-label">1 : ∞</div> <span></span></div>
+                        <div class="rel-box fk">Table B (FK)</div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">One-to-Many: One A record relates to many B records</p>
+                </div>
+
+                <div class="card purple-glow">
+                    <div class="card-title"><span class="dot dot-purple"></span>Query Design</div>
+                    <ol class="step-list">
+                        <li>Create tab → Query Design</li>
+                        <li>Add tables → Close</li>
+                        <li>Verify PK → FK links (auto or drag)</li>
+                        <li>Double-click fields to add to query</li>
+                        <li>Enter criteria in Criteria row</li>
+                        <li>Click Run (red !) to execute</li>
+                        <li>Save the query</li>
+                    </ol>
+                </div>
             </div>
         </div>
 
+        <!-- ════════════════ EXAM TAB ════════════════ -->
         <div id="final-exam" class="tab-content">
             <h2>Final Exam</h2>
             <h3>Section I: Multiple Choice Questions (40)</h3>
-            <div class="question-card"><div class="question-text">1. What does DBMS stand for?</div><div class="options">a) Data Backup Management System &nbsp; b) Database Management System &nbsp; c) Digital Base Mapping Service &nbsp; d) Data Binary Management Structure</div></div>
-            <div class="question-card"><div class="question-text">2. Which key uniquely identifies a record?</div><div class="options">a) Foreign key &nbsp; b) Composite key &nbsp; c) Candidate key &nbsp; d) Primary key</div></div>
-            <div class="question-card"><div class="question-text">3. Which SQL command retrieves records?</div><div class="options">a) SELECT &nbsp; b) INSERT &nbsp; c) CREATE &nbsp; d) ALTER</div></div>
-            <div class="question-card"><div class="question-text">4. Which language category includes CREATE TABLE?</div><div class="options">a) DML &nbsp; b) DDL &nbsp; c) DQL &nbsp; d) DCL</div></div>
-            <div class="question-card"><div class="question-text">5. Which normal form removes repeating groups?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) BCNF</div></div>
-            <div class="question-card"><div class="question-text">6. A foreign key is mainly used to:</div><div class="options">a) Encrypt records &nbsp; b) Link related tables &nbsp; c) Sort data automatically &nbsp; d) Drop duplicate rows</div></div>
-            <div class="question-card"><div class="question-text">7. Which operation removes all rows but keeps table structure?</div><div class="options">a) DELETE &nbsp; b) DROP &nbsp; c) TRUNCATE &nbsp; d) RENAME</div></div>
-            <div class="question-card"><div class="question-text">8. Which clause filters grouped data?</div><div class="options">a) WHERE &nbsp; b) ORDER BY &nbsp; c) HAVING &nbsp; d) LIMIT</div></div>
-            <div class="question-card"><div class="question-text">9. Which join returns matching rows from both tables only?</div><div class="options">a) LEFT JOIN &nbsp; b) RIGHT JOIN &nbsp; c) FULL JOIN &nbsp; d) INNER JOIN</div></div>
-            <div class="question-card"><div class="question-text">10. Which SQL statement adds a new row?</div><div class="options">a) INSERT &nbsp; b) UPDATE &nbsp; c) SELECT &nbsp; d) ALTER</div></div>
-            <div class="question-card"><div class="question-text">11. Entity-Relationship diagrams are used in:</div><div class="options">a) Physical backup &nbsp; b) Database design &nbsp; c) OS scheduling &nbsp; d) Firewall configuration</div></div>
-            <div class="question-card"><div class="question-text">12. Which normal form removes partial dependency?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) 4NF</div></div>
-            <div class="question-card"><div class="question-text">13. Which normal form removes transitive dependency?</div><div class="options">a) 1NF &nbsp; b) 2NF &nbsp; c) 3NF &nbsp; d) 5NF</div></div>
-            <div class="question-card"><div class="question-text">14. A transaction should satisfy:</div><div class="options">a) CPU principles &nbsp; b) ACID properties &nbsp; c) CRUD laws &nbsp; d) OOP rules</div></div>
-            <div class="question-card"><div class="question-text">15. Which ACID property ensures all-or-nothing execution?</div><div class="options">a) Consistency &nbsp; b) Atomicity &nbsp; c) Isolation &nbsp; d) Durability</div></div>
-            <div class="question-card"><div class="question-text">16. Which command undoes uncommitted transaction changes?</div><div class="options">a) SAVE &nbsp; b) COMMIT &nbsp; c) ROLLBACK &nbsp; d) REVOKE</div></div>
-            <div class="question-card"><div class="question-text">17. Which clause sorts query output?</div><div class="options">a) GROUP BY &nbsp; b) ORDER BY &nbsp; c) HAVING &nbsp; d) WHERE</div></div>
-            <div class="question-card"><div class="question-text">18. Which SQL function counts rows?</div><div class="options">a) SUM() &nbsp; b) AVG() &nbsp; c) COUNT() &nbsp; d) TOTAL()</div></div>
-            <div class="question-card"><div class="question-text">19. Which index structure is commonly used in DBMS?</div><div class="options">a) B-tree &nbsp; b) Stack &nbsp; c) Heap sort &nbsp; d) Queue list</div></div>
-            <div class="question-card"><div class="question-text">20. Which item defines constraints and tables?</div><div class="options">a) Instance &nbsp; b) Schema &nbsp; c) Session &nbsp; d) Trigger</div></div>
-            <div class="question-card"><div class="question-text">21. The view level in abstraction provides:</div><div class="options">a) File block layout &nbsp; b) User-specific data representation &nbsp; c) Query optimizer code &nbsp; d) Network protocol tuning</div></div>
-            <div class="question-card"><div class="question-text">22. Which SQL command changes existing table structure?</div><div class="options">a) UPDATE &nbsp; b) ALTER &nbsp; c) MODIFY ROW &nbsp; d) NEW TABLE</div></div>
-            <div class="question-card"><div class="question-text">23. Which model stores data as documents?</div><div class="options">a) Document model &nbsp; b) Relational model &nbsp; c) Hierarchical model &nbsp; d) Network model</div></div>
-            <div class="question-card"><div class="question-text">24. Which key references a primary key in another table?</div><div class="options">a) Alternate key &nbsp; b) Foreign key &nbsp; c) Super key &nbsp; d) Surrogate key</div></div>
-            <div class="question-card"><div class="question-text">25. What is data redundancy?</div><div class="options">a) Missing values &nbsp; b) Duplicate unnecessary data &nbsp; c) Encrypted data blocks &nbsp; d) Temporary indexes</div></div>
-            <div class="question-card"><div class="question-text">26. Which command removes database objects permanently?</div><div class="options">a) DROP &nbsp; b) TRUNCATE &nbsp; c) DELETE &nbsp; d) ERASE</div></div>
-            <div class="question-card"><div class="question-text">27. Which SQL statement updates existing data?</div><div class="options">a) INSERT &nbsp; b) UPDATE &nbsp; c) CREATE &nbsp; d) SELECT</div></div>
-            <div class="question-card"><div class="question-text">28. Which join preserves all rows from the left table?</div><div class="options">a) RIGHT JOIN &nbsp; b) CROSS JOIN &nbsp; c) LEFT JOIN &nbsp; d) SELF JOIN</div></div>
-            <div class="question-card"><div class="question-text">29. A composite key contains:</div><div class="options">a) One unique attribute &nbsp; b) Two or more attributes &nbsp; c) Only numeric data &nbsp; d) Encrypted columns</div></div>
-            <div class="question-card"><div class="question-text">30. Which SQL clause groups rows for aggregation?</div><div class="options">a) GROUP BY &nbsp; b) ORDER BY &nbsp; c) WHERE &nbsp; d) DISTINCT</div></div>
-            <div class="question-card"><div class="question-text">31. Which database type is best known for fixed table schema?</div><div class="options">a) Relational database &nbsp; b) Graph database &nbsp; c) Key-value database &nbsp; d) Document store</div></div>
-            <div class="question-card"><div class="question-text">32. Which SQL keyword removes duplicate output rows?</div><div class="options">a) UNIQUE &nbsp; b) PRIMARY &nbsp; c) DISTINCT &nbsp; d) FILTER</div></div>
-            <div class="question-card"><div class="question-text">33. Which isolation issue is prevented by proper transaction control?</div><div class="options">a) Dirty reads &nbsp; b) Zip compression &nbsp; c) Null references &nbsp; d) Batch sorting</div></div>
-            <div class="question-card"><div class="question-text">34. Which SQL function returns the highest value?</div><div class="options">a) MIN() &nbsp; b) TOP() &nbsp; c) MAX() &nbsp; d) UPPER()</div></div>
-            <div class="question-card"><div class="question-text">35. Which key concept defines relationship cardinality?</div><div class="options">a) One-to-one, one-to-many, many-to-many &nbsp; b) Simple and complex sorting &nbsp; c) Binary and decimal mapping &nbsp; d) Logical and physical backups</div></div>
-            <div class="question-card"><div class="question-text">36. Which SQL command saves a successful transaction permanently?</div><div class="options">a) COMMIT &nbsp; b) ROLLBACK &nbsp; c) RESTART &nbsp; d) MERGE</div></div>
-            <div class="question-card"><div class="question-text">37. What is the main purpose of normalization?</div><div class="options">a) Increase duplicate data &nbsp; b) Reduce redundancy and anomalies &nbsp; c) Replace indexes &nbsp; d) Disable constraints</div></div>
-            <div class="question-card"><div class="question-text">38. Which SQL permission command grants access rights?</div><div class="options">a) GRANT &nbsp; b) REVOKE &nbsp; c) ALLOW &nbsp; d) AUTHORIZE</div></div>
-            <div class="question-card"><div class="question-text">39. What does DML stand for?</div><div class="options">a) Data Markup Language &nbsp; b) Database Modeling Logic &nbsp; c) Data Manipulation Language &nbsp; d) Dynamic Machine Layer</div></div>
-            <div class="question-card"><div class="question-text">40. Which SQL query returns all columns from Students?</div><div class="options">a) GET ALL FROM Students; &nbsp; b) SELECT * FROM Students; &nbsp; c) SHOW Students ALL; &nbsp; d) FETCH COLUMNS Students;</div></div>
+            
+            <div class="question-card"><div class="question-text">1. What does DBMS stand for?</div><div class="options">a) Data Backup Management System · b) Database Management System · c) Digital Base Mapping Service · d) Data Binary Management Structure</div></div>
+            <div class="question-card"><div class="question-text">2. Which key uniquely identifies a record?</div><div class="options">a) Foreign key · b) Composite key · c) Candidate key · d) Primary key</div></div>
+            <div class="question-card"><div class="question-text">3. Which SQL command retrieves records?</div><div class="options">a) SELECT · b) INSERT · c) CREATE · d) ALTER</div></div>
+            <div class="question-card"><div class="question-text">4. Which language category includes CREATE TABLE?</div><div class="options">a) DML · b) DDL · c) DQL · d) DCL</div></div>
+            <div class="question-card"><div class="question-text">5. Which normal form removes repeating groups?</div><div class="options">a) 1NF · b) 2NF · c) 3NF · d) BCNF</div></div>
+            <div class="question-card"><div class="question-text">6. A foreign key is mainly used to:</div><div class="options">a) Encrypt records · b) Link related tables · c) Sort data automatically · d) Drop duplicate rows</div></div>
+            <div class="question-card"><div class="question-text">7. Which operation removes all rows but keeps table structure?</div><div class="options">a) DELETE · b) DROP · c) TRUNCATE · d) RENAME</div></div>
+            <div class="question-card"><div class="question-text">8. Which clause filters grouped data?</div><div class="options">a) WHERE · b) ORDER BY · c) HAVING · d) LIMIT</div></div>
+            <div class="question-card"><div class="question-text">9. Which join returns matching rows from both tables only?</div><div class="options">a) LEFT JOIN · b) RIGHT JOIN · c) FULL JOIN · d) INNER JOIN</div></div>
+            <div class="question-card"><div class="question-text">10. Which SQL statement adds a new row?</div><div class="options">a) INSERT · b) UPDATE · c) SELECT · d) ALTER</div></div>
+
+            <div class="question-card"><div class="question-text">11. Entity-Relationship diagrams are used in:</div><div class="options">a) Physical backup · b) Database design · c) OS scheduling · d) Firewall configuration</div></div>
+            <div class="question-card"><div class="question-text">12. Which normal form removes partial dependency?</div><div class="options">a) 1NF · b) 2NF · c) 3NF · d) 4NF</div></div>
+            <div class="question-card"><div class="question-text">13. Which normal form removes transitive dependency?</div><div class="options">a) 1NF · b) 2NF · c) 3NF · d) 5NF</div></div>
+            <div class="question-card"><div class="question-text">14. A transaction should satisfy:</div><div class="options">a) CPU principles · b) ACID properties · c) CRUD laws · d) OOP rules</div></div>
+            <div class="question-card"><div class="question-text">15. Which ACID property ensures all-or-nothing execution?</div><div class="options">a) Consistency · b) Atomicity · c) Isolation · d) Durability</div></div>
+            <div class="question-card"><div class="question-text">16. Which command undoes uncommitted transaction changes?</div><div class="options">a) SAVE · b) COMMIT · c) ROLLBACK · d) REVOKE</div></div>
+            <div class="question-card"><div class="question-text">17. Which clause sorts query output?</div><div class="options">a) GROUP BY · b) ORDER BY · c) HAVING · d) WHERE</div></div>
+            <div class="question-card"><div class="question-text">18. Which SQL function counts rows?</div><div class="options">a) SUM() · b) AVG() · c) COUNT() · d) TOTAL()</div></div>
+            <div class="question-card"><div class="question-text">19. Which index structure is commonly used in DBMS?</div><div class="options">a) B-tree · b) Stack · c) Heap sort · d) Queue list</div></div>
+            <div class="question-card"><div class="question-text">20. Which item defines constraints and tables?</div><div class="options">a) Instance · b) Schema · c) Session · d) Trigger</div></div>
+
+            <div class="question-card"><div class="question-text">21. The view level in abstraction provides:</div><div class="options">a) File block layout · b) User-specific data representation · c) Query optimizer code · d) Network protocol tuning</div></div>
+            <div class="question-card"><div class="question-text">22. Which SQL command changes existing table structure?</div><div class="options">a) UPDATE · b) ALTER · c) MODIFY ROW · d) NEW TABLE</div></div>
+            <div class="question-card"><div class="question-text">23. Which model stores data as documents?</div><div class="options">a) Document model · b) Relational model · c) Hierarchical model · d) Network model</div></div>
+            <div class="question-card"><div class="question-text">24. Which key references a primary key in another table?</div><div class="options">a) Alternate key · b) Foreign key · c) Super key · d) Surrogate key</div></div>
+            <div class="question-card"><div class="question-text">25. What is data redundancy?</div><div class="options">a) Missing values · b) Duplicate unnecessary data · c) Encrypted data blocks · d) Temporary indexes</div></div>
+            <div class="question-card"><div class="question-text">26. Which command removes database objects permanently?</div><div class="options">a) DROP · b) TRUNCATE · c) DELETE · d) ERASE</div></div>
+            <div class="question-card"><div class="question-text">27. Which SQL statement updates existing data?</div><div class="options">a) INSERT · b) UPDATE · c) CREATE · d) SELECT</div></div>
+            <div class="question-card"><div class="question-text">28. Which join preserves all rows from the left table?</div><div class="options">a) RIGHT JOIN · b) CROSS JOIN · c) LEFT JOIN · d) SELF JOIN</div></div>
+            <div class="question-card"><div class="question-text">29. A composite key contains:</div><div class="options">a) One unique attribute · b) Two or more attributes · c) Only numeric data · d) Encrypted columns</div></div>
+            <div class="question-card"><div class="question-text">30. Which SQL clause groups rows for aggregation?</div><div class="options">a) GROUP BY · b) ORDER BY · c) WHERE · d) DISTINCT</div></div>
+
+            <div class="question-card"><div class="question-text">31. Which database type is best known for fixed table schema?</div><div class="options">a) Relational database · b) Graph database · c) Key-value database · d) Document store</div></div>
+            <div class="question-card"><div class="question-text">32. Which SQL keyword removes duplicate output rows?</div><div class="options">a) UNIQUE · b) PRIMARY · c) DISTINCT · d) FILTER</div></div>
+            <div class="question-card"><div class="question-text">33. Which isolation issue is prevented by proper transaction control?</div><div class="options">a) Dirty reads · b) Zip compression · c) Null references · d) Batch sorting</div></div>
+            <div class="question-card"><div class="question-text">34. Which SQL function returns the highest value?</div><div class="options">a) MIN() · b) TOP() · c) MAX() · d) UPPER()</div></div>
+            <div class="question-card"><div class="question-text">35. Which key concept defines relationship cardinality?</div><div class="options">a) One-to-one, one-to-many, many-to-many · b) Simple and complex sorting · c) Binary and decimal mapping · d) Logical and physical backups</div></div>
+            <div class="question-card"><div class="question-text">36. Which SQL command saves a successful transaction permanently?</div><div class="options">a) COMMIT · b) ROLLBACK · c) RESTART · d) MERGE</div></div>
+            <div class="question-card"><div class="question-text">37. What is the main purpose of normalization?</div><div class="options">a) Increase duplicate data · b) Reduce redundancy and anomalies · c) Replace indexes · d) Disable constraints</div></div>
+            <div class="question-card"><div class="question-text">38. Which SQL permission command grants access rights?</div><div class="options">a) GRANT · b) REVOKE · c) ALLOW · d) AUTHORIZE</div></div>
+            <div class="question-card"><div class="question-text">39. What does DML stand for?</div><div class="options">a) Data Markup Language · b) Database Modeling Logic · c) Data Manipulation Language · d) Dynamic Machine Layer</div></div>
+            <div class="question-card"><div class="question-text">40. Which SQL query returns all columns from Students?</div><div class="options">a) GET ALL FROM Students; · b) SELECT * FROM Students; · c) SHOW Students ALL; · d) FETCH COLUMNS Students;</div></div>
 
             <hr class="section-divider">
 
@@ -219,6 +1000,7 @@
             </ol>
         </div>
 
+        <!-- ════════════════ ANSWER SHEET TAB ════════════════ -->
         <div id="answer-sheet" class="tab-content">
             <h2>Answer Sheet</h2>
             <h3>MCQ Key (40)</h3>
@@ -246,26 +1028,26 @@
             <h3>Short-Answer Key (20)</h3>
             <div class="card">
                 <ol>
-                    <li>A DBMS is software for creating and managing databases. Advantages include reduced redundancy and improved security/data sharing.</li>
-                    <li>A file system stores isolated files with duplication risk, while a DBMS provides centralized control, querying, concurrency, and integrity constraints.</li>
-                    <li>A primary key uniquely identifies each record in its own table. A foreign key references a primary key in another table to enforce relationships.</li>
+                    <li><strong>DBMS Definition:</strong> Software for creating and managing databases. Advantages: reduces data redundancy, improves security and data sharing.</li>
+                    <li><strong>File System vs DBMS:</strong> File systems store isolated data with duplication risk. DBMS provides centralized control, querying, concurrency, and integrity constraints.</li>
+                    <li><strong>Primary vs Foreign Key:</strong> Primary key uniquely identifies each record in its table. Foreign key references a primary key in another table for relationships.</li>
                     <li><code>CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(50), Department VARCHAR(30));</code></li>
-                    <li>Normalization organizes data to reduce redundancy and update anomalies, improving consistency and maintainability.</li>
-                    <li>1NF uses atomic fields; 2NF removes partial dependency on composite keys; 3NF removes transitive dependency on non-key attributes.</li>
-                    <li>ACID means Atomicity, Consistency, Isolation, and Durability, ensuring reliable transaction processing.</li>
-                    <li>DDL defines schema (CREATE), DML modifies data (UPDATE), DQL queries data (SELECT), DCL controls privileges (GRANT), TCL manages transactions (COMMIT).</li>
-                    <li>Schema is the structural blueprint of database objects. Instance is the current data state at a specific time.</li>
-                    <li>INNER JOIN returns only matching rows; LEFT JOIN returns all left-table rows plus matching right-table rows.</li>
-                    <li>An index is a fast lookup structure on columns. Benefit: faster search. Drawback: extra storage and slower writes.</li>
-                    <li>Data abstraction hides complexity at three levels: physical, logical, and view.</li>
-                    <li>Data integrity ensures correctness and consistency. Entity integrity requires non-null unique primary keys, and referential integrity requires valid foreign-key references.</li>
-                    <li>Centralized databases are managed at one location; distributed databases spread data across multiple sites with coordination.</li>
-                    <li>A view is a virtual table based on a query; it simplifies reporting and restricts sensitive data exposure.</li>
+                    <li><strong>Normalization:</strong> Organizing data to reduce redundancy and update anomalies. Required for consistency and maintainability.</li>
+                    <li><strong>Normal Forms:</strong> 1NF uses atomic fields; 2NF removes partial dependency on composite keys; 3NF removes transitive dependency on non-key attributes.</li>
+                    <li><strong>ACID:</strong> Atomicity (all-or-nothing), Consistency (valid state), Isolation (independent transactions), Durability (persistent changes).</li>
+                    <li><strong>SQL Languages:</strong> DDL: CREATE; DML: UPDATE; DQL: SELECT; DCL: GRANT; TCL: COMMIT.</li>
+                    <li><strong>Schema vs Instance:</strong> Schema is the structural blueprint. Instance is the current data state at a specific time.</li>
+                    <li><strong>Joins:</strong> INNER JOIN returns matching rows only. LEFT JOIN returns all left table rows plus matching right table rows.</li>
+                    <li><strong>Index:</strong> Fast lookup structure on columns. Benefit: faster searches. Drawback: extra storage, slower writes.</li>
+                    <li><strong>Abstraction:</strong> Hides complexity across three levels: physical (hardware), logical/conceptual (schema), and view (user-specific).</li>
+                    <li><strong>Data Integrity:</strong> Ensures correctness and consistency. Entity integrity: non-null, unique primary keys. Referential integrity: valid foreign key references.</li>
+                    <li><strong>Centralized vs Distributed:</strong> Centralized: single location management. Distributed: data spread across multiple sites with coordination.</li>
+                    <li><strong>View:</strong> Virtual table based on a query. Simplifies reporting and restricts sensitive data exposure.</li>
                     <li><code>INSERT INTO Student (RollNo, Name, Department) VALUES (101, 'Amina', 'CS');</code></li>
                     <li><code>UPDATE Student SET Department = 'IT' WHERE RollNo = 101;</code></li>
                     <li><code>SELECT Department, COUNT(*) AS total_students FROM Student GROUP BY Department;</code></li>
-                    <li>Backup creates restorable copies of data; recovery restores database consistency after failure.</li>
-                    <li>Concurrency control coordinates simultaneous transactions to avoid conflicts like lost updates and dirty reads.</li>
+                    <li><strong>Backup & Recovery:</strong> Backup creates restorable data copies. Recovery restores consistency after failure.</li>
+                    <li><strong>Concurrency Control:</strong> Coordinates simultaneous transactions to avoid conflicts like lost updates and dirty reads.</li>
                 </ol>
             </div>
         </div>
