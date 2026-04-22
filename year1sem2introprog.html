@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principles of Programming | CS Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --muted: #808080;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --border-color: #333333;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+            --blue: #3b82f6;
+            --blue2: #60a5fa;
+            --red: #ef4444;
+            --green: #10b981;
+            --gold: #f59e0b;
+            --purple: #a855f7;
+            --accent: #00ff88;
+        }
+        
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-main); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        header { margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
+        .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
+        .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
+        .nav-back:hover { color: var(--accent-color); }
+        
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; }
+        .tab-btn { background: none; border: none; color: var(--text-secondary); padding: 10px 20px; font-family: var(--font-mono); font-size: 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn:hover { color: var(--text-primary); }
+        .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        h2 { color: var(--text-primary); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
+        h3 { color: var(--accent-color); margin-top: 30px; font-family: var(--font-mono); }
+        h4 { margin-top: 12px; margin-bottom: 6px; }
+        
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .card.blue-glow { border-color: rgba(59, 130, 246, 0.3); background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, var(--card-bg) 100%); }
+        .card.red-glow { border-color: rgba(239, 68, 68, 0.3); background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, var(--card-bg) 100%); }
+        .card.green-glow { border-color: rgba(16, 185, 129, 0.3); background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--card-bg) 100%); }
+        .card.gold-glow { border-color: rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, var(--card-bg) 100%); }
+        .card.purple-glow { border-color: rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, var(--card-bg) 100%); }
+        
+        .card-title { font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .dot-blue { background: var(--blue); }
+        .dot-red { background: var(--red); }
+        .dot-green { background: var(--green); }
+        .dot-gold { background: var(--gold); }
+        .dot-purple { background: var(--purple); }
+        .dot-accent { background: var(--accent); }
+        
+        .section-title { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin: 32px 0 20px 0; padding: 12px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        
+        ol, ul { padding-left: 20px; }
+        li { color: var(--text-secondary); margin-bottom: 8px; }
+        
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        
+        .lang-block { background: rgba(255,255,255,0.02); padding: 12px; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid var(--border-color); }
+        .def { background: rgba(0, 255, 136, 0.05); border-left: 3px solid var(--accent); padding: 12px 15px; border-radius: 4px; margin-bottom: 16px; color: var(--text-secondary); }
+        
+        .question-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-color); }
+        .question-text { font-weight: 600; margin-bottom: 10px; }
+        .options { color: var(--text-secondary); font-size: 0.95rem; }
+        
+        .clean { list-style: none; padding: 0; }
+        .clean li { padding-left: 20px; position: relative; }
+        .clean li:before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+        .sheet { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 12px 0; }
+        .sheet tr { border-bottom: 1px solid var(--border-color); }
+        .sheet td, .sheet th { padding: 10px 12px; text-align: left; color: var(--text-secondary); }
+        .sheet thead { background: rgba(0, 255, 136, 0.05); color: var(--accent); font-weight: 600; }
+        
+        code { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color); padding: 2px 6px; border-radius: 3px; font-family: var(--font-mono); color: var(--accent); }
+        pre { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; font-family: var(--font-mono); color: var(--accent); overflow-x: auto; }
+        
+        .yt-link { display: flex; align-items: center; padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; text-decoration: none; color: var(--text-primary); transition: all 0.2s; }
+        .yt-link:hover { border-color: var(--red); background: rgba(239, 68, 68, 0.05); transform: translateY(-2px); }
+        .yt-icon { color: var(--red); font-size: 1.5rem; margin-right: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
+        <header>
+            <h1>Principles of Programming</h1>
+            <div class="subtitle">COM126 · Course Summary, Exams & Java Tutorials</div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('summary')">Subject Summary</button>
+            <button class="tab-btn" onclick="openTab('exam')">Final Exam</button>
+            <button class="tab-btn" onclick="openTab('java')">Java Tutorials</button>
+        </div>
+
+        <!-- ════════════════ SUMMARY TAB ════════════════ -->
+        <div id="summary" class="tab-content active">
+            <h2>Course Overview</h2>
+            <p>Comprehensive study material covering 8 lectures for COM126 Principles of Programming.</p>
+
+            <div class="section-title">Lecture 1 · Intro to Computers & Hardware</div>
+            <div class="grid-2">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Definition</div>
+                    <div class="def">
+                        A computer is a machine that performs a variety of tasks according to specific instructions. It's capable of performing computations and making logical decisions at high speeds.
+                    </div>
+                </div>
+
+                <div class="card green-glow">
+                    <div class="card-title"><span class="dot dot-green"></span>6 Logical Hardware Units</div>
+                    <ul class="clean">
+                        <li><strong>Input Unit:</strong> Allows the user to enter information (keyboard, mouse).</li>
+                        <li><strong>Output Unit:</strong> Makes processed info available (screens, printers).</li>
+                        <li><strong>Memory Unit:</strong> Stores info. RAM (volatile) and ROM (non-volatile).</li>
+                        <li><strong>ALU:</strong> Arithmetic and Logic Unit performs calculations.</li>
+                        <li><strong>CPU:</strong> Central Processing Unit supervises overall operations.</li>
+                        <li><strong>Secondary Storage:</strong> Permanent storage (magnetic disks, CD-ROMs).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-title">Lecture 2 · Computer Software</div>
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span>Programming Languages & Software Types</div>
+                <div class="grid-3" style="margin-bottom: 0;">
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">Low-Level Languages</h4>
+                        <p><strong>Machine Language:</strong> 1s and 0s. Lowest level.<br><strong>Assembly Language:</strong> Uses symbolic names for opcodes and operands. Needs translation.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">High-Level Languages</h4>
+                        <p>Easier to understand. Uses compilers (translates complete unit) or interpreters (translates statement by statement). Ex: C++, Java.</p>
+                    </div>
+                    <div class="lang-block">
+                        <h4 style="color: var(--gold);">Software Types</h4>
+                        <p><strong>Application:</strong> Written to perform particular user tasks.<br><strong>System:</strong> Operates the computer (e.g. Operating Systems like Windows/UNIX).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Lecture 3 · Program Development Life Cycle</div>
+            <div class="grid-2">
+                <div class="card purple-glow">
+                    <div class="card-title"><span class="dot dot-purple"></span>The 4 Steps of PDLC</div>
+                    <ol>
+                        <li><strong>Problem Definition:</strong> Specification of inputs/outputs and constraints.</li>
+                        <li><strong>Problem Analysis:</strong> Breaking the problem into smaller, simpler sub-problems.</li>
+                        <li><strong>Algorithm design:</strong> Clear specification of steps (Pseudocode/Flowchart).</li>
+                        <li><strong>Coding & Debugging:</strong> Writing the source code and fixing errors (bugs).</li>
+                    </ol>
+                </div>
+                <div class="card red-glow">
+                    <div class="card-title"><span class="dot dot-red"></span>Debugging & Variables</div>
+                    <ul class="clean">
+                        <li><strong>Compile-time error:</strong> Syntax error. Code won't compile into an executable.</li>
+                        <li><strong>Runtime error:</strong> Logic error (like an infinite loop). Program crashes while running.</li>
+                    </ul>
+                    <hr style="border-color: var(--border-color); margin: 10px 0;">
+                    <p><strong>Variables vs Constants:</strong> A constant never changes its value, while a variable's value changes during program execution. Names must start with a letter, have no spaces, and no hyphens.</p>
+                </div>
+            </div>
+
+            <div class="section-title">Lectures 4 & 5 · Algorithms, Pseudo Code & Flowcharts</div>
+            <div class="grid-2">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Pseudo Code Basics</div>
+                    <p>Pseudo code is a nonstandard English-like language used to model logic.</p>
+                    <table class="sheet">
+                        <tr><td><strong>Input</strong></td><td>Get, Read, Input</td></tr>
+                        <tr><td><strong>Output</strong></td><td>Print, Write, Output, Display</td></tr>
+                        <tr><td><strong>Math</strong></td><td>+, -, *, /, % (Compute/Calculate)</td></tr>
+                        <tr><td><strong>Assign</strong></td><td>Initialize, Set, =, &larr;</td></tr>
+                    </table>
+                </div>
+
+                <div class="card green-glow">
+                    <div class="card-title"><span class="dot dot-green"></span>Flowchart Symbols</div>
+                    <table class="sheet">
+                        <tr><td><strong>Oval (Terminal)</strong></td><td>Start/End</td></tr>
+                        <tr><td><strong>Parallelogram (I/O)</strong></td><td>Input/Output operations</td></tr>
+                        <tr><td><strong>Rectangle (Process)</strong></td><td>Calculations, assignments</td></tr>
+                        <tr><td><strong>Diamond (Decision)</strong></td><td>True/False conditionals</td></tr>
+                        <tr><td><strong>Arrows (Flow line)</strong></td><td>Sequence of execution</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-title">Lecture 6 · The Branching</div>
+            <div class="grid-3">
+                <div class="card purple-glow">
+                    <div class="card-title"><span class="dot dot-purple"></span>Simple If</div>
+                    <p>Execute block only if condition is true.</p>
+                    <pre><code>If (condition)
+  Statement
+EndIf</code></pre>
+                </div>
+
+                <div class="card gold-glow">
+                    <div class="card-title"><span class="dot dot-gold"></span>If-Else Statement</div>
+                    <p>Execute statement 1 if true, statement 2 if false.</p>
+                    <pre><code>If (condition)
+  Statement 1
+Else
+  Statement 2
+EndIf</code></pre>
+                </div>
+
+                <div class="card red-glow">
+                    <div class="card-title"><span class="dot dot-red"></span>Nested If Statement</div>
+                    <p>Combines several conditions in sequence.</p>
+                    <pre><code>If (cond 1)
+  Statement
+elseIf (cond 2)
+  Statement
+Else
+  Statement
+EndIf</code></pre>
+                </div>
+            </div>
+
+            <div class="section-title">Lectures 7 & 8 · Repetition, Accumulator & Counter</div>
+            <div class="grid-2">
+                <div class="card blue-glow">
+                    <div class="card-title"><span class="dot dot-blue"></span>Loop Constructs</div>
+                    <ul class="clean">
+                        <li><strong>Pre-Test Loop (While):</strong> Tests condition before execution. May execute 0 times.</li>
+                        <li><strong>Post-Test Loop (Do-While):</strong> Tests condition after execution. Always runs at least once.</li>
+                        <li><strong>Counted Loop (For):</strong> Executes a specified number of times using a control variable.</li>
+                    </ul>
+                </div>
+                <div class="card green-glow">
+                    <div class="card-title"><span class="dot dot-green"></span>Counters & Accumulators</div>
+                    <ul class="clean">
+                        <li><strong>Counting:</strong> Used to keep track of iterations. Incrementing or decrementing by a set value (e.g. <code>count = count + 1</code>).</li>
+                        <li><strong>Accumulating:</strong> Summarizes numbers by adding a variable value to a running total on each pass (e.g. <code>total = total + score</code>).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ════════════════ EXAM TAB ════════════════ -->
+        <div id="exam" class="tab-content">
+            <h2>Final Exam Practice</h2>
+            <p>Test your knowledge of programming fundamentals, algorithms, and logic structures.</p>
+            
+            <div class="question-card">
+                <div class="question-text">1. Which type of software translates high-level code as a complete unit before execution?</div>
+                <div class="options">
+                    <label><input type="radio" name="q1"> a) Operating System</label><br>
+                    <label><input type="radio" name="q1"> b) Compiler</label><br>
+                    <label><input type="radio" name="q1"> c) Interpreter</label><br>
+                    <label><input type="radio" name="q1"> d) Assembly Language</label>
+                </div>
+            </div>
+            
+            <div class="question-card">
+                <div class="question-text">2. Which flowchart symbol is used to represent a decision with multiple exit paths (Yes/No)?</div>
+                <div class="options">
+                    <label><input type="radio" name="q2"> a) Oval</label><br>
+                    <label><input type="radio" name="q2"> b) Rectangle</label><br>
+                    <label><input type="radio" name="q2"> c) Parallelogram</label><br>
+                    <label><input type="radio" name="q2"> d) Diamond</label>
+                </div>
+            </div>
+            
+            <div class="question-card">
+                <div class="question-text">3. Analyze the pseudocode: <br/><code>count = 0<br/>While (count < 5)<br/>  count = count + 1<br/>EndLoop</code><br/>What is the purpose of the variable <code>count</code>?</div>
+                <div class="options">
+                    <label><input type="radio" name="q3"> a) It acts as an accumulator</label><br>
+                    <label><input type="radio" name="q3"> b) It acts as a counter</label><br>
+                    <label><input type="radio" name="q3"> c) It is a constant</label><br>
+                    <label><input type="radio" name="q3"> d) It causes a runtime error</label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. What is the difference between a Pre-Test loop and a Post-Test loop?</div>
+                <div class="options">
+                    <label><input type="radio" name="q4"> a) Pre-Test loops never run, Post-Test loops run infinitely</label><br>
+                    <label><input type="radio" name="q4"> b) A Pre-Test loop might run 0 times, but a Post-Test loop always runs at least once</label><br>
+                    <label><input type="radio" name="q4"> c) They are exactly the same</label><br>
+                    <label><input type="radio" name="q4"> d) A Pre-Test loop is for counting, Post-Test is for accumulating</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ════════════════ JAVA TUTORIALS TAB ════════════════ -->
+        <div id="java" class="tab-content">
+            <h2>Java Programming Tutorials</h2>
+            <p>Curated YouTube links to help you master Java programming basics.</p>
+            
+            <a href="https://www.youtube.com/watch?v=eIrMbAQSU34" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Java Tutorial for Beginners</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Programming with Mosh - Full Course</div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=grEKMHGYyns" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Java Variables & Data Types</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Bro Code - Learn Java Basics</div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=I0G5Rih6rxc" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>If-Else Statements & Switch Cases in Java</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Alex Lee - Java Logic</div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=tJEOT1G2qow" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>For Loops, While Loops, and Do-While Loops</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Coding with John - Repetition in Java</div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=xk4_1vCGsFI" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Object-Oriented Programming (OOP) in Java</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Amigoscode - Classes & Objects</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabBtns;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
