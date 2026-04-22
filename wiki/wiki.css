@@ -1,0 +1,130 @@
+:root {
+  --bg-color: #0a0a0a;
+  --card-bg: #111111;
+  --panel-bg: #0f0f0f;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #00ff88;
+  --accent-dim: rgba(0, 255, 136, 0.1);
+  --border-color: #333333;
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(0, 255, 136, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.05), transparent 24%),
+    var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.nav-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+}
+
+.nav-back:hover {
+  color: var(--accent-color);
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--accent-color);
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.stub-section {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  background: var(--panel-bg);
+}
+
+.stub-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.stub-section p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.link-card {
+  display: block;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  background: var(--accent-dim);
+}
+
+.link-card span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding-top: 28px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  header,
+  .stub-section {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | CS Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0a0a0a;
+        --card-bg: #111111;
+        --panel-bg: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-color: #00ff88;
+        --accent-dim: rgba(0, 255, 136, 0.1);
+        --border-color: #333333;
+        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      .nav-back {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-family: var(--font-mono);
+      }
+
+      .nav-back:hover {
+        color: var(--accent-color);
+      }
+
+      header {
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        color: var(--accent-color);
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+      }
+
+      .intro {
+        margin: 0 0 28px;
+        max-width: 760px;
+        color: var(--text-secondary);
+      }
+
+      .jump-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 36px;
+      }
+
+      .jump-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .jump-link:hover {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+        background: var(--accent-dim);
+      }
+
+      .semester-block {
+        margin-top: 40px;
+        padding: 24px;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        background: var(--panel-bg);
+      }
+
+      .semester-title {
+        margin: 0 0 6px;
+        font-size: 2rem;
+      }
+
+      .semester-note {
+        margin: 0 0 22px;
+        color: var(--text-secondary);
+      }
+
+      .subject-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .subject-block {
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        background: var(--card-bg);
+      }
+
+      .subject-block h2 {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+      }
+
+      .subject-note {
+        margin: 0 0 16px;
+        color: var(--text-secondary);
+        font-size: 0.94rem;
+      }
+
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .resource-card,
+      .resource-empty {
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .resource-card h3,
+      .resource-empty h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .resource-card p,
+      .resource-empty p {
+        margin: 0 0 14px;
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--accent-dim);
+        color: var(--accent-color);
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+      }
+
+      .badge-neutral {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+      }
+
+      .resource-link {
+        display: inline-block;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+      }
+
+      .resource-link:hover {
+        opacity: 0.85;
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding-top: 28px;
+        }
+
+        h1 {
+          font-size: 2.35rem;
+        }
+
+        .semester-block,
+        .subject-block {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="nav-back">&larr; Back to Home</a>
+
+      <header>
+        <h1>Resources</h1>
+        <div class="subtitle">Video tutorials grouped by semester and subject</div>
+      </header>
+
+      <p class="intro">
+        Pick the semester first, then open the subject you need. The current set
+        uses the provided playlist and keeps the links grouped under the closest
+        course fit.
+      </p>
+
+      <div class="jump-links">
+        <a class="jump-link" href="#semester-one">Semester One</a>
+        <a class="jump-link" href="#semester-two">Semester Two</a>
+        <a class="jump-link" href="#future-semesters">Future Semesters</a>
+        <a class="jump-link" href="#computer-applications">Computer Applications</a>
+        <a class="jump-link" href="#intro-to-cs">Introduction to CS</a>
+        <a class="jump-link" href="#principles-of-programming">Principles of Programming</a>
+        <a class="jump-link" href="#intro-to-databases">Introduction to Databases</a>
+      </div>
+
+      <section class="semester-block" id="semester-one">
+        <h2 class="semester-title">Semester One</h2>
+        <p class="semester-note">Year 1 foundations and first-step practical subjects.</p>
+        <div class="subject-grid">
+          <section class="subject-block" id="computer-applications">
+            <h2>Computer Applications</h2>
+            <p class="subject-note">Practical tools, setup, and accessible web/dev entry points.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>25 VS Code Productivity Tips and Speed Hacks</h3>
+                <p>Practical editor shortcuts and workflow improvements for everyday coursework.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=ifTF3ags0XI" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>100+ Web Development Things you Should Know</h3>
+                <p>Broad overview of tools, terms, and workflow ideas that fit an entry-level practical track.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=erEgovG9WBs" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="intro-to-cs">
+            <h2>Introduction to Computer Science</h2>
+            <p class="subject-note">Broad CS foundations, computing context, and early orientation.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Introduction to Programming and Computer Science - Full Course</h3>
+                <p>Large overview course covering programming and core computer science foundations.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=zOjov-2OZ0E" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Why Some Projects Use Multiple Programming Languages</h3>
+                <p>Useful for understanding how different languages fit different system roles.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=XJC5WB2Bwrc" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="discrete-mathematics">
+            <h2>Discrete Mathematics</h2>
+            <p class="subject-note">Math support for logic, abstraction, and algorithmic thinking.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Math Every Programmer ACTUALLY Needs</h3>
+                <p>Practical math topics that translate well into early CS reasoning.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=mzw3P3np_pc" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>10 Math Concepts for Programmers</h3>
+                <p>Compact review of math ideas that repeatedly show up in programming study.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=bOCHTHkBoAs" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="semester-block" id="semester-two">
+        <h2 class="semester-title">Semester Two</h2>
+        <p class="semester-note">Programming, databases, and maintenance-focused subjects.</p>
+        <div class="subject-grid">
+          <section class="subject-block" id="intro-to-databases">
+            <h2>Introduction to Databases</h2>
+            <p class="subject-note">Database ideas viewed through real application and system examples.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Design ChatGPT Like a Senior Engineer: 800M Users, One Primary Database</h3>
+                <p>High-level system example with a strong database-centered angle.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Advanced</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=K4Ie-bM48qA" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="computer-architecture-maintenance">
+            <h2>Computer Maintenance</h2>
+            <p class="subject-note">Closest practical matches while hardware-focused videos are still missing.</p>
+            <div class="resource-grid">
+              <article class="resource-empty">
+                <h3>No direct match yet</h3>
+                <p>This subject is ready for hardware and maintenance videos when you add them.</p>
+                <div class="badge-row">
+                  <span class="badge badge-neutral">Waiting for videos</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="principles-of-programming">
+            <h2>Principles of Programming</h2>
+            <p class="subject-note">Language basics, code structure, problem solving, and OOP foundations.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Learn Java in 14 Minutes (seriously)</h3>
+                <p>Fast syntax-first refresher for beginner programming practice.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=RRubcjpTkks" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Java in 100 Seconds</h3>
+                <p>Short overview that helps place Java quickly before deeper study.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=l9AzO1FMgM8" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Learn Java in 15 Minutes (seriously)</h3>
+                <p>Alternative quick-start video with the same beginner-level target.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=b5l5UodFzMo" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Learn Java Object-Oriented Programming (with actual code)</h3>
+                <p>Good next step once the course moves into classes, objects, and methods.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Intermediate</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=TiccevwEVe8" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>How to solve a Google coding interview question</h3>
+                <p>Problem decomposition practice that still fits early programming logic work.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Intermediate</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=Ti5vfu9arXQ" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>How to OVER Engineer a Website // What is a Tech Stack?</h3>
+                <p>Web stack overview that still fits programming foundations better than a separate lane.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=Sxxw3qtb3_g" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="semester-block" id="future-semesters">
+        <h2 class="semester-title">Future Semesters</h2>
+        <p class="semester-note">Videos already classified for later subjects that are not on the current Year 1 pages.</p>
+        <div class="subject-grid">
+          <section class="subject-block" id="data-structures-algorithms">
+            <h2>Data Structures &amp; Algorithms</h2>
+            <p class="subject-note">Problem sets, common structures, and deeper algorithm review.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>70 Leetcode problems in 5+ hours (every data structure) (full tutorial)</h3>
+                <p>Large review set covering common structures and problem styles.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Intermediate</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=lvO88XxNAzs" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="operating-systems">
+            <h2>Operating Systems</h2>
+            <p class="subject-note">This lane is ready, but there is no direct playlist match yet.</p>
+            <div class="resource-grid">
+              <article class="resource-empty">
+                <h3>No direct match yet</h3>
+                <p>Add process, scheduling, or memory-management videos here later.</p>
+                <div class="badge-row">
+                  <span class="badge badge-neutral">Waiting for videos</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="networks">
+            <h2>Networks</h2>
+            <p class="subject-note">Infrastructure and deployment concepts closest to networking study.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Cloud Computing Explained: The Most Important Concepts To Know</h3>
+                <p>Bridge topic between networking, infrastructure, and deployment thinking.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=ZaA0kNm18pE" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="software-engineering">
+            <h2>Software Engineering</h2>
+            <p class="subject-note">Version control, architecture, systems, and delivery workflow.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>Git and GitHub for Beginners - Crash Course</h3>
+                <p>Strong first stop for version control and collaborative workflow basics.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Beginner</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>System Design Explained: APIs, Databases, Caching, CDNs, Load Balancing &amp; Production Infra</h3>
+                <p>Broad systems overview that connects several software engineering concerns in one place.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Advanced</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=adOkTjIIDnk" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Design Spotify Like a Senior Engineer (System Design Interview)</h3>
+                <p>Applied architecture case study with tradeoffs, scale, and service boundaries.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Advanced</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=H7s1pvuhmTA" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Unlock the Power of Event-Driven Architecture: How Netflix &amp; Uber Handle Billions of Events</h3>
+                <p>Useful for understanding modern backend architecture and asynchronous system design.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Advanced</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=hrvx8Nv9eQA" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="subject-block" id="ai-cybersecurity-specialization">
+            <h2>AI / Cybersecurity / Specialization</h2>
+            <p class="subject-note">Security concepts, AI fundamentals, and later specialization material.</p>
+            <div class="resource-grid">
+              <article class="resource-card">
+                <h3>7 Authentication Concepts Every Developer Should Know</h3>
+                <p>Security-oriented concepts that connect to auth, identity, and access control.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=iX8g4LqF8p8" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>Don't learn AI Agents without Learning these Fundamentals</h3>
+                <p>High-level overview for students moving toward AI-focused topics.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">Mixed</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=ZaPbP9DwBOE" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>How to Learn to Code - 8 Hard Truths</h3>
+                <p>Useful general mindset watch for students building long-term study habits.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">General</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=NtfbWkxJTHw" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>coding is easy, actually</h3>
+                <p>Short general encouragement piece that still fits the broader study path.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">General</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=qkFYqY3vr84" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+              <article class="resource-card">
+                <h3>The pain of becoming yourself</h3>
+                <p>General long-form mindset watch kept in the later-study pool instead of a separate lane.</p>
+                <div class="badge-row">
+                  <span class="badge">Video</span>
+                  <span class="badge badge-neutral">General</span>
+                </div>
+                <a class="resource-link" href="https://www.youtube.com/watch?v=QYAnJ_QyCQg" target="_blank" rel="noopener noreferrer">Open video</a>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Wiki | CS Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0a0a0a;
+        --card-bg: #111111;
+        --panel-bg: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-color: #00ff88;
+        --accent-dim: rgba(0, 255, 136, 0.1);
+        --border-color: #333333;
+        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, rgba(0, 255, 136, 0.08), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.05), transparent 24%),
+          var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      .nav-back {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-family: var(--font-mono);
+      }
+
+      .nav-back:hover {
+        color: var(--accent-color);
+      }
+
+      .hero {
+        padding: 24px 0 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        color: var(--accent-color);
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+      }
+
+      .intro {
+        max-width: 760px;
+        margin: 16px 0 0;
+        color: var(--text-secondary);
+      }
+
+      .strip {
+        margin-top: 28px;
+        padding: 18px;
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        background: var(--panel-bg);
+      }
+
+      .strip h2 {
+        margin: 0 0 6px;
+        font-size: 1.35rem;
+      }
+
+      .strip p {
+        margin: 0 0 16px;
+        color: var(--text-secondary);
+      }
+
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .wide-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      .tile {
+        display: block;
+        min-height: 148px;
+        padding: 18px;
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .tile:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-color);
+        background: var(--accent-dim);
+      }
+
+      .tile-tag {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+      }
+
+      .tile strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+      }
+
+      .tile span {
+        display: block;
+        color: var(--text-secondary);
+        font-size: 0.93rem;
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding-top: 28px;
+        }
+
+        h1 {
+          font-size: 2.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="nav-back">&larr; Back to Home</a>
+
+      <section class="hero">
+        <h1>CS Wiki</h1>
+        <div class="subtitle">Topic directory and blank note stubs</div>
+        <p class="intro">
+          This page is just a topic hub. Open a subject, then jump straight into
+          the blank subtopic pages behind it.
+        </p>
+      </section>
+
+      <section class="strip">
+        <h2>Topic Directory</h2>
+        <p>Core CS areas arranged as direct entry points.</p>
+        <div class="tile-grid">
+          <a class="tile" href="wiki/programming.html"><div class="tile-tag">Core</div><strong>Programming</strong><span>Variables, control flow, functions, data types, debugging.</span></a>
+          <a class="tile" href="wiki/algorithms.html"><div class="tile-tag">Core</div><strong>Algorithms</strong><span>Complexity, recursion, sorting, and searching.</span></a>
+          <a class="tile" href="wiki/data-structures.html"><div class="tile-tag">Core</div><strong>Data Structures</strong><span>Arrays, linked lists, stacks, queues, trees, graphs.</span></a>
+          <a class="tile" href="wiki/computer-architecture.html"><div class="tile-tag">Systems</div><strong>Computer Architecture</strong><span>CPU, memory, buses, and instruction cycle.</span></a>
+          <a class="tile" href="wiki/operating-systems.html"><div class="tile-tag">Systems</div><strong>Operating Systems</strong><span>Processes, threads, scheduling, and file systems.</span></a>
+          <a class="tile" href="wiki/databases.html"><div class="tile-tag">Data</div><strong>Databases</strong><span>SQL, ERD, normalization, indexing, transactions.</span></a>
+          <a class="tile" href="wiki/networks.html"><div class="tile-tag">Systems</div><strong>Networks</strong><span>OSI model, TCP/IP, subnetting, routing, switching.</span></a>
+          <a class="tile" href="wiki/software-engineering.html"><div class="tile-tag">Build</div><strong>Software Engineering</strong><span>SDLC, requirements, UML, testing, version control.</span></a>
+          <a class="tile" href="wiki/ai.html"><div class="tile-tag">Specialization</div><strong>AI</strong><span>Search, machine learning, and neural networks.</span></a>
+          <a class="tile" href="wiki/cybersecurity.html"><div class="tile-tag">Specialization</div><strong>Cybersecurity</strong><span>Cryptography, authentication, and network security.</span></a>
+          <a class="tile" href="wiki/web-development.html"><div class="tile-tag">Web</div><strong>Web Development</strong><span>HTML, CSS, JavaScript, HTTP, frontend/backend basics.</span></a>
+          <a class="tile" href="wiki/discrete-mathematics.html"><div class="tile-tag">Math</div><strong>Discrete Mathematics</strong><span>Logic, sets, relations, graphs, and proofs.</span></a>
+        </div>
+      </section>
+
+      <section class="strip">
+        <h2>Course Paths</h2>
+        <p>Quick jumps from the current course list into the closest topic shells.</p>
+        <div class="wide-grid">
+          <a class="tile" href="wiki/programming.html"><div class="tile-tag">Year 1</div><strong>Introduction to Computer Science</strong><span>Open the programming topic path.</span></a>
+          <a class="tile" href="wiki/databases.html"><div class="tile-tag">Year 1</div><strong>Introduction to Databases</strong><span>Open the database topic path.</span></a>
+          <a class="tile" href="wiki/computer-architecture.html"><div class="tile-tag">Year 1</div><strong>Computer Maintenance</strong><span>Open the architecture topic path.</span></a>
+          <a class="tile" href="wiki/discrete-mathematics.html"><div class="tile-tag">Year 1</div><strong>Discrete Mathematics</strong><span>Open the discrete math topic path.</span></a>
+          <a class="tile" href="wiki/software-engineering.html"><div class="tile-tag">Later Years</div><strong>Software Engineering</strong><span>Open the later-semester topic path.</span></a>
+          <a class="tile" href="wiki/web-development.html"><div class="tile-tag">Extra</div><strong>Web Development</strong><span>Open the web topic path.</span></a>
+        </div>
+      </section>
+
+      <section class="strip">
+        <h2>Fast Picks</h2>
+        <p>Direct links to a few commonly revisited blank subtopic pages.</p>
+        <div class="tile-grid">
+          <a class="tile" href="wiki/programming/functions.html"><div class="tile-tag">Quick</div><strong>Functions</strong><span>Blank subtopic page.</span></a>
+          <a class="tile" href="wiki/algorithms/sorting.html"><div class="tile-tag">Quick</div><strong>Sorting</strong><span>Blank subtopic page.</span></a>
+          <a class="tile" href="wiki/data-structures/trees.html"><div class="tile-tag">Quick</div><strong>Trees</strong><span>Blank subtopic page.</span></a>
+          <a class="tile" href="wiki/computer-architecture/cpu.html"><div class="tile-tag">Quick</div><strong>CPU</strong><span>Blank subtopic page.</span></a>
+          <a class="tile" href="wiki/databases/sql.html"><div class="tile-tag">Quick</div><strong>SQL</strong><span>Blank subtopic page.</span></a>
+          <a class="tile" href="wiki/networks/tcp-ip.html"><div class="tile-tag">Quick</div><strong>TCP/IP</strong><span>Blank subtopic page.</span></a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

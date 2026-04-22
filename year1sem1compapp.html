@@ -30,6 +30,18 @@
         header { margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
         h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
         .subtitle { color: var(--text-secondary); font-family: var(--font-mono); margin-top: 10px; }
+        .header-actions { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .page-link-btn {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: var(--font-mono);
+            border: 1px solid var(--accent-color);
+            background: var(--accent-dim);
+            color: var(--accent-color);
+        }
+        .page-link-btn:hover { background: var(--accent-color); color: #000; }
         
         .nav-back { display: inline-block; margin-bottom: 20px; color: var(--text-secondary); text-decoration: none; font-family: var(--font-mono); }
         .nav-back:hover { color: var(--accent-color); }
@@ -76,6 +88,9 @@
         <header>
             <h1>Computer Applications</h1>
             <div class="subtitle">COM-111 Resources & Study Guide</div>
+            <div class="header-actions">
+                <a href="resources.html#computer-applications" class="page-link-btn">Video Tutorials</a>
+            </div>
         </header>
 
         <div class="tabs">
