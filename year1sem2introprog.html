@@ -110,147 +110,174 @@
 
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
         <div id="summary" class="tab-content active">
-            <h2>Course Overview</h2>
-            <p>Comprehensive study material covering 8 lectures for COM126 Principles of Programming.</p>
+            <h2>Java Fundamentals — Lecture 1 Reference</h2>
+            <p>COM126 · Principles of Programming · NUSU · Batch 7 · Academic Year 2025–2026 · Semester 2 Week 1.</p>
 
-            <div class="section-title">Lecture 1 · Intro to Computers & Hardware</div>
-            <div class="grid-2">
-                <div class="card blue-glow">
-                    <div class="card-title"><span class="dot dot-blue"></span>Definition</div>
-                    <div class="def">
-                        A computer is a machine that performs a variety of tasks according to specific instructions. It's capable of performing computations and making logical decisions at high speeds.
-                    </div>
-                </div>
+            <div class="section-title">§1 · Java Platform — JDK, JRE, JVM & Compilation</div>
+            <div class="card">
+                <h3>What is Java?</h3>
+                <p>Java is a high-level, object-oriented language first released in 1995. It runs across many platforms through the JVM.</p>
 
-                <div class="card green-glow">
-                    <div class="card-title"><span class="dot dot-green"></span>6 Logical Hardware Units</div>
-                    <ul class="clean">
-                        <li><strong>Input Unit:</strong> Allows the user to enter information (keyboard, mouse).</li>
-                        <li><strong>Output Unit:</strong> Makes processed info available (screens, printers).</li>
-                        <li><strong>Memory Unit:</strong> Stores info. RAM (volatile) and ROM (non-volatile).</li>
-                        <li><strong>ALU:</strong> Arithmetic and Logic Unit performs calculations.</li>
-                        <li><strong>CPU:</strong> Central Processing Unit supervises overall operations.</li>
-                        <li><strong>Secondary Storage:</strong> Permanent storage (magnetic disks, CD-ROMs).</li>
-                    </ul>
-                </div>
+                <h3>The Three Layers</h3>
+                <ul>
+                    <li><strong>JDK:</strong> Java Development Kit (compiler <code>javac</code>, debugger, libraries, and JRE).</li>
+                    <li><strong>JRE:</strong> Java Runtime Environment (JVM + libraries needed to run programs).</li>
+                    <li><strong>JVM:</strong> Java Virtual Machine that executes bytecode on each OS.</li>
+                </ul>
+
+                <h3>Compilation Pipeline</h3>
+                <p><code>Main.java → javac → Main.class → java Main → output</code></p>
+                <p>Java compiles source code to bytecode, then JVM interprets or JIT-compiles it at runtime.</p>
+
+                <h3>Why Java?</h3>
+                <ul>
+                    <li>Platform-independent (write once, run anywhere).</li>
+                    <li>Popular and in-demand.</li>
+                    <li>Object-oriented and structured.</li>
+                    <li>Secure, fast, and has a huge ecosystem.</li>
+                </ul>
+
+                <h3>Java Editions</h3>
+                <ul>
+                    <li><strong>Java SE:</strong> Standard Edition (used in this course).</li>
+                    <li><strong>Java EE:</strong> Enterprise web systems.</li>
+                    <li><strong>Java ME:</strong> Mobile/embedded systems.</li>
+                    <li><strong>JavaFX:</strong> UI applications.</li>
+                </ul>
             </div>
 
-            <div class="section-title">Lecture 2 · Computer Software</div>
-            <div class="card gold-glow">
-                <div class="card-title"><span class="dot dot-gold"></span>Programming Languages & Software Types</div>
-                <div class="grid-3" style="margin-bottom: 0;">
-                    <div class="lang-block">
-                        <h4 style="color: var(--gold);">Low-Level Languages</h4>
-                        <p><strong>Machine Language:</strong> 1s and 0s. Lowest level.<br><strong>Assembly Language:</strong> Uses symbolic names for opcodes and operands. Needs translation.</p>
-                    </div>
-                    <div class="lang-block">
-                        <h4 style="color: var(--gold);">High-Level Languages</h4>
-                        <p>Easier to understand. Uses compilers (translates complete unit) or interpreters (translates statement by statement). Ex: C++, Java.</p>
-                    </div>
-                    <div class="lang-block">
-                        <h4 style="color: var(--gold);">Software Types</h4>
-                        <p><strong>Application:</strong> Written to perform particular user tasks.<br><strong>System:</strong> Operates the computer (e.g. Operating Systems like Windows/UNIX).</p>
-                    </div>
-                </div>
+            <div class="section-title">§2 · Syntax Comparison — Java, C++, JavaScript</div>
+            <div class="card">
+                <table class="sheet">
+                    <thead>
+                        <tr><th>Concept</th><th>Java</th><th>C++</th><th>JavaScript</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Entry point</td><td><code>public static void main(String[] args)</code></td><td><code>int main()</code></td><td>Top-level / event entry</td></tr>
+                        <tr><td>Print line</td><td><code>System.out.println()</code></td><td><code>cout &lt;&lt; ... &lt;&lt; endl</code></td><td><code>console.log()</code></td></tr>
+                        <tr><td>Integer</td><td><code>int x = 5;</code></td><td><code>int x = 5;</code></td><td><code>let x = 5;</code></td></tr>
+                        <tr><td>String</td><td><code>String s = "hello";</code></td><td><code>string s = "hello";</code></td><td><code>let s = "hello";</code></td></tr>
+                        <tr><td>Boolean</td><td><code>boolean b = true;</code></td><td><code>bool b = true;</code></td><td><code>let b = true;</code></td></tr>
+                        <tr><td>Constant</td><td><code>final int MAX = 100;</code></td><td><code>const int MAX = 100;</code></td><td><code>const MAX = 100;</code></td></tr>
+                        <tr><td>Conditionals</td><td><code>if / else if / else</code></td><td><code>if / else if / else</code></td><td><code>if / else if / else</code></td></tr>
+                        <tr><td>Loops</td><td><code>while / do-while / for</code></td><td><code>while / do-while / for</code></td><td><code>while / do-while / for</code></td></tr>
+                        <tr><td>Comments</td><td><code>//</code> and <code>/* */</code></td><td><code>//</code> and <code>/* */</code></td><td><code>//</code> and <code>/* */</code></td></tr>
+                        <tr><td>Type casting</td><td><code>(int) myDouble</code></td><td><code>(int) myDouble</code></td><td><code>parseInt()</code> / <code>Number()</code></td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Important:</strong> In Java, compare strings using <code>.equals()</code>, not <code>==</code>.</p>
             </div>
 
-            <div class="section-title">Lecture 3 · Program Development Life Cycle</div>
-            <div class="grid-2">
-                <div class="card purple-glow">
-                    <div class="card-title"><span class="dot dot-purple"></span>The 4 Steps of PDLC</div>
-                    <ol>
-                        <li><strong>Problem Definition:</strong> Specification of inputs/outputs and constraints.</li>
-                        <li><strong>Problem Analysis:</strong> Breaking the problem into smaller, simpler sub-problems.</li>
-                        <li><strong>Algorithm design:</strong> Clear specification of steps (Pseudocode/Flowchart).</li>
-                        <li><strong>Coding & Debugging:</strong> Writing the source code and fixing errors (bugs).</li>
-                    </ol>
-                </div>
-                <div class="card red-glow">
-                    <div class="card-title"><span class="dot dot-red"></span>Debugging & Variables</div>
-                    <ul class="clean">
-                        <li><strong>Compile-time error:</strong> Syntax error. Code won't compile into an executable.</li>
-                        <li><strong>Runtime error:</strong> Logic error (like an infinite loop). Program crashes while running.</li>
-                    </ul>
-                    <hr style="border-color: var(--border-color); margin: 10px 0;">
-                    <p><strong>Variables vs Constants:</strong> A constant never changes its value, while a variable's value changes during program execution. Names must start with a letter, have no spaces, and no hyphens.</p>
-                </div>
+            <div class="section-title">§3 · Hello World & Program Structure</div>
+            <div class="card">
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</code></pre>
+                <ul>
+                    <li>Class name must match filename (<code>Main.java</code>).</li>
+                    <li><code>main()</code> is the entry point.</li>
+                    <li>Statements end with <code>;</code>.</li>
+                    <li>Code blocks use curly braces <code>{ }</code>.</li>
+                </ul>
             </div>
 
-            <div class="section-title">Lectures 4 & 5 · Algorithms, Pseudo Code & Flowcharts</div>
-            <div class="grid-2">
-                <div class="card blue-glow">
-                    <div class="card-title"><span class="dot dot-blue"></span>Pseudo Code Basics</div>
-                    <p>Pseudo code is a nonstandard English-like language used to model logic.</p>
-                    <table class="sheet">
-                        <tr><td><strong>Input</strong></td><td>Get, Read, Input</td></tr>
-                        <tr><td><strong>Output</strong></td><td>Print, Write, Output, Display</td></tr>
-                        <tr><td><strong>Math</strong></td><td>+, -, *, /, % (Compute/Calculate)</td></tr>
-                        <tr><td><strong>Assign</strong></td><td>Initialize, Set, =, &larr;</td></tr>
-                    </table>
-                </div>
-
-                <div class="card green-glow">
-                    <div class="card-title"><span class="dot dot-green"></span>Flowchart Symbols</div>
-                    <table class="sheet">
-                        <tr><td><strong>Oval (Terminal)</strong></td><td>Start/End</td></tr>
-                        <tr><td><strong>Parallelogram (I/O)</strong></td><td>Input/Output operations</td></tr>
-                        <tr><td><strong>Rectangle (Process)</strong></td><td>Calculations, assignments</td></tr>
-                        <tr><td><strong>Diamond (Decision)</strong></td><td>True/False conditionals</td></tr>
-                        <tr><td><strong>Arrows (Flow line)</strong></td><td>Sequence of execution</td></tr>
-                    </table>
-                </div>
+            <div class="section-title">§4 · Output</div>
+            <div class="card">
+                <pre><code>System.out.println("Hello World!");
+System.out.print("Same line ");
+System.out.print("output");
+System.out.println(3 + 3);</code></pre>
+                <p>Use double quotes for text literals. <code>println</code> adds a new line; <code>print</code> does not.</p>
             </div>
 
-            <div class="section-title">Lecture 6 · The Branching</div>
-            <div class="grid-3">
-                <div class="card purple-glow">
-                    <div class="card-title"><span class="dot dot-purple"></span>Simple If</div>
-                    <p>Execute block only if condition is true.</p>
-                    <pre><code>If (condition)
-  Statement
-EndIf</code></pre>
-                </div>
-
-                <div class="card gold-glow">
-                    <div class="card-title"><span class="dot dot-gold"></span>If-Else Statement</div>
-                    <p>Execute statement 1 if true, statement 2 if false.</p>
-                    <pre><code>If (condition)
-  Statement 1
-Else
-  Statement 2
-EndIf</code></pre>
-                </div>
-
-                <div class="card red-glow">
-                    <div class="card-title"><span class="dot dot-red"></span>Nested If Statement</div>
-                    <p>Combines several conditions in sequence.</p>
-                    <pre><code>If (cond 1)
-  Statement
-elseIf (cond 2)
-  Statement
-Else
-  Statement
-EndIf</code></pre>
-                </div>
+            <div class="section-title">§5 · Comments</div>
+            <div class="card">
+                <pre><code>// Single-line comment
+/* Multi-line
+   comment */</code></pre>
             </div>
 
-            <div class="section-title">Lectures 7 & 8 · Repetition, Accumulator & Counter</div>
-            <div class="grid-2">
-                <div class="card blue-glow">
-                    <div class="card-title"><span class="dot dot-blue"></span>Loop Constructs</div>
-                    <ul class="clean">
-                        <li><strong>Pre-Test Loop (While):</strong> Tests condition before execution. May execute 0 times.</li>
-                        <li><strong>Post-Test Loop (Do-While):</strong> Tests condition after execution. Always runs at least once.</li>
-                        <li><strong>Counted Loop (For):</strong> Executes a specified number of times using a control variable.</li>
-                    </ul>
-                </div>
-                <div class="card green-glow">
-                    <div class="card-title"><span class="dot dot-green"></span>Counters & Accumulators</div>
-                    <ul class="clean">
-                        <li><strong>Counting:</strong> Used to keep track of iterations. Incrementing or decrementing by a set value (e.g. <code>count = count + 1</code>).</li>
-                        <li><strong>Accumulating:</strong> Summarizes numbers by adding a variable value to a running total on each pass (e.g. <code>total = total + score</code>).</li>
-                    </ul>
-                </div>
+            <div class="section-title">§6 · Variables & Data Types</div>
+            <div class="card">
+                <pre><code>int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";</code></pre>
+                <ul>
+                    <li>All variables must declare type before use.</li>
+                    <li><code>final</code> creates constants that cannot be reassigned.</li>
+                    <li>Primitive types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, <code>char</code>.</li>
+                </ul>
+            </div>
+
+            <div class="section-title">§7 · Type Casting</div>
+            <div class="card">
+                <p><strong>Widening:</strong> automatic small → large type (<code>int</code> to <code>double</code>).</p>
+                <p><strong>Narrowing:</strong> manual large → small type (<code>double</code> to <code>int</code>), possible data loss.</p>
+                <pre><code>int myInt = 9;
+double myDouble = myInt;
+
+double d = 9.78;
+int n = (int) d; // 9</code></pre>
+            </div>
+
+            <div class="section-title">§8 · Operators</div>
+            <div class="card">
+                <ul>
+                    <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code>.</li>
+                    <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+                    <li><strong>Logical:</strong> <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>.</li>
+                </ul>
+                <pre><code>int x = 5 + 3;
+int y = 5 + x;
+int z = x + y;</code></pre>
+            </div>
+
+            <div class="section-title">§9 · Strings & Methods</div>
+            <div class="card">
+                <pre><code>String txt = "Hello World";
+txt.length();
+txt.toUpperCase();
+txt.toLowerCase();
+firstName.concat(lastName);</code></pre>
+                <p>Common methods: <code>length()</code>, <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>charAt(i)</code>, <code>equals()</code>, <code>indexOf()</code>.</p>
+            </div>
+
+            <div class="section-title">§10 · Conditions & Branching</div>
+            <div class="card">
+                <pre><code>if (x &gt; 18) {
+    System.out.println("x is greater than 18");
+} else if (x == 18) {
+    System.out.println("x is 18");
+} else {
+    System.out.println("x is less than 18");
+}</code></pre>
+                <pre><code>switch (day) {
+    case 1: dayName = "Monday"; break;
+    case 2: dayName = "Tuesday"; break;
+    default: dayName = "Invalid";
+}</code></pre>
+            </div>
+
+            <div class="section-title">§11 · Loops</div>
+            <div class="card">
+                <pre><code>while (i &lt; 5) { i++; }
+
+do { i++; } while (i &lt; 5);
+
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}</code></pre>
+                <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) break;
+}
+
+for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) continue;
+}</code></pre>
             </div>
         </div>
 
