@@ -116,168 +116,436 @@
             <div class="section-title">§1 · Java Platform — JDK, JRE, JVM & Compilation</div>
             <div class="card">
                 <h3>What is Java?</h3>
-                <p>Java is a high-level, object-oriented language first released in 1995. It runs across many platforms through the JVM.</p>
+                <p>Java is a high-level, object-oriented language released by Sun Microsystems in 1995, now owned by Oracle. It runs on Windows, macOS, Linux, and many other platforms. Over 3 billion devices run Java today.</p>
 
                 <h3>The Three Layers</h3>
                 <ul>
-                    <li><strong>JDK:</strong> Java Development Kit (compiler <code>javac</code>, debugger, libraries, and JRE).</li>
-                    <li><strong>JRE:</strong> Java Runtime Environment (JVM + libraries needed to run programs).</li>
-                    <li><strong>JVM:</strong> Java Virtual Machine that executes bytecode on each OS.</li>
+                    <li><strong>JDK:</strong> Java Development Kit. Everything a developer needs: compiler (<code>javac</code>), debugger, libraries, and the JRE. You install this to write and compile Java programs.</li>
+                    <li><strong>JRE:</strong> Java Runtime Environment. The part needed to <em>run</em> already-compiled Java programs. Includes the JVM + standard libraries. End-users install this; developers install the JDK (which contains it).</li>
+                    <li><strong>JVM:</strong> Java Virtual Machine. An abstract machine that reads bytecode and executes it on your actual hardware. This is why Java is platform-independent — bytecode is the same everywhere; the JVM adapts it per OS.</li>
                 </ul>
 
-                <h3>Compilation Pipeline</h3>
-                <p><code>Main.java → javac → Main.class → java Main → output</code></p>
-                <p>Java compiles source code to bytecode, then JVM interprets or JIT-compiles it at runtime.</p>
+                <h3>The Compilation Pipeline</h3>
+                <p>Unlike C++ (which compiles directly to machine code), Java compiles to an intermediate format called <strong>bytecode</strong>, then the JVM interprets/JIT-compiles bytecode at runtime.</p>
+                <p><code>Source Code (Main.java) → Compiler (javac) → Bytecode (Main.class) → JVM (java Main) → Output (on any OS)</code></p>
 
-                <h3>Why Java?</h3>
+                <p><strong>C++ vs Java compilation</strong><br>
+                In C++: <code>g++ main.cpp -o main</code> → produces a binary for <em>that specific OS/CPU</em>.<br>
+                In Java: <code>javac Main.java</code> → produces <code>Main.class</code> (bytecode). Run anywhere with <code>java Main</code>.</p>
+
+                <h3>Why Java? (from the lecture)</h3>
                 <ul>
-                    <li>Platform-independent (write once, run anywhere).</li>
-                    <li>Popular and in-demand.</li>
-                    <li>Object-oriented and structured.</li>
-                    <li>Secure, fast, and has a huge ecosystem.</li>
+                    <li><strong>Platform-free:</strong> Write once, run anywhere — bytecode runs on any JVM</li>
+                    <li><strong>Popular:</strong> One of the most in-demand languages globally</li>
+                    <li><strong>OOP:</strong> Object-oriented design gives clear program structure and reuse</li>
+                    <li><strong>Open-source:</strong> Free to download and use</li>
+                    <li><strong>Secure & fast:</strong> Built-in security model; JIT compilation keeps it fast</li>
+                    <li><strong>Huge ecosystem:</strong> Tens of millions of developers; massive library support</li>
+                    <li><strong>Close to C++/C#:</strong> Syntax is familiar — easy to switch between the three</li>
                 </ul>
 
                 <h3>Java Editions</h3>
                 <ul>
-                    <li><strong>Java SE:</strong> Standard Edition (used in this course).</li>
-                    <li><strong>Java EE:</strong> Enterprise web systems.</li>
-                    <li><strong>Java ME:</strong> Mobile/embedded systems.</li>
-                    <li><strong>JavaFX:</strong> UI applications.</li>
+                    <li><strong>Java SE:</strong> Standard Edition — desktop & server apps. What this course uses.</li>
+                    <li><strong>Java EE:</strong> Enterprise Edition — web applications at scale</li>
+                    <li><strong>Java ME:</strong> Micro Edition — mobile/embedded devices</li>
+                    <li><strong>JavaFX:</strong> Rich internet application UIs</li>
                 </ul>
             </div>
 
-            <div class="section-title">§2 · Syntax Comparison — Java, C++, JavaScript</div>
+            <div class="section-title">§2 · Syntax Comparison — Java · C++ · JavaScript</div>
             <div class="card">
                 <table class="sheet">
                     <thead>
                         <tr><th>Concept</th><th>Java</th><th>C++</th><th>JavaScript</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Entry point</td><td><code>public static void main(String[] args)</code></td><td><code>int main()</code></td><td>Top-level / event entry</td></tr>
-                        <tr><td>Print line</td><td><code>System.out.println()</code></td><td><code>cout &lt;&lt; ... &lt;&lt; endl</code></td><td><code>console.log()</code></td></tr>
-                        <tr><td>Integer</td><td><code>int x = 5;</code></td><td><code>int x = 5;</code></td><td><code>let x = 5;</code></td></tr>
-                        <tr><td>String</td><td><code>String s = "hello";</code></td><td><code>string s = "hello";</code></td><td><code>let s = "hello";</code></td></tr>
+                        <tr><td>Entry point</td><td><code>public static void main(String[] args) {}</code></td><td><code>int main() {}</code></td><td>// top-level (or window.onload)</td></tr>
+                        <tr><td>Print line</td><td><code>System.out.println("hi");</code></td><td><code>cout &lt;&lt; "hi" &lt;&lt; endl;</code></td><td><code>console.log("hi");</code></td></tr>
+                        <tr><td>Print (no newline)</td><td><code>System.out.print("hi");</code></td><td><code>cout &lt;&lt; "hi";</code></td><td><code>process.stdout.write("hi");</code></td></tr>
+                        <tr><td>Integer variable</td><td><code>int x = 5;</code></td><td><code>int x = 5;</code></td><td><code>let x = 5;</code></td></tr>
+                        <tr><td>Float variable</td><td><code>float x = 5.5f;</code></td><td><code>float x = 5.5f;</code></td><td><code>let x = 5.5; // no float type</code></td></tr>
+                        <tr><td>Double variable</td><td><code>double x = 5.5;</code></td><td><code>double x = 5.5;</code></td><td><code>let x = 5.5;</code></td></tr>
+                        <tr><td>String variable</td><td><code>String s = "hello";</code></td><td><code>string s = "hello";</code></td><td><code>let s = "hello";</code></td></tr>
+                        <tr><td>Character</td><td><code>char c = 'A';</code></td><td><code>char c = 'A';</code></td><td><code>// no char type; use string</code></td></tr>
                         <tr><td>Boolean</td><td><code>boolean b = true;</code></td><td><code>bool b = true;</code></td><td><code>let b = true;</code></td></tr>
                         <tr><td>Constant</td><td><code>final int MAX = 100;</code></td><td><code>const int MAX = 100;</code></td><td><code>const MAX = 100;</code></td></tr>
-                        <tr><td>Conditionals</td><td><code>if / else if / else</code></td><td><code>if / else if / else</code></td><td><code>if / else if / else</code></td></tr>
-                        <tr><td>Loops</td><td><code>while / do-while / for</code></td><td><code>while / do-while / for</code></td><td><code>while / do-while / for</code></td></tr>
-                        <tr><td>Comments</td><td><code>//</code> and <code>/* */</code></td><td><code>//</code> and <code>/* */</code></td><td><code>//</code> and <code>/* */</code></td></tr>
-                        <tr><td>Type casting</td><td><code>(int) myDouble</code></td><td><code>(int) myDouble</code></td><td><code>parseInt()</code> / <code>Number()</code></td></tr>
+                        <tr><td>Concatenation</td><td><code>"Hi " + name</code></td><td><code>"Hi " + name (std::string)</code></td><td><code>"Hi " + name</code></td></tr>
+                        <tr><td>Read input</td><td><code>Scanner sc = new Scanner(System.in);<br>int n = sc.nextInt();</code></td><td><code>cin &gt;&gt; n;</code></td><td><code>// browser: prompt(); Node: readline</code></td></tr>
+                        <tr><td>if / else</td><td><code>if (x &gt; 0) {} else {}</code></td><td><code>if (x &gt; 0) {} else {}</code></td><td><code>if (x &gt; 0) {} else {}</code></td></tr>
+                        <tr><td>else if</td><td><code>else if (x == 0) {}</code></td><td><code>else if (x == 0) {}</code></td><td><code>else if (x === 0) {}</code></td></tr>
+                        <tr><td>switch</td><td><code>switch(x) { case 1: break; default: }</code></td><td><code>switch(x) { case 1: break; default: }</code></td><td><code>switch(x) { case 1: break; default: }</code></td></tr>
+                        <tr><td>while loop</td><td><code>while (i &lt; 5) { i++; }</code></td><td><code>while (i &lt; 5) { i++; }</code></td><td><code>while (i &lt; 5) { i++; }</code></td></tr>
+                        <tr><td>do-while</td><td><code>do { i++; } while (i &lt; 5);</code></td><td><code>do { i++; } while (i &lt; 5);</code></td><td><code>do { i++; } while (i &lt; 5);</code></td></tr>
+                        <tr><td>for loop</td><td><code>for (int i=0; i&lt;5; i++) {}</code></td><td><code>for (int i=0; i&lt;5; i++) {}</code></td><td><code>for (let i=0; i&lt;5; i++) {}</code></td></tr>
+                        <tr><td>break / continue</td><td><code>break; / continue;</code></td><td><code>break; / continue;</code></td><td><code>break; / continue;</code></td></tr>
+                        <tr><td>Array (1D)</td><td><code>int[] arr = new int[5];<br>int[] arr = {1,2,3};</code></td><td><code>int arr[5];<br>int arr[] = {1,2,3};</code></td><td><code>let arr = new Array(5);<br>let arr = [1,2,3];</code></td></tr>
+                        <tr><td>Array length</td><td><code>arr.length</code></td><td><code>sizeof(arr)/sizeof(arr[0])</code></td><td><code>arr.length</code></td></tr>
+                        <tr><td>String length</td><td><code>s.length()</code></td><td><code>s.length() or s.size()</code></td><td><code>s.length</code></td></tr>
+                        <tr><td>Equality check</td><td><code>== (primitives), .equals() (objects/Strings)</code></td><td><code>== for both</code></td><td><code>=== (strict), == (loose)</code></td></tr>
+                        <tr><td>Single-line comment</td><td><code>// comment</code></td><td><code>// comment</code></td><td><code>// comment</code></td></tr>
+                        <tr><td>Multi-line comment</td><td><code>/* comment */</code></td><td><code>/* comment */</code></td><td><code>/* comment */</code></td></tr>
+                        <tr><td>Method / function</td><td><code>static int add(int a, int b) { return a+b; }</code></td><td><code>int add(int a, int b) { return a+b; }</code></td><td><code>function add(a, b) { return a+b; }</code></td></tr>
+                        <tr><td>Type casting</td><td><code>(int) myDouble</code></td><td><code>(int) myDouble</code></td><td><code>parseInt(myStr) / Number()</code></td></tr>
+                        <tr><td>Null / no value</td><td><code>null</code></td><td><code>nullptr / NULL</code></td><td><code>null / undefined</code></td></tr>
+                        <tr><td>Imports</td><td><code>import java.util.Scanner;</code></td><td><code>#include &lt;iostream&gt;</code></td><td><code>import { x } from './mod.js';</code></td></tr>
+                        <tr><td>Namespace / package</td><td><code>package com.example;</code></td><td><code>namespace myns {}</code></td><td><code>// modules via import/export</code></td></tr>
                     </tbody>
                 </table>
-                <p><strong>Important:</strong> In Java, compare strings using <code>.equals()</code>, not <code>==</code>.</p>
+                <p><strong>Key difference to memorise:</strong> Java uses <code>String</code> (capital S) as an object type, not a primitive. Always use <code>.equals()</code> to compare strings — never <code>==</code>. The <code>==</code> operator on String objects checks if they are the <em>same object in memory</em>, not whether they have the same content.</p>
             </div>
 
             <div class="section-title">§3 · Hello World & Program Structure</div>
             <div class="card">
+                <p>Every Java program lives inside a <strong>class</strong>. The class name must match the filename exactly. Execution begins inside <code>main()</code>.</p>
+                <h4>Lecture Example · Hello World</h4>
                 <pre><code>public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
     }
 }</code></pre>
+                <p><strong>Output:</strong> Hello World</p>
                 <ul>
-                    <li>Class name must match filename (<code>Main.java</code>).</li>
-                    <li><code>main()</code> is the entry point.</li>
-                    <li>Statements end with <code>;</code>.</li>
-                    <li>Code blocks use curly braces <code>{ }</code>.</li>
+                    <li><strong>public class Main:</strong> Declares a class named <code>Main</code>. File must be saved as <code>Main.java</code>. Java is case-sensitive.</li>
+                    <li><strong>public static void main:</strong> The entry point. Every Java program requires this exact signature. <code>static</code> means it belongs to the class itself, not an instance.</li>
+                    <li><strong>String[] args:</strong> Command-line arguments passed in. Required syntax even if unused.</li>
+                    <li><strong>System.out.println():</strong> <code>System</code> is a built-in class. <code>out</code> is the output stream. <code>println</code> prints a line and adds a newline character.</li>
+                    <li><strong>Semicolon ;</strong> Every statement ends with <code>;</code> — same as C++.</li>
+                    <li><strong>Curly braces {}</strong> Mark the start and end of code blocks — same as C++.</li>
                 </ul>
             </div>
 
-            <div class="section-title">§4 · Output</div>
+            <div class="section-title">§4 · Output — println, print, numbers</div>
             <div class="card">
+                <h4>Multiple println calls</h4>
                 <pre><code>System.out.println("Hello World!");
-System.out.print("Same line ");
-System.out.print("output");
-System.out.println(3 + 3);</code></pre>
-                <p>Use double quotes for text literals. <code>println</code> adds a new line; <code>print</code> does not.</p>
+System.out.println("I am learning Java");
+System.out.println("It is awesome!");</code></pre>
+                <p><strong>Output:</strong><br>Hello World!<br>I am learning Java<br>It is awesome!</p>
+
+                <h4>print() vs println() — no newline</h4>
+                <pre><code>System.out.print("Hello World! ");
+System.out.print("I will print on the same line.");</code></pre>
+                <p><strong>Output:</strong> Hello World! I will print on the same line.</p>
+
+                <h4>Print numbers</h4>
+                <pre><code>System.out.println(3);
+System.out.println(358);
+System.out.println(50000);</code></pre>
+
+                <h4>Maths inside println</h4>
+                <pre><code>System.out.println(3 + 3);   // 6
+System.out.println(2 * 5);   // 10
+System.out.println(10 / 2); // 5</code></pre>
+
+                <p><strong>Double quotes rule:</strong> Text must always be wrapped in double quotes. <code>System.out.println(Hello);</code> causes a compile error — Java treats <code>Hello</code> as a variable name, not text. Always write <code>"Hello"</code>.</p>
             </div>
 
             <div class="section-title">§5 · Comments</div>
             <div class="card">
-                <pre><code>// Single-line comment
-/* Multi-line
-   comment */</code></pre>
+                <h4>Single-line comment</h4>
+                <pre><code>// This is a comment
+System.out.println("Hello World"); // this prints Hello World</code></pre>
+
+                <h4>Multi-line comment</h4>
+                <pre><code>/* The code below will print the words Hello World
+   to the screen, and it is amazing! */
+System.out.println("Hello World");</code></pre>
+
+                <p><strong>Rule of thumb:</strong> Use <code>//</code> for short inline notes. Use <code>/* */</code> for longer explanations or temporarily disabling a block of code.</p>
             </div>
 
             <div class="section-title">§6 · Variables & Data Types</div>
             <div class="card">
+                <p>Variables are containers for storing data values. All variables in Java must be declared with a <strong>type</strong> before use. Syntax: <code>type variableName = value;</code></p>
+
+                <h4>Declaring variables — all types</h4>
                 <pre><code>int myNum = 5;
 float myFloatNum = 5.99f;
 char myLetter = 'D';
 boolean myBool = true;
 String myText = "Hello";</code></pre>
-                <ul>
-                    <li>All variables must declare type before use.</li>
-                    <li><code>final</code> creates constants that cannot be reassigned.</li>
-                    <li>Primitive types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, <code>char</code>.</li>
-                </ul>
+
+                <h4>Declare now, assign later</h4>
+                <pre><code>int myNum;
+myNum = 15;
+System.out.println(myNum); // 15</code></pre>
+
+                <h4>Overwriting a variable</h4>
+                <pre><code>int myNum = 15;
+myNum = 20;                 // overrides the previous value
+System.out.println(myNum); // 20</code></pre>
+
+                <h4>Final (constant) variable</h4>
+                <pre><code>final int myNum = 15;
+myNum = 20; // error: cannot assign a value to a final variable</code></pre>
+
+                <h4>Display variables with text</h4>
+                <pre><code>String name = "John";
+System.out.println("Hello, my name is: " + name);
+
+String firstName = "John ";
+String lastName = "Doe";
+System.out.println(firstName + lastName); // John Doe
+
+int x = 5;
+int y = 6;
+System.out.println(x + y); // 11 (math, not concat)</code></pre>
+
+                <h4>Multiple variables</h4>
+                <pre><code>int x = 5, y = 6, z = 50;
+System.out.println(x + y + z); // 61
+
+int a, b, c;
+a = b = c = 50;
+System.out.println(a + b + c); // 150</code></pre>
+
+                <h3>Primitive Data Types</h3>
+                <table class="sheet">
+                    <thead>
+                        <tr><th>Type</th><th>Size</th><th>Stores</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>byte</td><td>1 byte</td><td>Whole numbers −128 to 127</td><td><code>byte b = 100;</code></td></tr>
+                        <tr><td>short</td><td>2 bytes</td><td>Whole numbers −32,768 to 32,767</td><td><code>short s = 5000;</code></td></tr>
+                        <tr><td>int</td><td>4 bytes</td><td>Whole numbers (most common)</td><td><code>int n = 100000;</code></td></tr>
+                        <tr><td>long</td><td>8 bytes</td><td>Very large whole numbers</td><td><code>long l = 15000000000L;</code></td></tr>
+                        <tr><td>float</td><td>4 bytes</td><td>Decimal numbers (~6–7 digits)</td><td><code>float f = 5.75f;</code></td></tr>
+                        <tr><td>double</td><td>8 bytes</td><td>Decimal numbers (~15 digits)</td><td><code>double d = 19.99;</code></td></tr>
+                        <tr><td>boolean</td><td>1 bit</td><td>true or false only</td><td><code>boolean ok = true;</code></td></tr>
+                        <tr><td>char</td><td>2 bytes</td><td>Single character or ASCII value</td><td><code>char c = 'A';</code></td></tr>
+                    </tbody>
+                </table>
+
+                <h4>Real-life example — cost calculation</h4>
+                <pre><code>int items = 50;
+float costPerItem = 9.99f;
+float totalCost = items * costPerItem;
+char currency = '$';
+System.out.println("Total cost: " + currency + totalCost);
+// Output: Total cost: $499.5</code></pre>
             </div>
 
             <div class="section-title">§7 · Type Casting</div>
             <div class="card">
-                <p><strong>Widening:</strong> automatic small → large type (<code>int</code> to <code>double</code>).</p>
-                <p><strong>Narrowing:</strong> manual large → small type (<code>double</code> to <code>int</code>), possible data loss.</p>
-                <pre><code>int myInt = 9;
-double myDouble = myInt;
+                <p>Type casting converts a value from one type to another. Java has two kinds:</p>
+                <ul>
+                    <li><strong>Widening:</strong> Smaller → larger type. Happens automatically. No data loss. <code>byte → short → char → int → long → float → double</code></li>
+                    <li><strong>Narrowing:</strong> Larger → smaller type. Must be done manually. Risk of data loss.</li>
+                </ul>
 
-double d = 9.78;
-int n = (int) d; // 9</code></pre>
+                <h4>Widening casting — automatic</h4>
+                <pre><code>int myInt = 9;
+double myDouble = myInt; // automatic: int → double
+System.out.println(myInt);    // 9
+System.out.println(myDouble); // 9.0</code></pre>
+
+                <h4>Narrowing casting — manual</h4>
+                <pre><code>double myDouble = 9.78d;
+int myInt = (int) myDouble; // manual: double → int (truncates)
+System.out.println(myDouble); // 9.78
+System.out.println(myInt);    // 9</code></pre>
+
+                <h4>Real-life — percentage score</h4>
+                <pre><code>int score = 90;
+int maxScore = 100;
+float percentage = (float) score / maxScore * 100;
+System.out.println("Your score is: " + percentage + "%");
+// Output: Your score is: 90.0%</code></pre>
             </div>
 
             <div class="section-title">§8 · Operators</div>
             <div class="card">
-                <ul>
-                    <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code>.</li>
-                    <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
-                    <li><strong>Logical:</strong> <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>.</li>
-                </ul>
-                <pre><code>int x = 5 + 3;
-int y = 5 + x;
-int z = x + y;</code></pre>
+                <h3>Arithmetic Operators</h3>
+                <table class="sheet">
+                    <thead><tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr></thead>
+                    <tbody>
+                        <tr><td>+</td><td>Addition</td><td>5 + 3</td><td>8</td></tr>
+                        <tr><td>-</td><td>Subtraction</td><td>5 - 3</td><td>2</td></tr>
+                        <tr><td>*</td><td>Multiplication</td><td>5 * 3</td><td>15</td></tr>
+                        <tr><td>/</td><td>Division</td><td>10 / 2</td><td>5</td></tr>
+                        <tr><td>%</td><td>Modulus (remainder)</td><td>7 % 3</td><td>1</td></tr>
+                        <tr><td>++</td><td>Increment</td><td>x++</td><td>x = x + 1</td></tr>
+                        <tr><td>--</td><td>Decrement</td><td>x--</td><td>x = x - 1</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Comparison & Logical Operators</h3>
+                <table class="sheet">
+                    <thead><tr><th>Operator</th><th>Meaning / Name</th><th>Example</th></tr></thead>
+                    <tbody>
+                        <tr><td>==</td><td>Equal to</td><td>x == y</td></tr>
+                        <tr><td>!=</td><td>Not equal</td><td>x != y</td></tr>
+                        <tr><td>&gt;</td><td>Greater than</td><td>x &gt; y</td></tr>
+                        <tr><td>&lt;</td><td>Less than</td><td>x &lt; y</td></tr>
+                        <tr><td>&gt;=</td><td>Greater than or equal</td><td>x &gt;= y</td></tr>
+                        <tr><td>&lt;=</td><td>Less than or equal</td><td>x &lt;= y</td></tr>
+                        <tr><td>&&</td><td>AND (True if both are true)</td><td>x &gt; 2 && x &lt; 10</td></tr>
+                        <tr><td>||</td><td>OR (True if at least one is true)</td><td>x &lt; 2 || x &gt; 10</td></tr>
+                        <tr><td>!</td><td>NOT (Reverses the result)</td><td>!(x &gt; 5)</td></tr>
+                    </tbody>
+                </table>
+
+                <h4>Lecture code — using + operator</h4>
+                <pre><code>int x = 5 + 3;   // 8
+int y = 5 + x;   // 13
+int z = x + y;   // 21
+System.out.println(z);</code></pre>
             </div>
 
-            <div class="section-title">§9 · Strings & Methods</div>
+            <div class="section-title">§9 · Strings & String Methods</div>
             <div class="card">
+                <p>In Java, <code>String</code> is an object (not a primitive). It has built-in methods you can call on it using dot notation.</p>
+
+                <h4>String length</h4>
+                <pre><code>String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());
+// Output: The length of the txt string is: 26</code></pre>
+
+                <h4>toUpperCase / toLowerCase</h4>
                 <pre><code>String txt = "Hello World";
-txt.length();
-txt.toUpperCase();
-txt.toLowerCase();
-firstName.concat(lastName);</code></pre>
-                <p>Common methods: <code>length()</code>, <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>charAt(i)</code>, <code>equals()</code>, <code>indexOf()</code>.</p>
+System.out.println(txt.toUpperCase()); // HELLO WORLD
+System.out.println(txt.toLowerCase()); // hello world</code></pre>
+
+                <h4>String concatenation</h4>
+                <pre><code>String firstName = "John";
+String lastName = "Doe";
+System.out.println(firstName + " " + lastName); // John Doe
+
+// using concat()
+String first = "John ";
+String last = "Doe";
+System.out.println(first.concat(last)); // John Doe</code></pre>
+
+                <p><strong>Common String methods summary:</strong><br>
+                <code>s.length()</code> — character count<br>
+                <code>s.toUpperCase()</code> — all caps<br>
+                <code>s.toLowerCase()</code> — all lower<br>
+                <code>s.charAt(i)</code> — character at index <code>i</code><br>
+                <code>s.equals("x")</code> — compare content (not <code>==</code>)<br>
+                <code>s.indexOf("x")</code> — find position of substring</p>
             </div>
 
             <div class="section-title">§10 · Conditions & Branching</div>
             <div class="card">
-                <pre><code>if (x &gt; 18) {
+                <h4>Simple if</h4>
+                <pre><code>int x = 20;
+if (x > 18) {
     System.out.println("x is greater than 18");
-} else if (x == 18) {
-    System.out.println("x is 18");
+}</code></pre>
+
+                <h4>if-else</h4>
+                <pre><code>int time = 20;
+if (time &lt; 18) {
+    System.out.println("Good day.");
 } else {
-    System.out.println("x is less than 18");
+    System.out.println("Good evening.");
+}
+// Output: Good evening.</code></pre>
+
+                <h4>else if</h4>
+                <pre><code>int time = 22;
+if (time &lt; 10) {
+    System.out.println("Good morning.");
+} else if (time &lt; 18) {
+    System.out.println("Good day.");
+} else {
+    System.out.println("Good evening.");
+}
+// Output: Good evening.</code></pre>
+
+                <h4>Real-life example — door code</h4>
+                <pre><code>int doorCode = 1337;
+if (doorCode == 1337) {
+    System.out.println("Correct code. The door is now open.");
+} else {
+    System.out.println("Wrong code. The door remains closed.");
 }</code></pre>
-                <pre><code>switch (day) {
-    case 1: dayName = "Monday"; break;
-    case 2: dayName = "Tuesday"; break;
+
+                <h4>Switch statement — weekday</h4>
+                <pre><code>int day = 4;
+String dayName;
+switch (day) {
+    case 1:  dayName = "Monday";    break;
+    case 2:  dayName = "Tuesday";   break;
+    case 3:  dayName = "Wednesday"; break;
+    case 4:  dayName = "Thursday";  break;
+    case 5:  dayName = "Friday";    break;
+    case 6:  dayName = "Saturday";  break;
+    case 7:  dayName = "Sunday";    break;
     default: dayName = "Invalid";
-}</code></pre>
+}
+System.out.println(dayName); // Thursday</code></pre>
+                <p><strong>Don't forget break!</strong> Without <code>break</code>, Java "falls through" into the next case and keeps executing. Always end each case with <code>break;</code> unless fall-through is intentional.</p>
             </div>
 
             <div class="section-title">§11 · Loops</div>
             <div class="card">
-                <pre><code>while (i &lt; 5) { i++; }
-
-do { i++; } while (i &lt; 5);
-
-for (int i = 0; i &lt; 5; i++) {
+                <h4>while loop</h4>
+                <pre><code>int i = 0;
+while (i &lt; 5) {
     System.out.println(i);
-}</code></pre>
-                <pre><code>for (int i = 0; i &lt; 10; i++) {
-    if (i == 4) break;
+    i++;
 }
+// Output: 0 1 2 3 4 (each on new line)</code></pre>
 
-for (int i = 0; i &lt; 10; i++) {
-    if (i == 4) continue;
+                <h4>do-while loop</h4>
+                <pre><code>int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i &lt; 5);
+// Runs at least once — even if i >= 5 from the start</code></pre>
+
+                <h4>for loop — 0 to 4</h4>
+                <pre><code>for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}
+// Output: 0 1 2 3 4</code></pre>
+
+                <h4>for loop — even numbers 0–10</h4>
+                <pre><code>for (int i = 0; i &lt;= 10; i += 2) {
+    System.out.println(i);
+}
+// Output: 0 2 4 6 8 10</code></pre>
+
+                <h4>Nested loops</h4>
+                <pre><code>// Outer loop
+for (int i = 1; i &lt;= 2; i++) {
+    System.out.println("Outer: " + i);
+    // Inner loop
+    for (int j = 1; j &lt;= 3; j++) {
+        System.out.println("  Inner: " + j);
+    }
 }</code></pre>
+                <p><strong>Output:</strong> Outer: 1 &nbsp; Inner: 1 &nbsp; Inner: 2 &nbsp; Inner: 3 &nbsp; Outer: 2 &nbsp; Inner: 1 &nbsp; Inner: 2 &nbsp; Inner: 3</p>
+
+                <h4>break — exit loop early</h4>
+                <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        break; // stop the loop when i equals 4
+    }
+    System.out.println(i);
+}
+// Output: 0 1 2 3</code></pre>
+
+                <h4>continue — skip one iteration</h4>
+                <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        continue; // skip 4, keep going
+    }
+    System.out.println(i);
+}
+// Output: 0 1 2 3 5 6 7 8 9</code></pre>
+
+                <h4>Real-life countdown</h4>
+                <pre><code>int countdown = 5;
+while (countdown > 0) {
+    System.out.println(countdown);
+    countdown--;
+}
+System.out.println("Go!");
+// Output: 5 4 3 2 1 Go!</code></pre>
             </div>
         </div>
 
