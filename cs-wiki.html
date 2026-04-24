@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CS Wiki | CS Hub</title>
+    <title>Computer - CS Wiki | CS Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,134 +30,220 @@
 
       body {
         margin: 0;
-        background:
-          radial-gradient(circle at top left, rgba(0, 255, 136, 0.08), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.05), transparent 24%),
-          var(--bg-color);
+        background-color: var(--bg-color);
         color: var(--text-primary);
         font-family: var(--font-main);
+        line-height: 1.7;
       }
 
       .container {
-        max-width: 1120px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 40px 20px 80px;
       }
 
       .nav-back {
         display: inline-block;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         color: var(--text-secondary);
         text-decoration: none;
         font-family: var(--font-mono);
+        transition: color 0.2s ease;
       }
 
       .nav-back:hover {
         color: var(--accent-color);
       }
 
-      .hero {
-        padding: 24px 0 18px;
+      /* WIKIPEDIA STYLE LAYOUT */
+      .wiki-header {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
       }
 
-      h1 {
+      .wiki-header h1 {
         margin: 0;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 800;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
+      }
+
+      .wiki-header p {
+        font-family: var(--font-mono);
+        color: var(--text-secondary);
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+      }
+
+      .wiki-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      .main-article {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      /* INFOBOX (RIGHT SIDEBAR) */
+      .infobox {
+        width: 300px;
+        background: var(--panel-bg);
+        border: 1px solid var(--border-color);
+        padding: 15px;
+        border-radius: 8px;
+        float: right;
+        margin: 0 0 20px 30px;
+      }
+
+      .infobox-title {
+        background: var(--accent-dim);
+        color: var(--accent-color);
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      .infobox-image {
+        width: 100%;
+        height: 150px;
+        background: rgba(255,255,255,0.02);
+        border: 1px dashed var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+
+      .infobox table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .infobox th {
+        text-align: left;
+        color: var(--text-secondary);
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-color);
+        font-weight: normal;
+        vertical-align: top;
+      }
+
+      .infobox td {
+        text-align: right;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-primary);
+      }
+
+      .infobox tr:last-child th,
+      .infobox tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* TABLE OF CONTENTS */
+      .toc {
+        background: var(--panel-bg);
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 20px 0;
+        min-width: 250px;
+      }
+
+      .toc-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      .toc ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .toc li {
+        margin-bottom: 8px;
+      }
+
+      .toc li ul {
+        padding-left: 20px;
+        margin-top: 5px;
+      }
+
+      .toc a {
+        color: var(--text-secondary);
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        text-decoration: underline;
         color: var(--accent-color);
       }
 
-      .subtitle {
-        margin-top: 10px;
-        color: var(--text-secondary);
+      .toc-number {
+        color: var(--accent-color);
+        margin-right: 5px;
         font-family: var(--font-mono);
+        font-size: 0.85rem;
       }
 
-      .intro {
-        max-width: 760px;
-        margin: 16px 0 0;
-        color: var(--text-secondary);
+      /* ARTICLE CONTENT */
+      h2 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 5px;
+        margin-top: 40px;
+        font-size: 1.8rem;
       }
 
-      .strip {
-        margin-top: 28px;
-        padding: 18px;
-        border: 1px solid var(--border-color);
-        border-radius: 18px;
-        background: var(--panel-bg);
+      h3 {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        color: #e0e0e0;
       }
 
-      .strip h2 {
-        margin: 0 0 6px;
-        font-size: 1.35rem;
+      p {
+        color: #cccccc;
+        margin-bottom: 16px;
       }
 
-      .strip p {
-        margin: 0 0 16px;
-        color: var(--text-secondary);
-      }
-
-      .tile-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-      }
-
-      .wide-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 16px;
-      }
-
-      .tile {
-        display: block;
-        min-height: 148px;
-        padding: 18px;
-        border: 1px solid var(--border-color);
-        border-radius: 18px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
-        color: var(--text-primary);
+      a.wiki-link {
+        color: var(--accent-color);
         text-decoration: none;
-        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        transition: opacity 0.2s;
+        border-bottom: 1px solid transparent;
       }
 
-      .tile:hover {
-        transform: translateY(-4px);
-        border-color: var(--accent-color);
-        background: var(--accent-dim);
+      a.wiki-link:hover {
+        border-bottom: 1px solid var(--accent-color);
+        opacity: 0.8;
       }
 
-      .tile-tag {
-        display: inline-block;
-        margin-bottom: 12px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text-secondary);
-        font-size: 0.75rem;
-        font-family: var(--font-mono);
+      /* Clearfix for the float */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
       }
 
-      .tile strong {
-        display: block;
-        font-size: 1.1rem;
-        margin-bottom: 6px;
-      }
-
-      .tile span {
-        display: block;
-        color: var(--text-secondary);
-        font-size: 0.93rem;
-      }
-
-      @media (max-width: 700px) {
-        .container {
-          padding-top: 28px;
-        }
-
-        h1 {
-          font-size: 2.3rem;
+      @media (max-width: 768px) {
+        .infobox {
+          float: none;
+          width: 100%;
+          margin: 0 0 20px 0;
         }
       }
     </style>
@@ -166,59 +252,116 @@
     <div class="container">
       <a href="index.html" class="nav-back">&larr; Back to Home</a>
 
-      <section class="hero">
-        <h1>CS Wiki</h1>
-        <div class="subtitle">Topic directory and blank note stubs</div>
-        <p class="intro">
-          This page is just a topic hub. Open a subject, then jump straight into
-          the blank subtopic pages behind it.
+      <div class="wiki-header">
+        <h1>Computer</h1>
+        <p>From CS Hub, the free encyclopedia of Computer Science</p>
+      </div>
+
+      <div class="clearfix">
+        <!-- INFOBOX -->
+        <div class="infobox">
+          <div class="infobox-title">Computer Science</div>
+          <div class="infobox-image">[ Abstract Logic Diagram ]</div>
+          <table>
+            <tr>
+              <th>Core Domain</th>
+              <td>Information Technology</td>
+            </tr>
+            <tr>
+              <th>Theory Based In</th>
+              <td><a href="wiki/discrete-mathematics.html" class="wiki-link">Mathematics</a></td>
+            </tr>
+            <tr>
+              <th>Key Elements</th>
+              <td>Hardware, Software</td>
+            </tr>
+            <tr>
+              <th>Primary Action</th>
+              <td>Computation &amp; Logic</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- LEAD PARAGRAPH -->
+        <p>
+          A <strong>computer</strong> is a machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically. Modern digital electronic computers can perform generic sets of operations known as programs. These programs enable computers to perform a wide range of tasks. 
         </p>
-      </section>
+        <p>
+          The study of computers and computational systems is known as Computer Science. Unlike electrical and computer engineers, computer scientists deal mostly with software and software systems; this includes their theory, design, development, and application.
+        </p>
 
-      <section class="strip">
-        <h2>Topic Directory</h2>
-        <p>Core CS areas arranged as direct entry points.</p>
-        <div class="tile-grid">
-          <a class="tile" href="wiki/programming.html"><div class="tile-tag">Core</div><strong>Programming</strong><span>Variables, control flow, functions, data types, debugging.</span></a>
-          <a class="tile" href="wiki/algorithms.html"><div class="tile-tag">Core</div><strong>Algorithms</strong><span>Complexity, recursion, sorting, and searching.</span></a>
-          <a class="tile" href="wiki/data-structures.html"><div class="tile-tag">Core</div><strong>Data Structures</strong><span>Arrays, linked lists, stacks, queues, trees, graphs.</span></a>
-          <a class="tile" href="wiki/computer-architecture.html"><div class="tile-tag">Systems</div><strong>Computer Architecture</strong><span>CPU, memory, buses, and instruction cycle.</span></a>
-          <a class="tile" href="wiki/operating-systems.html"><div class="tile-tag">Systems</div><strong>Operating Systems</strong><span>Processes, threads, scheduling, and file systems.</span></a>
-          <a class="tile" href="wiki/databases.html"><div class="tile-tag">Data</div><strong>Databases</strong><span>SQL, ERD, normalization, indexing, transactions.</span></a>
-          <a class="tile" href="wiki/networks.html"><div class="tile-tag">Systems</div><strong>Networks</strong><span>OSI model, TCP/IP, subnetting, routing, switching.</span></a>
-          <a class="tile" href="wiki/software-engineering.html"><div class="tile-tag">Build</div><strong>Software Engineering</strong><span>SDLC, requirements, UML, testing, version control.</span></a>
-          <a class="tile" href="wiki/ai.html"><div class="tile-tag">Specialization</div><strong>AI</strong><span>Search, machine learning, and neural networks.</span></a>
-          <a class="tile" href="wiki/cybersecurity.html"><div class="tile-tag">Specialization</div><strong>Cybersecurity</strong><span>Cryptography, authentication, and network security.</span></a>
-          <a class="tile" href="wiki/web-development.html"><div class="tile-tag">Web</div><strong>Web Development</strong><span>HTML, CSS, JavaScript, HTTP, frontend/backend basics.</span></a>
-          <a class="tile" href="wiki/discrete-mathematics.html"><div class="tile-tag">Math</div><strong>Discrete Mathematics</strong><span>Logic, sets, relations, graphs, and proofs.</span></a>
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+          <div class="toc-title">Contents</div>
+          <ul>
+            <li><a href="#hardware"><span class="toc-number">1</span> Hardware &amp; Architecture</a></li>
+            <li>
+              <a href="#software"><span class="toc-number">2</span> Software &amp; Systems</a>
+              <ul>
+                <li><a href="#programming"><span class="toc-number">2.1</span> Programming</a></li>
+                <li><a href="#os"><span class="toc-number">2.2</span> Operating Systems</a></li>
+              </ul>
+            </li>
+            <li><a href="#theory"><span class="toc-number">3</span> Mathematics &amp; Theory</a></li>
+            <li><a href="#data"><span class="toc-number">4</span> Data &amp; Intelligence</a></li>
+            <li><a href="#see-also"><span class="toc-number">5</span> See Also</a></li>
+          </ul>
         </div>
-      </section>
 
-      <section class="strip">
-        <h2>Course Paths</h2>
-        <p>Quick jumps from the current course list into the closest topic shells.</p>
-        <div class="wide-grid">
-          <a class="tile" href="wiki/programming.html"><div class="tile-tag">Year 1</div><strong>Introduction to Computer Science</strong><span>Open the programming topic path.</span></a>
-          <a class="tile" href="wiki/databases.html"><div class="tile-tag">Year 1</div><strong>Introduction to Databases</strong><span>Open the database topic path.</span></a>
-          <a class="tile" href="wiki/computer-architecture.html"><div class="tile-tag">Year 1</div><strong>Computer Maintenance</strong><span>Open the architecture topic path.</span></a>
-          <a class="tile" href="wiki/discrete-mathematics.html"><div class="tile-tag">Year 1</div><strong>Discrete Mathematics</strong><span>Open the discrete math topic path.</span></a>
-          <a class="tile" href="wiki/software-engineering.html"><div class="tile-tag">Later Years</div><strong>Software Engineering</strong><span>Open the later-semester topic path.</span></a>
-          <a class="tile" href="wiki/web-development.html"><div class="tile-tag">Extra</div><strong>Web Development</strong><span>Open the web topic path.</span></a>
-        </div>
-      </section>
+        <!-- SECTIONS -->
+        <h2 id="hardware">Hardware &amp; Architecture</h2>
+        <p>
+          Computer hardware includes the physical parts of a computer, such as the case, central processing unit (CPU), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard. The design and structure of these components is studied under <a href="wiki/computer-architecture.html" class="wiki-link">Computer Architecture</a>.
+        </p>
+        <p>
+          Multiple computers can be connected together to form <a href="wiki/networks.html" class="wiki-link">Networks</a>. The Internet is the most prominent example, allowing global communication and data exchange through protocols like TCP/IP.
+        </p>
 
-      <section class="strip">
-        <h2>Fast Picks</h2>
-        <p>Direct links to a few commonly revisited blank subtopic pages.</p>
-        <div class="tile-grid">
-          <a class="tile" href="wiki/programming/functions.html"><div class="tile-tag">Quick</div><strong>Functions</strong><span>Blank subtopic page.</span></a>
-          <a class="tile" href="wiki/algorithms/sorting.html"><div class="tile-tag">Quick</div><strong>Sorting</strong><span>Blank subtopic page.</span></a>
-          <a class="tile" href="wiki/data-structures/trees.html"><div class="tile-tag">Quick</div><strong>Trees</strong><span>Blank subtopic page.</span></a>
-          <a class="tile" href="wiki/computer-architecture/cpu.html"><div class="tile-tag">Quick</div><strong>CPU</strong><span>Blank subtopic page.</span></a>
-          <a class="tile" href="wiki/databases/sql.html"><div class="tile-tag">Quick</div><strong>SQL</strong><span>Blank subtopic page.</span></a>
-          <a class="tile" href="wiki/networks/tcp-ip.html"><div class="tile-tag">Quick</div><strong>TCP/IP</strong><span>Blank subtopic page.</span></a>
-        </div>
-      </section>
+        <h2 id="software">Software &amp; Systems</h2>
+        <p>
+          Software refers to parts of the computer which do not have a material form, such as programs, data, protocols, etc. The discipline of designing, writing, testing, and maintaining software is known as <a href="wiki/software-engineering.html" class="wiki-link">Software Engineering</a>.
+        </p>
+        
+        <h3 id="programming">Programming</h3>
+        <p>
+          <a href="wiki/programming.html" class="wiki-link">Programming</a> is the process of creating a set of instructions that tell a computer how to perform a task. It can be done using a variety of computer programming languages, such as JavaScript, Python, and C++. Modern <a href="wiki/web-development.html" class="wiki-link">Web Development</a> heavily relies on these languages to create interactive websites and applications.
+        </p>
+
+        <h3 id="os">Operating Systems</h3>
+        <p>
+          An <a href="wiki/operating-systems.html" class="wiki-link">Operating System</a> (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, printing, and other resources.
+        </p>
+
+        <h2 id="theory">Mathematics &amp; Theory</h2>
+        <p>
+          The theoretical foundations of computation are heavily rooted in <a href="wiki/discrete-mathematics.html" class="wiki-link">Discrete Mathematics</a>, encompassing logic, set theory, graph theory, and combinatorics. 
+        </p>
+        <p>
+          At the core of software design are <a href="wiki/algorithms.html" class="wiki-link">Algorithms</a> (step-by-step procedures for calculations) and <a href="wiki/data-structures.html" class="wiki-link">Data Structures</a> (ways to organize and store data efficiently for access and modification).
+        </p>
+
+        <h2 id="data">Data &amp; Intelligence</h2>
+        <p>
+          Information systems rely on <a href="wiki/databases.html" class="wiki-link">Databases</a> to store, retrieve, and manage massive amounts of structured and unstructured data reliably. 
+        </p>
+        <p>
+          More recently, <a href="wiki/ai.html" class="wiki-link">Artificial Intelligence (AI)</a> has emerged as a major field, enabling computers to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages. Protecting these systems and their data is the domain of <a href="wiki/cybersecurity.html" class="wiki-link">Cybersecurity</a>.
+        </p>
+
+        <h2 id="see-also">See Also</h2>
+        <p>
+          Explore the blank stub pages for deeper learning:
+        </p>
+        <ul>
+          <li><a href="wiki/programming/functions.html" class="wiki-link">Functions</a> (Programming)</li>
+          <li><a href="wiki/algorithms/sorting.html" class="wiki-link">Sorting</a> (Algorithms)</li>
+          <li><a href="wiki/data-structures/trees.html" class="wiki-link">Trees</a> (Data Structures)</li>
+          <li><a href="wiki/computer-architecture/cpu.html" class="wiki-link">CPU</a> (Computer Architecture)</li>
+          <li><a href="wiki/databases/sql.html" class="wiki-link">SQL</a> (Databases)</li>
+          <li><a href="wiki/networks/tcp-ip.html" class="wiki-link">TCP/IP</a> (Networks)</li>
+        </ul>
+
+      </div>
     </div>
   </body>
 </html>

@@ -22,6 +22,8 @@
         --border-color: #333333;
         --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
         --font-mono: "JetBrains Mono", monospace;
+        
+        --sidebar-width: 280px;
       }
 
       * {
@@ -35,154 +37,181 @@
         margin: 0;
         padding: 0;
         line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
       }
 
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px 80px;
+      /* TOP NAVBAR */
+      .top-nav {
+        height: 70px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        background: var(--bg-color);
+        flex-shrink: 0;
       }
 
       .nav-back {
-        display: inline-block;
-        margin-bottom: 20px;
         color: var(--text-secondary);
         text-decoration: none;
         font-family: var(--font-mono);
+        margin-right: 20px;
       }
 
       .nav-back:hover {
         color: var(--accent-color);
       }
 
-      header {
-        margin-bottom: 24px;
-      }
-
-      h1 {
+      .page-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--text-primary);
         margin: 0;
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: -2px;
-        color: var(--accent-color);
       }
 
-      .subtitle {
-        margin-top: 10px;
+      /* MAIN LAYOUT */
+      .layout {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        width: var(--sidebar-width);
+        background: var(--panel-bg);
+        border-right: 1px solid var(--border-color);
+        overflow-y: auto;
+        padding: 20px;
+        flex-shrink: 0;
+      }
+
+      .sidebar-group {
+        margin-bottom: 30px;
+      }
+
+      .sidebar-title {
         color: var(--text-secondary);
         font-family: var(--font-mono);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
       }
 
-      .intro {
-        margin: 0 0 28px;
-        max-width: 760px;
-        color: var(--text-secondary);
-      }
-
-      .jump-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 0 0 36px;
-      }
-
-      .jump-link {
-        display: inline-flex;
-        align-items: center;
+      .nav-item {
+        display: block;
         padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border-color);
-        background: rgba(255, 255, 255, 0.03);
-        color: var(--text-secondary);
+        color: var(--text-primary);
         text-decoration: none;
-        font-size: 0.9rem;
+        border-radius: 6px;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 1px solid transparent;
       }
 
-      .jump-link:hover {
+      .nav-item:hover {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: var(--border-color);
+      }
+
+      .nav-item.active {
+        background: var(--accent-dim);
         color: var(--accent-color);
         border-color: var(--accent-color);
-        background: var(--accent-dim);
+        font-weight: 600;
       }
 
-      .semester-block {
-        margin-top: 40px;
-        padding: 24px;
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        background: var(--panel-bg);
+      /* CONTENT AREA */
+      .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 40px;
+        background: var(--bg-color);
       }
 
-      .semester-title {
-        margin: 0 0 6px;
-        font-size: 2rem;
+      .content-section {
+        display: none;
+        max-width: 900px;
+        margin: 0 auto;
+        animation: fadeIn 0.3s ease;
       }
 
-      .semester-note {
-        margin: 0 0 22px;
+      .content-section.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .section-header {
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin: 0 0 10px 0;
+        font-weight: 800;
+      }
+
+      .section-desc {
         color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin: 0;
       }
 
-      .subject-grid {
-        display: grid;
-        gap: 16px;
-      }
-
-      .subject-block {
-        padding: 20px;
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        background: var(--card-bg);
-      }
-
-      .subject-block h2 {
-        margin: 0 0 6px;
-        font-size: 1.25rem;
-      }
-
-      .subject-note {
-        margin: 0 0 16px;
-        color: var(--text-secondary);
-        font-size: 0.94rem;
-      }
-
+      /* VIDEO CARDS */
       .resource-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
       }
 
-      .resource-card,
-      .resource-empty {
+      .resource-card, .resource-empty {
+        background: var(--card-bg);
         border: 1px solid var(--border-color);
         border-radius: 12px;
-        padding: 16px;
-        background: rgba(255, 255, 255, 0.02);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, border-color 0.2s;
       }
 
-      .resource-card h3,
-      .resource-empty h3 {
-        margin: 0 0 8px;
-        font-size: 1rem;
+      .resource-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-color);
       }
 
-      .resource-card p,
-      .resource-empty p {
-        margin: 0 0 14px;
+      .resource-card h3, .resource-empty h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.1rem;
+        line-height: 1.4;
+      }
+
+      .resource-card p, .resource-empty p {
+        margin: 0 0 20px 0;
         color: var(--text-secondary);
-        font-size: 0.92rem;
+        font-size: 0.9rem;
+        flex: 1;
       }
 
       .badge-row {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin-bottom: 14px;
+        margin-bottom: 15px;
       }
 
       .badge {
-        display: inline-block;
         padding: 4px 8px;
-        border-radius: 999px;
+        border-radius: 4px;
         background: var(--accent-dim);
         color: var(--accent-color);
         font-size: 0.75rem;
@@ -194,383 +223,803 @@
         color: var(--text-secondary);
       }
 
-      .resource-link {
+      .play-btn {
         display: inline-block;
-        color: var(--accent-color);
+        padding: 10px;
+        background: var(--accent-color);
+        color: #000;
+        text-align: center;
+        border-radius: 6px;
         text-decoration: none;
-        font-family: var(--font-mono);
+        font-weight: bold;
         font-size: 0.9rem;
+        transition: opacity 0.2s;
       }
 
-      .resource-link:hover {
-        opacity: 0.85;
+      .play-btn:hover {
+        opacity: 0.8;
       }
 
-      @media (max-width: 700px) {
-        .container {
-          padding-top: 28px;
-        }
+      /* MOBILE MENU TOGGLE */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: var(--font-mono);
+      }
 
-        h1 {
-          font-size: 2.35rem;
-        }
-
-        .semester-block,
-        .subject-block {
-          padding: 18px;
-        }
+      @media (max-width: 768px) {
+        body { overflow: auto; }
+        .layout { flex-direction: column; overflow: visible; }
+        .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); display: none; }
+        .sidebar.show { display: block; }
+        .content { padding: 20px; overflow-y: visible; }
+        .mobile-menu-btn { display: block; margin-left: auto; }
+        .section-title { font-size: 2rem; }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <a href="index.html" class="nav-back">&larr; Back to Home</a>
-
-      <header>
-        <h1>Resources</h1>
-        <div class="subtitle">Video tutorials grouped by semester and subject</div>
-      </header>
-
-      <p class="intro">
-        Pick the semester first, then open the subject you need. The current set
-        uses the provided playlist and keeps the links grouped under the closest
-        course fit.
-      </p>
-
-      <div class="jump-links">
-        <a class="jump-link" href="#semester-one">Semester One</a>
-        <a class="jump-link" href="#semester-two">Semester Two</a>
-        <a class="jump-link" href="#future-semesters">Future Semesters</a>
-        <a class="jump-link" href="#computer-applications">Computer Applications</a>
-        <a class="jump-link" href="#intro-to-cs">Introduction to CS</a>
-        <a class="jump-link" href="#principles-of-programming">Principles of Programming</a>
-        <a class="jump-link" href="#intro-to-databases">Introduction to Databases</a>
-      </div>
-
-      <section class="semester-block" id="semester-one">
-        <h2 class="semester-title">Semester One</h2>
-        <p class="semester-note">Year 1 foundations and first-step practical subjects.</p>
-        <div class="subject-grid">
-          <section class="subject-block" id="computer-applications">
-            <h2>Computer Applications</h2>
-            <p class="subject-note">Practical tools, setup, and accessible web/dev entry points.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>25 VS Code Productivity Tips and Speed Hacks</h3>
-                <p>Practical editor shortcuts and workflow improvements for everyday coursework.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=ifTF3ags0XI" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>100+ Web Development Things you Should Know</h3>
-                <p>Broad overview of tools, terms, and workflow ideas that fit an entry-level practical track.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=erEgovG9WBs" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="intro-to-cs">
-            <h2>Introduction to Computer Science</h2>
-            <p class="subject-note">Broad CS foundations, computing context, and early orientation.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Introduction to Programming and Computer Science - Full Course</h3>
-                <p>Large overview course covering programming and core computer science foundations.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=zOjov-2OZ0E" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Why Some Projects Use Multiple Programming Languages</h3>
-                <p>Useful for understanding how different languages fit different system roles.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=XJC5WB2Bwrc" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="discrete-mathematics">
-            <h2>Discrete Mathematics</h2>
-            <p class="subject-note">Math support for logic, abstraction, and algorithmic thinking.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Math Every Programmer ACTUALLY Needs</h3>
-                <p>Practical math topics that translate well into early CS reasoning.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=mzw3P3np_pc" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>10 Math Concepts for Programmers</h3>
-                <p>Compact review of math ideas that repeatedly show up in programming study.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=bOCHTHkBoAs" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="semester-block" id="semester-two">
-        <h2 class="semester-title">Semester Two</h2>
-        <p class="semester-note">Programming, databases, and maintenance-focused subjects.</p>
-        <div class="subject-grid">
-          <section class="subject-block" id="intro-to-databases">
-            <h2>Introduction to Databases</h2>
-            <p class="subject-note">Database ideas viewed through real application and system examples.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Design ChatGPT Like a Senior Engineer: 800M Users, One Primary Database</h3>
-                <p>High-level system example with a strong database-centered angle.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Advanced</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=K4Ie-bM48qA" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="computer-architecture-maintenance">
-            <h2>Computer Maintenance</h2>
-            <p class="subject-note">Closest practical matches while hardware-focused videos are still missing.</p>
-            <div class="resource-grid">
-              <article class="resource-empty">
-                <h3>No direct match yet</h3>
-                <p>This subject is ready for hardware and maintenance videos when you add them.</p>
-                <div class="badge-row">
-                  <span class="badge badge-neutral">Waiting for videos</span>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="principles-of-programming">
-            <h2>Principles of Programming</h2>
-            <p class="subject-note">Language basics, code structure, problem solving, and OOP foundations.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Learn Java in 14 Minutes (seriously)</h3>
-                <p>Fast syntax-first refresher for beginner programming practice.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=RRubcjpTkks" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Java in 100 Seconds</h3>
-                <p>Short overview that helps place Java quickly before deeper study.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=l9AzO1FMgM8" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Learn Java in 15 Minutes (seriously)</h3>
-                <p>Alternative quick-start video with the same beginner-level target.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=b5l5UodFzMo" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Learn Java Object-Oriented Programming (with actual code)</h3>
-                <p>Good next step once the course moves into classes, objects, and methods.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Intermediate</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=TiccevwEVe8" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>How to solve a Google coding interview question</h3>
-                <p>Problem decomposition practice that still fits early programming logic work.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Intermediate</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=Ti5vfu9arXQ" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>How to OVER Engineer a Website // What is a Tech Stack?</h3>
-                <p>Web stack overview that still fits programming foundations better than a separate lane.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=Sxxw3qtb3_g" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="semester-block" id="future-semesters">
-        <h2 class="semester-title">Future Semesters</h2>
-        <p class="semester-note">Videos already classified for later subjects that are not on the current Year 1 pages.</p>
-        <div class="subject-grid">
-          <section class="subject-block" id="data-structures-algorithms">
-            <h2>Data Structures &amp; Algorithms</h2>
-            <p class="subject-note">Problem sets, common structures, and deeper algorithm review.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>70 Leetcode problems in 5+ hours (every data structure) (full tutorial)</h3>
-                <p>Large review set covering common structures and problem styles.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Intermediate</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=lvO88XxNAzs" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="operating-systems">
-            <h2>Operating Systems</h2>
-            <p class="subject-note">This lane is ready, but there is no direct playlist match yet.</p>
-            <div class="resource-grid">
-              <article class="resource-empty">
-                <h3>No direct match yet</h3>
-                <p>Add process, scheduling, or memory-management videos here later.</p>
-                <div class="badge-row">
-                  <span class="badge badge-neutral">Waiting for videos</span>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="networks">
-            <h2>Networks</h2>
-            <p class="subject-note">Infrastructure and deployment concepts closest to networking study.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Cloud Computing Explained: The Most Important Concepts To Know</h3>
-                <p>Bridge topic between networking, infrastructure, and deployment thinking.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=ZaA0kNm18pE" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="software-engineering">
-            <h2>Software Engineering</h2>
-            <p class="subject-note">Version control, architecture, systems, and delivery workflow.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>Git and GitHub for Beginners - Crash Course</h3>
-                <p>Strong first stop for version control and collaborative workflow basics.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Beginner</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>System Design Explained: APIs, Databases, Caching, CDNs, Load Balancing &amp; Production Infra</h3>
-                <p>Broad systems overview that connects several software engineering concerns in one place.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Advanced</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=adOkTjIIDnk" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Design Spotify Like a Senior Engineer (System Design Interview)</h3>
-                <p>Applied architecture case study with tradeoffs, scale, and service boundaries.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Advanced</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=H7s1pvuhmTA" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Unlock the Power of Event-Driven Architecture: How Netflix &amp; Uber Handle Billions of Events</h3>
-                <p>Useful for understanding modern backend architecture and asynchronous system design.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Advanced</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=hrvx8Nv9eQA" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="subject-block" id="ai-cybersecurity-specialization">
-            <h2>AI / Cybersecurity / Specialization</h2>
-            <p class="subject-note">Security concepts, AI fundamentals, and later specialization material.</p>
-            <div class="resource-grid">
-              <article class="resource-card">
-                <h3>7 Authentication Concepts Every Developer Should Know</h3>
-                <p>Security-oriented concepts that connect to auth, identity, and access control.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=iX8g4LqF8p8" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>Don't learn AI Agents without Learning these Fundamentals</h3>
-                <p>High-level overview for students moving toward AI-focused topics.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">Mixed</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=ZaPbP9DwBOE" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>How to Learn to Code - 8 Hard Truths</h3>
-                <p>Useful general mindset watch for students building long-term study habits.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">General</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=NtfbWkxJTHw" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>coding is easy, actually</h3>
-                <p>Short general encouragement piece that still fits the broader study path.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">General</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=qkFYqY3vr84" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-              <article class="resource-card">
-                <h3>The pain of becoming yourself</h3>
-                <p>General long-form mindset watch kept in the later-study pool instead of a separate lane.</p>
-                <div class="badge-row">
-                  <span class="badge">Video</span>
-                  <span class="badge badge-neutral">General</span>
-                </div>
-                <a class="resource-link" href="https://www.youtube.com/watch?v=QYAnJ_QyCQg" target="_blank" rel="noopener noreferrer">Open video</a>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
+    
+    <div class="top-nav">
+      <a href="index.html" class="nav-back">&larr; Back</a>
+      <h1 class="page-title">Resources Library</h1>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">MENU</button>
     </div>
+
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        
+        <div class="sidebar-group">
+          <div class="sidebar-title">Semester One</div>
+          <div class="nav-item active" onclick="showSection('intro-to-cs', this)">Introduction to CS</div>
+          <div class="nav-item" onclick="showSection('computer-applications', this)">Computer Applications</div>
+          <div class="nav-item" onclick="showSection('discrete-mathematics', this)">Discrete Mathematics</div>
+        </div>
+
+        <div class="sidebar-group">
+          <div class="sidebar-title">Semester Two</div>
+          <div class="nav-item" onclick="showSection('principles-of-programming', this)">Principles of Programming</div>
+          <div class="nav-item" onclick="showSection('intro-to-databases', this)">Introduction to Databases</div>
+          <div class="nav-item" onclick="showSection('computer-architecture-maintenance', this)">Computer Maintenance</div>
+        </div>
+
+        <div class="sidebar-group">
+          <div class="sidebar-title">Future Semesters</div>
+          <div class="nav-item" onclick="showSection('software-engineering', this)">Software Engineering</div>
+          <div class="nav-item" onclick="showSection('data-structures-algorithms', this)">Data Structures &amp; Algorithms</div>
+          <div class="nav-item" onclick="showSection('networks', this)">Networks</div>
+          <div class="nav-item" onclick="showSection('operating-systems', this)">Operating Systems</div>
+          <div class="nav-item" onclick="showSection('ai-cybersecurity-specialization', this)">AI / Cybersecurity</div>
+          <div class="nav-item" onclick="showSection('java-tutorials', this)">Java (Advanced)</div>
+        </div>
+
+      </aside>
+
+      <!-- CONTENT AREA -->
+      <main class="content">
+        
+        <!-- Intro to CS -->
+        <section id="intro-to-cs" class="content-section active">
+          <div class="section-header">
+            <h2 class="section-title">Introduction to Computer Science</h2>
+            <p class="section-desc">Broad CS foundations, computing context, and early orientation.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Introduction to Programming and Computer Science - Full Course</h3>
+              <p>Large overview course covering programming and core computer science foundations.</p>
+              <div class="badge-row">
+                <span class="badge">Video</span>
+                <span class="badge badge-neutral">Beginner</span>
+              </div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=zOjov-2OZ0E" target="_blank" rel="noopener noreferrer">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Why Some Projects Use Multiple Programming Languages</h3>
+              <p>Useful for understanding how different languages fit different system roles.</p>
+              <div class="badge-row">
+                <span class="badge">Video</span>
+                <span class="badge badge-neutral">Mixed</span>
+              </div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=XJC5WB2Bwrc" target="_blank" rel="noopener noreferrer">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Computer Applications -->
+        <section id="computer-applications" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Computer Applications</h2>
+            <p class="section-desc">Practical tools, setup, and accessible web/dev entry points.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>25 VS Code Productivity Tips and Speed Hacks</h3>
+              <p>Practical editor shortcuts and workflow improvements for everyday coursework.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ifTF3ags0XI" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>100+ Web Development Things you Should Know</h3>
+              <p>Broad overview of tools, terms, and workflow ideas that fit an entry-level practical track.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=erEgovG9WBs" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Discrete Mathematics -->
+        <section id="discrete-mathematics" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Discrete Mathematics</h2>
+            <p class="section-desc">Math support for logic, abstraction, and algorithmic thinking.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Math Every Programmer ACTUALLY Needs</h3>
+              <p>Practical math topics that translate well into early CS reasoning.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=mzw3P3np_pc" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>10 Math Concepts for Programmers</h3>
+              <p>Compact review of math ideas that repeatedly show up in programming study.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=bOCHTHkBoAs" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Principles of Programming -->
+        <section id="principles-of-programming" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Principles of Programming</h2>
+            <p class="section-desc">Language basics, code structure, problem solving, and OOP foundations.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Learn Java in 14 Minutes (seriously)</h3>
+              <p>Fast syntax-first refresher for beginner programming practice.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=RRubcjpTkks" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Java in 100 Seconds</h3>
+              <p>Short overview that helps place Java quickly before deeper study.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=l9AzO1FMgM8" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Learn Java Object-Oriented Programming</h3>
+              <p>Good next step once the course moves into classes, objects, and methods.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Intermediate</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=TiccevwEVe8" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>How to solve a Google coding interview question</h3>
+              <p>Problem decomposition practice that fits early programming logic work.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Intermediate</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Ti5vfu9arXQ" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Intro to Databases -->
+        <section id="intro-to-databases" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Introduction to Databases</h2>
+            <p class="section-desc">Database ideas viewed through real application and system examples.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Design ChatGPT Like a Senior Engineer</h3>
+              <p>High-level system example with a strong database-centered angle.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Advanced</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=K4Ie-bM48qA" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Computer Maintenance -->
+        <section id="computer-architecture-maintenance" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Computer Maintenance</h2>
+            <p class="section-desc">Hardware-focused tutorials and guides.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-empty">
+              <h3>No direct match yet</h3>
+              <p>This subject is ready for hardware and maintenance videos when you add them.</p>
+              <div class="badge-row"><span class="badge badge-neutral">Waiting for videos</span></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Software Engineering -->
+        <section id="software-engineering" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Software Engineering</h2>
+            <p class="section-desc">Version control, architecture, systems, and delivery workflow.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Git and GitHub for Beginners - Crash Course</h3>
+              <p>Strong first stop for version control and collaborative workflow basics.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>System Design Explained</h3>
+              <p>Broad systems overview that connects several software engineering concerns.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Advanced</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=adOkTjIIDnk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Design Spotify Like a Senior Engineer</h3>
+              <p>Applied architecture case study with tradeoffs, scale, and service boundaries.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Advanced</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=H7s1pvuhmTA" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Data Structures -->
+        <section id="data-structures-algorithms" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Data Structures &amp; Algorithms</h2>
+            <p class="section-desc">Problem sets, common structures, and deeper algorithm review.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>70 Leetcode problems in 5+ hours</h3>
+              <p>Large review set covering common structures and problem styles.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Intermediate</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=lvO88XxNAzs" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Networks -->
+        <section id="networks" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Networks</h2>
+            <p class="section-desc">Infrastructure and deployment concepts closest to networking study.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Cloud Computing Explained</h3>
+              <p>Bridge topic between networking, infrastructure, and deployment thinking.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ZaA0kNm18pE" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- OS -->
+        <section id="operating-systems" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Operating Systems</h2>
+            <p class="section-desc">System processes, memory management, and kernel concepts.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-empty">
+              <h3>No direct match yet</h3>
+              <p>Add process, scheduling, or memory-management videos here later.</p>
+              <div class="badge-row"><span class="badge badge-neutral">Waiting for videos</span></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- AI & Cyber -->
+        <section id="ai-cybersecurity-specialization" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">AI / Cybersecurity</h2>
+            <p class="section-desc">Security concepts, AI fundamentals, and later specialization material.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>7 Authentication Concepts Every Developer Should Know</h3>
+              <p>Security-oriented concepts that connect to auth, identity, and access control.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=iX8g4LqF8p8" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Don't learn AI Agents without Learning these Fundamentals</h3>
+              <p>High-level overview for students moving toward AI-focused topics.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Mixed</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ZaPbP9DwBOE" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>How to Learn to Code - 8 Hard Truths</h3>
+              <p>Useful general mindset watch for students building long-term study habits.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">General</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=NtfbWkxJTHw" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Java Tutorials -->
+        <section id="java-tutorials" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Java Programming (Advanced)</h2>
+            <p class="section-desc">Future curriculum topics: Methods, Arrays, and Object-Oriented Programming from Neso Academy.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Java Programming - Full Playlist</h3>
+              <p>The complete 100+ video playlist from Neso Academy covering all aspects of Java.</p>
+              <div class="badge-row"><span class="badge">Playlist</span><span class="badge badge-neutral">Comprehensive</span></div>
+              <a class="play-btn" href="https://youtube.com/playlist?list=PLBlnK6fEyqRjKA_NuK9mHmlk0dZzuP1P5" target="_blank">► View Playlist</a>
+            </article>
+
+            <article class="resource-card">
+              <h3>Java Packages, Classes, and Methods</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=mgixJYEZ1Fk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Java Exercise - Creating Classes &amp; Methods</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=-94U78VoufQ" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Calling String Methods in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Ml08Trm5a58" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Instantiating a String Object</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=V4yLuptZq40" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The Scanner Class in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=huZ1neRqNho" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The While Loop in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=g8GcFboF2rM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>While Loop – Exercise</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=dw-4mDaxPu8" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The Do While Loop in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=2E-UgePiOoo" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The For Loop in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=GwcisLY5avc" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Nested Loops in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=CwjSpUIFi7w" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=cxhf69OL_oM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=WFBEV-j0jZM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 3)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ws0jAnMn7AM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 4)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=XYmPN55q-as" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 5)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=w3TPqnwxVyg" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 6)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=hFRgjAusrhA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 7)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=e49tD9XaCWQ" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 8)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=xhFlv0I1Uak" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 9)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=WZv8momDIAY" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 10)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=JsOVfu4qQvw" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 11)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=YjyT0t58p90" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 12)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=26cu_jyik10" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 13)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=j2xmaxUCbz0" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Loops in Java (Exercise 14)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=kFd_HuYUwkU" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Methods in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=r0SewFmbCUI" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Method Overloading in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=km8xnlSRtWg" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Methods (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Dw-wDvLHitY" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Methods (Exercise 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=swj8_rUCyFk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Single-Dimensional Arrays in Java (Part 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=kWJHzambtNo" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Single-Dimensional Arrays in Java (Part 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=LDxIl9La5nk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The Arrays Class in Java (Part 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ZJx3T3XL6CM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The Arrays Class in Java (Part 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=-VShg6LaWgc" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>The Arrays Class in Java (Part 3)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=hCB3TWpwMMM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Arrays in Java (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=gIqnW7ACL9o" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Arrays in Java (Exercise 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=1GRLdNtPpQI" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Arrays in Java (Exercise 3)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=HHsHydWBwJE" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Arrays in Java (Exercise 4)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=G04TZ7sbMUM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Arrays in Java (Exercise 5)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=LVNTVxeavBw" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Two-Dimensional Arrays in Java (Part 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Gbz3Ao2xq_4" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Two-Dimensional Arrays in Java (Part 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=fij_LIvdJzY" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Two-Dimensional Arrays in Java (Part 3)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=dGsO6Npqs1E" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Two-Dimensional Arrays in Java (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=778UYhztFAE" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Two-Dimensional Arrays in Java (Exercise 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=8uxGSiCiqZA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>ArrayLists in Java (Part 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=WCIpkigdOv4" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>ArrayLists in Java (Part 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=IkkndXpmCYs" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>For Each Loop in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=6SweFjpcYOI" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>ArrayLists (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=YgkRoY3-ng8" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>ArrayLists (Exercise 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Dcgl-KfLmfA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Introduction to Classes and Objects (Part 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=W-D71ZeMixQ" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Introduction to Classes and Objects (Part 2)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Kk6dlF59yGg" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Creating a Class in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=EplETikbJis" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Instantiating Objects in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Z-Y-7jND_Dc" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Constructors in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=HbQ2ASDc0Lw" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Creating a Class in Java - Practice</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=dDL4gpuQyzA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Static Variables and Static Methods in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=3LtIk7wFGi0" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Data Field Encapsulation in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=JYPMgbeQVvs" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Visibility Modifiers and Encapsulation - Practice</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=nx4Jl5tdqkk" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Immutable Classes and Objects in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=qbNMAJvv7qI" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Inner Classes in Java</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=zg1pijw6AM4" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>UML Class Diagram</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=ksvwF2sUjHM" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 1)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=LMCFb4m5WWE" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 2) - Part 1</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Lvg2-Gai_4Y" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 2) - Part 2</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=pDIZ79J1hnw" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 3)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=BSzkBvPV1No" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 4)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=hXsxrup9MdU" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 5)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=Lir3_nKxQ2Q" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Classes and Objects (Exercise 6)</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=sdoKsz2aAsA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Inheritance &amp; Polymorphism | Chapter-8 | Java Programming | nesoacademy.org</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=mVdapUEaSuA" target="_blank">► Play Video</a>
+            </article>
+            <article class="resource-card">
+              <h3>Abstract Classes &amp; Interfaces | Chapter-9 | Java Programming | nesoacademy.org</h3>
+              <p>Curriculum topic from Neso Academy.</p>
+              <div class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Neso Academy</span></div>
+              <a class="play-btn" href="https://www.youtube.com/watch?v=O8Gl4RYgg0k" target="_blank">► Play Video</a>
+            </article>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script>
+      function showSection(sectionId, element) {
+        // Remove active class from all nav items
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        
+        // Add active class to clicked item
+        if(element) element.classList.add('active');
+        
+        // Hide all sections
+        document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+        
+        // Show target section
+        document.getElementById(sectionId).classList.add('active');
+
+        // On mobile, hide the sidebar after selection
+        if (window.innerWidth <= 768) {
+          document.getElementById('sidebar').classList.remove('show');
+        }
+      }
+
+      function toggleMobileMenu() {
+        document.getElementById('sidebar').classList.toggle('show');
+      }
+
+      // Check if URL has a hash to pre-select a section
+      window.onload = function() {
+        if(window.location.hash) {
+          const id = window.location.hash.substring(1); // remove the #
+          const targetSection = document.getElementById(id);
+          if (targetSection) {
+            // Find corresponding nav item
+            const navItems = document.querySelectorAll('.nav-item');
+            let targetNav = null;
+            navItems.forEach(item => {
+              if(item.getAttribute('onclick').includes(id)) {
+                targetNav = item;
+              }
+            });
+            showSection(id, targetNav);
+          }
+        }
+      }
+    </script>
   </body>
 </html>

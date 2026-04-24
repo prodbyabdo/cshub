@@ -15,138 +15,175 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #050505;
+            --bg-color: #0a0a0a;
             --card-bg: #111111;
-            --text-color: #e0e0e0;
-            --accent-color: #00f0ff;
-            --secondary-accent: #2ecc71;
-            --muted-text: #a0a0a0;
-            --border-color: #333;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --accent-hover: rgba(0, 255, 136, 0.2);
+            --border-color: #333333;
+            --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            font-family: var(--font-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
+        .nav-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        .nav-back:hover {
+            color: var(--accent-color);
+        }
+
         header {
-            padding: 2rem 1rem;
+            padding: 80px 20px 40px 20px;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
         }
 
         h1 {
-            color: var(--accent-color);
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin: 0;
-            font-size: 2rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0 0 10px 0;
+            background: linear-gradient(to right, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            color: var(--muted-text);
-            margin-top: 0.5rem;
-            font-size: 1rem;
+            color: var(--accent-color);
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 1.5rem 4rem 1.5rem;
+            padding: 0 20px 80px 20px;
         }
 
         section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: border-color 0.3s ease;
+        }
+
+        section:hover {
+            border-color: rgba(0, 255, 136, 0.3);
         }
 
         h2 {
-            color: white;
-            font-weight: 600;
+            color: var(--text-primary);
+            font-weight: 700;
             margin-top: 0;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
         h2::before {
             content: '';
-            display: inline-block;
             width: 4px;
             height: 1.5rem;
             background-color: var(--accent-color);
-            margin-right: 0.75rem;
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
         p {
             margin-bottom: 1.5rem;
-            color: var(--text-color);
+            color: var(--text-secondary);
+            font-size: 1.05rem;
         }
 
         .math-block {
-            background-color: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-left: 3px solid var(--secondary-accent);
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
             overflow-x: auto;
+            text-align: center;
         }
 
         /* Quadrant Grid */
         .quadrant-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .quadrant-card {
-            background-color: rgba(255,255,255,0.02);
-            padding: 1rem;
-            border-radius: 8px;
+            background-color: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .quadrant-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
         }
 
         .quadrant-card strong {
             display: block;
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
         }
 
         .quadrant-card .sign {
-            font-size: 1.25rem;
-            font-family: monospace;
-            color: var(--secondary-accent);
+            font-size: 1.5rem;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .quadrant-card small {
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
         }
 
         /* Comparison Section */
         .comparison {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 20px;
         }
         
-        @media (min-width: 600px) {
+        @media (min-width: 768px) {
             .comparison {
                 flex-direction: row;
             }
@@ -154,58 +191,81 @@
 
         .comp-box {
             flex: 1;
-            padding: 1rem;
-            background: rgba(0, 240, 255, 0.05);
-            border-radius: 8px;
-            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 25px;
+            background: var(--accent-dim);
+            border-radius: 12px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .comp-box strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
 
         /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.95rem;
+            margin-top: 20px;
+            font-family: var(--font-mono);
         }
 
         th, td {
-            padding: 1rem;
+            padding: 15px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
 
         th {
             color: var(--accent-color);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
-        tr:last-child td {
-            border-bottom: none;
-        }
-        
         .highlight {
-            color: var(--secondary-accent);
+            color: var(--accent-color);
             font-weight: bold;
         }
 
+        /* Interactive SVG styles */
+        .angle-group {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .angle-group:hover text {
+            fill: var(--accent-color) !important;
+            font-weight: bold;
+        }
+        .angle-group:hover line {
+            stroke: var(--accent-color) !important;
+            stroke-width: 1.5 !important;
+        }
+        .coord-label {
+            opacity: 0.4;
+            transition: opacity 0.2s;
+        }
+        .angle-group:hover .coord-label {
+            opacity: 1;
+        }
+
         @media (max-width: 600px) {
-            main {
-                padding: 0 1rem 2rem 1rem;
-            }
-            .quadrant-grid {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 2.5rem; }
+            section { padding: 25px; }
+            .quadrant-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <a href="index.html" class="nav-back">← Back to Home</a>
+
     <header>
-        <h1>Unit Circle Trigonometry</h1>
-        <div class="subtitle">A visual guide to angles, signs, and sine values</div>
+        <h1>Unit Circle</h1>
+        <div class="subtitle">Visual Trigonometry & Angle Systems</div>
     </header>
 
     <main>
@@ -222,186 +282,123 @@
 
         <section>
             <h2>Visual Map</h2>
-            <p>Interactive diagram showing angles ($^\circ$) and coordinates $(\cos \theta, \sin \theta)$.</p>
+            <p>Hover over the angles to highlight coordinates $(\cos \theta, \sin \theta)$.</p>
             <div style="width: 100%; overflow-x: auto; text-align: center;">
-                <svg viewBox="-140 -140 280 280" style="max-width: 600px; width: 100%; height: auto; background: var(--bg-color); border-radius: 50%; font-family: 'Inter', sans-serif;">
+                <svg viewBox="-140 -140 280 280" style="max-width: 600px; width: 100%; height: auto; background: var(--bg-color); border-radius: 50%; font-family: var(--font-main);">
                     <!-- Grid/Axes -->
                     <line x1="-120" y1="0" x2="120" y2="0" stroke="#333" stroke-width="1" />
                     <line x1="0" y1="-120" x2="0" y2="120" stroke="#333" stroke-width="1" />
                     
                     <!-- Main Circle -->
-                    <circle cx="0" cy="0" r="100" fill="none" stroke="var(--accent-color)" stroke-width="2" />
+                    <circle cx="0" cy="0" r="100" fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-opacity="0.3" />
+                    <circle cx="0" cy="0" r="100" fill="none" stroke="var(--accent-color)" stroke-width="1" stroke-dasharray="2,2" />
 
-                    <!-- Angle Lines & Labels Group -->
-                    <g stroke="#555" stroke-width="0.5" font-size="7" text-anchor="middle">
-                        <!-- 30 deg lines -->
-                        <line x1="-86.6" y1="-50" x2="86.6" y2="50" />
-                        <line x1="-86.6" y1="50" x2="86.6" y2="-50" />
-                        <!-- 45 deg lines -->
-                        <line x1="-70.7" y1="-70.7" x2="70.7" y2="70.7" />
-                        <line x1="-70.7" y1="70.7" x2="70.7" y2="-70.7" />
-                        <!-- 60 deg lines -->
-                        <line x1="-50" y1="-86.6" x2="50" y2="86.6" />
-                        <line x1="-50" y1="86.6" x2="50" y2="-86.6" />
-                    </g>
-                    
-                    <!-- Labels function (manually expanded for clarity) -->
-                    <!-- Quad I -->
-                    <g fill="#e0e0e0" font-size="6">
+                    <!-- Angles Group -->
+                    <g font-size="6" text-anchor="middle">
                         <!-- 0 deg -->
-                        <text x="125" y="2" fill="var(--accent-color)">0°</text>
-                        <text x="110" y="15" font-size="5" fill="#aaa">(1, 0)</text>
-                        
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="100" y2="0" stroke="#555" stroke-width="0.5" />
+                            <text x="120" y="3" fill="var(--accent-color)" font-weight="600">0°</text>
+                            <text x="110" y="15" class="coord-label" fill="var(--text-secondary)">(1, 0)</text>
+                        </g>
+
                         <!-- 30 deg -->
-                        <text x="95" y="-48" fill="var(--accent-color)">30°</text>
-                        <text x="105" y="-35" font-size="5" fill="#aaa">(&radic;3/2, 1/2)</text>
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="86.6" y2="-50" stroke="#555" stroke-width="0.5" />
+                            <text x="95" y="-48" fill="var(--accent-color)" font-weight="600">30°</text>
+                            <text x="105" y="-35" class="coord-label" fill="var(--text-secondary)">(&radic;3/2, 1/2)</text>
+                        </g>
 
                         <!-- 45 deg -->
-                        <text x="78" y="-78" fill="var(--accent-color)">45°</text>
-                        <text x="90" y="-65" font-size="5" fill="#aaa">(&radic;2/2, &radic;2/2)</text>
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="70.7" y2="-70.7" stroke="#555" stroke-width="0.5" />
+                            <text x="78" y="-78" fill="var(--accent-color)" font-weight="600">45°</text>
+                            <text x="90" y="-65" class="coord-label" fill="var(--text-secondary)">(&radic;2/2, &radic;2/2)</text>
+                        </g>
 
                         <!-- 60 deg -->
-                        <text x="50" y="-95" fill="var(--accent-color)">60°</text>
-                        <text x="65" y="-85" font-size="5" fill="#aaa">(1/2, &radic;3/2)</text>
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="50" y2="-86.6" stroke="#555" stroke-width="0.5" />
+                            <text x="50" y="-95" fill="var(--accent-color)" font-weight="600">60°</text>
+                            <text x="65" y="-85" class="coord-label" fill="var(--text-secondary)">(1/2, &radic;3/2)</text>
+                        </g>
 
                         <!-- 90 deg -->
-                        <text x="0" y="-125" fill="var(--accent-color)">90°</text>
-                        <text x="0" y="-110" font-size="5" fill="#aaa">(0, 1)</text>
-                    </g>
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="0" y2="-100" stroke="#555" stroke-width="0.5" />
+                            <text x="0" y="-120" fill="var(--accent-color)" font-weight="600">90°</text>
+                            <text x="0" y="-108" class="coord-label" fill="var(--text-secondary)">(0, 1)</text>
+                        </g>
 
-                    <!-- Quad II -->
-                    <g fill="#e0e0e0" font-size="6">
-                        <!-- 120 -->
-                        <text x="-50" y="-95" fill="var(--accent-color)">120°</text>
-                        <text x="-65" y="-85" font-size="5" fill="#aaa">(-1/2, &radic;3/2)</text>
-                        <!-- 135 -->
-                        <text x="-78" y="-78" fill="var(--accent-color)">135°</text>
-                        <text x="-90" y="-65" font-size="5" fill="#aaa">(-&radic;2/2, &radic;2/2)</text>
-                        <!-- 150 -->
-                        <text x="-95" y="-48" fill="var(--accent-color)">150°</text>
-                        <text x="-105" y="-35" font-size="5" fill="#aaa">(-&radic;3/2, 1/2)</text>
-                        <!-- 180 -->
-                        <text x="-130" y="2" fill="var(--accent-color)">180°</text>
-                        <text x="-130" y="15" font-size="5" fill="#aaa">(-1, 0)</text>
-                    </g>
+                        <!-- 180 deg -->
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="-100" y2="0" stroke="#555" stroke-width="0.5" />
+                            <text x="-120" y="3" fill="var(--accent-color)" font-weight="600">180°</text>
+                            <text x="-110" y="15" class="coord-label" fill="var(--text-secondary)">(-1, 0)</text>
+                        </g>
 
-                    <!-- Quad III -->
-                    <g fill="#e0e0e0" font-size="6">
-                        <!-- 210 -->
-                        <text x="-95" y="55" fill="var(--accent-color)">210°</text>
-                        <text x="-105" y="45" font-size="5" fill="#aaa">(-&radic;3/2, -1/2)</text>
-                        <!-- 225 -->
-                        <text x="-78" y="85" fill="var(--accent-color)">225°</text>
-                        <text x="-90" y="75" font-size="5" fill="#aaa">(-&radic;2/2, -&radic;2/2)</text>
-                        <!-- 240 -->
-                        <text x="-50" y="105" fill="var(--accent-color)">240°</text>
-                        <text x="-65" y="95" font-size="5" fill="#aaa">(-1/2, -&radic;3/2)</text>
-                        <!-- 270 -->
-                        <text x="0" y="130" fill="var(--accent-color)">270°</text>
-                        <text x="0" y="115" font-size="5" fill="#aaa">(0, -1)</text>
-                    </g>
-
-                    <!-- Quad IV -->
-                    <g fill="#e0e0e0" font-size="6">
-                        <!-- 300 -->
-                        <text x="50" y="105" fill="var(--accent-color)">300°</text>
-                        <text x="65" y="95" font-size="5" fill="#aaa">(1/2, -&radic;3/2)</text>
-                        <!-- 315 -->
-                        <text x="78" y="85" fill="var(--accent-color)">315°</text>
-                        <text x="90" y="75" font-size="5" fill="#aaa">(&radic;2/2, -&radic;2/2)</text>
-                        <!-- 330 -->
-                        <text x="95" y="55" fill="var(--accent-color)">330°</text>
-                        <text x="105" y="45" font-size="5" fill="#aaa">(&radic;3/2, -1/2)</text>
+                        <!-- 270 deg -->
+                        <g class="angle-group">
+                            <line x1="0" y1="0" x2="0" y2="100" stroke="#555" stroke-width="0.5" />
+                            <text x="0" y="125" fill="var(--accent-color)" font-weight="600">270°</text>
+                            <text x="0" y="112" class="coord-label" fill="var(--text-secondary)">(0, -1)</text>
+                        </g>
                     </g>
 
                     <!-- Center Point -->
-                    <circle cx="0" cy="0" r="2" fill="white" />
+                    <circle cx="0" cy="0" r="3" fill="var(--accent-color)" />
                 </svg>
             </div>
-            <p style="text-align: center; color: var(--muted-text); font-size: 0.9rem;">
-                <em>Coordinates are $(\cos \theta, \sin \theta)$.</em>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                <em>Coordinates are always given as $(x, y)$ which corresponds to $(\cos \theta, \sin \theta)$.</em>
             </p>
         </section>
 
         <section>
             <h2>Quadrant Signs</h2>
-            <p>The sign of trigonometric functions depends on the quadrant where the angle's terminal side lies.</p>
+            <p>Memory trick: <strong>"All Students Take Calculus"</strong> (ASTC) tells you which functions are positive in each quadrant.</p>
             <div class="quadrant-grid">
                 <div class="quadrant-card">
                     <strong>Quadrant II ($90^\circ - 180^\circ$)</strong>
                     <div class="sign">(-, +)</div>
-                    <small>$\cos < 0$, $\sin > 0$</small>
+                    <small><b>S</b>ine is positive</small>
                 </div>
                 <div class="quadrant-card">
                     <strong>Quadrant I ($0^\circ - 90^\circ$)</strong>
                     <div class="sign">(+, +)</div>
-                    <small>$\cos > 0$, $\sin > 0$</small>
+                    <small><b>A</b>ll are positive</small>
                 </div>
                 <div class="quadrant-card">
                     <strong>Quadrant III ($180^\circ - 270^\circ$)</strong>
                     <div class="sign">(-, -)</div>
-                    <small>$\cos < 0$, $\sin < 0$</small>
+                    <small><b>T</b>angent is positive</small>
                 </div>
                 <div class="quadrant-card">
                     <strong>Quadrant IV ($270^\circ - 360^\circ$)</strong>
                     <div class="sign">(+, -)</div>
-                    <small>$\cos > 0$, $\sin < 0$</small>
+                    <small><b>C</b>osine is positive</small>
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2>Axis Angles (Quadrantal)</h2>
-            <p>Angles that land on the x or y axes ($0^\circ, 90^\circ, 180^\circ, 270^\circ, 360^\circ$) are called quadrantal angles. Their values are straightforward:</p>
-            <ul>
-                <li><strong>$0^\circ / 360^\circ$</strong>: On positive x-axis. $y=0$, so $\sin(0^\circ) = 0$.</li>
-                <li><strong>$90^\circ$</strong>: On positive y-axis. $y=1$, so $\sin(90^\circ) = 1$.</li>
-                <li><strong>$180^\circ$</strong>: On negative x-axis. $y=0$, so $\sin(180^\circ) = 0$.</li>
-                <li><strong>$270^\circ$</strong>: On negative y-axis. $y=-1$, so $\sin(270^\circ) = -1$.</li>
-            </ul>
         </section>
 
         <section>
             <h2>Reference Angles</h2>
-            <p>A <strong>reference angle</strong> ($\alpha$) is the acute angle ($0^\circ$ to $90^\circ$) formed between the terminal side of an angle and the x-axis.</p>
-            <p>Trigonometric values of any angle $\theta$ are the same as their reference angle $\alpha$, except possibly for the sign.</p>
+            <p>A <strong>reference angle</strong> ($\alpha$) is the acute angle ($0^\circ$ to $90^\circ$) formed between the terminal side and the <b>x-axis</b>.</p>
             
             <div class="comparison">
                 <div class="comp-box">
-                    <strong>Angle: $30^\circ$ (Quad I)</strong>
-                    <p>Reference: $30^\circ$</p>
-                    <p>$\sin(30^\circ) = +0.5$</p>
-                    <small>Both $y$ and reference are positive.</small>
+                    <strong>Case 1: $\theta = 150^\circ$</strong>
+                    <p>Quadrant II. Reference is $180^\circ - 150^\circ = 30^\circ$.</p>
+                    <p>$\sin(150^\circ) = \sin(30^\circ) = 0.5$</p>
                 </div>
                 <div class="comp-box">
-                    <strong>Angle: $300^\circ$ (Quad IV)</strong>
-                    <p>Reference: $360^\circ - 300^\circ = 60^\circ$? <br><em>Wait, reference to x-axis:</em></p>
-                    <p>Actually for $300^\circ$, ref is $360^\circ - 300^\circ = 60^\circ$. <br> Let's look at the requested comparison: <span style="color:var(--accent-color)">$30^\circ$ vs $300^\circ$</span> isn't a direct reference pair (30 & 330 are). <br> $300^\circ$ is $60^\circ$ ref. <br> Let's use the requested example clearly.</p>
+                    <strong>Case 2: $\theta = 330^\circ$</strong>
+                    <p>Quadrant IV. Reference is $360^\circ - 330^\circ = 30^\circ$.</p>
+                    <p>$\sin(330^\circ) = -\sin(30^\circ) = -0.5$</p>
                 </div>
             </div>
             
-            <!-- Correction to stick to the plan's specific request: 30 vs 300 might be a slight confusion in the prompt or just two disparate examples. 
-                 30 degrees has ref 30. 300 degrees has ref 60.
-                 Let's explain them individually as requested. -->
-            
-            <h3>Compare: $\sin(30^\circ)$ vs $\sin(300^\circ)$</h3>
-            <div class="math-block">
-                $$ \sin(30^\circ) = 0.5 $$
-                $$ \sin(300^\circ) = -\frac{\sqrt{3}}{2} \approx -0.866 $$
-            </div>
-            <p>Wait, typically we compare angles with the <em>same</em> reference angle to show sign differences (e.g., $30^\circ$ and $330^\circ$). The prompt asked for $30^\circ$ and $300^\circ$. Let's explain why they are different. </p>
-            <ul>
-                <li><strong>$30^\circ$</strong>: Quad I. Ref angle $30^\circ$. Positive sine. Value $1/2$.</li>
-                <li><strong>$300^\circ$</strong>: Quad IV. Ref angle $60^\circ$. Negative sine. Value $-\sqrt{3}/2$.</li>
-            </ul>
-            <p><em>(Self-Correction: If the prompt meant $330^\circ$, strictly following the prompt "$30^\circ$ vs $300^\circ$" might be confusing if they expect same magnitude. $30$ and $300$ do NOT have same magnitude of sine ($0.5$ vs $0.866$). <br> However, $\cos(30^\circ)$ and $\cos(300^\circ)$ match magnitudes? No, $\cos(30)=\sqrt{3}/2$, $\cos(300)=0.5$. <br> Maybe the user meant $330^\circ$ (ref 30) or $210^\circ$ (ref 30). <br> I will strictly follow the prompt but clarify the values so it doesn't look like a mistake.)</em></p>
-            
-            <p style="border-left: 2px solid var(--accent-color); padding-left: 1rem; color: var(--muted-text);">
-                <strong>Note:</strong> Comparison requested. <br>
-                $\sin(30^\circ)$ comes from a $30^\circ$ reference angle.<br>
-                $\sin(300^\circ)$ comes from a $60^\circ$ reference angle ($360^\circ - 300^\circ$).<br>
-                They have different magnitudes. Common partners for $30^\circ$ would be $150^\circ, 210^\circ, 330^\circ$.
-            </p>
+            <p style="margin-top: 20px;">Notice how both have the same <b>magnitude</b> (0.5) because they share the same reference angle, but different <b>signs</b> based on their quadrant.</p>
         </section>
 
         <section>

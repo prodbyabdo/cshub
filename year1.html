@@ -1,346 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Year 1 Curriculum | prodbyabdo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
     <style>
-      :root {
-        --bg-color: #0a0a0a;
-        --card-bg: #111111;
-        --text-primary: #ffffff;
-        --text-secondary: #a0a0a0;
-        --accent-color: #00ff88;
-        --accent-dim: rgba(0, 255, 136, 0.1);
-        --accent-hover: rgba(0, 255, 136, 0.2);
-        --border-color: #333333;
-        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-mono: "JetBrains Mono", monospace;
-      }
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --accent-hover: rgba(0, 255, 136, 0.2);
+            --border-color: #333333;
+            --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
 
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-primary);
-        font-family: var(--font-main);
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        min-height: 100vh;
-      }
+        * {
+            box-sizing: border-box;
+        }
 
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 60px 20px;
-      }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-      header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-      h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        letter-spacing: -2px;
-        margin: 0 0 10px 0;
-        background: linear-gradient(to right, #ffffff, #a0a0a0);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-      .subtitle {
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-      }
-      
-      .nav-back {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          color: var(--text-secondary);
-          text-decoration: none;
-          font-family: var(--font-mono);
-      }
-      .nav-back:hover { color: var(--accent-color); }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0 0 10px 0;
+            background: linear-gradient(to right, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-      .semester-title {
-          font-size: 2rem;
-          color: var(--text-primary);
-          margin: 40px 0 20px 0;
-          padding-bottom: 10px;
-          border-bottom: 2px solid var(--border-color);
-      }
+        .subtitle {
+            color: var(--accent-color);
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-      }
+        .nav-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+        }
 
-      .subject-card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
+        .nav-back:hover {
+            color: var(--accent-color);
+        }
 
-      .subject-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent-color);
-        background-color: var(--accent-dim);
-      }
+        /* --- NEW STEP-BY-STEP VIEWS --- */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
 
-      .subject-code {
-          color: var(--accent-color);
-          font-family: var(--font-mono);
-          font-size: 0.9rem;
-          margin-bottom: 10px;
-          font-weight: bold;
-      }
+        .view-section.active {
+            display: block;
+        }
 
-      .subject-name {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 15px;
-      }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
 
-      .card-actions {
-          display: flex;
-          gap: 10px;
-          margin-top: 15px;
-          flex-wrap: wrap;
-      }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-      .btn {
-          padding: 8px 12px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid var(--border-color);
-          border-radius: 6px;
-          color: var(--text-secondary);
-          text-decoration: none;
-          font-size: 0.85rem;
-          text-align: center;
-          flex: 1 1 120px;
-          transition: 0.2s;
-      }
-      
-      .btn:hover {
-          background: var(--accent-color);
-          color: #000;
-          border-color: var(--accent-color);
-      }
-      
-      .btn-primary {
-          background: var(--accent-dim);
-          color: var(--accent-color);
-          border-color: var(--accent-color);
-      }
-       .btn-primary:hover {
-          background: var(--accent-color);
-          color: #000;
-      }
-      
-      .btn-disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-      }
-      .btn-disabled:hover {
-          background: rgba(255,255,255,0.05);
-          color: var(--text-secondary);
-          border-color: var(--border-color);
-      }
+        /* Step 1: Semester Prompts */
+        .semester-prompts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
+        .semester-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 60px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .semester-btn:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            background-color: var(--accent-dim);
+        }
+
+        .semester-btn h2 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .semester-btn p {
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            margin: 0;
+        }
+
+        /* Step 2: Subject Grid and Search */
+        .subjects-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .back-to-semesters {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .back-to-semesters:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background: var(--accent-dim);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .subject-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative
+        }
+
+        .stretched-link::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            /* Expands the clickable area to the card boundaries */
+        }
+
+        /* Optional: Makes the whole card show a pointer cursor on hover */
+        .subject-card:has(.stretched-link):hover {
+            cursor: pointer;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            background-color: var(--accent-dim);
+        }
+
+        .subject-code {
+            color: var(--accent-color);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subject-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-align: center;
+            flex: 1 1 120px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background: var(--accent-dim);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-disabled:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border-color: var(--border-color);
+        }
+
+        .empty-search {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            grid-column: 1 / -1;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <a href="index.html" class="nav-back">← Back to Home</a>
-    
+
     <div class="container">
-      <header>
-        <h1>YEAR ONE</h1>
-        <div class="subtitle">Computer Science & Information Technology</div>
-      </header>
+        <header>
+            <h1>YEAR ONE</h1>
+            <div class="subtitle">Computer Science & Information Technology</div>
+        </header>
 
-      <!-- SEMESTER 1 -->
-      <div class="semester-title">Semester One</div>
-      <div class="grid">
-        
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">COM-111</div>
-                <div class="subject-name">Computer Applications</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem1compapp.html" class="btn btn-primary">Resources</a>
-                <a href="resources.html#computer-applications" class="btn">Tutorials</a>
-            </div>
-        </div>
-
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">INF-112</div>
-                <div class="subject-name">Principles of Information Systems</div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
+        <!-- VIEW 1: SEMESTER PROMPT -->
+        <div id="view-semesters" class="view-section active">
+            <div class="semester-prompts">
+                <div class="semester-btn" onclick="openSemester('sem1')">
+                    <h2>Semester One</h2>
+                    <p>Select to view subjects</p>
+                </div>
+                <div class="semester-btn" onclick="openSemester('sem2')">
+                    <h2>Semester Two</h2>
+                    <p>Select to view subjects</p>
+                </div>
             </div>
         </div>
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">HMS113</div>
-                <div class="subject-name">English for Specific Purpose I</div>
+        <!-- VIEW 2: SUBJECTS PROMPT & SEARCH -->
+        <div id="view-subjects" class="view-section">
+            <div class="subjects-header">
+                <button class="back-to-semesters" onclick="goBackToSemesters()">← Choose Semester</button>
+                <div class="search-box">
+                    <input type="text" id="subjectSearch" class="search-input"
+                        placeholder="Search for a subject or code..." onkeyup="filterSubjects()">
+                </div>
             </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
-            </div>
-        </div>
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">MAT114</div>
-                <div class="subject-name">Calculus I</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem1calclaws.html" class="btn btn-primary">Laws</a>
-                <a href="year1sem1calcsolutions.html" class="btn btn-primary">Solutions</a>
-            </div>
-        </div>
+            <div class="grid" id="subjectsGrid">
+                <div class="subject-card" data-sem="sem1" data-search="com-111 computer applications">
+                    <div>
+                        <div class="subject-code">COM-111</div>
+                        <div class="subject-name">Computer Applications</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem1compapp.html" class="btn btn-primary">Resources</a>
+                        <a href="resources.html#computer-applications" class="btn">Tutorials</a>
+                    </div>
+                </div>
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">COM115</div>
-                <div class="subject-name">Introduction to Computer Science</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem1introcs.html" class="btn btn-primary">Resources</a>
-                <a href="resources.html#intro-to-cs" class="btn">Tutorials</a>
-            </div>
-        </div>
-        
-         <div class="subject-card">
-            <div>
-                <div class="subject-code">MAT116</div>
-                <div class="subject-name">Discrete Mathematics</div>
-            </div>
-            <div class="card-actions">
-                <a href="resources.html#discrete-mathematics" class="btn btn-primary">Tutorials</a>
-            </div>
-        </div>
-        
-         <div class="subject-card">
-            <div>
-                <div class="subject-code">HMS117</div>
-                <div class="subject-name">Principles of Economic</div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
-            </div>
-        </div>
+                <div class="subject-card" data-sem="sem1" data-search="inf-112 principles of information systems">
+                    <div>
+                        <div class="subject-code">INF-112</div>
+                        <div class="subject-name">Principles of Information Systems</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
 
-      </div>
+                <div class="subject-card" data-sem="sem1" data-search="hms113 english for specific purpose i">
+                    <div>
+                        <div class="subject-code">HMS113</div>
+                        <div class="subject-name">English for Specific Purpose I</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
 
+                <div class="subject-card" data-sem="sem1" data-search="mat114 calculus i">
+                    <div>
+                        <div class="subject-code">MAT114</div>
+                        <div class="subject-name">Calculus I</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem1calclaws.html" class="btn btn-primary">Laws</a>
+                        <a href="year1sem1calcsolutions.html" class="btn btn-primary">Solutions</a>
+                    </div>
+                </div>
 
-      <!-- SEMESTER 2 -->
-      <div class="semester-title">Semester Two</div>
-      <div class="grid">
-          
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">COM121</div>
-                <div class="subject-name">File Management</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem2filemgmt.html" class="btn btn-primary">Tutorials</a>
+                <div class="subject-card" data-sem="sem1" data-search="com115 introduction to computer science">
+                    <div>
+                        <div class="subject-code">COM115</div>
+                        <div class="subject-name">Introduction to Computer Science</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem1introcs.html" class="btn btn-primary">Resources</a>
+                        <a href="resources.html#intro-to-cs" class="btn">Tutorials</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem1" data-search="mat116 discrete mathematics">
+                    <div>
+                        <div class="subject-code">MAT116</div>
+                        <div class="subject-name">Discrete Mathematics</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="resources.html#discrete-mathematics"
+                            class="btn btn-primary stretched-link">Tutorials</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem1" data-search="hms117 principles of economic">
+                    <div>
+                        <div class="subject-code">HMS117</div>
+                        <div class="subject-name">Principles of Economic</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="com121 file management">
+                    <div>
+                        <div class="subject-code">COM121</div>
+                        <div class="subject-name">File Management</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem2filemgmt.html" class="btn btn-primary stretched-link">Tutorials</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="com122 introduction to databases">
+                    <div>
+                        <div class="subject-code">COM122</div>
+                        <div class="subject-name">Introduction to Databases</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem2introdbms.html" class="btn btn-primary">Summary+Exam</a>
+                        <a href="resources.html#intro-to-databases" class="btn">Tutorials</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="inf124 computer maintenance">
+                    <div>
+                        <div class="subject-code">INF124</div>
+                        <div class="subject-name">Computer Maintenance</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem2compmain.html" class="btn btn-primary stretched-link">Tutorials</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="hms123 english for specific purpose ii">
+                    <div>
+                        <div class="subject-code">HMS123</div>
+                        <div class="subject-name">English for Specific Purpose II</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem2english.html" class="btn btn-primary stretched-link">Resources</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="hms125 principles of accounting">
+                    <div>
+                        <div class="subject-code">HMS125</div>
+                        <div class="subject-name">Principles of Accounting</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="com126 principles of programming">
+                    <div>
+                        <div class="subject-code">COM126</div>
+                        <div class="subject-name">Principles of Programming</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="year1sem2introprog.html" class="btn btn-primary stretched-link">Summary &amp; Exam</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="mat127 algebra and geometry">
+                    <div>
+                        <div class="subject-code">MAT127</div>
+                        <div class="subject-name">Algebra and Geometry</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-sem="sem2" data-search="mat128 calculus ii">
+                    <div>
+                        <div class="subject-code">MAT128</div>
+                        <div class="subject-name">Calculus II</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                    </div>
+                </div>
+
+                <div id="emptySearch" class="empty-search">
+                    No subjects found. Try another search term.
+                </div>
             </div>
         </div>
-        
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">COM122</div>
-                <div class="subject-name">Introduction to Databases</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem2introdbms.html" class="btn btn-primary">Summary+Exam</a>
-                <a href="resources.html#intro-to-databases" class="btn">Tutorials</a>
-            </div>
-        </div>
-        
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">INF124</div>
-                <div class="subject-name">Computer Maintenance</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem2compmain.html" class="btn btn-primary">Tutorials</a>
-            </div>
-        </div>
+        <script>
+            let currentSemester = '';
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">HMS123</div>
-                <div class="subject-name">English for Specific Purpose II</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem2english.html" class="btn btn-primary">Resources</a>
-            </div>
-        </div>
+            function openSemester(semester) {
+                currentSemester = semester;
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">HMS125</div>
-                <div class="subject-name">Principles of Accounting</div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
-            </div>
-        </div>
+                // Hide semester prompt
+                document.getElementById('view-semesters').classList.remove('active');
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">COM126</div>
-                <div class="subject-name">Principles of Programming</div>
-            </div>
-            <div class="card-actions">
-                <a href="year1sem2introprog.html" class="btn btn-primary">Summary &amp; Exam</a>
-            </div>
-        </div>
+                // Show subjects view
+                document.getElementById('view-subjects').classList.add('active');
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">MAT127</div>
-                <div class="subject-name">Algebra and Geometry</div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
-            </div>
-        </div>
+                // Clear search box
+                const searchInput = document.getElementById('subjectSearch');
+                searchInput.value = '';
 
-        <div class="subject-card">
-            <div>
-                <div class="subject-code">MAT128</div>
-                <div class="subject-name">Calculus II</div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn btn-disabled">Resources</a>
-            </div>
-        </div>
+                // Focus on search input automatically for better UX
+                setTimeout(() => searchInput.focus(), 50);
 
-      </div>
-    </div>
-  </body>
+                // Filter subjects to show only the selected semester
+                filterSubjects();
+            }
+
+            function goBackToSemesters() {
+                currentSemester = '';
+
+                // Hide subjects view
+                document.getElementById('view-subjects').classList.remove('active');
+
+                // Show semester prompt
+                document.getElementById('view-semesters').classList.add('active');
+            }
+
+            function filterSubjects() {
+                const query = document.getElementById('subjectSearch').value.toLowerCase().trim();
+                const cards = document.querySelectorAll('.subject-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const isCorrectSemester = card.getAttribute('data-sem') === currentSemester;
+                    const matchesSearch = card.getAttribute('data-search').includes(query);
+
+                    if (isCorrectSemester && matchesSearch) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show "no results" message if needed
+                const emptyMessage = document.getElementById('emptySearch');
+                if (visibleCount === 0) {
+                    emptyMessage.style.display = 'block';
+                } else {
+                    emptyMessage.style.display = 'none';
+                }
+            }
+        </script>
+</body>
+
 </html>
