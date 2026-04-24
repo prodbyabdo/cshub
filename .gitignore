@@ -5,9 +5,11 @@
 *.ini
 *.py
 *.json
-
+#folders
 cshub/
 
+
+#files
 desktop.ini
 Thumbs.db
 java_lecture1_reference.html
