@@ -1,0 +1,1447 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principles of Programming | CS Hub</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --muted: #808080;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --border-color: #333333;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+            --blue: #3b82f6;
+            --blue2: #60a5fa;
+            --red: #ef4444;
+            --green: #10b981;
+            --gold: #f59e0b;
+            --purple: #a855f7;
+            --accent: #00ff88;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            margin-top: 10px;
+        }
+
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+        }
+
+        .nav-back:hover {
+            color: var(--accent-color);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 30px;
+            font-family: var(--font-mono);
+        }
+
+        h4 {
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card.blue-glow {
+            border-color: rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .card.red-glow {
+            border-color: rgba(239, 68, 68, 0.3);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .card.green-glow {
+            border-color: rgba(16, 185, 129, 0.3);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .card.gold-glow {
+            border-color: rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .card.purple-glow {
+            border-color: rgba(168, 85, 247, 0.3);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-blue {
+            background: var(--blue);
+        }
+
+        .dot-red {
+            background: var(--red);
+        }
+
+        .dot-green {
+            background: var(--green);
+        }
+
+        .dot-gold {
+            background: var(--gold);
+        }
+
+        .dot-purple {
+            background: var(--purple);
+        }
+
+        .dot-accent {
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin: 32px 0 20px 0;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        ol,
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .lang-block {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .def {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .clean {
+            list-style: none;
+            padding: 0;
+        }
+
+        .clean li {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .clean li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .sheet {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+
+        .sheet tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sheet td,
+        .sheet th {
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--text-secondary);
+        }
+
+        .sheet thead {
+            background: rgba(0, 255, 136, 0.05);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: var(--font-mono);
+            color: var(--accent);
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            color: var(--accent);
+            overflow-x: auto;
+        }
+
+        .yt-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .yt-link:hover {
+            border-color: var(--red);
+            background: rgba(239, 68, 68, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .yt-icon {
+            color: var(--red);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 6px;
+        }
+
+        .sheet {
+            min-width: 680px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 28px 16px;
+            }
+
+            h1 {
+                font-size: clamp(1.9rem, 5.8vw, 2.3rem);
+            }
+
+            .tabs {
+                gap: 8px;
+            }
+
+            .tab-btn {
+                padding: 10px 14px;
+                font-size: 0.95rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 0.98rem;
+            }
+
+            .container {
+                padding: 24px 14px;
+            }
+
+            header {
+                margin-bottom: 24px;
+                padding-bottom: 16px;
+            }
+
+            h2 {
+                margin-top: 30px;
+                padding-left: 12px;
+            }
+
+            .card,
+            .question-card {
+                padding: 14px;
+            }
+
+            .tab-btn {
+                padding: 9px 12px;
+                font-size: 0.88rem;
+            }
+
+            .tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
+
+            .tabs::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            code,
+            pre {
+                word-break: break-word;
+            }
+
+            pre {
+                padding: 12px;
+                font-size: 0.86rem;
+            }
+        }
+
+        @media (max-width: 900px) and (orientation: landscape) {
+            .container {
+                max-width: 100%;
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
+        <header>
+            <h1>Principles of Programming</h1>
+            <div class="subtitle">COM126 · Course Summary, Exams &amp; Java Tutorials</div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('summary')">Subject Summary</button>
+            <button class="tab-btn" onclick="openTab('exam')">Practice Exam</button>
+            <button class="tab-btn" onclick="openTab('java')">Java Tutorials</button>
+            <button class="tab-btn" onclick="openTab('compilerrr')">Java Compiler</button>
+        </div>
+
+        <!-- ════════════════ SUMMARY TAB ════════════════ -->
+        <div id="summary" class="tab-content active">
+            <h2>Java Fundamentals — Lecture 1 Reference</h2>
+            <p>COM126 · Principles of Programming · NUSU · Batch 7 · Academic Year 2025–2026 · Semester 2 Week 1.</p>
+
+            <div class="section-title">§1 · Java Platform — JDK, JRE, JVM &amp; Compilation</div>
+            <div class="card">
+                <h3>What is Java?</h3>
+                <p>Java is a high-level, object-oriented language released by Sun Microsystems in 1995, now owned by
+                    Oracle. It runs on Windows, macOS, Linux, and many other platforms. Over 3 billion devices run Java
+                    today.</p>
+
+                <h3>The Three Layers</h3>
+                <ul>
+                    <li><strong>JDK:</strong> Java Development Kit. Everything a developer needs: compiler
+                        (<code>javac</code>), debugger, libraries, and the JRE. You install this to write and compile
+                        Java programs.</li>
+                    <li><strong>JRE:</strong> Java Runtime Environment. The part needed to <em>run</em> already-compiled
+                        Java programs. Includes the JVM + standard libraries. End-users install this; developers install
+                        the JDK (which contains it).</li>
+                    <li><strong>JVM:</strong> Java Virtual Machine. An abstract machine that reads bytecode and executes
+                        it on your actual hardware. This is why Java is platform-independent — bytecode is the same
+                        everywhere; the JVM adapts it per OS.</li>
+                </ul>
+
+                <h3>The Compilation Pipeline</h3>
+                <p>Unlike C++ (which compiles directly to machine code), Java compiles to an intermediate format called
+                    <strong>bytecode</strong>, then the JVM interprets/JIT-compiles bytecode at runtime.
+                </p>
+                <p><code>Source Code (Main.java) → Compiler (javac) → Bytecode (Main.class) → JVM (java Main) → Output (on any OS)</code>
+                </p>
+
+                <p><strong>C++ vs Java compilation</strong><br>
+                    In C++: <code>g++ main.cpp -o main</code> → produces a binary for <em>that specific OS/CPU</em>.<br>
+                    In Java: <code>javac Main.java</code> → produces <code>Main.class</code> (bytecode). Run anywhere
+                    with <code>java Main</code>.</p>
+
+                <h3>Why Java? (from the lecture)</h3>
+                <ul>
+                    <li><strong>Platform-free:</strong> Write once, run anywhere — bytecode runs on any JVM</li>
+                    <li><strong>Popular:</strong> One of the most in-demand languages globally</li>
+                    <li><strong>OOP:</strong> Object-oriented design gives clear program structure and reuse</li>
+                    <li><strong>Open-source:</strong> Free to download and use</li>
+                    <li><strong>Secure &amp; fast:</strong> Built-in security model; JIT compilation keeps it fast</li>
+                    <li><strong>Huge ecosystem:</strong> Tens of millions of developers; massive library support</li>
+                    <li><strong>Close to C++/C#:</strong> Syntax is familiar — easy to switch between the three</li>
+                </ul>
+
+                <h3>Java Editions</h3>
+                <ul>
+                    <li><strong>Java SE:</strong> Standard Edition — desktop &amp; server apps. What this course uses.
+                    </li>
+                    <li><strong>Java EE:</strong> Enterprise Edition — web applications at scale</li>
+                    <li><strong>Java ME:</strong> Micro Edition — mobile/embedded devices</li>
+                    <li><strong>JavaFX:</strong> Rich internet application UIs</li>
+                </ul>
+            </div>
+
+            <div class="section-title">§2 · Syntax Comparison — Java · C++ · JavaScript</div>
+            <div class="card">
+                <div class="table-wrap">
+                <table class="sheet">
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Java</th>
+                            <th>C++</th>
+                            <th>JavaScript</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Entry point</td>
+                            <td><code>public static void main(String[] args) {}</code></td>
+                            <td><code>int main() {}</code></td>
+                            <td>// top-level (or window.onload)</td>
+                        </tr>
+                        <tr>
+                            <td>Print line</td>
+                            <td><code>System.out.println("hi");</code></td>
+                            <td><code>cout &lt;&lt; "hi" &lt;&lt; endl;</code></td>
+                            <td><code>console.log("hi");</code></td>
+                        </tr>
+                        <tr>
+                            <td>Print (no newline)</td>
+                            <td><code>System.out.print("hi");</code></td>
+                            <td><code>cout &lt;&lt; "hi";</code></td>
+                            <td><code>process.stdout.write("hi");</code></td>
+                        </tr>
+                        <tr>
+                            <td>Integer variable</td>
+                            <td><code>int x = 5;</code></td>
+                            <td><code>int x = 5;</code></td>
+                            <td><code>let x = 5;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Float variable</td>
+                            <td><code>float x = 5.5f;</code></td>
+                            <td><code>float x = 5.5f;</code></td>
+                            <td><code>let x = 5.5; // no float type</code></td>
+                        </tr>
+                        <tr>
+                            <td>Double variable</td>
+                            <td><code>double x = 5.5;</code></td>
+                            <td><code>double x = 5.5;</code></td>
+                            <td><code>let x = 5.5;</code></td>
+                        </tr>
+                        <tr>
+                            <td>String variable</td>
+                            <td><code>String s = "hello";</code></td>
+                            <td><code>string s = "hello";</code></td>
+                            <td><code>let s = "hello";</code></td>
+                        </tr>
+                        <tr>
+                            <td>Character</td>
+                            <td><code>char c = 'A';</code></td>
+                            <td><code>char c = 'A';</code></td>
+                            <td><code>// no char type; use string</code></td>
+                        </tr>
+                        <tr>
+                            <td>Boolean</td>
+                            <td><code>boolean b = true;</code></td>
+                            <td><code>bool b = true;</code></td>
+                            <td><code>let b = true;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Constant</td>
+                            <td><code>final int MAX = 100;</code></td>
+                            <td><code>const int MAX = 100;</code></td>
+                            <td><code>const MAX = 100;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Concatenation</td>
+                            <td><code>"Hi " + name</code></td>
+                            <td><code>"Hi " + name (std::string)</code></td>
+                            <td><code>"Hi " + name</code></td>
+                        </tr>
+                        <tr>
+                            <td>Read input</td>
+                            <td><code>Scanner sc = new Scanner(System.in);<br>int n = sc.nextInt();</code></td>
+                            <td><code>cin &gt;&gt; n;</code></td>
+                            <td><code>// browser: prompt(); Node: readline</code></td>
+                        </tr>
+                        <tr>
+                            <td>if / else</td>
+                            <td><code>if (x &gt; 0) {} else {}</code></td>
+                            <td><code>if (x &gt; 0) {} else {}</code></td>
+                            <td><code>if (x &gt; 0) {} else {}</code></td>
+                        </tr>
+                        <tr>
+                            <td>else if</td>
+                            <td><code>else if (x == 0) {}</code></td>
+                            <td><code>else if (x == 0) {}</code></td>
+                            <td><code>else if (x === 0) {}</code></td>
+                        </tr>
+                        <tr>
+                            <td>switch</td>
+                            <td><code>switch(x) { case 1: break; default: }</code></td>
+                            <td><code>switch(x) { case 1: break; default: }</code></td>
+                            <td><code>switch(x) { case 1: break; default: }</code></td>
+                        </tr>
+                        <tr>
+                            <td>while loop</td>
+                            <td><code>while (i &lt; 5) { i++; }</code></td>
+                            <td><code>while (i &lt; 5) { i++; }</code></td>
+                            <td><code>while (i &lt; 5) { i++; }</code></td>
+                        </tr>
+                        <tr>
+                            <td>do-while</td>
+                            <td><code>do { i++; } while (i &lt; 5);</code></td>
+                            <td><code>do { i++; } while (i &lt; 5);</code></td>
+                            <td><code>do { i++; } while (i &lt; 5);</code></td>
+                        </tr>
+                        <tr>
+                            <td>for loop</td>
+                            <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
+                            <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
+                            <td><code>for (let i=0; i&lt;5; i++) {}</code></td>
+                        </tr>
+                        <tr>
+                            <td>break / continue</td>
+                            <td><code>break; / continue;</code></td>
+                            <td><code>break; / continue;</code></td>
+                            <td><code>break; / continue;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Array (1D)</td>
+                            <td><code>int[] arr = new int[5];<br>int[] arr = {1,2,3};</code></td>
+                            <td><code>int arr[5];<br>int arr[] = {1,2,3};</code></td>
+                            <td><code>let arr = new Array(5);<br>let arr = [1,2,3];</code></td>
+                        </tr>
+                        <tr>
+                            <td>Array length</td>
+                            <td><code>arr.length</code></td>
+                            <td><code>sizeof(arr)/sizeof(arr[0])</code></td>
+                            <td><code>arr.length</code></td>
+                        </tr>
+                        <tr>
+                            <td>String length</td>
+                            <td><code>s.length()</code></td>
+                            <td><code>s.length() or s.size()</code></td>
+                            <td><code>s.length</code></td>
+                        </tr>
+                        <tr>
+                            <td>Equality check</td>
+                            <td><code>== (primitives), .equals() (objects/Strings)</code></td>
+                            <td><code>== for both</code></td>
+                            <td><code>=== (strict), == (loose)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Single-line comment</td>
+                            <td><code>// comment</code></td>
+                            <td><code>// comment</code></td>
+                            <td><code>// comment</code></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-line comment</td>
+                            <td><code>/* comment */</code></td>
+                            <td><code>/* comment */</code></td>
+                            <td><code>/* comment */</code></td>
+                        </tr>
+                        <tr>
+                            <td>Method / function</td>
+                            <td><code>static int add(int a, int b) { return a+b; }</code></td>
+                            <td><code>int add(int a, int b) { return a+b; }</code></td>
+                            <td><code>function add(a, b) { return a+b; }</code></td>
+                        </tr>
+                        <tr>
+                            <td>Type casting</td>
+                            <td><code>(int) myDouble</code></td>
+                            <td><code>(int) myDouble</code></td>
+                            <td><code>parseInt(myStr) / Number()</code></td>
+                        </tr>
+                        <tr>
+                            <td>Null / no value</td>
+                            <td><code>null</code></td>
+                            <td><code>nullptr / NULL</code></td>
+                            <td><code>null / undefined</code></td>
+                        </tr>
+                        <tr>
+                            <td>Imports</td>
+                            <td><code>import java.util.Scanner;</code></td>
+                            <td><code>#include &lt;iostream&gt;</code></td>
+                            <td><code>import { x } from './mod.js';</code></td>
+                        </tr>
+                        <tr>
+                            <td>Namespace / package</td>
+                            <td><code>package com.example;</code></td>
+                            <td><code>namespace myns {}</code></td>
+                            <td><code>// modules via import/export</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                <p><strong>Key difference to memorise:</strong> Java uses <code>String</code> (capital S) as an object
+                    type, not a primitive. Always use <code>.equals()</code> to compare strings — never <code>==</code>.
+                    The <code>==</code> operator on String objects checks if they are the <em>same object in
+                        memory</em>, not whether they have the same content.</p>
+            </div>
+
+            <div class="section-title">§3 · Hello World &amp; Program Structure</div>
+            <div class="card">
+                <p>Every Java program lives inside a <strong>class</strong>. The class name must match the filename
+                    exactly. Execution begins inside <code>main()</code>.</p>
+                <h4>Lecture Example · Hello World</h4>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</code></pre>
+                <p><strong>Output:</strong> Hello World</p>
+                <ul>
+                    <li><strong>public class Main:</strong> Declares a class named <code>Main</code>. File must be saved
+                        as <code>Main.java</code>. Java is case-sensitive.</li>
+                    <li><strong>public static void main:</strong> The entry point. Every Java program requires this
+                        exact signature. <code>static</code> means it belongs to the class itself, not an instance.</li>
+                    <li><strong>String[] args:</strong> Command-line arguments passed in. Required syntax even if
+                        unused.</li>
+                    <li><strong>System.out.println():</strong> <code>System</code> is a built-in class. <code>out</code>
+                        is the output stream. <code>println</code> prints a line and adds a newline character.</li>
+                    <li><strong>Semicolon ;</strong> Every statement ends with <code>;</code> — same as C++.</li>
+                    <li><strong>Curly braces {}</strong> Mark the start and end of code blocks — same as C++.</li>
+                </ul>
+            </div>
+
+            <div class="section-title">§4 · Output — println, print, numbers</div>
+            <div class="card">
+                <h4>Multiple println calls</h4>
+                <pre><code>System.out.println("Hello World!");
+System.out.println("I am learning Java");
+System.out.println("It is awesome!");</code></pre>
+                <p><strong>Output:</strong><br>Hello World!<br>I am learning Java<br>It is awesome!</p>
+
+                <h4>print() vs println() — no newline</h4>
+                <pre><code>System.out.print("Hello World! ");
+System.out.print("I will print on the same line.");</code></pre>
+                <p><strong>Output:</strong> Hello World! I will print on the same line.</p>
+
+                <h4>Print numbers</h4>
+                <pre><code>System.out.println(3);
+System.out.println(358);
+System.out.println(50000);</code></pre>
+
+                <h4>Maths inside println</h4>
+                <pre><code>System.out.println(3 + 3);   // 6
+System.out.println(2 * 5);   // 10
+System.out.println(10 / 2); // 5</code></pre>
+
+                <p><strong>Double quotes rule:</strong> Text must always be wrapped in double quotes.
+                    <code>System.out.println(Hello);</code> causes a compile error — Java treats <code>Hello</code> as a
+                    variable name, not text. Always write <code>"Hello"</code>.
+                </p>
+            </div>
+
+            <div class="section-title">§5 · Comments</div>
+            <div class="card">
+                <h4>Single-line comment</h4>
+                <pre><code>// This is a comment
+System.out.println("Hello World"); // this prints Hello World</code></pre>
+
+                <h4>Multi-line comment</h4>
+                <pre><code>/* The code below will print the words Hello World
+   to the screen, and it is amazing! */
+System.out.println("Hello World");</code></pre>
+
+                <p><strong>Rule of thumb:</strong> Use <code>//</code> for short inline notes. Use <code>/* */</code>
+                    for longer explanations or temporarily disabling a block of code.</p>
+            </div>
+
+            <div class="section-title">§6 · Variables &amp; Data Types</div>
+            <div class="card">
+                <p>Variables are containers for storing data values. All variables in Java must be declared with a
+                    <strong>type</strong> before use. Syntax: <code>type variableName = value;</code>
+                </p>
+
+                <h4>Declaring variables — all types</h4>
+                <pre><code>int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";</code></pre>
+
+                <h4>Declare now, assign later</h4>
+                <pre><code>int myNum;
+myNum = 15;
+System.out.println(myNum); // 15</code></pre>
+
+                <h4>Overwriting a variable</h4>
+                <pre><code>int myNum = 15;
+myNum = 20;                 // overrides the previous value
+System.out.println(myNum); // 20</code></pre>
+
+                <h4>Final (constant) variable</h4>
+                <pre><code>final int myNum = 15;
+myNum = 20; // error: cannot assign a value to a final variable</code></pre>
+
+                <h4>Display variables with text</h4>
+                <pre><code>String name = "John";
+System.out.println("Hello, my name is: " + name);
+
+String firstName = "John ";
+String lastName = "Doe";
+System.out.println(firstName + lastName); // John Doe
+
+int x = 5;
+int y = 6;
+System.out.println(x + y); // 11 (math, not concat)</code></pre>
+
+                <h4>Multiple variables</h4>
+                <pre><code>int x = 5, y = 6, z = 50;
+System.out.println(x + y + z); // 61
+
+int a, b, c;
+a = b = c = 50;
+System.out.println(a + b + c); // 150</code></pre>
+
+                <h3>Primitive Data Types</h3>
+                <div class="table-wrap">
+                <table class="sheet">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Size</th>
+                            <th>Stores</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>byte</td>
+                            <td>1 byte</td>
+                            <td>Whole numbers −128 to 127</td>
+                            <td><code>byte b = 100;</code></td>
+                        </tr>
+                        <tr>
+                            <td>short</td>
+                            <td>2 bytes</td>
+                            <td>Whole numbers −32,768 to 32,767</td>
+                            <td><code>short s = 5000;</code></td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>4 bytes</td>
+                            <td>Whole numbers (most common)</td>
+                            <td><code>int n = 100000;</code></td>
+                        </tr>
+                        <tr>
+                            <td>long</td>
+                            <td>8 bytes</td>
+                            <td>Very large whole numbers</td>
+                            <td><code>long l = 15000000000L;</code></td>
+                        </tr>
+                        <tr>
+                            <td>float</td>
+                            <td>4 bytes</td>
+                            <td>Decimal numbers (~6–7 digits)</td>
+                            <td><code>float f = 5.75f;</code></td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>8 bytes</td>
+                            <td>Decimal numbers (~15 digits)</td>
+                            <td><code>double d = 19.99;</code></td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <td>1 bit</td>
+                            <td>true or false only</td>
+                            <td><code>boolean ok = true;</code></td>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>2 bytes</td>
+                            <td>Single character or ASCII value</td>
+                            <td><code>char c = 'A';</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+                <h4>Real-life example — cost calculation</h4>
+                <pre><code>int items = 50;
+float costPerItem = 9.99f;
+float totalCost = items * costPerItem;
+char currency = '$';
+System.out.println("Total cost: " + currency + totalCost);
+// Output: Total cost: $499.5</code></pre>
+            </div>
+
+            <div class="section-title">§7 · Type Casting</div>
+            <div class="card">
+                <p>Type casting converts a value from one type to another. Java has two kinds:</p>
+                <ul>
+                    <li><strong>Widening:</strong> Smaller → larger type. Happens automatically. No data loss.
+                        <code>byte → short → char → int → long → float → double</code>
+                    </li>
+                    <li><strong>Narrowing:</strong> Larger → smaller type. Must be done manually. Risk of data loss.
+                    </li>
+                </ul>
+
+                <h4>Widening casting — automatic</h4>
+                <pre><code>int myInt = 9;
+double myDouble = myInt; // automatic: int → double
+System.out.println(myInt);    // 9
+System.out.println(myDouble); // 9.0</code></pre>
+
+                <h4>Narrowing casting — manual</h4>
+                <pre><code>double myDouble = 9.78d;
+int myInt = (int) myDouble; // manual: double → int (truncates)
+System.out.println(myDouble); // 9.78
+System.out.println(myInt);    // 9</code></pre>
+
+                <h4>Real-life — percentage score</h4>
+                <pre><code>int score = 90;
+int maxScore = 100;
+float percentage = (float) score / maxScore * 100;
+System.out.println("Your score is: " + percentage + "%");
+// Output: Your score is: 90.0%</code></pre>
+            </div>
+
+            <div class="section-title">§8 · Operators</div>
+            <div class="card">
+                <h3>Arithmetic Operators</h3>
+                <div class="table-wrap">
+                <table class="sheet">
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>+</td>
+                            <td>Addition</td>
+                            <td>5 + 3</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Subtraction</td>
+                            <td>5 - 3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Multiplication</td>
+                            <td>5 * 3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Division</td>
+                            <td>10 / 2</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Modulus (remainder)</td>
+                            <td>7 % 3</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>++</td>
+                            <td>Increment</td>
+                            <td>x++</td>
+                            <td>x = x + 1</td>
+                        </tr>
+                        <tr>
+                            <td>--</td>
+                            <td>Decrement</td>
+                            <td>x--</td>
+                            <td>x = x - 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+                <h3>Comparison &amp; Logical Operators</h3>
+                <div class="table-wrap">
+                <table class="sheet">
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Meaning / Name</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>==</td>
+                            <td>Equal to</td>
+                            <td>x == y</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Not equal</td>
+                            <td>x != y</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>Greater than</td>
+                            <td>x &gt; y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>Less than</td>
+                            <td>x &lt; y</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;=</td>
+                            <td>Greater than or equal</td>
+                            <td>x &gt;= y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;=</td>
+                            <td>Less than or equal</td>
+                            <td>x &lt;= y</td>
+                        </tr>
+                        <tr>
+                            <td>&amp;&amp;</td>
+                            <td>AND (True if both are true)</td>
+                            <td>x &gt; 2 &amp;&amp; x &lt; 10</td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>OR (True if at least one is true)</td>
+                            <td>x &lt; 2 || x &gt; 10</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>NOT (Reverses the result)</td>
+                            <td>!(x &gt; 5)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+                <h4>Lecture code — using + operator</h4>
+                <pre><code>int x = 5 + 3;   // 8
+int y = 5 + x;   // 13
+int z = x + y;   // 21
+System.out.println(z);</code></pre>
+            </div>
+
+            <div class="section-title">§9 · Strings &amp; String Methods</div>
+            <div class="card">
+                <p>In Java, <code>String</code> is an object (not a primitive). It has built-in methods you can call on
+                    it using dot notation.</p>
+
+                <h4>String length</h4>
+                <pre><code>String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());
+// Output: The length of the txt string is: 26</code></pre>
+
+                <h4>toUpperCase / toLowerCase</h4>
+                <pre><code>String txt = "Hello World";
+System.out.println(txt.toUpperCase()); // HELLO WORLD
+System.out.println(txt.toLowerCase()); // hello world</code></pre>
+
+                <h4>String concatenation</h4>
+                <pre><code>String firstName = "John";
+String lastName = "Doe";
+System.out.println(firstName + " " + lastName); // John Doe
+
+// using concat()
+String first = "John ";
+String last = "Doe";
+System.out.println(first.concat(last)); // John Doe</code></pre>
+
+                <p><strong>Common String methods summary:</strong><br>
+                    <code>s.length()</code> — character count<br>
+                    <code>s.toUpperCase()</code> — all caps<br>
+                    <code>s.toLowerCase()</code> — all lower<br>
+                    <code>s.charAt(i)</code> — character at index <code>i</code><br>
+                    <code>s.equals("x")</code> — compare content (not <code>==</code>)<br>
+                    <code>s.indexOf("x")</code> — find position of substring
+                </p>
+            </div>
+
+            <div class="section-title">§10 · Conditions &amp; Branching</div>
+            <div class="card">
+                <h4>Simple if</h4>
+                <pre><code>int x = 20;
+if (x &gt; 18) {
+    System.out.println("x is greater than 18");
+}</code></pre>
+
+                <h4>if-else</h4>
+                <pre><code>int time = 20;
+if (time &lt; 18) {
+    System.out.println("Good day.");
+} else {
+    System.out.println("Good evening.");
+}
+// Output: Good evening.</code></pre>
+
+                <h4>else if</h4>
+                <pre><code>int time = 22;
+if (time &lt; 10) {
+    System.out.println("Good morning.");
+} else if (time &lt; 18) {
+    System.out.println("Good day.");
+} else {
+    System.out.println("Good evening.");
+}</code></pre>
+
+                <h4>Multi-level Grading (else if chain)</h4>
+                <pre><code>int score = 89;
+if (score &gt;= 80) {
+    System.out.println("Grade: A");
+} else if (score &gt;= 70) {
+    System.out.println("Grade: B");
+} else if (score &gt;= 60) {
+    System.out.println("Grade: C");
+} else if (score &gt;= 50) {
+    System.out.println("Grade: Pass");
+} else {
+    System.out.println("Grade: Fail");
+}</code></pre>
+
+                <h4>Real-life example — door code</h4>
+                <pre><code>int doorCode = 1337;
+if (doorCode == 1337) {
+    System.out.println("Correct code. The door is now open.");
+} else {
+    System.out.println("Wrong code. The door remains closed.");
+}</code></pre>
+
+                <h4>Nested if statements</h4>
+                <pre><code>int x = 20;
+int y = 18;
+if (x &gt; y) {
+    if (x &gt; 10) {
+        System.out.println("x is greater than y AND greater than 10");
+    }
+}</code></pre>
+
+                <h4>Switch statement — weekday</h4>
+                <pre><code>int day = 4;
+String dayName;
+switch (day) {
+    case 1:  dayName = "Monday";    break;
+    case 2:  dayName = "Tuesday";   break;
+    case 3:  dayName = "Wednesday"; break;
+    case 4:  dayName = "Thursday";  break;
+    case 5:  dayName = "Friday";    break;
+    default: dayName = "Invalid";
+}
+System.out.println(dayName); // Thursday</code></pre>
+
+                <h4>Menu-driven Switch (logic inside cases)</h4>
+                <pre><code>int choice = 2;
+switch(choice) {
+    case 1:
+        System.out.println("Welcome to the System");
+        break;
+    case 2:
+        int a = 5, b = 3;
+        System.out.println("Result: " + (a + b));
+        break;
+    case 3:
+        System.out.println("Exiting...");
+        break;
+    default:
+        System.out.println("Invalid Choice");
+}</code></pre>
+                <p><strong>Don't forget break!</strong> Without <code>break</code>, Java "falls through" into the next
+                    case and keeps executing. Always end each case with <code>break;</code> unless fall-through is
+                    intentional.</p>
+            </div>
+
+            <div class="section-title">§11 · Loops</div>
+            <div class="card">
+                <h4>while loop</h4>
+                <pre><code>int i = 0;
+while (i &lt; 5) {
+    System.out.println(i);
+    i++;
+}
+// Output: 0 1 2 3 4 (each on new line)</code></pre>
+
+                <h4>do-while loop</h4>
+                <pre><code>int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i &lt; 5);
+// Runs at least once — even if i &gt;= 5 from the start</code></pre>
+
+                <h4>for loop — 0 to 4</h4>
+                <pre><code>for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}
+// Output: 0 1 2 3 4</code></pre>
+
+                <h4>for loop — even numbers 0–10</h4>
+                <pre><code>for (int i = 0; i &lt;= 10; i += 2) {
+    System.out.println(i);
+}
+// Output: 0 2 4 6 8 10</code></pre>
+
+                <h4>Nested loops</h4>
+                <pre><code>// Outer loop
+for (int i = 1; i &lt;= 2; i++) {
+    System.out.println("Outer: " + i);
+    // Inner loop
+    for (int j = 1; j &lt;= 3; j++) {
+        System.out.println("  Inner: " + j);
+    }
+}</code></pre>
+                <p><strong>Output:</strong> Outer: 1 &nbsp; Inner: 1 &nbsp; Inner: 2 &nbsp; Inner: 3 &nbsp; Outer: 2
+                    &nbsp; Inner: 1 &nbsp; Inner: 2 &nbsp; Inner: 3</p>
+
+                <h4>break — exit loop early</h4>
+                <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        break; // stop the loop when i equals 4
+    }
+    System.out.println(i);
+}
+// Output: 0 1 2 3</code></pre>
+
+                <h4>continue — skip one iteration</h4>
+                <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 4) {
+        continue; // skip 4, keep going
+    }
+    System.out.println(i);
+}
+// Output: 0 1 2 3 5 6 7 8 9</code></pre>
+
+                <h4>Real-life countdown</h4>
+                <pre><code>int countdown = 5;
+while (countdown &gt; 0) {
+    System.out.println(countdown);
+    countdown--;
+}
+System.out.println("Go!");
+// Output: 5 4 3 2 1 Go!</code></pre>
+            </div>
+        </div>
+
+        <!-- ════════════════ EXAM TAB ════════════════ -->
+        <div id="exam" class="tab-content">
+            <h2>Practice Exam </h2>
+            <p>Test your knowledge of programming fundamentals, algorithms, and logic structures.</p>
+
+            <div class="question-card">
+                <div class="question-text">1. Which type of software translates high-level code as a complete unit
+                    before execution?</div>
+                <div class="options">
+                    <label><input type="radio" name="q1"> a) Operating System</label><br>
+                    <label><input type="radio" name="q1"> b) Compiler</label><br>
+                    <label><input type="radio" name="q1"> c) Interpreter</label><br>
+                    <label><input type="radio" name="q1"> d) Assembly Language</label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. Which flowchart symbol is used to represent a decision with multiple exit
+                    paths (Yes/No)?</div>
+                <div class="options">
+                    <label><input type="radio" name="q2"> a) Oval</label><br>
+                    <label><input type="radio" name="q2"> b) Rectangle</label><br>
+                    <label><input type="radio" name="q2"> c) Parallelogram</label><br>
+                    <label><input type="radio" name="q2"> d) Diamond</label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. Analyze the pseudocode:
+                    <br><code>count = 0<br>While (count &lt; 5)<br>  count = count + 1<br>EndLoop</code><br>What is the
+                    purpose of the variable <code>count</code>?
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q3"> a) It acts as an accumulator</label><br>
+                    <label><input type="radio" name="q3"> b) It acts as a counter</label><br>
+                    <label><input type="radio" name="q3"> c) It is a constant</label><br>
+                    <label><input type="radio" name="q3"> d) It causes a runtime error</label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. What is the difference between a Pre-Test loop and a Post-Test loop?</div>
+                <div class="options">
+                    <label><input type="radio" name="q4"> a) Pre-Test loops never run, Post-Test loops run
+                        infinitely</label><br>
+                    <label><input type="radio" name="q4"> b) A Pre-Test loop might run 0 times, but a Post-Test loop
+                        always runs at least once</label><br>
+                    <label><input type="radio" name="q4"> c) They are exactly the same</label><br>
+                    <label><input type="radio" name="q4"> d) A Pre-Test loop is for counting, Post-Test is for
+                        accumulating</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ════════════════ JAVA TUTORIALS TAB ════════════════ -->
+        <div id="java" class="tab-content">
+            <h2>Java Programming Tutorials</h2>
+            <p>Curated YouTube links to help you master Java programming basics.</p>
+
+            <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 20px rgba(0, 255, 136, 0.05);">
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">📚</div>
+                <h3 style="margin: 0 0 10px 0; font-size: 1.5rem; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px;">
+                    Full Java Video Library
+                </h3>
+                <p style="margin: 0 0 25px 0; font-size: 1.05rem; color: #d0d0d0; max-width: 550px; line-height: 1.5;">
+                    Looking for the complete Neso Academy course covering both current curriculum and future topics like <strong>Methods, Arrays, and Object-Oriented Programming</strong>?
+                </p>
+                <a href="resources.html#java-tutorials" style="background: var(--accent); color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: var(--font-mono); font-size: 1rem; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2); transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 255, 136, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 255, 136, 0.2)';">
+                    Go to the Java Resources Tab &rarr;
+                </a>
+            </div>
+
+            <h3 style="margin-top: 30px;">Curated Videos</h3>
+
+            <a href="https://www.youtube.com/watch?v=eIrMbAQSU34" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Java Tutorial for Beginners</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Programming with Mosh - Full Course
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=grEKMHGYyns" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Java Variables &amp; Data Types</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Bro Code - Learn Java Basics</div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=I0G5Rih6rxc" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>If-Else Statements &amp; Switch Cases in Java</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Alex Lee - Java Logic</div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=tJEOT1G2qow" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>For Loops, While Loops, and Do-While Loops</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Coding with John - Repetition in Java
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=xk4_1vCGsFI" target="_blank" class="yt-link">
+                <span class="yt-icon">▶</span>
+                <div>
+                    <strong>Object-Oriented Programming (OOP) in Java</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Amigoscode - Classes &amp; Objects
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- ════════════════ COMPILER TAB ════════════════ -->
+        <div id="compilerrr" class="tab-content">
+            <iframe
+                src="https://onecompiler.com/embed/java?hideLanguageSelection=true&theme=dark&amp;hideNew=true&amp;hideNewFileOption=true&amp;hideTitle=true"
+                frameborder="0" width="100%" height="600px" style="border-radius: 8px;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabBtns;
+
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+
+
+</body>
+
+</html>
