@@ -371,6 +371,16 @@
             margin-right: 15px;
             font-weight: bold;
         }
+
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 6px;
+        }
+
+        .sheet {
+            min-width: 680px;
+        }
     </style>
 </head>
 
@@ -1329,6 +1339,38 @@ System.out.println("Go!");
             document.getElementById(tabName).classList.add("active");
             event.currentTarget.classList.add("active");
         }
+
+        function setupTableHorizontalScroll() {
+            var tables = document.querySelectorAll('table.sheet');
+
+            tables.forEach(function (table) {
+                if (table.parentElement && table.parentElement.classList.contains('table-wrap')) {
+                    return;
+                }
+
+                var wrapper = document.createElement('div');
+                wrapper.className = 'table-wrap';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            });
+
+            var wrappers = document.querySelectorAll('.table-wrap');
+            wrappers.forEach(function (wrapper) {
+                wrapper.addEventListener('wheel', function (event) {
+                    var hasHorizontalOverflow = wrapper.scrollWidth > wrapper.clientWidth;
+                    var mostlyVerticalScroll = Math.abs(event.deltaY) > Math.abs(event.deltaX);
+
+                    if (!hasHorizontalOverflow || !mostlyVerticalScroll) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    wrapper.scrollLeft += event.deltaY;
+                }, { passive: false });
+            });
+        }
+
+        setupTableHorizontalScroll();
     </script>
 
 
