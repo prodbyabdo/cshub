@@ -625,9 +625,9 @@
         </header>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('summary')">Subject Summary</button>
-            <button class="tab-btn" onclick="openTab('final-exam')">Final Exam</button>
-            <button class="tab-btn" onclick="openTab('answer-sheet')">Answer Sheet</button>
+            <button class="tab-btn active" onclick=\"openTab('summary', this)\"">Subject Summary</button>
+            <button class="tab-btn" onclick=\"openTab('final-exam', this)\"">Final Exam</button>
+            <button class="tab-btn" onclick=\"openTab('answer-sheet', this)\"">Answer Sheet</button>
         </div>
 
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
@@ -635,7 +635,7 @@
             <h2>Course Overview</h2>
             <p>Comprehensive study material covering 6 lectures + MS Access practical for HMS-113 Introduction to Database. <strong>Exam Date: 18 April 2026</strong></p>
 
-            <div class="section-title">Lecture 1 · DBMS Introduction &amp; File-Based Problems</div>
+            <div class="section-title" id="lecture-1-dbms-introduction-amp-file-based-problems">Lecture 1 · DBMS Introduction &amp; File-Based Problems</div>
             <div class="grid-2">
                 <div class="card blue-glow">
                     <div class="card-title"><span class="dot dot-blue"></span>Definition of DBMS</div>
@@ -694,7 +694,7 @@
                 </div>
             </div>
 
-            <div class="section-title">Lectures 2 · Types of DBMS</div>
+            <div class="section-title" id="lectures-2-types-of-dbms">Lectures 2 · Types of DBMS</div>
             <div class="grid-3">
                 <div class="card blue-glow">
                     <div class="card-title"><span class="dot dot-blue"></span>1. Relational DBMS</div>
@@ -727,7 +727,7 @@
                 </div>
             </div>
 
-            <div class="section-title">Lectures 3 &amp; 4 · Database Languages</div>
+            <div class="section-title" id="lectures-3-amp-4-database-languages">Lectures 3 &amp; 4 · Database Languages</div>
             <div class="grid-2">
                 <div class="lang-block" style="border-left: 3px solid var(--blue); padding: 15px;">
                     <h4 style="color: var(--blue2);">DDL — Data Definition Language</h4>
@@ -771,7 +771,7 @@
                 </div>
             </div>
 
-            <div class="section-title">Lecture 5 · Database Abstraction &amp; Levels</div>
+            <div class="section-title" id="lecture-5-database-abstraction-amp-levels">Lecture 5 · Database Abstraction &amp; Levels</div>
             <div class="grid-2">
                 <div class="card blue-glow">
                     <div class="card-title"><span class="dot dot-blue"></span>Three Levels of Abstraction</div>
@@ -805,7 +805,7 @@
                 </div>
             </div>
 
-            <div class="section-title">Lecture 6 · Normalization</div>
+            <div class="section-title" id="lecture-6-normalization">Lecture 6 · Normalization</div>
             <div class="card gold-glow">
                 <div class="card-title"><span class="dot dot-gold"></span>Normalization Process</div>
                 <div class="def" style="margin-bottom: 12px;">
@@ -834,7 +834,7 @@
                 </div>
             </div>
 
-            <div class="section-title">Microsoft Access · Practical</div>
+            <div class="section-title" id="microsoft-access-practical">Microsoft Access · Practical</div>
             <div class="access-grid">
                 <div class="card blue-glow">
                     <div class="card-title"><span class="dot dot-blue"></span>Creating Tables in Access</div>
@@ -1057,16 +1057,71 @@
         </div>
     </div>
 
-    <script>
-        function openTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
+        <script>
+        function openTab(tabName, clickedEl) {
+            document.querySelectorAll('.tab-content').forEach(function(c) {
+                c.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
 
-            const tabs = ['summary', 'final-exam', 'answer-sheet'];
-            const idx = tabs.indexOf(tabName);
-            if (idx >= 0) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+            var target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
+
+            var activeBtn = clickedEl
+                || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
+            if (activeBtn) activeBtn.classList.add('active');
         }
     </script>
+    <!-- Deep Linking Script -->
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+
+                var targetId = decodeURIComponent(hash.substring(1));
+                var el = document.getElementById(targetId);
+                if (!el) return;
+
+                // If the element is inside an inactive tab, open that tab first
+                var tabContent = el.closest ? el.closest('.tab-content') : null;
+                if (!tabContent) {
+                    var parent = el.parentElement;
+                    while (parent) {
+                        if (parent.classList && parent.classList.contains('tab-content')) {
+                            tabContent = parent;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                }
+
+                if (tabContent && !tabContent.classList.contains('active')) {
+                    if (typeof openTab === 'function') {
+                        openTab(tabContent.id);
+                    }
+                }
+
+                // Scroll with slight delay to allow tab CSS transition
+                setTimeout(function () {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 120);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setTimeout(handleHash, 50);
+                });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
+
+
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory hierarchy | CS Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../wiki.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="../computer-architecture.html" class="nav-back">&larr; Back to Computer Architecture</a>
+      <header>
+        <h1>Memory hierarchy</h1>
+        <div class="subtitle">Wiki Importance Rank: 3</div>
+      </header>
+      <section class="wiki-content">
+        <p>In computer architecture, the <b>memory hierarchy</b> separates computer storage into a hierarchy based on response time. Since response time, complexity, and capacity are related, the levels may also be distinguished by their performance and controlling technologies. Memory hierarchy affects performance in computer architectural design, algorithm predictions, and lower level programming constructs involving locality of reference. 
+</p><p>Designing for high performance requires considering the restrictions of the memory hierarchy, i.e. the size and capabilities of each component. Each of the various components can be viewed as part of a hierarchy of memories <span>(<i>m</i><sub>1</sub>, <i>m</i><sub>2</sub>, ..., <i>m<sub>n</sub></i>)</span> in which each member <span>m<sub>i</sub></span> is typically smaller and faster than the next highest member <span><i>m</i><sub><i>i</i>+1</sub></span> of the hierarchy. To limit waiting by higher levels, a lower level will respond by filling a buffer and then signaling for activating the transfer.
+</p><p>There are four major storage levels.
+</p>
+<ul><li><i>Internal</i> – processor registers and cache.</li>
+<li>Main – the system RAM and controller cards.</li>
+<li>On-line mass storage – secondary storage.</li>
+<li>Off-line bulk storage – tertiary and off-line storage.</li></ul>
+<p>This is a general memory hierarchy structuring. Many other structures are useful.  For example, a paging algorithm may be considered as a level for virtual memory when designing a computer architecture, and one can include a level of nearline storage between online and offline storage.
+</p>
+      </section>
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 0.85rem; color: #64748b;">
+        Source: Wikipedia. The text above is an introductory summary fetched automatically.
+      </div>
+    </div>
+  </body>
+</html>

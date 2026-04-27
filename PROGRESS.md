@@ -1,0 +1,291 @@
+# Wiki Population Progress
+
+Track the status of Wikipedia article fetching and wiki page generation.
+
+## Status Legend
+- `[ ]` : Pending
+- `[x]` : Completed (Fetched and Generated)
+- `[s]` : Skipped (Rank too low)
+- `[e]` : Error (Not found or API error)
+
+## AI
+- [x] Artificial intelligence (Rank 1)
+- [x] Machine learning (Rank 1)
+- [x] Neural network (Rank 1)
+- [x] Search algorithm (Rank 1)
+- [ ] Deep learning
+- [ ] Reinforcement learning
+- [ ] Computer vision
+- [ ] Robotics
+- [ ] Expert system
+- [ ] Genetic algorithm
+- [ ] Turing test
+- [ ] Large language model
+- [ ] Generative artificial intelligence
+- [ ] Data science
+- [ ] Pattern recognition
+- [ ] Knowledge representation and reasoning
+- [ ] Automated reasoning
+- [ ] Bayesian network
+- [ ] Decision tree learning
+
+## Algorithms
+- [x] Algorithm (Rank 1)
+- [x] Sorting algorithm (Rank 1)
+- [ ] Search algorithm
+- [s] Graph traversal (Rank 4)
+- [ ] Big O notation
+- [ ] Time complexity
+- [ ] Recursion (computer science)
+- [ ] Dynamic programming
+- [ ] Greedy algorithm
+- [ ] Binary search algorithm
+- [ ] Quicksort
+- [ ] Merge sort
+- [ ] Dijkstra's algorithm
+- [ ] A* search algorithm
+- [ ] Backtracking
+- [ ] Divide-and-conquer algorithm
+- [ ] Randomized algorithm
+- [ ] Prim's algorithm
+- [ ] Kruskal's algorithm
+- [ ] Breadth-first search
+- [ ] Depth-first search
+- [ ] Hash function
+- [ ] Encryption
+- [ ] Compression
+
+## Computer Architecture
+- [x] Computer architecture (Rank 1)
+- [x] Central processing unit (Rank 1)
+- [x] Instruction set architecture (Rank 1)
+- [x] Memory hierarchy (Rank 1)
+- [ ] Von Neumann architecture
+- [ ] Harvard architecture
+- [ ] Microprocessor
+- [ ] Logic gate
+- [ ] Transistor
+- [ ] Integrated circuit
+- [ ] Motherboard
+- [ ] Random-access memory
+- [ ] Read-only memory
+- [ ] Flash memory
+- [ ] Hard disk drive
+- [ ] Solid-state drive
+- [ ] Bus (computing)
+- [ ] Cache (computing)
+- [ ] Graphics processing unit
+- [ ] Input/output
+- [ ] Interrupt
+- [ ] Pipelining (computing)
+- [ ] Supercomputer
+- [ ] Quantum computing
+
+## Cybersecurity
+- [x] Computer security (Rank 1)
+- [x] Cryptography (Rank 1)
+- [x] Network security (Rank 1)
+- [x] Malware (Rank 1)
+- [ ] Public-key cryptography
+- [ ] Symmetric-key algorithm
+- [ ] Digital signature
+- [ ] Firewall (computing)
+- [ ] Virtual private network
+- [ ] Transport Layer Security
+- [ ] SQL injection
+- [ ] Cross-site scripting
+- [ ] Denial-of-service attack
+- [ ] Phishing
+- [ ] Social engineering (security)
+- [ ] Penetration test
+- [ ] Identity management
+- [ ] Multi-factor authentication
+- [ ] Biometrics
+- [ ] Zero trust security model
+- [ ] Advanced persistent threat
+- [ ] Computer virus
+- [ ] Ransomware
+- [ ] Cryptographic hash function
+
+## Data Structures
+- [x] Data structure (Rank 1)
+- [e] Array data structure
+- [x] Linked list (Rank 1)
+- [e] Tree (data structure)
+- [x] Hash table (Rank 1)
+- [ ] Abstract data type
+- [ ] Stack (abstract data type)
+- [ ] Queue (abstract data type)
+- [ ] Priority queue
+- [ ] Heap (data structure)
+- [ ] Binary tree
+- [ ] Self-balancing binary search tree
+- [ ] B-tree
+- [ ] Graph (abstract data type)
+- [ ] Adjacency matrix
+- [ ] Adjacency list
+- [ ] Disjoint-set data structure
+- [ ] Bloom filter
+- [ ] Skip list
+- [ ] Trie
+
+## Databases
+- [x] Database (Rank 1)
+- [x] Relational database (Rank 1)
+- [x] SQL (Rank 1)
+- [x] NoSQL (Rank 1)
+- [ ] Database management system
+- [ ] Relational database management system
+- [ ] ACID
+- [ ] Database transaction
+- [ ] Database index
+- [ ] Foreign key
+- [ ] Data normalization
+- [ ] Distributed database
+- [ ] Data warehouse
+- [ ] Business intelligence
+- [ ] Big data
+- [ ] CAP theorem
+- [ ] Document-oriented database
+- [ ] Graph database
+- [ ] Key-value database
+
+## Discrete Mathematics
+- [x] Discrete mathematics (Rank 1)
+- [x] Boolean algebra (Rank 1)
+- [x] Set theory (Rank 1)
+- [x] Graph theory (Rank 1)
+- [ ] Automata theory
+- [ ] Formal language
+- [ ] Turing machine
+- [ ] Halting problem
+- [ ] P versus NP problem
+- [ ] Computational complexity theory
+- [ ] Regular expression
+- [ ] Context-free grammar
+- [ ] Mathematical logic
+- [ ] Combinatorics
+- [ ] Number theory
+- [ ] Probability theory
+- [ ] Information theory
+- [ ] Linear algebra
+- [ ] Calculus
+- [ ] Finite-state machine
+- [ ] Lambda calculus
+- [ ] Predicate logic
+- [ ] Truth table
+- [ ] Propositional calculus
+
+## Networks
+- [x] Computer network (Rank 1)
+- [e] Internet Protocol Suite
+- [x] Transmission Control Protocol (Rank 1)
+- [x] OSI model (Rank 1)
+- [ ] Local area network
+- [ ] Wide area network
+- [ ] Router (computing)
+- [ ] Network switch
+- [ ] IP address
+- [ ] Domain Name System
+- [ ] Hypertext Transfer Protocol
+- [ ] File Transfer Protocol
+- [ ] Simple Mail Transfer Protocol
+- [ ] Wireless LAN
+- [ ] Ethernet
+- [ ] Peer-to-peer
+- [ ] Client–server model
+- [ ] Cloud computing
+- [ ] Content delivery network
+- [ ] Network topology
+- [ ] Packet switching
+- [ ] Bandwidth (computing)
+- [ ] Latency (engineering)
+- [ ] Internet of things
+
+## Operating Systems
+- [x] Operating system (Rank 1)
+- [x] Process (computing) (Rank 1)
+- [x] Memory management (Rank 1)
+- [x] File system (Rank 1)
+- [ ] Kernel (operating system)
+- [ ] Multi-tasking
+- [ ] Virtual memory
+- [ ] Deadlock (computer science)
+- [ ] Thread (computing)
+- [ ] Scheduling (computing)
+- [ ] Shell (computing)
+- [ ] Device driver
+- [ ] Booting
+- [ ] Unix
+- [ ] Linux
+- [ ] Microsoft Windows
+- [ ] macOS
+- [ ] Real-time operating system
+
+## Programming
+- [x] Computer programming (Rank 1)
+- [x] Object-oriented programming (Rank 1)
+- [x] Functional programming (Rank 1)
+- [x] Control flow (Rank 1)
+- [e] Variable (computer science)
+- [ ] High-level programming language
+- [ ] Assembly language
+- [ ] Compiler
+- [ ] Interpreter (computing)
+- [ ] Integrated development environment
+- [ ] C (programming language)
+- [ ] C++
+- [ ] Java (programming language)
+- [ ] Python (programming language)
+- [ ] JavaScript
+- [ ] PHP
+- [ ] Swift (programming language)
+- [ ] Kotlin (programming language)
+- [ ] Rust (programming language)
+- [ ] Go (programming language)
+- [ ] Type system
+- [ ] Memory management
+- [ ] Garbage collection (computer science)
+- [ ] Scripting language
+
+## Software Engineering
+- [x] Software engineering (Rank 1)
+- [x] Software development process (Rank 1)
+- [x] Agile software development (Rank 1)
+- [x] Version control (Rank 1)
+- [ ] Software development lifecycle
+- [ ] Waterfall model
+- [ ] Scrum (software development)
+- [ ] DevOps
+- [ ] Continuous integration
+- [ ] Continuous delivery
+- [ ] Microservices
+- [ ] Containerization (computing)
+- [ ] Docker (software)
+- [ ] Kubernetes
+- [ ] Software testing
+- [ ] Unit testing
+- [ ] Debugging
+- [ ] Refactoring
+- [ ] Documentation
+
+## Web Development
+- [x] Web development (Rank 1)
+- [x] HTML (Rank 1)
+- [x] CSS (Rank 1)
+- [x] JavaScript (Rank 1)
+- [ ] World Wide Web
+- [ ] URL
+- [ ] Web browser
+- [ ] Document Object Model
+- [ ] Ajax (programming)
+- [ ] Web API
+- [ ] Single-page application
+- [ ] Responsive web design
+- [ ] Front-end web development
+- [ ] Back-end web development
+- [ ] Full-stack development
+- [ ] Web server
+- [ ] Search engine optimization
+- [ ] Web accessibility
+- [ ] Content management system

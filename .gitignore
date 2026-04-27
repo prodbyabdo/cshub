@@ -1,13 +1,38 @@
 
 
-#filetypes
-*.md
+# --- Project Specifics ---*.md
 *.ini
 *.py
 *.json
+*.ini
+*.log
+*.tmp
+
+# --- Windows System Files ---
+[Dd]esktop.ini
+desktop.ini
+$RECYCLE.BIN/
+Thumbs.db
+ehthumbs.db
+[Tt]humbs.db
+
+# --- macOS System Files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+
+
+# --- Folders and Previews ---
+contentforwiki/
+java_lecture1_reference.html
+index-preview.html
+year1-preview.html
+
 #folders
 cshub/
-
+.agents/
 
 #files
 desktop.ini

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmission Control Protocol | CS Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../wiki.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="../networks.html" class="nav-back">&larr; Back to Networks</a>
+      <header>
+        <h1>Transmission Control Protocol</h1>
+        <div class="subtitle">Wiki Importance Rank: 1</div>
+      </header>
+      <section class="wiki-content">
+        <p class="mw-empty-elt">
+</p>
+
+
+<p>The <b>Transmission Control Protocol</b> (<b>TCP</b>) is one of the main protocols of the Internet protocol suite, providing reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating via an IP network. It originated in the initial network implementation in which it complemented the Internet Protocol (IP). Therefore, the entire suite is commonly referred to as TCP/IP.
+</p><p>Major internet applications such as the World Wide Web, email, remote administration, file transfer and streaming media rely on TCP, which is part of the transport layer of the TCP/IP suite. SSL/TLS often runs on top of TCP. Today, TCP remains a core protocol for most Internet communication, ensuring reliable data transfer across diverse networks.
+</p><p>TCP is connection-oriented, meaning that sender and receiver firstly need to establish a connection based on agreed parameters; they do this through a three-way handshake procedure. The server must be listening (passive open) for connection requests from clients before a connection is established. Three-way handshake (active open), retransmission, and error detection adds to reliability but lengthens latency. Applications that do not require reliable data stream service may use the User Datagram Protocol (UDP) instead, which provides a connectionless datagram service that prioritizes time over reliability. TCP employs network congestion avoidance. However, there are vulnerabilities in TCP, including denial of service, connection hijacking, TCP veto, and reset attack.
+</p>
+      </section>
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 0.85rem; color: #64748b;">
+        Source: Wikipedia. The text above is an introductory summary fetched automatically.
+      </div>
+    </div>
+  </body>
+</html>

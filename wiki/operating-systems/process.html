@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Process (computing) | CS Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../wiki.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="../operating-systems.html" class="nav-back">&larr; Back to Operating Systems</a>
+      <header>
+        <h1>Process (computing)</h1>
+        <div class="subtitle">Wiki Importance Rank: 1</div>
+      </header>
+      <section class="wiki-content">
+        <p>In computing, a <b>process</b> is the instance of a computer program that is being executed by one or many threads. There are many different process models, some of which are lightweight, but almost all processes (even entire virtual machines) are rooted in an operating system (OS) process which comprises the program code, assigned system resources, physical and logical access permissions, and data structures to initiate, control and coordinate execution activity. Depending on the OS, a process may be made up of multiple threads of execution that execute instructions concurrently.
+</p><p>While a computer program is a passive collection of instructions typically stored in a file on disk, a process is the execution of those instructions after being loaded from the disk into memory. Several processes may be associated with the same program; for example, opening up several instances of the same program often results in more than one process being executed.
+</p><p>Multitasking is a method to allow multiple processes to share processors (CPUs) and other system resources. Each CPU (core) executes a single process at a time. However, multitasking allows each processor to switch between tasks that are being executed without having to wait for each task to finish (preemption). Depending on the operating system implementation, switches could be performed when tasks initiate and wait for completion of input/output operations, when a task voluntarily yields the CPU, on hardware interrupts, and when the operating system scheduler decides that a process has expired its fair share of CPU time (e.g, by the Completely Fair Scheduler of the Linux kernel).
+</p><p>A common form of multitasking is provided by CPU's time-sharing that is a method for interleaving the execution of users' processes and threads, and even of independent kernel tasks – although the latter feature is feasible only in preemptive kernels such as Linux. Preemption has an important side effect for interactive processes that are given higher priority with respect to CPU-bound processes; therefore users are immediately assigned computing resources at the simple pressing of a key or when moving a mouse. Furthermore, applications like video and music reproduction are given some kind of real-time priority, preempting any other lower priority process. In time-sharing systems, context switches are performed rapidly, which makes it seem like multiple processes are being executed simultaneously on the same processor. This seemingly-simultaneous execution of multiple processes is called concurrency.
+</p><p>For security and reliability, most modern operating systems prevent direct communication between independent processes, providing strictly mediated and controlled inter-process communication.
+</p>
+      </section>
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 0.85rem; color: #64748b;">
+        Source: Wikipedia. The text above is an introductory summary fetched automatically.
+      </div>
+    </div>
+  </body>
+</html>

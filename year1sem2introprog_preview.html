@@ -485,10 +485,10 @@
         </header>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('summary')">Subject Summary</button>
-            <button class="tab-btn" onclick="openTab('exam')">Practice Exam</button>
-            <button class="tab-btn" onclick="openTab('java')">Java Tutorials</button>
-            <button class="tab-btn" onclick="openTab('compilerrr')">Java Compiler</button>
+            <button class="tab-btn active" onclick=\"openTab('summary', this)\"">Subject Summary</button>
+            <button class="tab-btn" onclick=\"openTab('exam', this)\"">Practice Exam</button>
+            <button class="tab-btn" onclick=\"openTab('java', this)\"">Java Tutorials</button>
+            <button class="tab-btn" onclick=\"openTab('compilerrr', this)\"">Java Compiler</button>
         </div>
 
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
@@ -496,7 +496,7 @@
             <h2>Java Fundamentals — Lecture 1 Reference</h2>
             <p>COM126 · Principles of Programming · NUSU · Batch 7 · Academic Year 2025–2026 · Semester 2 Week 1.</p>
 
-            <div class="section-title">§1 · Java Platform — JDK, JRE, JVM &amp; Compilation</div>
+            <div class="section-title" id="1-java-platform-jdk-jre-jvm-amp-compilation">§1 · Java Platform — JDK, JRE, JVM &amp; Compilation</div>
             <div class="card">
                 <h3>What is Java?</h3>
                 <p>Java is a high-level, object-oriented language released by Sun Microsystems in 1995, now owned by
@@ -549,7 +549,7 @@
                 </ul>
             </div>
 
-            <div class="section-title">§2 · Syntax Comparison — Java · C++ · JavaScript</div>
+            <div class="section-title" id="2-syntax-comparison-java-c-javascript">§2 · Syntax Comparison — Java · C++ · JavaScript</div>
             <div class="card">
                 <div class="table-wrap">
                     <table class="sheet">
@@ -751,7 +751,7 @@
                         memory</em>, not whether they have the same content.</p>
             </div>
 
-            <div class="section-title">§3 · Hello World &amp; Program Structure</div>
+            <div class="section-title" id="3-hello-world-amp-program-structure">§3 · Hello World &amp; Program Structure</div>
             <div class="card">
                 <p>Every Java program lives inside a <strong>class</strong>. The class name must match the filename
                     exactly. Execution begins inside <code>main()</code>.</p>
@@ -781,7 +781,7 @@ public class Main {
                 </ul>
             </div>
 
-            <div class="section-title">§4 · Output — println, print, numbers</div>
+            <div class="section-title" id="4-output-println-print-numbers">§4 · Output — println, print, numbers</div>
             <div class="card">
                 <h4>Multiple println calls</h4>
                 <pre><code>System.out.println("Hello World!");
@@ -810,7 +810,7 @@ System.out.println(10 / 2); // 5</code></pre>
                 </p>
             </div>
 
-            <div class="section-title">§5 · Comments</div>
+            <div class="section-title" id="5-comments">§5 · Comments</div>
             <div class="card">
                 <h4>Single-line comment</h4>
                 <pre><code>// This is a comment
@@ -825,7 +825,7 @@ System.out.println("Hello World");</code></pre>
                     for longer explanations or temporarily disabling a block of code.</p>
             </div>
 
-            <div class="section-title">§6 · Variables &amp; Data Types</div>
+            <div class="section-title" id="6-variables-amp-data-types">§6 · Variables &amp; Data Types</div>
             <div class="card">
                 <p>Variables are containers for storing data values. All variables in Java must be declared with a
                     <strong>type</strong> before use. Syntax: <code>type variableName = value;</code>
@@ -945,7 +945,7 @@ System.out.println("Total cost: " + currency + totalCost);
 // Output: Total cost: $499.5</code></pre>
             </div>
 
-            <div class="section-title">§7 · Type Casting</div>
+            <div class="section-title" id="7-type-casting">§7 · Type Casting</div>
             <div class="card">
                 <p>Type casting converts a value from one type to another. Java has two kinds:</p>
                 <ul>
@@ -976,7 +976,7 @@ System.out.println("Your score is: " + percentage + "%");
 // Output: Your score is: 90.0%</code></pre>
             </div>
 
-            <div class="section-title">§8 · Operators</div>
+            <div class="section-title" id="8-operators">§8 · Operators</div>
             <div class="card">
                 <h3>Arithmetic Operators</h3>
                 <div class="table-wrap">
@@ -1103,7 +1103,7 @@ int z = x + y;   // 21
 System.out.println(z);</code></pre>
             </div>
 
-            <div class="section-title">§9 · Strings &amp; String Methods</div>
+            <div class="section-title" id="9-strings-amp-string-methods">§9 · Strings &amp; String Methods</div>
             <div class="card">
                 <p>In Java, <code>String</code> is an object (not a primitive). It has built-in methods you can call on
                     it using dot notation.</p>
@@ -1138,7 +1138,7 @@ System.out.println(first.concat(last)); // John Doe</code></pre>
                 </p>
             </div>
 
-            <div class="section-title">§10 · Conditions &amp; Branching</div>
+            <div class="section-title" id="10-conditions-amp-branching">§10 · Conditions &amp; Branching</div>
             <div class="card">
                 <h4>Simple if</h4>
                 <pre><code>int x = 20;
@@ -1230,7 +1230,7 @@ switch(choice) {
                     intentional.</p>
             </div>
 
-            <div class="section-title">§11 · Loops</div>
+            <div class="section-title" id="11-loops">§11 · Loops</div>
             <div class="card">
                 <h4>while loop</h4>
                 <pre><code>int i = 0;
@@ -1364,7 +1364,7 @@ System.out.println("Go!");
                 style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 20px rgba(0, 255, 136, 0.05);">
                 <div style="font-size: 2.5rem; margin-bottom: 10px;">📚</div>
                 <h3
-                    style="margin: 0 0 10px 0; font-size: 1.5rem; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px;">
+                    style="margin: 0 0 10px 0; font-size: 1.5rem; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px;" id="full-java-video-library">
                     Full Java Video Library
                 </h3>
                 <p style="margin: 0 0 25px 0; font-size: 1.05rem; color: #d0d0d0; max-width: 550px; line-height: 1.5;">
@@ -1379,7 +1379,7 @@ System.out.println("Go!");
                 </a>
             </div>
 
-            <h3 style="margin-top: 30px;">Curated Videos</h3>
+            <h3 style="margin-top: 30px;" id="curated-videos">Curated Videos</h3>
 
             <a href="https://www.youtube.com/watch?v=eIrMbAQSU34" target="_blank" class="yt-link">
                 <span class="yt-icon">▶</span>
@@ -1433,48 +1433,69 @@ System.out.println("Go!");
         </div>
     </div>
 
-    <script>
-        function openTab(tabName) {
-            var i, tabContent, tabBtns;
+        <script>
+        function openTab(tabName, clickedEl) {
+            document.querySelectorAll('.tab-content').forEach(function(c) {
+                c.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
 
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].classList.remove("active");
-            }
+            var target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
 
-            tabBtns = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].classList.remove("active");
-            }
-
-            document.getElementById(tabName).classList.add("active");
-            event.currentTarget.classList.add("active");
+            var activeBtn = clickedEl
+                || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
+            if (activeBtn) activeBtn.classList.add('active');
         }
-        function setupTableHorizontalScroll() {
-            var wrappers = document.querySelectorAll('.table-wrap');
+    </script>
+    <!-- Deep Linking Script -->
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
 
-            wrappers.forEach(function (wrapper) {
-                if (wrapper.dataset.wheelBound === 'true') {
-                    return;
+                var targetId = decodeURIComponent(hash.substring(1));
+                var el = document.getElementById(targetId);
+                if (!el) return;
+
+                // If the element is inside an inactive tab, open that tab first
+                var tabContent = el.closest ? el.closest('.tab-content') : null;
+                if (!tabContent) {
+                    var parent = el.parentElement;
+                    while (parent) {
+                        if (parent.classList && parent.classList.contains('tab-content')) {
+                            tabContent = parent;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
                 }
 
-                wrapper.addEventListener('wheel', function (event) {
-                    var hasHorizontalOverflow = wrapper.scrollWidth > wrapper.clientWidth;
-                    var mostlyVerticalScroll = Math.abs(event.deltaY) >= Math.abs(event.deltaX);
-
-                    if (!hasHorizontalOverflow || !mostlyVerticalScroll) {
-                        return;
+                if (tabContent && !tabContent.classList.contains('active')) {
+                    if (typeof openTab === 'function') {
+                        openTab(tabContent.id);
                     }
+                }
 
-                    event.preventDefault();
-                    wrapper.scrollLeft += event.deltaY;
-                }, { passive: false });
+                // Scroll with slight delay to allow tab CSS transition
+                setTimeout(function () {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 120);
+            }
 
-                wrapper.dataset.wheelBound = 'true';
-            });
-        }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setTimeout(handleHash, 50);
+                });
+            } else {
+                setTimeout(handleHash, 50);
+            }
 
-        setupTableHorizontalScroll();
+            window.addEventListener('hashchange', handleHash);
+        })();
     </script>
 
 

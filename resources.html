@@ -307,7 +307,7 @@
         <!-- Intro to CS -->
         <section id="intro-to-cs" class="content-section active">
           <div class="section-header">
-            <h2 class="section-title">Introduction to Computer Science</h2>
+            <h2 class="section-title" id="introduction-to-computer-science">Introduction to Computer Science</h2>
             <p class="section-desc">Broad CS foundations, computing context, and early orientation.</p>
           </div>
           <div class="resource-grid">
@@ -350,7 +350,7 @@
         <!-- Computer Applications -->
         <section id="computer-applications" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Computer Applications</h2>
+            <h2 class="section-title" id="computer-applications-1">Computer Applications</h2>
             <p class="section-desc">Practical tools, setup, and accessible web/dev entry points.</p>
           </div>
           <div class="resource-grid">
@@ -372,7 +372,7 @@
         <!-- Discrete Mathematics -->
         <section id="discrete-mathematics" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Discrete Mathematics</h2>
+            <h2 class="section-title" id="discrete-mathematics-1">Discrete Mathematics</h2>
             <p class="section-desc">Math support for logic, abstraction, and algorithmic thinking.</p>
           </div>
           <div class="resource-grid">
@@ -394,7 +394,7 @@
         <!-- Principles of Programming -->
         <section id="principles-of-programming" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Principles of Programming</h2>
+            <h2 class="section-title" id="principles-of-programming-1">Principles of Programming</h2>
             <p class="section-desc">Language basics, code structure, problem solving, and OOP foundations.</p>
           </div>
           <div class="resource-grid">
@@ -428,7 +428,7 @@
         <!-- Intro to Databases -->
         <section id="intro-to-databases" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Introduction to Databases</h2>
+            <h2 class="section-title" id="introduction-to-databases">Introduction to Databases</h2>
             <p class="section-desc">Database ideas viewed through real application and system examples.</p>
           </div>
           <div class="resource-grid">
@@ -452,7 +452,7 @@
         <!-- Computer Maintenance -->
         <section id="computer-architecture-maintenance" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Computer Maintenance</h2>
+            <h2 class="section-title" id="computer-maintenance">Computer Maintenance</h2>
             <p class="section-desc">Hardware-focused tutorials and guides.</p>
           </div>
           <div class="resource-grid">
@@ -477,7 +477,7 @@
         <!-- Software Engineering -->
         <section id="software-engineering" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Software Engineering</h2>
+            <h2 class="section-title" id="software-engineering-1">Software Engineering</h2>
             <p class="section-desc">Version control, architecture, systems, and delivery workflow.</p>
           </div>
           <div class="resource-grid">
@@ -541,7 +541,7 @@
         <!-- Data Structures -->
         <section id="data-structures-algorithms" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Data Structures &amp; Algorithms</h2>
+            <h2 class="section-title" id="data-structures-amp-algorithms">Data Structures &amp; Algorithms</h2>
             <p class="section-desc">Problem sets, common structures, and deeper algorithm review.</p>
           </div>
           <div class="resource-grid">
@@ -557,7 +557,7 @@
         <!-- Networks -->
         <section id="networks" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Networks</h2>
+            <h2 class="section-title" id="networks-1">Networks</h2>
             <p class="section-desc">Infrastructure and deployment concepts closest to networking study.</p>
           </div>
           <div class="resource-grid">
@@ -588,7 +588,7 @@
         <!-- OS -->
         <section id="operating-systems" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Operating Systems</h2>
+            <h2 class="section-title" id="operating-systems-1">Operating Systems</h2>
             <p class="section-desc">System processes, memory management, and kernel concepts.</p>
           </div>
           <div class="resource-grid">
@@ -603,7 +603,7 @@
         <!-- AI & Cyber -->
         <section id="ai-cybersecurity-specialization" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">AI / Cybersecurity</h2>
+            <h2 class="section-title" id="ai-cybersecurity">AI / Cybersecurity</h2>
             <p class="section-desc">Security concepts, AI fundamentals, and later specialization material.</p>
           </div>
           <div class="resource-grid">
@@ -653,7 +653,7 @@
         <!-- Java Tutorials -->
         <section id="java-tutorials" class="content-section">
           <div class="section-header">
-            <h2 class="section-title">Java Programming (Advanced)</h2>
+            <h2 class="section-title" id="java-programming-advanced">Java Programming (Advanced)</h2>
             <p class="section-desc">Future curriculum topics: Methods, Arrays, and Object-Oriented Programming from Neso Academy.</p>
           </div>
           <div class="resource-grid">
@@ -1127,5 +1127,54 @@
         }
       }
     </script>
-  </body>
+    <!-- Deep Linking Script -->
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+
+                var targetId = decodeURIComponent(hash.substring(1));
+                var el = document.getElementById(targetId);
+                if (!el) return;
+
+                // If the element is inside an inactive tab, open that tab first
+                var tabContent = el.closest ? el.closest('.tab-content') : null;
+                if (!tabContent) {
+                    var parent = el.parentElement;
+                    while (parent) {
+                        if (parent.classList && parent.classList.contains('tab-content')) {
+                            tabContent = parent;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                }
+
+                if (tabContent && !tabContent.classList.contains('active')) {
+                    if (typeof openTab === 'function') {
+                        openTab(tabContent.id);
+                    }
+                }
+
+                // Scroll with slight delay to allow tab CSS transition
+                setTimeout(function () {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 120);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setTimeout(handleHash, 50);
+                });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
+
+
+</body>
 </html>
