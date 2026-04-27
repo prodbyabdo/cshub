@@ -651,24 +651,29 @@
             <div class="card">
                 <p>Every Java program lives inside a <strong>class</strong>. The class name must match the filename
                     exactly. Execution begins inside <code>main()</code>.</p>
-                <h4>Lecture Example · Hello World</h4>
-                <pre><code>public class Main {
+                <h4>Lecture Example · Input with Scanner</h4>
+                <pre><code>import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+
+        System.out.println("Hello, " + name + "!");
+        input.close();
     }
 }</code></pre>
-                <p><strong>Output:</strong> Hello World</p>
+                <p><strong>Example run:</strong><br>Enter your name: Sara<br>Hello, Sara!</p>
                 <ul>
-                    <li><strong>public class Main:</strong> Declares a class named <code>Main</code>. File must be saved
-                        as <code>Main.java</code>. Java is case-sensitive.</li>
-                    <li><strong>public static void main:</strong> The entry point. Every Java program requires this
-                        exact signature. <code>static</code> means it belongs to the class itself, not an instance.</li>
-                    <li><strong>String[] args:</strong> Command-line arguments passed in. Required syntax even if
-                        unused.</li>
-                    <li><strong>System.out.println():</strong> <code>System</code> is a built-in class. <code>out</code>
-                        is the output stream. <code>println</code> prints a line and adds a newline character.</li>
-                    <li><strong>Semicolon ;</strong> Every statement ends with <code>;</code> — same as C++.</li>
-                    <li><strong>Curly braces {}</strong> Mark the start and end of code blocks — same as C++.</li>
+                    <li><strong>import java.util.Scanner;</strong> Import <code>Scanner</code> at the top of the file.</li>
+                    <li><strong>new Scanner(System.in):</strong> Creates an input reader for keyboard input.</li>
+                    <li><strong>nextLine():</strong> Reads a full line of text (including spaces).</li>
+                    <li><strong>nextInt(), nextDouble(), next():</strong> Use for integer, decimal, and single-word input.</li>
+                    <li><strong>input.close():</strong> Good practice when done reading input.</li>
+                    <li><strong>Important:</strong> If you use <code>nextInt()</code> or <code>nextDouble()</code> first, call
+                        one extra <code>nextLine()</code> before reading a full text line.</li>
                 </ul>
             </div>
 
