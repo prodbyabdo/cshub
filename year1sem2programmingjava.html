@@ -713,27 +713,35 @@
 
     <p>Every Java program lives inside a <strong>class</strong>. The class name must match the filename exactly. Execution begins inside <code>main()</code>.</p>
 
-    <h4>Main.java — Hello World</h4>
+    <h4>Main.java — Read Input with <code>Scanner</code></h4>
     <div class="code-block">
-      <div class="label">Lecture Example · Hello World</div>
-      <pre><span class="kw">public class</span> <span class="ty">Main</span> {
+      <div class="label">Lecture Example · Input</div>
+      <pre><span class="kw">import</span> java.util.<span class="ty">Scanner</span>;
+
+<span class="kw">public class</span> <span class="ty">Main</span> {
     <span class="kw">public static void</span> <span class="fn">main</span>(<span class="ty">String</span>[] args) {
-        <span class="ty">System</span>.out.<span class="fn">println</span>(<span class="str">"Hello World"</span>);
+        <span class="ty">Scanner</span> input = <span class="kw">new</span> <span class="ty">Scanner</span>(<span class="ty">System</span>.in);
+
+        <span class="ty">System</span>.out.<span class="fn">print</span>(<span class="str">"Enter your name: "</span>);
+        <span class="ty">String</span> name = input.<span class="fn">nextLine</span>();
+
+        <span class="ty">System</span>.out.<span class="fn">println</span>(<span class="str">"Hello, "</span> + name + <span class="str">"!"</span>);
+        input.<span class="fn">close</span>();
     }
 }</pre>
     </div>
     <div class="output">
-      <div class="out-label">Output</div>
-      Hello World
+      <div class="out-label">Example run</div>
+      Enter your name: Sara<br>Hello, Sara!
     </div>
 
     <dl class="dlist">
-      <dt>public class Main</dt><dd>Declares a class named <code>Main</code>. File must be saved as <code>Main.java</code>. Java is case-sensitive.</dd>
-      <dt>public static void main</dt><dd>The entry point. Every Java program requires this exact signature. <code>static</code> means it belongs to the class itself, not an instance.</dd>
-      <dt>String[] args</dt><dd>Command-line arguments passed in. Required syntax even if unused.</dd>
-      <dt>System.out.println()</dt><dd><code>System</code> is a built-in class. <code>out</code> is the output stream. <code>println</code> prints a line and adds a newline character.</dd>
-      <dt>Semicolon ;</dt><dd>Every statement ends with <code>;</code> — same as C++.</dd>
-      <dt>Curly braces {}</dt><dd>Mark the start and end of code blocks — same as C++.</dd>
+      <dt>import java.util.Scanner;</dt><dd>Import <code>Scanner</code> at the top of the file so Java can use the input class.</dd>
+      <dt>new Scanner(System.in)</dt><dd>Creates a scanner connected to keyboard input (<code>System.in</code>).</dd>
+      <dt>nextLine()</dt><dd>Reads a full line of text (including spaces). Use this for names/sentences.</dd>
+      <dt>nextInt(), nextDouble(), next()</dt><dd>Use <code>nextInt()</code> for whole numbers, <code>nextDouble()</code> for decimals, and <code>next()</code> for one word.</dd>
+      <dt>input.close()</dt><dd>Good practice: close the scanner when input is finished.</dd>
+      <dt>Important mixing rule</dt><dd>After <code>nextInt()</code> or <code>nextDouble()</code>, call an extra <code>nextLine()</code> before reading text lines to consume the leftover newline.</dd>
     </dl>
   </div>
 
