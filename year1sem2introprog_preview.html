@@ -552,199 +552,199 @@
             <div class="section-title">§2 · Syntax Comparison — Java · C++ · JavaScript</div>
             <div class="card">
                 <div class="table-wrap">
-                <table class="sheet">
-                    <thead>
-                        <tr>
-                            <th>Concept</th>
-                            <th>Java</th>
-                            <th>C++</th>
-                            <th>JavaScript</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Entry point</td>
-                            <td><code>public static void main(String[] args) {}</code></td>
-                            <td><code>int main() {}</code></td>
-                            <td>// top-level (or window.onload)</td>
-                        </tr>
-                        <tr>
-                            <td>Print line</td>
-                            <td><code>System.out.println("hi");</code></td>
-                            <td><code>cout &lt;&lt; "hi" &lt;&lt; endl;</code></td>
-                            <td><code>console.log("hi");</code></td>
-                        </tr>
-                        <tr>
-                            <td>Print (no newline)</td>
-                            <td><code>System.out.print("hi");</code></td>
-                            <td><code>cout &lt;&lt; "hi";</code></td>
-                            <td><code>process.stdout.write("hi");</code></td>
-                        </tr>
-                        <tr>
-                            <td>Integer variable</td>
-                            <td><code>int x = 5;</code></td>
-                            <td><code>int x = 5;</code></td>
-                            <td><code>let x = 5;</code></td>
-                        </tr>
-                        <tr>
-                            <td>Float variable</td>
-                            <td><code>float x = 5.5f;</code></td>
-                            <td><code>float x = 5.5f;</code></td>
-                            <td><code>let x = 5.5; // no float type</code></td>
-                        </tr>
-                        <tr>
-                            <td>Double variable</td>
-                            <td><code>double x = 5.5;</code></td>
-                            <td><code>double x = 5.5;</code></td>
-                            <td><code>let x = 5.5;</code></td>
-                        </tr>
-                        <tr>
-                            <td>String variable</td>
-                            <td><code>String s = "hello";</code></td>
-                            <td><code>string s = "hello";</code></td>
-                            <td><code>let s = "hello";</code></td>
-                        </tr>
-                        <tr>
-                            <td>Character</td>
-                            <td><code>char c = 'A';</code></td>
-                            <td><code>char c = 'A';</code></td>
-                            <td><code>// no char type; use string</code></td>
-                        </tr>
-                        <tr>
-                            <td>Boolean</td>
-                            <td><code>boolean b = true;</code></td>
-                            <td><code>bool b = true;</code></td>
-                            <td><code>let b = true;</code></td>
-                        </tr>
-                        <tr>
-                            <td>Constant</td>
-                            <td><code>final int MAX = 100;</code></td>
-                            <td><code>const int MAX = 100;</code></td>
-                            <td><code>const MAX = 100;</code></td>
-                        </tr>
-                        <tr>
-                            <td>Concatenation</td>
-                            <td><code>"Hi " + name</code></td>
-                            <td><code>"Hi " + name (std::string)</code></td>
-                            <td><code>"Hi " + name</code></td>
-                        </tr>
-                        <tr>
-                            <td>Read input</td>
-                            <td><code>Scanner sc = new Scanner(System.in);<br>int n = sc.nextInt();</code></td>
-                            <td><code>cin &gt;&gt; n;</code></td>
-                            <td><code>// browser: prompt(); Node: readline</code></td>
-                        </tr>
-                        <tr>
-                            <td>if / else</td>
-                            <td><code>if (x &gt; 0) {} else {}</code></td>
-                            <td><code>if (x &gt; 0) {} else {}</code></td>
-                            <td><code>if (x &gt; 0) {} else {}</code></td>
-                        </tr>
-                        <tr>
-                            <td>else if</td>
-                            <td><code>else if (x == 0) {}</code></td>
-                            <td><code>else if (x == 0) {}</code></td>
-                            <td><code>else if (x === 0) {}</code></td>
-                        </tr>
-                        <tr>
-                            <td>switch</td>
-                            <td><code>switch(x) { case 1: break; default: }</code></td>
-                            <td><code>switch(x) { case 1: break; default: }</code></td>
-                            <td><code>switch(x) { case 1: break; default: }</code></td>
-                        </tr>
-                        <tr>
-                            <td>while loop</td>
-                            <td><code>while (i &lt; 5) { i++; }</code></td>
-                            <td><code>while (i &lt; 5) { i++; }</code></td>
-                            <td><code>while (i &lt; 5) { i++; }</code></td>
-                        </tr>
-                        <tr>
-                            <td>do-while</td>
-                            <td><code>do { i++; } while (i &lt; 5);</code></td>
-                            <td><code>do { i++; } while (i &lt; 5);</code></td>
-                            <td><code>do { i++; } while (i &lt; 5);</code></td>
-                        </tr>
-                        <tr>
-                            <td>for loop</td>
-                            <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
-                            <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
-                            <td><code>for (let i=0; i&lt;5; i++) {}</code></td>
-                        </tr>
-                        <tr>
-                            <td>break / continue</td>
-                            <td><code>break; / continue;</code></td>
-                            <td><code>break; / continue;</code></td>
-                            <td><code>break; / continue;</code></td>
-                        </tr>
-                        <tr>
-                            <td>Array (1D)</td>
-                            <td><code>int[] arr = new int[5];<br>int[] arr = {1,2,3};</code></td>
-                            <td><code>int arr[5];<br>int arr[] = {1,2,3};</code></td>
-                            <td><code>let arr = new Array(5);<br>let arr = [1,2,3];</code></td>
-                        </tr>
-                        <tr>
-                            <td>Array length</td>
-                            <td><code>arr.length</code></td>
-                            <td><code>sizeof(arr)/sizeof(arr[0])</code></td>
-                            <td><code>arr.length</code></td>
-                        </tr>
-                        <tr>
-                            <td>String length</td>
-                            <td><code>s.length()</code></td>
-                            <td><code>s.length() or s.size()</code></td>
-                            <td><code>s.length</code></td>
-                        </tr>
-                        <tr>
-                            <td>Equality check</td>
-                            <td><code>== (primitives), .equals() (objects/Strings)</code></td>
-                            <td><code>== for both</code></td>
-                            <td><code>=== (strict), == (loose)</code></td>
-                        </tr>
-                        <tr>
-                            <td>Single-line comment</td>
-                            <td><code>// comment</code></td>
-                            <td><code>// comment</code></td>
-                            <td><code>// comment</code></td>
-                        </tr>
-                        <tr>
-                            <td>Multi-line comment</td>
-                            <td><code>/* comment */</code></td>
-                            <td><code>/* comment */</code></td>
-                            <td><code>/* comment */</code></td>
-                        </tr>
-                        <tr>
-                            <td>Method / function</td>
-                            <td><code>static int add(int a, int b) { return a+b; }</code></td>
-                            <td><code>int add(int a, int b) { return a+b; }</code></td>
-                            <td><code>function add(a, b) { return a+b; }</code></td>
-                        </tr>
-                        <tr>
-                            <td>Type casting</td>
-                            <td><code>(int) myDouble</code></td>
-                            <td><code>(int) myDouble</code></td>
-                            <td><code>parseInt(myStr) / Number()</code></td>
-                        </tr>
-                        <tr>
-                            <td>Null / no value</td>
-                            <td><code>null</code></td>
-                            <td><code>nullptr / NULL</code></td>
-                            <td><code>null / undefined</code></td>
-                        </tr>
-                        <tr>
-                            <td>Imports</td>
-                            <td><code>import java.util.Scanner;</code></td>
-                            <td><code>#include &lt;iostream&gt;</code></td>
-                            <td><code>import { x } from './mod.js';</code></td>
-                        </tr>
-                        <tr>
-                            <td>Namespace / package</td>
-                            <td><code>package com.example;</code></td>
-                            <td><code>namespace myns {}</code></td>
-                            <td><code>// modules via import/export</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <table class="sheet">
+                        <thead>
+                            <tr>
+                                <th>Concept</th>
+                                <th>Java</th>
+                                <th>C++</th>
+                                <th>JavaScript</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Entry point</td>
+                                <td><code>public static void main(String[] args) {}</code></td>
+                                <td><code>int main() {}</code></td>
+                                <td>// top-level (or window.onload)</td>
+                            </tr>
+                            <tr>
+                                <td>Print line</td>
+                                <td><code>System.out.println("hi");</code></td>
+                                <td><code>cout &lt;&lt; "hi" &lt;&lt; endl;</code></td>
+                                <td><code>console.log("hi");</code></td>
+                            </tr>
+                            <tr>
+                                <td>Print (no newline)</td>
+                                <td><code>System.out.print("hi");</code></td>
+                                <td><code>cout &lt;&lt; "hi";</code></td>
+                                <td><code>process.stdout.write("hi");</code></td>
+                            </tr>
+                            <tr>
+                                <td>Integer variable</td>
+                                <td><code>int x = 5;</code></td>
+                                <td><code>int x = 5;</code></td>
+                                <td><code>let x = 5;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Float variable</td>
+                                <td><code>float x = 5.5f;</code></td>
+                                <td><code>float x = 5.5f;</code></td>
+                                <td><code>let x = 5.5; // no float type</code></td>
+                            </tr>
+                            <tr>
+                                <td>Double variable</td>
+                                <td><code>double x = 5.5;</code></td>
+                                <td><code>double x = 5.5;</code></td>
+                                <td><code>let x = 5.5;</code></td>
+                            </tr>
+                            <tr>
+                                <td>String variable</td>
+                                <td><code>String s = "hello";</code></td>
+                                <td><code>string s = "hello";</code></td>
+                                <td><code>let s = "hello";</code></td>
+                            </tr>
+                            <tr>
+                                <td>Character</td>
+                                <td><code>char c = 'A';</code></td>
+                                <td><code>char c = 'A';</code></td>
+                                <td><code>// no char type; use string</code></td>
+                            </tr>
+                            <tr>
+                                <td>Boolean</td>
+                                <td><code>boolean b = true;</code></td>
+                                <td><code>bool b = true;</code></td>
+                                <td><code>let b = true;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Constant</td>
+                                <td><code>final int MAX = 100;</code></td>
+                                <td><code>const int MAX = 100;</code></td>
+                                <td><code>const MAX = 100;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Concatenation</td>
+                                <td><code>"Hi " + name</code></td>
+                                <td><code>"Hi " + name (std::string)</code></td>
+                                <td><code>"Hi " + name</code></td>
+                            </tr>
+                            <tr>
+                                <td>Read input</td>
+                                <td><code>Scanner sc = new Scanner(System.in);<br>int n = sc.nextInt();</code></td>
+                                <td><code>cin &gt;&gt; n;</code></td>
+                                <td><code>// browser: prompt(); Node: readline</code></td>
+                            </tr>
+                            <tr>
+                                <td>if / else</td>
+                                <td><code>if (x &gt; 0) {} else {}</code></td>
+                                <td><code>if (x &gt; 0) {} else {}</code></td>
+                                <td><code>if (x &gt; 0) {} else {}</code></td>
+                            </tr>
+                            <tr>
+                                <td>else if</td>
+                                <td><code>else if (x == 0) {}</code></td>
+                                <td><code>else if (x == 0) {}</code></td>
+                                <td><code>else if (x === 0) {}</code></td>
+                            </tr>
+                            <tr>
+                                <td>switch</td>
+                                <td><code>switch(x) { case 1: break; default: }</code></td>
+                                <td><code>switch(x) { case 1: break; default: }</code></td>
+                                <td><code>switch(x) { case 1: break; default: }</code></td>
+                            </tr>
+                            <tr>
+                                <td>while loop</td>
+                                <td><code>while (i &lt; 5) { i++; }</code></td>
+                                <td><code>while (i &lt; 5) { i++; }</code></td>
+                                <td><code>while (i &lt; 5) { i++; }</code></td>
+                            </tr>
+                            <tr>
+                                <td>do-while</td>
+                                <td><code>do { i++; } while (i &lt; 5);</code></td>
+                                <td><code>do { i++; } while (i &lt; 5);</code></td>
+                                <td><code>do { i++; } while (i &lt; 5);</code></td>
+                            </tr>
+                            <tr>
+                                <td>for loop</td>
+                                <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
+                                <td><code>for (int i=0; i&lt;5; i++) {}</code></td>
+                                <td><code>for (let i=0; i&lt;5; i++) {}</code></td>
+                            </tr>
+                            <tr>
+                                <td>break / continue</td>
+                                <td><code>break; / continue;</code></td>
+                                <td><code>break; / continue;</code></td>
+                                <td><code>break; / continue;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Array (1D)</td>
+                                <td><code>int[] arr = new int[5];<br>int[] arr = {1,2,3};</code></td>
+                                <td><code>int arr[5];<br>int arr[] = {1,2,3};</code></td>
+                                <td><code>let arr = new Array(5);<br>let arr = [1,2,3];</code></td>
+                            </tr>
+                            <tr>
+                                <td>Array length</td>
+                                <td><code>arr.length</code></td>
+                                <td><code>sizeof(arr)/sizeof(arr[0])</code></td>
+                                <td><code>arr.length</code></td>
+                            </tr>
+                            <tr>
+                                <td>String length</td>
+                                <td><code>s.length()</code></td>
+                                <td><code>s.length() or s.size()</code></td>
+                                <td><code>s.length</code></td>
+                            </tr>
+                            <tr>
+                                <td>Equality check</td>
+                                <td><code>== (primitives), .equals() (objects/Strings)</code></td>
+                                <td><code>== for both</code></td>
+                                <td><code>=== (strict), == (loose)</code></td>
+                            </tr>
+                            <tr>
+                                <td>Single-line comment</td>
+                                <td><code>// comment</code></td>
+                                <td><code>// comment</code></td>
+                                <td><code>// comment</code></td>
+                            </tr>
+                            <tr>
+                                <td>Multi-line comment</td>
+                                <td><code>/* comment */</code></td>
+                                <td><code>/* comment */</code></td>
+                                <td><code>/* comment */</code></td>
+                            </tr>
+                            <tr>
+                                <td>Method / function</td>
+                                <td><code>static int add(int a, int b) { return a+b; }</code></td>
+                                <td><code>int add(int a, int b) { return a+b; }</code></td>
+                                <td><code>function add(a, b) { return a+b; }</code></td>
+                            </tr>
+                            <tr>
+                                <td>Type casting</td>
+                                <td><code>(int) myDouble</code></td>
+                                <td><code>(int) myDouble</code></td>
+                                <td><code>parseInt(myStr) / Number()</code></td>
+                            </tr>
+                            <tr>
+                                <td>Null / no value</td>
+                                <td><code>null</code></td>
+                                <td><code>nullptr / NULL</code></td>
+                                <td><code>null / undefined</code></td>
+                            </tr>
+                            <tr>
+                                <td>Imports</td>
+                                <td><code>import java.util.Scanner;</code></td>
+                                <td><code>#include &lt;iostream&gt;</code></td>
+                                <td><code>import { x } from './mod.js';</code></td>
+                            </tr>
+                            <tr>
+                                <td>Namespace / package</td>
+                                <td><code>package com.example;</code></td>
+                                <td><code>namespace myns {}</code></td>
+                                <td><code>// modules via import/export</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p><strong>Key difference to memorise:</strong> Java uses <code>String</code> (capital S) as an object
                     type, not a primitive. Always use <code>.equals()</code> to compare strings — never <code>==</code>.
                     The <code>==</code> operator on String objects checks if they are the <em>same object in
@@ -874,67 +874,67 @@ System.out.println(a + b + c); // 150</code></pre>
 
                 <h3>Primitive Data Types</h3>
                 <div class="table-wrap">
-                <table class="sheet">
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Size</th>
-                            <th>Stores</th>
-                            <th>Example</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>byte</td>
-                            <td>1 byte</td>
-                            <td>Whole numbers −128 to 127</td>
-                            <td><code>byte b = 100;</code></td>
-                        </tr>
-                        <tr>
-                            <td>short</td>
-                            <td>2 bytes</td>
-                            <td>Whole numbers −32,768 to 32,767</td>
-                            <td><code>short s = 5000;</code></td>
-                        </tr>
-                        <tr>
-                            <td>int</td>
-                            <td>4 bytes</td>
-                            <td>Whole numbers (most common)</td>
-                            <td><code>int n = 100000;</code></td>
-                        </tr>
-                        <tr>
-                            <td>long</td>
-                            <td>8 bytes</td>
-                            <td>Very large whole numbers</td>
-                            <td><code>long l = 15000000000L;</code></td>
-                        </tr>
-                        <tr>
-                            <td>float</td>
-                            <td>4 bytes</td>
-                            <td>Decimal numbers (~6–7 digits)</td>
-                            <td><code>float f = 5.75f;</code></td>
-                        </tr>
-                        <tr>
-                            <td>double</td>
-                            <td>8 bytes</td>
-                            <td>Decimal numbers (~15 digits)</td>
-                            <td><code>double d = 19.99;</code></td>
-                        </tr>
-                        <tr>
-                            <td>boolean</td>
-                            <td>1 bit</td>
-                            <td>true or false only</td>
-                            <td><code>boolean ok = true;</code></td>
-                        </tr>
-                        <tr>
-                            <td>char</td>
-                            <td>2 bytes</td>
-                            <td>Single character or ASCII value</td>
-                            <td><code>char c = 'A';</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <table class="sheet">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Size</th>
+                                <th>Stores</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>byte</td>
+                                <td>1 byte</td>
+                                <td>Whole numbers −128 to 127</td>
+                                <td><code>byte b = 100;</code></td>
+                            </tr>
+                            <tr>
+                                <td>short</td>
+                                <td>2 bytes</td>
+                                <td>Whole numbers −32,768 to 32,767</td>
+                                <td><code>short s = 5000;</code></td>
+                            </tr>
+                            <tr>
+                                <td>int</td>
+                                <td>4 bytes</td>
+                                <td>Whole numbers (most common)</td>
+                                <td><code>int n = 100000;</code></td>
+                            </tr>
+                            <tr>
+                                <td>long</td>
+                                <td>8 bytes</td>
+                                <td>Very large whole numbers</td>
+                                <td><code>long l = 15000000000L;</code></td>
+                            </tr>
+                            <tr>
+                                <td>float</td>
+                                <td>4 bytes</td>
+                                <td>Decimal numbers (~6–7 digits)</td>
+                                <td><code>float f = 5.75f;</code></td>
+                            </tr>
+                            <tr>
+                                <td>double</td>
+                                <td>8 bytes</td>
+                                <td>Decimal numbers (~15 digits)</td>
+                                <td><code>double d = 19.99;</code></td>
+                            </tr>
+                            <tr>
+                                <td>boolean</td>
+                                <td>1 bit</td>
+                                <td>true or false only</td>
+                                <td><code>boolean ok = true;</code></td>
+                            </tr>
+                            <tr>
+                                <td>char</td>
+                                <td>2 bytes</td>
+                                <td>Single character or ASCII value</td>
+                                <td><code>char c = 'A';</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h4>Real-life example — cost calculation</h4>
                 <pre><code>int items = 50;
@@ -980,121 +980,121 @@ System.out.println("Your score is: " + percentage + "%");
             <div class="card">
                 <h3>Arithmetic Operators</h3>
                 <div class="table-wrap">
-                <table class="sheet">
-                    <thead>
-                        <tr>
-                            <th>Operator</th>
-                            <th>Name</th>
-                            <th>Example</th>
-                            <th>Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>+</td>
-                            <td>Addition</td>
-                            <td>5 + 3</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Subtraction</td>
-                            <td>5 - 3</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>*</td>
-                            <td>Multiplication</td>
-                            <td>5 * 3</td>
-                            <td>15</td>
-                        </tr>
-                        <tr>
-                            <td>/</td>
-                            <td>Division</td>
-                            <td>10 / 2</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>%</td>
-                            <td>Modulus (remainder)</td>
-                            <td>7 % 3</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>++</td>
-                            <td>Increment</td>
-                            <td>x++</td>
-                            <td>x = x + 1</td>
-                        </tr>
-                        <tr>
-                            <td>--</td>
-                            <td>Decrement</td>
-                            <td>x--</td>
-                            <td>x = x - 1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <table class="sheet">
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Name</th>
+                                <th>Example</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>+</td>
+                                <td>Addition</td>
+                                <td>5 + 3</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>Subtraction</td>
+                                <td>5 - 3</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>*</td>
+                                <td>Multiplication</td>
+                                <td>5 * 3</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>Division</td>
+                                <td>10 / 2</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>%</td>
+                                <td>Modulus (remainder)</td>
+                                <td>7 % 3</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>++</td>
+                                <td>Increment</td>
+                                <td>x++</td>
+                                <td>x = x + 1</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>Decrement</td>
+                                <td>x--</td>
+                                <td>x = x - 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3>Comparison &amp; Logical Operators</h3>
                 <div class="table-wrap">
-                <table class="sheet">
-                    <thead>
-                        <tr>
-                            <th>Operator</th>
-                            <th>Meaning / Name</th>
-                            <th>Example</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>==</td>
-                            <td>Equal to</td>
-                            <td>x == y</td>
-                        </tr>
-                        <tr>
-                            <td>!=</td>
-                            <td>Not equal</td>
-                            <td>x != y</td>
-                        </tr>
-                        <tr>
-                            <td>&gt;</td>
-                            <td>Greater than</td>
-                            <td>x &gt; y</td>
-                        </tr>
-                        <tr>
-                            <td>&lt;</td>
-                            <td>Less than</td>
-                            <td>x &lt; y</td>
-                        </tr>
-                        <tr>
-                            <td>&gt;=</td>
-                            <td>Greater than or equal</td>
-                            <td>x &gt;= y</td>
-                        </tr>
-                        <tr>
-                            <td>&lt;=</td>
-                            <td>Less than or equal</td>
-                            <td>x &lt;= y</td>
-                        </tr>
-                        <tr>
-                            <td>&amp;&amp;</td>
-                            <td>AND (True if both are true)</td>
-                            <td>x &gt; 2 &amp;&amp; x &lt; 10</td>
-                        </tr>
-                        <tr>
-                            <td>||</td>
-                            <td>OR (True if at least one is true)</td>
-                            <td>x &lt; 2 || x &gt; 10</td>
-                        </tr>
-                        <tr>
-                            <td>!</td>
-                            <td>NOT (Reverses the result)</td>
-                            <td>!(x &gt; 5)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <table class="sheet">
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Meaning / Name</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>==</td>
+                                <td>Equal to</td>
+                                <td>x == y</td>
+                            </tr>
+                            <tr>
+                                <td>!=</td>
+                                <td>Not equal</td>
+                                <td>x != y</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>Greater than</td>
+                                <td>x &gt; y</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>Less than</td>
+                                <td>x &lt; y</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;=</td>
+                                <td>Greater than or equal</td>
+                                <td>x &gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;=</td>
+                                <td>Less than or equal</td>
+                                <td>x &lt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>&amp;&amp;</td>
+                                <td>AND (True if both are true)</td>
+                                <td>x &gt; 2 &amp;&amp; x &lt; 10</td>
+                            </tr>
+                            <tr>
+                                <td>||</td>
+                                <td>OR (True if at least one is true)</td>
+                                <td>x &lt; 2 || x &gt; 10</td>
+                            </tr>
+                            <tr>
+                                <td>!</td>
+                                <td>NOT (Reverses the result)</td>
+                                <td>!(x &gt; 5)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h4>Lecture code — using + operator</h4>
                 <pre><code>int x = 5 + 3;   // 8
@@ -1360,15 +1360,21 @@ System.out.println("Go!");
             <h2>Java Programming Tutorials</h2>
             <p>Curated YouTube links to help you master Java programming basics.</p>
 
-            <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 20px rgba(0, 255, 136, 0.05);">
+            <div
+                style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 150, 255, 0.1) 100%); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 12px; padding: 30px; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 20px rgba(0, 255, 136, 0.05);">
                 <div style="font-size: 2.5rem; margin-bottom: 10px;">📚</div>
-                <h3 style="margin: 0 0 10px 0; font-size: 1.5rem; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px;">
+                <h3
+                    style="margin: 0 0 10px 0; font-size: 1.5rem; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px;">
                     Full Java Video Library
                 </h3>
                 <p style="margin: 0 0 25px 0; font-size: 1.05rem; color: #d0d0d0; max-width: 550px; line-height: 1.5;">
-                    Looking for the complete Neso Academy course covering both current curriculum and future topics like <strong>Methods, Arrays, and Object-Oriented Programming</strong>?
+                    Looking for the complete Neso Academy course covering both current curriculum and future topics like
+                    <strong>Methods, Arrays, and Object-Oriented Programming</strong>?
                 </p>
-                <a href="resources.html#java-tutorials" style="background: var(--accent); color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: var(--font-mono); font-size: 1rem; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2); transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 255, 136, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 255, 136, 0.2)';">
+                <a href="resources.html#java-tutorials"
+                    style="background: var(--accent); color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: var(--font-mono); font-size: 1rem; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2); transition: all 0.2s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 255, 136, 0.3)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 255, 136, 0.2)';">
                     Go to the Java Resources Tab &rarr;
                 </a>
             </div>
@@ -1444,6 +1450,31 @@ System.out.println("Go!");
             document.getElementById(tabName).classList.add("active");
             event.currentTarget.classList.add("active");
         }
+        function setupTableHorizontalScroll() {
+            var wrappers = document.querySelectorAll('.table-wrap');
+
+            wrappers.forEach(function (wrapper) {
+                if (wrapper.dataset.wheelBound === 'true') {
+                    return;
+                }
+
+                wrapper.addEventListener('wheel', function (event) {
+                    var hasHorizontalOverflow = wrapper.scrollWidth > wrapper.clientWidth;
+                    var mostlyVerticalScroll = Math.abs(event.deltaY) >= Math.abs(event.deltaX);
+
+                    if (!hasHorizontalOverflow || !mostlyVerticalScroll) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    wrapper.scrollLeft += event.deltaY;
+                }, { passive: false });
+
+                wrapper.dataset.wheelBound = 'true';
+            });
+        }
+
+        setupTableHorizontalScroll();
     </script>
 
 
