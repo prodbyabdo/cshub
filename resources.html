@@ -306,21 +306,83 @@
         border-radius: 4px;
         cursor: pointer;
         font-family: var(--font-mono);
+        z-index: 200;
+      }
+
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 90;
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .mobile-overlay.show {
+        display: block;
+        opacity: 1;
       }
 
       @media (max-width: 768px) {
-        body { overflow: auto; }
-        .layout { flex-direction: column; overflow: visible; }
-        .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); display: none; }
-        .sidebar.show { display: block; }
-        .content { padding: 20px; overflow-y: visible; }
+        .layout { flex-direction: column; }
+        
+        .sidebar { 
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 320px;
+          height: 100vh;
+          z-index: 100;
+          transition: left 0.3s ease;
+          border-right: 1px solid var(--border-color);
+          box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+          padding-top: 80px;
+          display: block;
+        }
+        .sidebar.show { left: 0; }
+        
+        .content { padding: 15px; }
         .mobile-menu-btn { display: block; margin-left: auto; }
-        .section-title { font-size: 2rem; }
+        .section-title { font-size: 1.6rem; }
+        .section-desc { font-size: 0.95rem; }
+
+        .resource-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .resource-card {
+          padding: 12px;
+        }
+        .resource-card h3 {
+          font-size: 0.9rem;
+          margin-bottom: 6px;
+        }
+        .resource-card p {
+          font-size: 0.8rem;
+          margin-bottom: 12px;
+        }
+        .badge-row {
+          gap: 4px;
+          margin-bottom: 10px;
+        }
+        .badge {
+          padding: 2px 6px;
+          font-size: 0.65rem;
+        }
+        .play-btn {
+          padding: 6px;
+          font-size: 0.8rem;
+        }
       }
     </style>
   </head>
   <body>
-    
+    <div id="mobile-overlay" class="mobile-overlay" onclick="toggleMobileMenu()"></div>
     <div class="top-nav">
       <a href="index.html" class="nav-back">&larr; Back</a>
       <h1 class="page-title">Resources Library</h1>
@@ -2096,15 +2158,21 @@
         // On mobile, hide the sidebar after selection
         if (window.innerWidth <= 768) {
           document.getElementById('sidebar').classList.remove('show');
+          document.getElementById('mobile-overlay').classList.remove('show');
         }
       }
 
       function toggleMobileMenu() {
         document.getElementById('sidebar').classList.toggle('show');
+        document.getElementById('mobile-overlay').classList.toggle('show');
       }
 
       // Check if URL has a hash to pre-select a section
       window.onload = function() {
+        if (window.innerWidth <= 768 && !window.location.hash) {
+          // Open menu on first visit on mobile
+          setTimeout(toggleMobileMenu, 100);
+        }
         if(window.location.hash) {
           const id = window.location.hash.substring(1); // remove the #
           const targetSection = document.getElementById(id);
