@@ -383,14 +383,593 @@
         </header>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('summary', this)">Subject Summary</button>
+            <button class="tab-btn active" onclick="openTab('course-summary', this)">Course Summary</button>
+            <button class="tab-btn" onclick="openTab('summary', this)">Java Summary</button>
             <button class="tab-btn" onclick="openTab('exam', this)">Practice Exam</button>
             <button class="tab-btn" onclick="openTab('java', this)">Java Tutorials</button>
             <button class="tab-btn" onclick="openTab('compilerrr', this)">Java Compiler</button>
         </div>
 
+        <!-- ════════════════ COURSE SUMMARY TAB ════════════════ -->
+        <div id="course-summary" class="tab-content active">
+            <h2>Course Summary — Lectures 1–8</h2>
+            <p>COM126 · Principles of Programming · Theory foundations covering hardware, software, algorithms, pseudocode, flowcharts, branching, loops, and accumulators.</p>
+
+            <!-- ─── §1 Introduction to Computers ─── -->
+            <div class="section-title" id="cs-1-introduction-to-computers">§1 · Introduction to Computers</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Definition</div>
+                <p>A computer is a machine that performs a variety of tasks according to specific instructions. It's capable of performing computations and making logical decisions at speeds millions and even billions of times faster than human beings can.</p>
+                <p>For example: many of today's personal computers can perform hundreds of millions of additions per second.</p>
+                <p>There are two components of a computer system: <strong>Hardware</strong> and <strong>Software</strong>.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> Computer Hardware</div>
+                <p>Computer hardware is the collection of physical elements that constitutes a computer system.</p>
+                <p>Examples: keyboard, screen, mouse, disks, memory, CD-ROM, and processing units.</p>
+                <p>Almost every computer may be seen as being divided into six logical units.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-accent"></span> Six Logical Units</div>
+                <table class="sheet">
+                    <thead>
+                        <tr><th>Unit</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Input Unit</strong></td><td>Allows the user to enter information into the system. Obtains information from input devices (keyboard, mouse, touchpad, webcam, microphone, joystick, image scanner) and places it at the disposal of other units.</td></tr>
+                        <tr><td><strong>Output Unit</strong></td><td>Takes processed information and places it on output devices. Most output is displayed on screens, printed on paper, or used to control other devices.</td></tr>
+                        <tr><td><strong>Memory Unit</strong></td><td>Stores information. RAM (Random Access Memory) is volatile — stores programs and data while in use. ROM (Read Only Memory) is non-volatile — contains fundamental instructions that cannot be lost or changed.</td></tr>
+                        <tr><td><strong>ALU</strong></td><td>Arithmetic and Logic Unit — performs all arithmetic and logic operations. Examples: addition, subtraction, comparison.</td></tr>
+                        <tr><td><strong>CPU</strong></td><td>Central Processing Unit — supervises the overall operation of the computer. Tells the input unit when to read into memory, tells the ALU when to compute, tells the output unit when to send data.</td></tr>
+                        <tr><td><strong>Secondary Storage</strong></td><td>Permanent storage for programs and data. Uses magnetic tapes, magnetic disks, and CD-ROMs.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ─── §2 Computer Software ─── -->
+            <div class="section-title" id="cs-2-computer-software">§2 · Computer Software</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Definitions</div>
+                <p>Software is computer programs that run on a computer. Software is instructions that can be stored and run by hardware.</p>
+                <p>Hardware is directed by the software to execute any command or instruction.</p>
+                <p>A computer program is a set of instructions used to operate a computer to produce a specific result.</p>
+                <p>Programming languages is a languages used to create computer programs.</p>
+                <p>Computer programming mean writing a computer programs by a programmer using programming language.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-red"></span> Machine Languages</div>
+                <p>Machine languages are the lowest level of computer languages. Programs written in machine language consist of entirely of 1s and 0s.</p>
+                <p>Programs in machine language can control directly to the computer's hardware.</p>
+                <p>A machine language instruction has two parts:</p>
+                <ul>
+                    <li><strong>Instruction part (opcode):</strong> leftmost group of bits; tells the computer the operation to perform</li>
+                    <li><strong>Address part:</strong> specifies the memory address of the data</li>
+                </ul>
+                <pre><code>00101010 000000000001 000000000010
+10011001 000000000010 000000000011</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-gold"></span> Assembly Languages</div>
+                <p>Assembly languages perform the same tasks as machine languages, but use symbolic names for (opcode) and operands instead of 1s and 0s.</p>
+                <p>Must be translated into machine language before execution.</p>
+                <p>Machine and assembly languages are called <strong>low-level languages</strong> — closest to computer hardware.</p>
+                <pre><code>LOAD BASEPAY
+ADD OVERPAY
+STORE GROSSPAY</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> High-Level Programming Languages</div>
+                <p>High-level programming languages create computer programs using instructions that much easier to understand than machine or assembly language instructions.</p>
+                <p>Must be translated into a low-level language using a <strong>compiler</strong>.</p>
+                <div class="def">A compiler is a program that translates programming code written in a high-level language into a low-level format.</div>
+                <p>Each line in a high-level language program is called a <strong>statement</strong>. Example: <code>Result = (First + Second)*Third</code></p>
+                <p>Two translation methods:</p>
+                <ul>
+                    <li><strong>Interpreted language:</strong> each statement translated and executed immediately upon translation; the program doing this is an <strong>interpreter</strong></li>
+                    <li><strong>Compiled language:</strong> all statements translated as a complete unit before any statement executes; the program doing this is a <strong>compiler</strong></li>
+                </ul>
+                <p>Examples: FORTRAN, COBOL, BASIC, PASCAL, C, C++, JAVA</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-purple"></span> Application vs System Software</div>
+                <p><strong>Application software:</strong> programs written to perform particular tasks required by the users.</p>
+                <p><strong>System software:</strong> the collection of programs that must be available to any computer system for it to operate.</p>
+                <p>The most important system software is the <strong>operating system</strong>. Examples: MS-DOS, UNIX, MS WINDOWS.</p>
+                <p><strong>Multitasking systems:</strong> operating systems that allow users to run multiple programs simultaneously. Language translators are also system software.</p>
+            </div>
+
+            <!-- ─── §3 Program Development Life Cycle ─── -->
+            <div class="section-title" id="cs-3-program-development-life-cycle">§3 · Program Development Life Cycle</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Overview</div>
+                <p>Programmers do not sit down and start writing code right away when trying to make a computer program.</p>
+                <p>Instead, they follow an organized plan or methodology that breaks the process or problem into a series of tasks.</p>
+                <ol>
+                    <li>Problem Definition</li>
+                    <li>Problem Analysis</li>
+                    <li>Algorithm design and representation (Pseudocode or flowchart)</li>
+                    <li>Coding and debugging</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> Step 1 — Problem Definition</div>
+                <p>This stage is the formal definition of the task.</p>
+                <p>Includes: specification of inputs and outputs, processing requirements, system constraints, error handling methods.</p>
+                <p>This step is very critical for the completion of a satisfactory program.</p>
+                <div class="def">It is impossible to solve a problem by using a computer, without a clear understanding and identification of the problem. A clearly defined problem is already half the solution.</div>
+                <p>Example: <em>"Create a program that will know how much older one person is than another."</em></p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-gold"></span> Step 2 — Problem Analysis</div>
+                <p>Break the problem into smaller, simpler sub-problems.</p>
+                <p>Example: Input = first age, second age. Output = difference of ages.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-purple"></span> Step 3 — Algorithm Design</div>
+                <p>An Algorithm is a clear and unambiguous specification of the steps needed to solve a problem. It may be expressed in either Human language (English, Arabic), through a graphical representation like a flowchart or through a pseudocode, which is a cross between human language and a programming language.</p>
+
+                <h4>Human language:</h4>
+                <pre><code>1. Ask user for first age.
+2. Ask user for second age.
+3. Subtract second age from first age.
+4. Print result.</code></pre>
+
+                <h4>Pseudocode:</h4>
+                <pre><code>1. Begin
+2. Get first_age
+3. Get second_age
+4. Result ← first_age – second_age
+5. Display Result
+6. End.</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-red"></span> Step 4 — Coding and Debugging</div>
+                <p>After constructing the algorithm, it is now possible to create the source code.</p>
+                <p>Most of the time, after the programmer has written the program, the program isn't 100% working right away.</p>
+                <p>Debugging: process of fixing errors (bugs) in a program. Two types:</p>
+                <h4>1) Compile-Time Errors</h4>
+                <ul>
+                    <li>Occur if there is a syntax error in the code.</li>
+                    <li>The compiler will detect the error and the program won't even compile.</li>
+                    <li>Example: Forgetting a semi-colon at the end of a statement or misspelling a certain command.</li>
+                </ul>
+                <h4>2) Runtime Errors</h4>
+                <ul>
+                    <li>Compilers aren't perfect and so can't catch all errors at compile time.</li>
+                    <li>Example: infinite loops — the same piece of code keeps executing over and over again infinitely.</li>
+                    <li>The program compiles fine into an executable file. However, when the end-user runs the program, the program (or even their whole computer) freezes up.</li>
+                    <li>Other examples: incorrect value computed, wrong thing happens.</li>
+                </ul>
+            </div>
+
+            <div class="card green-glow">
+                <div class="card-title"><span class="dot dot-green"></span> Constants and Variables</div>
+                <p>Constants and variables are two entities which are used to store information (technically called data) in your program.</p>
+                <div class="def"><strong>Constant:</strong> a value that never changes as the instructions in a program are followed.</div>
+                <div class="def"><strong>Variable:</strong> a value that does change as the instructions in a program are followed.</div>
+                <p>Both are given names used to refer to memory locations instead of memory addresses. You should always use names that are most meaningful to the end user.</p>
+                <h4>Four Naming Rules:</h4>
+                <ol>
+                    <li>Name a constant or variable according to what it represents.</li>
+                    <li>Do not use spaces in a constant or variable name.</li>
+                    <li>Start a constant or variable name with a letter, not a number.</li>
+                    <li>Do not use a dash or hyphen in a name (the computer will think it a subtraction sign), an underscore is fine.</li>
+                </ol>
+            </div>
+
+            <!-- ─── §4 Pseudocode ─── -->
+            <div class="section-title" id="cs-4-pseudocode">§4 · Pseudocode</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Definition</div>
+                <p>Pseudo code is a nonstandard English-like programming language used by programmers to model logic and instructions.</p>
+                <p>Pseudo-Code is simply a numbered list of instructions to perform some task.</p>
+                <p>Pseudo code is called a programming language even through it cannot be executed by a computer. It is designed for planning purposes only.</p>
+                <p>Pseudo code provides us with a way to concentrate on just logic structures without be constrained by the syntax rules of a particular programming language.</p>
+                <p>Generally, flowcharts work well for small problems but Pseudo code is used for larger problems.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-accent"></span> Basics of Writing Pseudocode</div>
+
+                <h4>1 — Receiving information</h4>
+                <p>Keywords: <code>Get</code>, <code>Read</code>, <code>Input</code></p>
+                <pre><code>Get filename
+Read class number
+Input radius</code></pre>
+
+                <h4>2 — Outputting information</h4>
+                <p>Keywords: <code>Print</code>, <code>Write</code>, <code>Output</code>, <code>Display</code></p>
+                <pre><code>Print 'Program Completed'
+Write student names
+Display area</code></pre>
+                <p><code>Prompt</code> is used to explain what variable should be input:</p>
+                <pre><code>Prompt user to enter the radius</code></pre>
+
+                <h4>3 — Arithmetic</h4>
+                <p>Either mathematical symbols or words:</p>
+                <pre><code>Multiply Length by Width to Compute Area
+Area = Length * Width</code></pre>
+                <table class="sheet">
+                    <thead><tr><th>Word</th><th>Symbol</th></tr></thead>
+                    <tbody>
+                        <tr><td>Parentheses</td><td>( )</td></tr>
+                        <tr><td>Add</td><td>+</td></tr>
+                        <tr><td>Subtract</td><td>–</td></tr>
+                        <tr><td>Multiply</td><td>*</td></tr>
+                        <tr><td>Divide</td><td>/</td></tr>
+                        <tr><td>Modulus</td><td>%</td></tr>
+                    </tbody>
+                </table>
+                <p><code>Compute</code> and <code>Calculate</code> are also valid:</p>
+                <pre><code>Compute degrees Celsius
+C = (F – 32) / 1.8</code></pre>
+
+                <h4>4 — Assigning values</h4>
+                <p><code>Initialize</code> or <code>Set</code> for initial values:</p>
+                <pre><code>Set total_price to 0
+Initialize PI to 3.14</code></pre>
+                <p><code>=</code> or <code>←</code> for result of processing:</p>
+                <pre><code>total_price ← cost_price + sales_tax</code></pre>
+            </div>
+
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span> Pseudocode Examples</div>
+
+                <h4>A. Find the Summation of two numbers:</h4>
+                <pre><code>1. Begin
+2. Prompt user to enter for number_one
+3. Get number_one
+4. Prompt user for to enter number_two
+5. Get number_two
+6. sum ← number_one + number_two
+7. Display sum
+8. End</code></pre>
+
+                <h4>B. Calculating the Circle area:</h4>
+                <pre><code>1. Begin
+2. Initialize PI to 3.14
+3. Prompt user to enter radius
+4. Read radius
+5. area ← PI * radius * radius
+6. Print area
+7. End</code></pre>
+
+                <h4>C. Calculating the Rectangle area:</h4>
+                <pre><code>1. Begin
+2. Prompt user to enter Length
+3. Input Length
+4. Prompt user to enter Width
+5. Input Width
+6. Multiply Length by Width to Compute Area
+7. Output Area
+8. End</code></pre>
+            </div>
+
+            <!-- ─── §5 Flowcharts ─── -->
+            <div class="section-title" id="cs-5-flowcharts">§5 · Flowcharts</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Definition</div>
+                <p>A flowchart is a design tool used to graphically represent the logic in a solution.</p>
+                <p>Flowcharts typically do not display programming language commands. Rather, they state the concept in English or mathematical notation.</p>
+                <p>You can use any symbols in creating your flowcharts, as long as you are consistent in using them.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-accent"></span> Flowchart Symbols</div>
+                <table class="sheet">
+                    <thead>
+                        <tr><th>Shape</th><th>Symbol Name</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><svg width="60" height="30"><rect x="2" y="2" width="56" height="26" rx="2" fill="none" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Process Symbol</strong></td>
+                            <td>Represents the process of executing a defined operation or groups of operations that results in a change in value, form, or location of information. Also functions as the default symbol when no other symbol is available.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><polygon points="12,28 2,2 48,2 58,28" fill="none" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Input/Output (I/O) Symbol</strong></td>
+                            <td>Represents an I/O function, which makes data available for processing (input) or displaying (output) of processed information.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><line x1="5" y1="15" x2="50" y2="15" stroke="#00ff88" stroke-width="1.5" marker-end="url(#arrowhead)"/><defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00ff88"/></marker></defs></svg></td>
+                            <td><strong>Flow line Symbol</strong></td>
+                            <td>Represents the sequence of available information and executable operations. The lines connect other symbols, and the arrowheads are mandatory only for right-to-left and bottom-to-top flow.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><line x1="30" y1="2" x2="30" y2="28" stroke="#00ff88" stroke-width="1.5"/><line x1="30" y1="15" x2="55" y2="15" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="4,3"/></svg></td>
+                            <td><strong>Annotation Symbol</strong></td>
+                            <td>Represents the addition of descriptive information, comments, or explanatory notes as clarification.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="36"><polygon points="30,2 58,18 30,34 2,18" fill="none" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Decision Symbol</strong></td>
+                            <td>Represents a decision that determines which of a number of alternative paths is to be followed.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><rect x="2" y="2" width="56" height="26" rx="13" fill="none" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Terminal Symbol</strong></td>
+                            <td>Represents the beginning, end, or a point of interruption or delay in a program.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><rect x="2" y="2" width="56" height="26" rx="2" fill="none" stroke="#00ff88" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="28" stroke="#00ff88" stroke-width="1.5"/><line x1="48" y1="2" x2="48" y2="28" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Predefined Process Symbol</strong></td>
+                            <td>Represents a named process consisting of one or more operations or program steps that are specified elsewhere.</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="60" height="30"><circle cx="30" cy="15" r="12" fill="none" stroke="#00ff88" stroke-width="1.5"/></svg></td>
+                            <td><strong>Connector Symbol</strong></td>
+                            <td>Represents any entry from, or exit to, another part of the flowchart. Also serves as an off-page connector.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span> Example — Sum, Average and Product of Three Numbers</div>
+                <pre><code>1. Begin
+2. Prompt user to enter no1, no2, no3
+3. Get no1, no2, no3
+4. Sum ← no1 + no2 + no3
+5. Avg ← Sum / 3
+6. Prd ← no1 * no2 * no3
+7. Display Sum, Avg, Prd
+8. End</code></pre>
+            </div>
+
+            <!-- ─── §6 Branching ─── -->
+            <div class="section-title" id="cs-6-branching">§6 · Branching</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Introduction</div>
+                <p>A program is usually not limited to a linear sequence of instructions.</p>
+                <p>Branching statements allows us to redirect the flow of program execution.</p>
+                <p>Branch statements that allow us to select and execute specific blocks of code while skipping other sections.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-accent"></span> Conditional Structure</div>
+                <p>In practice, the computer is presented not with a true / false statement, but with a question having a "Yes" or "No" answer using relational operators ( &gt;, &lt;, &gt;=, &lt;=, =, ≠ ).</p>
+                <p>The decision symbol (diamond) is the only flowchart symbol that may have more than one exit.</p>
+                <table class="sheet">
+                    <thead><tr><th>Condition (A=10, B=20, K=5, SALES=10000)</th><th>Answer</th></tr></thead>
+                    <tbody>
+                        <tr><td>If (A = B)?</td><td>No</td></tr>
+                        <tr><td>If (B &gt; A)?</td><td>Yes</td></tr>
+                        <tr><td>If (K &lt;= 25)?</td><td>Yes</td></tr>
+                        <tr><td>If (SALES &gt;= $500,000)?</td><td>Yes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> Simple If</div>
+                <p>If we have a code that we sometimes want to execute and sometimes we want to skip we can use if statement.</p>
+                <p>If this condition is true, statement is executed. If it is false, statement is ignored (not executed) and the program continues right after this conditional structure.</p>
+                <h4>Example — display "hundred" if num_1 equals 100:</h4>
+                <pre><code>1. Begin
+2. Prompt user for num_1
+3. Get num_1
+4. If (num_1=100)
+     Display hundred
+   EndIf
+5. End</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-gold"></span> If-Else Statement</div>
+                <pre><code>If (condition)
+  Statement1
+Else
+  Statement2
+EndIf</code></pre>
+                <h4>Example — output the greater of num_1 and num_2:</h4>
+                <pre><code>1. Begin
+2. Prompt user for num_1, num_2
+3. Get num_1, num_2
+4. If (num_1 &gt; num_2)
+     Display num_1
+   Else
+     Display num_2
+   EndIf
+5. End</code></pre>
+            </div>
+
+            <div class="card purple-glow">
+                <div class="card-title"><span class="dot dot-purple"></span> Nested If Statement</div>
+                <p>By using nested if, it is possible to combine several conditions.</p>
+                <p>Only the statements following the first condition that is found to be true will be executed, all other statements will be skipped.</p>
+                <p>The statements of the final Else will be executed if none of the conditions are true.</p>
+                <pre><code>If (condition1)
+  -- statements
+elsIf (condition2)
+  -- more statements
+elsIf (condition3)
+  -- more statements
+...
+elseIf (condition n)
+  -- statement n
+Else
+  -- other statements
+EndIf</code></pre>
+                <h4>Example — student grade based on degree:</h4>
+                <pre><code>1. Begin
+2. Prompt user to enter student's degree
+3. Read grade
+4. If student's degree is greater than or equal to 80
+     Write "A"
+   elseIf student's degree is greater than or equal to 70
+     Write "B"
+   elseIf student's degree is greater than or equal to 50
+     Write "C"
+   else
+     Write "F"
+   EndIf
+5. End</code></pre>
+            </div>
+
+            <!-- ─── §7 Repetition / Loops ─── -->
+            <div class="section-title" id="cs-7-repetition-loops">§7 · Repetition / Loops</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Introduction</div>
+                <p>Many problems require that steps be repeated. This is commonly known as looping, repetition or iteration.</p>
+                <p>It is called looping because logically it forms a loop as instructions are executed one after the other in the forward direction then control jumps back to the start of the loop.</p>
+                <p>To perform repetition successfully, two things are needed:</p>
+                <ol>
+                    <li>The instructions that are to be repeated</li>
+                    <li>When to stop looping</li>
+                </ol>
+                <p>Three loop constructs:</p>
+                <ol>
+                    <li>The Pre-Test Loop (while loop)</li>
+                    <li>The Post-Test Loop (do while loop)</li>
+                    <li>Counted Loops (for loop)</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> Pre-Test Loop (while loop)</div>
+                <p>The key feature of the pre-test loop is that we test to see whether or not to continue before executing the body of the loop. The effect of this is that we might not execute the body at all.</p>
+                <p>Use when the body may need to execute <strong>0 or more times</strong>.</p>
+                <pre><code>While (condition)
+  Statement
+  …
+  Statement
+EndLoop</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-gold"></span> Post-Test Loop (do while loop)</div>
+                <p>If we don't test to determine whether or not to continue until after we've executed the block, the loop body will always be executed at least once. This distinguishes it from the pre-test loop.</p>
+                <p>Use when the body must execute <strong>at least once</strong>.</p>
+                <pre><code>Do
+  Statement
+  …
+  Statement
+While (condition)</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-purple"></span> Counted Loop (for loop)</div>
+                <p>For loop allows a statement to be executed a specified number of times.</p>
+                <p>Begins with a loop control variable assigned a specific initial value. The control variable is incremented (or decremented) by a specified amount each iteration until a terminating value is reached.</p>
+                <p>For loop is a very powerful tool to use with arrays (a topic covered later). This loop is a specialized construct for iterating a specific number of times, often called a "counted loop".</p>
+                <pre><code>For initial value to final value
+  Statements
+  UpdateStatement
+EndLoop</code></pre>
+            </div>
+
+            <div class="card green-glow">
+                <div class="card-title"><span class="dot dot-accent"></span> Example — Output numbers 1 to 10</div>
+                <h4>While loop:</h4>
+                <pre><code>1. Begin
+2. Set 1 to i
+3. While (i &lt;= 10)
+     Display i
+     i ← i + 1
+   EndLoop
+4. End</code></pre>
+                <h4>Do-While loop:</h4>
+                <pre><code>1. Begin
+2. Set 1 to i
+3. Do
+     Display i
+     i ← i + 1
+   While (i &lt;= 10)
+4. End</code></pre>
+                <h4>For loop:</h4>
+                <pre><code>1. Begin
+2. For i = 1 to 10
+     Display i
+     i ← i + 1
+   EndLoop
+3. End</code></pre>
+            </div>
+
+            <!-- ─── §8 Accumulator and Counter ─── -->
+            <div class="section-title" id="cs-8-accumulator-and-counter">§8 · Accumulator and Counter</div>
+
+            <div class="card blue-glow">
+                <div class="card-title"><span class="dot dot-blue"></span> Introduction</div>
+                <p>We have two common operations served by repetition structures: Counting operations and Accumulating operations.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-green"></span> Counting</div>
+                <p>The counting is a very important operation in programming.</p>
+                <p>Uses of counting: perform calculations (e.g. averaging), determine when to stop looping.</p>
+                <p>Counting is accomplished in logic by defining a variable and adding or subtracting a value to/from the variable during each repetition loop.</p>
+                <ul>
+                    <li>If you add to the counter on each loop, the counter value increases (<strong>incrementing</strong>).</li>
+                    <li>If we subtract on each loop, we count down (<strong>decrementing</strong>) with the counter.</li>
+                    <li>We can count by ones or by larger numbers.</li>
+                </ul>
+            </div>
+
+            <div class="card gold-glow">
+                <div class="card-title"><span class="dot dot-gold"></span> Counting — Example 1</div>
+                <pre><code>1. Begin
+2. Set 0 to count
+3. Set 0 to countDown
+4. Set 0 to countByFive
+5. While count &lt;= 10
+     count equals count + 1
+     countDown equals countDown – 1
+     countByFive equals countByFive + 5
+   EndLoop
+6. Display count, countDown, countByFive
+7. End</code></pre>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span class="dot dot-red"></span> Counting — Example 2</div>
+                <p>Write pseudocode and draw flowchart to Count the number of four items weighting over 20 kg.</p>
+                <pre><code>1. Begin
+2. Set 0 to count
+3. Set 0 to cntover
+4. While (count &lt; 4)
+     Get num
+     If (num &gt; 20)
+       cntover ← cntover + 1
+     EndIf
+     count ← count + 1
+   EndLoop
+5. Display "Number Over 20:" cntover
+6. End</code></pre>
+            </div>
+
+            <div class="card purple-glow">
+                <div class="card-title"><span class="dot dot-purple"></span> Accumulating</div>
+                <p>With accumulation, an accumulator variable is designated to accumulate numbers in a variable.</p>
+                <p>Instead of incrementing a counter variable by a set number, we will be taking some value or identifier and add this to the accumulator variable on each repetition.</p>
+                <p>The effect is that the accumulator variable grows (summarizes) on each pass of the loop.</p>
+                <div class="def">
+                    <strong>Counter vs Accumulator:</strong><br>
+                    <strong>Counter:</strong> increments by a fixed set number each loop.<br>
+                    <strong>Accumulator:</strong> adds a varying value (an identifier/input) each loop.
+                </div>
+            </div>
+        </div>
+
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
-        <div id="summary" class="tab-content active">
+        <div id="summary" class="tab-content">
             <h2>Java Fundamentals — Lecture 1 Reference</h2>
             <p>COM126 · Principles of Programming · NUSU · Batch 7 · Academic Year 2025–2026 · Semester 2 Week 1.</p>
 
