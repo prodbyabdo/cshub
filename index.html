@@ -141,32 +141,40 @@
       .container {
         padding: 30px 15px;
       }
+
       header {
         margin-bottom: 40px;
       }
+
       h1 {
         font-size: 2.5rem;
         letter-spacing: -1px;
       }
+
       .subtitle {
         font-size: 1rem;
       }
+
       .grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
       }
+
       .card {
         padding: 15px;
         border-radius: 12px;
       }
+
       .card-icon {
         font-size: 2rem;
         margin-bottom: 10px;
       }
+
       .card-title {
         font-size: 1.1rem;
         margin-bottom: 5px;
       }
+
       .card-desc {
         font-size: 0.85rem;
       }
@@ -181,7 +189,7 @@
       <div class="subtitle">CS & IT
         <br><a style="font-size: 1.25rem; color: #00ff88; text-decoration: none; text-transform: none;"
           href="https://github.com/prodbyabdo" target="_blank">
-          made by, prodbyabdo
+          made by: prodbyabdo
         </a>
       </div>
     </header>
@@ -251,53 +259,53 @@
       </p>
     </div>
   </footer>
-    <!-- Deep Linking Script -->
-    <script>
-        (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
+  <!-- Deep Linking Script -->
+  <script>
+    (function () {
+      function handleHash() {
+        var hash = window.location.hash;
+        if (!hash) return;
 
-                var targetId = decodeURIComponent(hash.substring(1));
-                var el = document.getElementById(targetId);
-                if (!el) return;
+        var targetId = decodeURIComponent(hash.substring(1));
+        var el = document.getElementById(targetId);
+        if (!el) return;
 
-                // If the element is inside an inactive tab, open that tab first
-                var tabContent = el.closest ? el.closest('.tab-content') : null;
-                if (!tabContent) {
-                    var parent = el.parentElement;
-                    while (parent) {
-                        if (parent.classList && parent.classList.contains('tab-content')) {
-                            tabContent = parent;
-                            break;
-                        }
-                        parent = parent.parentElement;
-                    }
-                }
-
-                if (tabContent && !tabContent.classList.contains('active')) {
-                    if (typeof openTab === 'function') {
-                        openTab(tabContent.id);
-                    }
-                }
-
-                // Scroll with slight delay to allow tab CSS transition
-                setTimeout(function () {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 120);
+        // If the element is inside an inactive tab, open that tab first
+        var tabContent = el.closest ? el.closest('.tab-content') : null;
+        if (!tabContent) {
+          var parent = el.parentElement;
+          while (parent) {
+            if (parent.classList && parent.classList.contains('tab-content')) {
+              tabContent = parent;
+              break;
             }
+            parent = parent.parentElement;
+          }
+        }
 
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () {
-                    setTimeout(handleHash, 50);
-                });
-            } else {
-                setTimeout(handleHash, 50);
-            }
+        if (tabContent && !tabContent.classList.contains('active')) {
+          if (typeof openTab === 'function') {
+            openTab(tabContent.id);
+          }
+        }
 
-            window.addEventListener('hashchange', handleHash);
-        })();
-    </script>
+        // Scroll with slight delay to allow tab CSS transition
+        setTimeout(function () {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          setTimeout(handleHash, 50);
+        });
+      } else {
+        setTimeout(handleHash, 50);
+      }
+
+      window.addEventListener('hashchange', handleHash);
+    })();
+  </script>
 
 
 </body>
