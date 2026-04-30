@@ -312,11 +312,100 @@
             background: none;
             border: 1px solid var(--border-color);
             color: var(--text-primary);
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             cursor: pointer;
             font-family: var(--font-mono);
             z-index: 200;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background: var(--accent-dim);
+        }
+
+        /* MOBILE DRAWER */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100vh;
+            background: var(--panel-bg);
+            border-left: 1px solid var(--border-color);
+            z-index: 300;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-drawer.show {
+            right: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .drawer-title {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-drawer {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .drawer-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .drawer-link:hover,
+        .drawer-link.active {
+            border-color: var(--accent-color);
+            background: var(--accent-dim);
+            color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .drawer-link.active {
+            font-weight: 600;
+            border-left: 4px solid var(--accent-color);
         }
 
         .mobile-overlay {
@@ -342,7 +431,9 @@
         .mobile-bottom-nav {
             display: none;
             position: fixed;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             background: #0f0f0f;
             border-top: 1px solid var(--border-color);
             z-index: 200;
@@ -358,7 +449,10 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        .mobile-bottom-nav .scroll-strip::-webkit-scrollbar { display: none; }
+
+        .mobile-bottom-nav .scroll-strip::-webkit-scrollbar {
+            display: none;
+        }
 
         .mobile-nav-chip {
             flex-shrink: 0;
@@ -374,6 +468,7 @@
             transition: all 0.18s;
             -webkit-tap-highlight-color: transparent;
         }
+
         .mobile-nav-chip.active {
             background: var(--accent-dim);
             color: var(--accent-color);
@@ -381,14 +476,38 @@
         }
 
         @media (max-width: 768px) {
-            body { overflow: auto; padding-bottom: 60px; }
-            .layout { flex-direction: column; overflow: visible; }
+            body {
+                overflow: auto;
+                padding-bottom: 60px;
+            }
+
+            .layout {
+                flex-direction: column;
+                overflow: visible;
+            }
+
             /* hide sidebar completely on mobile — bottom nav replaces it */
-            .sidebar { display: none !important; }
-            .content { padding: 16px; overflow-y: visible; }
-            .mobile-menu-btn { display: none; }
-            .section-title { font-size: 1.6rem; }
-            .section-desc { font-size: 0.95rem; }
+            .sidebar {
+                display: none !important;
+            }
+
+            .content {
+                padding: 16px;
+                overflow-y: visible;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                margin-left: auto;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-desc {
+                font-size: 0.95rem;
+            }
 
             /* smaller resource grid: 2 columns max */
             .resource-grid {
@@ -397,16 +516,21 @@
             }
 
             /* compact cards */
-            .resource-card, .resource-empty {
+            .resource-card,
+            .resource-empty {
                 padding: 10px;
                 border-radius: 8px;
             }
-            .resource-card h3, .resource-empty h3 {
+
+            .resource-card h3,
+            .resource-empty h3 {
                 font-size: 0.78rem;
                 line-height: 1.3;
                 margin-bottom: 6px;
             }
-            .resource-card p, .resource-empty p {
+
+            .resource-card p,
+            .resource-empty p {
                 font-size: 0.72rem;
                 margin-bottom: 10px;
                 display: -webkit-box;
@@ -415,8 +539,16 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
-            .badge { font-size: 0.65rem; padding: 2px 6px; }
-            .play-btn { padding: 7px 6px; font-size: 0.78rem; }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 2px 6px;
+            }
+
+            .play-btn {
+                padding: 7px 6px;
+                font-size: 0.78rem;
+            }
 
             /* thumbnail: smaller on mobile */
             .resource-thumbnail {
@@ -429,22 +561,44 @@
                 display: none !important;
             }
 
-            .mobile-bottom-nav { display: flex; }
+            .mobile-bottom-nav {
+                display: flex;
+            }
         }
 
         @media (max-width: 420px) {
-            .resource-grid { grid-template-columns: 1fr; gap: 10px; }
-            .resource-card h3 { font-size: 0.85rem; }
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .resource-card h3 {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div id="mobile-overlay" class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <span class="drawer-title" style="color: var(--accent-color); font-weight: 800;">Browse Topics</span>
+            <button class="close-drawer" onclick="toggleMobileMenu()">&times;</button>
+        </div>
+        <nav class="drawer-nav" id="drawerNav">
+            <!-- topics injected by JS -->
+        </nav>
+    </div>
+
     <div class="top-nav">
         <a href="index.html" class="nav-back">&larr; Back</a>
         <h1 class="page-title">Resources Library</h1>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">MENU</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
     </div>
 
     <div class="layout">
@@ -560,6 +714,107 @@
                                 actually</a>
                         </div>
                     </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/SzJ46YA_RaA/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Map of Computer Science</h3>
+                            <p>The field of computer science summarised. Learn more at this video's sponsor
+                                https://brilliant.org/dos
+
+                                Computer science is the subject that studies w...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=SzJ46YA_RaA" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCxqAWLTk1CmBvZFPzeZMd9A" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Domain of
+                                Science</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/8mAITcNt710/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Harvard CS50 – Full Computer Science University Course</h3>
+                            <p>Learn the basics of computer science from Harvard University. This is CS50, an
+                                introduction to the intellectual enterprises of computer science and th...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=8mAITcNt710" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/OAx_6-wdslM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>What is Computer Science?</h3>
+                            <p>What is Computer Science?</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=OAx_6-wdslM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Code.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/O5nskjZ_GoI/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Early Computing: Crash Course Computer Science #1</h3>
+                            <p>Hello, world! Welcome to Crash Course Computer Science! So today, we’re going to take a
+                                look at computing’s origins, because even though our digital c...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                CrashCourse</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/-uleG_Vecis/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>100+ Computer Science Concepts Explained</h3>
+                            <p>Learn the fundamentals of Computer Science with a quick breakdown of jargon that every
+                                software engineer should know. Over 100 technical concepts from...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=-uleG_Vecis" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -608,6 +863,104 @@
                         </div>
                     </article>
 
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/BL4DCEp7blY/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>How to Build a PC, the last guide you'll ever need!</h3>
+                            <p>Thanks to Seasonic for sponsoring this video! Buy a Seasonic TX 1000 PSU today at
+                                https://geni.us/aryiquT
+
+                                We’ve done plenty of build guides before – ...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=BL4DCEp7blY" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Linus Tech
+                                Tips</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/LbpqkvaCLKE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>The First 5 Things to Do with a New PC Build</h3>
+                            <p>The First 5 Things to Do with a New PC Build</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=LbpqkvaCLKE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Paul's
+                                Hardware</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/12Cj9R-yGjM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>How to Clean Your PC the Right Way</h3>
+                            <p>How to Clean Your PC the Right Way</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=12Cj9R-yGjM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                JayzTwoCents</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/EUWVVNmF5oQ/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Thermal Paste Application Techniques</h3>
+                            <p>Thermal Paste Application Techniques</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=EUWVVNmF5oQ" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Gamers
+                                Nexus</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/zJgEty8Miyk/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Troubleshooting a PC That Won't Turn On</h3>
+                            <p>Troubleshooting a PC That Won't Turn On</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=zJgEty8Miyk" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Greg
+                                Salazar</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -695,6 +1048,106 @@
                                 style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
                                 onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Catherine
                                 Li</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/26QPDBe-CE8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Operating Systems Crash Course</h3>
+                            <p>Operating Systems Crash Course</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=26QPDBe-CE8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                CrashCourse</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/sWbUDq4S6Y8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Linux Operating System - Crash Course</h3>
+                            <p>If you're new to Linux, this beginner's course is for you. You'll learn many of the tools
+                                used every day by both Linux SysAdmins and the millions of p...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=sWbUDq4S6Y8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/qlH4-oHnBb8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Virtual Memory Explained</h3>
+                            <p>Interactive lecture at http://test.scalable-learning.com, enrollment key YRLRX-25436.
+                                What is virtual memory? Indirection between the program's addres...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=qlH4-oHnBb8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCzf_XjIoKSf4Ve2fH7xn-3A" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Computerphile</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/r8pzJiikBh4/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Deadlock in Operating Systems</h3>
+                            <p>Deadlock in Operating Systems</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=r8pzJiikBh4" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Neso
+                                Academy</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/4rLW7zg21gI/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Process vs Thread</h3>
+                            <p>Subscribe to our weekly system design newsletter: https://bit.ly/3tfAlYD
+
+                                Checkout our bestselling System Design Interview books:
+                                Volume 1: https://a...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=4rLW7zg21gI" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                ByteByteGo</a>
                         </div>
                     </article>
                 </div>
@@ -877,6 +1330,109 @@
                                 style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
                                 onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
                                 Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/8JJ101D3knE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Git Tutorial for Beginners: Learn Git in 1 Hour</h3>
+                            <p>Git: The essential tool for modern development. 🔧 This quick explainer shows why it's a
+                                must-have skill.
+
+                                🔥 Ready for a deep dive?
+                                - Check out my full...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Intermediate</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=8JJ101D3knE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Programming
+                                with Mosh</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/tK9Oc6AEnYA/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Bash Scripting Tutorial for Beginners</h3>
+                            <p>Bash Scripting Tutorial for Beginners</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=tK9Oc6AEnYA" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Gjnup-PuquQ/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Docker in 100 Seconds</h3>
+                            <p>🐳 Docker is a required skill for almost every developer in today's world. Learn the
+                                basics of Dockerfiles, images, and containers in 100 seconds. http...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Gjnup-PuquQ" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/ImaWp9SgoO8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Vim Tutorial for Beginners</h3>
+                            <p>Vim Tutorial for Beginners</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ImaWp9SgoO8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Vl0H-qTclOg/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Microsoft Excel Tutorial for Beginners</h3>
+                            <p>Lean how to use Microsoft Excel from the beginning by creating 6 real-world projects.
+                                Most of the content applies to Google Sheets as well.
+
+                                You will ...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Vl0H-qTclOg" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Kevin
+                                Stratvert</a>
                         </div>
                     </article>
                 </div>
@@ -1065,6 +1621,120 @@
                     </article>
 
 
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Oqj571aXQjM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Software Engineering Full Course</h3>
+                            <p>Software Engineering Full Course</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Oqj571aXQjM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/1xo-0gCVhCU/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Microservices vs Monoliths</h3>
+                            <p>Microservices vs Monoliths</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=1xo-0gCVhCU" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                ByteByteGo</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Z9QbYZh1YmE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>What is Agile?</h3>
+                            <p>What is Agile?</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Z9QbYZh1YmE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                AgileDad</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/_I9MQ9X25rQ/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>DevOps Explained</h3>
+                            <p>DevOps Explained</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=_I9MQ9X25rQ" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                Technology</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/scEDHlsUOkA/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>CI/CD Pipeline Explained in 100 Seconds</h3>
+                            <p>CI/CD Pipeline Explained in 100 Seconds</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=scEDHlsUOkA" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/i53Gi_TJXj4/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>System Design Interview Crash Course</h3>
+                            <p>System Design Interview Crash Course</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=i53Gi_TJXj4" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                ByteByteGo</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1101,6 +1771,106 @@
                                     class="badge badge-neutral">Mixed</span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=bOCHTHkBoAs" target="_blank">►
                                 Play Video</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/1bC8xP0mGZ8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Discrete Math Book for Beginners</h3>
+                            <p>Discrete Math Book for Beginners</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=1bC8xP0mGZ8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Math
+                                Sorcerer</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/tyDKR4FG3Yw/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Introduction to Discrete Mathematics</h3>
+                            <p>We introduce the basics of set theory and do some practice problems.
+
+                                This video is an updated version of the original video released over two years a...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=tyDKR4FG3Yw" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCGYSfZbPp3BiAFs531PBY7g" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                TrevTutor</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/JQBRqk8UcUc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Logic Gates, Truth Tables, Boolean Algebra</h3>
+                            <p>Logic Gates, Truth Tables, Boolean Algebra</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=JQBRqk8UcUc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic
+                                Chemistry Tutor</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/B7b72w8_0Fk/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Introduction to Sets</h3>
+                            <p>Introduction to Sets</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=B7b72w8_0Fk" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic
+                                Chemistry Tutor</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/DgXR2OWQnLc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Graph Theory Introduction</h3>
+                            <p>Graph Theory algorithms video series
+
+                                Support me by purchasing the full graph theory playlist on Udemy. This version offers
+                                additional problems, exerc...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=DgXR2OWQnLc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                WilliamFiset</a>
                         </div>
                     </article>
                 </div>
@@ -1278,6 +2048,98 @@
                                 Training</a>
                         </div>
                     </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/pTB0EiLXUC8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Object-oriented Programming in 7 minutes</h3>
+                            <p>4 pillars of object-oriented programming: encapsulation, abstraction, inheritance and
+                                polymorphism.
+
+                                ❤️ Join this channel to get access to perks:
+                                htt...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=pTB0EiLXUC8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Programming
+                                with Mosh</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/UoqTOO_OUxI/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>SOLID Principles in Programming</h3>
+                            <p>SOLID Principles in Programming</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=UoqTOO_OUxI" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Web Dev
+                                Simplified</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/N66EAKHXYvI/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/e-5obm1G_FY/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Functional Programming in 100 Seconds</h3>
+                            <p>Anjana's next talk at JSConf EU in May:
+                                http://2017.jsconf.eu/speakers/anjana-vakil-immutable-data-structures-for-functional-js.html
+
+                                Slides: https://...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=e-5obm1G_FY" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCzoVCacndDCfGDf41P-z0iA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/7EmboKQH8lM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Clean Code - Uncle Bob</h3>
+                            <p>↓↓ ENGLISH DESCRIPTION ↓↓
+                                "Coding Better World Together" is a set of master lessons from the famous Uncle Bob
+                                (Robert Cecil Martin), where he gives us...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=7EmboKQH8lM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCWFcVR9ULVRZ5UeweZPOTbQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Unity
+                                Coin</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1289,6 +2151,112 @@
                 </div>
                 <div class="resource-grid">
 
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/HXV3zeQKqGY/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>SQL Tutorial - Full Database Course for Beginners</h3>
+                            <p>In this course, we'll be looking at database management basics and SQL using the MySQL
+                                RDBMS.
+
+                                The course is designed for beginners to SQL and databa...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/ztHopE5Wnpc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Database Design Course - Learn how to design and plan a database</h3>
+                            <p>This database design course will help you understand database concepts and give you a
+                                deeper grasp of database design.
+
+                                Database design is the organi...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ztHopE5Wnpc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/ruz-vK8IesE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Relational Databases vs NoSQL Databases</h3>
+                            <p>In this video, I talk about the difference between SQL and NoSQL. I talk about the main
+                                features of both technologies categorized by Structure, Storag...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ruz-vK8IesE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCraiFqWi0qSIxXxXN4IHFBQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                ByteByteGo</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/zsjvFFKOm3c/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>SQL Explained in 100 Seconds</h3>
+                            <p>Learn the fundamentals of Structured Query Language SQL! Even though it's over 40 years
+                                old, the world's most popular databases still run on SQL.
+
+                                For...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=zsjvFFKOm3c" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/wR0jg0eQsZA/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>What is a Database?</h3>
+                            <p>This database tutorial will help beginners understand the basics of database management
+                                systems. We use helpful analogies to explain a high-level over...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=wR0jg0eQsZA" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCnd94o169CbOIJyiEUkTL2A" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                Technology</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1311,6 +2279,126 @@
                                     class="badge badge-neutral">Intermediate</span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=lvO88XxNAzs" target="_blank">►
                                 Play Video</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/RBSGKlAvoiM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Data Structures Easy to Advanced Course</h3>
+                            <p>Learn and master the most common data structures in this full course from Google engineer
+                                William Fiset. This course teaches data structures to beginn...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Advanced</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=RBSGKlAvoiM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                WilliamFiset</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Algorithms and Data Structures Tutorial</h3>
+                            <p>In this course you will learn about algorithms and data structures, two of the
+                                fundamental topics in computer science. There are three main parts to t...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=8hly31xKli0" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Mo4vwq-rmZ8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Big O Notation - Full Course</h3>
+                            <p>Big O Notation - Full Course</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Mo4vwq-rmZ8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/oBt53YbR9Kk/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Dynamic Programming - Learn to Solve Algorithmic Problems</h3>
+                            <p>Learn how to use Dynamic Programming in this course for beginners. It can help you solve
+                                complex programming problems, such as those often seen in pro...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=oBt53YbR9Kk" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/pYT9F8_LFTM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Binary Search Trees Explained</h3>
+                            <p>See complete series on data structures here:
+                                http://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+
+                                In this lesson, we have discusse...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=pYT9F8_LFTM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ CS Dojo</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/cWNEl4HE2OE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Graph Algorithms Crash Course</h3>
+                            <p>Prepare for a technical interview by learning about the graph data structure and basic
+                                traversal algorithms like depth-first search (DFS) and breadth-...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=cWNEl4HE2OE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
                         </div>
                     </article>
                 </div>
@@ -1357,6 +2445,92 @@
                         </div>
                     </article>
 
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/qiQR5rTSshw/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Computer Networking Course - Network Engineering</h3>
+                            <p>This full college-level computer networking course will prepare you to configure, manage,
+                                and troubleshoot computer networks. It will also help you pr...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=qiQR5rTSshw" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/vv4y_uOneC0/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>OSI Model Explained</h3>
+                            <p>Learn computer network layers or OSI layers in a computer network, OSI Model, OSI
+                                reference model or open system interconnection model or networking m...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=vv4y_uOneC0" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCY_dQTuD3MjtuQwYuy6xdag" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                NetworkChuck</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/7_LPdttKXPc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>How the Internet Works in 5 Minutes</h3>
+                            <p>Check out my new book, How to Prepare for Everything: www.howtoprepare.com!
+                                The internet is not a fuzzy cloud. The internet is a wire, actually buried...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCo_81kKe5qkF0JVsUaJ6fYQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Aaron</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/BWZ-MHIhqjM/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Subnetting Mastery</h3>
+                            <p>This video will teach you the basics of subnetting. Every Subnetting problem will ask you
+                                to solve for one or more of seven possible attributes: Netwo...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=BWZ-MHIhqjM" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCKmU-GKiukM8LYjkJFb8oBQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                NetworkChuck</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/27r4BvvwGKY/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1524,6 +2698,122 @@
                                 Huang</a>
                         </div>
                     </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/jC4v5AS4ART/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>ChatGPT Prompt Engineering for Developers</h3>
+                            <p>ChatGPT Prompt Engineering for Developers</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=jC4v5AS4ART" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                DeepLearning.AI</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/Wo5dCEP_mA4/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Neural Networks from Scratch</h3>
+                            <p>Neural Networks from Scratch</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=Wo5dCEP_mA4" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Sentdex</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/zxQyTK8quyY/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Transformer Models Explained</h3>
+                            <p>Transformer Neural Networks are the heart of pretty much everything exciting in AI right
+                                now. ChatGPT, Google Translate and many other cool things, ar...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=zxQyTK8quyY" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                StatQuest</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/YDiSFS-yHwk/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>LLMs Explained</h3>
+                            <p>How do language models like GPT and Palm work?
+                                Part 1: https://youtu.be/lnA9DMvHtfI
+                                See next: text-to-image (Parti, Imagen, Dall-E): https://yout...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=YDiSFS-yHwk" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC4r_gpcPz3Us9pmeGDjw_Rg" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                Technology</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/ifk_qYmb84w/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>AutoGPT and AI Agents Explained</h3>
+                            <p>AutoGPT and AI Agents Explained</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ifk_qYmb84w" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/PeMlgcqA004/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Machine Learning in 100 Seconds</h3>
+                            <p>Machine Learning in 100 Seconds</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=PeMlgcqA004" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Fireship</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1549,6 +2839,129 @@
                         </div>
                     </article>
 
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/U_P23SqJaDc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Cybersecurity for Beginners</h3>
+                            <p>In this complete cyber security course you will learn everything you need in order to
+                                understand cyber security in depth. You will learn all the termi...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=U_P23SqJaDc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCq8JbYayUHvKvjimPV0TCqQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/3Kq1MIfTWCE/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Ethical Hacking 101</h3>
+                            <p>Learn network penetration testing / ethical hacking in this full tutorial course for
+                                beginners. This course teaches everything you need to know to get...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=3Kq1MIfTWCE" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                NetworkChuck</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/GSIDS_lvRv4/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Encryption and Public Keys</h3>
+                            <p>Spies used to meet in the park to exchange code words, now things have moved on - Robert
+                                Miles explains the principle of Public/Private Key Cryptograp...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=GSIDS_lvRv4" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Computerphile</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/EoaDgUgS6QA/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Cross Site Scripting (XSS) Explained</h3>
+                            <p>#XSS #WebSecurity
+
+                                This time we are going to explore the world of Cross Site Scripting under 12 minutes.
+
+                                🔗 Links
+                                ✨ XSS Game: https://xss.pwnfunction....</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=EoaDgUgS6QA" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UCW6MNdOsqv2E9AjQkv9we7A" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                PwnFunction</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/_jKylhJtPmI/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>SQL Injection Explained</h3>
+                            <p>Websites can still be hacked using SQL injection - Tom explains how sites written in PHP
+                                (and other languages too) can be vulnerable and have basic se...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=_jKylhJtPmI" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Computerphile</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/GkXk8EwS4uU/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>How VPNs Actually Work</h3>
+                            <p>How VPNs Actually Work</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=GkXk8EwS4uU" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                ByteByteGo</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -2592,6 +4005,121 @@
                                 Academy</a>
                         </div>
                     </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/1HphkIWK9C8/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Java Multithreading</h3>
+                            <p>Java Multithreading</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=1HphkIWK9C8" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Cave of
+                                Programming</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/viZWJqD_WAs/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Java Collections Framework</h3>
+                            <p>Java Collections Framework</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=viZWJqD_WAs" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Telusko</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/t1-YZ6bF-g0/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Java Streams API Tutorial</h3>
+                            <p>Functional programming in Java: tutorial on how to use Java 8 Streams filter, map, sort,
+                                reduce and collect functions. Lambda functions explained thro...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=t1-YZ6bF-g0" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC4Xt-DUAapAtkfaWWkv4OAw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                Amigoscode</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/9SGDpanrc8U/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Spring Boot Tutorial for Beginners</h3>
+                            <p>Spring Boot is an open source Java based framework used to spring boot microservices. It
+                                is developed by Pivotal Team and is used to build stand-alone...</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=9SGDpanrc8U" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="https://www.youtube.com/channel/UC2KfmYEM4KCuA1ZurravgYw" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                freeCodeCamp.org</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/K1iu1kXkIqc/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Java Generics Tutorial</h3>
+                            <p>Java Generics Tutorial</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=K1iu1kXkIqc" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Coding with
+                                John</a>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-thumbnail">
+                            <img src="https://img.youtube.com/vi/cIqB-GqD3E4/mqdefault.jpg" loading="lazy">
+                            <div class="play-overlay">►</div>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Memory Management in Java</h3>
+                            <p>Memory Management in Java</p>
+                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                                        class="badge badge-neutral">Beginner</span></span></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=cIqB-GqD3E4" target="_blank"
+                                rel="noopener noreferrer">► Play Video</a>
+                            <a href="" target="_blank"
+                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Defog
+                                Tech</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -2599,18 +4127,46 @@
     </div>
 
     <script>
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobile-overlay');
+            const isShowing = drawer.classList.contains('show');
+
+            if (isShowing) {
+                drawer.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.style.overflow = '';
+            } else {
+                drawer.classList.add('show');
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
         function showSection(sectionId, element) {
             // Remove active class from all nav items
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            if (element) element.classList.add('active');
+            
+            // If element is a sidebar nav-item, mark it active
+            if (element && element.classList.contains('nav-item')) {
+                element.classList.add('active');
+            } else {
+                // Otherwise find the sidebar item and mark it active
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    if (item.getAttribute('onclick').includes(sectionId)) {
+                        item.classList.add('active');
+                    }
+                });
+            }
 
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) targetSection.classList.add('active');
 
-            // Sync mobile nav chips
-            document.querySelectorAll('.mobile-nav-chip').forEach(chip => {
-                chip.classList.toggle('active', chip.dataset.section === sectionId);
+            // Sync mobile elements (chips and drawer links)
+            document.querySelectorAll('.mobile-nav-chip, .drawer-link').forEach(el => {
+                el.classList.toggle('active', el.dataset.section === sectionId);
             });
 
             // Scroll content to top on mobile
@@ -2620,25 +4176,45 @@
             }
         }
 
-        // Build mobile nav chips from sidebar nav items
+        // Build mobile nav elements from sidebar nav items
         (function buildMobileNav() {
             const strip = document.getElementById('mobileNavStrip');
-            if (!strip) return;
+            const drawerNav = document.getElementById('drawerNav');
+            if (!strip || !drawerNav) return;
+
             document.querySelectorAll('.nav-item').forEach(item => {
                 const onclick = item.getAttribute('onclick') || '';
                 const match = onclick.match(/showSection\('([^']+)'/);
                 if (!match) return;
                 const sectionId = match[1];
+                const label = item.textContent.trim();
+
+                // 1. Build Bottom Chip
                 const chip = document.createElement('button');
                 chip.className = 'mobile-nav-chip';
                 chip.dataset.section = sectionId;
-                chip.textContent = item.textContent.trim();
+                chip.textContent = label;
                 chip.addEventListener('click', () => showSection(sectionId, chip));
                 strip.appendChild(chip);
+
+                // 2. Build Drawer Link
+                const link = document.createElement('a');
+                link.className = 'drawer-link';
+                link.href = 'javascript:void(0)';
+                link.dataset.section = sectionId;
+                link.textContent = label;
+                link.addEventListener('click', () => {
+                    showSection(sectionId, link);
+                    toggleMobileMenu();
+                });
+                drawerNav.appendChild(link);
             });
-            // Mark first chip active by default
-            const first = strip.querySelector('.mobile-nav-chip');
-            if (first) first.classList.add('active');
+
+            // Mark first items active by default
+            const firstChip = strip.querySelector('.mobile-nav-chip');
+            if (firstChip) firstChip.classList.add('active');
+            const firstLink = drawerNav.querySelector('.drawer-link');
+            if (firstLink) firstLink.classList.add('active');
         })();
 
         // Check if URL has a hash to pre-select a section
@@ -2662,9 +4238,9 @@
     </script>
     <!-- Mobile Bottom Nav -->
     <nav class="mobile-bottom-nav" id="mobileNav">
-      <div class="scroll-strip" id="mobileNavStrip">
-        <!-- chips injected by JS -->
-      </div>
+        <div class="scroll-strip" id="mobileNavStrip">
+            <!-- chips injected by JS -->
+        </div>
     </nav>
 
     <!-- Deep Linking Script -->
