@@ -1816,6 +1816,178 @@ public class userinfo {
                     <li><strong><code>input.close();</code></strong>: Closes the Scanner object to prevent resource leaks once we are done reading input.</li>
                 </ul>
             </div>
+
+            <div class="section-title" id="13-methods-parameters-return-values-scope">§13 · Methods, Parameters, Return Values, Scope</div>
+            <div class="card">
+                <h3>Creating and Calling Methods</h3>
+                <p>A method is a named block of code that performs a task. Methods help you reuse logic instead of writing the same code again and again.</p>
+                <pre><code>public class Main {
+    static void myMethod() {
+        System.out.println("I just got executed!");
+    }
+
+    public static void main(String[] args) {
+        myMethod();
+    }
+}</code></pre>
+                <p><strong>Key idea:</strong> Define the method once, then call it whenever you need it.</p>
+
+                <h4>Parameters and Arguments</h4>
+                <p>Parameters are variables in the method definition. Arguments are the real values you send when calling the method.</p>
+                <pre><code>public class Main {
+    static void myMethod(String fname, int age) {
+        System.out.println(fname + " is " + age);
+    }
+
+    public static void main(String[] args) {
+        myMethod("Ali", 5);
+        myMethod("Ahmed", 8);
+        myMethod("Omer", 31);
+    }
+}</code></pre>
+
+                <h4>Logic Inside Methods</h4>
+                <pre><code>public class Main {
+    static void checkAge(int age) {
+        if (age &lt; 18) {
+            System.out.println("Access denied - You are not old enough!");
+        } else {
+            System.out.println("Access granted - You are old enough!");
+        }
+    }
+
+    public static void main(String[] args) {
+        checkAge(20);
+    }
+}</code></pre>
+
+                <h4>Return Values</h4>
+                <p>Use <code>return</code> when a method should send a value back to the place where it was called.</p>
+                <pre><code>public class Main {
+    static int add(int x, int y) {
+        return x + y;
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 3);
+        System.out.println(result);
+    }
+}</code></pre>
+
+                <h4>Method Overloading</h4>
+                <p>Java allows multiple methods to have the same name if their parameter lists are different.</p>
+                <pre><code>public class Main {
+    static int plusMethod(int x, int y) {
+        return x + y;
+    }
+
+    static double plusMethod(double x, double y) {
+        return x + y;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(plusMethod(8, 5));
+        System.out.println(plusMethod(4.3, 6.26));
+    }
+}</code></pre>
+
+                <h4>Scope</h4>
+                <p>Scope means the region where a variable can be used. A variable declared inside a method or block only exists there.</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int x = 100;
+        System.out.println(x); // works here
+    }
+}
+
+// x cannot be used outside main()</code></pre>
+                <ul>
+                    <li><strong>Method scope:</strong> Variables created inside a method are available only inside that method.</li>
+                    <li><strong>Block scope:</strong> Variables created inside <code>if</code>, <code>for</code>, or <code>while</code> blocks stay inside those braces.</li>
+                    <li><strong>Best practice:</strong> Keep variables as local as possible so code is easier to understand and debug.</li>
+                </ul>
+            </div>
+
+            <div class="section-title" id="14-arrays-and-length">§14 · Arrays and <code>.length</code></div>
+            <div class="card">
+                <h3>What Is an Array?</h3>
+                <p>An array stores multiple values of the same type in one variable. Each value is stored at an index, starting from <code>0</code>.</p>
+
+                <h4>Declaring and Creating Arrays</h4>
+                <pre><code>int[] marks = new int[5];   // creates space for 5 integers
+int[] nums = {1, 2, 3};    // creates and fills the array immediately</code></pre>
+                <p><strong>Important:</strong> <code>new int[5]</code> creates empty slots with default values, while <code>{1, 2, 3}</code> creates an array that already contains values.</p>
+
+                <h4>Accessing and Updating Elements</h4>
+                <pre><code>String[] names = {"Ali", "Mona", "Sara"};
+System.out.println(names[0]); // Ali
+
+names[1] = "Omar";
+System.out.println(names[1]); // Omar</code></pre>
+                <p>Use square brackets with the index number to read or change one element.</p>
+
+                <h4>Using <code>arr.length</code></h4>
+                <pre><code>int[] nums = {10, 20, 30, 40};
+System.out.println(nums.length); // 4</code></pre>
+                <ul>
+                    <li><strong>Arrays use <code>arr.length</code></strong> with no parentheses.</li>
+                    <li><strong>Strings use <code>s.length()</code></strong> with parentheses because it is a method.</li>
+                </ul>
+
+                <h4>Looping Through Arrays</h4>
+                <pre><code>int[] nums = {10, 20, 30, 40};
+
+for (int i = 0; i &lt; nums.length; i++) {
+    System.out.println("Index " + i + ": " + nums[i]);
+}</code></pre>
+                <p>This is why <code>.length</code> is important: it tells the loop when to stop so you do not go past the end of the array.</p>
+
+                <h4>Real-Life Example</h4>
+                <pre><code>int[] marks = {78, 85, 92, 66};
+int total = 0;
+
+for (int i = 0; i &lt; marks.length; i++) {
+    total += marks[i];
+}
+
+System.out.println("Total = " + total);
+System.out.println("Subjects = " + marks.length);</code></pre>
+
+                <table class="sheet">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Java Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Declare an array variable</td>
+                            <td><code>int[] arr;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Create a fixed-size array</td>
+                            <td><code>arr = new int[5];</code></td>
+                        </tr>
+                        <tr>
+                            <td>Create with starting values</td>
+                            <td><code>int[] arr = {1, 2, 3};</code></td>
+                        </tr>
+                        <tr>
+                            <td>Read one element</td>
+                            <td><code>arr[0]</code></td>
+                        </tr>
+                        <tr>
+                            <td>Change one element</td>
+                            <td><code>arr[2] = 99;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Get number of elements</td>
+                            <td><code>arr.length</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- ════════════════ EXAM TAB ════════════════ -->
