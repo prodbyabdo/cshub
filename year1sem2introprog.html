@@ -286,6 +286,93 @@
             font-size: 0.95rem;
         }
 
+        .exam-hero {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.12), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(0, 255, 136, 0.28);
+            border-radius: 8px;
+            padding: 22px;
+            margin: 20px 0 24px;
+        }
+
+        .exam-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .exam-pill {
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 6px 12px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .compiler-jump {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 18px;
+            border: 1px solid rgba(0, 255, 136, 0.55);
+            background: var(--accent);
+            color: #03110a;
+            border-radius: 8px;
+            padding: 12px 18px;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .compiler-jump:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 255, 136, 0.16);
+        }
+
+        .exam-section {
+            margin-top: 32px;
+        }
+
+        .exam-list>li {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .exam-list ol {
+            margin-top: 8px;
+        }
+
+        .exam-list ol li {
+            margin-bottom: 3px;
+        }
+
+        .answer-grid {
+            columns: 2;
+            column-gap: 28px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        .answer-grid p {
+            break-inside: avoid;
+            margin: 0 0 9px;
+        }
+
+        .code-challenge {
+            border-left: 3px solid var(--blue2);
+        }
+
+        @media (max-width: 720px) {
+            .answer-grid {
+                columns: 1;
+            }
+        }
+
         .clean {
             list-style: none;
             padding: 0;
@@ -1992,55 +2079,320 @@ System.out.println("Subjects = " + marks.length);</code></pre>
 
         <!-- ════════════════ EXAM TAB ════════════════ -->
         <div id="exam" class="tab-content">
-            <h2>Practice Exam </h2>
-            <p>Test your knowledge of programming fundamentals, algorithms, and logic structures.</p>
-
-            <div class="question-card">
-                <div class="question-text">1. Which type of software translates high-level code as a complete unit
-                    before execution?</div>
-                <div class="options">
-                    <label><input type="radio" name="q1"> a) Operating System</label><br>
-                    <label><input type="radio" name="q1"> b) Compiler</label><br>
-                    <label><input type="radio" name="q1"> c) Interpreter</label><br>
-                    <label><input type="radio" name="q1"> d) Assembly Language</label>
+            <h2>Practice Exam</h2>
+            <div class="exam-hero">
+                <p>This practice exam is based on the principles of programming and Java fundamentals covered in your sources.</p>
+                <div class="exam-meta">
+                    <span class="exam-pill">80 MCQ</span>
+                    <span class="exam-pill">40 True/False</span>
+                    <span class="exam-pill">20 Non-Java Coding</span>
+                    <span class="exam-pill">30 Hard Java</span>
+                    <span class="exam-pill">20 Java Compiler Challenges</span>
                 </div>
+                <button class="compiler-jump" type="button" onclick="openTab('compilerrr'); window.scrollTo({ top: 0, behavior: 'smooth' });">Open Java Compiler Tab</button>
             </div>
 
-            <div class="question-card">
-                <div class="question-text">2. Which flowchart symbol is used to represent a decision with multiple exit
-                    paths (Yes/No)?</div>
-                <div class="options">
-                    <label><input type="radio" name="q2"> a) Oval</label><br>
-                    <label><input type="radio" name="q2"> b) Rectangle</label><br>
-                    <label><input type="radio" name="q2"> c) Parallelogram</label><br>
-                    <label><input type="radio" name="q2"> d) Diamond</label>
-                </div>
+            <div class="exam-section">
+                <h3>Section 1: 80 Multiple Choice Questions</h3>
+                <ol class="exam-list">
+                    <li><strong>Which logical unit of the computer is capable of performing computations and making logical decisions?</strong><ol type="a"><li>Input Unit</li><li>Output Unit</li><li>Arithmetic and Logic Unit (ALU)</li><li>Memory Unit</li></ol></li>
+                    <li><strong>Which device is considered hardware?</strong><ol type="a"><li>Operating System</li><li>Keyboard</li><li>Java Program</li><li>Compiler</li></ol></li>
+                    <li><strong>The unit that obtaining information from various input devices is the:</strong><ol type="a"><li>Memory Unit</li><li>Output Unit</li><li>Input Unit</li><li>CPU</li></ol></li>
+                    <li><strong>Which memory is volatile and stores your program and data while you are using the computer?</strong><ol type="a"><li>ROM</li><li>RAM</li><li>Secondary Storage</li><li>Hard Disk</li></ol></li>
+                    <li><strong>Which unit takes processed information and makes it available outside the computer?</strong><ol type="a"><li>ALU</li><li>CPU</li><li>Output Unit</li><li>Input Unit</li></ol></li>
+                    <li><strong>Secondary storage devices include which of the following?</strong><ol type="a"><li>RAM</li><li>Cache</li><li>Magnetic disks</li><li>CPU</li></ol></li>
+                    <li><strong>The "opcode" in a machine language instruction tells the computer:</strong><ol type="a"><li>The memory address of the data</li><li>The name of the programmer</li><li>The operation to be performed</li><li>The speed of the processor</li></ol></li>
+                    <li><strong>Programs written in 1s and 0s are in which language?</strong><ol type="a"><li>Assembly language</li><li>High-level language</li><li>Machine language</li><li>Pseudocode</li></ol></li>
+                    <li><strong>A program that translates high-level code as a complete unit is a(n):</strong><ol type="a"><li>Interpreter</li><li>Compiler</li><li>Assembler</li><li>Linker</li></ol></li>
+                    <li><strong>Which language uses symbolic names for opcodes and operands?</strong><ol type="a"><li>Machine language</li><li>C++</li><li>Assembly language</li><li>Java</li></ol></li>
+                    <li><strong>Languages closest to computer hardware are called:</strong><ol type="a"><li>High-level languages</li><li>Low-level languages</li><li>Object-oriented languages</li><li>Compiled languages</li></ol></li>
+                    <li><strong>Which of the following is an example of an Operating System?</strong><ol type="a"><li>MS-DOS</li><li>JAVA</li><li>COBOL</li><li>BASIC</li></ol></li>
+                    <li><strong>Programs written to perform particular tasks required by users are:</strong><ol type="a"><li>System software</li><li>Application software</li><li>Machine language</li><li>Translators</li></ol></li>
+                    <li><strong>What is the most important type of system software?</strong><ol type="a"><li>Word Processor</li><li>Spreadsheet</li><li>Operating system</li><li>Game</li></ol></li>
+                    <li><strong>What is the first step in the Program Development Life Cycle?</strong><ol type="a"><li>Problem Analysis</li><li>Coding</li><li>Problem Definition</li><li>Algorithm design</li></ol></li>
+                    <li><strong>The stage involving breaking a problem into smaller and simpler sub-problems is:</strong><ol type="a"><li>Problem Definition</li><li>Problem Analysis</li><li>Debugging</li><li>Translation</li></ol></li>
+                    <li><strong>An "Algorithm" is defined as:</strong><ol type="a"><li>A computer language</li><li>A clear and unambiguous specification of steps to solve a problem</li><li>A physical part of the computer</li><li>A syntax error</li></ol></li>
+                    <li><strong>The process of fixing errors or "bugs" in a program is called:</strong><ol type="a"><li>Analyzing</li><li>Debugging</li><li>Compiling</li><li>Running</li></ol></li>
+                    <li><strong>A syntax error, such as a missing semicolon, is a:</strong><ol type="a"><li>Runtime error</li><li>Logic error</li><li>Compile-time error</li><li>System error</li></ol></li>
+                    <li><strong>An infinite loop is typically an example of a:</strong><ol type="a"><li>Syntax error</li><li>Compile-time error</li><li>Runtime error</li><li>Hardware error</li></ol></li>
+                    <li><strong>A value that never changes during program execution is a:</strong><ol type="a"><li>Variable</li><li>Constant</li><li>Method</li><li>Statement</li></ol></li>
+                    <li><strong>Which rule applies to naming variables?</strong><ol type="a"><li>Can start with a number</li><li>Can contain spaces</li><li>Must start with a letter</li><li>Can use dashes</li></ol></li>
+                    <li><strong>Which tool graphically represents the logic in a solution?</strong><ol type="a"><li>Pseudocode</li><li>Flowchart</li><li>Compiler</li><li>Java Virtual Machine</li></ol></li>
+                    <li><strong>In pseudocode, which keyword is used for input from the keyboard?</strong><ol type="a"><li>Print</li><li>Display</li><li>Get</li><li>Prompt</li></ol></li>
+                    <li><strong>The pseudocode keyword "Prompt" is used to:</strong><ol type="a"><li>Receive data</li><li>Output data</li><li>Explain what variable should be input</li><li>Perform arithmetic</li></ol></li>
+                    <li><strong>Which symbol is used for the modulus operation in pseudocode?</strong><ol type="a"><li>/</li><li>*</li><li>%</li><li>+</li></ol></li>
+                    <li><strong>In a flowchart, what does the rectangle symbol represent?</strong><ol type="a"><li>Decision</li><li>Input/Output</li><li>Process</li><li>Terminal</li></ol></li>
+                    <li><strong>The diamond symbol in a flowchart indicates a:</strong><ol type="a"><li>Terminal</li><li>Decision</li><li>Data flow</li><li>Predefined process</li></ol></li>
+                    <li><strong>Which symbol marks the beginning or end of a flowchart?</strong><ol type="a"><li>Process symbol</li><li>Terminal symbol</li><li>Connector symbol</li><li>Annotation symbol</li></ol></li>
+                    <li><strong>What is the only flowchart symbol that can have more than one exit arrow?</strong><ol type="a"><li>Process</li><li>Input</li><li>Decision</li><li>Terminal</li></ol></li>
+                    <li><strong>Branching statements allow a program to:</strong><ol type="a"><li>Repeat code</li><li>Redirect the flow of execution</li><li>Define variables</li><li>Delete data</li></ol></li>
+                    <li><strong>Which relational operator means "not equal"?</strong><ol type="a"><li>==</li><li>!=</li><li>&gt;=</li><li>&lt;=</li></ol></li>
+                    <li><strong>The Simple If statement executes a block ONLY if the condition is:</strong><ol type="a"><li>False</li><li>True</li><li>Infinite</li><li>Signed</li></ol></li>
+                    <li><strong>Which structure is used to combine several different conditions?</strong><ol type="a"><li>Simple If</li><li>Nested If</li><li>While loop</li><li>Terminal symbol</li></ol></li>
+                    <li><strong>Iteration is another word for:</strong><ol type="a"><li>Branching</li><li>Repetition</li><li>Selection</li><li>Debugging</li></ol></li>
+                    <li><strong>A "Pre-Test" loop tests the condition:</strong><ol type="a"><li>After the body executes</li><li>During the body execution</li><li>Before the body executes</li><li>Only once</li></ol></li>
+                    <li><strong>Which loop is guaranteed to execute at least once?</strong><ol type="a"><li>While loop</li><li>Do-while loop</li><li>For loop</li><li>Nested loop</li></ol></li>
+                    <li><strong>A "Counted Loop" is generally implemented as a:</strong><ol type="a"><li>While loop</li><li>Do-while loop</li><li>For loop</li><li>Simple If</li></ol></li>
+                    <li><strong>Adding a value to a counter on each loop is called:</strong><ol type="a"><li>Decrementing</li><li>Accumulating</li><li>Incrementing</li><li>Branching</li></ol></li>
+                    <li><strong>An accumulator variable is used to:</strong><ol type="a"><li>Count loop passes</li><li>Summarize growing values</li><li>Terminate a loop</li><li>Name constants</li></ol></li>
+                    <li><strong>Java was originally developed by:</strong><ol type="a"><li>Microsoft</li><li>Sun Microsystems</li><li>IBM</li><li>Apple</li></ol></li>
+                    <li><strong>Which Java edition is used for web applications?</strong><ol type="a"><li>Java SE</li><li>Java ME</li><li>Java EE</li><li>JavaFX</li></ol></li>
+                    <li><strong>Java is platform-independent because it compiles into:</strong><ol type="a"><li>Machine code</li><li>Assembly</li><li>Bytecode</li><li>Pseudocode</li></ol></li>
+                    <li><strong>The entry point for every Java program is the:</strong><ol type="a"><li>Main method</li><li>Class constructor</li><li>System class</li><li>Compiler</li></ol></li>
+                    <li><strong>Which character marks the end of a Java statement?</strong><ol type="a"><li>:</li><li>;</li><li>.</li><li>,</li></ol></li>
+                    <li><strong>In Java, which data type is used to store text?</strong><ol type="a"><li>int</li><li>float</li><li>String</li><li>char</li></ol></li>
+                    <li><strong>Single-line comments in Java start with:</strong><ol type="a"><li>/*</li><li>//</li><li>#</li><li>--</li></ol></li>
+                    <li><strong>Which keyword creates a constant/read-only variable in Java?</strong><ol type="a"><li>static</li><li>const</li><li>final</li><li>void</li></ol></li>
+                    <li><strong>Automatic conversion of a smaller type to a larger type (e.g., int to double) is:</strong><ol type="a"><li>Narrowing casting</li><li>Widening casting</li><li>Manual casting</li><li>Concatenation</li></ol></li>
+                    <li><strong>Narrowing casting in Java must be done:</strong><ol type="a"><li>Automatically</li><li>Manually</li><li>By the JRE</li><li>Using the + operator</li></ol></li>
+                    <li><strong>Which operator returns the division remainder?</strong><ol type="a"><li>/</li><li>%</li><li>*</li><li>++</li></ol></li>
+                    <li><strong>The "equal to" comparison operator in Java is:</strong><ol type="a"><li>=</li><li>==</li><li>===</li><li>equals</li></ol></li>
+                    <li><strong>The logical "AND" operator is represented by:</strong><ol type="a"><li>||</li><li>!</li><li>&amp;&amp;</li><li>&amp;</li></ol></li>
+                    <li><strong>Which String method converts a string to all capital letters?</strong><ol type="a"><li>toUpper()</li><li>toUpperCase()</li><li>length()</li><li>concat()</li></ol></li>
+                    <li><strong>The switch statement selects one of many:</strong><ol type="a"><li>Variables</li><li>Loops</li><li>Code blocks</li><li>Flow lines</li></ol></li>
+                    <li><strong>In a switch statement, which keyword runs if there is no match?</strong><ol type="a"><li>break</li><li>else</li><li>default</li><li>continue</li></ol></li>
+                    <li><strong>Which statement is used to skip one iteration of a loop?</strong><ol type="a"><li>break</li><li>exit</li><li>continue</li><li>stop</li></ol></li>
+                    <li><strong>A byte data type can store numbers from:</strong><ol type="a"><li>-128 to 127</li><li>0 to 255</li><li>-32,768 to 32,767</li><li>-100 to 100</li></ol></li>
+                    <li><strong>Which Java loop is often called a "counted loop"?</strong><ol type="a"><li>while</li><li>do-while</li><li>for</li><li>simple if</li></ol></li>
+                    <li><strong>What is "bytecode" executed by?</strong><ol type="a"><li>The CPU directly</li><li>The Java Virtual Machine (JVM)</li><li>The Compiler</li><li>The Hard Disk</li></ol></li>
+                    <li><strong>The diamond symbol in flowcharts is the only symbol that:</strong><ol type="a"><li>Has no exit arrow</li><li>Is used for Start</li><li>May have more than one exit arrow</li><li>Represents a process</li></ol></li>
+                    <li><strong>The process of testing the condition after executing the loop body is called:</strong><ol type="a"><li>Pre-Test</li><li>Post-Test</li><li>Logic Test</li><li>Compilation</li></ol></li>
+                    <li><strong>"Set total to 0" in pseudocode is an example of:</strong><ol type="a"><li>Output</li><li>Initialization</li><li>Decision</li><li>Condition</li></ol></li>
+                    <li><strong>Which stage of PDLC specifies inputs and outputs?</strong><ol type="a"><li>Problem Definition</li><li>Coding</li><li>Debugging</li><li>Repetition</li></ol></li>
+                    <li><strong>A machine language instruction's "address part" specifies:</strong><ol type="a"><li>The opcode</li><li>The memory location of data</li><li>The programmer's email</li><li>The variable name</li></ol></li>
+                    <li><strong>Operating systems like MS Windows are:</strong><ol type="a"><li>Application Software</li><li>Hardware</li><li>System Software</li><li>Low-level languages</li></ol></li>
+                    <li><strong>Which logical operator reverses the result of a condition?</strong><ol type="a"><li>&amp;&amp;</li><li>||</li><li>!</li><li>!=</li></ol></li>
+                    <li><strong>Java is case-sensitive, so "MyClass" and "myclass" are:</strong><ol type="a"><li>The same</li><li>Different</li><li>Ignored</li><li>Keywords</li></ol></li>
+                    <li><strong>Text in Java must be wrapped in:</strong><ol type="a"><li>Single quotes</li><li>Parentheses</li><li>Double quotes</li><li>Curly braces</li></ol></li>
+                    <li><strong>Which method prints text and adds a new line?</strong><ol type="a"><li>print()</li><li>println()</li><li>write()</li><li>output()</li></ol></li>
+                    <li><strong>The primitive type for single characters is:</strong><ol type="a"><li>String</li><li>char</li><li>byte</li><li>boolean</li></ol></li>
+                    <li><strong>What is the result of 7 % 3?</strong><ol type="a"><li>2</li><li>1</li><li>0</li><li>2.33</li></ol></li>
+                    <li><strong>Widening casting is done:</strong><ol type="a"><li>Manually</li><li>Automatically</li><li>By the user</li><li>Not at all</li></ol></li>
+                    <li><strong>The break statement in a switch is used to:</strong><ol type="a"><li>Start a loop</li><li>Stop execution from "falling through"</li><li>Exit the entire program</li><li>Declare a default case</li></ol></li>
+                    <li><strong>A "nested loop" means:</strong><ol type="a"><li>A loop that never ends</li><li>A loop inside another loop</li><li>A loop with multiple conditions</li><li>A loop that runs backwards</li></ol></li>
+                    <li><strong>JVM stands for:</strong><ol type="a"><li>Java Variable Method</li><li>Java Virtual Machine</li><li>Just Valid Memory</li><li>Joint View Map</li></ol></li>
+                    <li><strong>Which is NOT a primitive data type?</strong><ol type="a"><li>int</li><li>float</li><li>String</li><li>boolean</li></ol></li>
+                    <li><strong>What happens if you forget double quotes for text in Java?</strong><ol type="a"><li>It works normally</li><li>It results in an error</li><li>It becomes a comment</li><li>It is ignored</li></ol></li>
+                    <li><strong>How many billion devices run Java today?</strong><ol type="a"><li>1 billion</li><li>2 billion</li><li>Over 3 billion</li><li>10 billion</li></ol></li>
+                    <li><strong>The ++ operator in Java is used for:</strong><ol type="a"><li>Addition</li><li>Decrementing</li><li>Incrementing</li><li>Concatenation</li></ol></li>
+                </ol>
             </div>
 
-            <div class="question-card">
-                <div class="question-text">3. Analyze the pseudocode:
-                    <br><code>count = 0<br>While (count &lt; 5)<br>  count = count + 1<br>EndLoop</code><br>What is the
-                    purpose of the variable <code>count</code>?
-                </div>
-                <div class="options">
-                    <label><input type="radio" name="q3"> a) It acts as an accumulator</label><br>
-                    <label><input type="radio" name="q3"> b) It acts as a counter</label><br>
-                    <label><input type="radio" name="q3"> c) It is a constant</label><br>
-                    <label><input type="radio" name="q3"> d) It causes a runtime error</label>
-                </div>
+            <div class="exam-section">
+                <h3>Section 2: 40 True or False Questions</h3>
+                <ol class="exam-list">
+                    <li>Hardware is directed by software to execute commands. <strong>(True)</strong></li>
+                    <li>RAM is non-volatile memory. <strong>(False - ROM is non-volatile)</strong></li>
+                    <li>Machine language consists entirely of 1s and 0s. <strong>(True)</strong></li>
+                    <li>An assembler translates high-level languages into machine language. <strong>(False - It translates assembly)</strong></li>
+                    <li>Multitasking systems allow users to run multiple programs. <strong>(True)</strong></li>
+                    <li>Programmers start writing code immediately without a plan. <strong>(False)</strong></li>
+                    <li>Inadequate identification of a problem leads to poor performance. <strong>(True)</strong></li>
+                    <li>A variable name can start with a number. <strong>(False)</strong></li>
+                    <li>Flowcharts are generally better for larger problems than pseudocode. <strong>(False)</strong></li>
+                    <li>Pseudocode cannot be executed by a computer. <strong>(True)</strong></li>
+                    <li>The diamond symbol in a flowchart is for Input/Output. <strong>(False - It is for decisions)</strong></li>
+                    <li>The terminal symbol represents the beginning or end of a program. <strong>(True)</strong></li>
+                    <li>Branching statements allow specific code blocks to be skipped. <strong>(True)</strong></li>
+                    <li>Relational operators include things like &gt; and &lt;. <strong>(True)</strong></li>
+                    <li>A "Post-Test" loop executes the body at least once. <strong>(True)</strong></li>
+                    <li>Counting operations can only increment by one. <strong>(False)</strong></li>
+                    <li>Java was developed by Sun Microsystems. <strong>(True)</strong></li>
+                    <li>Every Java application must have a <code>main()</code> method. <strong>(True)</strong></li>
+                    <li>Curly braces <code>{}</code> mark the start and end of code blocks in Java. <strong>(True)</strong></li>
+                    <li>Primitive data types include String. <strong>(False - String is non-primitive)</strong></li>
+                    <li>Narrowing casting is done automatically. <strong>(False - It is manual)</strong></li>
+                    <li>The <code>final</code> keyword makes a variable read-only. <strong>(True)</strong></li>
+                    <li>The <code>+</code> operator can concatenate two strings. <strong>(True)</strong></li>
+                    <li>In a switch statement, the <code>default</code> keyword is required. <strong>(False - but recommended)</strong></li>
+                    <li>The <code>break</code> statement jumps to the next iteration of a loop. <strong>(False - it exits the loop)</strong></li>
+                    <li>"Bytecode" is platform-independent. <strong>(True)</strong></li>
+                    <li>An interpreter translates high-level code as a complete unit. <strong>(False - that is a compiler)</strong></li>
+                    <li>Arithmetic operations include addition and multiplication. <strong>(True)</strong></li>
+                    <li>The Simple If executes if a condition is false. <strong>(False)</strong></li>
+                    <li>Loops reduce errors and make code more readable. <strong>(True)</strong></li>
+                    <li>JVM stands for Java Video Library. <strong>(False)</strong></li>
+                    <li>JDK includes everything a developer needs to write Java. <strong>(True)</strong></li>
+                    <li>Java is owned by Microsoft. <strong>(False - Oracle)</strong></li>
+                    <li><code>double</code> stores more precision than <code>float</code>. <strong>(True)</strong></li>
+                    <li>The <code>toLowerCase()</code> method changes text to all caps. <strong>(False)</strong></li>
+                    <li>The <code>indexOf()</code> method finds the position of a substring. <strong>(True)</strong></li>
+                    <li>A flowchart process symbol results in a change in information. <strong>(True)</strong></li>
+                    <li>Connector symbols serve as off-page connectors. <strong>(True)</strong></li>
+                    <li>Variables must be declared with a type before use in Java. <strong>(True)</strong></li>
+                    <li>Nested loops execute the inner loop for each outer iteration. <strong>(True)</strong></li>
+                </ol>
             </div>
 
-            <div class="question-card">
-                <div class="question-text">4. What is the difference between a Pre-Test loop and a Post-Test loop?</div>
-                <div class="options">
-                    <label><input type="radio" name="q4"> a) Pre-Test loops never run, Post-Test loops run
-                        infinitely</label><br>
-                    <label><input type="radio" name="q4"> b) A Pre-Test loop might run 0 times, but a Post-Test loop
-                        always runs at least once</label><br>
-                    <label><input type="radio" name="q4"> c) They are exactly the same</label><br>
-                    <label><input type="radio" name="q4"> d) A Pre-Test loop is for counting, Post-Test is for
-                        accumulating</label>
+            <div class="exam-section">
+                <h3>Section 3: 20 Non-Java Coding Questions (Lectures 1-8)</h3>
+                <ol class="exam-list">
+                    <li>Write the pseudocode to find the product of three numbers (<code>no1</code>, <code>no2</code>, <code>no3</code>).</li>
+                    <li>Write the pseudocode to find the average of three numbers (<code>no</code>, <code>no2</code>, <code>no3</code>).</li>
+                    <li>Express a solution in human language to ask for a radius and print area.</li>
+                    <li>Write pseudocode for a program that outputs "hundred" if a number equals 100.</li>
+                    <li>Create a pseudocode algorithm that outputs "A" if a grade is &gt;= 80, otherwise "F".</li>
+                    <li>Draw the flowchart sequence to compute the sum of two numbers.</li>
+                    <li>Write the pseudocode to display the multiplication table for number 4.</li>
+                    <li>Write a pseudocode algorithm to calculate the sum and average of five scores.</li>
+                    <li>Write a branching algorithm to output the larger of two numbers.</li>
+                    <li>Design a loop in pseudocode to display numbers 1 to 10.</li>
+                    <li>Write pseudocode to count how many of four items weigh over 20 kg.</li>
+                    <li>Create a pseudocode structure for a nested if assigning A (&gt;= 80), B (&gt;= 70), C (&gt;= 50), and F.</li>
+                    <li>Write pseudocode for calculating a 3% commission on costs &gt;= $300.</li>
+                    <li>Use pseudocode to initialize PI to 3.14 and read a radius.</li>
+                    <li>Write an algorithm using a While loop to decrement a counter from 10 to 1.</li>
+                    <li>Describe the purpose of an Annotation symbol in a flowchart.</li>
+                    <li>What keyword is used in pseudocode to assign an initial value?</li>
+                    <li>Write pseudocode to compute Celsius from Fahrenheit (<code>C = (F - 32) / 1.8</code>).</li>
+                    <li>Write pseudocode to read ten numbers and find their total using iteration.</li>
+                    <li>Describe the difference in logic flow between a While and a Do-While pseudocode construct.</li>
+                </ol>
+            </div>
+
+            <div class="exam-section">
+                <h3>Section 4: 30 Hard Java Questions (Java Fundamentals)</h3>
+                <ol class="exam-list">
+                    <li>What is the exact signature of the entry point method in a Java application?</li>
+                    <li>Explain why <code>System.out.println(Hello);</code> produces an error.</li>
+                    <li>How does the JVM enable platform independence for Java programs?</li>
+                    <li>Define the difference in functionality between the JDK and the JRE.</li>
+                    <li>What is the memory size and numerical range of the <code>short</code> data type?</li>
+                    <li>Why must narrowing casting be done manually with parentheses?</li>
+                    <li>Explain the result of <code>int x = 9; double y = x;</code> and name the process.</li>
+                    <li>In a switch statement, what happens if the <code>break</code> statement is omitted?</li>
+                    <li>How many decimal digits of precision does a <code>double</code> provide?</li>
+                    <li>What is the difference between <code>System.out.print()</code> and <code>System.out.println()</code>?</li>
+                    <li>Which primitive type is the most common for storing whole numbers?</li>
+                    <li>Describe the rules for naming a variable in Java.</li>
+                    <li>Explain the functionality of the <code>default</code> keyword in a <code>switch</code> statement.</li>
+                    <li>What is the specific return value type of comparison operators?</li>
+                    <li>Write the code for a nested if statement checking if a number is both positive and greater than 10.</li>
+                    <li>How do you find the total number of characters in a String object?</li>
+                    <li>Explain the behavior of a <code>do-while</code> loop when the condition is false from the start.</li>
+                    <li>Identify the three parts of a <code>for</code> loop header and their purposes.</li>
+                    <li>What is "Type Casting" in the context of primitive data types?</li>
+                    <li>Which built-in String method is used to compare content instead of memory address?</li>
+                    <li>Write a code snippet to convert "Java Programming" to all lowercase.</li>
+                    <li>What suffix is required for a floating-point literal in Java (e.g., 5.99)?</li>
+                    <li>Explain the difference between the operators <code>&amp;</code> and <code>&amp;&amp;</code>.</li>
+                    <li>How many times will a nested loop run if the outer runs twice and the inner runs three times?</li>
+                    <li>What happens to the decimal portion of a <code>double</code> when cast to an <code>int</code>?</li>
+                    <li>Which data type is used to store values with only two possible states?</li>
+                    <li>Explain the use of the <code>continue</code> keyword inside a repetition structure.</li>
+                    <li>What is the purpose of the <code>Scanner</code> class in Java input?</li>
+                    <li>Why is Java considered an Object-Oriented Programming (OOP) language?</li>
+                    <li>What error occurs if the class name does not match the filename in Java?</li>
+                </ol>
+            </div>
+
+            <div class="exam-section">
+                <h3>Section 5: 20 Java Compiler Code-Writing Challenges</h3>
+                <p>Use the compiler tab to write, run, and test these programs.</p>
+                <button class="compiler-jump" type="button" onclick="openTab('compilerrr'); window.scrollTo({ top: 0, behavior: 'smooth' });">Go Write Code in the Java Compiler</button>
+                <ol class="exam-list">
+                    <li class="question-card code-challenge">Write a complete Java program that prints your name, university ID, and section on separate lines.</li>
+                    <li class="question-card code-challenge">Write a program that stores three integers, prints their sum, product, and average.</li>
+                    <li class="question-card code-challenge">Use <code>Scanner</code> to read a radius and print the area of a circle using <code>final double PI = 3.14</code>.</li>
+                    <li class="question-card code-challenge">Read a temperature in Fahrenheit and print Celsius using <code>C = (F - 32) / 1.8</code>.</li>
+                    <li class="question-card code-challenge">Read an integer and print whether it is positive, negative, or zero.</li>
+                    <li class="question-card code-challenge">Read a grade and print A, B, C, or F using nested <code>if</code> statements.</li>
+                    <li class="question-card code-challenge">Write a program that reads two numbers and prints the larger number. If equal, print "Equal".</li>
+                    <li class="question-card code-challenge">Use a <code>for</code> loop to print the multiplication table for 4 from 1 to 12.</li>
+                    <li class="question-card code-challenge">Use a <code>while</code> loop to print numbers from 10 down to 1.</li>
+                    <li class="question-card code-challenge">Use a <code>do-while</code> loop that asks for a password until the user enters <code>java123</code>.</li>
+                    <li class="question-card code-challenge">Read ten integers and print their total using an accumulator variable.</li>
+                    <li class="question-card code-challenge">Read five scores, then print the sum and average.</li>
+                    <li class="question-card code-challenge">Read four item weights and count how many are over 20 kg.</li>
+                    <li class="question-card code-challenge">Write a switch program that reads a number 1-7 and prints the matching day name.</li>
+                    <li class="question-card code-challenge">Write a program that uses <code>continue</code> to print only odd numbers from 1 to 20.</li>
+                    <li class="question-card code-challenge">Write a program that uses <code>break</code> to stop reading numbers when the user enters 0.</li>
+                    <li class="question-card code-challenge">Read a name and print its length, uppercase form, lowercase form, and first character.</li>
+                    <li class="question-card code-challenge">Read two strings and use <code>.equals()</code> to check whether their contents match.</li>
+                    <li class="question-card code-challenge">Demonstrate widening casting from <code>int</code> to <code>double</code> and narrowing casting from <code>double</code> to <code>int</code>.</li>
+                    <li class="question-card code-challenge">Create a nested loop that prints a 5 by 5 square of asterisks.</li>
+                </ol>
+            </div>
+
+            <div class="exam-section">
+                <h3>Answersheet</h3>
+                <h4>MCQ Answers</h4>
+                <div class="answer-grid">
+                    <p>1. c | 2. b | 3. c | 4. b | 5. c | 6. c | 7. c | 8. c | 9. b | 10. c</p>
+                    <p>11. b | 12. a | 13. b | 14. c | 15. c | 16. b | 17. b | 18. b | 19. c | 20. c</p>
+                    <p>21. b | 22. c | 23. b | 24. c | 25. c | 26. c | 27. c | 28. b | 29. b | 30. c</p>
+                    <p>31. b | 32. b | 33. b | 34. b | 35. b | 36. c | 37. b | 38. c | 39. c | 40. b</p>
+                    <p>41. b | 42. c | 43. c | 44. a | 45. b | 46. c | 47. b | 48. c | 49. b | 50. b</p>
+                    <p>51. b | 52. b | 53. c | 54. b | 55. c | 56. c | 57. c | 58. a | 59. c | 60. b</p>
+                    <p>61. c | 62. b | 63. b | 64. a | 65. b | 66. c | 67. c | 68. b | 69. c | 70. b</p>
+                    <p>71. b | 72. b | 73. b | 74. b | 75. b | 76. b | 77. c | 78. b | 79. c | 80. c</p>
                 </div>
+
+                <h4>True/False Answers</h4>
+                <div class="answer-grid">
+                    <p>1. T | 2. F | 3. T | 4. F | 5. T | 6. F | 7. T | 8. F | 9. F | 10. T</p>
+                    <p>11. F | 12. T | 13. T | 14. T | 15. T | 16. F | 17. T | 18. T | 19. T | 20. F</p>
+                    <p>21. F | 22. T | 23. T | 24. F | 25. F | 26. T | 27. F | 28. T | 29. F | 30. T</p>
+                    <p>31. F | 32. T | 33. F | 34. T | 35. F | 36. T | 37. T | 38. T | 39. T | 40. T</p>
+                </div>
+
+                <h4>Coding Answers (Non-Java)</h4>
+                <ol class="exam-list">
+                    <li><code>Begin -&gt; Get no1, no2, no3 -&gt; prod = no1 * no2 * no3 -&gt; Display prod -&gt; End</code></li>
+                    <li><code>Begin -&gt; Get no, no2, no3 -&gt; sum = no + no2 + no3 -&gt; avg = sum / 3 -&gt; Display avg -&gt; End</code></li>
+                    <li>Prompt for radius, calculate <code>area = 3.14 * radius * radius</code>, then print area.</li>
+                    <li><code>If (num = 100) Display "hundred" EndIf</code></li>
+                    <li><code>If grade &gt;= 80 Write "A" Else Write "F" EndIf</code></li>
+                    <li>Start -&gt; Input first number -&gt; Input second number -&gt; sum = first + second -&gt; Output sum -&gt; End.</li>
+                    <li><code>For i = 1 to 10 Display 4 * i EndLoop</code></li>
+                    <li>Set total to 0, repeat five times reading score and adding to total, then average = total / 5.</li>
+                    <li>If first number is greater than second, display first; otherwise display second.</li>
+                    <li><code>Set num to 1 -&gt; While num &lt;= 10 Display num -&gt; num = num + 1 EndLoop</code></li>
+                    <li>Set count to 0, read four weights, increment count whenever weight &gt; 20, display count.</li>
+                    <li><code>If degree &gt;= 80 Write "A" elseIf degree &gt;= 70 Write "B" elseIf degree &gt;= 50 Write "C" Else Write "F" EndIf</code></li>
+                    <li>If cost &gt;= 300, commission = cost * 0.03; otherwise commission = 0.</li>
+                    <li><code>Set PI to 3.14 -&gt; Get radius</code></li>
+                    <li><code>Set counter to 10 -&gt; While counter &gt;= 1 Display counter -&gt; counter = counter - 1 EndLoop</code></li>
+                    <li>An annotation symbol adds an explanatory note to part of a flowchart.</li>
+                    <li><code>Set</code></li>
+                    <li><code>C = (F - 32) / 1.8</code></li>
+                    <li><code>Set total to 0 -&gt; Set count to 1 -&gt; While count &lt;= 10 -&gt; Get num -&gt; total = total + num -&gt; count = count + 1 EndLoop</code></li>
+                    <li>A While loop checks before the body; a Do-While loop executes the body once before checking.</li>
+                </ol>
+
+                <h4>Hard Java Answers</h4>
+                <ol class="exam-list">
+                    <li><code>public static void main(String[] args)</code></li>
+                    <li>It lacks double quotes; Java treats <code>Hello</code> as a variable name.</li>
+                    <li>It compiles to bytecode that can run on any operating system with a JVM.</li>
+                    <li>JDK is for developing Java programs; JRE is for running Java programs.</li>
+                    <li><code>short</code> uses 2 bytes and ranges from -32,768 to 32,767.</li>
+                    <li>Because it converts a larger type to a smaller type and can lose data.</li>
+                    <li><code>y</code> becomes <code>9.0</code>; this is widening casting.</li>
+                    <li>Fall-through occurs: execution continues into the next case.</li>
+                    <li>About 15 to 16 decimal digits.</li>
+                    <li><code>print()</code> stays on the same line; <code>println()</code> adds a new line.</li>
+                    <li><code>int</code></li>
+                    <li>Start with a letter, <code>_</code>, or <code>$</code>; no spaces; cannot be a keyword; case-sensitive.</li>
+                    <li><code>default</code> runs when no case matches.</li>
+                    <li><code>boolean</code></li>
+                    <li><code>if (num &gt; 0) { if (num &gt; 10) { System.out.println("Positive and greater than 10"); } }</code></li>
+                    <li>Use <code>stringName.length()</code>.</li>
+                    <li>It executes exactly once before stopping.</li>
+                    <li>Initialization runs once, condition is checked before each pass, update runs after each pass.</li>
+                    <li>Converting a value from one primitive type to another.</li>
+                    <li><code>.equals()</code></li>
+                    <li><code>String text = "Java Programming"; System.out.println(text.toLowerCase());</code></li>
+                    <li><code>f</code>, for example <code>5.99f</code>.</li>
+                    <li><code>&amp;&amp;</code> short-circuits; <code>&amp;</code> evaluates both sides when used with booleans.</li>
+                    <li>6 times.</li>
+                    <li>It is truncated.</li>
+                    <li><code>boolean</code></li>
+                    <li><code>continue</code> skips the rest of the current iteration and moves to the next one.</li>
+                    <li><code>Scanner</code> reads input from sources such as the keyboard.</li>
+                    <li>Java organizes programs around classes and objects that combine data and behavior.</li>
+                    <li>A compile-time error occurs.</li>
+                </ol>
             </div>
         </div>
 
