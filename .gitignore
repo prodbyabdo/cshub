@@ -41,3 +41,10 @@ java_lecture1_reference.html
 contentforwiki/
 index-preview.html  
 year1-preview.html 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
