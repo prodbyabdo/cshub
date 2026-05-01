@@ -74,6 +74,36 @@
             color: var(--accent-color);
         }
 
+        .header-actions,
+        .tab-print-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--accent-color);
+            background: var(--accent-dim);
+            color: var(--accent-color);
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .print-btn:hover {
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
+        }
+
         .tabs {
             display: flex;
             gap: 10px;
@@ -363,6 +393,40 @@
             margin: 0 0 9px;
         }
 
+        .answer-table-wrap {
+            overflow-x: auto;
+            margin: 10px 0 22px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .answer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.86rem;
+            min-width: 620px;
+        }
+
+        .answer-table th,
+        .answer-table td {
+            padding: 9px 10px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .answer-table th {
+            color: var(--accent);
+            background: rgba(0, 255, 136, 0.05);
+            font-weight: 700;
+        }
+
+        .answer-table tr:last-child td {
+            border-bottom: 0;
+        }
+
         .code-challenge {
             border-left: 3px solid var(--blue2);
         }
@@ -458,6 +522,245 @@
             margin-right: 15px;
             font-weight: bold;
         }
+
+        @media print {
+            @page {
+                margin: 14mm;
+            }
+
+            * {
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            html {
+                font-size: 10pt;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-family: var(--font-main);
+                line-height: 1.45;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-back,
+            .tabs,
+            .header-actions,
+            .tab-print-actions,
+            .compiler-jump,
+            #compilerrr,
+            iframe {
+                display: none !important;
+            }
+
+            header {
+                border-bottom: 2px solid #000000;
+                margin-bottom: 18px;
+                padding-bottom: 12px;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            li,
+            strong,
+            label,
+            .subtitle,
+            .question-text,
+            .options,
+            .card-title,
+            .exam-pill {
+                color: #000000 !important;
+            }
+
+            h1 {
+                font-size: 22pt;
+            }
+
+            h2 {
+                border-left: 0;
+                border-bottom: 2px solid #000000;
+                padding-left: 0;
+                padding-bottom: 6px;
+                margin: 24px 0 14px;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            h3,
+            h4,
+            .section-title,
+            .subtitle,
+            code,
+            pre,
+            .answer-grid,
+            .exam-pill {
+                font-family: var(--font-mono);
+            }
+
+            h3,
+            h4,
+            .section-title {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .tab-content {
+                animation: none !important;
+            }
+
+            body[data-print-mode] .tab-content,
+            body:not([data-print-mode]) .tab-content {
+                display: none !important;
+            }
+
+            body:not([data-print-mode]) .tab-content.active,
+            body[data-print-mode="full"] #course-summary,
+            body[data-print-mode="full"] #summary,
+            body[data-print-mode="full"] #exam,
+            body[data-print-mode="tab"][data-print-tab="course-summary"] #course-summary,
+            body[data-print-mode="tab"][data-print-tab="summary"] #summary,
+            body[data-print-mode="tab"][data-print-tab="exam"] #exam,
+            body[data-print-mode="tab"][data-print-tab="java"] #java {
+                display: block !important;
+            }
+
+            body[data-print-mode="full"] #summary,
+            body[data-print-mode="full"] #exam {
+                break-before: page;
+                page-break-before: always;
+            }
+
+            .card,
+            .question-card,
+            .def,
+            .lang-block,
+            .exam-hero,
+            .exam-pill,
+            .yt-link {
+                background: #ffffff !important;
+                border: 1px solid #777777 !important;
+                color: #000000 !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .card,
+            .question-card,
+            .def,
+            .lang-block,
+            .exam-hero {
+                border-left: 3px solid #000000 !important;
+                border-radius: 0;
+                padding: 12px 14px;
+            }
+
+            .section-title {
+                color: #000000 !important;
+                border-top: 1px solid #000000;
+                border-bottom: 1px solid #000000;
+                letter-spacing: 0.04em;
+                margin: 20px 0 12px;
+            }
+
+            .grid-2,
+            .grid-3 {
+                display: block;
+            }
+
+            .dot,
+            .yt-icon {
+                display: none;
+            }
+
+            table,
+            .sheet,
+            .answer-table {
+                width: 100%;
+                min-width: 0;
+                border-collapse: collapse;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .answer-table-wrap {
+                overflow: visible;
+                border: 0;
+                background: #ffffff !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .sheet tr,
+            .sheet td,
+            .sheet th,
+            .answer-table th,
+            .answer-table td {
+                border: 1px solid #777777 !important;
+            }
+
+            .sheet td,
+            .sheet th,
+            .answer-table th,
+            .answer-table td {
+                color: #000000 !important;
+                padding: 6px 8px;
+            }
+
+            .sheet thead,
+            .sheet th,
+            .answer-table thead,
+            .answer-table th {
+                background: #eeeeee !important;
+            }
+
+            .answer-table {
+                font-size: 8.5pt;
+            }
+
+            code,
+            pre {
+                background: #f5f5f5 !important;
+                border: 1px solid #777777 !important;
+                color: #000000 !important;
+            }
+
+            pre {
+                white-space: pre-wrap;
+                overflow: visible;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .exam-section,
+            .exam-list > li,
+            .answer-grid p {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .answer-grid {
+                columns: 1;
+                color: #000000 !important;
+            }
+
+            a,
+            a:visited {
+                color: #000000 !important;
+                text-decoration: underline;
+            }
+        }
     </style>
 </head>
 
@@ -467,6 +770,9 @@
         <header>
             <h1>Principles of Programming</h1>
             <div class="subtitle">COM126 · Course Summary, Exams &amp; Java Tutorials</div>
+            <div class="header-actions">
+                <button class="print-btn" type="button" onclick="printFullPdf()">Print Full PDF</button>
+            </div>
         </header>
 
         <div class="tabs">
@@ -479,6 +785,9 @@
 
         <!-- ════════════════ COURSE SUMMARY TAB ════════════════ -->
         <div id="course-summary" class="tab-content active">
+            <div class="tab-print-actions">
+                <button class="print-btn" type="button" onclick="printCurrentTab('course-summary')">Print Course Summary</button>
+            </div>
             <h2>Course Summary — Lectures 1–8</h2>
             <p>COM126 · Principles of Programming · Theory foundations covering hardware, software, algorithms, pseudocode, flowcharts, branching, loops, and accumulators.</p>
 
@@ -1057,6 +1366,9 @@ EndLoop</code></pre>
 
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
         <div id="summary" class="tab-content">
+            <div class="tab-print-actions">
+                <button class="print-btn" type="button" onclick="printCurrentTab('summary')">Print Java Summary</button>
+            </div>
             <h2>Java Fundamentals — Lecture 1 Reference</h2>
             <p>COM126 · Principles of Programming · NUSU · Batch 7 · Academic Year 2025–2026 · Semester 2 Week 1.</p>
 
@@ -2079,6 +2391,9 @@ System.out.println("Subjects = " + marks.length);</code></pre>
 
         <!-- ════════════════ EXAM TAB ════════════════ -->
         <div id="exam" class="tab-content">
+            <div class="tab-print-actions">
+                <button class="print-btn" type="button" onclick="printCurrentTab('exam')">Print Practice Exam</button>
+            </div>
             <h2>Practice Exam</h2>
             <div class="exam-hero">
                 <p>This practice exam is based on the principles of programming and Java fundamentals covered in your sources.</p>
@@ -2317,23 +2632,37 @@ System.out.println("Subjects = " + marks.length);</code></pre>
             <div class="exam-section">
                 <h3>Answersheet</h3>
                 <h4>MCQ Answers</h4>
-                <div class="answer-grid">
-                    <p>1. c | 2. b | 3. c | 4. b | 5. c | 6. c | 7. c | 8. c | 9. b | 10. c</p>
-                    <p>11. b | 12. a | 13. b | 14. c | 15. c | 16. b | 17. b | 18. b | 19. c | 20. c</p>
-                    <p>21. b | 22. c | 23. b | 24. c | 25. c | 26. c | 27. c | 28. b | 29. b | 30. c</p>
-                    <p>31. b | 32. b | 33. b | 34. b | 35. b | 36. c | 37. b | 38. c | 39. c | 40. b</p>
-                    <p>41. b | 42. c | 43. c | 44. a | 45. b | 46. c | 47. b | 48. c | 49. b | 50. b</p>
-                    <p>51. b | 52. b | 53. c | 54. b | 55. c | 56. c | 57. c | 58. a | 59. c | 60. b</p>
-                    <p>61. c | 62. b | 63. b | 64. a | 65. b | 66. c | 67. c | 68. b | 69. c | 70. b</p>
-                    <p>71. b | 72. b | 73. b | 74. b | 75. b | 76. b | 77. c | 78. b | 79. c | 80. c</p>
+                <div class="answer-table-wrap">
+                    <table class="answer-table">
+                        <thead>
+                            <tr><th>Q</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>1-10</th><td>c</td><td>b</td><td>c</td><td>b</td><td>c</td><td>c</td><td>c</td><td>c</td><td>b</td><td>c</td></tr>
+                            <tr><th>11-20</th><td>b</td><td>a</td><td>b</td><td>c</td><td>c</td><td>b</td><td>b</td><td>b</td><td>c</td><td>c</td></tr>
+                            <tr><th>21-30</th><td>b</td><td>c</td><td>b</td><td>c</td><td>c</td><td>c</td><td>c</td><td>b</td><td>b</td><td>c</td></tr>
+                            <tr><th>31-40</th><td>b</td><td>b</td><td>b</td><td>b</td><td>b</td><td>c</td><td>b</td><td>c</td><td>c</td><td>b</td></tr>
+                            <tr><th>41-50</th><td>b</td><td>c</td><td>c</td><td>a</td><td>b</td><td>c</td><td>b</td><td>c</td><td>b</td><td>b</td></tr>
+                            <tr><th>51-60</th><td>b</td><td>b</td><td>c</td><td>b</td><td>c</td><td>c</td><td>c</td><td>a</td><td>c</td><td>b</td></tr>
+                            <tr><th>61-70</th><td>c</td><td>b</td><td>b</td><td>a</td><td>b</td><td>c</td><td>c</td><td>b</td><td>c</td><td>b</td></tr>
+                            <tr><th>71-80</th><td>b</td><td>b</td><td>b</td><td>b</td><td>b</td><td>b</td><td>c</td><td>b</td><td>c</td><td>c</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h4>True/False Answers</h4>
-                <div class="answer-grid">
-                    <p>1. T | 2. F | 3. T | 4. F | 5. T | 6. F | 7. T | 8. F | 9. F | 10. T</p>
-                    <p>11. F | 12. T | 13. T | 14. T | 15. T | 16. F | 17. T | 18. T | 19. T | 20. F</p>
-                    <p>21. F | 22. T | 23. T | 24. F | 25. F | 26. T | 27. F | 28. T | 29. F | 30. T</p>
-                    <p>31. F | 32. T | 33. F | 34. T | 35. F | 36. T | 37. T | 38. T | 39. T | 40. T</p>
+                <div class="answer-table-wrap">
+                    <table class="answer-table">
+                        <thead>
+                            <tr><th>Q</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>1-10</th><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td></tr>
+                            <tr><th>11-20</th><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+                            <tr><th>21-30</th><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td></tr>
+                            <tr><th>31-40</th><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h4>Coding Answers (Non-Java)</h4>
@@ -2398,6 +2727,9 @@ System.out.println("Subjects = " + marks.length);</code></pre>
 
         <!-- ════════════════ JAVA TUTORIALS TAB ════════════════ -->
         <div id="java" class="tab-content">
+            <div class="tab-print-actions">
+                <button class="print-btn" type="button" onclick="printCurrentTab('java')">Print Java Tutorials</button>
+            </div>
             <h2>Java Programming Tutorials</h2>
             <p>Curated YouTube links to help you master Java programming basics.</p>
 
@@ -2484,6 +2816,25 @@ System.out.println("Subjects = " + marks.length);</code></pre>
                 || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
             if (activeBtn) activeBtn.classList.add('active');
         }
+
+        function clearPrintMode() {
+            document.body.removeAttribute('data-print-mode');
+            document.body.removeAttribute('data-print-tab');
+        }
+
+        function printFullPdf() {
+            document.body.setAttribute('data-print-mode', 'full');
+            document.body.removeAttribute('data-print-tab');
+            window.print();
+        }
+
+        function printCurrentTab(tabName) {
+            document.body.setAttribute('data-print-mode', 'tab');
+            document.body.setAttribute('data-print-tab', tabName);
+            window.print();
+        }
+
+        window.addEventListener('afterprint', clearPrintMode);
     </script>
     <!-- Deep Linking Script -->
     <script>
