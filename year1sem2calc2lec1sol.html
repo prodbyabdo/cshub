@@ -138,6 +138,29 @@
       transition: opacity 0.2s;
     }
 
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-dim);
+      color: var(--accent-color);
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .print-btn:hover {
+      border-color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-1px);
+    }
+
+
     a:hover {
       opacity: 0.8;
     }
@@ -145,6 +168,252 @@
     /* MathJax adjustments */
     mjx-container {
       font-size: 110% !important;
+    }
+
+    @media print {
+      @page {
+        margin: 14mm;
+      }
+
+      * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+
+      html {
+        font-size: 10pt;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: var(--font-main);
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-back,
+      .tabs,
+      .header-actions,
+      .tab-print-actions,
+      .compiler-jump,
+      #compilerrr,
+      iframe {
+        display: none !important;
+      }
+
+      header {
+        border-bottom: 2px solid #000000;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      li,
+      strong,
+      label,
+      .subtitle,
+      .question-text,
+      .options,
+      .card-title,
+      .exam-pill,
+      .problem-number,
+      .problem-statement,
+      .solution-step {
+        color: #000000 !important;
+      }
+
+      h1 {
+        font-size: 22pt;
+      }
+
+      h2 {
+        border-left: 0;
+        border-bottom: 2px solid #000000;
+        padding-left: 0;
+        padding-bottom: 6px;
+        margin: 24px 0 14px;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      h3,
+      h4,
+      .section-title,
+      .subtitle,
+      code,
+      pre,
+      .answer-grid,
+      .exam-pill {
+        font-family: var(--font-mono);
+      }
+
+      h3,
+      h4,
+      .section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .tab-content {
+        animation: none !important;
+      }
+
+      body[data-print-mode] .tab-content,
+      body:not([data-print-mode]) .tab-content {
+        display: none !important;
+      }
+
+      body:not([data-print-mode]) .tab-content.active,
+      body[data-print-mode="full"] #course-summary,
+      body[data-print-mode="full"] #summary,
+      body[data-print-mode="full"] #exam,
+      body[data-print-mode="tab"][data-print-tab="course-summary"] #course-summary,
+      body[data-print-mode="tab"][data-print-tab="summary"] #summary,
+      body[data-print-mode="tab"][data-print-tab="exam"] #exam,
+      body[data-print-mode="tab"][data-print-tab="java"] #java {
+        display: block !important;
+      }
+
+      body[data-print-mode="full"] #summary,
+      body[data-print-mode="full"] #exam {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .card,
+      .question-card,
+      .def,
+      .lang-block,
+      .exam-hero,
+      .exam-pill,
+      .yt-link,
+      .problem-card,
+      .final-answer {
+        background: #ffffff !important;
+        border: 1px solid #777777 !important;
+        color: #000000 !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .card,
+      .question-card,
+      .def,
+      .lang-block,
+      .exam-hero,
+      .problem-card,
+      .final-answer {
+        border-left: 3px solid #000000 !important;
+        border-radius: 0;
+        padding: 12px 14px;
+      }
+
+      .section-title {
+        color: #000000 !important;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        letter-spacing: 0.04em;
+        margin: 20px 0 12px;
+      }
+
+      .grid-2,
+      .grid-3 {
+        display: block;
+      }
+
+      .dot,
+      .yt-icon {
+        display: none;
+      }
+
+      table,
+      .sheet,
+      .answer-table {
+        width: 100%;
+        min-width: 0;
+        border-collapse: collapse;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .answer-table-wrap {
+        overflow: visible;
+        border: 0;
+        background: #ffffff !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .sheet tr,
+      .sheet td,
+      .sheet th,
+      .answer-table th,
+      .answer-table td {
+        border: 1px solid #777777 !important;
+      }
+
+      .sheet td,
+      .sheet th,
+      .answer-table th,
+      .answer-table td {
+        color: #000000 !important;
+        padding: 6px 8px;
+      }
+
+      .sheet thead,
+      .sheet th,
+      .answer-table thead,
+      .answer-table th {
+        background: #eeeeee !important;
+      }
+
+      .answer-table {
+        font-size: 8.5pt;
+      }
+
+      code,
+      pre {
+        background: #f5f5f5 !important;
+        border: 1px solid #777777 !important;
+        color: #000000 !important;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        overflow: visible;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .exam-section,
+      .exam-list>li,
+      .answer-grid p {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .answer-grid {
+        columns: 1;
+        color: #000000 !important;
+      }
+
+      a,
+      a:visited {
+        color: #000000 !important;
+        text-decoration: underline;
+      }
     }
   </style>
 </head>
@@ -158,6 +427,9 @@
       </h1>
       <div class="subtitle">
         INTEGRATION PRACTICE - LECTURE 1
+      </div>
+      <div class="header-actions">
+        <button class="print-btn" type="button" onclick="printFullPdf()">Print Full PDF</button>
       </div>
     </header>
     <div class="section">
@@ -429,6 +701,25 @@
     </div>
   </footer>
   <script>
+    function clearPrintMode() {
+      document.body.removeAttribute('data-print-mode');
+      document.body.removeAttribute('data-print-tab');
+    }
+
+    function printFullPdf() {
+      document.body.setAttribute('data-print-mode', 'full');
+      document.body.removeAttribute('data-print-tab');
+      window.print();
+    }
+
+    function printCurrentTab(tabName) {
+      document.body.setAttribute('data-print-mode', 'tab');
+      document.body.setAttribute('data-print-tab', tabName);
+      window.print();
+    }
+
+    window.addEventListener('afterprint', clearPrintMode);
+
     (function () {
       function handleHash() {
         var hash = window.location.hash;
