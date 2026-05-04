@@ -1,0 +1,63 @@
+--- hiba Integration_by_Substitutionlec2.pptx ---
+Found slide xml ppt/slides/slide1.xml
+Found slide xml ppt/slides/slide2.xml
+Found slide xml ppt/slides/slide3.xml
+Found slide xml ppt/slides/slide4.xml
+Found slide xml ppt/slides/slide5.xml
+Found slide xml ppt/slides/slide6.xml
+Found slide xml ppt/slides/slide7.xml
+Found slide xml ppt/slides/slide8.xml
+Found slide xml ppt/slides/slide9.xml
+Found slide xml ppt/slideMasters/slideMaster1.xml
+Found slide xml ppt/slideLayouts/slideLayout1.xml
+Found slide xml ppt/slideLayouts/slideLayout2.xml
+Found slide xml ppt/slideLayouts/slideLayout3.xml
+Found slide xml ppt/slideLayouts/slideLayout4.xml
+Found slide xml ppt/slideLayouts/slideLayout5.xml
+Found slide xml ppt/slideLayouts/slideLayout6.xml
+Found slide xml ppt/slideLayouts/slideLayout7.xml
+Found slide xml ppt/slideLayouts/slideLayout8.xml
+Found slide xml ppt/slideLayouts/slideLayout9.xml
+Found slide xml ppt/slideLayouts/slideLayout10.xml
+Found slide xml ppt/slideLayouts/slideLayout11.xml
+Found slide xml ppt/slideLayouts/slideLayout12.xml
+Found slide xml ppt/slideLayouts/slideLayout13.xml
+Found slide xml ppt/slideLayouts/slideLayout14.xml
+Found slide xml ppt/slideLayouts/slideLayout15.xml
+Found slide xml ppt/slideLayouts/slideLayout16.xml
+Found slide xml ppt/slideLayouts/slideLayout17.xml
+
+--- hiba Lec 3.pdf ---
+Lecture 03
+Dr. Mohamed Ali Mohamed
+Faculty of Engineering and Architecture
+Fall 2024
+Basic Integration Rules
+Example 5 (1/2):
+Calculus 2
+Example 5 (2/2):
+Calculus 3
+Indefinite Integrals of Exponential Functions (1/2):
+Calculus 4
+Indefinite Integrals of Exponential Functions (2/2):
+Calculus 5
+
+--- hiba Lec 4.pdf ---
+Lecture 04
+Dr. Mohamed Ali Mohamed
+Faculty of Engineering and Architecture
+Fall 2024
+Definition (1/7):
+If 𝑢 = 𝑓(𝑥), the differential of 𝑢, written 𝑑𝑢, is defined as
+𝑑𝑢 = 𝑓′ 𝑥 𝑑𝑥
+For example, if 𝑢 = 2𝑥3 + 1, then 𝑑𝑢 = 6𝑥2 𝑑𝑥.
+Calculus 2
+Definition (2/7):
+Find
+Calculus 3
+Definition (3/7):
+Find
+Calculus 4
+Integration by Substitution (1/7)
+Definition (4/7):
+Calculus 5

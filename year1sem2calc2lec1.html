@@ -186,6 +186,69 @@
             margin-top: 12px;
         }
 
+        .problem-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-color);
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .problem-number {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .problem-statement {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .solution-step {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .final-answer {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--accent-dim);
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
         details summary {
             cursor: pointer;
             font-size: 0.85em;
@@ -674,7 +737,6 @@
                     </li>
                 </ul>
             </div>
-
         </div><!-- .content -->
     </div><!-- .container -->
 

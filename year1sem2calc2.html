@@ -136,7 +136,8 @@
             color: #ffffff;
         }
 
-        ul, ol {
+        ul,
+        ol {
             margin-left: 20px;
             margin-top: 10px;
         }
@@ -173,31 +174,51 @@
             @page {
                 margin: 14mm;
             }
+
             * {
                 box-shadow: none !important;
                 text-shadow: none !important;
             }
+
             body {
                 background: white !important;
                 color: black !important;
                 padding: 0;
             }
-            .container, .section, .formula-box, table, th, td, .note {
+
+            .container,
+            .section,
+            .formula-box,
+            table,
+            th,
+            td,
+            .note {
                 background: white !important;
                 color: black !important;
                 border-color: #777777 !important;
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
+
             header {
                 background: white !important;
                 color: black !important;
                 border-bottom: 2px solid black !important;
             }
-            h1, h2, h3, h4, p, li, strong, label {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            li,
+            strong,
+            label {
                 color: black !important;
             }
-            .nav-back, .print-btn {
+
+            .nav-back,
+            .print-btn {
                 display: none !important;
             }
         }
@@ -207,7 +228,7 @@
 <body>
 
     <div class="container">
-        <a href="index.html" class="nav-back">← Back to Home</a>
+        <a href="year1.html" class="nav-back">← Back to Home</a>
 
         <header>
             <h1>📚 Calculus II Complete Reference</h1>
@@ -230,28 +251,52 @@
             <div class="section">
                 <h2>Lectures & Notes</h2>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="year1sem2calc2lec1.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec1.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 1: Basic Integration
                     </a>
-                    <a href="year1sem2calc2lec2.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec2.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 2: Substitution & Completing the Square
                     </a>
-                    <a href="year1sem2calc2lec3.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec3.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 3: Integration by Parts & Tabular Method
                     </a>
-                    <a href="year1sem2calc2lec4.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec4.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 4: Trigonometric Integrals
                     </a>
-                    <a href="year1sem2calc2lec5.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec5.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 5: Partial Fractions
                     </a>
-                    <a href="year1sem2calc2lec6.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec6.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 6: Trig & Clever Substitution
                     </a>
-                    <a href="year1sem2calc2lec7.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec7.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 7: Areas Between Curves
                     </a>
-                    <a href="year1sem2calc2lec8.html" style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;" onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'" onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
+                    <a href="year1sem2calc2lec8.html"
+                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
+                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
+                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
                         📄 Lecture 8: Multiple & Triple Integrals
                     </a>
                 </div>
@@ -1019,30 +1064,29 @@
                     <li>Double and triple integrals: evaluate from the inside out, one variable at a time.</li>
                 </ul>
             </div>
+            <!-- .content -->
+        </div><!-- .container -->
 
-        </div><!-- .content -->
-    </div><!-- .container -->
-
-    <script>
-        (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
-                var targetId = decodeURIComponent(hash.substring(1));
-                var el = document.getElementById(targetId);
-                if (!el) return;
-                setTimeout(function () {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 120);
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-            } else {
-                setTimeout(handleHash, 50);
-            }
-            window.addEventListener('hashchange', handleHash);
-        })();
-    </script>
+        <script>
+            (function () {
+                function handleHash() {
+                    var hash = window.location.hash;
+                    if (!hash) return;
+                    var targetId = decodeURIComponent(hash.substring(1));
+                    var el = document.getElementById(targetId);
+                    if (!el) return;
+                    setTimeout(function () {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 120);
+                }
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+                } else {
+                    setTimeout(handleHash, 50);
+                }
+                window.addEventListener('hashchange', handleHash);
+            })();
+        </script>
 
 </body>
 
