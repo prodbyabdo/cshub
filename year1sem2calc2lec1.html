@@ -64,7 +64,7 @@
             padding: 25px;
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
-            
+
         }
 
         .section h2 {
@@ -96,7 +96,7 @@
 
         .important {
             background: #0a0a0a;
-            
+
         }
 
         .theorem {
@@ -137,7 +137,7 @@
             padding: 15px;
             margin: 15px 0;
             border: 1px solid #1a1a1a;
-            
+
         }
 
         .note strong {
@@ -405,19 +405,22 @@
                         style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
                         <iframe src="context/calc2/lec1.pdf" width="100%" height="100%" style="border: none;"
                             title="Lecture 1 PDF Viewer"></iframe>
-                </div>
-                <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
-                    <a href="context/calc2/lec1.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#128196; Open PDF (Mobile Friendly)
-                    </a>
-                    <a href="context/calc2/lec1.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#11015;&#65039; Download PDF
-                    </a>
-                </div>
+                    </div>
+                    <div class="viewer-actions"
+                        style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                        <a href="context/calc2/lec1.pdf" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                            &#128196; Open PDF (Mobile Friendly)
+                        </a>
+                        <a href="context/calc2/lec1.pdf" download
+                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                            &#11015;&#65039; Download PDF
+                        </a>
+                    </div>
                     <div class="solutions-link" style="text-align: center; margin-top: 10px;">
                         <a href="year1sem2calc2lec1sol.html"
                             style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                            View Practice Solutions
+                            View Assignment Solutions
                         </a>
                     </div>
                 </div>
@@ -757,23 +760,23 @@
     </div><!-- .container -->
 
 
-        <script>
-            (function () {
-                function handleHash() {
-                    var hash = window.location.hash;
-                    if (!hash) return;
-                    var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-                    if (!el) return;
-                    setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-                }
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-                } else {
-                    setTimeout(handleHash, 50);
-                }
-                window.addEventListener('hashchange', handleHash);
-            })();
-        </script>
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
+                if (!el) return;
+                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
 
 </body>
 
