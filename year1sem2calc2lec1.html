@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculus II — Lecture 1: Basic Integration</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
@@ -45,7 +50,9 @@
             font-weight: 300;
         }
 
-        .content { padding: 40px; }
+        .content {
+            padding: 40px;
+        }
 
         .section {
             margin-bottom: 40px;
@@ -98,7 +105,8 @@
             border: 1px solid #1a1a1a;
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #1a1a1a;
@@ -112,7 +120,9 @@
             border-bottom: 1px solid #333333;
         }
 
-        tr:hover { background: #0f0f0f; }
+        tr:hover {
+            background: #0f0f0f;
+        }
 
         .note {
             background: #0a0a0a;
@@ -122,12 +132,25 @@
             border-left: 2px solid #ffffff;
         }
 
-        .note strong { color: #ffffff; }
+        .note strong {
+            color: #ffffff;
+        }
 
-        p { color: #cccccc; }
+        p {
+            color: #cccccc;
+        }
 
-        ol, ul { margin-left: 20px; margin-top: 10px; }
-        ol li, ul li { margin: 8px 0; color: #cccccc; }
+        ol,
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        ol li,
+        ul li {
+            margin: 8px 0;
+            color: #cccccc;
+        }
 
         .step-block {
             background: #000000;
@@ -173,7 +196,9 @@
             border-top: 1px solid #1a1a1a;
         }
 
-        details summary::-webkit-details-marker { display: none; }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
 
         details summary::before {
             content: '▸  show solution';
@@ -211,410 +236,466 @@
         }
 
         @media print {
-            @page { margin: 14mm; }
+            @page {
+                margin: 14mm;
+            }
+
             * {
                 box-shadow: none !important;
                 text-shadow: none !important;
             }
-            body { background: white !important; color: black !important; padding: 0; }
-            .container, .section, .formula-box, table, th, td, .note, .step-block, .exam-q { 
-                background: white !important; 
-                color: black !important; 
+
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0;
+            }
+
+            .container,
+            .section,
+            .formula-box,
+            table,
+            th,
+            td,
+            .note,
+            .step-block,
+            .exam-q {
+                background: white !important;
+                color: black !important;
                 border-color: #777777 !important;
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
-            header { background: white !important; color: black !important; border-bottom: 2px solid black !important; }
-            h1, h2, h3, h4, p, li, strong, label, .step-label, .q-label, summary, .solution { color: black !important; }
-            .nav-back, .print-btn, .solutions-link { display: none !important; }
-            details { display: block !important; }
-            details[open] .solution, details:not([open]) .solution { display: block !important; }
+
+            header {
+                background: white !important;
+                color: black !important;
+                border-bottom: 2px solid black !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            li,
+            strong,
+            label,
+            .step-label,
+            .q-label,
+            summary,
+            .solution {
+                color: black !important;
+            }
+
+            .nav-back,
+            .print-btn,
+            .solutions-link {
+                display: none !important;
+            }
+
+            details {
+                display: block !important;
+            }
+
+            details[open] .solution,
+            details:not([open]) .solution {
+                display: block !important;
+            }
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <a href="index.html" class="nav-back">? Back to Home</a>
-    <header>
-        <h1>📐 Calculus II — Lecture 1</h1>
-        <p>Basic Integration · Dr. Hiba Omer</p>
-        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
-            <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
-            <p style="font-size: 0.85em; margin-top: 5px;">
-                <a href="https://linktr.ee/prodbyabdo" target="_blank"
-                   style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
-                    linktr.ee/prodbyabdo
-                </a>
-            </p>
-            <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
-        </div>
-    </header>
-
-    <div class="content">
-
-        <!-- ── LECTURE SLIDES & RESOURCES ── -->
-        <div class="section">
-            <h2>Lecture Slides & Resources</h2>
-            <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                    <iframe src="context/calc2/lec1.pdf" width="100%" height="100%" style="border: none;" title="Lecture 1 PDF Viewer"></iframe>
-                </div>
-                <div class="solutions-link" style="text-align: center; margin-top: 10px;">
-                    <a href="year1sem2calc2lec1sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                        View Practice Solutions
+    <div class="container">
+        <a href="year1sem2calc2.html" class="nav-back">? Back to Home</a>
+        <header>
+            <h1>📐 Calculus II — Lecture 1</h1>
+            <p>Basic Integration · Dr. Hiba Omer</p>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
+                <p style="font-size: 0.85em; margin-top: 5px;">
+                    <a href="https://linktr.ee/prodbyabdo" target="_blank"
+                        style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
+                        linktr.ee/prodbyabdo
                     </a>
+                </p>
+                <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- ── LECTURE SLIDES & RESOURCES ── -->
+            <div class="section">
+                <h2>Lecture Slides & Resources</h2>
+                <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="viewer-wrapper"
+                        style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                        <iframe src="context/calc2/lec1.pdf" width="100%" height="100%" style="border: none;"
+                            title="Lecture 1 PDF Viewer"></iframe>
+                    </div>
+                    <div class="solutions-link" style="text-align: center; margin-top: 10px;">
+                        <a href="year1sem2calc2lec1sol.html"
+                            style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
+                            View Practice Solutions
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- ── 1. REVERSING DIFFERENTIATION ── -->
-        <div class="section">
-            <h2>1. Reversing the Process of Differentiation</h2>
+            <!-- ── 1. REVERSING DIFFERENTIATION ── -->
+            <div class="section">
+                <h2>1. Reversing the Process of Differentiation</h2>
 
-            <div class="formula-box theorem">
-                <p>To differentiate \(y = x^n\) we multiply by the power and reduce the power by one:</p>
-                \[x^n \xrightarrow{\times n,\; \text{power} - 1} nx^{n-1}\]
-                <p style="margin-top: 12px;">Reversing this: given \(\dfrac{dy}{dx} = x^n\), find \(y\).</p>
-                \[x^n \xrightarrow{\div (n+1),\; \text{power} + 1} \frac{x^{n+1}}{n+1}\]
+                <div class="formula-box theorem">
+                    <p>To differentiate \(y = x^n\) we multiply by the power and reduce the power by one:</p>
+                    \[x^n \xrightarrow{\times n,\; \text{power} - 1} nx^{n-1}\]
+                    <p style="margin-top: 12px;">Reversing this: given \(\dfrac{dy}{dx} = x^n\), find \(y\).</p>
+                    \[x^n \xrightarrow{\div (n+1),\; \text{power} + 1} \frac{x^{n+1}}{n+1}\]
+                </div>
+
+                <h3>Why We Need + C</h3>
+                <div class="formula-box important">
+                    <p>
+                        If \(\dfrac{dy}{dx} = 6x^2\), adding 1 to the power and dividing by the new power gives:
+                    </p>
+                    \[y = \frac{6x^3}{3} = 2x^3\]
+                    <p style="margin-top: 12px;">
+                        But differentiating \(2x^3 + 1\), or \(2x^3 - 3\), or \(2x^3 +\) any constant, also
+                        gives \(6x^2\). We cannot determine the constant without extra information, so we must write:
+                    </p>
+                    \[y = 2x^3 + c\]
+                    <p style="margin-top: 10px;">
+                        The value \(c\) is the <strong>constant of integration</strong>. The result is called an
+                        <em>indefinite integral</em> because \(c\) is unknown.
+                    </p>
+                </div>
+
+                <h3>Notation</h3>
+                <div class="formula-box">
+                    <p>The integral of \(6x^2\) with respect to \(x\) is written:</p>
+                    \[\int 6x^2\,dx = 2x^3 + c\]
+                </div>
             </div>
 
-            <h3>Why We Need + C</h3>
-            <div class="formula-box important">
-                <p>
-                    If \(\dfrac{dy}{dx} = 6x^2\), adding 1 to the power and dividing by the new power gives:
-                </p>
-                \[y = \frac{6x^3}{3} = 2x^3\]
-                <p style="margin-top: 12px;">
-                    But differentiating \(2x^3 + 1\), or \(2x^3 - 3\), or \(2x^3 +\) any constant, also
-                    gives \(6x^2\). We cannot determine the constant without extra information, so we must write:
-                </p>
-                \[y = 2x^3 + c\]
-                <p style="margin-top: 10px;">
-                    The value \(c\) is the <strong>constant of integration</strong>. The result is called an
-                    <em>indefinite integral</em> because \(c\) is unknown.
-                </p>
+            <!-- ── 2. INDEFINITE INTEGRATION ── -->
+            <div class="section">
+                <h2>2. Indefinite Integration</h2>
+
+                <h3>General Power Rule</h3>
+                <div class="formula-box important">
+                    \[\int ax^n\,dx = \frac{ax^{n+1}}{n+1} + c \qquad (n \neq -1)\]
+                    <p style="margin-top: 10px;">A constant factor can be moved outside the integral:</p>
+                    \[\int ax^n\,dx = a\int x^n\,dx\]
+                </div>
+
+                <h3>Worked Examples</h3>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE A</div>
+                    <p>Find \(\displaystyle\int 12x^5\,dx\)</p>
+                    \[\int 12x^5\,dx = \frac{12x^6}{6} + c = 2x^6 + c\]
+                </div>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE B</div>
+                    <p>Find \(\displaystyle\int 8\,dx\)</p>
+                    \[\int 8\,dx = 8x + c\]
+                </div>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE C</div>
+                    <p>Find \(\displaystyle\int \frac{x^3}{2}\,dx\)</p>
+                    \[\int \frac{x^3}{2}\,dx = \frac{1}{2}\cdot\frac{x^4}{4} + c = \frac{x^4}{8} + c\]
+                </div>
+
+                <h3>Integration of Polynomials</h3>
+                <div class="formula-box theorem">
+                    <p>Integrate term by term:</p>
+                    \[\int [f(x) + g(x)]\,dx = \int f(x)\,dx + \int g(x)\,dx\]
+                </div>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE — POLYNOMIAL</div>
+                    <p>Find \(\displaystyle\int (8x^3 + 5x^2 - 6x + 2)\,dx\)</p>
+                    \[
+                    = \frac{8x^4}{4} + \frac{5x^3}{3} - \frac{6x^2}{2} + 2x + c
+                    = 2x^4 + \frac{5x^3}{3} - 3x^2 + 2x + c
+                    \]
+                </div>
+
+                <h3>Negative and Fractional Powers</h3>
+                <div class="formula-box">
+                    <p>The power rule applies to all rational \(n\) except \(n = -1\).</p>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE — NEGATIVE POWER</div>
+                    <p>Find \(\displaystyle\int \frac{2}{x^2}\,dx\)</p>
+                    <p>Write as \(2x^{-2}\), then:</p>
+                    \[\int 2x^{-2}\,dx = \frac{2x^{-1}}{-1} + c = -\frac{2}{x} + c\]
+                </div>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE — FRACTIONAL POWER</div>
+                    <p>Find \(\displaystyle\int \!\left(3\sqrt{x} + \frac{2}{\sqrt{x}}\right)dx\)</p>
+                    <p>Write as \(3x^{1/2} + 2x^{-1/2}\), then:</p>
+                    \[
+                    = \frac{3x^{3/2}}{3/2} + \frac{2x^{1/2}}{1/2} + c
+                    = 2x^{3/2} + 4x^{1/2} + c
+                    \]
+                </div>
             </div>
 
-            <h3>Notation</h3>
-            <div class="formula-box">
-                <p>The integral of \(6x^2\) with respect to \(x\) is written:</p>
-                \[\int 6x^2\,dx = 2x^3 + c\]
-            </div>
-        </div>
+            <!-- ── 3. REWRITING BEFORE INTEGRATING ── -->
+            <div class="section">
+                <h2>3. Rewriting Expressions Before Integrating</h2>
 
-        <!-- ── 2. INDEFINITE INTEGRATION ── -->
-        <div class="section">
-            <h2>2. Indefinite Integration</h2>
+                <div class="formula-box theorem">
+                    <p>
+                        Some expressions must be rewritten as separate terms of the form \(ax^n\) before the
+                        power rule can be applied. The two most common techniques are <strong>expanding
+                            brackets</strong>
+                        and <strong>splitting a fraction</strong>.
+                    </p>
+                </div>
 
-            <h3>General Power Rule</h3>
-            <div class="formula-box important">
-                \[\int ax^n\,dx = \frac{ax^{n+1}}{n+1} + c \qquad (n \neq -1)\]
-                <p style="margin-top: 10px;">A constant factor can be moved outside the integral:</p>
-                \[\int ax^n\,dx = a\int x^n\,dx\]
-            </div>
+                <h3>Expanding Brackets First</h3>
 
-            <h3>Worked Examples</h3>
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE</div>
+                    <p>Find \(\displaystyle\int (3 - 2x)^2\,dx\)</p>
+                    <p style="margin-top: 10px;"><strong>Step 1</strong> — expand:</p>
+                    \[(3 - 2x)^2 = 9 - 12x + 4x^2\]
+                    <p style="margin-top: 10px;"><strong>Step 2</strong> — integrate term by term:</p>
+                    \[
+                    \int (9 - 12x + 4x^2)\,dx
+                    = 9x - \frac{12x^2}{2} + \frac{4x^3}{3} + c
+                    = 9x - 6x^2 + \frac{4x^3}{3} + c
+                    \]
+                </div>
 
-            <div class="step-block">
-                <div class="step-label">EXAMPLE A</div>
-                <p>Find \(\displaystyle\int 12x^5\,dx\)</p>
-                \[\int 12x^5\,dx = \frac{12x^6}{6} + c = 2x^6 + c\]
-            </div>
+                <h3>Splitting a Fraction</h3>
 
-            <div class="step-block">
-                <div class="step-label">EXAMPLE B</div>
-                <p>Find \(\displaystyle\int 8\,dx\)</p>
-                \[\int 8\,dx = 8x + c\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE C</div>
-                <p>Find \(\displaystyle\int \frac{x^3}{2}\,dx\)</p>
-                \[\int \frac{x^3}{2}\,dx = \frac{1}{2}\cdot\frac{x^4}{4} + c = \frac{x^4}{8} + c\]
-            </div>
-
-            <h3>Integration of Polynomials</h3>
-            <div class="formula-box theorem">
-                <p>Integrate term by term:</p>
-                \[\int [f(x) + g(x)]\,dx = \int f(x)\,dx + \int g(x)\,dx\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — POLYNOMIAL</div>
-                <p>Find \(\displaystyle\int (8x^3 + 5x^2 - 6x + 2)\,dx\)</p>
-                \[
-                = \frac{8x^4}{4} + \frac{5x^3}{3} - \frac{6x^2}{2} + 2x + c
-                = 2x^4 + \frac{5x^3}{3} - 3x^2 + 2x + c
-                \]
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE</div>
+                    <p>Find \(\displaystyle\int \frac{4x^3 - 5x^2 + 2}{x^2}\,dx\)</p>
+                    <p style="margin-top: 10px;"><strong>Step 1</strong> — divide each term by \(x^2\):</p>
+                    \[\frac{4x^3}{x^2} - \frac{5x^2}{x^2} + \frac{2}{x^2} = 4x - 5 + 2x^{-2}\]
+                    <p style="margin-top: 10px;"><strong>Step 2</strong> — integrate:</p>
+                    \[
+                    \int (4x - 5 + 2x^{-2})\,dx
+                    = 2x^2 - 5x + \frac{2x^{-1}}{-1} + c
+                    = 2x^2 - 5x - \frac{2}{x} + c
+                    \]
+                </div>
             </div>
 
-            <h3>Negative and Fractional Powers</h3>
-            <div class="formula-box">
-                <p>The power rule applies to all rational \(n\) except \(n = -1\).</p>
+            <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
+            <div class="section">
+                <h2>4. Finding the Constant of Integration Given a Point</h2>
+
+                <div class="formula-box theorem">
+                    <p>
+                        If we know both the gradient function \(\dfrac{dy}{dx}\) and a point \((x_0,\, y_0)\) that
+                        lies on the curve, we can determine \(c\) exactly by substituting the coordinates after
+                        integrating.
+                    </p>
+                </div>
+
+                <h3>Method</h3>
+                <div class="formula-box important">
+                    <ol>
+                        <li>Integrate \(\dfrac{dy}{dx}\) to get \(y = F(x) + c\).</li>
+                        <li>Substitute the given point \((x_0, y_0)\) into the equation.</li>
+                        <li>Solve for \(c\).</li>
+                        <li>Write the final equation of the curve with the exact value of \(c\).</li>
+                    </ol>
+                </div>
+
+                <h3>Worked Example</h3>
+
+                <div class="step-block">
+                    <div class="step-label">EXAMPLE</div>
+                    <p>
+                        A curve \(y = f(x)\) passes through the point \((2, 9)\). Given that
+                        \(\dfrac{dy}{dx} = 8x^3 - 10x\), find the equation of the curve.
+                    </p>
+
+                    <p style="margin-top: 14px;"><strong>Step 1</strong> — integrate:</p>
+                    \[
+                    y = \int (8x^3 - 10x)\,dx = \frac{8x^4}{4} - \frac{10x^2}{2} + c = 2x^4 - 5x^2 + c
+                    \]
+
+                    <p style="margin-top: 12px;"><strong>Step 2</strong> — substitute \((2, 9)\):</p>
+                    \[
+                    9 = 2(2)^4 - 5(2)^2 + c = 32 - 20 + c = 12 + c
+                    \]
+                    \[c = -3\]
+
+                    <p style="margin-top: 12px;"><strong>Answer:</strong></p>
+                    \[y = 2x^4 - 5x^2 - 3\]
+                </div>
             </div>
 
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — NEGATIVE POWER</div>
-                <p>Find \(\displaystyle\int \frac{2}{x^2}\,dx\)</p>
-                <p>Write as \(2x^{-2}\), then:</p>
-                \[\int 2x^{-2}\,dx = \frac{2x^{-1}}{-1} + c = -\frac{2}{x} + c\]
+            <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
+            <div class="section">
+                <h2>5. Examination-Style Questions</h2>
+
+                <div class="exam-q">
+                    <div class="q-label">QUESTION 1</div>
+                    <p>Find \(\displaystyle\int (5x^4 - 3x^2 + 7)\,dx\).</p>
+                    <details>
+                        <summary></summary>
+                        <div class="solution">
+                            \[\int (5x^4 - 3x^2 + 7)\,dx = x^5 - x^3 + 7x + c\]
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exam-q">
+                    <div class="q-label">QUESTION 2</div>
+                    <p>Find \(\displaystyle\int \frac{3}{x^3}\,dx\).</p>
+                    <details>
+                        <summary></summary>
+                        <div class="solution">
+                            <p>Write \(3x^{-3}\):</p>
+                            \[\int 3x^{-3}\,dx = \frac{3x^{-2}}{-2} + c = -\frac{3}{2x^2} + c\]
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exam-q">
+                    <div class="q-label">QUESTION 3</div>
+                    <p>Find \(\displaystyle\int (2 + 3x)^2\,dx\).</p>
+                    <details>
+                        <summary></summary>
+                        <div class="solution">
+                            <p>Expand: \((2+3x)^2 = 4 + 12x + 9x^2\)</p>
+                            \[\int (4 + 12x + 9x^2)\,dx = 4x + 6x^2 + 3x^3 + c\]
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exam-q">
+                    <div class="q-label">QUESTION 4 — EXAM STYLE</div>
+                    <p>
+                        A curve has gradient function \(f'(x) = 6x^2 - 7\). Given that the curve passes through
+                        the point \((2,\, 5)\), find the equation of the curve.
+                    </p>
+                    <details>
+                        <summary></summary>
+                        <div class="solution">
+                            <p><strong>Step 1</strong> — integrate:</p>
+                            \[f(x) = 2x^3 - 7x + c\]
+                            <p style="margin-top: 10px;"><strong>Step 2</strong> — substitute \((2, 5)\):</p>
+                            \[5 = 2(8) - 7(2) + c = 16 - 14 + c = 2 + c \implies c = 3\]
+                            <p style="margin-top: 10px;"><strong>Answer:</strong></p>
+                            \[f(x) = 2x^3 - 7x + 3\]
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exam-q">
+                    <div class="q-label">QUESTION 5</div>
+                    <p>
+                        Find \(\displaystyle\int \frac{6x^4 - 9x^3 + 3x}{3x^2}\,dx\).
+                    </p>
+                    <details>
+                        <summary></summary>
+                        <div class="solution">
+                            <p>Split the fraction:</p>
+                            \[\frac{6x^4}{3x^2} - \frac{9x^3}{3x^2} + \frac{3x}{3x^2} = 2x^2 - 3x + x^{-1}\]
+                            \[\int \!\left(2x^2 - 3x + \frac{1}{x}\right)dx = \frac{2x^3}{3} - \frac{3x^2}{2} + \ln|x| +
+                            c\]
+                        </div>
+                    </details>
+                </div>
+
             </div>
 
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — FRACTIONAL POWER</div>
-                <p>Find \(\displaystyle\int \!\left(3\sqrt{x} + \frac{2}{\sqrt{x}}\right)dx\)</p>
-                <p>Write as \(3x^{1/2} + 2x^{-1/2}\), then:</p>
-                \[
-                = \frac{3x^{3/2}}{3/2} + \frac{2x^{1/2}}{1/2} + c
-                = 2x^{3/2} + 4x^{1/2} + c
-                \]
-            </div>
-        </div>
+            <!-- ── QUICK REFERENCE ── -->
+            <div class="section">
+                <h2>6. Quick Reference — Lecture 1 Rules</h2>
 
-        <!-- ── 3. REWRITING BEFORE INTEGRATING ── -->
-        <div class="section">
-            <h2>3. Rewriting Expressions Before Integrating</h2>
-
-            <div class="formula-box theorem">
-                <p>
-                    Some expressions must be rewritten as separate terms of the form \(ax^n\) before the
-                    power rule can be applied. The two most common techniques are <strong>expanding brackets</strong>
-                    and <strong>splitting a fraction</strong>.
-                </p>
-            </div>
-
-            <h3>Expanding Brackets First</h3>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE</div>
-                <p>Find \(\displaystyle\int (3 - 2x)^2\,dx\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — expand:</p>
-                \[(3 - 2x)^2 = 9 - 12x + 4x^2\]
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — integrate term by term:</p>
-                \[
-                \int (9 - 12x + 4x^2)\,dx
-                = 9x - \frac{12x^2}{2} + \frac{4x^3}{3} + c
-                = 9x - 6x^2 + \frac{4x^3}{3} + c
-                \]
-            </div>
-
-            <h3>Splitting a Fraction</h3>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE</div>
-                <p>Find \(\displaystyle\int \frac{4x^3 - 5x^2 + 2}{x^2}\,dx\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — divide each term by \(x^2\):</p>
-                \[\frac{4x^3}{x^2} - \frac{5x^2}{x^2} + \frac{2}{x^2} = 4x - 5 + 2x^{-2}\]
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — integrate:</p>
-                \[
-                \int (4x - 5 + 2x^{-2})\,dx
-                = 2x^2 - 5x + \frac{2x^{-1}}{-1} + c
-                = 2x^2 - 5x - \frac{2}{x} + c
-                \]
-            </div>
-        </div>
-
-        <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
-        <div class="section">
-            <h2>4. Finding the Constant of Integration Given a Point</h2>
-
-            <div class="formula-box theorem">
-                <p>
-                    If we know both the gradient function \(\dfrac{dy}{dx}\) and a point \((x_0,\, y_0)\) that
-                    lies on the curve, we can determine \(c\) exactly by substituting the coordinates after
-                    integrating.
-                </p>
+                <table>
+                    <tr>
+                        <th>Rule</th>
+                        <th>Formula</th>
+                        <th>Condition</th>
+                    </tr>
+                    <tr>
+                        <td>Power Rule</td>
+                        <td>\(\displaystyle\int ax^n\,dx = \dfrac{ax^{n+1}}{n+1} + c\)</td>
+                        <td>\(n \neq -1\)</td>
+                    </tr>
+                    <tr>
+                        <td>Constant</td>
+                        <td>\(\displaystyle\int k\,dx = kx + c\)</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Constant Factor</td>
+                        <td>\(\displaystyle\int k\,f(x)\,dx = k\int f(x)\,dx\)</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Sum / Difference</td>
+                        <td>\(\displaystyle\int [f \pm g]\,dx = \int f\,dx \pm \int g\,dx\)</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Expand First</td>
+                        <td>Expand brackets, then integrate each term</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Split Fraction</td>
+                        <td>Divide every numerator term by denominator, then integrate</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Find \(c\)</td>
+                        <td>Integrate, then substitute the given point to solve for \(c\)</td>
+                        <td>Point must be given</td>
+                    </tr>
+                </table>
             </div>
 
-            <h3>Method</h3>
-            <div class="formula-box important">
-                <ol>
-                    <li>Integrate \(\dfrac{dy}{dx}\) to get \(y = F(x) + c\).</li>
-                    <li>Substitute the given point \((x_0, y_0)\) into the equation.</li>
-                    <li>Solve for \(c\).</li>
-                    <li>Write the final equation of the curve with the exact value of \(c\).</li>
-                </ol>
+            <div class="note">
+                <strong>💡 Lecture 1 Tips:</strong>
+                <ul>
+                    <li>Always include \(+c\) — omitting it loses marks in every indefinite integral.</li>
+                    <li>Rewrite negative and fractional powers using index notation before applying the rule.</li>
+                    <li>You cannot integrate a product or quotient directly — expand or split first.</li>
+                    <li>The power rule fails at \(n = -1\); \(\int x^{-1}\,dx = \ln|x| + c\).</li>
+                    <li>When finding the constant: integrate first, substitute the point second, solve for \(c\) third.
+                    </li>
+                </ul>
             </div>
 
-            <h3>Worked Example</h3>
+        </div><!-- .content -->
+    </div><!-- .container -->
 
-            <div class="step-block">
-                <div class="step-label">EXAMPLE</div>
-                <p>
-                    A curve \(y = f(x)\) passes through the point \((2, 9)\). Given that
-                    \(\dfrac{dy}{dx} = 8x^3 - 10x\), find the equation of the curve.
-                </p>
-
-                <p style="margin-top: 14px;"><strong>Step 1</strong> — integrate:</p>
-                \[
-                y = \int (8x^3 - 10x)\,dx = \frac{8x^4}{4} - \frac{10x^2}{2} + c = 2x^4 - 5x^2 + c
-                \]
-
-                <p style="margin-top: 12px;"><strong>Step 2</strong> — substitute \((2, 9)\):</p>
-                \[
-                9 = 2(2)^4 - 5(2)^2 + c = 32 - 20 + c = 12 + c
-                \]
-                \[c = -3\]
-
-                <p style="margin-top: 12px;"><strong>Answer:</strong></p>
-                \[y = 2x^4 - 5x^2 - 3\]
-            </div>
-        </div>
-
-        <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
-        <div class="section">
-            <h2>5. Examination-Style Questions</h2>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 1</div>
-                <p>Find \(\displaystyle\int (5x^4 - 3x^2 + 7)\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        \[\int (5x^4 - 3x^2 + 7)\,dx = x^5 - x^3 + 7x + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 2</div>
-                <p>Find \(\displaystyle\int \frac{3}{x^3}\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Write \(3x^{-3}\):</p>
-                        \[\int 3x^{-3}\,dx = \frac{3x^{-2}}{-2} + c = -\frac{3}{2x^2} + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 3</div>
-                <p>Find \(\displaystyle\int (2 + 3x)^2\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Expand: \((2+3x)^2 = 4 + 12x + 9x^2\)</p>
-                        \[\int (4 + 12x + 9x^2)\,dx = 4x + 6x^2 + 3x^3 + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 4 — EXAM STYLE</div>
-                <p>
-                    A curve has gradient function \(f'(x) = 6x^2 - 7\). Given that the curve passes through
-                    the point \((2,\, 5)\), find the equation of the curve.
-                </p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p><strong>Step 1</strong> — integrate:</p>
-                        \[f(x) = 2x^3 - 7x + c\]
-                        <p style="margin-top: 10px;"><strong>Step 2</strong> — substitute \((2, 5)\):</p>
-                        \[5 = 2(8) - 7(2) + c = 16 - 14 + c = 2 + c \implies c = 3\]
-                        <p style="margin-top: 10px;"><strong>Answer:</strong></p>
-                        \[f(x) = 2x^3 - 7x + 3\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 5</div>
-                <p>
-                    Find \(\displaystyle\int \frac{6x^4 - 9x^3 + 3x}{3x^2}\,dx\).
-                </p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Split the fraction:</p>
-                        \[\frac{6x^4}{3x^2} - \frac{9x^3}{3x^2} + \frac{3x}{3x^2} = 2x^2 - 3x + x^{-1}\]
-                        \[\int \!\left(2x^2 - 3x + \frac{1}{x}\right)dx = \frac{2x^3}{3} - \frac{3x^2}{2} + \ln|x| + c\]
-                    </div>
-                </details>
-            </div>
-
-        </div>
-
-        <!-- ── QUICK REFERENCE ── -->
-        <div class="section">
-            <h2>6. Quick Reference — Lecture 1 Rules</h2>
-
-            <table>
-                <tr>
-                    <th>Rule</th>
-                    <th>Formula</th>
-                    <th>Condition</th>
-                </tr>
-                <tr>
-                    <td>Power Rule</td>
-                    <td>\(\displaystyle\int ax^n\,dx = \dfrac{ax^{n+1}}{n+1} + c\)</td>
-                    <td>\(n \neq -1\)</td>
-                </tr>
-                <tr>
-                    <td>Constant</td>
-                    <td>\(\displaystyle\int k\,dx = kx + c\)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Constant Factor</td>
-                    <td>\(\displaystyle\int k\,f(x)\,dx = k\int f(x)\,dx\)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Sum / Difference</td>
-                    <td>\(\displaystyle\int [f \pm g]\,dx = \int f\,dx \pm \int g\,dx\)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Expand First</td>
-                    <td>Expand brackets, then integrate each term</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Split Fraction</td>
-                    <td>Divide every numerator term by denominator, then integrate</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Find \(c\)</td>
-                    <td>Integrate, then substitute the given point to solve for \(c\)</td>
-                    <td>Point must be given</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="note">
-            <strong>💡 Lecture 1 Tips:</strong>
-            <ul>
-                <li>Always include \(+c\) — omitting it loses marks in every indefinite integral.</li>
-                <li>Rewrite negative and fractional powers using index notation before applying the rule.</li>
-                <li>You cannot integrate a product or quotient directly — expand or split first.</li>
-                <li>The power rule fails at \(n = -1\); \(\int x^{-1}\,dx = \ln|x| + c\).</li>
-                <li>When finding the constant: integrate first, substitute the point second, solve for \(c\) third.</li>
-            </ul>
-        </div>
-
-    </div><!-- .content -->
-</div><!-- .container -->
-
-<script>
-    (function () {
-        function handleHash() {
-            var hash = window.location.hash;
-            if (!hash) return;
-            var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-            if (!el) return;
-            setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-        } else {
-            setTimeout(handleHash, 50);
-        }
-        window.addEventListener('hashchange', handleHash);
-    })();
-</script>
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
+                if (!el) return;
+                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
 
 </body>
+
 </html>
