@@ -37,6 +37,7 @@ Live at → **[prodbyabdo.github.io/cshub](https://prodbyabdo.github.io/cshub)**
 ├── year1sem2english.html         # English for Specific Purpose II
 ├── year1sem2filemgmt.html        # File Management (COM121)
 ├── year1sem2compmain.html        # Computer Maintenance (INF124)
+├── yea1sem2calc2sol.html         # Calculus II — Worked Solutions
 │
 ├── resources.html                # Resource library (videos, references)
 ├── cs-wiki.html                  # CS Wiki index
