@@ -4610,7 +4610,7 @@
         }
 
         // Build mobile nav elements from sidebar nav items
-        (function buildMobileNav() {
+        document.addEventListener('DOMContentLoaded', function buildMobileNav() {
             const strip = document.getElementById('mobileNavStrip');
             const drawerNav = document.getElementById('drawerNav');
             if (!strip || !drawerNav) return;
@@ -4648,7 +4648,7 @@
             if (firstChip) firstChip.classList.add('active');
             const firstLink = drawerNav.querySelector('.drawer-link');
             if (firstLink) firstLink.classList.add('active');
-        })();
+        });
 
         // Check if URL has a hash to pre-select a section
         window.onload = function () {
