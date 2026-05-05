@@ -1,0 +1,9 @@
+{
+  "name": "cshub-worker",
+  "main": "index.html",
+  "site": {
+    "bucket": "./",
+    "entry-point": "workers-site"
+  },
+  "compatibility_date": "2026-05-05"
+}
