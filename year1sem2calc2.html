@@ -178,6 +178,23 @@
             transform: translateY(-1px);
         }
 
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #cccccc;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-back:hover {
+            color: #00ff88;
+            transform: translateX(-4px);
+        }
+
         @media print {
             @page {
                 margin: 14mm;
@@ -236,7 +253,7 @@
 <body>
 
     <div class="container">
-        <a href="year1.html" class="nav-back">← Back to Home</a>
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
 
         <header>
             <h1>📚 Calculus II Complete Reference</h1>

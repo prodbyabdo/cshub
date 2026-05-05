@@ -10,6 +10,10 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -306,6 +310,25 @@
             transform: translateY(-1px);
         }
 
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #cccccc;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-back:hover {
+            color: #00ff88;
+            transform: translateX(-4px);
+        }
+
         @media print {
             @page {
                 margin: 14mm;
@@ -507,7 +530,7 @@
         <!-- Main Content Column -->
         <main class="main-column">
             <div class="container">
-        <a href="year1sem2calc2.html" class="nav-back">← Back to Home</a>
+        <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
         <header>
             <h1>📐 Calculus II — Lecture 1</h1>
             <p>Basic Integration · Dr. Hiba Omer</p>
@@ -892,20 +915,6 @@
 
     <script>
         (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
-                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-                if (!el) return;
-                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-            } else {
-                setTimeout(handleHash, 50);
-            }
-            window.addEventListener('hashchange', handleHash);
-
             // Progress Bar Logic
             window.addEventListener('scroll', function() {
                 var winScroll = document.body.scrollTop || document.documentElement.scrollTop;

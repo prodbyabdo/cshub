@@ -218,6 +218,23 @@
             transform: translateY(-1px);
         }
 
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 10px 0 20px 20px;
+            color: #cccccc;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-back:hover {
+            color: #00ff88;
+            transform: translateX(-4px);
+        }
+
         @media print {
             @page { margin: 14mm; }
             * {
@@ -556,3 +573,4 @@
 
 </body>
 </html>
+
