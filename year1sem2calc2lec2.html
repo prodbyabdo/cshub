@@ -521,7 +521,52 @@
                 </div>
             </div>
 
-            <!-- ── 4. USEFUL PATTERNS ── -->
+            <!-- ── 4. INVERSE TRIGONOMETRIC FUNCTIONS ── -->
+            <div class="section">
+                <h2>4. Inverse Trigonometric Functions & Their Derivatives</h2>
+
+                <div class="formula-box theorem">
+                    <p>The derivatives of the three key inverse trigonometric functions are:</p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Function \(y\)</th>
+                        <th>Derivative \(\dfrac{dy}{dx}\)</th>
+                    </tr>
+                    <tr>
+                        <td>\(\sin^{-1}(x)\)</td>
+                        <td>\(\dfrac{1}{\sqrt{1-x^2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cos^{-1}(x)\)</td>
+                        <td>\(-\dfrac{1}{\sqrt{1-x^2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tan^{-1}(x)\)</td>
+                        <td>\(\dfrac{1}{1+x^2}\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec^{-1}(x)\)</td>
+                        <td>\(\dfrac{1}{|x|\sqrt{x^2-1}}\)</td>
+                    </tr>
+                </table>
+
+                <h3>Generalised Integration Forms</h3>
+                <div class="formula-box important">
+                    <p>By reversing these derivatives and introducing constants \(a\):</p>
+                    \[\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\!\left(\frac{x}{a}\right) + c\]
+                    \[\int \frac{dx}{a^2 + x^2} = \frac{1}{a}\tan^{-1}\!\left(\frac{x}{a}\right) + c\]
+                    \[\int \frac{dx}{x\sqrt{x^2 - a^2}} = \frac{1}{a}\sec^{-1}\!\left|\frac{x}{a}\right| + c\]
+                </div>
+
+                <div class="note">
+                    <strong>💡 Key Insight:</strong>
+                    <p>These are the <em>same</em> forms used in Section 3 (completing the square). The difference is that completing the square <strong>converts</strong> a general quadratic into one of these standard patterns.</p>
+                </div>
+            </div>
+
+            <!-- ── 5. USEFUL PATTERNS ── -->
             <div class="section">
                 <h2>4. Common Substitution Patterns</h2>
 

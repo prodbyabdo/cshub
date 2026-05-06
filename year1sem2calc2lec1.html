@@ -525,9 +525,10 @@
                 <li><a href="#sec-1">1. Reversing Differentiation</a></li>
                 <li><a href="#sec-2">2. Indefinite Integration</a></li>
                 <li><a href="#sec-3">3. Rewriting Expressions</a></li>
-                <li><a href="#sec-4">4. Finding the Constant</a></li>
-                <li><a href="#sec-5">5. Exam Questions</a></li>
-                <li><a href="#sec-6">6. Quick Reference</a></li>
+                <li><a href="#sec-4">4. The ln Rule</a></li>
+                <li><a href="#sec-5">5. Finding the Constant</a></li>
+                <li><a href="#sec-6">6. Exam Questions</a></li>
+                <li><a href="#sec-7">7. Quick Reference</a></li>
             </ul>
         </aside>
 
@@ -763,9 +764,59 @@
                         </div>
                     </div>
 
-                    <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
+                    <!-- ── 4. THE NATURAL LOG RULE ── -->
                     <div class="section" id="sec-4">
-                        <h2>4. Finding the Constant of Integration Given a Point</h2>
+                        <h2>4. The Natural Logarithm Rule</h2>
+
+                        <div class="formula-box theorem">
+                            <p>When \(n = -1\) the power rule fails. Instead we have the special case:</p>
+                            \[\int \frac{1}{x}\,dx = \ln|x| + c\]
+                            <p style="margin-top: 12px;">More generally, when the numerator is the derivative of the denominator:</p>
+                            \[\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + c\]
+                        </div>
+
+                        <h3>How to Recognise It</h3>
+                        <div class="formula-box important">
+                            <p>Ask: <em>"Is the numerator the derivative (or a constant multiple of the derivative) of the denominator?"</em></p>
+                            <p style="margin-top: 10px;">If <strong>yes</strong>, the result is \(\ln|\text{denominator}| + c\) (adjusting for the constant).</p>
+                        </div>
+
+                        <h3>Worked Examples</h3>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE A — SIMPLE LINEAR</div>
+                            <p>Find \(\displaystyle\int \frac{1}{x-1}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(x-1\) and \(\dfrac{d}{dx}(x-1) = 1\), which equals the numerator.</p>
+                            \[\int \frac{1}{x-1}\,dx = \ln|x-1| + c\]
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE B — TRIGONOMETRIC (TAN X)</div>
+                            <p>Find \(\displaystyle\int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(\cos x\) and \(\dfrac{d}{dx}(\cos x) = -\sin x\). The numerator \(\sin x = -1 \times (-\sin x)\):</p>
+                            \[\int \frac{\sin x}{\cos x}\,dx = -\int \frac{-\sin x}{\cos x}\,dx = -\ln|\cos x| + c\]
+                            <p style="margin-top: 10px;">This can also be written as \(\ln|\sec x| + c\).</p>
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE C — POLYNOMIAL</div>
+                            <p>Find \(\displaystyle\int \frac{2x}{x^2+5}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(x^2+5\) and \(\dfrac{d}{dx}(x^2+5) = 2x\), which is exactly the numerator:</p>
+                            \[\int \frac{2x}{x^2+5}\,dx = \ln|x^2+5| + c = \ln(x^2+5) + c\]
+                            <p style="margin-top: 10px;">(Absolute value bars are optional here since \(x^2+5 > 0\) always.)</p>
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE D — ADJUSTING CONSTANTS</div>
+                            <p>Find \(\displaystyle\int \frac{3}{2x+7}\,dx\)</p>
+                            <p style="margin-top: 10px;">\(\dfrac{d}{dx}(2x+7) = 2\), but the numerator is \(3\). Factor:</p>
+                            \[\int \frac{3}{2x+7}\,dx = \frac{3}{2}\int \frac{2}{2x+7}\,dx = \frac{3}{2}\ln|2x+7| + c\]
+                        </div>
+                    </div>
+
+                    <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
+                    <div class="section" id="sec-5">
+                        <h2>5. Finding the Constant of Integration Given a Point</h2>
 
                         <div class="formula-box theorem">
                             <p>
@@ -812,8 +863,8 @@
                     </div>
 
                     <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
-                    <div class="section" id="sec-5">
-                        <h2>5. Examination-Style Questions</h2>
+                    <div class="section" id="sec-6">
+                        <h2>6. Examination-Style Questions</h2>
 
                         <div class="exam-q">
                             <div class="q-label">QUESTION 1</div>
@@ -889,8 +940,8 @@
                     </div>
 
                     <!-- ── QUICK REFERENCE ── -->
-                    <div class="section" id="sec-6">
-                        <h2>6. Quick Reference — Lecture 1 Rules</h2>
+                    <div class="section" id="sec-7">
+                        <h2>7. Quick Reference — Lecture 1 Rules</h2>
 
                         <table>
                             <tr>

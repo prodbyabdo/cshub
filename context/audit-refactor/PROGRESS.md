@@ -30,7 +30,7 @@ main (production) ← DO NOT TOUCH
 |-------|-------|-------|--------|----------|
 | **Foundation** | Shared CSS/JS | 3 new | ✅ Done | 3/3 |
 | **Agent 1** | `index.html`, `year1-4.html` | 5 files | ✅ Done | 5/5 |
-| **Agent 2** | `resources.html` | 1 file (317KB) | ⬜ Not started | 0/1 |
+| **Agent 2** | `resources.html` | 1 file (317KB) | ✅ Done | 1/1 |
 | **Agent 3** | Calculus pages + `math-style.css` | 20 files + 1 new | ⬜ Not started | 0/20 |
 | **Agent 4** | Subject pages + Wiki | 10 + wiki/* | ⬜ Not started | 0/10 |
 
@@ -60,17 +60,17 @@ main (production) ← DO NOT TOUCH
 ### Agent 2 — Resources Library
 > Task file: `context/audit-refactor/TASK_2_RESOURCES.md`
 
-- [ ] 2.1 — Link shared assets
-- [ ] 2.2 — Fix accent color mismatch (#00c288 → #00ff88)
-- [ ] 2.3 — CSS deduplication
-- [ ] 2.4 — Replace ~100 inline styles with `.channel-link` class
-- [ ] 2.5 — Accessibility (semantic nav, ARIA, alt text on ~100 images)
-- [ ] 2.6 — Content fixes (misplaced chemistry video, empty href, nested badge-row)
-- [ ] 2.7 — Mobile drawer ARIA toggle
-- [ ] 2.8 — Visual verification
+- [x] 2.1 — Link shared assets
+- [x] 2.2 — Fix accent color mismatch (#00c288 → #00ff88)
+- [x] 2.3 — CSS deduplication
+- [x] 2.4 — Replace ~100 inline styles with `.channel-link` class
+- [x] 2.5 — Accessibility (semantic nav, ARIA, alt text on ~100 images)
+- [x] 2.6 — Content fixes (misplaced chemistry video, empty href, nested badge-row)
+- [x] 2.7 — Mobile drawer ARIA toggle
+- [x] 2.8 — Visual verification
 
 **Notes from agent**:
-> _(agent writes status notes here)_
+> Agent 2 completed all tasks using a custom Python script to handle the 4,700-line file safely without hitting regex limits or timeout issues. The misplaced chemistry video was successfully relocated to the Calculus section. Image alt tags were correctly populated from the video titles. The file was checked back in clean condition.
 
 ### Agent 3 — Calculus Pages
 > Task file: `context/audit-refactor/TASK_3_CALCULUS.md`
