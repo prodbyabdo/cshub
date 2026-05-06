@@ -1,666 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculus II — Lecture 3: Integration by Parts & Tabular Method</title>
+    <title>Calculus II — Lecture 3: Integration by Parts & Inverse Hyperbolic</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000000;
-            color: #ffffff;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            overflow: hidden;
-        }
-
-        header {
-            background: #000000;
-            color: #ffffff;
-            padding: 30px;
-            text-align: center;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 800;
-            color: #00ff88;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.1em;
-            opacity: 0.6;
-            font-weight: 800;
-            color: #00ff88;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-
-        }
-
-        .section h2 {
-            color: #ffffff;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #1a1a1a;
-            font-weight: 800;
-            color: #00ff88;
-            letter-spacing: 1px;
-        }
-
-        .section h3 {
-            color: #cccccc;
-            font-size: 1.3em;
-            margin: 20px 0 15px 0;
-            font-weight: 800;
-            color: #00ff88;
-        }
-
-        .formula-box {
-            background: #000000;
-            padding: 20px;
-            margin: 15px 0;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #666666;
-        }
-
-        .important {
-            background: #0a0a0a;
-
-        }
-
-        .theorem {
-            background: #0a0a0a;
-            border-left: 2px solid #888888;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: #000000;
-            border: 1px solid #1a1a1a;
-        }
-
-        th,
-        td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #1a1a1a;
-            font-weight: 800;
-            color: #00ff88;
-        }
-
-        th {
-            background: #0a0a0a;
-            color: #ffffff;
-            font-weight: 400;
-            border-bottom: 1px solid #333333;
-        }
-
-        tr:hover {
-            background: #0f0f0f;
-        }
-
-        .note {
-            background: #0a0a0a;
-            padding: 15px;
-            margin: 15px 0;
-            border: 1px solid #1a1a1a;
-
-        }
-
-        .note strong {
-            color: #ffffff;
-        }
-
-        p {
-            color: #cccccc;
-        }
-
-        ol,
-        ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        ol li,
-        ul li {
-            margin: 8px 0;
-            color: #cccccc;
-        }
-
-        .step-block {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #444444;
-            padding: 18px 20px;
-            margin: 12px 0;
-        }
-
-        .step-block .step-label {
-            font-size: 0.8em;
-            letter-spacing: 2px;
-            opacity: 0.5;
-            margin-bottom: 8px;
-        }
-
-        .exam-q {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #888888;
-            padding: 20px;
-            margin: 16px 0;
-        }
-
-        .exam-q .q-label {
-            font-size: 0.78em;
-            letter-spacing: 2px;
-            opacity: 0.45;
-            margin-bottom: 10px;
-        }
-
-        details {
-            margin-top: 12px;
-        }
-
-        details summary {
-            cursor: pointer;
-            font-size: 0.85em;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            list-style: none;
-            padding: 6px 0;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details summary::before {
-            content: '▸  show solution';
-        }
-
-        details[open] summary::before {
-            content: '▾  hide solution';
-        }
-
-        details .solution {
-            padding-top: 14px;
-        }
-
-        .print-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #00ff88;
-            background: rgba(0, 255, 136, 0.1);
-            color: #00ff88;
-            border-radius: 6px;
-            padding: 8px 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-            margin-top: 15px;
-        }
-
-        .print-btn:hover {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-1px);
-        }
-
-        .nav-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 10px 0 20px 20px;
-            color: #cccccc;
-            text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-
-        .nav-back:hover {
-            color: #00ff88;
-            transform: translateX(-4px);
-        }
-
-        @media print {
-            @page {
-                margin: 14mm;
-            }
-
-            * {
-                box-shadow: none !important;
-                text-shadow: none !important;
-            }
-
-            body {
-                background: white !important;
-                color: black !important;
-                padding: 0;
-            }
-
-            .container,
-            .section,
-            .formula-box,
-            table,
-            th,
-            td,
-            .note,
-            .step-block,
-            .exam-q {
-                background: white !important;
-                color: black !important;
-                border-color: #777777 !important;
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            header {
-                background: white !important;
-                color: black !important;
-                border-bottom: 2px solid black !important;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            p,
-            li,
-            strong,
-            label,
-            .step-label,
-            .q-label,
-            summary,
-            .solution {
-                color: black !important;
-            }
-
-            .nav-back,
-            .print-btn,
-            .solutions-link {
-                display: none !important;
-            }
-
-            details {
-                display: block !important;
-            }
-
-            details[open] .solution,
-            details:not([open]) .solution {
-                display: block !important;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000000; color: #ffffff; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; background: #0a0a0a; border: 1px solid #1a1a1a; overflow: hidden; }
+        header { background: #000000; color: #ffffff; padding: 30px; text-align: center; border-bottom: 1px solid #1a1a1a; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 800; color: #00ff88; letter-spacing: 2px; }
+        header p { font-size: 1.1em; opacity: 0.6; font-weight: 800; color: #00ff88; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 40px; padding: 25px; background: #0a0a0a; border: 1px solid #1a1a1a; }
+        .section h2 { color: #ffffff; font-size: 1.8em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; font-weight: 800; color: #00ff88; letter-spacing: 1px; }
+        .section h3 { color: #cccccc; font-size: 1.3em; margin: 20px 0 15px 0; font-weight: 800; color: #00ff88; }
+        .formula-box { background: #000000; padding: 20px; margin: 15px 0; border: 1px solid #1a1a1a; border-left: 2px solid #666666; }
+        .important { background: #0a0a0a; }
+        .theorem { background: #0a0a0a; border-left: 2px solid #888888; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #000000; border: 1px solid #1a1a1a; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #1a1a1a; font-weight: 800; color: #00ff88; }
+        th { background: #0a0a0a; color: #ffffff; font-weight: 400; border-bottom: 1px solid #333333; }
+        tr:hover { background: #0f0f0f; }
+        .note { background: #0a0a0a; padding: 15px; margin: 15px 0; border: 1px solid #1a1a1a; }
+        .note strong { color: #ffffff; }
+        p { color: #cccccc; }
+        ol, ul { margin-left: 20px; margin-top: 10px; }
+        ol li, ul li { margin: 8px 0; color: #cccccc; }
+        .step-block { background: #000000; border: 1px solid #1a1a1a; border-left: 2px solid #444444; padding: 18px 20px; margin: 12px 0; }
+        .step-block .step-label { font-size: 0.8em; letter-spacing: 2px; opacity: 0.5; margin-bottom: 8px; }
+        .exam-q { background: #000000; border: 1px solid #1a1a1a; border-left: 2px solid #888888; padding: 20px; margin: 16px 0; }
+        .exam-q .q-label { font-size: 0.78em; letter-spacing: 2px; opacity: 0.45; margin-bottom: 10px; }
+        details { margin-top: 12px; }
+        details summary { cursor: pointer; font-size: 0.85em; opacity: 0.55; letter-spacing: 1px; list-style: none; padding: 6px 0; border-top: 1px solid #1a1a1a; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::before { content: '▸  show solution'; }
+        details[open] summary::before { content: '▾  hide solution'; }
+        details .solution { padding-top: 14px; }
+        .print-btn { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #00ff88; background: rgba(0, 255, 136, 0.1); color: #00ff88; border-radius: 6px; padding: 8px 14px; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease; margin-top: 15px; }
+        .print-btn:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.06); transform: translateY(-1px); }
+        .nav-back { display: inline-flex; align-items: center; gap: 0.5rem; margin: 10px 0 20px 20px; color: #cccccc; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; transition: color 0.2s ease, transform 0.2s ease; }
+        .nav-back:hover { color: #00ff88; transform: translateX(-4px); }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <a href="index.html" class="nav-back">← Back to Home</a>
-        <header>
-            <h1>📐 Calculus II — Lecture 3</h1>
-            <p>Integration by Parts & Tabular Method · Dr. Hiba Omer</p>
-            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
-                <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
-                <p style="font-size: 0.85em; margin-top: 5px;">
-                    <a href="https://linktr.ee/prodbyabdo" target="_blank"
-                        style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
-                        linktr.ee/prodbyabdo
+<div class="container">
+    <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
+    <header>
+        <h1>📐 Calculus II — Day 3</h1>
+        <p>Integration by Parts, Inverse Trig & Hyperbolics · Dr. Hiba Omer</p>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+            <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
+            <p style="font-size: 0.85em; margin-top: 5px;">
+                <a href="https://linktr.ee/prodbyabdo" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">linktr.ee/prodbyabdo</a>
+            </p>
+            <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
+        </div>
+    </header>
+
+    <div class="content">
+
+        <!-- ── LECTURE SLIDES & RESOURCES ── -->
+        <div class="section">
+            <h2>Day 3 Lecture Slides & Resources</h2>
+            <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                    <iframe src="context/calc2/Hiba Lec 5.pdf" width="100%" height="100%" style="border: none;" title="Lecture 5 Viewer"></iframe>
+                </div>
+                <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                    <a href="context/calc2/Hiba Lec 5.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                        &#128196; Open PDF
                     </a>
-                </p>
-                <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
+                    <a href="context/calc2/Hiba Lec 5.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                        &#11015;&#65039; Download PDF
+                    </a>
+                </div>
             </div>
-        </header>
-
-        <div class="content">
-
-            <!-- ── LECTURE SLIDES & RESOURCES ── -->
-            <div class="section">
-                <h2>Lecture Slides & Resources</h2>
-                <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
-                    <div class="viewer-wrapper"
-                        style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                        <iframe src="context/calc2/Hiba Lec 5.pdf" width="100%" height="100%" style="border: none;"
-                            title="Lecture 3 Viewer"></iframe>
-                    </div>
-                    <div class="viewer-actions"
-                        style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
-                        <a href="context/calc2/Hiba Lec 5.pdf" target="_blank"
-                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#128196; Open PDF (Mobile Friendly)
-                        </a>
-                        <a href="context/calc2/Hiba Lec 5.pdf" download
-                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#11015;&#65039; Download PDF
-                        </a>
-                    </div>
-                </div>
-                <div class="solutions-link" style="text-align: center; margin-top: 10px;">
-                    <a href="year1sem2calc2lec3sol.html"
-                        style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                        View Practice Solutions
-                    </a>
-                </div>
+            <div class="solutions-link" style="text-align: center; margin-top: 30px;">
+                <a href="year1sem2calc2lec3sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
+                    View 20 Practice Solutions
+                </a>
             </div>
         </div>
 
-        <!-- ── 1. INTEGRATION BY SUBSTITUTION ── -->
+        <!-- ── 1. INTEGRATION BY PARTS ── -->
         <div class="section">
-            <h2>1. Integration by Substitution (u-Substitution)</h2>
+            <h2>1. Integration by Parts</h2>
 
             <div class="formula-box theorem">
-                <p>If an integrand has the form \(f(g(x))\cdot g'(x)\), we set \(u = g(x)\) so that \(du = g'(x)\,dx\)
-                    and the integral simplifies:</p>
-                \[\int f(g(x))\,g'(x)\,dx = \int f(u)\,du\]
+                <p>Based on the product rule for differentiation, Integration by Parts is used to integrate the product of two functions:</p>
+                \[\int u \, dv = uv - \int v \, du\]
             </div>
 
-            <h3>Procedure</h3>
+            <h3>How to choose \(u\) and \(dv\) (LIATE Rule)</h3>
             <div class="formula-box important">
+                <p>Choose \(u\) to be the function that comes first in this list (and \(dv\) will be the rest of the integrand):</p>
                 <ol>
-                    <li>Identify an inner function \(u = g(x)\).</li>
-                    <li>Compute \(du = g'(x)\,dx\).</li>
-                    <li>Rewrite every \(x\)-expression in terms of \(u\) and \(du\).</li>
-                    <li>Integrate with respect to \(u\).</li>
-                    <li>Substitute back to express the result in terms of \(x\).</li>
+                    <li><strong>L</strong>ogarithmic functions (e.g., \(\ln x\))</li>
+                    <li><strong>I</strong>nverse trigonometric functions (e.g., \(\tan^{-1} x\))</li>
+                    <li><strong>A</strong>lgebraic functions (e.g., \(x^2\), \(3x\))</li>
+                    <li><strong>T</strong>rigonometric functions (e.g., \(\sin x\), \(\cos x\))</li>
+                    <li><strong>E</strong>xponential functions (e.g., \(e^x\))</li>
                 </ol>
             </div>
 
             <h3>Worked Examples</h3>
 
             <div class="step-block">
-                <div class="step-label">EXAMPLE A</div>
-                <p>Find \(\displaystyle\int \frac{2x-9}{\sqrt{x^2-9x+1}}\,dx\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — let \(u = x^2 - 9x + 1\), then \(du =
-                    (2x-9)\,dx\):</p>
-                \[\int \frac{du}{\sqrt{u}} = \int u^{-1/2}\,du = 2u^{1/2} + c = 2\sqrt{x^2 - 9x + 1} + c\]
+                <div class="step-label">EXAMPLE A — ALGEBRAIC & EXPONENTIAL</div>
+                <p>Find \(\displaystyle\int x e^x \, dx\)</p>
+                <p style="margin-top: 10px;"><strong>Step 1</strong> — Choose \(u\) and \(dv\):</p>
+                <p>Let \(u = x\) (Algebraic) \(\implies du = dx\)</p>
+                <p>Let \(dv = e^x \, dx\) (Exponential) \(\implies v = e^x\)</p>
+                <p style="margin-top: 10px;"><strong>Step 2</strong> — Apply formula:</p>
+                \[\int x e^x \, dx = x e^x - \int e^x \, dx = x e^x - e^x + C\]
             </div>
 
             <div class="step-block">
-                <div class="step-label">EXAMPLE B</div>
-                <p>Find \(\displaystyle\int 3x^2\cos(x^3)\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = x^3\), then \(du = 3x^2\,dx\):</p>
-                \[\int \cos(u)\,du = \sin(u) + c = \sin(x^3) + c\]
+                <div class="step-label">EXAMPLE B — LOGARITHMIC</div>
+                <p>Find \(\displaystyle\int \ln x \, dx\)</p>
+                <p style="margin-top: 10px;"><strong>Step 1</strong> — Choose \(u\) and \(dv\):</p>
+                <p>Let \(u = \ln x\) (Logarithmic) \(\implies du = \frac{1}{x} dx\)</p>
+                <p>Let \(dv = dx\) (Algebraic) \(\implies v = x\)</p>
+                <p style="margin-top: 10px;"><strong>Step 2</strong> — Apply formula:</p>
+                \[\int \ln x \, dx = x \ln x - \int x \left(\frac{1}{x}\right) dx = x \ln x - \int 1 \, dx = x \ln x - x + C\]
             </div>
-
+            
             <div class="step-block">
-                <div class="step-label">EXAMPLE C — ADJUSTING CONSTANTS</div>
-                <p>Find \(\displaystyle\int x\,e^{x^2}\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = x^2\), then \(du = 2x\,dx\), so \(x\,dx = \tfrac{1}{2}\,du\):</p>
-                \[\frac{1}{2}\int e^{u}\,du = \frac{1}{2}e^{u} + c = \frac{1}{2}e^{x^2} + c\]
+                <div class="step-label">EXAMPLE C — INVERSE TRIGONOMETRIC</div>
+                <p>Find \(\displaystyle\int \tan^{-1} x \, dx\)</p>
+                <p style="margin-top: 10px;">Let \(u = \tan^{-1} x \implies du = \frac{1}{1+x^2} dx\)</p>
+                <p>Let \(dv = dx \implies v = x\)</p>
+                \[= x \tan^{-1} x - \int \frac{x}{1+x^2} dx\]
+                <p>For the remaining integral, use substitution (Natural Log Rule) with \(w = 1+x^2\), \(dw = 2x\,dx\):</p>
+                \[= x \tan^{-1} x - \frac{1}{2} \ln(1+x^2) + C\]
             </div>
         </div>
 
-        <!-- ── 2. DEFINITE INTEGRALS BY SUBSTITUTION ── -->
+        <!-- ── 2. RECURRENT INTEGRATION ── -->
         <div class="section">
-            <h2>2. Definite Integrals by Substitution</h2>
+            <h2>2. Recurrent Integration by Parts</h2>
 
             <div class="formula-box theorem">
-                <p>When using substitution in a definite integral, <strong>change the limits</strong> from \(x\)-values
-                    to \(u\)-values:</p>
-                \[\int_{a}^{b} f(g(x))\,g'(x)\,dx = \int_{g(a)}^{g(b)} f(u)\,du\]
-                <p style="margin-top: 10px;">This avoids needing to substitute back to \(x\).</p>
+                <p>Sometimes, applying Integration by Parts twice returns the original integral. When this happens, we treat the integral as a variable (say, \(I\)) and solve for it algebraically.</p>
             </div>
 
             <div class="step-block">
-                <div class="step-label">EXAMPLE — DEFINITE</div>
-                <p>Evaluate \(\displaystyle\int_{0}^{2} x(x^2+1)^3\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = x^2+1\), \(du = 2x\,dx\). When \(x=0\): \(u=1\); when \(x=2\):
-                    \(u=5\).</p>
-                \[\frac{1}{2}\int_{1}^{5} u^3\,du = \frac{1}{2}\left[\frac{u^4}{4}\right]_{1}^{5} = \frac{1}{8}(625 - 1)
-                = 78\]
+                <div class="step-label">EXAMPLE — EXPONENTIAL & TRIG</div>
+                <p>Find \(I = \displaystyle\int e^x \cos x \, dx\)</p>
+                <p style="margin-top: 10px;"><strong>First IBP:</strong> Let \(u = e^x\), \(dv = \cos x \, dx \implies du = e^x \, dx\), \(v = \sin x\)</p>
+                \[I = e^x \sin x - \int e^x \sin x \, dx\]
+                <p style="margin-top: 10px;"><strong>Second IBP</strong> on \(\int e^x \sin x \, dx\): Let \(u = e^x\), \(dv = \sin x \, dx \implies du = e^x \, dx\), \(v = -\cos x\)</p>
+                \[\int e^x \sin x \, dx = -e^x \cos x - \int (-e^x \cos x) \, dx = -e^x \cos x + I\]
+                <p style="margin-top: 10px;">Substitute back:</p>
+                \[I = e^x \sin x - (-e^x \cos x + I) = e^x \sin x + e^x \cos x - I\]
+                \[2I = e^x(\sin x + \cos x) \implies I = \frac{e^x(\sin x + \cos x)}{2} + C\]
             </div>
         </div>
 
-        <!-- ── 3. COMPLETING THE SQUARE ── -->
+        <!-- ── 3. INVERSE HYPERBOLIC FUNCTIONS ── -->
         <div class="section">
-            <h2>3. Completing the Square in Integration</h2>
+            <h2>3. Inverse Hyperbolic Functions</h2>
 
             <div class="formula-box theorem">
-                <p>When the integrand contains a quadratic \(ax^2 + bx + c\) under a square root or in a denominator,
-                    completing the square rewrites it into a standard form that matches known integral formulas.</p>
+                <p>Similar to standard inverse trigonometric functions, inverse hyperbolic functions appear from specific radical denominators.</p>
             </div>
-
-            <h3>Standard Forms Unlocked</h3>
-            <div class="formula-box important">
-                \[\int \frac{dx}{\sqrt{a^2 - u^2}} = \sin^{-1}\!\left(\frac{u}{a}\right) + c\]
-                \[\int \frac{dx}{a^2 + u^2} = \frac{1}{a}\tan^{-1}\!\left(\frac{u}{a}\right) + c\]
-                \[\int \frac{dx}{u\sqrt{u^2 - a^2}} = \frac{1}{a}\sec^{-1}\!\left|\frac{u}{a}\right| + c\]
-            </div>
-
-            <h3>Worked Example</h3>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — COMPLETING THE SQUARE</div>
-                <p>Find \(\displaystyle\int \frac{dx}{\sqrt{8x - x^2}}\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — complete the square:</p>
-                \[8x - x^2 = -(x^2 - 8x) = -(x^2 - 8x + 16) + 16 = 16 - (x-4)^2\]
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — recognise the \(\sin^{-1}\) form with \(a=4\),
-                    \(u=x-4\):</p>
-                \[\int \frac{dx}{\sqrt{16 - (x-4)^2}} = \sin^{-1}\!\left(\frac{x-4}{4}\right) + c\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — QUADRATIC DENOMINATOR</div>
-                <p>Find \(\displaystyle\int \frac{dx}{x^2 + 6x + 13}\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — complete the square: \(x^2+6x+13 = (x+3)^2 + 4\)
-                </p>
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — use \(\tan^{-1}\) form with \(a=2\), \(u=x+3\):
-                </p>
-                \[\int \frac{dx}{(x+3)^2 + 4} = \frac{1}{2}\tan^{-1}\!\left(\frac{x+3}{2}\right) + c\]
-            </div>
-        </div>
-
-        <!-- ── 4. USEFUL PATTERNS ── -->
-        <div class="section">
-            <h2>4. Common Substitution Patterns</h2>
 
             <table>
                 <tr>
-                    <th>Integrand Pattern</th>
-                    <th>Substitution</th>
-                    <th>Result</th>
+                    <th>Integrand</th>
+                    <th>Resulting Inverse Hyperbolic</th>
                 </tr>
                 <tr>
-                    <td>\(\displaystyle\int \frac{f'(x)}{f(x)}\,dx\)</td>
-                    <td>\(u = f(x)\)</td>
-                    <td>\(\ln|f(x)| + c\)</td>
+                    <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2 + a^2}}\)</td>
+                    <td>\(\sinh^{-1}\left(\frac{x}{a}\right) + C \quad \text{or} \quad \ln|x + \sqrt{x^2+a^2}| + C\)</td>
                 </tr>
                 <tr>
-                    <td>\(\displaystyle\int f'(x)\,[f(x)]^n\,dx\)</td>
-                    <td>\(u = f(x)\)</td>
-                    <td>\(\dfrac{[f(x)]^{n+1}}{n+1} + c\)</td>
+                    <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2 - a^2}}\)</td>
+                    <td>\(\cosh^{-1}\left(\frac{x}{a}\right) + C \quad \text{or} \quad \ln|x + \sqrt{x^2-a^2}| + C\)</td>
                 </tr>
                 <tr>
-                    <td>\(\displaystyle\int f'(x)\,e^{f(x)}\,dx\)</td>
-                    <td>\(u = f(x)\)</td>
-                    <td>\(e^{f(x)} + c\)</td>
+                    <td>\(\displaystyle\int \frac{dx}{a^2 - x^2}\)</td>
+                    <td>\(\frac{1}{a}\tanh^{-1}\left(\frac{x}{a}\right) + C \quad \text{for } |x| < a\)</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>💡 Note on Logarithmic Forms:</strong>
+                <p>Inverse hyperbolic functions can always be expressed in terms of natural logarithms. Many exams will accept either form, but logarithmic form is often preferred if bounds are given to evaluate.</p>
+            </div>
+        </div>
+
+        <!-- ── 4. QUICK REFERENCE ── -->
+        <div class="section">
+            <h2>4. Quick Reference — Lecture 3 Rules</h2>
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Formula / Rule</th>
                 </tr>
                 <tr>
-                    <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-u^2}}\)</td>
-                    <td>Complete the square</td>
-                    <td>\(\sin^{-1}(u/a) + c\)</td>
+                    <td>Integration by Parts</td>
+                    <td>\(\int u \, dv = uv - \int v \, du\)</td>
                 </tr>
                 <tr>
-                    <td>\(\displaystyle\int \frac{dx}{a^2+u^2}\)</td>
-                    <td>Complete the square</td>
-                    <td>\(\frac{1}{a}\tan^{-1}(u/a) + c\)</td>
+                    <td>LIATE Rule for \(u\)</td>
+                    <td>Logarithmic, Inverse Trig, Algebraic, Trigonometric, Exponential</td>
+                </tr>
+                <tr>
+                    <td>Recurrent Integration</td>
+                    <td>If \(I\) appears on the RHS, add it to the LHS and divide.</td>
+                </tr>
+                <tr>
+                    <td>Inverse \(\sinh\) form</td>
+                    <td>\(\int \frac{1}{\sqrt{x^2+a^2}} dx = \sinh^{-1}(x/a) + C\)</td>
+                </tr>
+                <tr>
+                    <td>Inverse \(\cosh\) form</td>
+                    <td>\(\int \frac{1}{\sqrt{x^2-a^2}} dx = \cosh^{-1}(x/a) + C\)</td>
                 </tr>
             </table>
         </div>
 
-        <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
-        <div class="section">
-            <h2>5. Examination-Style Questions</h2>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 1</div>
-                <p>Find \(\displaystyle\int \frac{6x^2}{(x^3+4)^2}\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Let \(u = x^3+4\), \(du = 3x^2\,dx\):</p>
-                        \[\frac{6}{3}\int u^{-2}\,du = 2\cdot\frac{u^{-1}}{-1} + c = -\frac{2}{x^3+4} + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 2</div>
-                <p>Evaluate \(\displaystyle\int_{0}^{1} \frac{x}{\sqrt{1+x^2}}\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Let \(u = 1+x^2\), \(du = 2x\,dx\). Limits: \(u(0)=1,\; u(1)=2\).</p>
-                        \[\frac{1}{2}\int_{1}^{2} u^{-1/2}\,du = \frac{1}{2}\left[2u^{1/2}\right]_{1}^{2} = \sqrt{2} -
-                        1\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 3</div>
-                <p>Find \(\displaystyle\int \frac{\cos x}{1+\sin^2 x}\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Let \(u = \sin x\), \(du = \cos x\,dx\):</p>
-                        \[\int \frac{du}{1+u^2} = \tan^{-1}(u) + c = \tan^{-1}(\sin x) + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 4</div>
-                <p>Find \(\displaystyle\int \frac{dx}{\sqrt{3-2x-x^2}}\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Complete the square: \(3-2x-x^2 = -(x^2+2x-3) = -(x^2+2x+1)+4 = 4-(x+1)^2\).</p>
-                        \[\int \frac{dx}{\sqrt{4-(x+1)^2}} = \sin^{-1}\!\left(\frac{x+1}{2}\right) + c\]
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-q">
-                <div class="q-label">QUESTION 5</div>
-                <p>Find \(\displaystyle\int (1+\tan x)^2\sec^2 x\,dx\).</p>
-                <details>
-                    <summary></summary>
-                    <div class="solution">
-                        <p>Let \(u = 1+\tan x\), \(du = \sec^2 x\,dx\):</p>
-                        \[\int u^2\,du = \frac{u^3}{3} + c = \frac{(1+\tan x)^3}{3} + c\]
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <!-- ── QUICK REFERENCE ── -->
-        <div class="section">
-            <h2>6. Quick Reference — Lecture 3 Rules</h2>
-
-            <table>
-                <tr>
-                    <th>Rule</th>
-                    <th>Formula</th>
-                    <th>Condition</th>
-                </tr>
-                <tr>
-                    <td>u-Substitution</td>
-                    <td>\(\displaystyle\int f(g(x))\,g'(x)\,dx = \int f(u)\,du\)</td>
-                    <td>\(u = g(x)\)</td>
-                </tr>
-                <tr>
-                    <td>Definite Sub</td>
-                    <td>Change limits: \(x=a \to u=g(a)\)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Completing Sq</td>
-                    <td>\(ax^2+bx+c = a(x+\tfrac{b}{2a})^2 + (c - \tfrac{b^2}{4a})\)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>Arcsin Form</td>
-                    <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-u^2}} = \sin^{-1}(u/a)+c\)</td>
-                    <td>\(|u| < a\)</td>
-                </tr>
-                <tr>
-                    <td>Arctan Form</td>
-                    <td>\(\displaystyle\int \frac{dx}{a^2+u^2} = \frac{1}{a}\tan^{-1}(u/a)+c\)</td>
-                    <td>—</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="note">
-            <strong>💡 Lecture 3 Tips:</strong>
-            <ul>
-                <li>Always look for the derivative of the inner function lurking in the integrand.</li>
-                <li>For definite integrals, change the limits when substituting — saves time.</li>
-                <li>If a quadratic appears under a root or in a denominator, try completing the square first.</li>
-                <li>Adjust constants: if \(du = 3x^2\,dx\) but you only have \(x^2\,dx\), multiply/divide by 3.</li>
-                <li>Check your answer by differentiating — the chain rule should return the integrand.</li>
-            </ul>
-        </div>
-
-    </div><!-- .content -->
-    </div><!-- .container -->
-
-    <script>
-        (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
-                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-                if (!el) return;
-                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-            } else {
-                setTimeout(handleHash, 50);
-            }
-            window.addEventListener('hashchange', handleHash);
-        })();
-    </script>
-
+    </div>
+</div>
 </body>
-
 </html>
