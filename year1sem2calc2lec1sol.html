@@ -655,19 +655,18 @@
           <span class="problem-number">Problem 12</span>
         </div>
         <div class="problem-statement">
-          \[ \int (\frac{\sec^2 x}{3} - 2\sec 4x \tan 4x) \, dx \]
+          \[ \int \left(\frac{\sec^2 x}{3} - 2\sec(4x) + \tan(4x)\right) \, dx \]
         </div>
         <div class="solution-details">
-          <div class="solution-step">Split into two separate integrals:</div>
-          <div class="solution-step">\[ \int \frac{1}{3}\sec^2 x \, dx - \int 2\sec(4x)\tan(4x) \, dx \]</div>
-          <div class="solution-step">Integrate the first term using \( \int \sec^2 x \, dx = \tan x \):</div>
-          <div class="solution-step">\[ \frac{1}{3}\tan x \]</div>
-          <div class="solution-step">Integrate the second term using \( \int \sec(ax)\tan(ax) \, dx =
-            \frac{1}{a}\sec(ax) \) with \( a = 4 \):</div>
-          <div class="solution-step">\[ -2 \left( \frac{1}{4}\sec(4x) \right) = -\frac{1}{2}\sec(4x) \]</div>
-          <div class="solution-step">Combine the results:</div>
+          <div class="solution-step">Split the integral:</div>
+          <div class="solution-step">\[ = \frac{1}{3}\int \sec^2 x \, dx - 2\int \sec(4x) \, dx + \int \tan(4x) \, dx \]</div>
+          <div class="solution-step">Integrate each term:</div>
+          <div class="solution-step">1. \[ \frac{1}{3}\int \sec^2 x \, dx = \frac{1}{3}\tan x \]</div>
+          <div class="solution-step">2. \[ \int \sec(4x) \, dx = \frac{1}{4}\ln|\sec(4x)+\tan(4x)| \]</div>
+          <div class="solution-step">So: \[ -2 \cdot \frac{1}{4} = -\frac{1}{2} \]</div>
+          <div class="solution-step">3. \[ \int \tan(4x) \, dx = -\frac{1}{4}\ln|\cos(4x)| \]</div>
           <div class="final-answer">
-            \[ = \frac{1}{3}\tan x - \frac{1}{2}\sec 4x + C \]
+            \[ \frac{1}{3}\tan x - \frac{1}{2}\ln|\sec(4x)+\tan(4x)| - \frac{1}{4}\ln|\cos(4x)| + C \]
           </div>
         </div>
       </div>
