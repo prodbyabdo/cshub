@@ -13,10 +13,10 @@
 
 ### 1.1 — Link Shared Assets
 For each file in scope:
-- [ ] Add `<link rel="stylesheet" href="assets/css/global.css">` in `<head>` (BEFORE any `<style>` block)
-- [ ] Add `<link rel="icon" href="assets/online.png" type="image/png">` (missing on year pages)
-- [ ] Replace the inline deep-linking `<script>` block (the ~45-line IIFE at bottom) with: `<script src="assets/js/deeplink.js" defer></script>`
-- [ ] Keep only page-specific CSS in the remaining `<style>` block. Remove any rules that now exist in `global.css`
+- [x] Add `<link rel="stylesheet" href="assets/css/global.css">` in `<head>` (BEFORE any `<style>` block)
+- [x] Add `<link rel="icon" href="assets/online.png" type="image/png">` (missing on year pages)
+- [x] Replace the inline deep-linking `<script>` block (the ~45-line IIFE at bottom) with: `<script src="assets/js/deeplink.js" defer></script>`
+- [x] Keep only page-specific CSS in the remaining `<style>` block. Remove any rules that now exist in `global.css`
 
 ### 1.2 — CSS Deduplication (per file)
 
@@ -53,32 +53,32 @@ These are placeholder pages (~3.4 KB each). Remove:
 ### 1.3 — Accessibility Fixes
 
 #### All 5 files:
-- [ ] Add `<meta name="description" content="...">` to `<head>`:
+- [x] Add `<meta name="description" content="...">` to `<head>`:
   - `index.html`: `"CS Hub — A student-built study platform for CS & IT undergraduates. Course notes, video tutorials, and a CS wiki."`
   - `year1.html`: `"Year 1 CS & IT curriculum — Semester 1 and 2 subjects including Calculus, Programming, Databases, and more."`
   - `year2-4.html`: `"Year N CS & IT curriculum — Coming soon."`
-- [ ] Add `<link rel="icon" href="assets/online.png" type="image/png">` where missing
+- [x] Add `<link rel="icon" href="assets/online.png" type="image/png">` where missing
 
 #### `index.html`:
-- [ ] The `<a>` tag on line 199 (inline style, "made by: prodbyabdo") → move inline style to a CSS class `.author-link`
-- [ ] Footer link should have `rel="noopener noreferrer"`
+- [x] The `<a>` tag on line 199 (inline style, "made by: prodbyabdo") → move inline style to a CSS class `.author-link`
+- [x] Footer link should have `rel="noopener noreferrer"`
 
 #### `year1.html`:
-- [ ] Change `<div class="semester-btn" onclick="openSemester('sem1')">` → `<button class="semester-btn" onclick="openSemester('sem1')" type="button">`
+- [x] Change `<div class="semester-btn" onclick="openSemester('sem1')">` → `<button class="semester-btn" onclick="openSemester('sem1')" type="button">`
   - Do this for BOTH semester buttons (lines 328, 332)
-- [ ] Change `<div class="nav-item" ...>` elements → won't apply here (that's resources.html scope)
-- [ ] Fix `.nav-back` from `position: absolute` → remove position rule, use normal flow with `margin-bottom`
-- [ ] Search input: add `<label>` element (visually hidden) for the search input, or add `aria-label="Search subjects"`
-- [ ] Disabled buttons (`<a href="#" class="btn btn-disabled">`) → add `aria-disabled="true"` and `tabindex="-1"`
+- [x] Change `<div class="nav-item" ...>` elements → won't apply here (that's resources.html scope)
+- [x] Fix `.nav-back` from `position: absolute` → remove position rule, use normal flow with `margin-bottom`
+- [x] Search input: add `<label>` element (visually hidden) for the search input, or add `aria-label="Search subjects"`
+- [x] Disabled buttons (`<a href="#" class="btn btn-disabled">`) → add `aria-disabled="true"` and `tabindex="-1"`
 
 ### 1.4 — Typography / Design Fixes
 
 #### `index.html`:
-- [ ] REMOVE gradient text on `h1` (the `background: linear-gradient(...); background-clip: text; -webkit-text-fill-color: transparent;`). Replace with `color: var(--text-primary);`
+- [x] REMOVE gradient text on `h1` (the `background: linear-gradient(...); background-clip: text; -webkit-text-fill-color: transparent;`). Replace with `color: var(--text-primary);`
 
 #### `year1.html`:
-- [ ] REMOVE gradient text on `h1` — same fix as index.html
-- [ ] Fix `.btn-primary` and `.btn-secondary` — they're currently identical. Make `.btn-secondary` use a lighter style:
+- [x] REMOVE gradient text on `h1` — same fix as index.html
+- [x] Fix `.btn-primary` and `.btn-secondary` — they're currently identical. Make `.btn-secondary` use a lighter style:
   ```css
   .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
@@ -88,10 +88,10 @@ These are placeholder pages (~3.4 KB each). Remove:
   ```
 
 ### 1.5 — Verify
-- [ ] Open each page in browser — visual check, no broken styles
-- [ ] Check that tab navigation, search, semester switching all still work
-- [ ] Keyboard-tab through year1.html — verify focus indicators appear
-- [ ] Check mobile at 375px width — verify layout isn't broken
+- [x] Open each page in browser — visual check, no broken styles
+- [x] Check that tab navigation, search, semester switching all still work
+- [x] Keyboard-tab through year1.html — verify focus indicators appear
+- [x] Check mobile at 375px width — verify layout isn't broken
 
 ---
 

@@ -4,37 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Year 1 CS & IT curriculum — Semester 1 and 2 subjects including Calculus, Programming, Databases, and more.">
     <title>Year 1 Curriculum | prodbyabdo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/online.png" type="image/png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/global.css">
     <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #111111;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-color: #00ff88;
-            --accent-dim: rgba(0, 255, 136, 0.1);
-            --accent-hover: rgba(0, 255, 136, 0.2);
-            --border-color: #333333;
-            --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: "JetBrains Mono", monospace;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
             min-height: 100vh;
         }
 
@@ -54,10 +34,7 @@
             font-weight: 800;
             letter-spacing: -2px;
             margin: 0 0 10px 0;
-            background: linear-gradient(to right, #ffffff, #a0a0a0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-primary);
         }
 
         .subtitle {
@@ -67,39 +44,10 @@
             letter-spacing: 1px;
         }
 
-        .nav-back {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-family: var(--font-mono);
-        }
-
-        .nav-back:hover {
-            color: var(--accent-color);
-        }
-
         /* --- NEW STEP-BY-STEP VIEWS --- */
         .view-section {
             display: none;
             animation: fadeIn 0.4s ease forwards;
-        }
-
-        .view-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Step 1: Semester Prompts */
@@ -281,9 +229,9 @@
         }
 
         .btn-secondary {
-            background: var(--accent-dim);
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border-color: var(--border-color);
         }
 
         .btn-primary:hover {
@@ -325,14 +273,14 @@
         <!-- VIEW 1: SEMESTER PROMPT -->
         <div id="view-semesters" class="view-section active">
             <div class="semester-prompts">
-                <div class="semester-btn" onclick="openSemester('sem1')">
+                <button class="semester-btn" onclick="openSemester('sem1')" type="button">
                     <h2>Semester One</h2>
                     <p>Select to view subjects</p>
-                </div>
-                <div class="semester-btn" onclick="openSemester('sem2')">
+                </button>
+                <button class="semester-btn" onclick="openSemester('sem2')" type="button">
                     <h2>Semester Two</h2>
                     <p>Select to view subjects</p>
-                </div>
+                </button>
             </div>
         </div>
 
@@ -342,7 +290,7 @@
                 <button class="back-to-semesters" onclick="goBackToSemesters()">← Choose Semester</button>
                 <div class="search-box">
                     <input type="text" id="subjectSearch" class="search-input"
-                        placeholder="Search for a subject or code..." onkeyup="filterSubjects()">
+                        placeholder="Search for a subject or code..." aria-label="Search subjects" onkeyup="filterSubjects()">
                 </div>
             </div>
 
@@ -364,7 +312,7 @@
                         <div class="subject-name">Principles of Information Systems</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <a href="#" class="btn btn-disabled stretched-link" aria-disabled="true" tabindex="-1">Resources</a>
                     </div>
                 </div>
 
@@ -374,7 +322,7 @@
                         <div class="subject-name">English for Specific Purpose I</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <a href="#" class="btn btn-disabled stretched-link" aria-disabled="true" tabindex="-1">Resources</a>
                     </div>
                 </div>
 
@@ -417,7 +365,7 @@
                         <div class="subject-name">Principles of Economic</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <a href="#" class="btn btn-disabled stretched-link" aria-disabled="true" tabindex="-1">Resources</a>
                     </div>
                 </div>
 
@@ -468,7 +416,7 @@
                         <div class="subject-name">Principles of Accounting</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <a href="#" class="btn btn-disabled stretched-link" aria-disabled="true" tabindex="-1">Resources</a>
                     </div>
                 </div>
 
@@ -488,7 +436,7 @@
                         <div class="subject-name">Algebra and Geometry</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <a href="#" class="btn btn-disabled stretched-link" aria-disabled="true" tabindex="-1">Resources</a>
                     </div>
                 </div>
 
@@ -567,53 +515,8 @@
                 }
             }
         </script>
-        <!-- Deep Linking Script -->
-        <script>
-            (function () {
-                function handleHash() {
-                    var hash = window.location.hash;
-                    if (!hash) return;
-
-                    var targetId = decodeURIComponent(hash.substring(1));
-                    var el = document.getElementById(targetId);
-                    if (!el) return;
-
-                    // If the element is inside an inactive tab, open that tab first
-                    var tabContent = el.closest ? el.closest('.tab-content') : null;
-                    if (!tabContent) {
-                        var parent = el.parentElement;
-                        while (parent) {
-                            if (parent.classList && parent.classList.contains('tab-content')) {
-                                tabContent = parent;
-                                break;
-                            }
-                            parent = parent.parentElement;
-                        }
-                    }
-
-                    if (tabContent && !tabContent.classList.contains('active')) {
-                        if (typeof openTab === 'function') {
-                            openTab(tabContent.id);
-                        }
-                    }
-
-                    // Scroll with slight delay to allow tab CSS transition
-                    setTimeout(function () {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 120);
-                }
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', function () {
-                        setTimeout(handleHash, 50);
-                    });
-                } else {
-                    setTimeout(handleHash, 50);
-                }
-
-                window.addEventListener('hashchange', handleHash);
-            })();
-        </script>
+    <!-- Deep Linking Script -->
+    <script src="assets/js/deeplink.js" defer></script>
 
 
 </body>

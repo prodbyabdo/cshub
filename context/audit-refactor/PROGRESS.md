@@ -29,7 +29,7 @@ main (production) ← DO NOT TOUCH
 | Agent | Scope | Files | Status | Progress |
 |-------|-------|-------|--------|----------|
 | **Foundation** | Shared CSS/JS | 3 new | ✅ Done | 3/3 |
-| **Agent 1** | `index.html`, `year1-4.html` | 5 files | ⬜ Not started | 0/5 |
+| **Agent 1** | `index.html`, `year1-4.html` | 5 files | ✅ Done | 5/5 |
 | **Agent 2** | `resources.html` | 1 file (317KB) | ⬜ Not started | 0/1 |
 | **Agent 3** | Calculus pages + `math-style.css` | 20 files + 1 new | ⬜ Not started | 0/20 |
 | **Agent 4** | Subject pages + Wiki | 10 + wiki/* | ⬜ Not started | 0/10 |
@@ -48,14 +48,14 @@ main (production) ← DO NOT TOUCH
 ### Agent 1 — Navigation Pages
 > Task file: `context/audit-refactor/TASK_1_NAVIGATION.md`
 
-- [ ] 1.1 — Link shared assets to all 5 files
-- [ ] 1.2 — CSS deduplication (remove inline `:root`, body, nav-back, etc.)
-- [ ] 1.3 — Accessibility (meta desc, semantic buttons, ARIA, favicon)
-- [ ] 1.4 — Typography (remove gradient text, fix btn-primary/secondary)
-- [ ] 1.5 — Visual verification
+- [x] 1.1 — Link shared assets to all 5 files
+- [x] 1.2 — CSS deduplication (remove inline `:root`, body, nav-back, etc.)
+- [x] 1.3 — Accessibility (meta desc, semantic buttons, ARIA, favicon)
+- [x] 1.4 — Typography (remove gradient text, fix btn-primary/secondary)
+- [x] 1.5 — Visual verification
 
 **Notes from agent**:
-> _(agent writes status notes here)_
+> All tasks complete. Removed gradient from h1 headers and extracted common styling. Year 2-4 placeholder pages are also converted to global styles.
 
 ### Agent 2 — Resources Library
 > Task file: `context/audit-refactor/TASK_2_RESOURCES.md`

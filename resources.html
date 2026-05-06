@@ -10,24 +10,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="icon" href="assets/online.png" type="image/png">
+    <meta name="description" content="Curated CS video tutorials and resources — categorized by subject for CS & IT students.">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="icon" href="assets/online.png" type="image/png">
+    <meta name="description" content="Curated CS video tutorials and resources — categorized by subject for CS & IT students.">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #111111;
-            --panel-bg: #0f0f0f;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-color: #00c288;
-            --accent-dim: rgba(0, 194, 136, 0.08);
-            --border-color: #333333;
-            --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: "JetBrains Mono", monospace;
-
             --sidebar-width: 280px;
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         body {
@@ -145,12 +136,6 @@
         .content-section.active {
             display: block;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(5px);
-            }
 
             to {
                 opacity: 1;
@@ -585,7 +570,7 @@
     <div id="mobile-overlay" class="mobile-overlay" onclick="toggleMobileMenu()"></div>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <div class="drawer-header">
             <span class="drawer-title" style="color: var(--accent-color); font-weight: 800;">Browse Topics</span>
             <button class="close-drawer" onclick="toggleMobileMenu()">&times;</button>
@@ -598,7 +583,7 @@
     <div class="top-nav">
         <a href="index.html" class="nav-back">&larr; Back</a>
         <h1 class="page-title">Resources Library</h1>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <button class="mobile-menu-btn" aria-label="Open topic menu" aria-expanded="false" onclick="toggleMobileMenu()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
     </div>
@@ -610,29 +595,29 @@
             <div class="sidebar-group">
                 <div class="sidebar-title">Library Topics</div>
                 <div class="nav-item active" onclick="showSection('intro-to-cs', this)">Introduction to CS</div>
-                <div class="nav-item" onclick="showSection('computer-applications', this)">Computer Applications</div>
-                <div class="nav-item" onclick="showSection('discrete-mathematics', this)">Discrete Mathematics</div>
-                <div class="nav-item" onclick="showSection('principles-of-programming', this)">Principles of Programming
-                </div>
-                <div class="nav-item" onclick="showSection('intro-to-databases', this)">Introduction to Databases</div>
-                <div class="nav-item" onclick="showSection('computer-architecture-maintenance', this)">Computer
-                    Maintenance</div>
-                <div class="nav-item" onclick="showSection('software-engineering', this)">Software Engineering</div>
-                <div class="nav-item" onclick="showSection('data-structures-algorithms', this)">Data Structures &amp;
-                    Algorithms</div>
-                <div class="nav-item" onclick="showSection('networks', this)">Networks</div>
-                <div class="nav-item" onclick="showSection('operating-systems', this)">Operating Systems</div>
-                <div class="nav-item" onclick="showSection('ai-prompt-engineering', this)">AI &amp; Prompt Engineering
-                </div>
-                <div class="nav-item" onclick="showSection('cybersecurity-specialization', this)">Cybersecurity</div>
-                <div class="nav-item" onclick="showSection('java-tutorials', this)">Java (Advanced)</div>
-                <div class="nav-item" onclick="showSection('calculus', this)">Calculus</div>
+                <button class="nav-item" type="button" onclick="showSection('computer-applications', this)">Computer Applications</button>
+                <button class="nav-item" type="button" onclick="showSection('discrete-mathematics', this)">Discrete Mathematics</button>
+                <button class="nav-item" type="button" onclick="showSection('principles-of-programming', this)">Principles of Programming
+                </button>
+                <button class="nav-item" type="button" onclick="showSection('intro-to-databases', this)">Introduction to Databases</button>
+                <button class="nav-item" type="button" onclick="showSection('computer-architecture-maintenance', this)">Computer
+                    Maintenance</button>
+                <button class="nav-item" type="button" onclick="showSection('software-engineering', this)">Software Engineering</button>
+                <button class="nav-item" type="button" onclick="showSection('data-structures-algorithms', this)">Data Structures &amp;
+                    Algorithms</button>
+                <button class="nav-item" type="button" onclick="showSection('networks', this)">Networks</button>
+                <button class="nav-item" type="button" onclick="showSection('operating-systems', this)">Operating Systems</button>
+                <button class="nav-item" type="button" onclick="showSection('ai-prompt-engineering', this)">AI &amp; Prompt Engineering
+                </button>
+                <button class="nav-item" type="button" onclick="showSection('cybersecurity-specialization', this)">Cybersecurity</button>
+                <button class="nav-item" type="button" onclick="showSection('java-tutorials', this)">Java (Advanced)</button>
+                <button class="nav-item" type="button" onclick="showSection('calculus', this)">Calculus</button>
             </div>
 
         </aside>
 
         <!-- CONTENT AREA -->
-        <main class="content">
+        <main class="content" aria-label="Resource content">
 
             <!-- Intro to CS -->
             <section id="intro-to-cs" class="content-section active">
@@ -669,13 +654,12 @@
                         <div class="resource-info">
                             <h3>coding is easy, actually</h3>
                             <p>coding is easy, actually</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=qkFYqY3vr84" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCY6VZZo9MZCyIIozTs0khNA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ easy,
+                                class="channel-link" rel="noopener noreferrer">↗ easy,
                                 actually</a>
                         </div>
                     </article>
@@ -691,13 +675,12 @@
                                 https://brilliant.org/dos
 
                                 Computer science is the subject that studies w...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=SzJ46YA_RaA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCxqAWLTk1CmBvZFPzeZMd9A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Domain of
+                                class="channel-link" rel="noopener noreferrer">↗ Domain of
                                 Science</a>
                         </div>
                     </article>
@@ -711,13 +694,12 @@
                             <h3>Harvard CS50 – Full Computer Science University Course</h3>
                             <p>Learn the basics of computer science from Harvard University. This is CS50, an
                                 introduction to the intellectual enterprises of computer science and th...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=8mAITcNt710" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -730,13 +712,12 @@
                         <div class="resource-info">
                             <h3>What is Computer Science?</h3>
                             <p>What is Computer Science?</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=OAx_6-wdslM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Code.org</a>
                         </div>
                     </article>
@@ -750,13 +731,12 @@
                             <h3>Early Computing: Crash Course Computer Science #1</h3>
                             <p>Hello, world! Welcome to Crash Course Computer Science! So today, we’re going to take a
                                 look at computing’s origins, because even though our digital c...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 CrashCourse</a>
                         </div>
                     </article>
@@ -770,13 +750,12 @@
                             <h3>100+ Computer Science Concepts Explained</h3>
                             <p>Learn the fundamentals of Computer Science with a quick breakdown of jargon that every
                                 software engineer should know. Over 100 technical concepts from...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=-uleG_Vecis" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -789,9 +768,9 @@
               <div class="resource-info">
                 <h3>Integrated Rate Laws - Zero, First, &amp; Second Order Reactions - Chemical Kinetics</h3>
                 <p>Integrated Rate Laws - Zero, First, & Second Order Reactions - Chemical Kinetics</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=7I0Xg92_eA4" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -813,13 +792,12 @@
                         <div class="resource-info">
                             <h3>How CPUs Interact with So Many Different Devices</h3>
                             <p>How CPUs Interact with So Many Different Devices</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=tadUeiNe5-g" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCGKEMK3s-ZPbjVOIuAV8clQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Core
+                                class="channel-link" rel="noopener noreferrer">↗ Core
                                 Dumped</a>
                         </div>
                     </article>
@@ -832,13 +810,12 @@
                         <div class="resource-info">
                             <h3>Why Some Low-Level Projects Are Full of Weird Code Like This</h3>
                             <p>Why Some Low-Level Projects Are Full of Weird Code Like This</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=z7wVUfnm7M0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCGKEMK3s-ZPbjVOIuAV8clQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Core
+                                class="channel-link" rel="noopener noreferrer">↗ Core
                                 Dumped</a>
                         </div>
                     </article>
@@ -855,13 +832,12 @@
                                 https://geni.us/aryiquT
 
                                 We’ve done plenty of build guides before – ...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=BL4DCEp7blY" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Linus Tech
+                                class="channel-link" rel="noopener noreferrer">↗ Linus Tech
                                 Tips</a>
                         </div>
                     </article>
@@ -874,13 +850,12 @@
                         <div class="resource-info">
                             <h3>The First 5 Things to Do with a New PC Build</h3>
                             <p>The First 5 Things to Do with a New PC Build</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=LbpqkvaCLKE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Paul's
+                                class="channel-link" rel="noopener noreferrer">↗ Paul's
                                 Hardware</a>
                         </div>
                     </article>
@@ -893,13 +868,12 @@
                         <div class="resource-info">
                             <h3>How to Clean Your PC the Right Way</h3>
                             <p>How to Clean Your PC the Right Way</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=12Cj9R-yGjM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 JayzTwoCents</a>
                         </div>
                     </article>
@@ -912,13 +886,12 @@
                         <div class="resource-info">
                             <h3>Thermal Paste Application Techniques</h3>
                             <p>Thermal Paste Application Techniques</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=EUWVVNmF5oQ" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Gamers
+                                class="channel-link" rel="noopener noreferrer">↗ Gamers
                                 Nexus</a>
                         </div>
                     </article>
@@ -931,13 +904,12 @@
                         <div class="resource-info">
                             <h3>Troubleshooting a PC That Won't Turn On</h3>
                             <p>Troubleshooting a PC That Won't Turn On</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=zJgEty8Miyk" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Greg
+                                class="channel-link" rel="noopener noreferrer">↗ Greg
                                 Salazar</a>
                         </div>
                     </article>
@@ -959,13 +931,12 @@
                         <div class="resource-info">
                             <h3>How Does Linux Boot Process Work?</h3>
                             <p>Walk through every stage of the Linux boot process, from BIOS/UEFI to the user shell.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=XpFsMB6FoOs" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -980,13 +951,12 @@
                         <div class="resource-info">
                             <h3>The Weirdest Bug in Programming - Race Conditions</h3>
                             <p>The Weirdest Bug in Programming - Race Conditions</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=bhpzTWtee2A" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCGKEMK3s-ZPbjVOIuAV8clQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Core
+                                class="channel-link" rel="noopener noreferrer">↗ Core
                                 Dumped</a>
                         </div>
                     </article>
@@ -1001,13 +971,12 @@
                         <div class="resource-info">
                             <h3>It took me 10+ years to realize what I’ll tell you in 8 minutes</h3>
                             <p>It took me 10+ years to realize what I’ll tell you in 8 minutes</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=RGaW82k4dK4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCPhyA52nHlW3L6r-7sDfcyg" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Web
+                                class="channel-link" rel="noopener noreferrer">↗ Web
                                 Developete</a>
                         </div>
                     </article>
@@ -1020,13 +989,12 @@
                         <div class="resource-info">
                             <h3>How I'd learn to code if I had to start over</h3>
                             <p>How I'd learn to code if I had to start over</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=3V5LaqHqh4c" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCfbNkHkjYUjRGV67vVCOVsQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Catherine
+                                class="channel-link" rel="noopener noreferrer">↗ Catherine
                                 Li</a>
                         </div>
                     </article>
@@ -1039,13 +1007,12 @@
                         <div class="resource-info">
                             <h3>Operating Systems Crash Course</h3>
                             <p>Operating Systems Crash Course</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=26QPDBe-CE8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 CrashCourse</a>
                         </div>
                     </article>
@@ -1059,13 +1026,12 @@
                             <h3>Linux Operating System - Crash Course</h3>
                             <p>If you're new to Linux, this beginner's course is for you. You'll learn many of the tools
                                 used every day by both Linux SysAdmins and the millions of p...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=sWbUDq4S6Y8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1079,13 +1045,12 @@
                             <h3>Virtual Memory Explained</h3>
                             <p>Interactive lecture at http://test.scalable-learning.com, enrollment key YRLRX-25436.
                                 What is virtual memory? Indirection between the program's addres...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=qlH4-oHnBb8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCzf_XjIoKSf4Ve2fH7xn-3A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -1098,13 +1063,12 @@
                         <div class="resource-info">
                             <h3>Deadlock in Operating Systems</h3>
                             <p>Deadlock in Operating Systems</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=r8pzJiikBh4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Neso
+                                class="channel-link" rel="noopener noreferrer">↗ Neso
                                 Academy</a>
                         </div>
                     </article>
@@ -1120,13 +1084,12 @@
 
                                 Checkout our bestselling System Design Interview books:
                                 Volume 1: https://a...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=4rLW7zg21gI" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1149,13 +1112,12 @@
                             <h3>Build a CRM with Google Sheets + PostgreSQL + Stripe API Tutorial (Ecommerce Course)
                             </h3>
                             <p>Build a CRM with Google Sheets + PostgreSQL + Stripe API Tutorial (Ecommerce Course)</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=erka8USiBgM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1200,13 +1162,12 @@
                             <h3>Introduction to Database Management Systems</h3>
                             <p>Introduction to Database Management Systems — solid foundation for the Intro to Databases
                                 course.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=6Iu45VZGQDk" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCQYMhOMi_Cdj1CEAU-fv80A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Neso
+                                class="channel-link" rel="noopener noreferrer">↗ Neso
                                 Academy</a>
                         </div>
                     </article>
@@ -1219,13 +1180,12 @@
                         <div class="resource-info">
                             <h3>Django Project – Code a CRM App Tutorial</h3>
                             <p>Django Project – Code a CRM App Tutorial</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=t10QcFx7d5k" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1239,13 +1199,12 @@
                         <div class="resource-info">
                             <h3>PC Maintenance Basics: Disassemble, Reassemble &amp; Identify Components | Module 1</h3>
                             <p>Hands-on guide to disassembling, reassembling, and identifying PC components.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=VlLlEAUHCLw" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCmwKbQN5A3yZGYrtzSbzO8g" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Joseph
+                                class="channel-link" rel="noopener noreferrer">↗ Joseph
                                 H.Schuessler</a>
                         </div>
                     </article>
@@ -1257,13 +1216,12 @@
                         <div class="resource-info">
                             <h3>How To Keep Windows Running Smoothly With Routine Maintenance</h3>
                             <p>Routine Windows maintenance tasks to keep your system fast and stable.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=5AC4-uM56p0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCIcDD_2ewPpM6dk9rZlHEBA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Ask
+                                class="channel-link" rel="noopener noreferrer">↗ Ask
                                 Leo!</a>
                         </div>
                     </article>
@@ -1280,13 +1238,12 @@
                         <div class="resource-info">
                             <h3>How Real Projects Mix Compiled and Interpreted Languages</h3>
                             <p>How Real Projects Mix Compiled and Interpreted Languages</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=RnBOOF502p0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCGKEMK3s-ZPbjVOIuAV8clQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Core
+                                class="channel-link" rel="noopener noreferrer">↗ Core
                                 Dumped</a>
                         </div>
                     </article>
@@ -1302,13 +1259,12 @@
                         <div class="resource-info">
                             <h3>How to OVER Engineer a Website // What is a Tech Stack?</h3>
                             <p>How to OVER Engineer a Website // What is a Tech Stack?</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Sxxw3qtb3_g" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -1325,13 +1281,12 @@
 
                                 🔥 Ready for a deep dive?
                                 - Check out my full...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=8JJ101D3knE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Programming
+                                class="channel-link" rel="noopener noreferrer">↗ Programming
                                 with Mosh</a>
                         </div>
                     </article>
@@ -1344,13 +1299,12 @@
                         <div class="resource-info">
                             <h3>Bash Scripting Tutorial for Beginners</h3>
                             <p>Bash Scripting Tutorial for Beginners</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=tK9Oc6AEnYA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1364,13 +1318,12 @@
                             <h3>Docker in 100 Seconds</h3>
                             <p>🐳 Docker is a required skill for almost every developer in today's world. Learn the
                                 basics of Dockerfiles, images, and containers in 100 seconds. http...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Gjnup-PuquQ" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -1383,13 +1336,12 @@
                         <div class="resource-info">
                             <h3>Vim Tutorial for Beginners</h3>
                             <p>Vim Tutorial for Beginners</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ImaWp9SgoO8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1405,13 +1357,12 @@
                                 Most of the content applies to Google Sheets as well.
 
                                 You will ...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Vl0H-qTclOg" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Kevin
+                                class="channel-link" rel="noopener noreferrer">↗ Kevin
                                 Stratvert</a>
                         </div>
                     </article>
@@ -1492,13 +1443,12 @@
                             <h3>Kubernetes Explained in 6 Minutes | k8s Architecture</h3>
                             <p>Container orchestration fundamentals — key infrastructure concept for software engineers.
                             </p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=TlHvYWVUZyc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1511,13 +1461,12 @@
                             <h3>System Design: Why is Kafka fast?</h3>
                             <p>Message queue architecture and why event-driven systems choose Kafka for high throughput.
                             </p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=UNUz1-msbOM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1529,13 +1478,12 @@
                         <div class="resource-info">
                             <h3>Top 6 Most Popular API Architecture Styles</h3>
                             <p>Overview of REST, GraphQL, gRPC, WebSocket, and four other major API design patterns.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=4vLxWqE94l4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1548,13 +1496,12 @@
                             <h3>What Is REST API? Examples And How To Use It: Crash Course System Design #3</h3>
                             <p>Crash course on REST API design with real-world examples and how HTTP verbs map to
                                 operations.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=-mN3VyJuCjM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1568,13 +1515,12 @@
                                 Discord, Slack)</h3>
                             <p>Full system design interview walkthrough: building a scalable real-time chat platform.
                             </p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Advanced</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=okrR1KXNLtA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1589,13 +1535,12 @@
                                 Events</h3>
                             <p>Unlock the Power of Event-Driven Architecture: How Netflix & Uber Handle Billions of
                                 Events</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=hrvx8Nv9eQA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCzCsyvyrq38R6TnztEzOmgg" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteMonk</a>
                         </div>
                     </article>
@@ -1610,13 +1555,12 @@
                         <div class="resource-info">
                             <h3>Software Engineering Full Course</h3>
                             <p>Software Engineering Full Course</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Oqj571aXQjM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -1629,13 +1573,12 @@
                         <div class="resource-info">
                             <h3>Microservices vs Monoliths</h3>
                             <p>Microservices vs Monoliths</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=1xo-0gCVhCU" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1648,13 +1591,12 @@
                         <div class="resource-info">
                             <h3>What is Agile?</h3>
                             <p>What is Agile?</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Z9QbYZh1YmE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 AgileDad</a>
                         </div>
                     </article>
@@ -1667,13 +1609,12 @@
                         <div class="resource-info">
                             <h3>DevOps Explained</h3>
                             <p>DevOps Explained</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=_I9MQ9X25rQ" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                class="channel-link" rel="noopener noreferrer">↗ IBM
                                 Technology</a>
                         </div>
                     </article>
@@ -1686,13 +1627,12 @@
                         <div class="resource-info">
                             <h3>CI/CD Pipeline Explained in 100 Seconds</h3>
                             <p>CI/CD Pipeline Explained in 100 Seconds</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=scEDHlsUOkA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -1705,13 +1645,12 @@
                         <div class="resource-info">
                             <h3>System Design Interview Crash Course</h3>
                             <p>System Design Interview Crash Course</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=i53Gi_TJXj4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -1762,13 +1701,12 @@
                         <div class="resource-info">
                             <h3>Discrete Math Book for Beginners</h3>
                             <p>Discrete Math Book for Beginners</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=1bC8xP0mGZ8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Math
+                                class="channel-link" rel="noopener noreferrer">↗ The Math
                                 Sorcerer</a>
                         </div>
                     </article>
@@ -1783,13 +1721,12 @@
                             <p>We introduce the basics of set theory and do some practice problems.
 
                                 This video is an updated version of the original video released over two years a...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=tyDKR4FG3Yw" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCGYSfZbPp3BiAFs531PBY7g" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 TrevTutor</a>
                         </div>
                     </article>
@@ -1802,13 +1739,12 @@
                         <div class="resource-info">
                             <h3>Logic Gates, Truth Tables, Boolean Algebra</h3>
                             <p>Logic Gates, Truth Tables, Boolean Algebra</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=JQBRqk8UcUc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic
+                                class="channel-link" rel="noopener noreferrer">↗ The Organic
                                 Chemistry Tutor</a>
                         </div>
                     </article>
@@ -1821,13 +1757,12 @@
                         <div class="resource-info">
                             <h3>Introduction to Sets</h3>
                             <p>Introduction to Sets</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=B7b72w8_0Fk" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic
+                                class="channel-link" rel="noopener noreferrer">↗ The Organic
                                 Chemistry Tutor</a>
                         </div>
                     </article>
@@ -1843,13 +1778,12 @@
 
                                 Support me by purchasing the full graph theory playlist on Udemy. This version offers
                                 additional problems, exerc...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=DgXR2OWQnLc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 WilliamFiset</a>
                         </div>
                     </article>
@@ -1961,13 +1895,12 @@
                         <div class="resource-info">
                             <h3>Why C is so Influential - Computerphile</h3>
                             <p>How C shaped modern programming — invaluable context for any CS student.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ci1PJexnfNE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -1980,13 +1913,12 @@
                             <h3>"C" Programming Language: Brian Kernighan - Computerphile</h3>
                             <p>Brian Kernighan (co-author of K&R C) talks about the language that changed programming
                                 history.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">General</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=de2Hsvxaf8M" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -1999,13 +1931,12 @@
                         <div class="resource-info">
                             <h3>The pain of becoming yourself</h3>
                             <p>The pain of becoming yourself</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=QYAnJ_QyCQg" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCl1E5-Fm5q7VB4dKbbDyIOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Alastair</a>
                         </div>
                     </article>
@@ -2018,13 +1949,12 @@
                         <div class="resource-info">
                             <h3>(Re-Air) Build a Custom CRM || Full App build</h3>
                             <p>(Re-Air) Build a Custom CRM || Full App build</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=m2WZh0pCrPM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCpUqfy0-plYV7OAno2Hohug" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ AppSheet
+                                class="channel-link" rel="noopener noreferrer">↗ AppSheet
                                 Training</a>
                         </div>
                     </article>
@@ -2041,13 +1971,12 @@
 
                                 ❤️ Join this channel to get access to perks:
                                 htt...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=pTB0EiLXUC8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Programming
+                                class="channel-link" rel="noopener noreferrer">↗ Programming
                                 with Mosh</a>
                         </div>
                     </article>
@@ -2060,13 +1989,12 @@
                         <div class="resource-info">
                             <h3>SOLID Principles in Programming</h3>
                             <p>SOLID Principles in Programming</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=UoqTOO_OUxI" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Web Dev
+                                class="channel-link" rel="noopener noreferrer">↗ Web Dev
                                 Simplified</a>
                         </div>
                     </article>
@@ -2089,13 +2017,12 @@
                                 http://2017.jsconf.eu/speakers/anjana-vakil-immutable-data-structures-for-functional-js.html
 
                                 Slides: https://...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=e-5obm1G_FY" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCzoVCacndDCfGDf41P-z0iA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -2110,13 +2037,12 @@
                             <p>↓↓ ENGLISH DESCRIPTION ↓↓
                                 "Coding Better World Together" is a set of master lessons from the famous Uncle Bob
                                 (Robert Cecil Martin), where he gives us...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=7EmboKQH8lM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCWFcVR9ULVRZ5UeweZPOTbQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Unity
+                                class="channel-link" rel="noopener noreferrer">↗ Unity
                                 Coin</a>
                         </div>
                     </article>
@@ -2143,13 +2069,12 @@
                                 RDBMS.
 
                                 The course is designed for beginners to SQL and databa...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2165,13 +2090,12 @@
                                 deeper grasp of database design.
 
                                 Database design is the organi...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ztHopE5Wnpc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2185,13 +2109,12 @@
                             <h3>Relational Databases vs NoSQL Databases</h3>
                             <p>In this video, I talk about the difference between SQL and NoSQL. I talk about the main
                                 features of both technologies categorized by Structure, Storag...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ruz-vK8IesE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCraiFqWi0qSIxXxXN4IHFBQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -2207,13 +2130,12 @@
                                 old, the world's most popular databases still run on SQL.
 
                                 For...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=zsjvFFKOm3c" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -2227,13 +2149,12 @@
                             <h3>What is a Database?</h3>
                             <p>This database tutorial will help beginners understand the basics of database management
                                 systems. We use helpful analogies to explain a high-level over...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=wR0jg0eQsZA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCnd94o169CbOIJyiEUkTL2A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                class="channel-link" rel="noopener noreferrer">↗ IBM
                                 Technology</a>
                         </div>
                     </article>
@@ -2271,13 +2192,12 @@
                             <h3>Data Structures Easy to Advanced Course</h3>
                             <p>Learn and master the most common data structures in this full course from Google engineer
                                 William Fiset. This course teaches data structures to beginn...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Advanced</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=RBSGKlAvoiM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 WilliamFiset</a>
                         </div>
                     </article>
@@ -2291,13 +2211,12 @@
                             <h3>Algorithms and Data Structures Tutorial</h3>
                             <p>In this course you will learn about algorithms and data structures, two of the
                                 fundamental topics in computer science. There are three main parts to t...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=8hly31xKli0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2310,13 +2229,12 @@
                         <div class="resource-info">
                             <h3>Big O Notation - Full Course</h3>
                             <p>Big O Notation - Full Course</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Mo4vwq-rmZ8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2330,13 +2248,12 @@
                             <h3>Dynamic Programming - Learn to Solve Algorithmic Problems</h3>
                             <p>Learn how to use Dynamic Programming in this course for beginners. It can help you solve
                                 complex programming problems, such as those often seen in pro...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=oBt53YbR9Kk" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2352,13 +2269,12 @@
                                 http://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
                                 In this lesson, we have discusse...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=pYT9F8_LFTM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ CS Dojo</a>
+                                class="channel-link" rel="noopener noreferrer">↗ CS Dojo</a>
                         </div>
                     </article>
 
@@ -2371,13 +2287,12 @@
                             <h3>Graph Algorithms Crash Course</h3>
                             <p>Prepare for a technical interview by learning about the graph data structure and basic
                                 traversal algorithms like depth-first search (DFS) and breadth-...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=cWNEl4HE2OE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -2414,13 +2329,12 @@
                         <div class="resource-info">
                             <h3>SSL, TLS, HTTPS Explained</h3>
                             <p>How SSL and TLS secure data in transit — essential networking and security knowledge.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=j9QmMEWmcfo" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -2435,13 +2349,12 @@
                             <h3>Computer Networking Course - Network Engineering</h3>
                             <p>This full college-level computer networking course will prepare you to configure, manage,
                                 and troubleshoot computer networks. It will also help you pr...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=qiQR5rTSshw" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2455,13 +2368,12 @@
                             <h3>OSI Model Explained</h3>
                             <p>Learn computer network layers or OSI layers in a computer network, OSI Model, OSI
                                 reference model or open system interconnection model or networking m...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=vv4y_uOneC0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCY_dQTuD3MjtuQwYuy6xdag" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 NetworkChuck</a>
                         </div>
                     </article>
@@ -2475,13 +2387,12 @@
                             <h3>How the Internet Works in 5 Minutes</h3>
                             <p>Check out my new book, How to Prepare for Everything: www.howtoprepare.com!
                                 The internet is not a fuzzy cloud. The internet is a wire, actually buried...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCo_81kKe5qkF0JVsUaJ6fYQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Aaron</a>
+                                class="channel-link" rel="noopener noreferrer">↗ Aaron</a>
                         </div>
                     </article>
 
@@ -2494,13 +2405,12 @@
                             <h3>Subnetting Mastery</h3>
                             <p>This video will teach you the basics of subnetting. Every Subnetting problem will ask you
                                 to solve for one or more of seven possible attributes: Netwo...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=BWZ-MHIhqjM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCKmU-GKiukM8LYjkJFb8oBQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 NetworkChuck</a>
                         </div>
                     </article>
@@ -2543,13 +2453,12 @@
                         <div class="resource-info">
                             <h3>Coding Agents Explained: How Claude Code, Codex &amp; Cursor Actually Work</h3>
                             <p>How AI coding agents like Claude Code and Cursor actually work under the hood.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Advanced</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=nvGqzQ47FTM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC5mEvNHnfRNuDivuXiCPiZA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteAI</a>
                         </div>
                     </article>
@@ -2561,13 +2470,12 @@
                         <div class="resource-info">
                             <h3>Vibe Coding Fundamentals In 23 minutes</h3>
                             <p>Vibe Coding Fundamentals In 23 minutes</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=-hcNCVpW3uA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCiGWNa6QK6CiKPvv5-YPv8g" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Sabrina
+                                class="channel-link" rel="noopener noreferrer">↗ Sabrina
                                 Ramonov 🍄</a>
                         </div>
                     </article>
@@ -2579,13 +2487,12 @@
                         <div class="resource-info">
                             <h3>Prompt Engineering Tutorial – Master ChatGPT and LLM Responses</h3>
                             <p>Prompt Engineering Tutorial – Master ChatGPT and LLM Responses</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=_ZvnD73m40o" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2597,13 +2504,12 @@
                         <div class="resource-info">
                             <h3>You’re Not Behind (Yet): How to Learn AI in 29 Minutes</h3>
                             <p>You’re Not Behind (Yet): How to Learn AI in 29 Minutes</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=9c7zh2MkslY" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC_RovKmk0OCbuZjA8f08opw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Futurepedia</a>
                         </div>
                     </article>
@@ -2615,13 +2521,12 @@
                         <div class="resource-info">
                             <h3>You’re not behind (yet): How to learn AI in 18 minutes</h3>
                             <p>You’re not behind (yet): How to learn AI in 18 minutes</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=0Tch0N5nsRU" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCA-mWX9CvCTVFWRMb9bKc9w" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Dan
+                                class="channel-link" rel="noopener noreferrer">↗ Dan
                                 Martell</a>
                         </div>
                     </article>
@@ -2633,13 +2538,12 @@
                         <div class="resource-info">
                             <h3>AI Agents, Clearly Explained</h3>
                             <p>AI Agents, Clearly Explained</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=FwOTs4UxQS4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCwAnu01qlnVg1Ai2AbtTMaA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Jeff Su</a>
+                                class="channel-link" rel="noopener noreferrer">↗ Jeff Su</a>
                         </div>
                     </article>
                     <article class="resource-card">
@@ -2650,13 +2554,12 @@
                         <div class="resource-info">
                             <h3>CLAUDE CODE FULL COURSE 4 HOURS: Build &amp; Sell (2026)</h3>
                             <p>CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=QoQBzR1NIqI" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCbo-KbSjJDG6JWQ_MTZ_rNA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Nick
+                                class="channel-link" rel="noopener noreferrer">↗ Nick
                                 Saraev</a>
                         </div>
                     </article>
@@ -2668,13 +2571,12 @@
                         <div class="resource-info">
                             <h3>Google's 9 Hour AI Prompt Engineering Course In 20 Minutes</h3>
                             <p>Google's 9 Hour AI Prompt Engineering Course In 20 Minutes</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=p09yRj47kNM" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC2UXDak6o7rBm23k3Vv5dww" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Tina
+                                class="channel-link" rel="noopener noreferrer">↗ Tina
                                 Huang</a>
                         </div>
                     </article>
@@ -2687,13 +2589,12 @@
                         <div class="resource-info">
                             <h3>ChatGPT Prompt Engineering for Developers</h3>
                             <p>ChatGPT Prompt Engineering for Developers</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=jC4v5AS4ART" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 DeepLearning.AI</a>
                         </div>
                     </article>
@@ -2706,13 +2607,12 @@
                         <div class="resource-info">
                             <h3>Neural Networks from Scratch</h3>
                             <p>Neural Networks from Scratch</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=Wo5dCEP_mA4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Sentdex</a>
+                                class="channel-link" rel="noopener noreferrer">↗ Sentdex</a>
                         </div>
                     </article>
 
@@ -2725,13 +2625,12 @@
                             <h3>Transformer Models Explained</h3>
                             <p>Transformer Neural Networks are the heart of pretty much everything exciting in AI right
                                 now. ChatGPT, Google Translate and many other cool things, ar...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=zxQyTK8quyY" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 StatQuest</a>
                         </div>
                     </article>
@@ -2746,13 +2645,12 @@
                             <p>How do language models like GPT and Palm work?
                                 Part 1: https://youtu.be/lnA9DMvHtfI
                                 See next: text-to-image (Parti, Imagen, Dall-E): https://yout...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=YDiSFS-yHwk" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC4r_gpcPz3Us9pmeGDjw_Rg" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ IBM
+                                class="channel-link" rel="noopener noreferrer">↗ IBM
                                 Technology</a>
                         </div>
                     </article>
@@ -2765,13 +2663,12 @@
                         <div class="resource-info">
                             <h3>AutoGPT and AI Agents Explained</h3>
                             <p>AutoGPT and AI Agents Explained</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ifk_qYmb84w" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -2784,13 +2681,12 @@
                         <div class="resource-info">
                             <h3>Machine Learning in 100 Seconds</h3>
                             <p>Machine Learning in 100 Seconds</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=PeMlgcqA004" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Fireship</a>
                         </div>
                     </article>
@@ -2829,13 +2725,12 @@
                             <h3>OAuth 2 Explained In Simple Terms</h3>
                             <p>Clear explanation of OAuth 2.0 — the standard behind "Login with Google/Facebook" flows.
                             </p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=ZV5yTm4pT8g" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -2848,13 +2743,12 @@
                             <h3>How NOT to Store Passwords! - Computerphile</h3>
                             <p>Why plain-text and simple-hash password storage is dangerous — and the secure
                                 alternatives.</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Intermediate</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=8ZtInClXe1Q" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -2869,13 +2763,12 @@
                             <h3>Cybersecurity for Beginners</h3>
                             <p>In this complete cyber security course you will learn everything you need in order to
                                 understand cyber security in depth. You will learn all the termi...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=U_P23SqJaDc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCq8JbYayUHvKvjimPV0TCqQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -2889,13 +2782,12 @@
                             <h3>Ethical Hacking 101</h3>
                             <p>Learn network penetration testing / ethical hacking in this full tutorial course for
                                 beginners. This course teaches everything you need to know to get...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=3Kq1MIfTWCE" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 NetworkChuck</a>
                         </div>
                     </article>
@@ -2909,13 +2801,12 @@
                             <h3>Encryption and Public Keys</h3>
                             <p>Spies used to meet in the park to exchange code words, now things have moved on - Robert
                                 Miles explains the principle of Public/Private Key Cryptograp...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=GSIDS_lvRv4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -2933,13 +2824,12 @@
 
                                 🔗 Links
                                 ✨ XSS Game: https://xss.pwnfunction....</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=EoaDgUgS6QA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCW6MNdOsqv2E9AjQkv9we7A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 PwnFunction</a>
                         </div>
                     </article>
@@ -2953,13 +2843,12 @@
                             <h3>SQL Injection Explained</h3>
                             <p>Websites can still be hacked using SQL injection - Tom explains how sites written in PHP
                                 (and other languages too) can be vulnerable and have basic se...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=_jKylhJtPmI" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Computerphile</a>
                         </div>
                     </article>
@@ -2972,13 +2861,12 @@
                         <div class="resource-info">
                             <h3>How VPNs Actually Work</h3>
                             <p>How VPNs Actually Work</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=GkXk8EwS4uU" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ByteByteGo</a>
                         </div>
                     </article>
@@ -3977,13 +3865,12 @@
                         <div class="resource-info">
                             <h3>Learn Java in 15 Minutes (seriously)</h3>
                             <p>Learn Java in 15 Minutes (seriously)</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=b5l5UodFzMo" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC2WHjPDvbE6O328n17ZGcfg" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 ForrestKnight</a>
                         </div>
                     </article>
@@ -3996,13 +3883,12 @@
                         <div class="resource-info">
                             <h3>Introduction to Java Programming</h3>
                             <p>Introduction to Java Programming</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=mG4NLNZ37y4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCQYMhOMi_Cdj1CEAU-fv80A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Neso
+                                class="channel-link" rel="noopener noreferrer">↗ Neso
                                 Academy</a>
                         </div>
                     </article>
@@ -4015,13 +3901,12 @@
                         <div class="resource-info">
                             <h3>Anatomy of Java Program</h3>
                             <p>Anatomy of Java Program</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=vsxYucdzimA" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UCQYMhOMi_Cdj1CEAU-fv80A" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Neso
+                                class="channel-link" rel="noopener noreferrer">↗ Neso
                                 Academy</a>
                         </div>
                     </article>
@@ -4034,13 +3919,12 @@
                         <div class="resource-info">
                             <h3>Java Multithreading</h3>
                             <p>Java Multithreading</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=1HphkIWK9C8" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Cave of
+                                class="channel-link" rel="noopener noreferrer">↗ Cave of
                                 Programming</a>
                         </div>
                     </article>
@@ -4053,13 +3937,12 @@
                         <div class="resource-info">
                             <h3>Java Collections Framework</h3>
                             <p>Java Collections Framework</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=viZWJqD_WAs" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Telusko</a>
+                                class="channel-link" rel="noopener noreferrer">↗ Telusko</a>
                         </div>
                     </article>
 
@@ -4072,13 +3955,12 @@
                             <h3>Java Streams API Tutorial</h3>
                             <p>Functional programming in Java: tutorial on how to use Java 8 Streams filter, map, sort,
                                 reduce and collect functions. Lambda functions explained thro...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=t1-YZ6bF-g0" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC4Xt-DUAapAtkfaWWkv4OAw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 Amigoscode</a>
                         </div>
                     </article>
@@ -4092,13 +3974,12 @@
                             <h3>Spring Boot Tutorial for Beginners</h3>
                             <p>Spring Boot is an open source Java based framework used to spring boot microservices. It
                                 is developed by Pivotal Team and is used to build stand-alone...</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=9SGDpanrc8U" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="https://www.youtube.com/channel/UC2KfmYEM4KCuA1ZurravgYw" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗
+                                class="channel-link" rel="noopener noreferrer">↗
                                 freeCodeCamp.org</a>
                         </div>
                     </article>
@@ -4111,13 +3992,12 @@
                         <div class="resource-info">
                             <h3>Java Generics Tutorial</h3>
                             <p>Java Generics Tutorial</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=K1iu1kXkIqc" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Coding with
+                                class="channel-link" rel="noopener noreferrer">↗ Coding with
                                 John</a>
                         </div>
                     </article>
@@ -4130,13 +4010,12 @@
                         <div class="resource-info">
                             <h3>Memory Management in Java</h3>
                             <p>Memory Management in Java</p>
-                            <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span
+                            <div class="badge-row"><span><span class="badge">Video</span><span
                                         class="badge badge-neutral">Beginner</span></span></div>
                             <a class="play-btn" href="https://www.youtube.com/watch?v=cIqB-GqD3E4" target="_blank"
                                 rel="noopener noreferrer">► Play Video</a>
                             <a href="" target="_blank"
-                                style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ Defog
+                                class="channel-link" rel="noopener noreferrer">↗ Defog
                                 Tech</a>
                         </div>
                     </article>
@@ -4159,9 +4038,9 @@
               <div class="resource-info">
                 <h3>Basic Integration Rules &amp; Problems, Riemann Sum, Area, Sigma Notation, Fundamental Theorem, Calculus</h3>
                 <p>Basic Integration Rules & Problems, Riemann Sum, Area, Sigma Notation, Fundamental Theorem, Calculus</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=WDZMjYJyH6k" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4174,9 +4053,9 @@
               <div class="resource-info">
                 <h3>Calculus 1 - Integration &amp; Antiderivatives</h3>
                 <p>Calculus 1 - Integration & Antiderivatives</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=6WUjbJEeJwM" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4189,9 +4068,9 @@
               <div class="resource-info">
                 <h3>Basic Integration Problems</h3>
                 <p>Basic Integration Problems</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=zOxaUlRkFG0" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4204,9 +4083,9 @@
               <div class="resource-info">
                 <h3>Integration By Parts</h3>
                 <p>Integration By Parts</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=sWSLLO3DS1I" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec3.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Integration by Parts</a>
               </div>
             </article>
@@ -4219,9 +4098,9 @@
               <div class="resource-info">
                 <h3>How To Integrate Using U-Substitution</h3>
                 <p>How To Integrate Using U-Substitution</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=sdYdnpYn-1o" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec2.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Substitution</a>
               </div>
             </article>
@@ -4234,9 +4113,9 @@
               <div class="resource-info">
                 <h3>Indefinite Integral - Basic Integration Rules, Problems, Formulas, Trig Functions, Calculus</h3>
                 <p>Indefinite Integral - Basic Integration Rules, Problems, Formulas, Trig Functions, Calculus</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=o75AqTInKDU" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4249,9 +4128,9 @@
               <div class="resource-info">
                 <h3>Calculus 2 - Basic Integration</h3>
                 <p>Calculus 2 - Basic Integration</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=2N6A4ed8s58" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4264,9 +4143,9 @@
               <div class="resource-info">
                 <h3>Integration By Partial Fractions</h3>
                 <p>Integration By Partial Fractions</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=6rXByMcuAyI" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec5.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Partial Fractions</a>
               </div>
             </article>
@@ -4279,9 +4158,9 @@
               <div class="resource-info">
                 <h3>Integration of Rational Functions into Logarithms By Substitution &amp; Long Division</h3>
                 <p>Integration of Rational Functions into Logarithms By Substitution & Long Division</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=4yJmhZBB40w" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec2.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Substitution</a>
               </div>
             </article>
@@ -4294,9 +4173,9 @@
               <div class="resource-info">
                 <h3>Definite Integral Calculus Examples, Integration - Basic Introduction, Practice Problems</h3>
                 <p>Definite Integral Calculus Examples, Integration - Basic Introduction, Practice Problems</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=rCWOdfQ3cwQ" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4309,9 +4188,9 @@
               <div class="resource-info">
                 <h3>Trigonometric Integrals</h3>
                 <p>Trigonometric Integrals</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=3pXALn2ovIE" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec4.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Trigonometric Integrals</a>
               </div>
             </article>
@@ -4324,9 +4203,9 @@
               <div class="resource-info">
                 <h3>Indefinite Integral</h3>
                 <p>Indefinite Integral</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=JTFMeSCxgcA" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4339,9 +4218,9 @@
               <div class="resource-info">
                 <h3>Integration By Parts - Tabular Method</h3>
                 <p>Integration By Parts - Tabular Method</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=Yyic5aaXGaw" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec3.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Integration by Parts</a>
               </div>
             </article>
@@ -4354,9 +4233,9 @@
               <div class="resource-info">
                 <h3>Area Between Two Curves</h3>
                 <p>Area Between Two Curves</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=kgg5Rspf1Js" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4369,9 +4248,9 @@
               <div class="resource-info">
                 <h3>Trigonometric Substitution</h3>
                 <p>Trigonometric Substitution</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=ocgjfF2AboA" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec2.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Substitution</a>
               </div>
             </article>
@@ -4384,9 +4263,9 @@
               <div class="resource-info">
                 <h3>Definite Integral</h3>
                 <p>Definite Integral</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=Gc3QvUB0PkI" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4399,9 +4278,9 @@
               <div class="resource-info">
                 <h3>Calculus - Integration By Parts</h3>
                 <p>Calculus - Integration By Parts</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=yJF3kv8UzGo" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec3.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Integration by Parts</a>
               </div>
             </article>
@@ -4414,9 +4293,9 @@
               <div class="resource-info">
                 <h3>U-substitution With Definite Integrals</h3>
                 <p>U-substitution With Definite Integrals</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=tM4RWc9ryx0" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec2.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Substitution</a>
               </div>
             </article>
@@ -4429,9 +4308,9 @@
               <div class="resource-info">
                 <h3>Integrating Exponential Functions By Substitution - Antiderivatives - Calculus</h3>
                 <p>Integrating Exponential Functions By Substitution - Antiderivatives - Calculus</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=D9dqdbCgJQM" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec2.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Substitution</a>
               </div>
             </article>
@@ -4444,9 +4323,9 @@
               <div class="resource-info">
                 <h3>Antiderivatives</h3>
                 <p>Antiderivatives</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=xaCPDMEkbig" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 <a href="year1sem2calc2lec1.html" style="font-size:0.78rem;color:#00c288;text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);font-weight:bold;">→ View Lecture: Basic Integration</a>
               </div>
             </article>
@@ -4459,9 +4338,9 @@
               <div class="resource-info">
                 <h3>Riemann Sums - Midpoint, Left &amp; Right Endpoints, Area, Definite Integral, Sigma Notation, Calculus</h3>
                 <p>Riemann Sums - Midpoint, Left & Right Endpoints, Area, Definite Integral, Sigma Notation, Calculus</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=AkUa9Fkz2rw" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4474,9 +4353,9 @@
               <div class="resource-info">
                 <h3>Fundamental Theorem of Calculus Part 1</h3>
                 <p>Fundamental Theorem of Calculus Part 1</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=aeB5BWY0RlE" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4489,9 +4368,9 @@
               <div class="resource-info">
                 <h3>Exponential Growth and Decay Calculus, Relative Growth Rate, Differential Equations, Word Problems</h3>
                 <p>Exponential Growth and Decay Calculus, Relative Growth Rate, Differential Equations, Word Problems</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=M9rcYTuFG4w" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4504,9 +4383,9 @@
               <div class="resource-info">
                 <h3>Double Integrals</h3>
                 <p>Double Integrals</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=BJ_0FURo9RE" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4519,9 +4398,9 @@
               <div class="resource-info">
                 <h3>Understand Calculus in 35 Minutes</h3>
                 <p>Understand Calculus in 35 Minutes</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=WsQQvHm4lSw" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4534,9 +4413,9 @@
               <div class="resource-info">
                 <h3>Improper Integrals - Convergence and Divergence - Calculus 2</h3>
                 <p>Improper Integrals - Convergence and Divergence - Calculus 2</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=ND9cEdfCFr0" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
@@ -4549,9 +4428,9 @@
               <div class="resource-info">
                 <h3>Calculus 1 - Introduction to Limits</h3>
                 <p>Calculus 1 - Introduction to Limits</p>
-                <div class="badge-row"><span class="badge-row"><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
+                <div class="badge-row"><span><span class="badge">Video</span><span class="badge badge-neutral">Beginner</span></span></div>
                 <a class="play-btn" href="https://www.youtube.com/watch?v=YNstP0ESndU" target="_blank" rel="noopener noreferrer">► Play Video</a>
-                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" style="font-size:0.78rem;color:var(--text-secondary);text-decoration:none;margin-top:8px;display:inline-block;font-family:var(--font-mono);opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">↗ The Organic Chemistry Tutor</a>
+                <a href="https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA" target="_blank" class="channel-link" rel="noopener noreferrer">↗ The Organic Chemistry Tutor</a>
                 
               </div>
             </article>
