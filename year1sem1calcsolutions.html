@@ -3,156 +3,68 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Calculus 1 — Exam solutions and worked problems.">
+    <link rel="icon" href="assets/online.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/math-style.css">
   <title>
    Calculus Solutions | prodbyabdo
   </title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
-  </script>
   <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
-  <style>
-   :root {
-        --bg-color: #0a0a0a;
-        --card-bg: #111111;
-        --text-primary: #ffffff;
-        --text-secondary: #a0a0a0;
-        --accent-color: #00ff88;
-        --accent-dim: rgba(0, 255, 136, 0.1);
-        --border-color: #333333;
-        --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-mono: "JetBrains Mono", monospace;
-      }
-
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-primary);
-        font-family: var(--font-main);
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 40px 20px;
-      }
-
-      header {
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 40px;
-        margin-bottom: 60px;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        letter-spacing: -2px;
-        margin: 0 0 10px 0;
-        background: linear-gradient(to right, #ffffff, #a0a0a0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .subtitle {
-        color: var(--accent-color);
-        font-family: var(--font-mono);
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-      }
-
-      .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 60px 0 30px;
-        padding-left: 20px;
-        border-left: 4px solid var(--accent-color);
-        color: var(--text-primary);
-      }
-
-      .problem-card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 25px;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .problem-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-        border-color: var(--accent-color);
-      }
-
-      .problem-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 15px;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 10px;
-      }
-
-      .problem-number {
-        font-family: var(--font-mono);
-        color: var(--accent-color);
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-
-      .problem-statement {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: var(--text-primary);
-      }
-
-      .solution-step {
-        margin-bottom: 15px;
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-      }
-
-      .final-answer {
-        margin-top: 20px;
-        padding: 15px;
-        background-color: var(--accent-dim);
-        border-radius: 8px;
-        border: 1px solid var(--accent-color);
-        color: var(--text-primary);
-        font-weight: bold;
-      }
-
-      footer {
-        margin-top: 100px;
-        border-top: 1px solid var(--border-color);
-        padding: 40px 0;
-        text-align: center;
-        color: var(--text-secondary);
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-      }
-
-      a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-
-      a:hover {
-        opacity: 0.8;
-      }
-
-      /* MathJax adjustments */
-      mjx-container {
-        font-size: 110% !important;
-      }
-  </style>
- </head>
+    <style>
+        /* Page-specific overrides */
+        body { padding: 20px; }
+        .container {
+            max-width: 1200px;
+            background: var(--bg-color);
+            border: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        header {
+            background: #000000;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        header h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+        li { color: #cccccc; }
+        .section { border-left: 2px solid var(--text-primary); }
+        .important { border-left: 2px solid var(--text-primary); }
+        .note { border-left: 2px solid var(--text-primary); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #000000;
+            border: 1px solid #1a1a1a;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 300;
+        }
+        th {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-weight: 400;
+            border-bottom: 1px solid var(--border-color);
+        }
+        tr:hover { background: #0f0f0f; }
+    </style>
+</head>
  <body>
   <div class="container">
-    <a href="index.html" class="nav-back">← Back to Home</a>
+    <a href="year1.html" class="nav-back">← Back to Year 1</a>
    <header>
     <h1>
      CALCULUS SOLUTIONS
@@ -6327,54 +6239,11 @@
    </div>
   </footer>
     <!-- Deep Linking Script -->
-    <script>
-        (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
-
-                var targetId = decodeURIComponent(hash.substring(1));
-                var el = document.getElementById(targetId);
-                if (!el) return;
-
-                // If the element is inside an inactive tab, open that tab first
-                var tabContent = el.closest ? el.closest('.tab-content') : null;
-                if (!tabContent) {
-                    var parent = el.parentElement;
-                    while (parent) {
-                        if (parent.classList && parent.classList.contains('tab-content')) {
-                            tabContent = parent;
-                            break;
-                        }
-                        parent = parent.parentElement;
-                    }
-                }
-
-                if (tabContent && !tabContent.classList.contains('active')) {
-                    if (typeof openTab === 'function') {
-                        openTab(tabContent.id);
-                    }
-                }
-
-                // Scroll with slight delay to allow tab CSS transition
-                setTimeout(function () {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 120);
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () {
-                    setTimeout(handleHash, 50);
-                });
-            } else {
-                setTimeout(handleHash, 50);
-            }
-
-            window.addEventListener('hashchange', handleHash);
-        })();
-    </script>
+    
 
 
+    <script src="assets/js/deeplink.js" defer></script>
+    <script src="assets/js/tabs.js"></script>
 </body>
 </html>
 

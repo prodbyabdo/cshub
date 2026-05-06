@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unit circle and trigonometry reference — visual guide.">
+    <link rel="icon" href="assets/online.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/math-style.css">
     <title>Unit Circle Trigonometry</title>
     <!-- MathJax for LaTeX -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
         window.MathJax = {
             tex: {
@@ -261,7 +264,7 @@
 </head>
 <body>
 
-    <a href="index.html" class="nav-back">← Back to Home</a>
+    <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
 
     <header>
         <h1>Unit Circle</h1>
@@ -523,53 +526,9 @@
 
     </main>
     <!-- Deep Linking Script -->
-    <script>
-        (function () {
-            function handleHash() {
-                var hash = window.location.hash;
-                if (!hash) return;
-
-                var targetId = decodeURIComponent(hash.substring(1));
-                var el = document.getElementById(targetId);
-                if (!el) return;
-
-                // If the element is inside an inactive tab, open that tab first
-                var tabContent = el.closest ? el.closest('.tab-content') : null;
-                if (!tabContent) {
-                    var parent = el.parentElement;
-                    while (parent) {
-                        if (parent.classList && parent.classList.contains('tab-content')) {
-                            tabContent = parent;
-                            break;
-                        }
-                        parent = parent.parentElement;
-                    }
-                }
-
-                if (tabContent && !tabContent.classList.contains('active')) {
-                    if (typeof openTab === 'function') {
-                        openTab(tabContent.id);
-                    }
-                }
-
-                // Scroll with slight delay to allow tab CSS transition
-                setTimeout(function () {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 120);
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function () {
-                    setTimeout(handleHash, 50);
-                });
-            } else {
-                setTimeout(handleHash, 50);
-            }
-
-            window.addEventListener('hashchange', handleHash);
-        })();
-    </script>
+    
 
 
+    <script src="assets/js/deeplink.js" defer></script>
 </body>
 </html>

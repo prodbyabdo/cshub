@@ -4,110 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculus 2 — Lecture 1 notes, formulas, and worked examples for CS & IT students.">
+    <link rel="icon" href="assets/online.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/math-style.css">
     <title>Calculus II — Lecture 1: Basic Integration</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000000;
-            color: #ffffff;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
+        /* Page-specific overrides */
+        body { padding: 20px; }
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            background: #0a0a0a;
+            background: var(--bg-color);
             border: 1px solid #1a1a1a;
             overflow: hidden;
         }
-
         header {
             background: #000000;
-            color: #ffffff;
             padding: 30px;
             text-align: center;
             border-bottom: 1px solid #1a1a1a;
         }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 800;
-            color: #00ff88;
-            letter-spacing: 2px;
-        }
-
+        header h1 { letter-spacing: 2px; }
         header p {
             font-size: 1.1em;
             opacity: 0.6;
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent-color);
         }
-
-        .content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-
-        }
-
-        .section h2 {
-            color: #ffffff;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #1a1a1a;
-            font-weight: 800;
-            color: #00ff88;
-            letter-spacing: 1px;
-        }
-
-        .section h3 {
-            color: #cccccc;
-            font-size: 1.3em;
-            margin: 20px 0 15px 0;
-            font-weight: 800;
-            color: #00ff88;
-        }
-
-        .formula-box {
-            background: #000000;
-            padding: 20px;
-            margin: 15px 0;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #666666;
-        }
-
-        .important {
-            background: #0a0a0a;
-
-        }
-
-        .theorem {
-            background: #0a0a0a;
-            border-left: 2px solid #888888;
-        }
-
+        p { color: #cccccc; }
+        ol li, ul li { color: #cccccc; }
+        /* Tables in lecture pages use accent-colored cells */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -115,396 +45,27 @@
             background: #000000;
             border: 1px solid #1a1a1a;
         }
-
-        th,
-        td {
+        th, td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #1a1a1a;
             font-weight: 800;
-            color: #00ff88;
-        }
-
-        th {
-            background: #0a0a0a;
-            color: #ffffff;
-            font-weight: 400;
-            border-bottom: 1px solid #333333;
-        }
-
-        tr:hover {
-            background: #0f0f0f;
-        }
-
-        .note {
-            background: #0a0a0a;
-            padding: 15px;
-            margin: 15px 0;
-            border: 1px solid #1a1a1a;
-
-        }
-
-        .note strong {
-            color: #ffffff;
-        }
-
-        p {
-            color: #cccccc;
-        }
-
-        ol,
-        ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        ol li,
-        ul li {
-            margin: 8px 0;
-            color: #cccccc;
-        }
-
-        .step-block {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #444444;
-            padding: 18px 20px;
-            margin: 12px 0;
-        }
-
-        .step-block .step-label {
-            font-size: 0.8em;
-            letter-spacing: 2px;
-            opacity: 0.5;
-            margin-bottom: 8px;
-        }
-
-        .exam-q {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #888888;
-            padding: 20px;
-            margin: 16px 0;
-        }
-
-        .exam-q .q-label {
-            font-size: 0.78em;
-            letter-spacing: 2px;
-            opacity: 0.45;
-            margin-bottom: 10px;
-        }
-
-        details {
-            margin-top: 12px;
-        }
-
-        .problem-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            border-color: var(--accent-color);
-        }
-
-        .problem-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .problem-number {
-            font-family: var(--font-mono);
             color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.1rem;
         }
-
-        .problem-statement {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        th {
+            background: var(--bg-color);
             color: var(--text-primary);
+            font-weight: 400;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .solution-step {
-            margin-bottom: 15px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .final-answer {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: var(--accent-dim);
-            border-radius: 8px;
-            border: 1px solid var(--accent-color);
-            color: var(--text-primary);
-            font-weight: bold;
-        }
-
-        footer {
-            margin-top: 100px;
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-        }
-
-        details summary {
-            cursor: pointer;
-            font-size: 0.85em;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            list-style: none;
-            padding: 6px 0;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details summary::before {
-            content: '▸  show solution';
-        }
-
-        details[open] summary::before {
-            content: '▾  hide solution';
-        }
-
-        details .solution {
-            padding-top: 14px;
-        }
-
-        .print-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #00ff88;
-            background: rgba(0, 255, 136, 0.1);
-            color: #00ff88;
-            border-radius: 6px;
-            padding: 8px 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-            margin-top: 15px;
-        }
-
-        .print-btn:hover {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-1px);
-        }
-
-        .nav-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            color: #cccccc;
-            text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            transition: color 0.2s ease, transform 0.2s ease;
-            position: relative;
-            z-index: 10;
-        }
-
-        .nav-back:hover {
-            color: #00ff88;
-            transform: translateX(-4px);
-        }
-
-        @media print {
-            @page {
-                margin: 14mm;
-            }
-
-            * {
-                box-shadow: none !important;
-                text-shadow: none !important;
-            }
-
-            body {
-                background: white !important;
-                color: black !important;
-                padding: 0;
-            }
-
-            .container,
-            .section,
-            .formula-box,
-            table,
-            th,
-            td,
-            .note,
-            .step-block,
-            .exam-q {
-                background: white !important;
-                color: black !important;
-                border-color: #777777 !important;
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            header {
-                background: white !important;
-                color: black !important;
-                border-bottom: 2px solid black !important;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            p,
-            li,
-            strong,
-            label,
-            .step-label,
-            .q-label,
-            summary,
-            .solution {
-                color: black !important;
-            }
-
-            .nav-back,
-            .print-btn,
-            .solutions-link {
-                display: none !important;
-            }
-
-            details {
-                display: block !important;
-            }
-
-            details[open] .solution,
-            details:not([open]) .solution {
-                display: block !important;
-            }
-        }
-
-        /* --- Modern Desktop E-Learning Additions --- */
-
-        /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: #000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .progress-bar {
-            height: 4px;
-            background: #00ff88;
-            width: 0%;
-        }
-
-        /* Desktop Sidebar styles hidden on mobile */
-        .desktop-sidebar {
-            display: none;
-        }
-
-        /* Desktop layout */
+        tr:hover { background: #0f0f0f; }
         @media (min-width: 1024px) {
-            body {
-                background: #050505;
-                padding: 40px;
-            }
-
-            .layout-wrapper {
-                display: grid;
-                grid-template-columns: 280px 1fr;
-                gap: 40px;
-                max-width: 1400px;
-                margin: 0 auto;
-                align-items: start;
-            }
-
-            .desktop-sidebar {
-                display: block;
-                position: sticky;
-                top: 40px;
-                background: #0a0a0a;
-                border: 1px solid #1a1a1a;
-                padding: 25px;
-                border-radius: 12px;
-                max-height: calc(100vh - 80px);
-                overflow-y: auto;
-            }
-
-            .desktop-sidebar h3 {
-                color: #ffffff;
-                font-size: 1.2em;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 1px solid #1a1a1a;
-                font-weight: 800;
-                letter-spacing: 1px;
-            }
-
-            .desktop-sidebar ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .desktop-sidebar li {
-                margin-bottom: 12px;
-            }
-
-            .desktop-sidebar a {
-                color: #cccccc;
-                text-decoration: none;
-                font-size: 0.95em;
-                transition: color 0.2s, transform 0.2s;
-                display: block;
-            }
-
-            .desktop-sidebar a:hover {
-                color: #00ff88;
-                transform: translateX(5px);
-            }
-
-            .main-column {
-                min-width: 0;
-            }
-
+            body { background: #050505; padding: 40px; }
             .container {
                 border-radius: 12px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
                 margin: 0;
-                /* Reset margin since grid handles it */
                 max-width: 100%;
-                /* Fill the grid column */
-            }
-
-            .section {
-                border-radius: 8px;
-                transition: transform 0.2s, box-shadow 0.2s;
-            }
-
-            .section:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 24px rgba(0, 255, 136, 0.05);
-                border-color: #333;
             }
         }
     </style>
@@ -518,16 +79,17 @@
 
     <div class="layout-wrapper">
         <!-- Desktop Sidebar -->
-        <aside class="desktop-sidebar">
+        <aside class="desktop-sidebar" role="complementary" aria-label="Lecture navigation">
             <h3>Day 1 Contents</h3>
             <ul>
                 <li><a href="#sec-resources">Lecture Resources</a></li>
                 <li><a href="#sec-1">1. Reversing Differentiation</a></li>
                 <li><a href="#sec-2">2. Indefinite Integration</a></li>
                 <li><a href="#sec-3">3. Rewriting Expressions</a></li>
-                <li><a href="#sec-4">4. Finding the Constant</a></li>
-                <li><a href="#sec-5">5. Exam Questions</a></li>
-                <li><a href="#sec-6">6. Quick Reference</a></li>
+                <li><a href="#sec-4">4. The ln Rule</a></li>
+                <li><a href="#sec-5">5. Finding the Constant</a></li>
+                <li><a href="#sec-6">6. Exam Questions</a></li>
+                <li><a href="#sec-7">7. Quick Reference</a></li>
             </ul>
         </aside>
 
@@ -763,9 +325,59 @@
                         </div>
                     </div>
 
-                    <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
+                    <!-- ── 4. THE NATURAL LOG RULE ── -->
                     <div class="section" id="sec-4">
-                        <h2>4. Finding the Constant of Integration Given a Point</h2>
+                        <h2>4. The Natural Logarithm Rule</h2>
+
+                        <div class="formula-box theorem">
+                            <p>When \(n = -1\) the power rule fails. Instead we have the special case:</p>
+                            \[\int \frac{1}{x}\,dx = \ln|x| + c\]
+                            <p style="margin-top: 12px;">More generally, when the numerator is the derivative of the denominator:</p>
+                            \[\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + c\]
+                        </div>
+
+                        <h3>How to Recognise It</h3>
+                        <div class="formula-box important">
+                            <p>Ask: <em>"Is the numerator the derivative (or a constant multiple of the derivative) of the denominator?"</em></p>
+                            <p style="margin-top: 10px;">If <strong>yes</strong>, the result is \(\ln|\text{denominator}| + c\) (adjusting for the constant).</p>
+                        </div>
+
+                        <h3>Worked Examples</h3>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE A — SIMPLE LINEAR</div>
+                            <p>Find \(\displaystyle\int \frac{1}{x-1}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(x-1\) and \(\dfrac{d}{dx}(x-1) = 1\), which equals the numerator.</p>
+                            \[\int \frac{1}{x-1}\,dx = \ln|x-1| + c\]
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE B — TRIGONOMETRIC (TAN X)</div>
+                            <p>Find \(\displaystyle\int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(\cos x\) and \(\dfrac{d}{dx}(\cos x) = -\sin x\). The numerator \(\sin x = -1 \times (-\sin x)\):</p>
+                            \[\int \frac{\sin x}{\cos x}\,dx = -\int \frac{-\sin x}{\cos x}\,dx = -\ln|\cos x| + c\]
+                            <p style="margin-top: 10px;">This can also be written as \(\ln|\sec x| + c\).</p>
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE C — POLYNOMIAL</div>
+                            <p>Find \(\displaystyle\int \frac{2x}{x^2+5}\,dx\)</p>
+                            <p style="margin-top: 10px;">The denominator is \(x^2+5\) and \(\dfrac{d}{dx}(x^2+5) = 2x\), which is exactly the numerator:</p>
+                            \[\int \frac{2x}{x^2+5}\,dx = \ln|x^2+5| + c = \ln(x^2+5) + c\]
+                            <p style="margin-top: 10px;">(Absolute value bars are optional here since \(x^2+5 > 0\) always.)</p>
+                        </div>
+
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE D — ADJUSTING CONSTANTS</div>
+                            <p>Find \(\displaystyle\int \frac{3}{2x+7}\,dx\)</p>
+                            <p style="margin-top: 10px;">\(\dfrac{d}{dx}(2x+7) = 2\), but the numerator is \(3\). Factor:</p>
+                            \[\int \frac{3}{2x+7}\,dx = \frac{3}{2}\int \frac{2}{2x+7}\,dx = \frac{3}{2}\ln|2x+7| + c\]
+                        </div>
+                    </div>
+
+                    <!-- ── 4. FINDING THE CONSTANT OF INTEGRATION ── -->
+                    <div class="section" id="sec-5">
+                        <h2>5. Finding the Constant of Integration Given a Point</h2>
 
                         <div class="formula-box theorem">
                             <p>
@@ -812,8 +424,8 @@
                     </div>
 
                     <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
-                    <div class="section" id="sec-5">
-                        <h2>5. Examination-Style Questions</h2>
+                    <div class="section" id="sec-6">
+                        <h2>6. Examination-Style Questions</h2>
 
                         <div class="exam-q">
                             <div class="q-label">QUESTION 1</div>
@@ -889,8 +501,8 @@
                     </div>
 
                     <!-- ── QUICK REFERENCE ── -->
-                    <div class="section" id="sec-6">
-                        <h2>6. Quick Reference — Lecture 1 Rules</h2>
+                    <div class="section" id="sec-7">
+                        <h2>7. Quick Reference — Lecture 1 Rules</h2>
 
                         <table>
                             <tr>
@@ -967,6 +579,8 @@
         })();
     </script>
 
+
+    <script src="assets/js/deeplink.js" defer></script>
 </body>
 
 </html>
