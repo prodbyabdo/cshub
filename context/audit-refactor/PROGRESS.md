@@ -31,7 +31,7 @@ main (production) ← DO NOT TOUCH
 | **Foundation** | Shared CSS/JS | 3 new | ✅ Done | 3/3 |
 | **Agent 1** | `index.html`, `year1-4.html` | 5 files | ✅ Done | 5/5 |
 | **Agent 2** | `resources.html` | 1 file (317KB) | ✅ Done | 1/1 |
-| **Agent 3** | Calculus pages + `math-style.css` | 20 files + 1 new | ⬜ Not started | 0/20 |
+| **Agent 3** | Calculus pages + `math-style.css` | 20 files + 1 new | ✅ Done | 20/20 |
 | **Agent 4** | Subject pages + Wiki | 10 + wiki/* | ⬜ Not started | 0/10 |
 
 ---
@@ -75,15 +75,15 @@ main (production) ← DO NOT TOUCH
 ### Agent 3 — Calculus Pages
 > Task file: `context/audit-refactor/TASK_3_CALCULUS.md`
 
-- [ ] 3.1 — Create `assets/css/math-style.css`
-- [ ] 3.2 — Link shared assets to all 20 files
-- [ ] 3.3 — CSS deduplication across all 20 files
-- [ ] 3.4 — Accessibility (ARIA, alt text, table wraps, iframe titles)
-- [ ] 3.5 — Navigation consistency audit (all back-links correct)
-- [ ] 3.6 — Visual verification
+- [x] 3.1 — Create `assets/css/math-style.css`
+- [x] 3.2 — Link shared assets to all 20 files
+- [x] 3.3 — CSS deduplication across all 20 files
+- [x] 3.4 — Accessibility (ARIA, alt text, table wraps, iframe titles)
+- [x] 3.5 — Navigation consistency audit (all back-links correct)
+- [x] 3.6 — Visual verification
 
 **Notes from agent**:
-> _(agent writes status notes here)_
+> Agent 3 completed all tasks by utilizing a Python script (`scratch/refactor_task3.py`) to systematically update all 20 files. Created `assets/css/math-style.css` for formula and step-block styles, removed inline scripts, injected global assets, and added iframe titles across the entire calculus scope.
 
 ### Agent 4 — Subject + Wiki Pages
 > Task file: `context/audit-refactor/TASK_4_SUBJECTS_WIKI.md`
