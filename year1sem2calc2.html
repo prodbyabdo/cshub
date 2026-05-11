@@ -422,65 +422,138 @@
                         <td>\(a^x\)</td>
                         <td>\(\dfrac{a^x}{\ln a} + C\)</td>
                     </tr>
+                </table>
+
+                <h3>Trigonometric D ↔ I Reference</h3>
+                <table>
+                    <tr>
+                        <th>\(f(x)\)</th>
+                        <th>D: \(f'(x)\)</th>
+                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
+                    </tr>
+                    <!-- Standard Trig -->
                     <tr>
                         <td>\(\sin x\)</td>
+                        <td>\(\cos x\)</td>
                         <td>\(-\cos x + C\)</td>
                     </tr>
                     <tr>
                         <td>\(\cos x\)</td>
+                        <td>\(-\sin x\)</td>
                         <td>\(\sin x + C\)</td>
                     </tr>
                     <tr>
-                        <td>\(\sec^2 x\)</td>
-                        <td>\(\tan x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc^2 x\)</td>
-                        <td>\(-\cot x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec x \tan x\)</td>
-                        <td>\(\sec x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc x \cot x\)</td>
-                        <td>\(-\csc x + C\)</td>
-                    </tr>
-                    <tr>
                         <td>\(\tan x\)</td>
+                        <td>\(\sec^2 x\)</td>
                         <td>\(\ln|\sec x| + C\)</td>
                     </tr>
                     <tr>
                         <td>\(\cot x\)</td>
+                        <td>\(-\csc^2 x\)</td>
                         <td>\(\ln|\sin x| + C\)</td>
                     </tr>
                     <tr>
                         <td>\(\sec x\)</td>
+                        <td>\(\sec x \tan x\)</td>
                         <td>\(\ln|\sec x + \tan x| + C\)</td>
                     </tr>
                     <tr>
                         <td>\(\csc x\)</td>
+                        <td>\(-\csc x \cot x\)</td>
                         <td>\(\ln|\csc x - \cot x| + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec^2 x\)</td>
+                        <td>\(2\sec^2 x \tan x\)</td>
+                        <td>\(\tan x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc^2 x\)</td>
+                        <td>\(-2\csc^2 x \cot x\)</td>
+                        <td>\(-\cot x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\sec x \tan x\)</td>
+                        <td>\(\sec x(2\tan^2 x + \sec^2 x - 1)\)</td>
+                        <td>\(\sec x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\csc x \cot x\)</td>
+                        <td>\(-\csc x(2\cot^2 x + \csc^2 x - 1)\)</td>
+                        <td>\(-\csc x + C\)</td>
                     </tr>
                 </table>
 
-                <h3>Inverse Trigonometric Integrals</h3>
+                <h3>Hyperbolic D ↔ I Reference</h3>
                 <table>
                     <tr>
-                        <th>Function</th>
-                        <th>Integral</th>
+                        <th>\(f(x)\)</th>
+                        <th>D: \(f'(x)\)</th>
+                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
                     </tr>
                     <tr>
+                        <td>\(\sinh x\)</td>
+                        <td>\(\cosh x\)</td>
+                        <td>\(\cosh x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\cosh x\)</td>
+                        <td>\(\sinh x\)</td>
+                        <td>\(\sinh x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\tanh x\)</td>
+                        <td>\(\text{sech}^2 x\)</td>
+                        <td>\(\ln(\cosh x) + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\coth x\)</td>
+                        <td>\(-\text{csch}^2 x\)</td>
+                        <td>\(\ln|\sinh x| + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\text{sech}\, x\)</td>
+                        <td>\(-\text{sech}\, x \tanh x\)</td>
+                        <td>\(2\tan^{-1}(e^x) + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\text{csch}\, x\)</td>
+                        <td>\(-\text{csch}\, x \coth x\)</td>
+                        <td>\(\ln\!\left|\tanh\!\tfrac{x}{2}\right| + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\text{sech}^2 x\)</td>
+                        <td>\(-2\,\text{sech}^2 x \tanh x\)</td>
+                        <td>\(\tanh x + C\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(\text{csch}^2 x\)</td>
+                        <td>\(2\,\text{csch}^2 x \coth x\)</td>
+                        <td>\(-\coth x + C\)</td>
+                    </tr>
+                </table>
+
+                <h3>Inverse Trigonometric D ↔ I Reference</h3>
+                <table>
+                    <tr>
+                        <th>\(f(x)\)</th>
+                        <th>D: \(f'(x)\)</th>
+                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
+                    </tr>
+                    <tr>
+                        <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
                         <td>\(\dfrac{1}{\sqrt{a^2 - x^2}}\)</td>
-                        <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                        <td>\(x\sin^{-1}\!\left(\dfrac{x}{a}\right) + \sqrt{a^2 - x^2} + C\)</td>
                     </tr>
                     <tr>
-                        <td>\(\dfrac{1}{a^2 + x^2}\)</td>
-                        <td>\(\dfrac{1}{a}\tan^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                        <td>\(\tan^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
+                        <td>\(\dfrac{a}{a^2 + x^2}\)</td>
+                        <td>\(x\tan^{-1}\!\left(\dfrac{x}{a}\right) - \dfrac{a}{2}\ln(a^2 + x^2) + C\)</td>
                     </tr>
                     <tr>
-                        <td>\(\dfrac{1}{x\sqrt{x^2 - a^2}}\)</td>
-                        <td>\(\dfrac{1}{a}\sec^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                        <td>\(\sec^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
+                        <td>\(\dfrac{a}{x\sqrt{x^2 - a^2}}\)</td>
+                        <td>\(x\sec^{-1}\!\left(\dfrac{x}{a}\right) - a\ln\!\left|x + \sqrt{x^2 - a^2}\right| + C\)</td>
                     </tr>
                 </table>
 
