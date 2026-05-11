@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manual Node Dependency Manager"
+  short_description: "Fetch Node packages from UNPKG when npm is blocked."
+  default_prompt: "Help me install a Node dependency manually using UNPKG."
