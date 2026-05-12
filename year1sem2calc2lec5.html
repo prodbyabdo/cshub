@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculus II — Day 5: Standard Integrals (Trig & Hyperbolic Substitution)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
@@ -506,6 +509,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Reading Progress Bar -->
     <div class="progress-container">
@@ -532,198 +536,297 @@
         <!-- Main Content Column -->
         <main class="main-column">
             <div class="container">
-    <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
-    <header>
-        <h1>📐 Calculus II — Day 5</h1>
-        <p>Standard Integrals · Dr. Mohamed Ali Mohamed</p>
-        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
-            <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
-            <p style="font-size: 0.85em; margin-top: 5px;">
-                <a href="https://linktr.ee/prodbyabdo" target="_blank"
-                   style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
-                    linktr.ee/prodbyabdo
-                </a>
-            </p>
-            <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
-        </div>
-    </header>
+                <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
+                <header>
+                    <h1>📐 Calculus II — Day 5</h1>
+                    <p>Standard Integrals · Dr. Mohamed Ali Mohamed</p>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                        <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
+                        <p style="font-size: 0.85em; margin-top: 5px;">
+                            <a href="https://linktr.ee/prodbyabdo" target="_blank"
+                                style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
+                                linktr.ee/prodbyabdo
+                            </a>
+                        </p>
+                        <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
+                    </div>
+                </header>
 
-    <div class="content">
+                <div class="content">
 
-        <!-- ── LECTURE SLIDES & RESOURCES ── -->
-        <div class="section" id="sec-resources">
-            <h2>Lecture Slides & Resources</h2>
-            <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                    <iframe src="context/calc2/Hiba Lec 7.pdf" width="100%" height="100%" style="border: none;" title="Day 5 Viewer"></iframe>
-                </div>
-                <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
-                    <a href="context/calc2/Hiba Lec 7.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#128196; Open PDF (Mobile Friendly)
-                    </a>
-                    <a href="context/calc2/Hiba Lec 7.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#11015;&#65039; Download PDF
-                    </a>
-                </div>
-            </div>
-            <div class="solutions-link" style="text-align: center; margin-top: 10px;">
-                <a href="year1sem2calc2lec5sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                    View Practice Solutions
-                </a>
-            </div>
-        </div>
+                    <!-- ── LECTURE SLIDES & RESOURCES ── -->
+                    <div class="section" id="sec-resources">
+                        <h2>Lecture Slides & Resources</h2>
+                        <div class="resource-container" style="display: flex; flex-direction: column; gap: 30px;">
+                            <div class="resource-block">
+                                <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">📝 CL9: Standard
+                                    Integrals</h3>
+                                <div class="viewer-wrapper"
+                                    style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                                    <iframe src="context/calc2/Hiba Lec 9.pdf" width="100%" height="100%"
+                                        style="border: none;" title="Standard Integrals PDF Viewer"></iframe>
+                                </div>
+                                <div class="viewer-actions"
+                                    style="display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+                                    <a href="context/calc2/Hiba Lec 9.pdf" target="_blank"
+                                        style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: rgba(0, 255, 136, 0.1); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; transition: all 0.2s;">
+                                        &#128196; Open Standard Integrals PDF
+                                    </a>
+                                    <a href="context/calc2/Hiba Lec 9.pdf" download
+                                        style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: rgba(0, 255, 136, 0.1); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; transition: all 0.2s;">
+                                        &#11015;&#65039; Download Standard Integrals
+                                    </a>
+                                </div>
+                            </div>
 
-        <!-- ── OVERVIEW ── -->
-        <div class="section" id="sec-overview">
-            <h2>Six Standard Integrals</h2>
-            <div class="formula-box theorem">
-                <p>These six integrals arise frequently and are derived using trigonometric or hyperbolic substitutions. Memorise the results; understand the derivations.</p>
-            </div>
-            <table>
-                <tr><th>#</th><th>Integral</th><th>Result</th></tr>
-                <tr><td>1</td><td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</td><td>\(\sin^{-1}\!\left(\frac{x}{a}\right) + C\)</td></tr>
-                <tr><td>2</td><td>\(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</td><td>\(\frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) + \frac{x}{2}\sqrt{a^2-x^2} + C\)</td></tr>
-                <tr><td>3</td><td>\(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</td><td>\(\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td></tr>
-                <tr><td>4</td><td>\(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</td><td>\(\frac{x}{2}\sqrt{a^2+x^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td></tr>
-                <tr><td>5</td><td>\(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</td><td>\(\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td></tr>
-                <tr><td>6</td><td>\(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</td><td>\(\frac{x}{2}\sqrt{x^2-a^2} - \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td></tr>
-            </table>
-        </div>
+                            <hr style="border: 0; border-top: 1px solid #1a1a1a; margin: 10px 0;">
 
-        <!-- ── DERIVATION 1 ── -->
-        <div class="section" id="sec-1">
-            <h2>1. \(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
-                <p>Then \(dx = a\cos\theta\,d\theta\) and \(\sqrt{a^2 - a^2\sin^2\theta} = a\cos\theta\):</p>
-                \[\int \frac{a\cos\theta\,d\theta}{a\cos\theta} = \int d\theta = \theta + C\]
-                <p style="margin-top: 10px;">Since \(\theta = \sin^{-1}\!\left(\frac{x}{a}\right)\):</p>
-                <div class="formula-box important">
-                    \[\int \frac{dx}{\sqrt{a^2-x^2}} = \sin^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-            </div>
-        </div>
+                            <div class="resource-block">
+                                <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">📝 CL10: Practice &
+                                    Examples</h3>
+                                <div class="viewer-wrapper"
+                                    style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                                    <iframe src="context/calc2/Hiba Lec 10.pdf" width="100%" height="100%"
+                                        style="border: none;" title="Practice and Examples PDF Viewer"></iframe>
+                                </div>
+                                <div class="viewer-actions"
+                                    style="display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+                                    <a href="context/calc2/Hiba Lec 10.pdf" target="_blank"
+                                        style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: rgba(0, 255, 136, 0.1); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; transition: all 0.2s;">
+                                        &#128196; Open Practice PDF
+                                    </a>
+                                    <a href="context/calc2/Hiba Lec 10.pdf" download
+                                        style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: rgba(0, 255, 136, 0.1); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; transition: all 0.2s;">
+                                        &#11015;&#65039; Download Practice
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solutions-link"
+                            style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                            <a href="year1sem2calc2lec5sol.html"
+                                style="display: inline-block; padding: 15px 40px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                View Practice Solutions
+                            </a>
+                        </div>
+                    </div>
 
-        <!-- ── DERIVATION 2 ── -->
-        <div class="section" id="sec-2">
-            <h2>2. \(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
-                <p>\(dx = a\cos\theta\,d\theta\), \(\sqrt{a^2-a^2\sin^2\theta} = a\cos\theta\):</p>
-                \[\int a\cos\theta \cdot a\cos\theta\,d\theta = a^2\int\cos^2\theta\,d\theta\]
-                <p style="margin-top: 10px;">Use \(\cos^2\theta = \frac{1+\cos 2\theta}{2}\):</p>
-                \[= \frac{a^2}{2}\left(\theta + \frac{1}{2}\sin 2\theta\right) + C = \frac{a^2}{2}\theta + \frac{a^2}{2}\sin\theta\cos\theta + C\]
-                <p style="margin-top: 10px;">Back-substitute: \(\sin\theta = \frac{x}{a}\), \(\cos\theta = \frac{\sqrt{a^2-x^2}}{a}\):</p>
-                <div class="formula-box important">
-                    \[\int \sqrt{a^2-x^2}\,dx = \frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) + \frac{x}{2}\sqrt{a^2-x^2} + C\]
-                </div>
-            </div>
-        </div>
+                    <!-- ── OVERVIEW ── -->
+                    <div class="section" id="sec-overview">
+                        <h2>Six Standard Integrals</h2>
+                        <div class="formula-box theorem">
+                            <p>These six integrals arise frequently and are derived using trigonometric or hyperbolic
+                                substitutions. Memorise the results; understand the derivations.</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Integral</th>
+                                <th>Result</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</td>
+                                <td>\(\sin^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>\(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</td>
+                                <td>\(\frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) + \frac{x}{2}\sqrt{a^2-x^2} + C\)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</td>
+                                <td>\(\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>\(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</td>
+                                <td>\(\frac{x}{2}\sqrt{a^2+x^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) +
+                                    C\)</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</td>
+                                <td>\(\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>\(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</td>
+                                <td>\(\frac{x}{2}\sqrt{x^2-a^2} - \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) +
+                                    C\)</td>
+                            </tr>
+                        </table>
+                    </div>
 
-        <!-- ── DERIVATION 3 ── -->
-        <div class="section" id="sec-3">
-            <h2>3. \(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
-                <p>\(dx = a\cosh\theta\,d\theta\) and \(\sqrt{a^2+a^2\sinh^2\theta} = a\cosh\theta\):</p>
-                \[\int \frac{a\cosh\theta\,d\theta}{a\cosh\theta} = \int d\theta = \theta + C\]
-                <p style="margin-top: 10px;">Since \(\theta = \sinh^{-1}\!\left(\frac{x}{a}\right)\):</p>
-                <div class="formula-box important">
-                    \[\int \frac{dx}{\sqrt{a^2+x^2}} = \sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-            </div>
-        </div>
+                    <!-- ── DERIVATION 1 ── -->
+                    <div class="section" id="sec-1">
+                        <h2>1. \(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
+                            <p>Then \(dx = a\cos\theta\,d\theta\) and \(\sqrt{a^2 - a^2\sin^2\theta} = a\cos\theta\):
+                            </p>
+                            \[\int \frac{a\cos\theta\,d\theta}{a\cos\theta} = \int d\theta = \theta + C\]
+                            <p style="margin-top: 10px;">Since \(\theta = \sin^{-1}\!\left(\frac{x}{a}\right)\):</p>
+                            <div class="formula-box important">
+                                \[\int \frac{dx}{\sqrt{a^2-x^2}} = \sin^{-1}\!\left(\frac{x}{a}\right) + C\]
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- ── DERIVATION 4 ── -->
-        <div class="section" id="sec-4">
-            <h2>4. \(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
-                <p>\(dx = a\cosh\theta\,d\theta\), using \(\cosh^2\theta - \sinh^2\theta = 1\):</p>
-                \[\int a\cosh\theta \cdot a\cosh\theta\,d\theta = a^2\int\cosh^2\theta\,d\theta\]
-                <p style="margin-top: 10px;">Use \(\cosh^2\theta = \frac{\cosh 2\theta + 1}{2}\):</p>
-                \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} + \theta\right) + C = \frac{a^2}{2}\sinh\theta\cosh\theta + \frac{a^2}{2}\theta + C\]
-                <p style="margin-top: 10px;">Back-substitute: \(\sinh\theta = \frac{x}{a}\), \(\cosh\theta = \sqrt{1+\frac{x^2}{a^2}}\):</p>
-                <div class="formula-box important">
-                    \[\int \sqrt{a^2+x^2}\,dx = \frac{x}{2}\sqrt{a^2+x^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-            </div>
-        </div>
+                    <!-- ── DERIVATION 2 ── -->
+                    <div class="section" id="sec-2">
+                        <h2>2. \(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
+                            <p>\(dx = a\cos\theta\,d\theta\), \(\sqrt{a^2-a^2\sin^2\theta} = a\cos\theta\):</p>
+                            \[\int a\cos\theta \cdot a\cos\theta\,d\theta = a^2\int\cos^2\theta\,d\theta\]
+                            <p style="margin-top: 10px;">Use \(\cos^2\theta = \frac{1+\cos 2\theta}{2}\):</p>
+                            \[= \frac{a^2}{2}\left(\theta + \frac{1}{2}\sin 2\theta\right) + C = \frac{a^2}{2}\theta +
+                            \frac{a^2}{2}\sin\theta\cos\theta + C\]
+                            <p style="margin-top: 10px;">Back-substitute: \(\sin\theta = \frac{x}{a}\), \(\cos\theta =
+                                \frac{\sqrt{a^2-x^2}}{a}\):</p>
+                            <div class="formula-box important">
+                                \[\int \sqrt{a^2-x^2}\,dx = \frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) +
+                                \frac{x}{2}\sqrt{a^2-x^2} + C\]
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- ── DERIVATION 5 ── -->
-        <div class="section" id="sec-5">
-            <h2>5. \(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
-                <p>\(dx = a\sinh\theta\,d\theta\) and \(\sqrt{a^2\cosh^2\theta - a^2} = a\sinh\theta\):</p>
-                \[\int \frac{a\sinh\theta\,d\theta}{a\sinh\theta} = \int d\theta = \theta + C\]
-                <p style="margin-top: 10px;">Since \(\theta = \cosh^{-1}\!\left(\frac{x}{a}\right)\):</p>
-                <div class="formula-box important">
-                    \[\int \frac{dx}{\sqrt{x^2-a^2}} = \cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-            </div>
-        </div>
+                    <!-- ── DERIVATION 3 ── -->
+                    <div class="section" id="sec-3">
+                        <h2>3. \(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
+                            <p>\(dx = a\cosh\theta\,d\theta\) and \(\sqrt{a^2+a^2\sinh^2\theta} = a\cosh\theta\):</p>
+                            \[\int \frac{a\cosh\theta\,d\theta}{a\cosh\theta} = \int d\theta = \theta + C\]
+                            <p style="margin-top: 10px;">Since \(\theta = \sinh^{-1}\!\left(\frac{x}{a}\right)\):</p>
+                            <div class="formula-box important">
+                                \[\int \frac{dx}{\sqrt{a^2+x^2}} = \sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- ── DERIVATION 6 ── -->
-        <div class="section" id="sec-6">
-            <h2>6. \(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</h2>
-            <div class="step-block">
-                <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
-                <p>\(dx = a\sinh\theta\,d\theta\), \(\sqrt{a^2\cosh^2\theta - a^2} = a\sinh\theta\):</p>
-                \[a^2\int\sinh^2\theta\,d\theta\]
-                <p style="margin-top: 10px;">Use \(\sinh^2\theta = \frac{\cosh 2\theta - 1}{2}\):</p>
-                \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} - \theta\right) + C = \frac{a^2}{2}\sinh\theta\cosh\theta - \frac{a^2}{2}\theta + C\]
-                <p style="margin-top: 10px;">Back-substitute: \(\cosh\theta = \frac{x}{a}\), \(\sinh\theta = \frac{\sqrt{x^2-a^2}}{a}\):</p>
-                <div class="formula-box important">
-                    \[\int \sqrt{x^2-a^2}\,dx = \frac{x}{2}\sqrt{x^2-a^2} - \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-            </div>
-        </div>
+                    <!-- ── DERIVATION 4 ── -->
+                    <div class="section" id="sec-4">
+                        <h2>4. \(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
+                            <p>\(dx = a\cosh\theta\,d\theta\), using \(\cosh^2\theta - \sinh^2\theta = 1\):</p>
+                            \[\int a\cosh\theta \cdot a\cosh\theta\,d\theta = a^2\int\cosh^2\theta\,d\theta\]
+                            <p style="margin-top: 10px;">Use \(\cosh^2\theta = \frac{\cosh 2\theta + 1}{2}\):</p>
+                            \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} + \theta\right) + C =
+                            \frac{a^2}{2}\sinh\theta\cosh\theta + \frac{a^2}{2}\theta + C\]
+                            <p style="margin-top: 10px;">Back-substitute: \(\sinh\theta = \frac{x}{a}\), \(\cosh\theta =
+                                \sqrt{1+\frac{x^2}{a^2}}\):</p>
+                            <div class="formula-box important">
+                                \[\int \sqrt{a^2+x^2}\,dx = \frac{x}{2}\sqrt{a^2+x^2} +
+                                \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- ── SUBSTITUTION REFERENCE ── -->
-        <div class="section" id="sec-7">
-            <h2>7. Quick Reference — Substitution Table</h2>
-            <table>
-                <tr><th>Expression</th><th>Substitution</th><th>Identity Used</th></tr>
-                <tr><td>\(\sqrt{a^2-x^2}\)</td><td>\(x = a\sin\theta\)</td><td>\(1-\sin^2\theta = \cos^2\theta\)</td></tr>
-                <tr><td>\(\sqrt{a^2+x^2}\)</td><td>\(x = a\sinh\theta\)</td><td>\(1+\sinh^2\theta = \cosh^2\theta\)</td></tr>
-                <tr><td>\(\sqrt{x^2-a^2}\)</td><td>\(x = a\cosh\theta\)</td><td>\(\cosh^2\theta - 1 = \sinh^2\theta\)</td></tr>
-            </table>
-        </div>
+                    <!-- ── DERIVATION 5 ── -->
+                    <div class="section" id="sec-5">
+                        <h2>5. \(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
+                            <p>\(dx = a\sinh\theta\,d\theta\) and \(\sqrt{a^2\cosh^2\theta - a^2} = a\sinh\theta\):</p>
+                            \[\int \frac{a\sinh\theta\,d\theta}{a\sinh\theta} = \int d\theta = \theta + C\]
+                            <p style="margin-top: 10px;">Since \(\theta = \cosh^{-1}\!\left(\frac{x}{a}\right)\):</p>
+                            <div class="formula-box important">
+                                \[\int \frac{dx}{\sqrt{x^2-a^2}} = \cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="note">
-            <strong>💡 Day 5 Tips:</strong>
-            <ul>
-                <li>These six results are standard — memorise them and recognise the radical form to pick the right substitution.</li>
-                <li>\(\sqrt{a^2-x^2}\) → trig sub (\(\sin\theta\)); \(\sqrt{a^2+x^2}\) and \(\sqrt{x^2-a^2}\) → hyperbolic sub (\(\sinh\theta\) or \(\cosh\theta\)).</li>
-                <li>Always convert back to \(x\) using \(\sin\theta = x/a\), \(\sinh\theta = x/a\), or \(\cosh\theta = x/a\).</li>
-                <li>For the square root integrals (2, 4, 6), use the double-angle identity to integrate the squared trig/hyperbolic function.</li>
-                <li>Don't forget the Jacobian factor from \(dx\) — it cancels in the simple cases but contributes \(a^2\) in the squared cases.</li>
-            </ul>
-        </div>
+                    <!-- ── DERIVATION 6 ── -->
+                    <div class="section" id="sec-6">
+                        <h2>6. \(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</h2>
+                        <div class="step-block">
+                            <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
+                            <p>\(dx = a\sinh\theta\,d\theta\), \(\sqrt{a^2\cosh^2\theta - a^2} = a\sinh\theta\):</p>
+                            \[a^2\int\sinh^2\theta\,d\theta\]
+                            <p style="margin-top: 10px;">Use \(\sinh^2\theta = \frac{\cosh 2\theta - 1}{2}\):</p>
+                            \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} - \theta\right) + C =
+                            \frac{a^2}{2}\sinh\theta\cosh\theta - \frac{a^2}{2}\theta + C\]
+                            <p style="margin-top: 10px;">Back-substitute: \(\cosh\theta = \frac{x}{a}\), \(\sinh\theta =
+                                \frac{\sqrt{x^2-a^2}}{a}\):</p>
+                            <div class="formula-box important">
+                                \[\int \sqrt{x^2-a^2}\,dx = \frac{x}{2}\sqrt{x^2-a^2} -
+                                \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                            </div>
+                        </div>
+                    </div>
 
-    </div><!-- .content -->
-</div><!-- .container -->
+                    <!-- ── SUBSTITUTION REFERENCE ── -->
+                    <div class="section" id="sec-7">
+                        <h2>7. Quick Reference — Substitution Table</h2>
+                        <table>
+                            <tr>
+                                <th>Expression</th>
+                                <th>Substitution</th>
+                                <th>Identity Used</th>
+                            </tr>
+                            <tr>
+                                <td>\(\sqrt{a^2-x^2}\)</td>
+                                <td>\(x = a\sin\theta\)</td>
+                                <td>\(1-\sin^2\theta = \cos^2\theta\)</td>
+                            </tr>
+                            <tr>
+                                <td>\(\sqrt{a^2+x^2}\)</td>
+                                <td>\(x = a\sinh\theta\)</td>
+                                <td>\(1+\sinh^2\theta = \cosh^2\theta\)</td>
+                            </tr>
+                            <tr>
+                                <td>\(\sqrt{x^2-a^2}\)</td>
+                                <td>\(x = a\cosh\theta\)</td>
+                                <td>\(\cosh^2\theta - 1 = \sinh^2\theta\)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="note">
+                        <strong>💡 Day 5 Tips:</strong>
+                        <ul>
+                            <li>These six results are standard — memorise them and recognise the radical form to pick
+                                the right substitution.</li>
+                            <li>\(\sqrt{a^2-x^2}\) → trig sub (\(\sin\theta\)); \(\sqrt{a^2+x^2}\) and
+                                \(\sqrt{x^2-a^2}\) → hyperbolic sub (\(\sinh\theta\) or \(\cosh\theta\)).</li>
+                            <li>Always convert back to \(x\) using \(\sin\theta = x/a\), \(\sinh\theta = x/a\), or
+                                \(\cosh\theta = x/a\).</li>
+                            <li>For the square root integrals (2, 4, 6), use the double-angle identity to integrate the
+                                squared trig/hyperbolic function.</li>
+                            <li>Don't forget the Jacobian factor from \(dx\) — it cancels in the simple cases but
+                                contributes \(a^2\) in the squared cases.</li>
+                        </ul>
+                    </div>
+
+                </div><!-- .content -->
+            </div><!-- .container -->
         </main>
     </div><!-- .layout-wrapper -->
 
-<script>
-    (function () {
-        function handleHash() {
-            var hash = window.location.hash;
-            if (!hash) return;
-            var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-            if (!el) return;
-            setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-        } else {
-            setTimeout(handleHash, 50);
-        }
-        window.addEventListener('hashchange', handleHash);
-    })();
-</script>
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
+                if (!el) return;
+                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
 
 
     <script>
@@ -739,4 +842,5 @@
         })();
     </script>
 </body>
+
 </html>
