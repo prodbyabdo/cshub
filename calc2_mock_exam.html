@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus II — Mock Exam</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      line-height: 1.7
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a
+    }
+
+    header {
+      background: #000;
+      padding: 30px;
+      text-align: center;
+      border-bottom: 1px solid #1a1a1a
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      font-weight: 800;
+      color: #00ff88;
+      letter-spacing: 2px
+    }
+
+    header p {
+      opacity: .6;
+      color: #00ff88;
+      font-weight: 600;
+      margin-top: 6px
+    }
+
+    .meta {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap
+    }
+
+    .meta span {
+      font-size: .85em;
+      color: #888;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .content {
+      padding: 40px
+    }
+
+    .part-title {
+      color: #00ff88;
+      font-size: 1.5em;
+      font-weight: 800;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 10px;
+      margin: 40px 0 20px
+    }
+
+    .part-intro {
+      color: #888;
+      font-size: .9em;
+      margin-bottom: 24px;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .exam-q {
+      background: #000;
+      border: 1px solid #1a1a1a;
+      border-left: 2px solid #333;
+      padding: 20px;
+      margin: 14px 0
+    }
+
+    .exam-q .q-label {
+      font-size: .72em;
+      letter-spacing: 2px;
+      color: #555;
+      margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .exam-q p {
+      color: #ccc;
+      font-size: 1.05em
+    }
+
+    details {
+      margin-top: 14px
+    }
+
+    details summary {
+      cursor: pointer;
+      font-size: .8em;
+      letter-spacing: 1px;
+      color: #555;
+      list-style: none;
+      padding: 6px 0;
+      border-top: 1px solid #1a1a1a
+    }
+
+    details summary::-webkit-details-marker {
+      display: none
+    }
+
+    details summary::before {
+      content: '▸  show solution'
+    }
+
+    details[open] summary::before {
+      content: '▾  hide solution'
+    }
+
+    .solution {
+      padding-top: 14px;
+      color: #aaa;
+      font-size: .95em
+    }
+
+    .solution p {
+      margin: 6px 0;
+      color: #aaa
+    }
+
+    .solution strong {
+      color: #fff
+    }
+
+    .ans {
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-left: 2px solid #00ff88;
+      padding: 12px 16px;
+      margin-top: 12px;
+      color: #00ff88
+    }
+
+    .mcq-opts {
+      margin: 12px 0 0 10px
+    }
+
+    .mcq-opts label {
+      display: block;
+      margin: 7px 0;
+      color: #bbb;
+      cursor: pointer;
+      font-size: .97em
+    }
+
+    .mcq-opts label:hover {
+      color: #00ff88
+    }
+
+    .tf-opts {
+      display: flex;
+      gap: 20px;
+      margin-top: 12px
+    }
+
+    .tf-opts label {
+      color: #bbb;
+      cursor: pointer;
+      font-size: .97em
+    }
+
+    .tf-opts label:hover {
+      color: #00ff88
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #00ff88;
+      background: rgba(0, 255, 136, .1);
+      color: #00ff88;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 14px;
+      transition: .2s
+    }
+
+    .print-btn:hover {
+      background: rgba(0, 255, 136, .2)
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 20px;
+      color: #888;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .85rem;
+      transition: .2s
+    }
+
+    .nav-back:hover {
+      color: #00ff88
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(0, 255, 136, .1);
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      font-size: .7em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-family: 'JetBrains Mono', monospace;
+      margin-left: 10px;
+      vertical-align: middle
+    }
+
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 30px;
+      text-align: center;
+      color: #444;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .8em
+    }
+
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important
+      }
+
+      .container,
+      .exam-q,
+      .solution,
+      .ans {
+        background: #fff !important;
+        color: #000 !important;
+        border-color: #999 !important
+      }
+
+      header {
+        background: #fff !important;
+        border-bottom: 2px solid #000 !important
+      }
+
+      h1,
+      h2,
+      p,
+      li,
+      label,
+      .q-label,
+      .part-title {
+        color: #000 !important
+      }
+
+      .nav-back,
+      .print-btn {
+        display: none !important
+      }
+
+      details {
+        display: block !important
+      }
+
+      details .solution {
+        display: block !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="year1sem2calc2.html" class="nav-back" style="margin:20px 0 0 20px;display:inline-flex">← Back to Calculus
+      2</a>
+    <header>
+      <h1>📐 Calculus II — Mock Exam</h1>
+      <p>Integration · u-Substitution · IBP · Trig &amp; Hyperbolic Substitution</p>
+      <div class="meta">
+        <span>60 Integration Problems</span>
+        <span>15 Multiple Choice</span>
+        <span>15 True / False</span>
+        <span>Dr. Hiba Omer · Dr. Mohamed Ali</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    </header>
+
+    <div class="content">
+
+      <!-- ═══════════════════════════════════════
+         PART A — INTEGRATION PROBLEMS (Q1–20)
+    ════════════════════════════════════════ -->
+      <div class="part-title">Part A — Integration Problems <span class="section-badge">60 Questions</span></div>
+      <p class="part-intro">Show full working. Include +C for indefinite integrals. Expand solutions using <em>▸ show
+          solution</em>.</p>
+
+      <!-- Q1 -->
+      <div class="exam-q" id="q1">
+        <div class="q-label">QUESTION 01 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x\,(x^2+1)^6\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=x^2+1,\quad du=2x\,dx \Rightarrow x\,dx=\tfrac{1}{2}du\)</p>
+            \[\tfrac{1}{2}\int u^6\,du = \frac{u^7}{14}+C\]
+            <div class="ans">\[\dfrac{(x^2+1)^7}{14}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q2 -->
+      <div class="exam-q" id="q2">
+        <div class="q-label">QUESTION 02 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^2}{\sqrt{x^3-2}}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=x^3-2,\quad du=3x^2\,dx\)</p>
+            \[\tfrac{1}{3}\int u^{-1/2}\,du = \frac{2}{3}\sqrt{u}+C\]
+            <div class="ans">\[\dfrac{2}{3}\sqrt{x^3-2}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q3 -->
+      <div class="exam-q" id="q3">
+        <div class="q-label">QUESTION 03 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int (x+2)(x-3)^5\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=x-3\Rightarrow x=u+3,\; x+2=u+5,\; dx=du\)</p>
+            \[\int(u+5)u^5\,du=\int(u^6+5u^5)\,du=\frac{u^7}{7}+\frac{5u^6}{6}+C\]
+            <div class="ans">\[\dfrac{(x-3)^7}{7}+\dfrac{5(x-3)^6}{6}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q4 -->
+      <div class="exam-q" id="q4">
+        <div class="q-label">QUESTION 04 · BASIC INTEGRATION</div>
+        <p>Evaluate: \(\displaystyle\int (y+5)y^5\,dy\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Expand: \((y+5)y^5 = y^6+5y^5\)</p>
+            \[\int(y^6+5y^5)\,dy = \frac{y^7}{7}+\frac{5y^6}{6}+C\]
+            <div class="ans">\[\dfrac{y^7}{7}+\dfrac{5y^6}{6}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q5 -->
+      <div class="exam-q" id="q5">
+        <div class="q-label">QUESTION 05 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x^2\sin(x^3+1)\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=x^3+1,\quad du=3x^2\,dx\)</p>
+            \[\tfrac{1}{3}\int\sin u\,du=-\frac{1}{3}\cos u+C\]
+            <div class="ans">\[-\dfrac{1}{3}\cos(x^3+1)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q6 -->
+      <div class="exam-q" id="q6">
+        <div class="q-label">QUESTION 06 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sin(2x-5)\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=2x-5,\quad du=2\,dx\)</p>
+            \[\tfrac{1}{2}\int\sin u\,du=-\frac{1}{2}\cos u+C\]
+            <div class="ans">\[-\dfrac{1}{2}\cos(2x-5)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q7 -->
+      <div class="exam-q" id="q7">
+        <div class="q-label">QUESTION 07 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sin^6 x\cos x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=\sin x,\quad du=\cos x\,dx\)</p>
+            \[\int u^6\,du=\frac{u^7}{7}+C\]
+            <div class="ans">\[\dfrac{\sin^7 x}{7}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q8 -->
+      <div class="exam-q" id="q8">
+        <div class="q-label">QUESTION 08 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \tan^4 x\sec^2 x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=\tan x,\quad du=\sec^2 x\,dx\)</p>
+            \[\int u^4\,du=\frac{u^5}{5}+C\]
+            <div class="ans">\[\dfrac{\tan^5 x}{5}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q9 -->
+      <div class="exam-q" id="q9">
+        <div class="q-label">QUESTION 09 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \csc^2 x\cot^3 x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Let</strong> \(u=\cot x,\quad du=-\csc^2 x\,dx\)</p>
+            \[-\int u^3\,du=-\frac{u^4}{4}+C\]
+            <div class="ans">\[-\dfrac{\cot^4 x}{4}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q10 -->
+      <div class="exam-q" id="q10">
+        <div class="q-label">QUESTION 10 · TRIG REDUCTION</div>
+        <p>Evaluate: \(\displaystyle\int \sin^5 x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Write \(\sin^5 x = \sin^4 x\cdot\sin x=(1-\cos^2 x)^2\sin x\). Let \(u=\cos x,\;du=-\sin x\,dx\).</p>
+            \[-\int(1-u^2)^2\,du=-\int(1-2u^2+u^4)\,du\]
+            \[=-u+\tfrac{2u^3}{3}-\tfrac{u^5}{5}+C\]
+            <div class="ans">\[-\cos x+\dfrac{2\cos^3 x}{3}-\dfrac{\cos^5 x}{5}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q11 -->
+      <div class="exam-q" id="q11">
+        <div class="q-label">QUESTION 11 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{9-x^2}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=3\sin\theta,\;dx=3\cos\theta\,d\theta,\;\sqrt{9-x^2}=3\cos\theta\)</p>
+            \[9\int\cos^2\theta\,d\theta=\frac{9}{2}\int(1+\cos2\theta)\,d\theta=\frac{9}{2}\!\left(\theta+\frac{\sin2\theta}{2}\right)+C\]
+            <p>Back-substitute: \(\theta=\sin^{-1}(x/3),\;\sin2\theta=\tfrac{2x}{9}\sqrt{9-x^2}\)</p>
+            <div class="ans">\[\dfrac{x}{2}\sqrt{9-x^2}+\dfrac{9}{2}\sin^{-1}\!\left(\dfrac{x}{3}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q12 -->
+      <div class="exam-q" id="q12">
+        <div class="q-label">QUESTION 12 · HYPERBOLIC</div>
+        <p>Evaluate: \(\displaystyle\int \sinh x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Direct antiderivative: \(\tfrac{d}{dx}[\cosh x]=\sinh x\)</p>
+            <div class="ans">\[\cosh x+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q13 -->
+      <div class="exam-q" id="q13">
+        <div class="q-label">QUESTION 13 · STANDARD INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int \csc x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Multiply and divide by \((\csc x-\cot x)\), then let \(u=\csc x-\cot x\):</p>
+            \[\int\frac{\csc x(\csc x-\cot x)}{\csc x-\cot x}\,dx=\int\frac{du}{u}=\ln|u|+C\]
+            <div class="ans">\[\ln|\csc x-\cot x|+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q14 -->
+      <div class="exam-q" id="q14">
+        <div class="q-label">QUESTION 14 · DEFINITE INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int_{2}^{4}(2x+6)\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            \[\bigl[x^2+6x\bigr]_2^4=(16+24)-(4+12)=40-16\]
+            <div class="ans">\[= 24\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q15 -->
+      <div class="exam-q" id="q15">
+        <div class="q-label">QUESTION 15 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int e^{5x+1}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(u=5x+1,\;du=5\,dx\)</p>
+            \[\frac{1}{5}\int e^u\,du=\frac{e^u}{5}+C\]
+            <div class="ans">\[\dfrac{e^{5x+1}}{5}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q16 -->
+      <div class="exam-q" id="q16">
+        <div class="q-label">QUESTION 16 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x\,e^{x^2}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(u=x^2,\;du=2x\,dx\)</p>
+            \[\frac{1}{2}\int e^u\,du=\frac{e^u}{2}+C\]
+            <div class="ans">\[\dfrac{e^{x^2}}{2}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q17 -->
+      <div class="exam-q" id="q17">
+        <div class="q-label">QUESTION 17 · INTEGRATION BY PARTS</div>
+        <p>Evaluate: \(\displaystyle\int x\cos x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=x,\;dv=\cos x\,dx \Rightarrow du=dx,\;v=\sin x\)</p>
+            \[x\sin x-\int\sin x\,dx=x\sin x+\cos x+C\]
+            <div class="ans">\[x\sin x+\cos x+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q18 -->
+      <div class="exam-q" id="q18">
+        <div class="q-label">QUESTION 18 · DEFINITE INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int_{1}^{4}\frac{x^2+x}{\sqrt{x}}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Rewrite: \(\dfrac{x^2+x}{\sqrt{x}}=x^{3/2}+x^{1/2}\)</p>
+            \[\left[\frac{2x^{5/2}}{5}+\frac{2x^{3/2}}{3}\right]_1^4=\!\left(\frac{64}{5}+\frac{16}{3}\right)-\!\left(\frac{2}{5}+\frac{2}{3}\right)=\frac{62}{5}+\frac{14}{3}=\frac{256}{15}\]
+            <div class="ans">\[\dfrac{256}{15}\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q19 -->
+      <div class="exam-q" id="q19">
+        <div class="q-label">QUESTION 19 · BASIC INTEGRATION</div>
+        <p>Evaluate: \(\displaystyle\int x^2\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Power rule: raise power by 1, divide by new power.</p>
+            <div class="ans">\[\dfrac{x^3}{3}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q20 -->
+      <div class="exam-q" id="q20">
+        <div class="q-label">QUESTION 20 · DEFINITE INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int_{0}^{1}(x+2)^2\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Expand: \((x+2)^2=x^2+4x+4\)</p>
+            \[\left[\frac{x^3}{3}+2x^2+4x\right]_0^1=\frac{1}{3}+2+4=\frac{19}{3}\]
+            <div class="ans">\[\dfrac{19}{3}\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q21 -->
+      <div class="exam-q" id="q21">
+        <div class="q-label">QUESTION 21 · SIMPLIFY FIRST</div>
+        <p>Evaluate: \(\displaystyle\int\frac{x^3-1}{x-1}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Factor: \(\dfrac{x^3-1}{x-1}=x^2+x+1\)</p>
+            \[\int(x^2+x+1)\,dx\]
+            <div class="ans">\[\dfrac{x^3}{3}+\dfrac{x^2}{2}+x+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q22 -->
+      <div class="exam-q" id="q22">
+        <div class="q-label">QUESTION 22 · DEFINITE + U-SUB</div>
+        <p>Evaluate: \(\displaystyle\int_0^2 x^2\sqrt{x^3+1}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(u=x^3+1,\;du=3x^2\,dx\). Bounds: \(x=0\to u=1,\;x=2\to u=9\).</p>
+            \[\tfrac{1}{3}\int_1^9\sqrt{u}\,du=\tfrac{1}{3}\cdot\tfrac{2}{3}\bigl[u^{3/2}\bigr]_1^9=\tfrac{2}{9}(27-1)\]
+            <div class="ans">\[=\dfrac{52}{9}\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q23 -->
+      <div class="exam-q" id="q23">
+        <div class="q-label">QUESTION 23 · DEFINITE INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int_1^9\frac{1}{3}\sqrt{y}\,dy\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            \[\tfrac{1}{3}\cdot\tfrac{2}{3}\bigl[y^{3/2}\bigr]_1^9=\tfrac{2}{9}(27-1)\]
+            <div class="ans">\[=\dfrac{52}{9}\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q24 -->
+      <div class="exam-q" id="q24">
+        <div class="q-label">QUESTION 24 · DEFINITE + U-SUB</div>
+        <p>Evaluate: \(\displaystyle\int_0^{\pi/2}\sqrt{\cos x}\cdot\sin x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(u=\cos x,\;du=-\sin x\,dx\). Bounds: \(1\to0\).</p>
+            \[\int_1^0 u^{1/2}(-du)=\int_0^1 u^{1/2}\,du=\bigl[\tfrac{2}{3}u^{3/2}\bigr]_0^1\]
+            <div class="ans">\[=\dfrac{2}{3}\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q25 -->
+      <div class="exam-q" id="q25">
+        <div class="q-label">QUESTION 25 · IBP + DEFINITE</div>
+        <p>Evaluate: \(\displaystyle\int_0^{\pi} x\cos x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=x,\;dv=\cos x\,dx\Rightarrow v=\sin x\)</p>
+            \[\bigl[x\sin x\bigr]_0^\pi-\int_0^\pi\sin x\,dx=0-\bigl[-\cos x\bigr]_0^\pi=-(−1−1)\]
+            <div class="ans">\[=-2\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q26 -->
+      <div class="exam-q" id="q26">
+        <div class="q-label">QUESTION 26 · TRIVIAL</div>
+        <p>Evaluate: \(\displaystyle\int d\theta\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>The integrand is 1.</p>
+            <div class="ans">\[\theta+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q27 -->
+      <div class="exam-q" id="q27">
+        <div class="q-label">QUESTION 27 · IBP CYCLIC</div>
+        <p>Evaluate: \(\displaystyle\int e^{3x}\cos2x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Apply IBP twice (cyclic). Let \(I=\int e^{3x}\cos2x\,dx\).</p>
+            <p>\(u=e^{3x},\;dv=\cos2x\,dx\): \(I=\tfrac{e^{3x}\sin2x}{2}-\tfrac{3}{2}\int e^{3x}\sin2x\,dx\)</p>
+            <p>Second IBP on \(\int e^{3x}\sin2x\,dx\): \(-\tfrac{e^{3x}\cos2x}{2}+\tfrac{3}{2}\int e^{3x}\cos2x\,dx\)
+            </p>
+            <p>Substitute back: \(I=\tfrac{e^{3x}\sin2x}{2}+\tfrac{3e^{3x}\cos2x}{4}-\tfrac{9}{4}I \Rightarrow
+              \tfrac{13}{4}I=\cdots\)</p>
+            <div class="ans">\[\dfrac{e^{3x}(3\cos2x+2\sin2x)}{13}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q28 -->
+      <div class="exam-q" id="q28">
+        <div class="q-label">QUESTION 28 · HYPERBOLIC SUB (Lec 7 Form 4)</div>
+        <p>Evaluate: \(\displaystyle\int\sqrt{x^2+9}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=3\sinh\theta,\;dx=3\cosh\theta\,d\theta,\;\sqrt{x^2+9}=3\cosh\theta\)</p>
+            \[9\int\cosh^2\theta\,d\theta=\tfrac{9}{2}\int(\cosh2\theta+1)\,d\theta=\tfrac{9}{4}\sinh2\theta+\tfrac{9}{2}\theta+C\]
+            <p>Back-sub \(\sinh\theta=x/3,\;\cosh\theta=\sqrt{x^2+9}/3\):</p>
+            <div class="ans">\[\dfrac{x}{2}\sqrt{x^2+9}+\dfrac{9}{2}\sinh^{-1}\!\left(\dfrac{x}{3}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q29 -->
+      <div class="exam-q" id="q29">
+        <div class="q-label">QUESTION 29 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int\frac{dx}{x^2-a^2}\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>\(\dfrac{1}{x^2-a^2}=\dfrac{1}{2a}\!\left(\dfrac{1}{x-a}-\dfrac{1}{x+a}\right)\)</p>
+            \[\frac{1}{2a}\bigl(\ln|x-a|-\ln|x+a|\bigr)+C\]
+            <div class="ans">\[\dfrac{1}{2a}\ln\left|\dfrac{x-a}{x+a}\right|+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q30 -->
+      <div class="exam-q" id="q30">
+        <div class="q-label">QUESTION 30 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int x^2\ln x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=\ln x,\;dv=x^2\,dx\Rightarrow du=\tfrac{dx}{x},\;v=\tfrac{x^3}{3}\)</p>
+            \[\frac{x^3\ln x}{3}-\int\frac{x^3}{3}\cdot\frac{1}{x}\,dx=\frac{x^3\ln x}{3}-\frac{1}{3}\int x^2\,dx\]
+            <div class="ans">\[\dfrac{x^3\ln x}{3}-\dfrac{x^3}{9}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q31 -->
+      <div class="exam-q" id="q31">
+        <div class="q-label">QUESTION 31 · TRIG SUB (Lec 7 Form 1)</div>
+        <p>Evaluate: \(\displaystyle\int\frac{dx}{\sqrt{a^2-x^2}}\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\sin\theta,\;dx=a\cos\theta\,d\theta,\;\sqrt{a^2-x^2}=a\cos\theta\)</p>
+            \[\int\frac{a\cos\theta\,d\theta}{a\cos\theta}=\int d\theta=\theta+C,\quad\theta=\sin^{-1}\!\tfrac{x}{a}\]
+            <div class="ans">\[\sin^{-1}\!\left(\dfrac{x}{a}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q32 -->
+      <div class="exam-q" id="q32">
+        <div class="q-label">QUESTION 32 · TRIG SUB (Lec 7 Form 2)</div>
+        <p>Evaluate: \(\displaystyle\int\sqrt{a^2-x^2}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\sin\theta\). Then \(\sqrt{a^2-x^2}=a\cos\theta,\;dx=a\cos\theta\,d\theta\).</p>
+            \[a^2\int\cos^2\theta\,d\theta=\frac{a^2}{2}\!\left(\theta+\frac{\sin2\theta}{2}\right)+C\]
+            <p>Back-sub: \(\sin\theta=x/a,\;\cos\theta=\sqrt{a^2-x^2}/a\)</p>
+            <div class="ans">\[\dfrac{a^2}{2}\sin^{-1}\!\left(\dfrac{x}{a}\right)+\dfrac{x}{2}\sqrt{a^2-x^2}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q33 -->
+      <div class="exam-q" id="q33">
+        <div class="q-label">QUESTION 33 · HYPERBOLIC SUB (Lec 7 Form 3)</div>
+        <p>Evaluate: \(\displaystyle\int\frac{dx}{\sqrt{a^2+x^2}}\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\sinh\theta,\;dx=a\cosh\theta\,d\theta,\;\sqrt{a^2+x^2}=a\cosh\theta\)</p>
+            \[\int\frac{a\cosh\theta\,d\theta}{a\cosh\theta}=\theta+C=\sinh^{-1}\!\tfrac{x}{a}+C\]
+            <div class="ans">\[\sinh^{-1}\!\left(\dfrac{x}{a}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q34 -->
+      <div class="exam-q" id="q34">
+        <div class="q-label">QUESTION 34 · HYPERBOLIC SUB (Lec 7 Form 4)</div>
+        <p>Evaluate: \(\displaystyle\int\sqrt{a^2+x^2}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\sinh\theta\). Then \(\sqrt{a^2+x^2}=a\cosh\theta,\;dx=a\cosh\theta\,d\theta\).</p>
+            \[a^2\int\cosh^2\theta\,d\theta=\frac{a^2}{2}\!\left(\frac{\sinh2\theta}{2}+\theta\right)+C\]
+            <p>Since \(\sinh2\theta=2\sinh\theta\cosh\theta\), back-substituting:</p>
+            <div class="ans">\[\dfrac{x}{2}\sqrt{a^2+x^2}+\dfrac{a^2}{2}\sinh^{-1}\!\left(\dfrac{x}{a}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q35 -->
+      <div class="exam-q" id="q35">
+        <div class="q-label">QUESTION 35 · HYPERBOLIC SUB (Lec 7 Form 5)</div>
+        <p>Evaluate: \(\displaystyle\int\frac{dx}{\sqrt{x^2-a^2}}\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\cosh\theta,\;dx=a\sinh\theta\,d\theta,\;\sqrt{x^2-a^2}=a\sinh\theta\)</p>
+            \[\int\frac{a\sinh\theta\,d\theta}{a\sinh\theta}=\theta+C=\cosh^{-1}\!\tfrac{x}{a}+C\]
+            <div class="ans">\[\cosh^{-1}\!\left(\dfrac{x}{a}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q36 -->
+      <div class="exam-q" id="q36">
+        <div class="q-label">QUESTION 36 · HYPERBOLIC SUB (Lec 7 Form 6)</div>
+        <p>Evaluate: \(\displaystyle\int\sqrt{x^2-a^2}\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>Let \(x=a\cosh\theta,\;dx=a\sinh\theta\,d\theta,\;\sqrt{x^2-a^2}=a\sinh\theta\).</p>
+            \[a^2\int\sinh^2\theta\,d\theta=\frac{a^2}{2}\!\left(\frac{\sinh2\theta}{2}-\theta\right)+C\]
+            <p>Back-sub: \(\cosh\theta=x/a,\;\sinh\theta=\sqrt{x^2-a^2}/a\):</p>
+            <div class="ans">\[\dfrac{x}{2}\sqrt{x^2-a^2}-\dfrac{a^2}{2}\cosh^{-1}\!\left(\dfrac{x}{a}\right)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q37 -->
+      <div class="exam-q" id="q37">
+        <div class="q-label">QUESTION 37 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int x\ln x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=\ln x,\;dv=x\,dx\Rightarrow du=dx/x,\;v=x^2/2\)</p>
+            \[\frac{x^2\ln x}{2}-\int\frac{x^2}{2}\cdot\frac{1}{x}\,dx=\frac{x^2\ln x}{2}-\frac{x^2}{4}+C\]
+            <div class="ans">\[\dfrac{x^2}{2}\ln x-\dfrac{x^2}{4}+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q38 -->
+      <div class="exam-q" id="q38">
+        <div class="q-label">QUESTION 38 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int\arctan x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=\arctan x,\;dv=dx\Rightarrow du=\tfrac{dx}{1+x^2},\;v=x\)</p>
+            \[x\arctan x-\int\frac{x}{1+x^2}\,dx=x\arctan x-\frac{1}{2}\ln(1+x^2)+C\]
+            <div class="ans">\[x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q39 -->
+      <div class="exam-q" id="q39">
+        <div class="q-label">QUESTION 39 · IBP (REPEATED)</div>
+        <p>Evaluate: \(\displaystyle\int x^2 e^x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP twice. \(u=x^2,\;dv=e^x\,dx\):</p>
+            \[x^2e^x-2\int xe^x\,dx=x^2e^x-2(xe^x-e^x)+C\]
+            <div class="ans">\[e^x(x^2-2x+2)+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q40 -->
+      <div class="exam-q" id="q40">
+        <div class="q-label">QUESTION 40 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int\ln x\,dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p>IBP: \(u=\ln x,\;dv=dx\Rightarrow du=dx/x,\;v=x\)</p>
+            \[x\ln x-\int\frac{x}{x}\,dx=x\ln x-x+C\]
+            <div class="ans">\[x\ln x-x+C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q41 -->
+      <div class="exam-q" id="q41"><div class="q-label">QUESTION 41 · BASIC INTEGRATION</div>
+        <p>Evaluate: \(\displaystyle\int (3x^4 - 2x^2 + 5)\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Integrate term by term using power rule.</p>
+          <div class="ans">\[\dfrac{3x^5}{5}-\dfrac{2x^3}{3}+5x+C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q42 -->
+      <div class="exam-q" id="q42"><div class="q-label">QUESTION 42 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{e^x}{e^x + 1}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = e^x + 1, \; du = e^x\,dx\)</p>
+          \[\int \frac{du}{u} = \ln|u| + C\]
+          <div class="ans">\[\ln(e^x+1)+C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q43 -->
+      <div class="exam-q" id="q43"><div class="q-label">QUESTION 43 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x\sqrt{x-1}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = x - 1 \Rightarrow x = u + 1,\; dx = du\)</p>
+          \[\int (u+1)u^{1/2}\,du = \int (u^{3/2} + u^{1/2})\,du\]
+          <div class="ans">\[\dfrac{2}{5}(x-1)^{5/2} + \dfrac{2}{3}(x-1)^{3/2} + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q44 -->
+      <div class="exam-q" id="q44"><div class="q-label">QUESTION 44 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \cos^3 x\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>\(\cos^3 x = \cos^2 x \cos x = (1 - \sin^2 x)\cos x\). Let \(u = \sin x, \; du = \cos x\,dx\)</p>
+          \[\int (1 - u^2)\,du = u - \frac{u^3}{3} + C\]
+          <div class="ans">\[\sin x - \dfrac{\sin^3 x}{3} + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q45 -->
+      <div class="exam-q" id="q45"><div class="q-label">QUESTION 45 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int x\sin(3x)\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>IBP: \(u=x, \; dv=\sin(3x)\,dx \Rightarrow du=dx, \; v=-\frac{1}{3}\cos(3x)\)</p>
+          \[-\frac{x}{3}\cos(3x) - \int -\frac{1}{3}\cos(3x)\,dx\]
+          <div class="ans">\[-\dfrac{x}{3}\cos(3x) + \dfrac{1}{9}\sin(3x) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q46 -->
+      <div class="exam-q" id="q46"><div class="q-label">QUESTION 46 · DEFINITE INTEGRAL</div>
+        <p>Evaluate: \(\displaystyle\int_0^1 (x^2 + 2x)\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          \[\left[ \frac{x^3}{3} + x^2 \right]_0^1 = \left(\frac{1}{3} + 1\right) - 0\]
+          <div class="ans">\[\dfrac{4}{3}\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q47 -->
+      <div class="exam-q" id="q47"><div class="q-label">QUESTION 47 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{x\ln x}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = \ln x, \; du = \frac{1}{x}\,dx\)</p>
+          \[\int \frac{du}{u} = \ln|u| + C\]
+          <div class="ans">\[\ln|\ln x| + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q48 -->
+      <div class="exam-q" id="q48"><div class="q-label">QUESTION 48 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \tan x\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>\(\int \frac{\sin x}{\cos x}\,dx\). Let \(u = \cos x, \; du = -\sin x\,dx\)</p>
+          \[-\int \frac{du}{u} = -\ln|u| + C = \ln|\sec x| + C\]
+          <div class="ans">\[\ln|\sec x| + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q49 -->
+      <div class="exam-q" id="q49"><div class="q-label">QUESTION 49 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int e^x \sin x\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Cyclic IBP. Let \(I = \int e^x \sin x\,dx\). \(u=\sin x, \; dv=e^x\,dx \Rightarrow du=\cos x\,dx, \; v=e^x\)</p>
+          \[I = e^x\sin x - \int e^x\cos x\,dx\]
+          <p>Second IBP: \(u=\cos x, \; dv=e^x\,dx \Rightarrow du=-\sin x\,dx, \; v=e^x\)</p>
+          \[I = e^x\sin x - \left(e^x\cos x - \int e^x(-\sin x)\,dx\right) = e^x(\sin x - \cos x) - I\]
+          \[2I = e^x(\sin x - \cos x) \Rightarrow I = \frac{e^x}{2}(\sin x - \cos x)\]
+          <div class="ans">\[\dfrac{e^x}{2}(\sin x - \cos x) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q50 -->
+      <div class="exam-q" id="q50"><div class="q-label">QUESTION 50 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{(x^2+4)^{3/2}}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(x = 2\tan\theta, \; dx = 2\sec^2\theta\,d\theta, \; \sqrt{x^2+4} = 2\sec\theta\)</p>
+          \[\int \frac{2\sec^2\theta}{(2\sec\theta)^3}\,d\theta = \frac{2}{8}\int \frac{\sec^2\theta}{\sec^3\theta}\,d\theta = \frac{1}{4}\int \cos\theta\,d\theta = \frac{1}{4}\sin\theta + C\]
+          <p>\(\sin\theta = \frac{x}{\sqrt{x^2+4}}\)</p>
+          <div class="ans">\[\dfrac{x}{4\sqrt{x^2+4}} + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q51 -->
+      <div class="exam-q" id="q51"><div class="q-label">QUESTION 51 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x}{x^2 - 5x + 6}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>\(\frac{x}{(x-2)(x-3)} = \frac{A}{x-2} + \frac{B}{x-3} \Rightarrow x = A(x-3) + B(x-2)\)</p>
+          <p>For \(x=2: 2 = -A \Rightarrow A = -2\). For \(x=3: 3 = B\)</p>
+          \[\int \left(\frac{-2}{x-2} + \frac{3}{x-3}\right)dx = -2\ln|x-2| + 3\ln|x-3| + C\]
+          <div class="ans">\[3\ln|x-3| - 2\ln|x-2| + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q52 -->
+      <div class="exam-q" id="q52"><div class="q-label">QUESTION 52 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{x^2 + 4x + 13}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>\(x^2 + 4x + 13 = (x+2)^2 + 9\)</p>
+          \[\int \frac{1}{(x+2)^2 + 3^2}\,dx = \frac{1}{3}\arctan\left(\frac{x+2}{3}\right) + C\]
+          <div class="ans">\[\dfrac{1}{3}\arctan\left(\dfrac{x+2}{3}\right) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q53 -->
+      <div class="exam-q" id="q53"><div class="q-label">QUESTION 53 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sin x}{1+\cos^2 x}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = \cos x, \; du = -\sin x\,dx\)</p>
+          \[-\int \frac{du}{1+u^2} = -\arctan u + C\]
+          <div class="ans">\[-\arctan(\cos x) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q54 -->
+      <div class="exam-q" id="q54"><div class="q-label">QUESTION 54 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \sec^3 x\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>IBP: \(u=\sec x, \; dv=\sec^2 x\,dx \Rightarrow du=\sec x\tan x\,dx, \; v=\tan x\)</p>
+          \[\int \sec^3 x\,dx = \sec x\tan x - \int \sec x\tan^2 x\,dx = \sec x\tan x - \int \sec x(\sec^2 x - 1)\,dx\]
+          \[= \sec x\tan x - \int \sec^3 x\,dx + \int \sec x\,dx\]
+          \[2\int \sec^3 x\,dx = \sec x\tan x + \ln|\sec x + \tan x|\]
+          <div class="ans">\[\dfrac{1}{2}(\sec x\tan x + \ln|\sec x + \tan x|) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q55 -->
+      <div class="exam-q" id="q55"><div class="q-label">QUESTION 55 · ADVANCED IBP</div>
+        <p>Evaluate: \(\displaystyle\int x^3 e^{x^2}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = x^2 \Rightarrow du = 2x\,dx\). Then \(x^3 e^{x^2}\,dx = x^2 e^{x^2} x\,dx = u e^u \frac{du}{2}\)</p>
+          <p>\(\frac{1}{2}\int u e^u\,du\). Use IBP on this: \(\frac{1}{2}(u e^u - e^u)\)</p>
+          <div class="ans">\[\dfrac{1}{2}e^{x^2}(x^2 - 1) + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q56 -->
+      <div class="exam-q" id="q56"><div class="q-label">QUESTION 56 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \sin(5x)\cos(3x)\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Use identity: \(\sin A\cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]\)</p>
+          \[\int \frac{1}{2}[\sin(8x) + \sin(2x)]\,dx = \frac{1}{2}\left( -\frac{\cos(8x)}{8} - \frac{\cos(2x)}{2} \right)\]
+          <div class="ans">\[-\dfrac{\cos(8x)}{16} - \dfrac{\cos(2x)}{4} + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q57 -->
+      <div class="exam-q" id="q57"><div class="q-label">QUESTION 57 · ADVANCED SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{1 + e^x}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = \sqrt{1 + e^x} \Rightarrow u^2 = 1 + e^x \Rightarrow e^x = u^2 - 1 \Rightarrow 2u\,du = e^x\,dx = (u^2-1)dx \Rightarrow dx = \frac{2u}{u^2-1}du\)</p>
+          \[\int u \frac{2u}{u^2-1}\,du = 2\int \frac{u^2}{u^2-1}\,du = 2\int \left(1 + \frac{1}{u^2-1}\right)du\]
+          \[= 2u + \ln\left|\frac{u-1}{u+1}\right|\]
+          <div class="ans">\[2\sqrt{1+e^x} + \ln\left|\dfrac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1}\right| + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q58 -->
+      <div class="exam-q" id="q58"><div class="q-label">QUESTION 58 · RATIONAL FUNCTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{dx}{x^4 - 1}\)</p>
+        <details><summary></summary><div class="solution">
+          <p>\(x^4-1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)\)</p>
+          <p>Partial fractions: \(\frac{1}{x^4-1} = \frac{A}{x-1} + \frac{B}{x+1} + \frac{Cx+D}{x^2+1}\)</p>
+          <p>\(A=1/4, \; B=-1/4, \; C=0, \; D=-1/2\)</p>
+          \[\int \left( \frac{1/4}{x-1} - \frac{1/4}{x+1} - \frac{1/2}{x^2+1} \right) dx\]
+          <div class="ans">\[\dfrac{1}{4}\ln\left|\dfrac{x-1}{x+1}\right| - \dfrac{1}{2}\arctan x + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q59 -->
+      <div class="exam-q" id="q59"><div class="q-label">QUESTION 59 · MIXED TECHNIQUE</div>
+        <p>Evaluate: \(\displaystyle\int \ln(x^2 + 1)\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>IBP: \(u = \ln(x^2+1), \; dv = dx \Rightarrow du = \frac{2x}{x^2+1}\,dx, \; v = x\)</p>
+          \[x\ln(x^2+1) - \int \frac{2x^2}{x^2+1}\,dx = x\ln(x^2+1) - 2\int \left(1 - \frac{1}{x^2+1}\right)dx\]
+          <div class="ans">\[x\ln(x^2+1) - 2x + 2\arctan x + C\]</div>
+        </div></details>
+      </div>
+
+      <!-- Q60 -->
+      <div class="exam-q" id="q60"><div class="q-label">QUESTION 60 · DEFINITE INTEGRAL (HARD)</div>
+        <p>Evaluate: \(\displaystyle\int_0^{\pi/4} \frac{\sin x + \cos x}{3 + \sin 2x}\,dx\)</p>
+        <details><summary></summary><div class="solution">
+          <p>Let \(u = \sin x - \cos x \Rightarrow du = (\cos x + \sin x)dx\).</p>
+          <p>\(u^2 = \sin^2 x - 2\sin x\cos x + \cos^2 x = 1 - \sin 2x \Rightarrow \sin 2x = 1 - u^2\)</p>
+          <p>Denominator: \(3 + \sin 2x = 3 + (1 - u^2) = 4 - u^2\)</p>
+          <p>Limits: \(x=0 \to u=-1\); \(x=\pi/4 \to u=0\)</p>
+          \[\int_{-1}^0 \frac{du}{4-u^2} = \frac{1}{4} \left[ \ln\left|\frac{2+u}{2-u}\right| \right]_{-1}^0 = \frac{1}{4}(\ln 1 - \ln(1/3))\]
+          <div class="ans">\[\dfrac{\ln 3}{4}\]</div>
+        </div></details>
+      </div>
+
+      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
+
+      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
+      <!-- MCQ_TF_HERE -->
+
+      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
+      <!-- MCQ_TF_HERE -->
+
+    </div><!-- end .content -->
+
+    <footer>Calculus II Mock Exam · Compiled by Abdelrazieg Mohamed · linktr.ee/prodbyabdo</footer>
+  </div><!-- end .container -->
+</body>
+
+</html>

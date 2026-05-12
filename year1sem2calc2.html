@@ -155,6 +155,135 @@
             color: #cccccc;
         }
 
+        /* ── Lecture Card Grid ── */
+        .lec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 4px;
+        }
+
+        @keyframes cardReveal {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lec-card {
+            background: #0d0d0d;
+            border: 1px solid #1e1e1e;
+            border-top: 2px solid #00ff88;
+            border-radius: 6px;
+            padding: 18px 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .lec-card.visible {
+            animation: cardReveal 0.42s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .lec-card:hover {
+            border-color: #00ff88;
+            box-shadow: 0 4px 24px rgba(0, 255, 136, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .lec-card__header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .lec-card__badge {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .lec-card__title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+
+        .lec-card__actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .lec-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .lec-link--notes {
+            background: rgba(0, 255, 136, 0.08);
+            color: #00ff88;
+            border: 1px solid rgba(0, 255, 136, 0.25);
+        }
+
+        .lec-link--notes:hover {
+            background: rgba(0, 255, 136, 0.16);
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.15);
+        }
+
+        .lec-link--sol {
+            background: rgba(255, 255, 255, 0.04);
+            color: #aaaaaa;
+            border: 1px solid #2a2a2a;
+        }
+
+        .lec-link--sol:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #cccccc;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .lec-card {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .lec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .print-btn {
             display: inline-flex;
             align-items: center;
@@ -278,106 +407,114 @@
 
             <!-- ── LECTURES & NOTES ── -->
             <div class="section no-print">
-                <h2>Lectures & Notes</h2>
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="year1sem2calc2lec1.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Day 1: Basic Integration
-                    </a>
-                    <a href="year1sem2calc2lec1sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 1 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec2.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Day 2: Substitution & Square Complement
-                    </a>
-                    <a href="year1sem2calc2lec2sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 2 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec3.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Lecture 3: Integration by Parts & Tabular Method
-                    </a>
-                    <a href="year1sem2calc2lec3sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 3 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec4.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Day 4: Integration by Parts & Tabular Method
-                    </a>
-                    <a href="year1sem2calc2lec4sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 4 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec5.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Day 5: Standard Integrals
-                    </a>
-                    <a href="year1sem2calc2lec5sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 5 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec6.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Lecture 6: Trig & Clever Substitution
-                    </a>
-                    <a href="year1sem2calc2lec6sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 6 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec7.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Lecture 7: Areas Between Curves
-                    </a>
-                    <a href="year1sem2calc2lec7sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 7 Solutions
-                    </a>
-                    <a href="year1sem2calc2lec8.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        📄 Lecture 8: Multiple & Triple Integrals
-                    </a>
-                    <a href="year1sem2calc2lec8sol.html"
-                        style="display: inline-block; padding: 15px 25px; background: #1a1a1a; color: #00ff88; text-decoration: none; border: 1px solid #333; border-radius: 5px; font-family: var(--font-mono, 'SF Mono', monospace); transition: all 0.2s;"
-                        onmouseover="this.style.background='#222'; this.style.borderColor='#00ff88'"
-                        onmouseout="this.style.background='#1a1a1a'; this.style.borderColor='#333'">
-                        ✅ Lecture 8 Solutions
-                    </a>
+                <h2>Lectures &amp; Notes</h2>
+                <div class="lec-grid">
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">01</span>
+                            <span class="lec-card__title">Basic Integration</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec1.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec1sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">02</span>
+                            <span class="lec-card__title">Substitution &amp; Square Complement</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec2.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec2sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">03</span>
+                            <span class="lec-card__title">Integration by Parts &amp; Tabular Method</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec3.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec3sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">04</span>
+                            <span class="lec-card__title">Clever Substitutions</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec4.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec4sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">05</span>
+                            <span class="lec-card__title">Partial Fractions</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec5.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec5sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">06</span>
+                            <span class="lec-card__title">Trig &amp; Clever Substitution</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec6.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec6sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">07</span>
+                            <span class="lec-card__title">Areas Between Curves</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec7.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec7sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="lec-card">
+                        <div class="lec-card__header">
+                            <span class="lec-card__badge">08</span>
+                            <span class="lec-card__title">Multiple &amp; Triple Integrals</span>
+                        </div>
+                        <div class="lec-card__actions">
+                            <a href="year1sem2calc2lec8.html" class="lec-link lec-link--notes">📄 Notes</a>
+                            <a href="year1sem2calc2lec8sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <script>
+                (function () {
+                    const cards = document.querySelectorAll('.lec-card');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry, i) => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    cards.forEach(card => observer.observe(card));
+                })();
+            </script>
 
 
             <!-- ── 1. BASIC INTEGRATION ── -->
