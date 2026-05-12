@@ -1,12 +1,12 @@
-# Lec 6 — Tabular Method
+# Lec 6 - Tabular Method
 
-Dr Hiba Omer
+Dr. Hiba Omer
 
 ---
 
-# Example 4 — Tabular Method
+## Example 4 - Tabular Method
 
-The tabular method is a convenient way to organize repeated integration by parts.
+The tabular method is a convenient way to organize repeated integration by parts. It is useful when one factor differentiates to zero after a finite number of steps.
 
 Evaluate:
 
@@ -17,51 +17,50 @@ Evaluate:
 Let:
 
 \[
-f(x)=x^2
-\]
-
-\[
-g(x)=e^x
+f(x)=x^2,\qquad g(x)=e^x
 \]
 
 Construct the table:
 
-| Differentiate \(f(x)\) | Integrate \(g(x)\) |
-|---|---|
-| \(x^2\) | \(e^x\) |
-| \(2x\) | \(e^x\) |
-| \(2\) | \(e^x\) |
-| \(0\) | |
+| Differentiate \(f(x)\) | Sign | Integrate \(g(x)\) |
+|---|---:|---|
+| \(x^2\) | \(+\) | \(e^x\) |
+| \(2x\) | \(-\) | \(e^x\) |
+| \(2\) | \(+\) | \(e^x\) |
+| \(0\) | | |
 
-Apply alternating signs:
+Multiply diagonally and use alternating signs:
 
 \[
-\int x^2 e^x dx
+\int x^2 e^x\,dx
 =
-x^2 e^x
+x^2e^x
 -
-2x e^x
+2xe^x
 +
-2 e^x
+2e^x
 +
 C
 \]
 
-Factor:
+Therefore:
 
 \[
+\boxed{
+\int x^2 e^x\,dx
 =
 e^x(x^2-2x+2)+C
+}
 \]
 
 ---
 
-# Example 5
+## Example 5 - Definite Integral with Tabular Method
 
 Find:
 
 \[
-\int x^2 \cos(nx)\,dx
+\frac{1}{\pi}\int_0^\pi x^3\cos(nx)\,dx
 \]
 
 where \(n\) is a positive integer.
@@ -69,66 +68,99 @@ where \(n\) is a positive integer.
 Let:
 
 \[
-f(x)=x^2
+f(x)=x^3,\qquad g(x)=\cos(nx)
 \]
 
-\[
-g(x)=\cos(nx)
-\]
+Construct the table:
 
-Table:
+| Differentiate \(f(x)\) | Sign | Integrate \(g(x)\) |
+|---|---:|---|
+| \(x^3\) | \(+\) | \(\frac{1}{n}\sin(nx)\) |
+| \(3x^2\) | \(-\) | \(-\frac{1}{n^2}\cos(nx)\) |
+| \(6x\) | \(+\) | \(-\frac{1}{n^3}\sin(nx)\) |
+| \(6\) | \(-\) | \(\frac{1}{n^4}\cos(nx)\) |
+| \(0\) | | |
 
-| Differentiate | Integrate |
-|---|---|
-| \(x^2\) | \(\frac{1}{n}\sin(nx)\) |
-| \(2x\) | \(-\frac{1}{n^2}\cos(nx)\) |
-| \(2\) | \(-\frac{1}{n^3}\sin(nx)\) |
-| \(0\) | |
-
-Using alternating signs:
+Thus:
 
 \[
-\int x^2\cos(nx)\,dx
+\int x^3\cos(nx)\,dx
 =
-\frac{x^2}{n}\sin(nx)
+\frac{x^3}{n}\sin(nx)
 +
-\frac{2x}{n^2}\cos(nx)
+\frac{3x^2}{n^2}\cos(nx)
 -
-\frac{2}{n^3}\sin(nx)
+\frac{6x}{n^3}\sin(nx)
+-
+\frac{6}{n^4}\cos(nx)
+\]
+
+Apply the bounds \(0\) and \(\pi\):
+
+\[
+\frac{1}{\pi}\int_0^\pi x^3\cos(nx)\,dx
+=
+\frac{1}{\pi}
+\left[
+\frac{x^3}{n}\sin(nx)
 +
-C
+\frac{3x^2}{n^2}\cos(nx)
+-
+\frac{6x}{n^3}\sin(nx)
+-
+\frac{6}{n^4}\cos(nx)
+\right]_0^\pi
+\]
+
+Since \(\sin(n\pi)=0\), \(\sin(0)=0\), \(\cos(n\pi)=(-1)^n\), and \(\cos(0)=1\):
+
+\[
+\frac{1}{\pi}\int_0^\pi x^3\cos(nx)\,dx
+=
+\frac{1}{\pi}
+\left[
+\frac{3\pi^2(-1)^n}{n^2}
+-
+\frac{6(-1)^n}{n^4}
++
+\frac{6}{n^4}
+\right]
+\]
+
+Therefore:
+
+\[
+\boxed{
+\frac{1}{\pi}\int_0^\pi x^3\cos(nx)\,dx
+=
+\frac{3\pi^2 n^2(-1)^n-6(-1)^n+6}{\pi n^4}
+}
 \]
 
 ---
 
-# Example 6 — Recurring Integrals
+## Example 6 - Recurring Integrals
 
 Evaluate:
 
 \[
-\int e^x \sin(x)\,dx
+\int e^x\sin(x)\,dx
 \]
 
 Let:
 
 \[
-I=\int e^x \sin(x)\,dx
+I=\int e^x\sin(x)\,dx
 \]
 
-Apply integration by parts:
-
-Choose:
+Apply integration by parts once:
 
 \[
-u=e^x
-\Rightarrow
-du=e^x dx
+u=e^x,\qquad dv=\sin(x)\,dx
 \]
 
 \[
-dv=\sin(x)\,dx
-\Rightarrow
-v=-\cos(x)
+du=e^x\,dx,\qquad v=-\cos(x)
 \]
 
 Then:
@@ -141,7 +173,15 @@ I
 \int e^x\cos(x)\,dx
 \]
 
-Integrate again by parts:
+Apply integration by parts again to \(\int e^x\cos(x)\,dx\):
+
+\[
+u=e^x,\qquad dv=\cos(x)\,dx
+\]
+
+\[
+du=e^x\,dx,\qquad v=\sin(x)
+\]
 
 \[
 \int e^x\cos(x)\,dx
@@ -166,31 +206,15 @@ I
 Thus:
 
 \[
-2I
-=
-e^x(\sin(x)-\cos(x))
+2I=e^x(\sin(x)-\cos(x))
 \]
 
 Therefore:
 
 \[
-I
-=
-\frac{e^x}{2}
-(\sin(x)-\cos(x))
-+
-C
-\]
-
-Hence:
-
-\[
 \boxed{
 \int e^x\sin(x)\,dx
 =
-\frac{e^x}{2}
-(\sin(x)-\cos(x))
-+
-C
+\frac{e^x}{2}(\sin(x)-\cos(x))+C
 }
 \]

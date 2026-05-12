@@ -10,6 +10,10 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -194,6 +198,69 @@
             margin-top: 12px;
         }
 
+        .problem-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-color);
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .problem-number {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .problem-statement {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .solution-step {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .final-answer {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--accent-dim);
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
         details summary {
             cursor: pointer;
             font-size: 0.85em;
@@ -247,12 +314,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin: 10px 0 20px 20px;
+            margin-bottom: 1.5rem;
             color: #cccccc;
             text-decoration: none;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
             transition: color 0.2s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 10;
         }
 
         .nav-back:hover {
@@ -328,11 +397,143 @@
                 display: block !important;
             }
         }
+
+        /* --- Modern Desktop E-Learning Additions --- */
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #00ff88;
+            width: 0%;
+        }
+
+        /* Desktop Sidebar styles hidden on mobile */
+        .desktop-sidebar {
+            display: none;
+        }
+
+        /* Desktop layout */
+        @media (min-width: 1024px) {
+            body {
+                background: #050505;
+                padding: 40px;
+            }
+
+            .layout-wrapper {
+                display: grid;
+                grid-template-columns: 280px 1fr;
+                gap: 40px;
+                max-width: 1400px;
+                margin: 0 auto;
+                align-items: start;
+            }
+
+            .desktop-sidebar {
+                display: block;
+                position: sticky;
+                top: 40px;
+                background: #0a0a0a;
+                border: 1px solid #1a1a1a;
+                padding: 25px;
+                border-radius: 12px;
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+
+            .desktop-sidebar h3 {
+                color: #ffffff;
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #1a1a1a;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+
+            .desktop-sidebar ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .desktop-sidebar li {
+                margin-bottom: 12px;
+            }
+
+            .desktop-sidebar a {
+                color: #cccccc;
+                text-decoration: none;
+                font-size: 0.95em;
+                transition: color 0.2s, transform 0.2s;
+                display: block;
+            }
+
+            .desktop-sidebar a:hover {
+                color: #00ff88;
+                transform: translateX(5px);
+            }
+
+            .main-column {
+                min-width: 0;
+            }
+
+            .container {
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                margin: 0;
+                /* Reset margin since grid handles it */
+                max-width: 100%;
+                /* Fill the grid column */
+            }
+
+            .section {
+                border-radius: 8px;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+            .section:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 255, 136, 0.05);
+                border-color: #333;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <div class="layout-wrapper">
+        <!-- Desktop Sidebar -->
+        <aside class="desktop-sidebar">
+            <h3>Day 2 Contents</h3>
+            <ul>
+                <li><a href="#sec-resources">Lecture Resources</a></li>
+                <li><a href="#sec-1">1. Substitution Rule</a></li>
+                <li><a href="#sec-2">2. Definite Integrals</a></li>
+                <li><a href="#sec-3">3. Completing the Square</a></li>
+                <li><a href="#sec-4">4. Worked Examples</a></li>
+                <li><a href="#sec-5">5. Exam Questions</a></li>
+                <li><a href="#sec-6">6. Quick Reference</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Column -->
+        <main class="main-column">
+            <div class="container">
         <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
         <header>
             <h1>📐 Calculus II — Day 2</h1>
@@ -414,7 +615,7 @@
             </div>
 
             <!-- ── 1. INTEGRATION BY SUBSTITUTION ── -->
-            <div class="section">
+            <div class="section" id="sec-1">
                 <h2>1. Integration by Substitution (u-Substitution)</h2>
 
                 <div class="formula-box theorem">
@@ -461,7 +662,7 @@
             </div>
 
             <!-- ── 2. DEFINITE INTEGRALS BY SUBSTITUTION ── -->
-            <div class="section">
+            <div class="section" id="sec-2">
                 <h2>2. Definite Integrals by Substitution</h2>
 
                 <div class="formula-box theorem">
@@ -482,7 +683,7 @@
             </div>
 
             <!-- ── 3. COMPLETING THE SQUARE ── -->
-            <div class="section">
+            <div class="section" id="sec-3">
                 <h2>3. Completing the Square in Integration</h2>
 
                 <div class="formula-box theorem">
@@ -522,7 +723,7 @@
             </div>
 
             <!-- ── 4. USEFUL PATTERNS ── -->
-            <div class="section">
+            <div class="section" id="sec-4">
                 <h2>4. Common Substitution Patterns</h2>
 
                 <table>
@@ -560,7 +761,7 @@
             </div>
 
             <!-- ── 5. EXAMINATION-STYLE QUESTIONS ── -->
-            <div class="section">
+            <div class="section" id="sec-5">
                 <h2>5. Examination-Style Questions</h2>
 
                 <div class="exam-q">
@@ -626,7 +827,7 @@
             </div>
 
             <!-- ── QUICK REFERENCE ── -->
-            <div class="section">
+            <div class="section" id="sec-6">
                 <h2>6. Quick Reference — Lecture 2 Rules</h2>
 
                 <table>
@@ -676,6 +877,8 @@
 
         </div><!-- .content -->
     </div><!-- .container -->
+        </main>
+    </div><!-- .layout-wrapper -->
 
     <script>
         (function () {
@@ -695,6 +898,19 @@
         })();
     </script>
 
+
+    <script>
+        (function () {
+            // Progress Bar Logic
+            window.addEventListener('scroll', function () {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                var bar = document.getElementById("myBar");
+                if (bar) bar.style.width = scrolled + "%";
+            });
+        })();
+    </script>
 </body>
 
 </html>
