@@ -475,7 +475,7 @@
                             <a href="year1sem2calc2lec6sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
                         </div>
                     </div>
-
+                    <!--
                     <div class="lec-card">
                         <div class="lec-card__header">
                             <span class="lec-card__badge">07</span>
@@ -496,872 +496,873 @@
                             <a href="year1sem2calc2lec8.html" class="lec-link lec-link--notes">📄 Notes</a>
                             <a href="year1sem2calc2lec8sol.html" class="lec-link lec-link--sol">✅ Solutions</a>
                         </div>
+                        -->
+                </div>
+
+                <!-- PART 3 -->
+                <div class="lec-card">
+                    <div class="lec-card__header">
+                        <span class="lec-card__badge">09</span>
+                        <span class="lec-card__title">Part 3 — Practice Mock Exam</span>
                     </div>
 
-                    <!-- PART 3 -->
-                    <div class="lec-card">
-                        <div class="lec-card__header">
-                            <span class="lec-card__badge">09</span>
-                            <span class="lec-card__title">Part 3 — Practice Mock Exam</span>
-                        </div>
-
-                        <a href="calc2_mock_exam.html" class="print-btn"
-                            style="text-decoration:none; background:rgba(0,255,136,0.1); border-color:#00ff88;">📄
-                            Take Mock Exam</a>
-                    </div>
-
+                    <a href="calc2_mock_exam.html" class="print-btn"
+                        style="text-decoration:none; background:rgba(0,255,136,0.1); border-color:#00ff88;">📄
+                        Take Mock Exam</a>
                 </div>
+
             </div>
-
-            <script>
-                (function () {
-                    const cards = document.querySelectorAll('.lec-card');
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach((entry, i) => {
-                            if (entry.isIntersecting) {
-                                setTimeout(() => entry.target.classList.add('visible'), i * 60);
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.1 });
-                    cards.forEach(card => observer.observe(card));
-                })();
-            </script>
-
-
-            <!-- ── 1. BASIC INTEGRATION ── -->
-            <div class="section">
-                <h2>1. Basic Integration</h2>
-
-                <h3>Definition of the Indefinite Integral</h3>
-                <div class="formula-box important">
-                    \[\int f(x)\,dx = F(x) + C \quad \text{where } F'(x) = f(x)\]
-                    <p style="margin-top:10px;">The constant \(C\) is the <em>constant of integration</em> and must
-                        always be included.</p>
-                </div>
-
-                <h3>Fundamental Theorem of Calculus</h3>
-                <div class="formula-box theorem">
-                    <p><strong>Part 1:</strong></p>
-                    \[\frac{d}{dx}\int_a^x f(t)\,dt = f(x)\]
-                    <p style="margin-top:12px;"><strong>Part 2:</strong></p>
-                    \[\int_a^b f(x)\,dx = F(b) - F(a)\]
-                </div>
-
-                <h3>Basic Integral Table</h3>
-                <table>
-                    <tr>
-                        <th>Function</th>
-                        <th>Integral</th>
-                    </tr>
-                    <tr>
-                        <td>\(k\) (constant)</td>
-                        <td>\(kx + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(x^n,\;\; n \neq -1\)</td>
-                        <td>\(\dfrac{x^{n+1}}{n+1} + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{1}{x}\)</td>
-                        <td>\(\ln|x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(e^x\)</td>
-                        <td>\(e^x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(a^x\)</td>
-                        <td>\(\dfrac{a^x}{\ln a} + C\)</td>
-                    </tr>
-                </table>
-
-                <h3>Trigonometric D ↔ I Reference</h3>
-                <table>
-                    <tr>
-                        <th>\(f(x)\)</th>
-                        <th>D: \(f'(x)\)</th>
-                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
-                    </tr>
-                    <!-- Standard Trig -->
-                    <tr>
-                        <td>\(\sin x\)</td>
-                        <td>\(\cos x\)</td>
-                        <td>\(-\cos x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cos x\)</td>
-                        <td>\(-\sin x\)</td>
-                        <td>\(\sin x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\tan x\)</td>
-                        <td>\(\sec^2 x\)</td>
-                        <td>\(\ln|\sec x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cot x\)</td>
-                        <td>\(-\csc^2 x\)</td>
-                        <td>\(\ln|\sin x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec x\)</td>
-                        <td>\(\sec x \tan x\)</td>
-                        <td>\(\ln|\sec x + \tan x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc x\)</td>
-                        <td>\(-\csc x \cot x\)</td>
-                        <td>\(\ln|\csc x - \cot x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec^2 x\)</td>
-                        <td>\(2\sec^2 x \tan x\)</td>
-                        <td>\(\tan x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc^2 x\)</td>
-                        <td>\(-2\csc^2 x \cot x\)</td>
-                        <td>\(-\cot x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec x \tan x\)</td>
-                        <td>\(\sec x(2\tan^2 x + \sec^2 x - 1)\)</td>
-                        <td>\(\sec x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc x \cot x\)</td>
-                        <td>\(-\csc x(2\cot^2 x + \csc^2 x - 1)\)</td>
-                        <td>\(-\csc x + C\)</td>
-                    </tr>
-                </table>
-
-                <h3>Hyperbolic D ↔ I Reference</h3>
-                <table>
-                    <tr>
-                        <th>\(f(x)\)</th>
-                        <th>D: \(f'(x)\)</th>
-                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
-                    </tr>
-                    <tr>
-                        <td>\(\sinh x\)</td>
-                        <td>\(\cosh x\)</td>
-                        <td>\(\cosh x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cosh x\)</td>
-                        <td>\(\sinh x\)</td>
-                        <td>\(\sinh x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\tanh x\)</td>
-                        <td>\(\text{sech}^2 x\)</td>
-                        <td>\(\ln(\cosh x) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\coth x\)</td>
-                        <td>\(-\text{csch}^2 x\)</td>
-                        <td>\(\ln|\sinh x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\text{sech}\, x\)</td>
-                        <td>\(-\text{sech}\, x \tanh x\)</td>
-                        <td>\(2\tan^{-1}(e^x) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\text{csch}\, x\)</td>
-                        <td>\(-\text{csch}\, x \coth x\)</td>
-                        <td>\(-\ln\!\left|\text{csch}\, x + \text{coth}\, x\right| + C\) <br> or
-                            \(\ln\!\left|\tanh\!\tfrac{x}{2}\right| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\text{sech}^2 x\)</td>
-                        <td>\(-2\,\text{sech}^2 x \tanh x\)</td>
-                        <td>\(\tanh x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\text{csch}^2 x\)</td>
-                        <td>\(2\,\text{csch}^2 x \coth x\)</td>
-                        <td>\(-\coth x + C\)</td>
-                    </tr>
-                </table>
-
-                <h3>Inverse Trigonometric D ↔ I Reference</h3>
-                <table>
-                    <tr>
-                        <th>\(f(x)\)</th>
-                        <th>D: \(f'(x)\)</th>
-                        <th>I: \(\displaystyle\int f(x)\,dx\)</th>
-                    </tr>
-                    <tr>
-                        <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
-                        <td>\(\dfrac{1}{\sqrt{a^2 - x^2}}\)</td>
-                        <td>\(x\sin^{-1}\!\left(\dfrac{x}{a}\right) + \sqrt{a^2 - x^2} + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\tan^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
-                        <td>\(\dfrac{a}{a^2 + x^2}\)</td>
-                        <td>\(x\tan^{-1}\!\left(\dfrac{x}{a}\right) - \dfrac{a}{2}\ln(a^2 + x^2) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
-                        <td>\(\dfrac{a}{|x|\sqrt{x^2 - a^2}}\)</td>
-                        <td>\(x\sec^{-1}\!\left(\dfrac{x}{a}\right) - a\ln\!\left|x + \sqrt{x^2 - a^2}\right| + C\)</td>
-                    </tr>
-                </table>
-
-                <h3>Properties of the Integral</h3>
-                <div class="formula-box">
-                    \[\int [f(x) \pm g(x)]\,dx = \int f(x)\,dx \pm \int g(x)\,dx\]
-                    \[\int k\,f(x)\,dx = k\int f(x)\,dx\]
-                    \[\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx\]
-                    \[\int_a^a f(x)\,dx = 0\]
-                    \[\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx\]
-                </div>
-            </div>
-
-            <!-- ── 2. INTEGRATION BY SUBSTITUTION ── -->
-            <div class="section">
-                <h2>2. Integration by Substitution</h2>
-
-                <div class="formula-box important">
-                    <p><strong>The Rule:</strong></p>
-                    \[\int f(g(x))\,g'(x)\,dx = \int f(u)\,du \quad \text{where } u = g(x),\;\; du = g'(x)\,dx\]
-                </div>
-
-                <h3>Procedure</h3>
-                <div class="formula-box theorem">
-                    <ol>
-                        <li>Choose \(u = g(x)\) — typically the inner function or the expression under a root or power.
-                        </li>
-                        <li>Compute \(du = g'(x)\,dx\), then isolate \(dx\).</li>
-                        <li>Rewrite the entire integral in terms of \(u\).</li>
-                        <li>Integrate with respect to \(u\).</li>
-                        <li>Back-substitute \(u = g(x)\) to express the answer in \(x\).</li>
-                    </ol>
-                </div>
-
-                <h3>Common Substitution Patterns</h3>
-                <table>
-                    <tr>
-                        <th>Integrand contains</th>
-                        <th>Try substitution</th>
-                    </tr>
-                    <tr>
-                        <td>\((ax+b)^n\)</td>
-                        <td>\(u = ax+b\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(e^{g(x)} \cdot g'(x)\)</td>
-                        <td>\(u = g(x)\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{g'(x)}{g(x)}\)</td>
-                        <td>\(u = g(x)\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sin^n x \cos x\)</td>
-                        <td>\(u = \sin x\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cos^n x \sin x\)</td>
-                        <td>\(u = \cos x\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(f(\sqrt{x})\)</td>
-                        <td>\(u = \sqrt{x},\;\; x = u^2\)</td>
-                    </tr>
-                </table>
-
-                <h3>Definite Integrals — Change of Limits</h3>
-                <div class="formula-box">
-                    <p>When limits are in \(x\), convert them to \(u\):</p>
-                    \[\int_a^b f(g(x))\,g'(x)\,dx = \int_{g(a)}^{g(b)} f(u)\,du\]
-                </div>
-            </div>
-
-
-
-            <!-- ── 3. INTEGRATION BY PARTS ── -->
-            <div class="section">
-                <h2>3. Integration by Parts</h2>
-
-                <div class="formula-box important">
-                    \[\int u\,dv = uv - \int v\,du\]
-                </div>
-
-                <div class="formula-box theorem">
-                    <p><strong>Equivalent form:</strong></p>
-                    \[\int f(x)\,g'(x)\,dx = f(x)\,g(x) - \int g(x)\,f'(x)\,dx\]
-                </div>
-
-                <h3>Choosing u and dv — LIATE Rule</h3>
-                <table>
-                    <tr>
-                        <th>Priority</th>
-                        <th>Type</th>
-                        <th>Examples</th>
-                    </tr>
-                    <tr>
-                        <td>1st — choose as \(u\)</td>
-                        <td><strong>L</strong>ogarithmic</td>
-                        <td>\(\ln x,\;\log_a x\)</td>
-                    </tr>
-                    <tr>
-                        <td>2nd — choose as \(u\)</td>
-                        <td><strong>I</strong>nverse Trig</td>
-                        <td>\(\sin^{-1}x,\;\tan^{-1}x\)</td>
-                    </tr>
-                    <tr>
-                        <td>3rd — choose as \(u\)</td>
-                        <td><strong>A</strong>lgebraic</td>
-                        <td>\(x^n,\;\sqrt{x}\)</td>
-                    </tr>
-                    <tr>
-                        <td>4th — choose as \(u\)</td>
-                        <td><strong>T</strong>rigonometric</td>
-                        <td>\(\sin x,\;\cos x\)</td>
-                    </tr>
-                    <tr>
-                        <td>5th — choose as \(u\)</td>
-                        <td><strong>E</strong>xponential</td>
-                        <td>\(e^x,\;a^x\)</td>
-                    </tr>
-                </table>
-
-                <h3>Cyclic Case</h3>
-                <div class="formula-box">
-                    <p>For integrands like \(e^x \sin x\) or \(e^x \cos x\), two applications of parts return the
-                        original integral \(I\). Solve algebraically:</p>
-                    \[I = [\text{expression}] - kI \implies I = \frac{[\text{expression}]}{1 + k}\]
-                </div>
-            </div>
-
-            <!-- ── 4. TABULAR METHOD ── -->
-            <div class="section">
-                <h2>4. Tabular Method</h2>
-
-                <div class="formula-box theorem">
-                    <p>A fast version of repeated Integration by Parts. Works when one factor differentiates to zero in
-                        finitely many steps.</p>
-                </div>
-
-                <h3>Procedure</h3>
-                <div class="formula-box important">
-                    <ol>
-                        <li>Create two columns: <strong>D</strong> (differentiate) and <strong>I</strong> (integrate).
-                        </li>
-                        <li>Column D: write \(u\) and differentiate repeatedly until \(0\).</li>
-                        <li>Column I: write \(dv\) and integrate repeatedly (no \(+C\)).</li>
-                        <li>Multiply diagonally with alternating signs \(+,\,-,\,+,\,-,\ldots\)</li>
-                        <li>Sum all diagonal products and add \(+C\).</li>
-                    </ol>
-                </div>
-
-                <h3>Sign Pattern</h3>
-                <table>
-                    <tr>
-                        <th>Sign</th>
-                        <th>D column</th>
-                        <th>I column</th>
-                    </tr>
-                    <tr>
-                        <td>\(+\)</td>
-                        <td>\(u\)</td>
-                        <td>\(v_1\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(-\)</td>
-                        <td>\(u'\)</td>
-                        <td>\(v_2\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(+\)</td>
-                        <td>\(u''\)</td>
-                        <td>\(v_3\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(-\)</td>
-                        <td>\(u'''\)</td>
-                        <td>\(v_4\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\vdots\)</td>
-                        <td>\(\vdots\)</td>
-                        <td>\(\vdots\)</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>\(0\)</td>
-                        <td></td>
-                    </tr>
-                </table>
-
-                <div class="formula-box">
-                    <p><strong>Result:</strong></p>
-                    \[\int u\,dv = (+)\,u\,v_1 - u'\,v_2 + u''\,v_3 - u'''\,v_4 + \cdots + C\]
-                </div>
-            </div>
-
-            <!-- ── 5. SPECIAL INTEGRATION — TRIG INTEGRALS ── -->
-            <div class="section">
-                <h2>5. Special Integration — Trigonometric Integrals</h2>
-
-                <h3>Powers of Sine and Cosine</h3>
-                <div class="formula-box important">
-                    <p><strong>Case 1 — odd power of \(\cos x\):</strong><br>
-                        Peel off one \(\cos x\), use \(\cos^2 x = 1 - \sin^2 x\), let \(u = \sin x\).</p>
-                    <p style="margin-top:10px;"><strong>Case 2 — odd power of \(\sin x\):</strong><br>
-                        Peel off one \(\sin x\), use \(\sin^2 x = 1 - \cos^2 x\), let \(u = \cos x\).</p>
-                    <p style="margin-top:10px;"><strong>Case 3 — both powers even:</strong><br>
-                        Use the half-angle identities below.</p>
-                </div>
-
-                <h3>Essential Identities</h3>
-                <div class="formula-box theorem">
-                    \[\sin^2 x = \frac{1 - \cos 2x}{2} \qquad \cos^2 x = \frac{1 + \cos 2x}{2}\]
-                    \[\sin x \cos x = \frac{\sin 2x}{2}\]
-                    \[\sin^2 x + \cos^2 x = 1 \qquad 1 + \tan^2 x = \sec^2 x \qquad 1 + \cot^2 x = \csc^2 x\]
-                </div>
-
-                <h3>Powers of Tangent and Secant</h3>
-                <table>
-                    <tr>
-                        <th>Form</th>
-                        <th>Strategy</th>
-                    </tr>
-                    <tr>
-                        <td>\(\int \tan^n x\,dx\)</td>
-                        <td>Use \(\tan^2 x = \sec^2 x - 1\), reduce</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \sec^n x\,dx\) (\(n\) even)</td>
-                        <td>Factor \(\sec^2 x\), use \(\sec^2 x = 1+\tan^2 x\), let \(u=\tan x\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \sec^n x\,dx\) (\(n\) odd)</td>
-                        <td>Integration by parts or reduction formula</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \tan^m x \sec^n x\,dx\) (\(n\) even)</td>
-                        <td>Let \(u = \tan x\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \tan^m x \sec^n x\,dx\) (\(m\) odd)</td>
-                        <td>Let \(u = \sec x\)</td>
-                    </tr>
-                </table>
-
-                <h3>Product-to-Sum Formulas</h3>
-                <div class="formula-box">
-                    \[\sin A \cos B = \tfrac{1}{2}[\sin(A-B) + \sin(A+B)]\]
-                    \[\sin A \sin B = \tfrac{1}{2}[\cos(A-B) - \cos(A+B)]\]
-                    \[\cos A \cos B = \tfrac{1}{2}[\cos(A-B) + \cos(A+B)]\]
-                </div>
-            </div>
-
-            <!-- ── 6. FRACTION INTEGRATION — PARTIAL FRACTIONS ── -->
-            <div class="section">
-                <h2>6. Fraction Integration — Partial Fractions</h2>
-
-                <div class="formula-box theorem">
-                    <p>Used for \(\displaystyle\int \dfrac{P(x)}{Q(x)}\,dx\) where \(\deg P < \deg Q\).<br>
-                            If \(\deg P \geq \deg Q\): perform polynomial long division first.</p>
-                </div>
-
-                <h3>Decomposition Cases</h3>
-                <table>
-                    <tr>
-                        <th>Factor in \(Q(x)\)</th>
-                        <th>Partial Fraction Terms</th>
-                    </tr>
-                    <tr>
-                        <td>Linear: \((ax+b)\)</td>
-                        <td>\(\dfrac{A}{ax+b}\)</td>
-                    </tr>
-                    <tr>
-                        <td>Repeated linear: \((ax+b)^n\)</td>
-                        <td>\(\dfrac{A_1}{ax+b} + \dfrac{A_2}{(ax+b)^2} + \cdots + \dfrac{A_n}{(ax+b)^n}\)</td>
-                    </tr>
-                    <tr>
-                        <td>Irreducible quadratic: \((ax^2+bx+c)\)</td>
-                        <td>\(\dfrac{Ax+B}{ax^2+bx+c}\)</td>
-                    </tr>
-                    <tr>
-                        <td>Repeated quadratic: \((ax^2+bx+c)^n\)</td>
-                        <td>\(\dfrac{A_1x+B_1}{ax^2+bx+c} + \cdots + \dfrac{A_nx+B_n}{(ax^2+bx+c)^n}\)</td>
-                    </tr>
-                </table>
-
-                <h3>Key Results</h3>
-                <div class="formula-box important">
-                    \[\int \frac{A}{ax+b}\,dx = \frac{A}{a}\ln|ax+b| + C\]
-                    \[\int \frac{Ax+B}{x^2+a^2}\,dx = \frac{A}{2}\ln(x^2+a^2) +
-                    \frac{B}{a}\tan^{-1}\!\left(\frac{x}{a}\right) + C\]
-                </div>
-
-                <h3>Procedure</h3>
-                <div class="formula-box">
-                    <ol>
-                        <li>Factor \(Q(x)\) completely over the reals.</li>
-                        <li>Write the partial fraction decomposition for each factor type.</li>
-                        <li>Multiply through by \(Q(x)\) and expand both sides.</li>
-                        <li>Solve for constants by substituting convenient values of \(x\) or comparing coefficients.
-                        </li>
-                        <li>Integrate each partial fraction term separately.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- ── 7. TRIGONOMETRIC SUBSTITUTION ── -->
-            <div class="section">
-                <h2>7. Trigonometric Substitution</h2>
-
-                <div class="formula-box theorem">
-                    <p>Used to eliminate radicals of the forms \(\sqrt{a^2-x^2}\), \(\sqrt{a^2+x^2}\), and
-                        \(\sqrt{x^2-a^2}\).</p>
-                </div>
-
-                <h3>Substitution Table</h3>
-                <table>
-                    <tr>
-                        <th>Expression</th>
-                        <th>Substitution</th>
-                        <th>Identity Used</th>
-                        <th>Simplified</th>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{a^2 - x^2}\)</td>
-                        <td>\(x = a\sin\theta,\quad dx = a\cos\theta\,d\theta\)</td>
-                        <td>\(1 - \sin^2\theta = \cos^2\theta\)</td>
-                        <td>\(a\cos\theta\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{a^2 + x^2}\)</td>
-                        <td>\(x = a\tan\theta,\quad dx = a\sec^2\theta\,d\theta\)</td>
-                        <td>\(1 + \tan^2\theta = \sec^2\theta\)</td>
-                        <td>\(a\sec\theta\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{x^2 - a^2}\)</td>
-                        <td>\(x = a\sec\theta,\quad dx = a\sec\theta\tan\theta\,d\theta\)</td>
-                        <td>\(\sec^2\theta - 1 = \tan^2\theta\)</td>
-                        <td>\(|a\tan\theta|\)</td>
-                    </tr>
-                </table>
-
-                <h3>Reference Triangles for Back-Substitution</h3>
-                <div class="formula-box">
-                    <p><strong>\(x = a\sin\theta\):</strong> &ensp; opp \(= x\), hyp \(= a\), adj \(= \sqrt{a^2-x^2}\)
-                    </p>
-                    <p style="margin-top:8px;"><strong>\(x = a\tan\theta\):</strong> &ensp; opp \(= x\), adj \(= a\),
-                        hyp \(= \sqrt{a^2+x^2}\)</p>
-                    <p style="margin-top:8px;"><strong>\(x = a\sec\theta\):</strong> &ensp; hyp \(= x\), adj \(= a\),
-                        opp \(= \sqrt{x^2-a^2}\)</p>
-                </div>
-            </div>
-
-            <!-- ── 8. CLEVER SUBSTITUTION ── -->
-            <div class="section">
-                <h2>8. Clever Substitution</h2>
-
-                <h3>Rationalizing Substitution</h3>
-                <div class="formula-box">
-                    <p>For integrands with \(\sqrt[n]{ax+b}\), let \(u = \sqrt[n]{ax+b}\):<br>
-                        Then \(x = \dfrac{u^n - b}{a}\) and \(dx = \dfrac{n\,u^{n-1}}{a}\,du\).</p>
-                    <p style="margin-top:10px;">For mixed powers like \(x^{1/2}\) and \(x^{1/3}\), let \(u = x^{1/6}\)
-                        (LCM of denominators).</p>
-                </div>
-
-                <h3>Weierstrass (Half-Angle) Substitution</h3>
-                <div class="formula-box important">
-                    <p>For rational functions of \(\sin x\) and \(\cos x\), let \(t = \tan\!\left(\dfrac{x}{2}\right)\):
-                    </p>
-                    \[\sin x = \frac{2t}{1+t^2}, \qquad \cos x = \frac{1-t^2}{1+t^2}, \qquad dx = \frac{2}{1+t^2}\,dt\]
-                </div>
-
-                <h3>Logarithmic Pattern Recognition</h3>
-                <div class="formula-box">
-                    \[\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + C\]
-                    <p style="margin-top:8px;">Recognising this pattern avoids a full substitution in many cases.</p>
-                </div>
-            </div>
-
-            <!-- ── 9. PROPERTIES OF TRIGONOMETRIC INTEGRALS ── -->
-            <div class="section">
-                <h2>9. Properties of Trigonometric Integrals</h2>
-
-                <h3>Even and Odd Symmetry</h3>
-                <div class="formula-box important">
-                    <p>If \(f\) is <strong>even</strong> \(\;[\,f(-x) = f(x)\,]\):</p>
-                    \[\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx\]
-                    <p style="margin-top:10px;">If \(f\) is <strong>odd</strong> \(\;[\,f(-x) = -f(x)\,]\):</p>
-                    \[\int_{-a}^{a} f(x)\,dx = 0\]
-                </div>
-
-                <h3>Wallis's Formulas</h3>
-                <div class="formula-box theorem">
-                    \[\int_0^{\pi/2} \sin^n x\,dx = \int_0^{\pi/2} \cos^n x\,dx\]
-                    <p style="margin-top:10px;"><strong>n even:</strong> &ensp;
-                        \(\dfrac{(n-1)!!}{n!!}\cdot\dfrac{\pi}{2}\) &ensp; e.g. \(n=4:
-                        \dfrac{3\cdot1}{4\cdot2}\cdot\dfrac{\pi}{2} = \dfrac{3\pi}{16}\)</p>
-                    <p style="margin-top:10px;"><strong>n odd:</strong> &ensp; \(\dfrac{(n-1)!!}{n!!}\) &ensp; e.g.
-                        \(n=3: \dfrac{2}{3}\)</p>
-                </div>
-
-                <h3>Reduction Formulas</h3>
-                <table>
-                    <tr>
-                        <th>Integral</th>
-                        <th>Reduction Formula</th>
-                    </tr>
-                    <tr>
-                        <td>\(\int \sin^n x\,dx\)</td>
-                        <td>\(-\dfrac{\sin^{n-1}x\cos x}{n} + \dfrac{n-1}{n}\displaystyle\int \sin^{n-2}x\,dx\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \cos^n x\,dx\)</td>
-                        <td>\(\dfrac{\cos^{n-1}x\sin x}{n} + \dfrac{n-1}{n}\displaystyle\int \cos^{n-2}x\,dx\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \tan^n x\,dx\)</td>
-                        <td>\(\dfrac{\tan^{n-1}x}{n-1} - \displaystyle\int \tan^{n-2}x\,dx\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\int \sec^n x\,dx\)</td>
-                        <td>\(\dfrac{\sec^{n-2}x\tan x}{n-1} + \dfrac{n-2}{n-1}\displaystyle\int \sec^{n-2}x\,dx\)</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- ── 10. AREAS BETWEEN CURVES ── -->
-            <div class="section">
-                <h2>10. Areas Between Curves</h2>
-
-                <div class="formula-box important">
-                    <p><strong>If \(f(x) \geq g(x)\) on \([a,b]\):</strong></p>
-                    \[A = \int_a^b \bigl[f(x) - g(x)\bigr]\,dx\]
-                    <p style="margin-top:10px;"><strong>General (curves may cross):</strong></p>
-                    \[A = \int_a^b \left|f(x) - g(x)\right|\,dx\]
-                </div>
-
-                <h3>Integrating with Respect to y</h3>
-                <div class="formula-box theorem">
-                    <p>When curves are expressed as \(x = f(y)\) and \(x = g(y)\) with \(f(y) \geq g(y)\) on \([c,d]\):
-                    </p>
-                    \[A = \int_c^d \bigl[f(y) - g(y)\bigr]\,dy\]
-                </div>
-
-                <h3>Procedure</h3>
-                <div class="formula-box">
-                    <ol>
-                        <li>Sketch the curves to identify which is on top.</li>
-                        <li>Find intersection points by solving \(f(x) = g(x)\) — these are the limits.</li>
-                        <li>If curves cross within the interval, split the integral at each crossing.</li>
-                        <li>Evaluate and sum all areas (use absolute values throughout).</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- ── 11. MULTIPLE INTEGRALS ── -->
-            <div class="section">
-                <h2>11. Multiple Integrals</h2>
-
-                <h3>Double Integral</h3>
-                <div class="formula-box important">
-                    \[\iint_R f(x,y)\,dA = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx\]
-                </div>
-
-                <h3>Fubini's Theorem</h3>
-                <div class="formula-box theorem">
-                    <p>If \(f\) is continuous on the rectangle \(R = [a,b]\times[c,d]\):</p>
-                    \[\iint_R f(x,y)\,dA = \int_a^b\int_c^d f(x,y)\,dy\,dx = \int_c^d\int_a^b f(x,y)\,dx\,dy\]
-                </div>
-
-                <h3>Properties</h3>
-                <div class="formula-box">
-                    \[\iint_R [f \pm g]\,dA = \iint_R f\,dA \pm \iint_R g\,dA\]
-                    \[\iint_R k\,f\,dA = k\iint_R f\,dA\]
-                    \[\iint_R 1\,dA = \text{Area of } R\]
-                </div>
-
-                <h3>Polar Coordinates</h3>
-                <div class="formula-box important">
-                    <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad dA = r\,dr\,d\theta\)</p>
-                    \[\iint_R f(x,y)\,dA = \int_\alpha^\beta \int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,\,
-                    r\sin\theta)\; r\,dr\,d\theta\]
-                    <p style="margin-top:8px;">The extra \(r\) is the Jacobian — never omit it.</p>
-                </div>
-            </div>
-
-            <!-- ── 12. TRIPLE INTEGRALS ── -->
-            <div class="section">
-                <h2>12. Triple Integrals</h2>
-
-                <div class="formula-box important">
-                    \[\iiint_E f(x,y,z)\,dV = \int_a^b \int_{g_1(x)}^{g_2(x)} \int_{h_1(x,y)}^{h_2(x,y)}
-                    f(x,y,z)\,dz\,dy\,dx\]
-                </div>
-
-                <div class="formula-box">
-                    \[\iiint_E 1\,dV = \text{Volume of } E\]
-                </div>
-
-                <h3>Cylindrical Coordinates</h3>
-                <div class="formula-box theorem">
-                    <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad z = z\)</p>
-                    \[\iiint_E f\,dV = \iiint f(r\cos\theta,\, r\sin\theta,\, z)\; r\,dz\,dr\,d\theta\]
-                </div>
-
-                <h3>Spherical Coordinates</h3>
-                <div class="formula-box theorem">
-                    <p>\(x = \rho\sin\phi\cos\theta,\quad y = \rho\sin\phi\sin\theta,\quad z = \rho\cos\phi\)</p>
-                    \[\iiint_E f\,dV = \iiint f\;\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\]
-                    <p style="margin-top:8px;">Jacobian: \(\rho^2\sin\phi\)</p>
-                </div>
-            </div>
-
-            <!-- ── 13. QUICK REFERENCE ── -->
-            <div class="section">
-                <h2>13. Quick Reference — All Integrals</h2>
-
-                <table>
-                    <tr>
-                        <th>Function</th>
-                        <th>Integral</th>
-                    </tr>
-                    <tr>
-                        <td>\(x^n\)</td>
-                        <td>\(\dfrac{x^{n+1}}{n+1} + C\) &ensp; (\(n\neq-1\))</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{1}{x}\)</td>
-                        <td>\(\ln|x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(e^x\)</td>
-                        <td>\(e^x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(a^x\)</td>
-                        <td>\(\dfrac{a^x}{\ln a} + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sin x\)</td>
-                        <td>\(-\cos x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cos x\)</td>
-                        <td>\(\sin x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\tan x\)</td>
-                        <td>\(\ln|\sec x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\cot x\)</td>
-                        <td>\(\ln|\sin x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec x\)</td>
-                        <td>\(\ln|\sec x + \tan x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc x\)</td>
-                        <td>\(\ln|\csc x - \cot x| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec^2 x\)</td>
-                        <td>\(\tan x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc^2 x\)</td>
-                        <td>\(-\cot x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sec x\tan x\)</td>
-                        <td>\(\sec x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\csc x\cot x\)</td>
-                        <td>\(-\csc x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{1}{\sqrt{a^2-x^2}}\)</td>
-                        <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{1}{a^2+x^2}\)</td>
-                        <td>\(\dfrac{1}{a}\tan^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\dfrac{1}{x\sqrt{x^2-a^2}}\)</td>
-                        <td>\(\dfrac{1}{a}\sec^{-1}\!\left|\dfrac{x}{a}\right| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\ln x\)</td>
-                        <td>\(x\ln x - x + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sin^{-1} x\)</td>
-                        <td>\(x\sin^{-1}x + \sqrt{1-x^2} + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\tan^{-1} x\)</td>
-                        <td>\(x\tan^{-1}x - \tfrac{1}{2}\ln(1+x^2) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{a^2-x^2}\)</td>
-                        <td>\(\dfrac{x}{2}\sqrt{a^2-x^2} + \dfrac{a^2}{2}\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{a^2+x^2}\)</td>
-                        <td>\(\dfrac{x}{2}\sqrt{a^2+x^2} + \dfrac{a^2}{2}\ln\!\left|x+\sqrt{a^2+x^2}\right| + C\)</td>
-                    </tr>
-                    <tr>
-                        <td>\(\sqrt{x^2-a^2}\)</td>
-                        <td>\(\dfrac{x}{2}\sqrt{x^2-a^2} - \dfrac{a^2}{2}\ln\!\left|x+\sqrt{x^2-a^2}\right| + C\)</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="note">
-                <strong>💡 Study Tips:</strong>
-                <ul>
-                    <li>Always write \(+C\) for indefinite integrals — it costs marks if missing.</li>
-                    <li>For substitution: find the piece whose derivative also appears in the integrand.</li>
-                    <li>LIATE tells you which factor to call \(u\) in Integration by Parts.</li>
-                    <li>Partial fractions require \(\deg(\text{num}) &lt; \deg(\text{denom})\) — divide first if not.
-                    </li>
-                    <li>Trig substitution: identify the radical type, draw the reference triangle to back-substitute.
-                    </li>
-                    <li>For areas: always sketch and check which curve is above the other.</li>
-                    <li>Double and triple integrals: evaluate from the inside out, one variable at a time.</li>
-                </ul>
-            </div>
-            <!-- .content -->
-        </div><!-- .container -->
+        </div>
 
         <script>
             (function () {
-                function handleHash() {
-                    var hash = window.location.hash;
-                    if (!hash) return;
-                    var targetId = decodeURIComponent(hash.substring(1));
-                    var el = document.getElementById(targetId);
-                    if (!el) return;
-                    setTimeout(function () {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 120);
-                }
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-                } else {
-                    setTimeout(handleHash, 50);
-                }
-                window.addEventListener('hashchange', handleHash);
+                const cards = document.querySelectorAll('.lec-card');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, i) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                cards.forEach(card => observer.observe(card));
             })();
         </script>
+
+
+        <!-- ── 1. BASIC INTEGRATION ── -->
+        <div class="section">
+            <h2>1. Basic Integration</h2>
+
+            <h3>Definition of the Indefinite Integral</h3>
+            <div class="formula-box important">
+                \[\int f(x)\,dx = F(x) + C \quad \text{where } F'(x) = f(x)\]
+                <p style="margin-top:10px;">The constant \(C\) is the <em>constant of integration</em> and must
+                    always be included.</p>
+            </div>
+
+            <h3>Fundamental Theorem of Calculus</h3>
+            <div class="formula-box theorem">
+                <p><strong>Part 1:</strong></p>
+                \[\frac{d}{dx}\int_a^x f(t)\,dt = f(x)\]
+                <p style="margin-top:12px;"><strong>Part 2:</strong></p>
+                \[\int_a^b f(x)\,dx = F(b) - F(a)\]
+            </div>
+
+            <h3>Basic Integral Table</h3>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Integral</th>
+                </tr>
+                <tr>
+                    <td>\(k\) (constant)</td>
+                    <td>\(kx + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(x^n,\;\; n \neq -1\)</td>
+                    <td>\(\dfrac{x^{n+1}}{n+1} + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{1}{x}\)</td>
+                    <td>\(\ln|x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(e^x\)</td>
+                    <td>\(e^x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(a^x\)</td>
+                    <td>\(\dfrac{a^x}{\ln a} + C\)</td>
+                </tr>
+            </table>
+
+            <h3>Trigonometric D ↔ I Reference</h3>
+            <table>
+                <tr>
+                    <th>\(f(x)\)</th>
+                    <th>D: \(f'(x)\)</th>
+                    <th>I: \(\displaystyle\int f(x)\,dx\)</th>
+                </tr>
+                <!-- Standard Trig -->
+                <tr>
+                    <td>\(\sin x\)</td>
+                    <td>\(\cos x\)</td>
+                    <td>\(-\cos x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cos x\)</td>
+                    <td>\(-\sin x\)</td>
+                    <td>\(\sin x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\tan x\)</td>
+                    <td>\(\sec^2 x\)</td>
+                    <td>\(\ln|\sec x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cot x\)</td>
+                    <td>\(-\csc^2 x\)</td>
+                    <td>\(\ln|\sin x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec x\)</td>
+                    <td>\(\sec x \tan x\)</td>
+                    <td>\(\ln|\sec x + \tan x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc x\)</td>
+                    <td>\(-\csc x \cot x\)</td>
+                    <td>\(\ln|\csc x - \cot x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec^2 x\)</td>
+                    <td>\(2\sec^2 x \tan x\)</td>
+                    <td>\(\tan x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc^2 x\)</td>
+                    <td>\(-2\csc^2 x \cot x\)</td>
+                    <td>\(-\cot x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec x \tan x\)</td>
+                    <td>\(\sec x(2\tan^2 x + \sec^2 x - 1)\)</td>
+                    <td>\(\sec x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc x \cot x\)</td>
+                    <td>\(-\csc x(2\cot^2 x + \csc^2 x - 1)\)</td>
+                    <td>\(-\csc x + C\)</td>
+                </tr>
+            </table>
+
+            <h3>Hyperbolic D ↔ I Reference</h3>
+            <table>
+                <tr>
+                    <th>\(f(x)\)</th>
+                    <th>D: \(f'(x)\)</th>
+                    <th>I: \(\displaystyle\int f(x)\,dx\)</th>
+                </tr>
+                <tr>
+                    <td>\(\sinh x\)</td>
+                    <td>\(\cosh x\)</td>
+                    <td>\(\cosh x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cosh x\)</td>
+                    <td>\(\sinh x\)</td>
+                    <td>\(\sinh x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\tanh x\)</td>
+                    <td>\(\text{sech}^2 x\)</td>
+                    <td>\(\ln(\cosh x) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\coth x\)</td>
+                    <td>\(-\text{csch}^2 x\)</td>
+                    <td>\(\ln|\sinh x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\text{sech}\, x\)</td>
+                    <td>\(-\text{sech}\, x \tanh x\)</td>
+                    <td>\(2\tan^{-1}(e^x) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\text{csch}\, x\)</td>
+                    <td>\(-\text{csch}\, x \coth x\)</td>
+                    <td>\(-\ln\!\left|\text{csch}\, x + \text{coth}\, x\right| + C\) <br> or
+                        \(\ln\!\left|\tanh\!\tfrac{x}{2}\right| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\text{sech}^2 x\)</td>
+                    <td>\(-2\,\text{sech}^2 x \tanh x\)</td>
+                    <td>\(\tanh x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\text{csch}^2 x\)</td>
+                    <td>\(2\,\text{csch}^2 x \coth x\)</td>
+                    <td>\(-\coth x + C\)</td>
+                </tr>
+            </table>
+
+            <h3>Inverse Trigonometric D ↔ I Reference</h3>
+            <table>
+                <tr>
+                    <th>\(f(x)\)</th>
+                    <th>D: \(f'(x)\)</th>
+                    <th>I: \(\displaystyle\int f(x)\,dx\)</th>
+                </tr>
+                <tr>
+                    <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
+                    <td>\(\dfrac{1}{\sqrt{a^2 - x^2}}\)</td>
+                    <td>\(x\sin^{-1}\!\left(\dfrac{x}{a}\right) + \sqrt{a^2 - x^2} + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\tan^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
+                    <td>\(\dfrac{a}{a^2 + x^2}\)</td>
+                    <td>\(x\tan^{-1}\!\left(\dfrac{x}{a}\right) - \dfrac{a}{2}\ln(a^2 + x^2) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec^{-1}\!\left(\dfrac{x}{a}\right)\)</td>
+                    <td>\(\dfrac{a}{|x|\sqrt{x^2 - a^2}}\)</td>
+                    <td>\(x\sec^{-1}\!\left(\dfrac{x}{a}\right) - a\ln\!\left|x + \sqrt{x^2 - a^2}\right| + C\)</td>
+                </tr>
+            </table>
+
+            <h3>Properties of the Integral</h3>
+            <div class="formula-box">
+                \[\int [f(x) \pm g(x)]\,dx = \int f(x)\,dx \pm \int g(x)\,dx\]
+                \[\int k\,f(x)\,dx = k\int f(x)\,dx\]
+                \[\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx\]
+                \[\int_a^a f(x)\,dx = 0\]
+                \[\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx\]
+            </div>
+        </div>
+
+        <!-- ── 2. INTEGRATION BY SUBSTITUTION ── -->
+        <div class="section">
+            <h2>2. Integration by Substitution</h2>
+
+            <div class="formula-box important">
+                <p><strong>The Rule:</strong></p>
+                \[\int f(g(x))\,g'(x)\,dx = \int f(u)\,du \quad \text{where } u = g(x),\;\; du = g'(x)\,dx\]
+            </div>
+
+            <h3>Procedure</h3>
+            <div class="formula-box theorem">
+                <ol>
+                    <li>Choose \(u = g(x)\) — typically the inner function or the expression under a root or power.
+                    </li>
+                    <li>Compute \(du = g'(x)\,dx\), then isolate \(dx\).</li>
+                    <li>Rewrite the entire integral in terms of \(u\).</li>
+                    <li>Integrate with respect to \(u\).</li>
+                    <li>Back-substitute \(u = g(x)\) to express the answer in \(x\).</li>
+                </ol>
+            </div>
+
+            <h3>Common Substitution Patterns</h3>
+            <table>
+                <tr>
+                    <th>Integrand contains</th>
+                    <th>Try substitution</th>
+                </tr>
+                <tr>
+                    <td>\((ax+b)^n\)</td>
+                    <td>\(u = ax+b\)</td>
+                </tr>
+                <tr>
+                    <td>\(e^{g(x)} \cdot g'(x)\)</td>
+                    <td>\(u = g(x)\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{g'(x)}{g(x)}\)</td>
+                    <td>\(u = g(x)\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sin^n x \cos x\)</td>
+                    <td>\(u = \sin x\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cos^n x \sin x\)</td>
+                    <td>\(u = \cos x\)</td>
+                </tr>
+                <tr>
+                    <td>\(f(\sqrt{x})\)</td>
+                    <td>\(u = \sqrt{x},\;\; x = u^2\)</td>
+                </tr>
+            </table>
+
+            <h3>Definite Integrals — Change of Limits</h3>
+            <div class="formula-box">
+                <p>When limits are in \(x\), convert them to \(u\):</p>
+                \[\int_a^b f(g(x))\,g'(x)\,dx = \int_{g(a)}^{g(b)} f(u)\,du\]
+            </div>
+        </div>
+
+
+
+        <!-- ── 3. INTEGRATION BY PARTS ── -->
+        <div class="section">
+            <h2>3. Integration by Parts</h2>
+
+            <div class="formula-box important">
+                \[\int u\,dv = uv - \int v\,du\]
+            </div>
+
+            <div class="formula-box theorem">
+                <p><strong>Equivalent form:</strong></p>
+                \[\int f(x)\,g'(x)\,dx = f(x)\,g(x) - \int g(x)\,f'(x)\,dx\]
+            </div>
+
+            <h3>Choosing u and dv — LIATE Rule</h3>
+            <table>
+                <tr>
+                    <th>Priority</th>
+                    <th>Type</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td>1st — choose as \(u\)</td>
+                    <td><strong>L</strong>ogarithmic</td>
+                    <td>\(\ln x,\;\log_a x\)</td>
+                </tr>
+                <tr>
+                    <td>2nd — choose as \(u\)</td>
+                    <td><strong>I</strong>nverse Trig</td>
+                    <td>\(\sin^{-1}x,\;\tan^{-1}x\)</td>
+                </tr>
+                <tr>
+                    <td>3rd — choose as \(u\)</td>
+                    <td><strong>A</strong>lgebraic</td>
+                    <td>\(x^n,\;\sqrt{x}\)</td>
+                </tr>
+                <tr>
+                    <td>4th — choose as \(u\)</td>
+                    <td><strong>T</strong>rigonometric</td>
+                    <td>\(\sin x,\;\cos x\)</td>
+                </tr>
+                <tr>
+                    <td>5th — choose as \(u\)</td>
+                    <td><strong>E</strong>xponential</td>
+                    <td>\(e^x,\;a^x\)</td>
+                </tr>
+            </table>
+
+            <h3>Cyclic Case</h3>
+            <div class="formula-box">
+                <p>For integrands like \(e^x \sin x\) or \(e^x \cos x\), two applications of parts return the
+                    original integral \(I\). Solve algebraically:</p>
+                \[I = [\text{expression}] - kI \implies I = \frac{[\text{expression}]}{1 + k}\]
+            </div>
+        </div>
+
+        <!-- ── 4. TABULAR METHOD ── -->
+        <div class="section">
+            <h2>4. Tabular Method</h2>
+
+            <div class="formula-box theorem">
+                <p>A fast version of repeated Integration by Parts. Works when one factor differentiates to zero in
+                    finitely many steps.</p>
+            </div>
+
+            <h3>Procedure</h3>
+            <div class="formula-box important">
+                <ol>
+                    <li>Create two columns: <strong>D</strong> (differentiate) and <strong>I</strong> (integrate).
+                    </li>
+                    <li>Column D: write \(u\) and differentiate repeatedly until \(0\).</li>
+                    <li>Column I: write \(dv\) and integrate repeatedly (no \(+C\)).</li>
+                    <li>Multiply diagonally with alternating signs \(+,\,-,\,+,\,-,\ldots\)</li>
+                    <li>Sum all diagonal products and add \(+C\).</li>
+                </ol>
+            </div>
+
+            <h3>Sign Pattern</h3>
+            <table>
+                <tr>
+                    <th>Sign</th>
+                    <th>D column</th>
+                    <th>I column</th>
+                </tr>
+                <tr>
+                    <td>\(+\)</td>
+                    <td>\(u\)</td>
+                    <td>\(v_1\)</td>
+                </tr>
+                <tr>
+                    <td>\(-\)</td>
+                    <td>\(u'\)</td>
+                    <td>\(v_2\)</td>
+                </tr>
+                <tr>
+                    <td>\(+\)</td>
+                    <td>\(u''\)</td>
+                    <td>\(v_3\)</td>
+                </tr>
+                <tr>
+                    <td>\(-\)</td>
+                    <td>\(u'''\)</td>
+                    <td>\(v_4\)</td>
+                </tr>
+                <tr>
+                    <td>\(\vdots\)</td>
+                    <td>\(\vdots\)</td>
+                    <td>\(\vdots\)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>\(0\)</td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div class="formula-box">
+                <p><strong>Result:</strong></p>
+                \[\int u\,dv = (+)\,u\,v_1 - u'\,v_2 + u''\,v_3 - u'''\,v_4 + \cdots + C\]
+            </div>
+        </div>
+
+        <!-- ── 5. SPECIAL INTEGRATION — TRIG INTEGRALS ── -->
+        <div class="section">
+            <h2>5. Special Integration — Trigonometric Integrals</h2>
+
+            <h3>Powers of Sine and Cosine</h3>
+            <div class="formula-box important">
+                <p><strong>Case 1 — odd power of \(\cos x\):</strong><br>
+                    Peel off one \(\cos x\), use \(\cos^2 x = 1 - \sin^2 x\), let \(u = \sin x\).</p>
+                <p style="margin-top:10px;"><strong>Case 2 — odd power of \(\sin x\):</strong><br>
+                    Peel off one \(\sin x\), use \(\sin^2 x = 1 - \cos^2 x\), let \(u = \cos x\).</p>
+                <p style="margin-top:10px;"><strong>Case 3 — both powers even:</strong><br>
+                    Use the half-angle identities below.</p>
+            </div>
+
+            <h3>Essential Identities</h3>
+            <div class="formula-box theorem">
+                \[\sin^2 x = \frac{1 - \cos 2x}{2} \qquad \cos^2 x = \frac{1 + \cos 2x}{2}\]
+                \[\sin x \cos x = \frac{\sin 2x}{2}\]
+                \[\sin^2 x + \cos^2 x = 1 \qquad 1 + \tan^2 x = \sec^2 x \qquad 1 + \cot^2 x = \csc^2 x\]
+            </div>
+
+            <h3>Powers of Tangent and Secant</h3>
+            <table>
+                <tr>
+                    <th>Form</th>
+                    <th>Strategy</th>
+                </tr>
+                <tr>
+                    <td>\(\int \tan^n x\,dx\)</td>
+                    <td>Use \(\tan^2 x = \sec^2 x - 1\), reduce</td>
+                </tr>
+                <tr>
+                    <td>\(\int \sec^n x\,dx\) (\(n\) even)</td>
+                    <td>Factor \(\sec^2 x\), use \(\sec^2 x = 1+\tan^2 x\), let \(u=\tan x\)</td>
+                </tr>
+                <tr>
+                    <td>\(\int \sec^n x\,dx\) (\(n\) odd)</td>
+                    <td>Integration by parts or reduction formula</td>
+                </tr>
+                <tr>
+                    <td>\(\int \tan^m x \sec^n x\,dx\) (\(n\) even)</td>
+                    <td>Let \(u = \tan x\)</td>
+                </tr>
+                <tr>
+                    <td>\(\int \tan^m x \sec^n x\,dx\) (\(m\) odd)</td>
+                    <td>Let \(u = \sec x\)</td>
+                </tr>
+            </table>
+
+            <h3>Product-to-Sum Formulas</h3>
+            <div class="formula-box">
+                \[\sin A \cos B = \tfrac{1}{2}[\sin(A-B) + \sin(A+B)]\]
+                \[\sin A \sin B = \tfrac{1}{2}[\cos(A-B) - \cos(A+B)]\]
+                \[\cos A \cos B = \tfrac{1}{2}[\cos(A-B) + \cos(A+B)]\]
+            </div>
+        </div>
+
+        <!-- ── 6. FRACTION INTEGRATION — PARTIAL FRACTIONS ── -->
+        <div class="section">
+            <h2>6. Fraction Integration — Partial Fractions</h2>
+
+            <div class="formula-box theorem">
+                <p>Used for \(\displaystyle\int \dfrac{P(x)}{Q(x)}\,dx\) where \(\deg P < \deg Q\).<br>
+                        If \(\deg P \geq \deg Q\): perform polynomial long division first.</p>
+            </div>
+
+            <h3>Decomposition Cases</h3>
+            <table>
+                <tr>
+                    <th>Factor in \(Q(x)\)</th>
+                    <th>Partial Fraction Terms</th>
+                </tr>
+                <tr>
+                    <td>Linear: \((ax+b)\)</td>
+                    <td>\(\dfrac{A}{ax+b}\)</td>
+                </tr>
+                <tr>
+                    <td>Repeated linear: \((ax+b)^n\)</td>
+                    <td>\(\dfrac{A_1}{ax+b} + \dfrac{A_2}{(ax+b)^2} + \cdots + \dfrac{A_n}{(ax+b)^n}\)</td>
+                </tr>
+                <tr>
+                    <td>Irreducible quadratic: \((ax^2+bx+c)\)</td>
+                    <td>\(\dfrac{Ax+B}{ax^2+bx+c}\)</td>
+                </tr>
+                <tr>
+                    <td>Repeated quadratic: \((ax^2+bx+c)^n\)</td>
+                    <td>\(\dfrac{A_1x+B_1}{ax^2+bx+c} + \cdots + \dfrac{A_nx+B_n}{(ax^2+bx+c)^n}\)</td>
+                </tr>
+            </table>
+
+            <h3>Key Results</h3>
+            <div class="formula-box important">
+                \[\int \frac{A}{ax+b}\,dx = \frac{A}{a}\ln|ax+b| + C\]
+                \[\int \frac{Ax+B}{x^2+a^2}\,dx = \frac{A}{2}\ln(x^2+a^2) +
+                \frac{B}{a}\tan^{-1}\!\left(\frac{x}{a}\right) + C\]
+            </div>
+
+            <h3>Procedure</h3>
+            <div class="formula-box">
+                <ol>
+                    <li>Factor \(Q(x)\) completely over the reals.</li>
+                    <li>Write the partial fraction decomposition for each factor type.</li>
+                    <li>Multiply through by \(Q(x)\) and expand both sides.</li>
+                    <li>Solve for constants by substituting convenient values of \(x\) or comparing coefficients.
+                    </li>
+                    <li>Integrate each partial fraction term separately.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ── 7. TRIGONOMETRIC SUBSTITUTION ── -->
+        <div class="section">
+            <h2>7. Trigonometric Substitution</h2>
+
+            <div class="formula-box theorem">
+                <p>Used to eliminate radicals of the forms \(\sqrt{a^2-x^2}\), \(\sqrt{a^2+x^2}\), and
+                    \(\sqrt{x^2-a^2}\).</p>
+            </div>
+
+            <h3>Substitution Table</h3>
+            <table>
+                <tr>
+                    <th>Expression</th>
+                    <th>Substitution</th>
+                    <th>Identity Used</th>
+                    <th>Simplified</th>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{a^2 - x^2}\)</td>
+                    <td>\(x = a\sin\theta,\quad dx = a\cos\theta\,d\theta\)</td>
+                    <td>\(1 - \sin^2\theta = \cos^2\theta\)</td>
+                    <td>\(a\cos\theta\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{a^2 + x^2}\)</td>
+                    <td>\(x = a\tan\theta,\quad dx = a\sec^2\theta\,d\theta\)</td>
+                    <td>\(1 + \tan^2\theta = \sec^2\theta\)</td>
+                    <td>\(a\sec\theta\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{x^2 - a^2}\)</td>
+                    <td>\(x = a\sec\theta,\quad dx = a\sec\theta\tan\theta\,d\theta\)</td>
+                    <td>\(\sec^2\theta - 1 = \tan^2\theta\)</td>
+                    <td>\(|a\tan\theta|\)</td>
+                </tr>
+            </table>
+
+            <h3>Reference Triangles for Back-Substitution</h3>
+            <div class="formula-box">
+                <p><strong>\(x = a\sin\theta\):</strong> &ensp; opp \(= x\), hyp \(= a\), adj \(= \sqrt{a^2-x^2}\)
+                </p>
+                <p style="margin-top:8px;"><strong>\(x = a\tan\theta\):</strong> &ensp; opp \(= x\), adj \(= a\),
+                    hyp \(= \sqrt{a^2+x^2}\)</p>
+                <p style="margin-top:8px;"><strong>\(x = a\sec\theta\):</strong> &ensp; hyp \(= x\), adj \(= a\),
+                    opp \(= \sqrt{x^2-a^2}\)</p>
+            </div>
+        </div>
+
+        <!-- ── 8. CLEVER SUBSTITUTION ── -->
+        <div class="section">
+            <h2>8. Clever Substitution</h2>
+
+            <h3>Rationalizing Substitution</h3>
+            <div class="formula-box">
+                <p>For integrands with \(\sqrt[n]{ax+b}\), let \(u = \sqrt[n]{ax+b}\):<br>
+                    Then \(x = \dfrac{u^n - b}{a}\) and \(dx = \dfrac{n\,u^{n-1}}{a}\,du\).</p>
+                <p style="margin-top:10px;">For mixed powers like \(x^{1/2}\) and \(x^{1/3}\), let \(u = x^{1/6}\)
+                    (LCM of denominators).</p>
+            </div>
+
+            <h3>Weierstrass (Half-Angle) Substitution</h3>
+            <div class="formula-box important">
+                <p>For rational functions of \(\sin x\) and \(\cos x\), let \(t = \tan\!\left(\dfrac{x}{2}\right)\):
+                </p>
+                \[\sin x = \frac{2t}{1+t^2}, \qquad \cos x = \frac{1-t^2}{1+t^2}, \qquad dx = \frac{2}{1+t^2}\,dt\]
+            </div>
+
+            <h3>Logarithmic Pattern Recognition</h3>
+            <div class="formula-box">
+                \[\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + C\]
+                <p style="margin-top:8px;">Recognising this pattern avoids a full substitution in many cases.</p>
+            </div>
+        </div>
+
+        <!-- ── 9. PROPERTIES OF TRIGONOMETRIC INTEGRALS ── -->
+        <div class="section">
+            <h2>9. Properties of Trigonometric Integrals</h2>
+
+            <h3>Even and Odd Symmetry</h3>
+            <div class="formula-box important">
+                <p>If \(f\) is <strong>even</strong> \(\;[\,f(-x) = f(x)\,]\):</p>
+                \[\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx\]
+                <p style="margin-top:10px;">If \(f\) is <strong>odd</strong> \(\;[\,f(-x) = -f(x)\,]\):</p>
+                \[\int_{-a}^{a} f(x)\,dx = 0\]
+            </div>
+
+            <h3>Wallis's Formulas</h3>
+            <div class="formula-box theorem">
+                \[\int_0^{\pi/2} \sin^n x\,dx = \int_0^{\pi/2} \cos^n x\,dx\]
+                <p style="margin-top:10px;"><strong>n even:</strong> &ensp;
+                    \(\dfrac{(n-1)!!}{n!!}\cdot\dfrac{\pi}{2}\) &ensp; e.g. \(n=4:
+                    \dfrac{3\cdot1}{4\cdot2}\cdot\dfrac{\pi}{2} = \dfrac{3\pi}{16}\)</p>
+                <p style="margin-top:10px;"><strong>n odd:</strong> &ensp; \(\dfrac{(n-1)!!}{n!!}\) &ensp; e.g.
+                    \(n=3: \dfrac{2}{3}\)</p>
+            </div>
+
+            <h3>Reduction Formulas</h3>
+            <table>
+                <tr>
+                    <th>Integral</th>
+                    <th>Reduction Formula</th>
+                </tr>
+                <tr>
+                    <td>\(\int \sin^n x\,dx\)</td>
+                    <td>\(-\dfrac{\sin^{n-1}x\cos x}{n} + \dfrac{n-1}{n}\displaystyle\int \sin^{n-2}x\,dx\)</td>
+                </tr>
+                <tr>
+                    <td>\(\int \cos^n x\,dx\)</td>
+                    <td>\(\dfrac{\cos^{n-1}x\sin x}{n} + \dfrac{n-1}{n}\displaystyle\int \cos^{n-2}x\,dx\)</td>
+                </tr>
+                <tr>
+                    <td>\(\int \tan^n x\,dx\)</td>
+                    <td>\(\dfrac{\tan^{n-1}x}{n-1} - \displaystyle\int \tan^{n-2}x\,dx\)</td>
+                </tr>
+                <tr>
+                    <td>\(\int \sec^n x\,dx\)</td>
+                    <td>\(\dfrac{\sec^{n-2}x\tan x}{n-1} + \dfrac{n-2}{n-1}\displaystyle\int \sec^{n-2}x\,dx\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ── 10. AREAS BETWEEN CURVES ── -->
+        <div class="section">
+            <h2>10. Areas Between Curves</h2>
+
+            <div class="formula-box important">
+                <p><strong>If \(f(x) \geq g(x)\) on \([a,b]\):</strong></p>
+                \[A = \int_a^b \bigl[f(x) - g(x)\bigr]\,dx\]
+                <p style="margin-top:10px;"><strong>General (curves may cross):</strong></p>
+                \[A = \int_a^b \left|f(x) - g(x)\right|\,dx\]
+            </div>
+
+            <h3>Integrating with Respect to y</h3>
+            <div class="formula-box theorem">
+                <p>When curves are expressed as \(x = f(y)\) and \(x = g(y)\) with \(f(y) \geq g(y)\) on \([c,d]\):
+                </p>
+                \[A = \int_c^d \bigl[f(y) - g(y)\bigr]\,dy\]
+            </div>
+
+            <h3>Procedure</h3>
+            <div class="formula-box">
+                <ol>
+                    <li>Sketch the curves to identify which is on top.</li>
+                    <li>Find intersection points by solving \(f(x) = g(x)\) — these are the limits.</li>
+                    <li>If curves cross within the interval, split the integral at each crossing.</li>
+                    <li>Evaluate and sum all areas (use absolute values throughout).</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ── 11. MULTIPLE INTEGRALS ── -->
+        <div class="section">
+            <h2>11. Multiple Integrals</h2>
+
+            <h3>Double Integral</h3>
+            <div class="formula-box important">
+                \[\iint_R f(x,y)\,dA = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx\]
+            </div>
+
+            <h3>Fubini's Theorem</h3>
+            <div class="formula-box theorem">
+                <p>If \(f\) is continuous on the rectangle \(R = [a,b]\times[c,d]\):</p>
+                \[\iint_R f(x,y)\,dA = \int_a^b\int_c^d f(x,y)\,dy\,dx = \int_c^d\int_a^b f(x,y)\,dx\,dy\]
+            </div>
+
+            <h3>Properties</h3>
+            <div class="formula-box">
+                \[\iint_R [f \pm g]\,dA = \iint_R f\,dA \pm \iint_R g\,dA\]
+                \[\iint_R k\,f\,dA = k\iint_R f\,dA\]
+                \[\iint_R 1\,dA = \text{Area of } R\]
+            </div>
+
+            <h3>Polar Coordinates</h3>
+            <div class="formula-box important">
+                <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad dA = r\,dr\,d\theta\)</p>
+                \[\iint_R f(x,y)\,dA = \int_\alpha^\beta \int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,\,
+                r\sin\theta)\; r\,dr\,d\theta\]
+                <p style="margin-top:8px;">The extra \(r\) is the Jacobian — never omit it.</p>
+            </div>
+        </div>
+
+        <!-- ── 12. TRIPLE INTEGRALS ── -->
+        <div class="section">
+            <h2>12. Triple Integrals</h2>
+
+            <div class="formula-box important">
+                \[\iiint_E f(x,y,z)\,dV = \int_a^b \int_{g_1(x)}^{g_2(x)} \int_{h_1(x,y)}^{h_2(x,y)}
+                f(x,y,z)\,dz\,dy\,dx\]
+            </div>
+
+            <div class="formula-box">
+                \[\iiint_E 1\,dV = \text{Volume of } E\]
+            </div>
+
+            <h3>Cylindrical Coordinates</h3>
+            <div class="formula-box theorem">
+                <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad z = z\)</p>
+                \[\iiint_E f\,dV = \iiint f(r\cos\theta,\, r\sin\theta,\, z)\; r\,dz\,dr\,d\theta\]
+            </div>
+
+            <h3>Spherical Coordinates</h3>
+            <div class="formula-box theorem">
+                <p>\(x = \rho\sin\phi\cos\theta,\quad y = \rho\sin\phi\sin\theta,\quad z = \rho\cos\phi\)</p>
+                \[\iiint_E f\,dV = \iiint f\;\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\]
+                <p style="margin-top:8px;">Jacobian: \(\rho^2\sin\phi\)</p>
+            </div>
+        </div>
+
+        <!-- ── 13. QUICK REFERENCE ── -->
+        <div class="section">
+            <h2>13. Quick Reference — All Integrals</h2>
+
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Integral</th>
+                </tr>
+                <tr>
+                    <td>\(x^n\)</td>
+                    <td>\(\dfrac{x^{n+1}}{n+1} + C\) &ensp; (\(n\neq-1\))</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{1}{x}\)</td>
+                    <td>\(\ln|x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(e^x\)</td>
+                    <td>\(e^x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(a^x\)</td>
+                    <td>\(\dfrac{a^x}{\ln a} + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sin x\)</td>
+                    <td>\(-\cos x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cos x\)</td>
+                    <td>\(\sin x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\tan x\)</td>
+                    <td>\(\ln|\sec x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\cot x\)</td>
+                    <td>\(\ln|\sin x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec x\)</td>
+                    <td>\(\ln|\sec x + \tan x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc x\)</td>
+                    <td>\(\ln|\csc x - \cot x| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec^2 x\)</td>
+                    <td>\(\tan x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc^2 x\)</td>
+                    <td>\(-\cot x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sec x\tan x\)</td>
+                    <td>\(\sec x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\csc x\cot x\)</td>
+                    <td>\(-\csc x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{1}{\sqrt{a^2-x^2}}\)</td>
+                    <td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{1}{a^2+x^2}\)</td>
+                    <td>\(\dfrac{1}{a}\tan^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{1}{x\sqrt{x^2-a^2}}\)</td>
+                    <td>\(\dfrac{1}{a}\sec^{-1}\!\left|\dfrac{x}{a}\right| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\ln x\)</td>
+                    <td>\(x\ln x - x + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sin^{-1} x\)</td>
+                    <td>\(x\sin^{-1}x + \sqrt{1-x^2} + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\tan^{-1} x\)</td>
+                    <td>\(x\tan^{-1}x - \tfrac{1}{2}\ln(1+x^2) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{a^2-x^2}\)</td>
+                    <td>\(\dfrac{x}{2}\sqrt{a^2-x^2} + \dfrac{a^2}{2}\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{a^2+x^2}\)</td>
+                    <td>\(\dfrac{x}{2}\sqrt{a^2+x^2} + \dfrac{a^2}{2}\ln\!\left|x+\sqrt{a^2+x^2}\right| + C\)</td>
+                </tr>
+                <tr>
+                    <td>\(\sqrt{x^2-a^2}\)</td>
+                    <td>\(\dfrac{x}{2}\sqrt{x^2-a^2} - \dfrac{a^2}{2}\ln\!\left|x+\sqrt{x^2-a^2}\right| + C\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="note">
+            <strong>💡 Study Tips:</strong>
+            <ul>
+                <li>Always write \(+C\) for indefinite integrals — it costs marks if missing.</li>
+                <li>For substitution: find the piece whose derivative also appears in the integrand.</li>
+                <li>LIATE tells you which factor to call \(u\) in Integration by Parts.</li>
+                <li>Partial fractions require \(\deg(\text{num}) &lt; \deg(\text{denom})\) — divide first if not.
+                </li>
+                <li>Trig substitution: identify the radical type, draw the reference triangle to back-substitute.
+                </li>
+                <li>For areas: always sketch and check which curve is above the other.</li>
+                <li>Double and triple integrals: evaluate from the inside out, one variable at a time.</li>
+            </ul>
+        </div>
+        <!-- .content -->
+    </div><!-- .container -->
+
+    <script>
+        (function () {
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+                var targetId = decodeURIComponent(hash.substring(1));
+                var el = document.getElementById(targetId);
+                if (!el) return;
+                setTimeout(function () {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 120);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
 
 </body>
 
