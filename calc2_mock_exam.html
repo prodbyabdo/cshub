@@ -1099,13 +1099,450 @@
         </div></details>
       </div>
 
-      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
+    <!-- ═══════════════════════════════════════
+         PART B — MULTIPLE CHOICE
+    ════════════════════════════════════════ -->
+    <div class="part-title">Part B — Multiple Choice <span class="section-badge">15 Questions</span></div>
 
-      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
-      <!-- MCQ_TF_HERE -->
+    <!-- MCQ 1 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 61</div>
+      <p>The integral \(\int \frac{1}{1+x^2}\,dx\) evaluates to:</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m1"> A) \(\ln(1+x^2) + C\)</label>
+        <label><input type="radio" name="m1"> B) \(\arcsin x + C\)</label>
+        <label><input type="radio" name="m1"> C) \(\arctan x + C\)</label>
+        <label><input type="radio" name="m1"> D) \(\frac{1}{x} + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>This is a standard integral form for the arctangent function.</p>
+        <div class="ans">C) \(\arctan x + C\)</div>
+      </div></details>
+    </div>
 
-      <!-- ═══ PLACEHOLDER FOR MCQ + T/F ═══ -->
-      <!-- MCQ_TF_HERE -->
+    <!-- MCQ 2 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 62</div>
+      <p>Which substitution is best for \(\int \sqrt{16-x^2}\,dx\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m2"> A) \(x = 16\sin\theta\)</label>
+        <label><input type="radio" name="m2"> B) \(x = 4\tan\theta\)</label>
+        <label><input type="radio" name="m2"> C) \(x = 4\sin\theta\)</label>
+        <label><input type="radio" name="m2"> D) \(x = 4\sec\theta\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>The form \(\sqrt{a^2-x^2}\) requires \(x = a\sin\theta\). Here \(a=4\).</p>
+        <div class="ans">C) \(x = 4\sin\theta\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 3 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 63</div>
+      <p>If \(u=x\) and \(dv=e^x\,dx\), what is \(\int x e^x\,dx\) using Integration by Parts?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m3"> A) \(xe^x - e^x + C\)</label>
+        <label><input type="radio" name="m3"> B) \(xe^x + e^x + C\)</label>
+        <label><input type="radio" name="m3"> C) \(\frac{1}{2}x^2 e^x + C\)</label>
+        <label><input type="radio" name="m3"> D) \(e^x - x + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>\(uv - \int v\,du = xe^x - \int e^x\,dx = xe^x - e^x + C\)</p>
+        <div class="ans">A) \(xe^x - e^x + C\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 4 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 64</div>
+      <p>Evaluate \(\int_0^{\pi/2} \cos x\,dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m4"> A) 0</label>
+        <label><input type="radio" name="m4"> B) 1</label>
+        <label><input type="radio" name="m4"> C) -1</label>
+        <label><input type="radio" name="m4"> D) \(\pi/2\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>\([\sin x]_0^{\pi/2} = \sin(\pi/2) - \sin(0) = 1 - 0 = 1\)</p>
+        <div class="ans">B) 1</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 5 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 65</div>
+      <p>What is \(\int \sinh x\,dx\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m5"> A) \(-\cosh x + C\)</label>
+        <label><input type="radio" name="m5"> B) \(\cosh x + C\)</label>
+        <label><input type="radio" name="m5"> C) \(\sin x + C\)</label>
+        <label><input type="radio" name="m5"> D) \(-\sin x + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>The derivative of \(\cosh x\) is \(\sinh x\), no negative sign.</p>
+        <div class="ans">B) \(\cosh x + C\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 6 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 66</div>
+      <p>In partial fractions, what is the form for \(\frac{1}{x(x^2+1)}\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m6"> A) \(\frac{A}{x} + \frac{B}{x^2+1}\)</label>
+        <label><input type="radio" name="m6"> B) \(\frac{A}{x} + \frac{Bx+C}{x^2+1}\)</label>
+        <label><input type="radio" name="m6"> C) \(\frac{A}{x} + \frac{B}{x+1} + \frac{C}{(x+1)^2}\)</label>
+        <label><input type="radio" name="m6"> D) \(\frac{Ax+B}{x} + \frac{Cx+D}{x^2+1}\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>\(x^2+1\) is an irreducible quadratic, so its numerator must be linear \(Bx+C\).</p>
+        <div class="ans">B) \(\frac{A}{x} + \frac{Bx+C}{x^2+1}\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 7 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 67</div>
+      <p>Which identity is used to integrate \(\sin^2 x\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m7"> A) \(1-\cos^2 x\)</label>
+        <label><input type="radio" name="m7"> B) \(\frac{1+\cos 2x}{2}\)</label>
+        <label><input type="radio" name="m7"> C) \(\frac{1-\cos 2x}{2}\)</label>
+        <label><input type="radio" name="m7"> D) \(2\sin x\cos x\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>The half-angle identity reduces the power so it can be integrated.</p>
+        <div class="ans">C) \(\frac{1-\cos 2x}{2}\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 8 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 68</div>
+      <p>What is \(\int \sec x \tan x\,dx\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m8"> A) \(\sec x + C\)</label>
+        <label><input type="radio" name="m8"> B) \(\tan x + C\)</label>
+        <label><input type="radio" name="m8"> C) \(\sec^2 x + C\)</label>
+        <label><input type="radio" name="m8"> D) \(\ln|\sec x + \tan x| + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>This is a standard derivative rule in reverse.</p>
+        <div class="ans">A) \(\sec x + C\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 9 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 69</div>
+      <p>The substitution \(x = a\cosh\theta\) is best for which radical?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m9"> A) \(\sqrt{a^2-x^2}\)</label>
+        <label><input type="radio" name="m9"> B) \(\sqrt{a^2+x^2}\)</label>
+        <label><input type="radio" name="m9"> C) \(\sqrt{x^2-a^2}\)</label>
+        <label><input type="radio" name="m9"> D) \(\sqrt[3]{x^2+a^2}\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Because \(\cosh^2\theta - 1 = \sinh^2\theta\), it simplifies \(\sqrt{x^2-a^2}\).</p>
+        <div class="ans">C) \(x = 4\sin\theta\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 10 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 70</div>
+      <p>Evaluate \(\int_1^e \frac{1}{x}\,dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m10"> A) 0</label>
+        <label><input type="radio" name="m10"> B) 1</label>
+        <label><input type="radio" name="m10"> C) \(e\)</label>
+        <label><input type="radio" name="m10"> D) \(e-1\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>\([\ln x]_1^e = \ln e - \ln 1 = 1 - 0 = 1\)</p>
+        <div class="ans">B) 1</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 11 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 71</div>
+      <p>Which rule of thumb applies for choosing \(u\) in Integration by Parts?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m11"> A) FOIL</label>
+        <label><input type="radio" name="m11"> B) PEMDAS</label>
+        <label><input type="radio" name="m11"> C) LIATE</label>
+        <label><input type="radio" name="m11"> D) SOHCAHTOA</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>LIATE = Logarithmic, Inverse trig, Algebraic, Trig, Exponential.</p>
+        <div class="ans">C) LIATE</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 12 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 72</div>
+      <p>Evaluate \(\int 2^x\,dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m12"> A) \(2^x + C\)</label>
+        <label><input type="radio" name="m12"> B) \(\frac{2^x}{\ln 2} + C\)</label>
+        <label><input type="radio" name="m12"> C) \(2^x\ln 2 + C\)</label>
+        <label><input type="radio" name="m12"> D) \(\frac{x\cdot 2^{x-1}}{\ln 2} + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>For exponential functions base \(a\), the integral is \(\frac{a^x}{\ln a}\).</p>
+        <div class="ans">B) \(\frac{2^x}{\ln 2} + C\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 13 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 73</div>
+      <p>For \(\int \sin^m x \cos^n x\,dx\) where \(m\) is odd, what is the best substitution?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m13"> A) \(u = \sin x\)</label>
+        <label><input type="radio" name="m13"> B) \(u = \cos x\)</label>
+        <label><input type="radio" name="m13"> C) \(u = \tan x\)</label>
+        <label><input type="radio" name="m13"> D) Use half-angle identities</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Peel off one \(\sin x\) to use with \(dx\), convert remaining sines to cosines, and let \(u=\cos x\).</p>
+        <div class="ans">B) \(u = \cos x\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 14 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 74</div>
+      <p>The integral \(\int \frac{1}{\sqrt{a^2+x^2}}\,dx\) is equal to:</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m14"> A) \(\sin^{-1}(x/a) + C\)</label>
+        <label><input type="radio" name="m14"> B) \(\sinh^{-1}(x/a) + C\)</label>
+        <label><input type="radio" name="m14"> C) \(\cosh^{-1}(x/a) + C\)</label>
+        <label><input type="radio" name="m14"> D) \(\frac{1}{a}\tan^{-1}(x/a) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>This is standard form #3 from Lecture 7.</p>
+        <div class="ans">B) \(\sinh^{-1}(x/a) + C\)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 15 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 75</div>
+      <p>Which is true about an odd function \(f(x)\) integrated over \([-a, a]\)?</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m15"> A) The result is \(2\int_0^a f(x)\,dx\)</label>
+        <label><input type="radio" name="m15"> B) The result is 1</label>
+        <label><input type="radio" name="m15"> C) The result is 0</label>
+        <label><input type="radio" name="m15"> D) It cannot be evaluated without knowing the function</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>The area under the x-axis perfectly cancels the area above.</p>
+        <div class="ans">C) The result is 0</div>
+      </div></details>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         PART C — TRUE / FALSE
+    ════════════════════════════════════════ -->
+    <div class="part-title">Part C — True / False <span class="section-badge">15 Questions</span></div>
+
+    <!-- TF 1 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 76</div>
+      <p>\(\int x\cos x\,dx = \frac{1}{2}x^2\sin x + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t1"> True</label>
+        <label><input type="radio" name="t1"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. You cannot just integrate the terms separately. It requires Integration by Parts.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 2 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 77</div>
+      <p>\(\int_a^b f(x)\,dx = - \int_b^a f(x)\,dx\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t2"> True</label>
+        <label><input type="radio" name="t2"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. Reversing the limits of integration negates the value.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 3 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 78</div>
+      <p>The degree of the numerator must be strictly less than the denominator before applying partial fractions.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t3"> True</label>
+        <label><input type="radio" name="t3"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. If not, polynomial long division must be performed first.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 4 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 79</div>
+      <p>\(\int \ln x\,dx = \frac{1}{x} + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t4"> True</label>
+        <label><input type="radio" name="t4"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. The <em>derivative</em> of \(\ln x\) is \(1/x\). The integral is \(x\ln x - x + C\).</p>
+      </div></details>
+    </div>
+
+    <!-- TF 5 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 80</div>
+      <p>\(\cosh^2 x - \sinh^2 x = 1\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t5"> True</label>
+        <label><input type="radio" name="t5"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. This is the fundamental hyperbolic identity.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 6 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 81</div>
+      <p>A definite integral always yields a positive number representing area.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t6"> True</label>
+        <label><input type="radio" name="t6"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. If the function is below the x-axis, the integral evaluates to a negative number.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 7 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 82</div>
+      <p>\(\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t7"> True</label>
+        <label><input type="radio" name="t7"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. This is the standard logarithmic integration pattern.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 8 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 83</div>
+      <p>When calculating the area between \(f(x)\) and \(g(x)\), it is not necessary to find their intersection points if the interval is given.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t8"> True</label>
+        <label><input type="radio" name="t8"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. The curves might cross within the interval, requiring you to split the integral.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 9 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 84</div>
+      <p>The substitution \(x = a\tan\theta\) is used for radicals of the form \(\sqrt{a^2+x^2}\).</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t9"> True</label>
+        <label><input type="radio" name="t9"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. This takes advantage of the identity \(1 + \tan^2\theta = \sec^2\theta\).</p>
+      </div></details>
+    </div>
+
+    <!-- TF 10 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 85</div>
+      <p>Integration by Parts is derived from the Product Rule of differentiation.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t10"> True</label>
+        <label><input type="radio" name="t10"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. \((uv)' = u'v + uv'\) rearranges to \(uv' = (uv)' - u'v\).</p>
+      </div></details>
+    </div>
+
+    <!-- TF 11 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 86</div>
+      <p>\(\int e^{x^2}\,dx = \frac{e^{x^2}}{2x} + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t11"> True</label>
+        <label><input type="radio" name="t11"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. \(e^{x^2}\) does not have an elementary antiderivative. Differentiating the proposed answer gives a quotient rule mess.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 12 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 87</div>
+      <p>If \(f(x)\) is continuous on \([a,b]\), then \(\int_a^b f(x)\,dx\) exists.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t12"> True</label>
+        <label><input type="radio" name="t12"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. Continuity on a closed interval guarantees integrability.</p>
+      </div></details>
+    </div>
+
+    <!-- TF 13 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 88</div>
+      <p>\(\int \tan^2 x\,dx = \frac{\tan^3 x}{3} + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t13"> True</label>
+        <label><input type="radio" name="t13"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. You must use \(\tan^2 x = \sec^2 x - 1\). The result is \(\tan x - x + C\).</p>
+      </div></details>
+    </div>
+
+    <!-- TF 14 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 89</div>
+      <p>The constant of integration \(C\) must always be explicitly stated when evaluating definite integrals.</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t14"> True</label>
+        <label><input type="radio" name="t14"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>False. The constants cancel out in definite integrals: \((F(b)+C) - (F(a)+C) = F(b) - F(a)\).</p>
+      </div></details>
+    </div>
+
+    <!-- TF 15 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 90</div>
+      <p>In partial fractions, an expression \(\frac{1}{(x-2)^2}\) requires the terms \(\frac{A}{x-2} + \frac{B}{(x-2)^2}\).</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t15"> True</label>
+        <label><input type="radio" name="t15"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>True. This is the rule for repeated linear factors.</p>
+      </div></details>
+    </div>
 
     </div><!-- end .content -->
 

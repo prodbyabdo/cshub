@@ -905,124 +905,52 @@
         </div>
     </div>
 
-    <!-- ── 5. SPECIAL INTEGRATION — TRIG INTEGRALS ── -->
+    <!-- ── 5. SIX STANDARD INTEGRALS (Lecture 4) ── -->
     <div class="section">
-        <h2>5. Special Integration — Trigonometric Integrals</h2>
+        <h2>5. Six Standard Integrals</h2>
 
-        <h3>Powers of Sine and Cosine</h3>
-        <div class="formula-box important">
-            <p><strong>Case 1 — odd power of \(\cos x\):</strong><br>
-                Peel off one \(\cos x\), use \(\cos^2 x = 1 - \sin^2 x\), let \(u = \sin x\).</p>
-            <p style="margin-top:10px;"><strong>Case 2 — odd power of \(\sin x\):</strong><br>
-                Peel off one \(\sin x\), use \(\sin^2 x = 1 - \cos^2 x\), let \(u = \cos x\).</p>
-            <p style="margin-top:10px;"><strong>Case 3 — both powers even:</strong><br>
-                Use the half-angle identities below.</p>
-        </div>
-
-        <h3>Essential Identities</h3>
         <div class="formula-box theorem">
-            \[\sin^2 x = \frac{1 - \cos 2x}{2} \qquad \cos^2 x = \frac{1 + \cos 2x}{2}\]
-            \[\sin x \cos x = \frac{\sin 2x}{2}\]
-            \[\sin^2 x + \cos^2 x = 1 \qquad 1 + \tan^2 x = \sec^2 x \qquad 1 + \cot^2 x = \csc^2 x\]
+            <p>These six standard forms arise from trigonometric and hyperbolic substitutions. They are used whenever the integrand contains \(\sqrt{a^2 - x^2}\), \(\sqrt{a^2 + x^2}\), or \(\sqrt{x^2 - a^2}\).</p>
         </div>
 
-        <h3>Powers of Tangent and Secant</h3>
+        <h3>Complete Table</h3>
         <table>
             <tr>
-                <th>Form</th>
-                <th>Strategy</th>
+                <th>#</th>
+                <th>Integral</th>
+                <th>Result</th>
             </tr>
             <tr>
-                <td>\(\int \tan^n x\,dx\)</td>
-                <td>Use \(\tan^2 x = \sec^2 x - 1\), reduce</td>
+                <td>1</td>
+                <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</td>
+                <td>\(\sin^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
             </tr>
             <tr>
-                <td>\(\int \sec^n x\,dx\) (\(n\) even)</td>
-                <td>Factor \(\sec^2 x\), use \(\sec^2 x = 1+\tan^2 x\), let \(u=\tan x\)</td>
+                <td>2</td>
+                <td>\(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</td>
+                <td>\(\frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) + \frac{x}{2}\sqrt{a^2-x^2} + C\)</td>
             </tr>
             <tr>
-                <td>\(\int \sec^n x\,dx\) (\(n\) odd)</td>
-                <td>Integration by parts or reduction formula</td>
+                <td>3</td>
+                <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</td>
+                <td>\(\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
             </tr>
             <tr>
-                <td>\(\int \tan^m x \sec^n x\,dx\) (\(n\) even)</td>
-                <td>Let \(u = \tan x\)</td>
+                <td>4</td>
+                <td>\(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</td>
+                <td>\(\frac{x}{2}\sqrt{a^2+x^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
             </tr>
             <tr>
-                <td>\(\int \tan^m x \sec^n x\,dx\) (\(m\) odd)</td>
-                <td>Let \(u = \sec x\)</td>
+                <td>5</td>
+                <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</td>
+                <td>\(\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>\(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</td>
+                <td>\(\frac{x}{2}\sqrt{x^2-a^2} - \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
             </tr>
         </table>
-
-        <h3>Product-to-Sum Formulas</h3>
-        <div class="formula-box">
-            \[\sin A \cos B = \tfrac{1}{2}[\sin(A-B) + \sin(A+B)]\]
-            \[\sin A \sin B = \tfrac{1}{2}[\cos(A-B) - \cos(A+B)]\]
-            \[\cos A \cos B = \tfrac{1}{2}[\cos(A-B) + \cos(A+B)]\]
-        </div>
-    </div>
-
-    <!-- ── 6. FRACTION INTEGRATION — PARTIAL FRACTIONS ── -->
-    <div class="section">
-        <h2>6. Fraction Integration — Partial Fractions</h2>
-
-        <div class="formula-box theorem">
-            <p>Used for \(\displaystyle\int \dfrac{P(x)}{Q(x)}\,dx\) where \(\deg P < \deg Q\).<br>
-                    If \(\deg P \geq \deg Q\): perform polynomial long division first.</p>
-        </div>
-
-        <h3>Decomposition Cases</h3>
-        <table>
-            <tr>
-                <th>Factor in \(Q(x)\)</th>
-                <th>Partial Fraction Terms</th>
-            </tr>
-            <tr>
-                <td>Linear: \((ax+b)\)</td>
-                <td>\(\dfrac{A}{ax+b}\)</td>
-            </tr>
-            <tr>
-                <td>Repeated linear: \((ax+b)^n\)</td>
-                <td>\(\dfrac{A_1}{ax+b} + \dfrac{A_2}{(ax+b)^2} + \cdots + \dfrac{A_n}{(ax+b)^n}\)</td>
-            </tr>
-            <tr>
-                <td>Irreducible quadratic: \((ax^2+bx+c)\)</td>
-                <td>\(\dfrac{Ax+B}{ax^2+bx+c}\)</td>
-            </tr>
-            <tr>
-                <td>Repeated quadratic: \((ax^2+bx+c)^n\)</td>
-                <td>\(\dfrac{A_1x+B_1}{ax^2+bx+c} + \cdots + \dfrac{A_nx+B_n}{(ax^2+bx+c)^n}\)</td>
-            </tr>
-        </table>
-
-        <h3>Key Results</h3>
-        <div class="formula-box important">
-            \[\int \frac{A}{ax+b}\,dx = \frac{A}{a}\ln|ax+b| + C\]
-            \[\int \frac{Ax+B}{x^2+a^2}\,dx = \frac{A}{2}\ln(x^2+a^2) +
-            \frac{B}{a}\tan^{-1}\!\left(\frac{x}{a}\right) + C\]
-        </div>
-
-        <h3>Procedure</h3>
-        <div class="formula-box">
-            <ol>
-                <li>Factor \(Q(x)\) completely over the reals.</li>
-                <li>Write the partial fraction decomposition for each factor type.</li>
-                <li>Multiply through by \(Q(x)\) and expand both sides.</li>
-                <li>Solve for constants by substituting convenient values of \(x\) or comparing coefficients.
-                </li>
-                <li>Integrate each partial fraction term separately.</li>
-            </ol>
-        </div>
-    </div>
-
-    <!-- ── 7. TRIGONOMETRIC SUBSTITUTION ── -->
-    <div class="section">
-        <h2>7. Trigonometric Substitution</h2>
-
-        <div class="formula-box theorem">
-            <p>Used to eliminate radicals of the forms \(\sqrt{a^2-x^2}\), \(\sqrt{a^2+x^2}\), and
-                \(\sqrt{x^2-a^2}\).</p>
-        </div>
 
         <h3>Substitution Table</h3>
         <table>
@@ -1030,116 +958,47 @@
                 <th>Expression</th>
                 <th>Substitution</th>
                 <th>Identity Used</th>
-                <th>Simplified</th>
             </tr>
             <tr>
-                <td>\(\sqrt{a^2 - x^2}\)</td>
-                <td>\(x = a\sin\theta,\quad dx = a\cos\theta\,d\theta\)</td>
-                <td>\(1 - \sin^2\theta = \cos^2\theta\)</td>
-                <td>\(a\cos\theta\)</td>
+                <td>\(\sqrt{a^2-x^2}\)</td>
+                <td>\(x = a\sin\theta\)</td>
+                <td>\(1-\sin^2\theta = \cos^2\theta\)</td>
             </tr>
             <tr>
-                <td>\(\sqrt{a^2 + x^2}\)</td>
-                <td>\(x = a\tan\theta,\quad dx = a\sec^2\theta\,d\theta\)</td>
-                <td>\(1 + \tan^2\theta = \sec^2\theta\)</td>
-                <td>\(a\sec\theta\)</td>
+                <td>\(\sqrt{a^2+x^2}\)</td>
+                <td>\(x = a\sinh\theta\)</td>
+                <td>\(1+\sinh^2\theta = \cosh^2\theta\)</td>
             </tr>
             <tr>
-                <td>\(\sqrt{x^2 - a^2}\)</td>
-                <td>\(x = a\sec\theta,\quad dx = a\sec\theta\tan\theta\,d\theta\)</td>
-                <td>\(\sec^2\theta - 1 = \tan^2\theta\)</td>
-                <td>\(|a\tan\theta|\)</td>
+                <td>\(\sqrt{x^2-a^2}\)</td>
+                <td>\(x = a\cosh\theta\)</td>
+                <td>\(\cosh^2\theta - 1 = \sinh^2\theta\)</td>
             </tr>
         </table>
 
-        <h3>Reference Triangles for Back-Substitution</h3>
-        <div class="formula-box">
-            <p><strong>\(x = a\sin\theta\):</strong> &ensp; opp \(= x\), hyp \(= a\), adj \(= \sqrt{a^2-x^2}\)
-            </p>
-            <p style="margin-top:8px;"><strong>\(x = a\tan\theta\):</strong> &ensp; opp \(= x\), adj \(= a\),
-                hyp \(= \sqrt{a^2+x^2}\)</p>
-            <p style="margin-top:8px;"><strong>\(x = a\sec\theta\):</strong> &ensp; hyp \(= x\), adj \(= a\),
-                opp \(= \sqrt{x^2-a^2}\)</p>
+        <div class="note">
+            <strong>💡 Note:</strong> These substitutions rely on the prerequisite identities for \(\sin\), \(\sinh\), \(\arcsin\), \(\cosh^{-1}\), etc. listed in the D ↔ I reference tables in Section 1 above.
         </div>
     </div>
 
-    <!-- ── 8. CLEVER SUBSTITUTION ── -->
+    <!-- ── 6. DEFINITE INTEGRALS & AREAS BETWEEN CURVES (Lecture 5) ── -->
     <div class="section">
-        <h2>8. Clever Substitution</h2>
+        <h2>6. Definite Integrals &amp; Areas Between Curves</h2>
 
-        <h3>Rationalizing Substitution</h3>
-        <div class="formula-box">
-            <p>For integrands with \(\sqrt[n]{ax+b}\), let \(u = \sqrt[n]{ax+b}\):<br>
-                Then \(x = \dfrac{u^n - b}{a}\) and \(dx = \dfrac{n\,u^{n-1}}{a}\,du\).</p>
-            <p style="margin-top:10px;">For mixed powers like \(x^{1/2}\) and \(x^{1/3}\), let \(u = x^{1/6}\)
-                (LCM of denominators).</p>
-        </div>
-
-        <h3>Weierstrass (Half-Angle) Substitution</h3>
+        <h3>Evaluating Definite Integrals</h3>
         <div class="formula-box important">
-            <p>For rational functions of \(\sin x\) and \(\cos x\), let \(t = \tan\!\left(\dfrac{x}{2}\right)\):
-            </p>
-            \[\sin x = \frac{2t}{1+t^2}, \qquad \cos x = \frac{1-t^2}{1+t^2}, \qquad dx = \frac{2}{1+t^2}\,dt\]
+            <p><strong>Fundamental Theorem of Calculus:</strong></p>
+            \[\int_a^b f(x)\,dx = F(b) - F(a) \quad \text{where } F'(x) = f(x)\]
         </div>
 
-        <h3>Logarithmic Pattern Recognition</h3>
+        <h3>Properties of Definite Integrals</h3>
         <div class="formula-box">
-            \[\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + C\]
-            <p style="margin-top:8px;">Recognising this pattern avoids a full substitution in many cases.</p>
-        </div>
-    </div>
-
-    <!-- ── 9. PROPERTIES OF TRIGONOMETRIC INTEGRALS ── -->
-    <div class="section">
-        <h2>9. Properties of Trigonometric Integrals</h2>
-
-        <h3>Even and Odd Symmetry</h3>
-        <div class="formula-box important">
-            <p>If \(f\) is <strong>even</strong> \(\;[\,f(-x) = f(x)\,]\):</p>
-            \[\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx\]
-            <p style="margin-top:10px;">If \(f\) is <strong>odd</strong> \(\;[\,f(-x) = -f(x)\,]\):</p>
-            \[\int_{-a}^{a} f(x)\,dx = 0\]
+            \[\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx\]
+            \[\int_a^a f(x)\,dx = 0\]
+            \[\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx\]
         </div>
 
-        <h3>Wallis's Formulas</h3>
-        <div class="formula-box theorem">
-            \[\int_0^{\pi/2} \sin^n x\,dx = \int_0^{\pi/2} \cos^n x\,dx\]
-            <p style="margin-top:10px;"><strong>n even:</strong> &ensp;
-                \(\dfrac{(n-1)!!}{n!!}\cdot\dfrac{\pi}{2}\) &ensp; e.g. \(n=4:
-                \dfrac{3\cdot1}{4\cdot2}\cdot\dfrac{\pi}{2} = \dfrac{3\pi}{16}\)</p>
-            <p style="margin-top:10px;"><strong>n odd:</strong> &ensp; \(\dfrac{(n-1)!!}{n!!}\) &ensp; e.g.
-                \(n=3: \dfrac{2}{3}\)</p>
-        </div>
-
-        <h3>Reduction Formulas</h3>
-        <table>
-            <tr>
-                <th>Integral</th>
-                <th>Reduction Formula</th>
-            </tr>
-            <tr>
-                <td>\(\int \sin^n x\,dx\)</td>
-                <td>\(-\dfrac{\sin^{n-1}x\cos x}{n} + \dfrac{n-1}{n}\displaystyle\int \sin^{n-2}x\,dx\)</td>
-            </tr>
-            <tr>
-                <td>\(\int \cos^n x\,dx\)</td>
-                <td>\(\dfrac{\cos^{n-1}x\sin x}{n} + \dfrac{n-1}{n}\displaystyle\int \cos^{n-2}x\,dx\)</td>
-            </tr>
-            <tr>
-                <td>\(\int \tan^n x\,dx\)</td>
-                <td>\(\dfrac{\tan^{n-1}x}{n-1} - \displaystyle\int \tan^{n-2}x\,dx\)</td>
-            </tr>
-            <tr>
-                <td>\(\int \sec^n x\,dx\)</td>
-                <td>\(\dfrac{\sec^{n-2}x\tan x}{n-1} + \dfrac{n-2}{n-1}\displaystyle\int \sec^{n-2}x\,dx\)</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- ── 10. AREAS BETWEEN CURVES ── -->
-    <div class="section">
-        <h2>10. Areas Between Curves</h2>
-
+        <h3>Area Between Two Curves</h3>
         <div class="formula-box important">
             <p><strong>If \(f(x) \geq g(x)\) on \([a,b]\):</strong></p>
             \[A = \int_a^b \bigl[f(x) - g(x)\bigr]\,dx\]
@@ -1149,8 +1008,7 @@
 
         <h3>Integrating with Respect to y</h3>
         <div class="formula-box theorem">
-            <p>When curves are expressed as \(x = f(y)\) and \(x = g(y)\) with \(f(y) \geq g(y)\) on \([c,d]\):
-            </p>
+            <p>When curves are expressed as \(x = f(y)\) and \(x = g(y)\) with \(f(y) \geq g(y)\) on \([c,d]\):</p>
             \[A = \int_c^d \bigl[f(y) - g(y)\bigr]\,dy\]
         </div>
 
@@ -1162,64 +1020,6 @@
                 <li>If curves cross within the interval, split the integral at each crossing.</li>
                 <li>Evaluate and sum all areas (use absolute values throughout).</li>
             </ol>
-        </div>
-    </div>
-
-    <!-- ── 11. MULTIPLE INTEGRALS ── -->
-    <div class="section">
-        <h2>11. Multiple Integrals</h2>
-
-        <h3>Double Integral</h3>
-        <div class="formula-box important">
-            \[\iint_R f(x,y)\,dA = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx\]
-        </div>
-
-        <h3>Fubini's Theorem</h3>
-        <div class="formula-box theorem">
-            <p>If \(f\) is continuous on the rectangle \(R = [a,b]\times[c,d]\):</p>
-            \[\iint_R f(x,y)\,dA = \int_a^b\int_c^d f(x,y)\,dy\,dx = \int_c^d\int_a^b f(x,y)\,dx\,dy\]
-        </div>
-
-        <h3>Properties</h3>
-        <div class="formula-box">
-            \[\iint_R [f \pm g]\,dA = \iint_R f\,dA \pm \iint_R g\,dA\]
-            \[\iint_R k\,f\,dA = k\iint_R f\,dA\]
-            \[\iint_R 1\,dA = \text{Area of } R\]
-        </div>
-
-        <h3>Polar Coordinates</h3>
-        <div class="formula-box important">
-            <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad dA = r\,dr\,d\theta\)</p>
-            \[\iint_R f(x,y)\,dA = \int_\alpha^\beta \int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,\,
-            r\sin\theta)\; r\,dr\,d\theta\]
-            <p style="margin-top:8px;">The extra \(r\) is the Jacobian — never omit it.</p>
-        </div>
-    </div>
-
-    <!-- ── 12. TRIPLE INTEGRALS ── -->
-    <div class="section">
-        <h2>12. Triple Integrals</h2>
-
-        <div class="formula-box important">
-            \[\iiint_E f(x,y,z)\,dV = \int_a^b \int_{g_1(x)}^{g_2(x)} \int_{h_1(x,y)}^{h_2(x,y)}
-            f(x,y,z)\,dz\,dy\,dx\]
-        </div>
-
-        <div class="formula-box">
-            \[\iiint_E 1\,dV = \text{Volume of } E\]
-        </div>
-
-        <h3>Cylindrical Coordinates</h3>
-        <div class="formula-box theorem">
-            <p>\(x = r\cos\theta,\quad y = r\sin\theta,\quad z = z\)</p>
-            \[\iiint_E f\,dV = \iiint f(r\cos\theta,\, r\sin\theta,\, z)\; r\,dz\,dr\,d\theta\]
-        </div>
-
-        <h3>Spherical Coordinates</h3>
-        <div class="formula-box theorem">
-            <p>\(x = \rho\sin\phi\cos\theta,\quad y = \rho\sin\phi\sin\theta,\quad z = \rho\cos\phi\)</p>
-            \[\iiint_E f\,dV = \iiint f\;\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\]
-            <p style="margin-top:8px;">Jacobian: \(\rho^2\sin\phi\)</p>
         </div>
     </div>
 
