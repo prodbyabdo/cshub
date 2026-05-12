@@ -279,8 +279,41 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                border: none;
+            }
+            header {
+                padding: 20px 15px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 15px;
+            }
+            .section {
+                padding: 15px;
+            }
             .lec-grid {
                 grid-template-columns: 1fr;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .formula-box {
+                overflow-x: auto;
+                padding: 15px;
+            }
+            .print-btn {
+                display: flex;
+                width: 100%;
+                margin-top: 10px;
+                margin-left: 0 !important;
             }
         }
 
