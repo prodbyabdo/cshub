@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculus II — Lecture 3: Integration by Parts & Inverse Hyperbolic</title>
+    <title>Calculus II - Lecture 3: Integration by Parts & Tabular Method</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #000000;
-            color: #ffffff;
+            background: #000;
+            color: #fff;
             padding: 20px;
             line-height: 1.6;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -32,15 +23,13 @@
             border: 1px solid #1a1a1a;
             overflow: hidden;
         }
-
         header {
-            background: #000000;
-            color: #ffffff;
+            background: #000;
+            color: #fff;
             padding: 30px;
             text-align: center;
             border-bottom: 1px solid #1a1a1a;
         }
-
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -48,28 +37,20 @@
             color: #00ff88;
             letter-spacing: 2px;
         }
-
         header p {
-            font-size: 1.1em;
-            opacity: 0.6;
-            font-weight: 800;
+            font-size: 1.05em;
+            opacity: 0.75;
+            font-weight: 700;
             color: #00ff88;
         }
-
-        .content {
-            padding: 40px;
-        }
-
+        .content { padding: 40px; }
         .section {
             margin-bottom: 40px;
             padding: 25px;
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
-
         }
-
         .section h2 {
-            color: #ffffff;
             font-size: 1.8em;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -78,212 +59,53 @@
             color: #00ff88;
             letter-spacing: 1px;
         }
-
         .section h3 {
-            color: #cccccc;
-            font-size: 1.3em;
-            margin: 20px 0 15px 0;
+            font-size: 1.2em;
+            margin: 20px 0 12px 0;
             font-weight: 800;
             color: #00ff88;
         }
-
-        .formula-box {
-            background: #000000;
-            padding: 20px;
-            margin: 15px 0;
+        .formula-box,
+        .step-block,
+        .note {
+            background: #000;
             border: 1px solid #1a1a1a;
-            border-left: 2px solid #666666;
+            padding: 18px 20px;
+            margin: 14px 0;
         }
-
-        .important {
-            background: #0a0a0a;
-
+        .formula-box { border-left: 2px solid #666; }
+        .step-block { border-left: 2px solid #444; }
+        .note { background: #0a0a0a; }
+        .theorem { border-left-color: #888; }
+        .important { background: #0a0a0a; }
+        .step-label {
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 8px;
         }
-
-        .theorem {
-            background: #0a0a0a;
-            border-left: 2px solid #888888;
-        }
-
+        p { color: #ccc; }
+        ol, ul { margin-left: 20px; margin-top: 10px; }
+        ol li, ul li { margin: 8px 0; color: #ccc; }
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: #000000;
+            background: #000;
             border: 1px solid #1a1a1a;
         }
-
-        th,
-        td {
+        th, td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #1a1a1a;
-            font-weight: 800;
-            color: #00ff88;
         }
-
         th {
             background: #0a0a0a;
-            color: #ffffff;
-            font-weight: 400;
-            border-bottom: 1px solid #333333;
+            color: #fff;
+            font-weight: 700;
         }
-
-        tr:hover {
-            background: #0f0f0f;
-        }
-
-        .note {
-            background: #0a0a0a;
-            padding: 15px;
-            margin: 15px 0;
-            border: 1px solid #1a1a1a;
-
-        }
-
-        .note strong {
-            color: #ffffff;
-        }
-
-        p {
-            color: #cccccc;
-        }
-
-        ol,
-        ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        ol li,
-        ul li {
-            margin: 8px 0;
-            color: #cccccc;
-        }
-
-        .step-block {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #444444;
-            padding: 18px 20px;
-            margin: 12px 0;
-        }
-
-        .step-block .step-label {
-            font-size: 0.8em;
-            letter-spacing: 2px;
-            opacity: 0.5;
-            margin-bottom: 8px;
-        }
-
-        .exam-q {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #888888;
-            padding: 20px;
-            margin: 16px 0;
-        }
-
-        .exam-q .q-label {
-            font-size: 0.78em;
-            letter-spacing: 2px;
-            opacity: 0.45;
-            margin-bottom: 10px;
-        }
-
-        details {
-            margin-top: 12px;
-        }
-
-        .problem-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            border-color: var(--accent-color);
-        }
-
-        .problem-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .problem-number {
-            font-family: var(--font-mono);
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .problem-statement {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .solution-step {
-            margin-bottom: 15px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .final-answer {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: var(--accent-dim);
-            border-radius: 8px;
-            border: 1px solid var(--accent-color);
-            color: var(--text-primary);
-            font-weight: bold;
-        }
-
-        footer {
-            margin-top: 100px;
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-        }
-
-        details summary {
-            cursor: pointer;
-            font-size: 0.85em;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            list-style: none;
-            padding: 6px 0;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details summary::before {
-            content: '▸  show solution';
-        }
-
-        details[open] summary::before {
-            content: '▾  hide solution';
-        }
-
-        details .solution {
-            padding-top: 14px;
-        }
-
+        td { color: #00ff88; font-weight: 700; }
+        tr:hover { background: #0f0f0f; }
         .print-btn {
             display: inline-flex;
             align-items: center;
@@ -297,107 +119,19 @@
             font-size: 0.88rem;
             font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
             margin-top: 15px;
         }
-
-        .print-btn:hover {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-1px);
-        }
-
         .nav-back {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            color: #cccccc;
+            color: #ccc;
             text-decoration: none;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
-            transition: color 0.2s ease, transform 0.2s ease;
-            position: relative;
-            z-index: 10;
         }
-
-        .nav-back:hover {
-            color: #00ff88;
-            transform: translateX(-4px);
-        }
-
-        @media print {
-            @page {
-                margin: 14mm;
-            }
-
-            * {
-                box-shadow: none !important;
-                text-shadow: none !important;
-            }
-
-            body {
-                background: white !important;
-                color: black !important;
-                padding: 0;
-            }
-
-            .container,
-            .section,
-            .formula-box,
-            table,
-            th,
-            td,
-            .note,
-            .step-block,
-            .exam-q {
-                background: white !important;
-                color: black !important;
-                border-color: #777777 !important;
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            header {
-                background: white !important;
-                color: black !important;
-                border-bottom: 2px solid black !important;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            p,
-            li,
-            strong,
-            label,
-            .step-label,
-            .q-label,
-            summary,
-            .solution {
-                color: black !important;
-            }
-
-            .nav-back,
-            .print-btn,
-            .solutions-link {
-                display: none !important;
-            }
-
-            details {
-                display: block !important;
-            }
-
-            details[open] .solution,
-            details:not([open]) .solution {
-                display: block !important;
-            }
-        }
-
-        /* --- Modern Desktop E-Learning Additions --- */
-
-        /* Progress Bar */
+        .nav-back:hover { color: #00ff88; }
         .progress-container {
             width: 100%;
             height: 4px;
@@ -407,25 +141,14 @@
             left: 0;
             z-index: 1000;
         }
-
         .progress-bar {
             height: 4px;
             background: #00ff88;
             width: 0%;
         }
-
-        /* Desktop Sidebar styles hidden on mobile */
-        .desktop-sidebar {
-            display: none;
-        }
-
-        /* Desktop layout */
+        .desktop-sidebar { display: none; }
         @media (min-width: 1024px) {
-            body {
-                background: #050505;
-                padding: 40px;
-            }
-
+            body { background: #050505; padding: 40px; }
             .layout-wrapper {
                 display: grid;
                 grid-template-columns: 280px 1fr;
@@ -434,7 +157,6 @@
                 margin: 0 auto;
                 align-items: start;
             }
-
             .desktop-sidebar {
                 display: block;
                 position: sticky;
@@ -446,290 +168,232 @@
                 max-height: calc(100vh - 80px);
                 overflow-y: auto;
             }
-
             .desktop-sidebar h3 {
-                color: #ffffff;
+                color: #fff;
                 font-size: 1.2em;
                 margin-bottom: 20px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid #1a1a1a;
                 font-weight: 800;
-                letter-spacing: 1px;
             }
-
             .desktop-sidebar ul {
                 list-style: none;
                 margin: 0;
                 padding: 0;
             }
-
-            .desktop-sidebar li {
-                margin-bottom: 12px;
-            }
-
+            .desktop-sidebar li { margin-bottom: 12px; }
             .desktop-sidebar a {
-                color: #cccccc;
+                color: #ccc;
                 text-decoration: none;
                 font-size: 0.95em;
-                transition: color 0.2s, transform 0.2s;
                 display: block;
             }
-
-            .desktop-sidebar a:hover {
-                color: #00ff88;
-                transform: translateX(5px);
-            }
-
-            .main-column {
-                min-width: 0;
-            }
-
+            .desktop-sidebar a:hover { color: #00ff88; }
             .container {
                 border-radius: 12px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                margin: 0;
-                /* Reset margin since grid handles it */
                 max-width: 100%;
-                /* Fill the grid column */
-            }
-
-            .section {
-                border-radius: 8px;
-                transition: transform 0.2s, box-shadow 0.2s;
-            }
-
-            .section:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 24px rgba(0, 255, 136, 0.05);
-                border-color: #333;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Reading Progress Bar -->
     <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
     </div>
 
     <div class="layout-wrapper">
-        <!-- Desktop Sidebar -->
         <aside class="desktop-sidebar">
-            <h3>Day 3 Contents</h3>
+            <h3>Lecture 3 Contents</h3>
             <ul>
                 <li><a href="#sec-resources">Lecture Resources</a></li>
                 <li><a href="#sec-1">1. Integration by Parts</a></li>
-                <li><a href="#sec-2">2. Recurrent Integration</a></li>
-                <li><a href="#sec-3">3. Inverse Hyperbolic</a></li>
-                <li><a href="#sec-4">4. Quick Reference</a></li>
+                <li><a href="#sec-2">2. LIATE Rule</a></li>
+                <li><a href="#sec-3">3. Worked Examples</a></li>
+                <li><a href="#sec-4">4. Recurrent Integration</a></li>
+                <li><a href="#sec-5">5. Tabular Method</a></li>
+                <li><a href="#sec-6">6. Quick Reference</a></li>
             </ul>
         </aside>
 
-        <!-- Main Content Column -->
         <main class="main-column">
             <div class="container">
-    <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
-    <header>
-        <h1>📐 Calculus II — Day 3</h1>
-        <p>Integration by Parts, Inverse Trig & Hyperbolics · Dr. Hiba Omer</p>
-        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
-            <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
-            <p style="font-size: 0.85em; margin-top: 5px;">
-                <a href="https://linktr.ee/prodbyabdo" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">linktr.ee/prodbyabdo</a>
-            </p>
-            <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
-        </div>
-    </header>
-
-    <div class="content">
-
-        <!-- ── LECTURE SLIDES & RESOURCES ── -->
-        <div class="section" id="sec-resources">
-            <h2>Day 3 Lecture Slides & Resources</h2>
-            <div class="resource-container" style="display: flex; flex-direction: column; gap: 30px;">
-                <div class="resource-block">
-                    <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">IBP & Hyperbolic Forms</h3>
-                    <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                        <iframe src="context/calc2/Hiba Lec 5.pdf" width="100%" height="100%" style="border: none;" title="Lecture 5 Viewer"></iframe>
+                <a href="year1sem2calc2.html" class="nav-back"><- Back to Calculus 2</a>
+                <header>
+                    <h1>Calculus II - Lecture 3</h1>
+                    <p>Integration by Parts and Tabular Method</p>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                        <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
+                        <p style="font-size: 0.85em; margin-top: 5px;">
+                            <a href="https://linktr.ee/prodbyabdo" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
+                                linktr.ee/prodbyabdo
+                            </a>
+                        </p>
+                        <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
                     </div>
-                    <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="context/calc2/Hiba Lec 5.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#128196; Open Lec 5 PDF
-                        </a>
-                        <a href="context/calc2/Hiba Lec 5.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#11015;&#65039; Download Lec 5
-                        </a>
+                </header>
+
+                <div class="content">
+                    <div class="section" id="sec-resources">
+                        <h2>Lecture Resources</h2>
+                        <div class="resource-container" style="display: flex; flex-direction: column; gap: 30px;">
+                            <div class="resource-block">
+                                <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">IBP and Hyperbolic Forms</h3>
+                                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                                    <iframe src="context/calc2/Hiba Lec 5.pdf" width="100%" height="100%" style="border: none;" title="Lecture 5 Viewer"></iframe>
+                                </div>
+                            </div>
+                            <div class="resource-block">
+                                <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">Tabular Method and Recurring Integrals</h3>
+                                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                                    <iframe src="context/calc2/Hiba Lec 6.pdf" width="100%" height="100%" style="border: none;" title="Lecture 6 Viewer"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solutions-link" style="text-align: center; margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                            <a href="year1sem2calc2lec3sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.05em;">
+                                View Lec 3 Solutions
+                            </a>
+                            <a href="year1sem2calc2lec4sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.05em;">
+                                View Lec 4 Solutions
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="section" id="sec-1">
+                        <h2>1. Integration by Parts</h2>
+                        <div class="formula-box theorem">
+                            <p>From the product rule for differentiation:</p>
+                            \[\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}\]
+                            <p style="margin-top: 10px;">Rearranging and integrating gives:</p>
+                            \[\int u\,dv = uv - \int v\,du\]
+                        </div>
+                        <div class="formula-box important">
+                            <p><strong>Main formula:</strong></p>
+                            \[\int u\,dv = uv - \int v\,du\]
+                        </div>
+                    </div>
+
+                    <div class="section" id="sec-2">
+                        <h2>2. LIATE Rule</h2>
+                        <div class="formula-box theorem">
+                            <p>Choose \(u\) using the LIATE order:</p>
+                        </div>
+                        <table>
+                            <tr><th>Priority</th><th>Type</th><th>Examples</th></tr>
+                            <tr><td>1st</td><td>Logarithmic</td><td>\(\ln x,\;\log_a x\)</td></tr>
+                            <tr><td>2nd</td><td>Inverse trig</td><td>\(\sin^{-1}x,\;\tan^{-1}x\)</td></tr>
+                            <tr><td>3rd</td><td>Algebraic</td><td>\(x^n,\;\sqrt{x}\)</td></tr>
+                            <tr><td>4th</td><td>Trigonometric</td><td>\(\sin x,\;\cos x\)</td></tr>
+                            <tr><td>5th</td><td>Exponential</td><td>\(e^x,\;a^x\)</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="section" id="sec-3">
+                        <h2>3. Worked Examples</h2>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 1</div>
+                            <p>Evaluate \(\displaystyle\int xe^x\,dx\)</p>
+                            \[\int xe^x\,dx = xe^x - \int e^x\,dx = e^x(x-1) + C\]
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 2</div>
+                            <p>Evaluate \(\displaystyle\int x\sin x\,dx\)</p>
+                            \[\int x\sin x\,dx = -x\cos x + \int \cos x\,dx = -x\cos x + \sin x + C\]
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 3</div>
+                            <p>Evaluate \(\displaystyle\int x^2\ln x\,dx\)</p>
+                            \[\int x^2\ln x\,dx = \frac{x^3}{3}\ln x - \frac{1}{3}\int x^2\,dx = \frac{x^3}{3}\ln x - \frac{x^3}{9} + C\]
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 4</div>
+                            <p>Evaluate \(\displaystyle\int \tan^{-1}x\,dx\)</p>
+                            \[\int \tan^{-1}x\,dx = x\tan^{-1}x - \int \frac{x}{x^2+1}\,dx = x\tan^{-1}x - \frac{1}{2}\ln(x^2+1) + C\]
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 5</div>
+                            <p>Evaluate \(\displaystyle\int \ln x\,dx\)</p>
+                            \[\int \ln x\,dx = x\ln x - \int 1\,dx = x\ln x - x + C\]
+                        </div>
+                    </div>
+
+                    <div class="section" id="sec-4">
+                        <h2>4. Recurrent Integration</h2>
+                        <div class="formula-box theorem">
+                            <p>Some integrals return to the original integral after two applications of integration by parts. Treat the original integral as \(I\) and solve algebraically.</p>
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 6</div>
+                            <p>Evaluate \(\displaystyle I = \int e^x\sin x\,dx\)</p>
+                            <p style="margin-top: 10px;"><strong>First IBP:</strong></p>
+                            \[I = -e^x\cos x + \int e^x\cos x\,dx\]
+                            <p style="margin-top: 10px;"><strong>Second IBP:</strong></p>
+                            \[\int e^x\cos x\,dx = e^x\sin x - I\]
+                            <p style="margin-top: 10px;"><strong>Substitute back:</strong></p>
+                            \[I = -e^x\cos x + e^x\sin x - I\]
+                            \[2I = e^x(\sin x - \cos x)\]
+                            \[\int e^x\sin x\,dx = \frac{e^x}{2}(\sin x - \cos x) + C\]
+                        </div>
+                    </div>
+
+                    <div class="section" id="sec-5">
+                        <h2>5. Tabular Method</h2>
+                        <div class="formula-box theorem">
+                            <p>The tabular method is a shortcut for repeated integration by parts when one factor differentiates to zero after a finite number of steps.</p>
+                        </div>
+                        <div class="formula-box important">
+                            <p><strong>Procedure:</strong></p>
+                            <ol>
+                                <li>Write a differentiation column and an integration column.</li>
+                                <li>Differentiate the polynomial factor until it becomes zero.</li>
+                                <li>Integrate the other factor repeatedly.</li>
+                                <li>Multiply diagonally with alternating signs.</li>
+                            </ol>
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 7</div>
+                            <p>Evaluate \(\displaystyle\int x^2 e^x\,dx\)</p>
+                            <table>
+                                <tr><th>Sign</th><th>Differentiate</th><th>Integrate</th></tr>
+                                <tr><td>\(+\)</td><td>\(x^2\)</td><td>\(e^x\)</td></tr>
+                                <tr><td>\(-\)</td><td>\(2x\)</td><td>\(e^x\)</td></tr>
+                                <tr><td>\(+\)</td><td>\(2\)</td><td>\(e^x\)</td></tr>
+                                <tr><td></td><td>\(0\)</td><td></td></tr>
+                            </table>
+                            \[\int x^2 e^x\,dx = x^2e^x - 2xe^x + 2e^x + C\]
+                        </div>
+                        <div class="step-block">
+                            <div class="step-label">EXAMPLE 8</div>
+                            <p>Evaluate \(\displaystyle\int x^2\cos(nx)\,dx\)</p>
+                            <table>
+                                <tr><th>Sign</th><th>Differentiate</th><th>Integrate</th></tr>
+                                <tr><td>\(+\)</td><td>\(x^2\)</td><td>\(\frac{1}{n}\sin(nx)\)</td></tr>
+                                <tr><td>\(-\)</td><td>\(2x\)</td><td>\(-\frac{1}{n^2}\cos(nx)\)</td></tr>
+                                <tr><td>\(+\)</td><td>\(2\)</td><td>\(-\frac{1}{n^3}\sin(nx)\)</td></tr>
+                                <tr><td></td><td>\(0\)</td><td></td></tr>
+                            </table>
+                            \[\int x^2\cos(nx)\,dx = \frac{x^2}{n}\sin(nx) + \frac{2x}{n^2}\cos(nx) - \frac{2}{n^3}\sin(nx) + C\]
+                        </div>
+                    </div>
+
+                    <div class="section" id="sec-6">
+                        <h2>6. Quick Reference</h2>
+                        <table>
+                            <tr><th>Rule</th><th>Formula</th></tr>
+                            <tr><td>IBP</td><td>\(\displaystyle\int u\,dv = uv - \int v\,du\)</td></tr>
+                            <tr><td>LIATE</td><td>Logarithmic, inverse trig, algebraic, trig, exponential</td></tr>
+                            <tr><td>Recurring case</td><td>If \(I\) returns, solve algebraically for \(I\)</td></tr>
+                            <tr><td>Tabular method</td><td>Differentiate one side, integrate the other, use alternating signs</td></tr>
+                        </table>
                     </div>
                 </div>
-                <div class="resource-block">
-                    <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #fff;">Tabular Method & Recurring Integrals</h3>
-                    <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                        <iframe src="context/calc2/Hiba Lec 6.pdf" width="100%" height="100%" style="border: none;" title="Lecture 6 Viewer"></iframe>
-                    </div>
-                    <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="context/calc2/Hiba Lec 6.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#128196; Open Lec 6 PDF
-                        </a>
-                        <a href="context/calc2/Hiba Lec 6.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                            &#11015;&#65039; Download Lec 6
-                        </a>
-                    </div>
-                </div>
             </div>
-            <div class="solutions-link" style="text-align: center; margin-top: 30px;">
-                <a href="year1sem2calc2lec3sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                    View 20 Practice Solutions
-                </a>
-            </div>
-        </div>
-
-        <!-- ── 1. INTEGRATION BY PARTS ── -->
-        <div class="section" id="sec-1">
-            <h2>1. Integration by Parts</h2>
-
-            <div class="formula-box theorem">
-                <p>Based on the product rule for differentiation, Integration by Parts is used to integrate the product of two functions:</p>
-                \[\int u \, dv = uv - \int v \, du\]
-            </div>
-
-            <h3>How to choose \(u\) and \(dv\) (LIATE Rule)</h3>
-            <div class="formula-box important">
-                <p>Choose \(u\) to be the function that comes first in this list (and \(dv\) will be the rest of the integrand):</p>
-                <ol>
-                    <li><strong>L</strong>ogarithmic functions (e.g., \(\ln x\))</li>
-                    <li><strong>I</strong>nverse trigonometric functions (e.g., \(\tan^{-1} x\))</li>
-                    <li><strong>A</strong>lgebraic functions (e.g., \(x^2\), \(3x\))</li>
-                    <li><strong>T</strong>rigonometric functions (e.g., \(\sin x\), \(\cos x\))</li>
-                    <li><strong>E</strong>xponential functions (e.g., \(e^x\))</li>
-                </ol>
-            </div>
-
-            <h3>Worked Examples</h3>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE A — ALGEBRAIC & EXPONENTIAL</div>
-                <p>Find \(\displaystyle\int x e^x \, dx\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — Choose \(u\) and \(dv\):</p>
-                <p>Let \(u = x\) (Algebraic) \(\implies du = dx\)</p>
-                <p>Let \(dv = e^x \, dx\) (Exponential) \(\implies v = e^x\)</p>
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — Apply formula:</p>
-                \[\int x e^x \, dx = x e^x - \int e^x \, dx = x e^x - e^x + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE B — LOGARITHMIC</div>
-                <p>Find \(\displaystyle\int \ln x \, dx\)</p>
-                <p style="margin-top: 10px;"><strong>Step 1</strong> — Choose \(u\) and \(dv\):</p>
-                <p>Let \(u = \ln x\) (Logarithmic) \(\implies du = \frac{1}{x} dx\)</p>
-                <p>Let \(dv = dx\) (Algebraic) \(\implies v = x\)</p>
-                <p style="margin-top: 10px;"><strong>Step 2</strong> — Apply formula:</p>
-                \[\int \ln x \, dx = x \ln x - \int x \left(\frac{1}{x}\right) dx = x \ln x - \int 1 \, dx = x \ln x - x + C\]
-            </div>
-            
-            <div class="step-block">
-                <div class="step-label">EXAMPLE C — INVERSE TRIGONOMETRIC</div>
-                <p>Find \(\displaystyle\int \tan^{-1} x \, dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = \tan^{-1} x \implies du = \frac{1}{1+x^2} dx\)</p>
-                <p>Let \(dv = dx \implies v = x\)</p>
-                \[= x \tan^{-1} x - \int \frac{x}{1+x^2} dx\]
-                <p>For the remaining integral, use substitution (Natural Log Rule) with \(w = 1+x^2\), \(dw = 2x\,dx\):</p>
-                \[= x \tan^{-1} x - \frac{1}{2} \ln(1+x^2) + C\]
-            </div>
-        </div>
-
-        <!-- ── 2. RECURRENT INTEGRATION ── -->
-        <div class="section" id="sec-2">
-            <h2>2. Recurrent Integration by Parts</h2>
-
-            <div class="formula-box theorem">
-                <p>Sometimes, applying Integration by Parts twice returns the original integral. When this happens, we treat the integral as a variable (say, \(I\)) and solve for it algebraically.</p>
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE — EXPONENTIAL & TRIG</div>
-                <p>Find \(I = \displaystyle\int e^x \cos x \, dx\)</p>
-                <p style="margin-top: 10px;"><strong>First IBP:</strong> Let \(u = e^x\), \(dv = \cos x \, dx \implies du = e^x \, dx\), \(v = \sin x\)</p>
-                \[I = e^x \sin x - \int e^x \sin x \, dx\]
-                <p style="margin-top: 10px;"><strong>Second IBP</strong> on \(\int e^x \sin x \, dx\): Let \(u = e^x\), \(dv = \sin x \, dx \implies du = e^x \, dx\), \(v = -\cos x\)</p>
-                \[\int e^x \sin x \, dx = -e^x \cos x - \int (-e^x \cos x) \, dx = -e^x \cos x + I\]
-                <p style="margin-top: 10px;">Substitute back:</p>
-                \[I = e^x \sin x - (-e^x \cos x + I) = e^x \sin x + e^x \cos x - I\]
-                \[2I = e^x(\sin x + \cos x) \implies I = \frac{e^x(\sin x + \cos x)}{2} + C\]
-            </div>
-        </div>
-
-        <!-- ── 3. INVERSE HYPERBOLIC FUNCTIONS ── -->
-        <div class="section" id="sec-3">
-            <h2>3. Inverse Hyperbolic Functions</h2>
-
-            <div class="formula-box theorem">
-                <p>Similar to standard inverse trigonometric functions, inverse hyperbolic functions appear from specific radical denominators.</p>
-            </div>
-
-            <table>
-                <tr>
-                    <th>Integrand</th>
-                    <th>Resulting Inverse Hyperbolic</th>
-                </tr>
-                <tr>
-                    <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2 + a^2}}\)</td>
-                    <td>\(\sinh^{-1}\left(\frac{x}{a}\right) + C \quad \text{or} \quad \ln|x + \sqrt{x^2+a^2}| + C\)</td>
-                </tr>
-                <tr>
-                    <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2 - a^2}}\)</td>
-                    <td>\(\cosh^{-1}\left(\frac{x}{a}\right) + C \quad \text{or} \quad \ln|x + \sqrt{x^2-a^2}| + C\)</td>
-                </tr>
-                <tr>
-                    <td>\(\displaystyle\int \frac{dx}{a^2 - x^2}\)</td>
-                    <td>\(\frac{1}{a}\tanh^{-1}\left(\frac{x}{a}\right) + C \quad \text{for } |x| < a\)</td>
-                </tr>
-            </table>
-
-            <div class="note">
-                <strong>💡 Note on Logarithmic Forms:</strong>
-                <p>Inverse hyperbolic functions can always be expressed in terms of natural logarithms. Many exams will accept either form, but logarithmic form is often preferred if bounds are given to evaluate.</p>
-            </div>
-        </div>
-
-        <!-- ── 4. QUICK REFERENCE ── -->
-        <div class="section" id="sec-4">
-            <h2>4. Quick Reference — Lecture 3 Rules</h2>
-            <table>
-                <tr>
-                    <th>Method</th>
-                    <th>Formula / Rule</th>
-                </tr>
-                <tr>
-                    <td>Integration by Parts</td>
-                    <td>\(\int u \, dv = uv - \int v \, du\)</td>
-                </tr>
-                <tr>
-                    <td>LIATE Rule for \(u\)</td>
-                    <td>Logarithmic, Inverse Trig, Algebraic, Trigonometric, Exponential</td>
-                </tr>
-                <tr>
-                    <td>Recurrent Integration</td>
-                    <td>If \(I\) appears on the RHS, add it to the LHS and divide.</td>
-                </tr>
-                <tr>
-                    <td>Inverse \(\sinh\) form</td>
-                    <td>\(\int \frac{1}{\sqrt{x^2+a^2}} dx = \sinh^{-1}(x/a) + C\)</td>
-                </tr>
-                <tr>
-                    <td>Inverse \(\cosh\) form</td>
-                    <td>\(\int \frac{1}{\sqrt{x^2-a^2}} dx = \cosh^{-1}(x/a) + C\)</td>
-                </tr>
-            </table>
-        </div>
-
-    </div>
-</div>
         </main>
-    </div><!-- .layout-wrapper -->
+    </div>
 
     <script>
         (function () {
-            // Progress Bar Logic
             window.addEventListener('scroll', function () {
                 var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
