@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculus II — Day 4: Integration by Parts & Tabular Method</title>
+    <title>Calculus II - Day 4-5: Integration by Parts, Tabular Method & Standard Integrals</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
@@ -65,11 +68,9 @@
             padding: 25px;
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
-
         }
 
         .section h2 {
-            color: #ffffff;
             font-size: 1.8em;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -80,7 +81,6 @@
         }
 
         .section h3 {
-            color: #cccccc;
             font-size: 1.3em;
             margin: 20px 0 15px 0;
             font-weight: 800;
@@ -97,7 +97,6 @@
 
         .important {
             background: #0a0a0a;
-
         }
 
         .theorem {
@@ -138,7 +137,6 @@
             padding: 15px;
             margin: 15px 0;
             border: 1px solid #1a1a1a;
-
         }
 
         .note strong {
@@ -174,114 +172,6 @@
             letter-spacing: 2px;
             opacity: 0.5;
             margin-bottom: 8px;
-        }
-
-        .exam-q {
-            background: #000000;
-            border: 1px solid #1a1a1a;
-            border-left: 2px solid #888888;
-            padding: 20px;
-            margin: 16px 0;
-        }
-
-        .exam-q .q-label {
-            font-size: 0.78em;
-            letter-spacing: 2px;
-            opacity: 0.45;
-            margin-bottom: 10px;
-        }
-
-        details {
-            margin-top: 12px;
-        }
-
-        .problem-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            border-color: var(--accent-color);
-        }
-
-        .problem-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .problem-number {
-            font-family: var(--font-mono);
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .problem-statement {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .solution-step {
-            margin-bottom: 15px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .final-answer {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: var(--accent-dim);
-            border-radius: 8px;
-            border: 1px solid var(--accent-color);
-            color: var(--text-primary);
-            font-weight: bold;
-        }
-
-        footer {
-            margin-top: 100px;
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-        }
-
-        details summary {
-            cursor: pointer;
-            font-size: 0.85em;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            list-style: none;
-            padding: 6px 0;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details summary::before {
-            content: '▸  show solution';
-        }
-
-        details[open] summary::before {
-            content: '▾  hide solution';
-        }
-
-        details .solution {
-            padding-top: 14px;
         }
 
         .print-btn {
@@ -326,6 +216,26 @@
             transform: translateX(-4px);
         }
 
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #00ff88;
+            width: 0%;
+        }
+
+        .desktop-sidebar {
+            display: none;
+        }
+
         @media print {
             @page {
                 margin: 14mm;
@@ -349,8 +259,7 @@
             th,
             td,
             .note,
-            .step-block,
-            .exam-q {
+            .step-block {
                 background: white !important;
                 color: black !important;
                 border-color: #777777 !important;
@@ -371,11 +280,7 @@
             p,
             li,
             strong,
-            label,
-            .step-label,
-            .q-label,
-            summary,
-            .solution {
+            label {
                 color: black !important;
             }
 
@@ -384,42 +289,8 @@
             .solutions-link {
                 display: none !important;
             }
-
-            details {
-                display: block !important;
-            }
-
-            details[open] .solution,
-            details:not([open]) .solution {
-                display: block !important;
-            }
         }
 
-        /* --- Modern Desktop E-Learning Additions --- */
-
-        /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: #000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .progress-bar {
-            height: 4px;
-            background: #00ff88;
-            width: 0%;
-        }
-
-        /* Desktop Sidebar styles hidden on mobile */
-        .desktop-sidebar {
-            display: none;
-        }
-
-        /* Desktop layout */
         @media (min-width: 1024px) {
             body {
                 background: #050505;
@@ -488,9 +359,7 @@
                 border-radius: 12px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
                 margin: 0;
-                /* Reset margin since grid handles it */
                 max-width: 100%;
-                /* Fill the grid column */
             }
 
             .section {
@@ -506,16 +375,15 @@
         }
     </style>
 </head>
+
 <body>
-    <!-- Reading Progress Bar -->
     <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
     </div>
 
     <div class="layout-wrapper">
-        <!-- Desktop Sidebar -->
         <aside class="desktop-sidebar">
-            <h3>Day 4 Contents</h3>
+            <h3>Day 4-5 Contents</h3>
             <ul>
                 <li><a href="#sec-resources">Lecture Resources</a></li>
                 <li><a href="#sec-1">1. Integration by Parts</a></li>
@@ -524,277 +392,561 @@
                 <li><a href="#sec-4">4. Tabular Method</a></li>
                 <li><a href="#sec-5">5. Recurring Integrals</a></li>
                 <li><a href="#sec-6">6. Quick Reference</a></li>
+                <li><a href="#sec-7">7. Day 5 Resources</a></li>
+                <li><a href="#sec-8">8. Six Standard Integrals</a></li>
+                <li><a href="#sec-9">9. First Standard Integral</a></li>
+                <li><a href="#sec-10">10. Second Standard Integral</a></li>
+                <li><a href="#sec-11">11. Third Standard Integral</a></li>
+                <li><a href="#sec-12">12. Fourth Standard Integral</a></li>
+                <li><a href="#sec-13">13. Fifth Standard Integral</a></li>
+                <li><a href="#sec-14">14. Sixth Standard Integral</a></li>
+                <li><a href="#sec-15">15. Substitution Table</a></li>
             </ul>
         </aside>
 
-        <!-- Main Content Column -->
         <main class="main-column">
             <div class="container">
-    <a href="year1sem2calc2.html" class="nav-back">← Back to Calculus 2</a>
-    <header>
-        <h1>📐 Calculus II — Day 4</h1>
-        <p>Integration by Parts & Tabular Method · Dr. Mohamed Ali & Dr. Hiba Omer</p>
-        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
-            <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg Mohamed</strong></p>
-            <p style="font-size: 0.85em; margin-top: 5px;">
-                <a href="https://linktr.ee/prodbyabdo" target="_blank"
-                   style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
-                    linktr.ee/prodbyabdo
-                </a>
-            </p>
-            <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
-        </div>
-    </header>
+                <a href="year1sem2calc2.html" class="nav-back"><- Back to Calculus 2</a>
+                        <header>
+                            <h1>Calculus II - Day 4-5</h1>
+                            <p>Integration by Parts, Tabular Method & Standard Integrals - Dr. Mohamed Ali & Dr. Hiba
+                                Omer</p>
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #1a1a1a;">
+                                <p style="font-size: 0.9em; opacity: 0.8;">Compiled by <strong>Abdelrazieg
+                                        Mohamed</strong></p>
+                                <p style="font-size: 0.85em; margin-top: 5px;">
+                                    <a href="https://linktr.ee/prodbyabdo" target="_blank"
+                                        style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #666666; padding-bottom: 2px;">
+                                        linktr.ee/prodbyabdo
+                                    </a>
+                                </p>
+                                <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
+                            </div>
+                        </header>
 
-    <div class="content">
+                        <div class="content">
+                            <div class="section" id="sec-resources">
+                                <h2>Lecture Slides & Resources</h2>
+                                <div class="resource-container"
+                                    style="display: flex; flex-direction: column; gap: 20px;">
+                                    <div class="viewer-wrapper"
+                                        style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
+                                        <iframe src="context/calc2/Hiba Lec 7.pdf" width="100%" height="100%"
+                                            style="border: none;" title="Day 4 Viewer â€” Standard Integrals"></iframe>
+                                    </div>
+                                    <div class="viewer-actions"
+                                        style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                                        <a href="context/calc2/Hiba Lec 7.pdf" target="_blank"
+                                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                                            &#128196; Standard Integrals Slides (PDF)
+                                        </a>
+                                        <a href="context/calc2/Hiba Lec 7.pdf" download
+                                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
+                                            &#11015;&#65039; Download PDF
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="solutions-link" style="text-align: center; margin-top: 10px;">
+                                    <a href="year1sem2calc2lec4sol.html"
+                                        style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
+                                        View Practice Solutions
+                                    </a>
+                                </div>
+                            </div>
 
-        <!-- ── LECTURE SLIDES & RESOURCES ── -->
-        <div class="section" id="sec-resources">
-            <h2>Lecture Slides & Resources</h2>
-            <div class="resource-container" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="viewer-wrapper" style="position: relative; width: 100%; height: 600px; border: 1px solid #1a1a1a; background: #000; border-radius: 8px; overflow: hidden;">
-                    <iframe src="context/calc2/Hiba Lec 7.pdf" width="100%" height="100%" style="border: none;" title="Day 4 Viewer — Standard Integrals"></iframe>
-                </div>
-                <div class="viewer-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
-                    <a href="context/calc2/Hiba Lec 7.pdf" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#128196; Standard Integrals Slides (PDF)
-                    </a>
-                    <a href="context/calc2/Hiba Lec 7.pdf" download style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: rgba(0, 255, 136, 0.15); border: 1px solid #00ff88; color: #00ff88; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.95em; transition: all 0.2s;">
-                        &#11015;&#65039; Download PDF
-                    </a>
-                </div>
+                            <div class="section" id="sec-1">
+                                <h2>1. Integration by Parts</h2>
+                                <h3>Derivation</h3>
+                                <div class="formula-box theorem">
+                                    <p>From the product rule for differentiation:</p>
+                                    \[\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}\]
+                                    <p style="margin-top: 10px;">Rearranging and integrating both sides:</p>
+                                    \[u\,dv = d(uv) - v\,du\]
+                                </div>
+                                <div class="formula-box important">
+                                    <p><strong>The IBP Formula:</strong></p>
+                                    \[\int u\,dv = uv - \int v\,du\]
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-2">
+                                <h2>2. LIATE Rule â€” Choosing u</h2>
+                                <div class="formula-box theorem">
+                                    <p>To select \(u\), use the LIATE priority (first in list = best choice for \(u\)):
+                                    </p>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <th>Priority</th>
+                                        <th>Type</th>
+                                        <th>Examples</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1st</td>
+                                        <td><strong>L</strong>ogarithmic</td>
+                                        <td>\(\ln x,\;\log_a x\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2nd</td>
+                                        <td><strong>I</strong>nverse Trig</td>
+                                        <td>\(\sin^{-1}x,\;\tan^{-1}x\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3rd</td>
+                                        <td><strong>A</strong>lgebraic</td>
+                                        <td>\(x^n,\;\sqrt{x}\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4th</td>
+                                        <td><strong>T</strong>rigonometric</td>
+                                        <td>\(\sin x,\;\cos x\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5th</td>
+                                        <td><strong>E</strong>xponential</td>
+                                        <td>\(e^x,\;a^x\)</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section" id="sec-3">
+                                <h2>3. Worked Examples â€” Integration by Parts</h2>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 1</div>
+                                    <p>Evaluate \(\displaystyle\int xe^x\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = x \Rightarrow du = dx\), \(dv = e^x dx
+                                        \Rightarrow v = e^x\):</p>
+                                    \[\int xe^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = e^x(x-1) + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 2</div>
+                                    <p>Evaluate \(\displaystyle\int x\sin x\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = x \Rightarrow du = dx\), \(dv = \sin x\,dx
+                                        \Rightarrow v = -\cos x\):</p>
+                                    \[\int x\sin x\,dx = -x\cos x + \int \cos x\,dx = -x\cos x + \sin x + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 3</div>
+                                    <p>Evaluate \(\displaystyle\int x^2\ln x\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = \ln x \Rightarrow du = \frac{1}{x}dx\), \(dv
+                                        = x^2\,dx \Rightarrow v = \frac{x^3}{3}\):</p>
+                                    \[\int x^2\ln x\,dx = \frac{x^3}{3}\ln x - \int \frac{x^3}{3}\cdot\frac{1}{x}\,dx =
+                                    \frac{x^3}{3}\ln x - \frac{1}{3}\int x^2\,dx\]
+                                    \[= \frac{x^3}{3}\ln x - \frac{x^3}{9} + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 4</div>
+                                    <p>Evaluate \(\displaystyle\int \tan^{-1}x\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = \tan^{-1}x \Rightarrow du =
+                                        \frac{1}{x^2+1}dx\), \(dv = dx \Rightarrow v = x\):</p>
+                                    \[\int \tan^{-1}x\,dx = x\tan^{-1}x - \int \frac{x}{x^2+1}\,dx = x\tan^{-1}x -
+                                    \frac{1}{2}\ln(x^2+1) + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 5</div>
+                                    <p>Evaluate \(\displaystyle\int \ln x\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = \ln x \Rightarrow du = \frac{1}{x}dx\), \(dv
+                                        = dx \Rightarrow v = x\):</p>
+                                    \[\int \ln x\,dx = x\ln x - \int x\cdot\frac{1}{x}\,dx = x\ln x - x + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 6</div>
+                                    <p>Evaluate \(\displaystyle\int \sqrt{x^2+a^2}\,dx\)</p>
+                                    <p style="margin-top: 10px;">Let \(u = \sqrt{x^2+a^2}\), \(du =
+                                        \frac{x}{\sqrt{x^2+a^2}}dx\), \(dv = dx \Rightarrow v = x\):</p>
+                                    \[I = x\sqrt{x^2+a^2} - \int \frac{x^2}{\sqrt{x^2+a^2}}\,dx\]
+                                    <p style="margin-top: 10px;">Rewrite \(x^2 = (x^2+a^2) - a^2\):</p>
+                                    \[I = x\sqrt{x^2+a^2} - I + a^2\int \frac{dx}{\sqrt{x^2+a^2}}\]
+                                    \[2I = x\sqrt{x^2+a^2} + a^2\sinh^{-1}\!\left(\frac{x}{a}\right)\]
+                                    \[I = \frac{1}{2}x\sqrt{x^2+a^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right)
+                                    + C\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 7 â€” CYCLIC / RECURRING</div>
+                                    <p>Evaluate \(\displaystyle I = \int e^{3x}\cos 2x\,dx\)</p>
+                                    <p style="margin-top: 10px;"><strong>First application:</strong> \(u = e^{3x}\),
+                                        \(dv = \cos 2x\,dx \Rightarrow v = \frac{1}{2}\sin 2x\):</p>
+                                    \[I = \frac{1}{2}e^{3x}\sin 2x - \frac{3}{2}\int e^{3x}\sin 2x\,dx\]
+                                    <p style="margin-top: 10px;"><strong>Second application</strong> on the remaining
+                                        integral:</p>
+                                    \[I = \frac{1}{2}e^{3x}\sin 2x + \frac{3}{4}e^{3x}\cos 2x - \frac{9}{4}I\]
+                                    <p style="margin-top: 10px;"><strong>Solve for \(I\):</strong></p>
+                                    \[\frac{13}{4}I = \frac{1}{2}e^{3x}\sin 2x + \frac{3}{4}e^{3x}\cos 2x\]
+                                    \[I = \frac{e^{3x}}{13}(2\sin 2x + 3\cos 2x) + C\]
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-4">
+                                <h2>4. Tabular Method (Repeated IBP)</h2>
+                                <div class="formula-box theorem">
+                                    <p>The tabular method is a convenient way to organise repeated integration by parts.
+                                        It works when one factor differentiates to zero in finitely many steps.</p>
+                                </div>
+                                <div class="formula-box important">
+                                    <p><strong>Procedure:</strong></p>
+                                    <ol>
+                                        <li>Create two columns: <strong>D</strong> (differentiate) and
+                                            <strong>I</strong> (integrate).
+                                        </li>
+                                        <li>Column D: write \(u\) and differentiate repeatedly until \(0\).</li>
+                                        <li>Column I: write \(dv\) and integrate repeatedly (no \(+C\)).</li>
+                                        <li>Multiply diagonally with alternating signs \(+,\,-,\,+,\,-,\ldots\)</li>
+                                        <li>Sum all diagonal products and add \(+C\).</li>
+                                    </ol>
+                                </div>
+                                <h3>Example â€” Tabular: \(\int x^2 e^x\,dx\)</h3>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 8</div>
+                                    <table>
+                                        <tr>
+                                            <th>Sign</th>
+                                            <th>Differentiate \(f(x)\)</th>
+                                            <th>Integrate \(g(x)\)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>\(+\)</td>
+                                            <td>\(x^2\)</td>
+                                            <td>\(e^x\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>\(-\)</td>
+                                            <td>\(2x\)</td>
+                                            <td>\(e^x\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>\(+\)</td>
+                                            <td>\(2\)</td>
+                                            <td>\(e^x\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>\(0\)</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                    <div class="formula-box">
+                                        \[\int x^2 e^x\,dx = x^2 e^x - 2xe^x + 2e^x + C = e^x(x^2 - 2x + 2) + C\]
+                                    </div>
+                                </div>
+                                <h3>Example â€” Tabular: \(\int x^2\cos(nx)\,dx\)</h3>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 9</div>
+                                    <p>Where \(n\) is a positive integer:</p>
+                                    <table>
+                                        <tr>
+                                            <th>Sign</th>
+                                            <th>Differentiate</th>
+                                            <th>Integrate</th>
+                                        </tr>
+                                        <tr>
+                                            <td>\(+\)</td>
+                                            <td>\(x^2\)</td>
+                                            <td>\(\frac{1}{n}\sin(nx)\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>\(-\)</td>
+                                            <td>\(2x\)</td>
+                                            <td>\(-\frac{1}{n^2}\cos(nx)\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>\(+\)</td>
+                                            <td>\(2\)</td>
+                                            <td>\(-\frac{1}{n^3}\sin(nx)\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>\(0\)</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                    <div class="formula-box">
+                                        \[\int x^2\cos(nx)\,dx = \frac{x^2}{n}\sin(nx) + \frac{2x}{n^2}\cos(nx) -
+                                        \frac{2}{n^3}\sin(nx) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-5">
+                                <h2>5. Recurring Integrals</h2>
+                                <div class="formula-box theorem">
+                                    <p>For integrands like \(e^x\sin x\) or \(e^x\cos x\), two applications of IBP
+                                        return the original integral \(I\). Solve algebraically:</p>
+                                    \[I = [\text{expression}] - kI \implies I = \frac{[\text{expression}]}{1 + k}\]
+                                </div>
+                                <div class="step-block">
+                                    <div class="step-label">EXAMPLE 10</div>
+                                    <p>Evaluate \(\displaystyle I = \int e^x\sin x\,dx\)</p>
+                                    <p style="margin-top: 10px;"><strong>First IBP:</strong> \(u = e^x\), \(dv = \sin
+                                        x\,dx \Rightarrow v = -\cos x\):</p>
+                                    \[I = -e^x\cos x + \int e^x\cos x\,dx\]
+                                    <p style="margin-top: 10px;"><strong>Second IBP</strong> on \(\int e^x\cos x\,dx\):
+                                    </p>
+                                    \[\int e^x\cos x\,dx = e^x\sin x - \int e^x\sin x\,dx = e^x\sin x - I\]
+                                    <p style="margin-top: 10px;"><strong>Substitute back:</strong></p>
+                                    \[I = -e^x\cos x + e^x\sin x - I\]
+                                    \[2I = e^x(\sin x - \cos x)\]
+                                    <div class="formula-box important">
+                                        \[\int e^x\sin x\,dx = \frac{e^x}{2}(\sin x - \cos x) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-6">
+                                <h2>6. Quick Reference â€” Day 4 Rules</h2>
+                                <table>
+                                    <tr>
+                                        <th>Rule</th>
+                                        <th>Formula</th>
+                                    </tr>
+                                    <tr>
+                                        <td>IBP Formula</td>
+                                        <td>\(\displaystyle\int u\,dv = uv - \int v\,du\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LIATE</td>
+                                        <td>Log â†’ Inv. Trig â†’ Algebraic â†’ Trig â†’ Exponential</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tabular Method</td>
+                                        <td>D/I columns with alternating \(\pm\) diagonal products</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cyclic Case</td>
+                                        <td>If \(I\) reappears, solve \(I = \text{expr} - kI\) algebraically</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="note">
+                                <strong>ðŸ’¡ Day 4 Tips:</strong>
+                                <ul>
+                                    <li>LIATE tells you which factor to call \(u\) â€” the one that simplifies when
+                                        differentiated.</li>
+                                    <li>For \(\ln x\), \(\tan^{-1}x\), \(\sin^{-1}x\): always set them as \(u\) with
+                                        \(dv = dx\).</li>
+                                    <li>If one factor is a polynomial, tabular method is fastest.</li>
+                                    <li>For products of \(e^x\) with \(\sin x\) or \(\cos x\): expect a recurring
+                                        integral â€” apply IBP twice and solve for \(I\).</li>
+                                    <li>Always check by differentiating your result.</li>
+                                </ul>
+                            </div>
+
+                            <div class="section" id="sec-8">
+                                <h2>8. Six Standard Integrals</h2>
+                                <div class="formula-box theorem">
+                                    <p>These six integrals arise frequently and are derived using trigonometric or
+                                        hyperbolic substitutions. Memorise the results; understand the derivations.</p>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Integral</th>
+                                        <th>Result</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</td>
+                                        <td>\(\sin^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>\(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</td>
+                                        <td>\(\frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) +
+                                            \frac{x}{2}\sqrt{a^2-x^2} + C\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>\(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</td>
+                                        <td>\(\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>\(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</td>
+                                        <td>\(\frac{x}{2}\sqrt{a^2+x^2} +
+                                            \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>\(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</td>
+                                        <td>\(\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>\(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</td>
+                                        <td>\(\frac{x}{2}\sqrt{x^2-a^2} -
+                                            \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\)</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section" id="sec-9">
+                                <h2>9. \(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
+                                    <p>Then \(dx = a\cos\theta\,d\theta\) and \(\sqrt{a^2 - a^2\sin^2\theta} =
+                                        a\cos\theta\):</p>
+                                    \[\int \frac{a\cos\theta\,d\theta}{a\cos\theta} = \int d\theta = \theta + C\]
+                                    <p style="margin-top: 10px;">Since \(\theta = \sin^{-1}\!\left(\frac{x}{a}\right)\):
+                                    </p>
+                                    <div class="formula-box important">
+                                        \[\int \frac{dx}{\sqrt{a^2-x^2}} = \sin^{-1}\!\left(\frac{x}{a}\right) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-10">
+                                <h2>10. \(\displaystyle\int \sqrt{a^2-x^2}\,dx\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\sin\theta\)</div>
+                                    <p>\(dx = a\cos\theta\,d\theta\), \(\sqrt{a^2-a^2\sin^2\theta} = a\cos\theta\):</p>
+                                    \[\int a\cos\theta \cdot a\cos\theta\,d\theta = a^2\int\cos^2\theta\,d\theta\]
+                                    <p style="margin-top: 10px;">Use \(\cos^2\theta = \frac{1+\cos 2\theta}{2}\):</p>
+                                    \[= \frac{a^2}{2}\left(\theta + \frac{1}{2}\sin 2\theta\right) + C =
+                                    \frac{a^2}{2}\theta + \frac{a^2}{2}\sin\theta\cos\theta + C\]
+                                    <p style="margin-top: 10px;">Back-substitute: \(\sin\theta = \frac{x}{a}\),
+                                        \(\cos\theta = \frac{\sqrt{a^2-x^2}}{a}\):</p>
+                                    <div class="formula-box important">
+                                        \[\int \sqrt{a^2-x^2}\,dx = \frac{a^2}{2}\sin^{-1}\!\left(\frac{x}{a}\right) +
+                                        \frac{x}{2}\sqrt{a^2-x^2} + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-11">
+                                <h2>11. \(\displaystyle\int \frac{dx}{\sqrt{a^2+x^2}}\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
+                                    <p>\(dx = a\cosh\theta\,d\theta\) and \(\sqrt{a^2+a^2\sinh^2\theta} =
+                                        a\cosh\theta\):</p>
+                                    \[\int \frac{a\cosh\theta\,d\theta}{a\cosh\theta} = \int d\theta = \theta + C\]
+                                    <p style="margin-top: 10px;">Since \(\theta =
+                                        \sinh^{-1}\!\left(\frac{x}{a}\right)\):</p>
+                                    <div class="formula-box important">
+                                        \[\int \frac{dx}{\sqrt{a^2+x^2}} = \sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-12">
+                                <h2>12. \(\displaystyle\int \sqrt{a^2+x^2}\,dx\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\sinh\theta\)</div>
+                                    <p>\(dx = a\cosh\theta\,d\theta\), using \(\cosh^2\theta - \sinh^2\theta = 1\):</p>
+                                    \[\int a\cosh\theta \cdot a\cosh\theta\,d\theta = a^2\int\cosh^2\theta\,d\theta\]
+                                    <p style="margin-top: 10px;">Use \(\cosh^2\theta = \frac{\cosh 2\theta + 1}{2}\):
+                                    </p>
+                                    \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} + \theta\right) + C =
+                                    \frac{a^2}{2}\sinh\theta\cosh\theta + \frac{a^2}{2}\theta + C\]
+                                    <p style="margin-top: 10px;">Back-substitute: \(\sinh\theta = \frac{x}{a}\),
+                                        \(\cosh\theta = \sqrt{1+\frac{x^2}{a^2}}\):</p>
+                                    <div class="formula-box important">
+                                        \[\int \sqrt{a^2+x^2}\,dx = \frac{x}{2}\sqrt{a^2+x^2} +
+                                        \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-13">
+                                <h2>13. \(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
+                                    <p>\(dx = a\sinh\theta\,d\theta\) and \(\sqrt{a^2\cosh^2\theta - a^2} =
+                                        a\sinh\theta\):</p>
+                                    \[\int \frac{a\sinh\theta\,d\theta}{a\sinh\theta} = \int d\theta = \theta + C\]
+                                    <p style="margin-top: 10px;">Since \(\theta =
+                                        \cosh^{-1}\!\left(\frac{x}{a}\right)\):</p>
+                                    <div class="formula-box important">
+                                        \[\int \frac{dx}{\sqrt{x^2-a^2}} = \cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-14">
+                                <h2>14. \(\displaystyle\int \sqrt{x^2-a^2}\,dx\)</h2>
+                                <div class="step-block">
+                                    <div class="step-label">SUBSTITUTION: \(x = a\cosh\theta\)</div>
+                                    <p>\(dx = a\sinh\theta\,d\theta\), \(\sqrt{a^2\cosh^2\theta - a^2} = a\sinh\theta\):
+                                    </p>
+                                    \[a^2\int\sinh^2\theta\,d\theta\]
+                                    <p style="margin-top: 10px;">Use \(\sinh^2\theta = \frac{\cosh 2\theta - 1}{2}\):
+                                    </p>
+                                    \[= \frac{a^2}{2}\left(\frac{\sinh 2\theta}{2} - \theta\right) + C =
+                                    \frac{a^2}{2}\sinh\theta\cosh\theta - \frac{a^2}{2}\theta + C\]
+                                    <p style="margin-top: 10px;">Back-substitute: \(\cosh\theta = \frac{x}{a}\),
+                                        \(\sinh\theta = \frac{\sqrt{x^2-a^2}}{a}\):</p>
+                                    <div class="formula-box important">
+                                        \[\int \sqrt{x^2-a^2}\,dx = \frac{x}{2}\sqrt{x^2-a^2} -
+                                        \frac{a^2}{2}\cosh^{-1}\!\left(\frac{x}{a}\right) + C\]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="sec-15">
+                                <h2>15. Quick Reference â€” Substitution Table</h2>
+                                <table>
+                                    <tr>
+                                        <th>Expression</th>
+                                        <th>Substitution</th>
+                                        <th>Identity Used</th>
+                                    </tr>
+                                    <tr>
+                                        <td>\(\sqrt{a^2-x^2}\)</td>
+                                        <td>\(x = a\sin\theta\)</td>
+                                        <td>\(1-\sin^2\theta = \cos^2\theta\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>\(\sqrt{a^2+x^2}\)</td>
+                                        <td>\(x = a\sinh\theta\)</td>
+                                        <td>\(1+\sinh^2\theta = \cosh^2\theta\)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>\(\sqrt{x^2-a^2}\)</td>
+                                        <td>\(x = a\cosh\theta\)</td>
+                                        <td>\(\cosh^2\theta - 1 = \sinh^2\theta\)</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="note">
+                                <strong>ðŸ’¡ Day 5 Tips:</strong>
+                                <ul>
+                                    <li>These six results are standard â€” memorise them and recognise the radical form
+                                        to pick the right substitution.</li>
+                                    <li>\(\sqrt{a^2-x^2}\) â†’ trig sub (\(\sin\theta\)); \(\sqrt{a^2+x^2}\) and
+                                        \(\sqrt{x^2-a^2}\) â†’ hyperbolic sub (\(\sinh\theta\) or \(\cosh\theta\)).</li>
+                                    <li>Always convert back to \(x\) using \(\sin\theta = x/a\), \(\sinh\theta = x/a\),
+                                        or \(\cosh\theta = x/a\).</li>
+                                    <li>For the square root integrals (2, 4, 6), use the double-angle identity to
+                                        integrate the squared trig/hyperbolic function.</li>
+                                    <li>Don't forget the Jacobian factor from \(dx\) â€” it cancels in the simple cases
+                                        but contributes \(a^2\) in the squared cases.</li>
+                                </ul>
+                            </div>
+                        </div>
             </div>
-            <div class="solutions-link" style="text-align: center; margin-top: 10px;">
-                <a href="year1sem2calc2lec4sol.html" style="display: inline-block; padding: 15px 30px; background: #00ff88; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; transition: opacity 0.2s;">
-                    View Practice Solutions
-                </a>
-            </div>
-        </div>
-
-        <!-- ── 1. INTEGRATION BY PARTS ── -->
-        <div class="section" id="sec-1">
-            <h2>1. Integration by Parts</h2>
-
-            <h3>Derivation</h3>
-            <div class="formula-box theorem">
-                <p>From the product rule for differentiation:</p>
-                \[\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}\]
-                <p style="margin-top: 10px;">Rearranging and integrating both sides:</p>
-                \[u\,dv = d(uv) - v\,du\]
-            </div>
-
-            <div class="formula-box important">
-                <p><strong>The IBP Formula:</strong></p>
-                \[\int u\,dv = uv - \int v\,du\]
-            </div>
-        </div>
-
-        <!-- ── 2. LIATE RULE ── -->
-        <div class="section" id="sec-2">
-            <h2>2. LIATE Rule — Choosing u</h2>
-            <div class="formula-box theorem">
-                <p>To select \(u\), use the LIATE priority (first in list = best choice for \(u\)):</p>
-            </div>
-            <table>
-                <tr><th>Priority</th><th>Type</th><th>Examples</th></tr>
-                <tr><td>1st</td><td><strong>L</strong>ogarithmic</td><td>\(\ln x,\;\log_a x\)</td></tr>
-                <tr><td>2nd</td><td><strong>I</strong>nverse Trig</td><td>\(\sin^{-1}x,\;\tan^{-1}x\)</td></tr>
-                <tr><td>3rd</td><td><strong>A</strong>lgebraic</td><td>\(x^n,\;\sqrt{x}\)</td></tr>
-                <tr><td>4th</td><td><strong>T</strong>rigonometric</td><td>\(\sin x,\;\cos x\)</td></tr>
-                <tr><td>5th</td><td><strong>E</strong>xponential</td><td>\(e^x,\;a^x\)</td></tr>
-            </table>
-        </div>
-
-        <!-- ── 3. WORKED EXAMPLES (IBP) ── -->
-        <div class="section" id="sec-3">
-            <h2>3. Worked Examples — Integration by Parts</h2>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 1</div>
-                <p>Evaluate \(\displaystyle\int xe^x\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = x \Rightarrow du = dx\), \(dv = e^x dx \Rightarrow v = e^x\):</p>
-                \[\int xe^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = e^x(x-1) + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 2</div>
-                <p>Evaluate \(\displaystyle\int x\sin x\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = x \Rightarrow du = dx\), \(dv = \sin x\,dx \Rightarrow v = -\cos x\):</p>
-                \[\int x\sin x\,dx = -x\cos x + \int \cos x\,dx = -x\cos x + \sin x + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 3</div>
-                <p>Evaluate \(\displaystyle\int x^2\ln x\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = \ln x \Rightarrow du = \frac{1}{x}dx\), \(dv = x^2\,dx \Rightarrow v = \frac{x^3}{3}\):</p>
-                \[\int x^2\ln x\,dx = \frac{x^3}{3}\ln x - \int \frac{x^3}{3}\cdot\frac{1}{x}\,dx = \frac{x^3}{3}\ln x - \frac{1}{3}\int x^2\,dx\]
-                \[= \frac{x^3}{3}\ln x - \frac{x^3}{9} + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 4</div>
-                <p>Evaluate \(\displaystyle\int \tan^{-1}x\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = \tan^{-1}x \Rightarrow du = \frac{1}{x^2+1}dx\), \(dv = dx \Rightarrow v = x\):</p>
-                \[\int \tan^{-1}x\,dx = x\tan^{-1}x - \int \frac{x}{x^2+1}\,dx = x\tan^{-1}x - \frac{1}{2}\ln(x^2+1) + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 5</div>
-                <p>Evaluate \(\displaystyle\int \ln x\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = \ln x \Rightarrow du = \frac{1}{x}dx\), \(dv = dx \Rightarrow v = x\):</p>
-                \[\int \ln x\,dx = x\ln x - \int x\cdot\frac{1}{x}\,dx = x\ln x - x + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 6</div>
-                <p>Evaluate \(\displaystyle\int \sqrt{x^2+a^2}\,dx\)</p>
-                <p style="margin-top: 10px;">Let \(u = \sqrt{x^2+a^2}\), \(du = \frac{x}{\sqrt{x^2+a^2}}dx\), \(dv = dx \Rightarrow v = x\):</p>
-                \[I = x\sqrt{x^2+a^2} - \int \frac{x^2}{\sqrt{x^2+a^2}}\,dx\]
-                <p style="margin-top: 10px;">Rewrite \(x^2 = (x^2+a^2) - a^2\):</p>
-                \[I = x\sqrt{x^2+a^2} - I + a^2\int \frac{dx}{\sqrt{x^2+a^2}}\]
-                \[2I = x\sqrt{x^2+a^2} + a^2\sinh^{-1}\!\left(\frac{x}{a}\right)\]
-                \[I = \frac{1}{2}x\sqrt{x^2+a^2} + \frac{a^2}{2}\sinh^{-1}\!\left(\frac{x}{a}\right) + C\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 7 — CYCLIC / RECURRING</div>
-                <p>Evaluate \(\displaystyle I = \int e^{3x}\cos 2x\,dx\)</p>
-                <p style="margin-top: 10px;"><strong>First application:</strong> \(u = e^{3x}\), \(dv = \cos 2x\,dx \Rightarrow v = \frac{1}{2}\sin 2x\):</p>
-                \[I = \frac{1}{2}e^{3x}\sin 2x - \frac{3}{2}\int e^{3x}\sin 2x\,dx\]
-                <p style="margin-top: 10px;"><strong>Second application</strong> on the remaining integral:</p>
-                \[I = \frac{1}{2}e^{3x}\sin 2x + \frac{3}{4}e^{3x}\cos 2x - \frac{9}{4}I\]
-                <p style="margin-top: 10px;"><strong>Solve for \(I\):</strong></p>
-                \[\frac{13}{4}I = \frac{1}{2}e^{3x}\sin 2x + \frac{3}{4}e^{3x}\cos 2x\]
-                \[I = \frac{e^{3x}}{13}(2\sin 2x + 3\cos 2x) + C\]
-            </div>
-        </div>
-
-        <!-- ── 4. TABULAR METHOD ── -->
-        <div class="section" id="sec-4">
-            <h2>4. Tabular Method (Repeated IBP)</h2>
-
-            <div class="formula-box theorem">
-                <p>The tabular method is a convenient way to organise repeated integration by parts. It works when one factor differentiates to zero in finitely many steps.</p>
-            </div>
-
-            <div class="formula-box important">
-                <p><strong>Procedure:</strong></p>
-                <ol>
-                    <li>Create two columns: <strong>D</strong> (differentiate) and <strong>I</strong> (integrate).</li>
-                    <li>Column D: write \(u\) and differentiate repeatedly until \(0\).</li>
-                    <li>Column I: write \(dv\) and integrate repeatedly (no \(+C\)).</li>
-                    <li>Multiply diagonally with alternating signs \(+,\,-,\,+,\,-,\ldots\)</li>
-                    <li>Sum all diagonal products and add \(+C\).</li>
-                </ol>
-            </div>
-
-            <h3>Example — Tabular: \(\int x^2 e^x\,dx\)</h3>
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 8</div>
-                <table>
-                    <tr><th>Sign</th><th>Differentiate \(f(x)\)</th><th>Integrate \(g(x)\)</th></tr>
-                    <tr><td>\(+\)</td><td>\(x^2\)</td><td>\(e^x\)</td></tr>
-                    <tr><td>\(-\)</td><td>\(2x\)</td><td>\(e^x\)</td></tr>
-                    <tr><td>\(+\)</td><td>\(2\)</td><td>\(e^x\)</td></tr>
-                    <tr><td></td><td>\(0\)</td><td></td></tr>
-                </table>
-                <div class="formula-box">
-                    \[\int x^2 e^x\,dx = x^2 e^x - 2xe^x + 2e^x + C = e^x(x^2 - 2x + 2) + C\]
-                </div>
-            </div>
-
-            <h3>Example — Tabular: \(\int x^2\cos(nx)\,dx\)</h3>
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 9</div>
-                <p>Where \(n\) is a positive integer:</p>
-                <table>
-                    <tr><th>Sign</th><th>Differentiate</th><th>Integrate</th></tr>
-                    <tr><td>\(+\)</td><td>\(x^2\)</td><td>\(\frac{1}{n}\sin(nx)\)</td></tr>
-                    <tr><td>\(-\)</td><td>\(2x\)</td><td>\(-\frac{1}{n^2}\cos(nx)\)</td></tr>
-                    <tr><td>\(+\)</td><td>\(2\)</td><td>\(-\frac{1}{n^3}\sin(nx)\)</td></tr>
-                    <tr><td></td><td>\(0\)</td><td></td></tr>
-                </table>
-                <div class="formula-box">
-                    \[\int x^2\cos(nx)\,dx = \frac{x^2}{n}\sin(nx) + \frac{2x}{n^2}\cos(nx) - \frac{2}{n^3}\sin(nx) + C\]
-                </div>
-            </div>
-        </div>
-
-        <!-- ── 5. RECURRING INTEGRALS ── -->
-        <div class="section" id="sec-5">
-            <h2>5. Recurring Integrals</h2>
-
-            <div class="formula-box theorem">
-                <p>For integrands like \(e^x\sin x\) or \(e^x\cos x\), two applications of IBP return the original integral \(I\). Solve algebraically:</p>
-                \[I = [\text{expression}] - kI \implies I = \frac{[\text{expression}]}{1 + k}\]
-            </div>
-
-            <div class="step-block">
-                <div class="step-label">EXAMPLE 10</div>
-                <p>Evaluate \(\displaystyle I = \int e^x\sin x\,dx\)</p>
-                <p style="margin-top: 10px;"><strong>First IBP:</strong> \(u = e^x\), \(dv = \sin x\,dx \Rightarrow v = -\cos x\):</p>
-                \[I = -e^x\cos x + \int e^x\cos x\,dx\]
-                <p style="margin-top: 10px;"><strong>Second IBP</strong> on \(\int e^x\cos x\,dx\):</p>
-                \[\int e^x\cos x\,dx = e^x\sin x - \int e^x\sin x\,dx = e^x\sin x - I\]
-                <p style="margin-top: 10px;"><strong>Substitute back:</strong></p>
-                \[I = -e^x\cos x + e^x\sin x - I\]
-                \[2I = e^x(\sin x - \cos x)\]
-                <div class="formula-box important">
-                    \[\int e^x\sin x\,dx = \frac{e^x}{2}(\sin x - \cos x) + C\]
-                </div>
-            </div>
-        </div>
-
-        <!-- ── QUICK REFERENCE ── -->
-        <div class="section" id="sec-6">
-            <h2>6. Quick Reference — Day 4 Rules</h2>
-            <table>
-                <tr><th>Rule</th><th>Formula</th></tr>
-                <tr><td>IBP Formula</td><td>\(\displaystyle\int u\,dv = uv - \int v\,du\)</td></tr>
-                <tr><td>LIATE</td><td>Log → Inv. Trig → Algebraic → Trig → Exponential</td></tr>
-                <tr><td>Tabular Method</td><td>D/I columns with alternating \(\pm\) diagonal products</td></tr>
-                <tr><td>Cyclic Case</td><td>If \(I\) reappears, solve \(I = \text{expr} - kI\) algebraically</td></tr>
-            </table>
-        </div>
-
-        <div class="note">
-            <strong>💡 Day 4 Tips:</strong>
-            <ul>
-                <li>LIATE tells you which factor to call \(u\) — the one that simplifies when differentiated.</li>
-                <li>For \(\ln x\), \(\tan^{-1}x\), \(\sin^{-1}x\): always set them as \(u\) with \(dv = dx\).</li>
-                <li>If one factor is a polynomial, tabular method is fastest.</li>
-                <li>For products of \(e^x\) with \(\sin x\) or \(\cos x\): expect a recurring integral — apply IBP twice and solve for \(I\).</li>
-                <li>Always check by differentiating your result.</li>
-            </ul>
-        </div>
-
-    </div><!-- .content -->
-</div><!-- .container -->
         </main>
-    </div><!-- .layout-wrapper -->
-
-<script>
-    (function () {
-        function handleHash() {
-            var hash = window.location.hash;
-            if (!hash) return;
-            var el = document.getElementById(decodeURIComponent(hash.substring(1)));
-            if (!el) return;
-            setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
-        } else {
-            setTimeout(handleHash, 50);
-        }
-        window.addEventListener('hashchange', handleHash);
-    })();
-</script>
-
+    </div>
 
     <script>
         (function () {
-            // Progress Bar Logic
+            function handleHash() {
+                var hash = window.location.hash;
+                if (!hash) return;
+                var el = document.getElementById(decodeURIComponent(hash.substring(1)));
+                if (!el) return;
+                setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { setTimeout(handleHash, 50); });
+            } else {
+                setTimeout(handleHash, 50);
+            }
+            window.addEventListener('hashchange', handleHash);
+        })();
+    </script>
+
+    <script>
+        (function () {
             window.addEventListener('scroll', function () {
                 var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -805,4 +957,5 @@
         })();
     </script>
 </body>
+
 </html>
