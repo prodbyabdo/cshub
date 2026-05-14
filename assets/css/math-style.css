@@ -1,0 +1,766 @@
+/* ================================================================
+   math-style.css — Shared styles for all CS Hub calc/math pages
+   Terminal (default) + Manuscript theme toggle
+   ================================================================ */
+
+/* ── Theme Custom Properties ── */
+:root {
+    --bg:           #000000;
+    --surface:      #0a0a0a;
+    --accent:       #00ff88;
+    --text:         #ffffff;
+    --text-muted:   #cccccc;
+    --border:       #1a1a1a;
+    --border-strong:#333333;
+    --font-body:    'Inter', sans-serif;
+    --font-mono:    'JetBrains Mono', monospace;
+
+    /* Aliases for solution-file compatibility */
+    --bg-color:      var(--surface);
+    --card-bg:       var(--surface);
+    --text-primary:  var(--text);
+    --text-secondary:var(--text-muted);
+    --accent-color:  var(--accent);
+    --accent-dim:    rgba(0, 255, 136, 0.1);
+    --border-color:  var(--border-strong);
+    --font-main:     var(--font-body);
+}
+
+[data-theme="manuscript"] {
+    --bg:           #f5f0e8;
+    --surface:      #faf7f2;
+    --accent:       #8b1a1a;
+    --text:         #1a1a1a;
+    --text-muted:   #5a5a4a;
+    --border:       #d4c9b0;
+    --border-strong:#a09070;
+    --font-body:    Georgia, 'Times New Roman', serif;
+    --font-mono:    'Courier New', Courier, monospace;
+
+    /* Aliases */
+    --bg-color:      var(--surface);
+    --card-bg:       var(--surface);
+    --text-primary:  var(--text);
+    --text-secondary:var(--text-muted);
+    --accent-color:  var(--accent);
+    --accent-dim:    rgba(139, 26, 26, 0.07);
+    --border-color:  var(--border-strong);
+    --font-main:     var(--font-body);
+}
+
+/* ── Reset ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── Base ── */
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    margin: 5px 0;
+    color: var(--text-muted);
+}
+
+ol li, ul li {
+    margin: 8px 0;
+    color: var(--text-muted);
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+header {
+    background: var(--bg);
+    color: var(--text);
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.6;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.content {
+    padding: 40px;
+}
+
+/* ── Sections ── */
+.section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.section h2 {
+    color: var(--accent);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.section h3 {
+    color: var(--accent);
+    font-size: 1.3em;
+    margin: 20px 0 15px 0;
+    font-weight: 800;
+}
+
+/* ── Formula Boxes ── */
+.formula-box {
+    background: var(--bg);
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid var(--border);
+    border-left: 2px solid #666666;
+}
+
+.important {
+    background: var(--surface);
+}
+
+.theorem {
+    background: var(--surface);
+    border-left: 2px solid #888888;
+}
+
+/* ── Tables ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-weight: 800;
+    color: var(--accent);
+}
+
+th {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 400;
+    border-bottom: 1px solid var(--border-strong);
+}
+
+tr:hover {
+    background: #0f0f0f;
+}
+
+/* ── Notes ── */
+.note {
+    background: var(--surface);
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid var(--border);
+}
+
+.note strong {
+    color: var(--text);
+}
+
+/* ── Lecture Card Grid ── */
+.lec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 4px;
+}
+
+@keyframes cardReveal {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.lec-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-radius: 6px;
+    padding: 18px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.lec-card.visible {
+    animation: cardReveal 0.42s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.lec-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 24px rgba(0, 255, 136, 0.08);
+    transform: translateY(-3px);
+}
+
+.lec-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.lec-card__badge {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.lec-card__title {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.lec-card__actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.lec-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lec-link--notes {
+    background: rgba(0, 255, 136, 0.08);
+    color: var(--accent);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+}
+
+.lec-link--notes:hover {
+    background: rgba(0, 255, 136, 0.16);
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.15);
+}
+
+.lec-link--sol {
+    background: rgba(255, 255, 255, 0.04);
+    color: #aaaaaa;
+    border: 1px solid var(--border-strong);
+}
+
+.lec-link--sol:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+}
+
+/* ── Buttons ── */
+.print-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent);
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    margin-top: 15px;
+}
+
+.print-btn:hover {
+    border-color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+}
+
+/* ── Navigation ── */
+.nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-back:hover {
+    color: var(--accent);
+    transform: translateX(-4px);
+}
+
+/* ── Solution-file card styles ── */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 60px 0 30px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+    color: var(--text);
+}
+
+.subtitle {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.problem-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+.problem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 10px;
+}
+
+.problem-number {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.problem-statement {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.solution-step {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.final-answer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--accent-dim);
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 100px;
+    border-top: 1px solid var(--border-strong);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* ── Lecture-file extras ── */
+.step-block {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 2px solid #444444;
+    padding: 18px 20px;
+    margin: 12px 0;
+}
+
+.step-block .step-label {
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+}
+
+.exam-q {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 2px solid #888888;
+    padding: 20px;
+    margin: 16px 0;
+}
+
+.exam-q .q-label {
+    font-size: 0.78em;
+    letter-spacing: 2px;
+    opacity: 0.45;
+    margin-bottom: 10px;
+}
+
+details {
+    margin-top: 12px;
+}
+
+details summary {
+    cursor: pointer;
+    font-size: 0.85em;
+    opacity: 0.55;
+    letter-spacing: 1px;
+    list-style: none;
+    padding: 6px 0;
+    border-top: 1px solid var(--border);
+}
+
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: '▸  show solution'; }
+details[open] summary::before { content: '▾  hide solution'; }
+
+details .solution {
+    padding-top: 14px;
+}
+
+/* ── Reading Progress Bar ── */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: var(--bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--accent);
+    width: 0%;
+}
+
+/* ── MathJax ── */
+mjx-container {
+    font-size: 110% !important;
+}
+
+/* ── Desktop Sidebar (lecture pages) ── */
+.desktop-sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    body {
+        background: #050505;
+        padding: 40px;
+    }
+
+    .layout-wrapper {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .desktop-sidebar {
+        display: block;
+        position: sticky;
+        top: 40px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 25px;
+        border-radius: 12px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .desktop-sidebar h3 {
+        color: var(--text);
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .desktop-sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .desktop-sidebar li {
+        margin-bottom: 12px;
+    }
+
+    .desktop-sidebar a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.95em;
+        transition: color 0.2s, transform 0.2s;
+        display: block;
+    }
+
+    .desktop-sidebar a:hover {
+        color: var(--accent);
+        transform: translateX(5px);
+    }
+
+    .main-column {
+        min-width: 0;
+    }
+
+    .container {
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .section {
+        border-radius: 8px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 255, 136, 0.05);
+        border-color: #333;
+    }
+}
+
+/* ── Manuscript-specific overrides ── */
+[data-theme="manuscript"] .lec-card {
+    border-top-color: var(--accent);
+    background: var(--surface);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="manuscript"] .lec-link--notes {
+    background: rgba(139, 26, 26, 0.07);
+    color: var(--accent);
+    border-color: rgba(139, 26, 26, 0.3);
+}
+
+[data-theme="manuscript"] .lec-link--notes:hover {
+    background: rgba(139, 26, 26, 0.14);
+    box-shadow: none;
+}
+
+[data-theme="manuscript"] .formula-box {
+    border-left-color: var(--accent);
+}
+
+[data-theme="manuscript"] .lec-card__badge {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+[data-theme="manuscript"] tr:hover {
+    background: #ede8dc;
+}
+
+[data-theme="manuscript"] body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+[data-theme="manuscript"] .problem-card {
+    background: var(--surface);
+    border-color: var(--border-strong);
+}
+
+[data-theme="manuscript"] .final-answer {
+    background: rgba(139, 26, 26, 0.07);
+    border-color: var(--accent);
+}
+
+[data-theme="manuscript"] .step-block {
+    background: var(--bg);
+    border-color: var(--border);
+}
+
+[data-theme="manuscript"] .desktop-sidebar {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+[data-theme="manuscript"] details summary {
+    border-top-color: var(--border);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .lec-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .container { border: none; }
+    header { padding: 20px 15px; }
+    header h1 { font-size: 1.8em; }
+    .content { padding: 15px; }
+    .section { padding: 15px; }
+    .lec-grid { grid-template-columns: 1fr; }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .formula-box {
+        overflow-x: auto;
+        padding: 15px;
+    }
+
+    .print-btn {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0 !important;
+    }
+}
+
+/* ── Print ── */
+@media print {
+    @page { margin: 14mm; }
+
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        padding: 0;
+    }
+
+    .container, .section, .formula-box, table, th, td,
+    .note, .step-block, .exam-q, .problem-card, .final-answer {
+        background: white !important;
+        color: black !important;
+        border-color: #777777 !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    header {
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid black !important;
+    }
+
+    h1, h2, h3, h4, p, li, strong, label,
+    .step-label, .q-label, summary, .solution,
+    .subtitle, .problem-number, .problem-statement, .solution-step,
+    .section-title {
+        color: black !important;
+    }
+
+    .nav-back, .print-btn, .no-print, .solutions-link,
+    .progress-container, .desktop-sidebar {
+        display: none !important;
+    }
+
+    details {
+        display: block !important;
+    }
+
+    details[open] .solution,
+    details:not([open]) .solution {
+        display: block !important;
+    }
+
+    a, a:visited {
+        color: #000000 !important;
+        text-decoration: underline;
+    }
+}

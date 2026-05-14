@@ -665,7 +665,8 @@
           <summary></summary>
           <div class="solution">
             <p>IBP: \(u=x,\;dv=\cos x\,dx\Rightarrow v=\sin x\)</p>
-            \[\bigl[x\sin x\bigr]_0^\pi-\int_0^\pi\sin x\,dx=0-\bigl[-\cos x\bigr]_0^\pi=-(−1−1)\]
+            \[\bigl[x\sin x\bigr]_0^\pi-\int_0^\pi\sin x\,dx=0-\bigl[-\cos x\bigr]_0^\pi\]
+            \[=0-\bigl[(-\cos\pi)-(-\cos 0)\bigr]=0-\bigl[(1)-(-1)\bigr]=0-2\]
             <div class="ans">\[=-2\]</div>
           </div>
         </details>
@@ -692,11 +693,13 @@
           <summary></summary>
           <div class="solution">
             <p>Apply IBP twice (cyclic). Let \(I=\int e^{3x}\cos2x\,dx\).</p>
-            <p>\(u=e^{3x},\;dv=\cos2x\,dx\): \(I=\tfrac{e^{3x}\sin2x}{2}-\tfrac{3}{2}\int e^{3x}\sin2x\,dx\)</p>
-            <p>Second IBP on \(\int e^{3x}\sin2x\,dx\): \(-\tfrac{e^{3x}\cos2x}{2}+\tfrac{3}{2}\int e^{3x}\cos2x\,dx\)
-            </p>
-            <p>Substitute back: \(I=\tfrac{e^{3x}\sin2x}{2}+\tfrac{3e^{3x}\cos2x}{4}-\tfrac{9}{4}I \Rightarrow
-              \tfrac{13}{4}I=\cdots\)</p>
+            <p><strong>1st IBP:</strong> \(u=e^{3x},\;dv=\cos2x\,dx \Rightarrow du=3e^{3x}\,dx,\;v=\tfrac{\sin2x}{2}\)</p>
+            \[I=\tfrac{e^{3x}\sin2x}{2}-\tfrac{3}{2}\int e^{3x}\sin2x\,dx\]
+            <p><strong>2nd IBP:</strong> \(u=e^{3x},\;dv=\sin2x\,dx \Rightarrow du=3e^{3x}\,dx,\;v=-\tfrac{\cos2x}{2}\)</p>
+            \[\int e^{3x}\sin2x\,dx=-\tfrac{e^{3x}\cos2x}{2}+\tfrac{3}{2}\int e^{3x}\cos2x\,dx=-\tfrac{e^{3x}\cos2x}{2}+\tfrac{3}{2}I\]
+            <p><strong>Substitute back:</strong></p>
+            \[I=\tfrac{e^{3x}\sin2x}{2}-\tfrac{3}{2}\!\left(-\tfrac{e^{3x}\cos2x}{2}+\tfrac{3}{2}I\right)=\tfrac{e^{3x}\sin2x}{2}+\tfrac{3e^{3x}\cos2x}{4}-\tfrac{9}{4}I\]
+            \[I+\tfrac{9}{4}I=\tfrac{e^{3x}\sin2x}{2}+\tfrac{3e^{3x}\cos2x}{4} \quad\Rightarrow\quad \tfrac{13}{4}I=\tfrac{e^{3x}(2\sin2x+3\cos2x)}{4}\]
             <div class="ans">\[\dfrac{e^{3x}(3\cos2x+2\sin2x)}{13}+C\]</div>
           </div>
         </details>
@@ -1462,7 +1465,7 @@
         <label><input type="radio" name="t9"> False</label>
       </div>
       <details><summary></summary><div class="solution">
-        <p>True — but context-dependent. The substitution \(x = a\tan\theta\) is mathematically valid (using \(1 + \tan^2\theta = \sec^2\theta\)). However, this course's standard substitution table uses \(x = a\sinh\theta\) (using \(1 + \sinh^2\theta = \cosh^2\theta\)) for \(\sqrt{a^2+x^2}\). Both work; know which your exam expects.</p>
+        <p><strong>False</strong> for this course. While the substitution \(x = a\tan\theta\) is mathematically valid (using \(1 + \tan^2\theta = \sec^2\theta\)), this course's standard substitution table uses \(x = a\sinh\theta\) (using \(1 + \sinh^2\theta = \cosh^2\theta\)) for \(\sqrt{a^2+x^2}\). On this exam, follow the course table: <strong>\(x = a\sinh\theta\)</strong>.</p>
       </div></details>
     </div>
 
