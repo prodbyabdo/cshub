@@ -10,6 +10,30 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
+        /* ── Theme Custom Properties ── */
+        :root {
+            --bg:           #000000;
+            --surface:      #0a0a0a;
+            --accent:       #00ff88;
+            --text:         #ffffff;
+            --text-muted:   #cccccc;
+            --border:       #1a1a1a;
+            --border-strong:#333333;
+            --font-body:    'Inter', sans-serif;
+            --font-mono:    'JetBrains Mono', monospace;
+        }
+
+        [data-theme="manuscript"] {
+            --bg:           #f5f0e8;
+            --surface:      #faf7f2;
+            --accent:       #8b1a1a;
+            --text:         #1a1a1a;
+            --text-muted:   #5a5a4a;
+            --border:       #d4c9b0;
+            --border-strong:#a09070;
+            --font-body:    Georgia, 'Times New Roman', serif;
+            --font-mono:    'Courier New', Courier, monospace;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -17,9 +41,9 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #000000;
-            color: #ffffff;
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
             padding: 20px;
             line-height: 1.6;
         }
@@ -27,24 +51,24 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
+            background: var(--surface);
+            border: 1px solid var(--border);
             overflow: hidden;
         }
 
         header {
-            background: #000000;
-            color: #ffffff;
+            background: var(--bg);
+            color: var(--text);
             padding: 30px;
             text-align: center;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid var(--border);
         }
 
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent);
             letter-spacing: 2px;
         }
 
@@ -52,7 +76,7 @@
             font-size: 1.1em;
             opacity: 0.6;
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent);
         }
 
         .content {
@@ -62,45 +86,45 @@
         .section {
             margin-bottom: 40px;
             padding: 25px;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
+            background: var(--surface);
+            border: 1px solid var(--border);
 
         }
 
         .section h2 {
-            color: #ffffff;
+            color: var(--text);
             font-size: 1.8em;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid var(--border);
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent);
             letter-spacing: 1px;
         }
 
         .section h3 {
-            color: #cccccc;
+            color: var(--text-muted);
             font-size: 1.3em;
             margin: 20px 0 15px 0;
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent);
         }
 
         .formula-box {
-            background: #000000;
+            background: var(--bg);
             padding: 20px;
             margin: 15px 0;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--border);
             border-left: 2px solid #666666;
         }
 
         .important {
-            background: #0a0a0a;
+            background: var(--surface);
 
         }
 
         .theorem {
-            background: #0a0a0a;
+            background: var(--surface);
             border-left: 2px solid #888888;
         }
 
@@ -108,40 +132,76 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: #000000;
-            border: 1px solid #1a1a1a;
+            background: var(--bg);
+            border: 1px solid var(--border);
         }
 
         th,
         td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid var(--border);
             font-weight: 800;
-            color: #00ff88;
+            color: var(--accent);
         }
 
         th {
-            background: #0a0a0a;
-            color: #ffffff;
+            background: var(--surface);
+            color: var(--text);
             font-weight: 400;
-            border-bottom: 1px solid #333333;
+            border-bottom: 1px solid var(--border-strong);
         }
 
         tr:hover {
             background: #0f0f0f;
         }
 
+        /* ── Manuscript-specific overrides ── */
+        [data-theme="manuscript"] .lec-card {
+            border-top-color: var(--accent);
+            background: var(--surface);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        [data-theme="manuscript"] .lec-link--notes {
+            background: rgba(139,26,26,0.07);
+            color: var(--accent);
+            border-color: rgba(139,26,26,0.3);
+        }
+
+        [data-theme="manuscript"] .lec-link--notes:hover {
+            background: rgba(139,26,26,0.14);
+            box-shadow: none;
+        }
+
+        [data-theme="manuscript"] .formula-box {
+            border-left-color: var(--accent);
+        }
+
+        [data-theme="manuscript"] .lec-card__badge {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        [data-theme="manuscript"] tr:hover {
+            background: #ede8dc;
+        }
+
+        /* Paper grain texture — CSS only, no image */
+        [data-theme="manuscript"] body {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+        }
+
         .note {
-            background: #0a0a0a;
+            background: var(--surface);
             padding: 15px;
             margin: 15px 0;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--border);
 
         }
 
         .note strong {
-            color: #ffffff;
+            color: var(--text);
         }
 
         ul,
@@ -152,7 +212,7 @@
 
         li {
             margin: 5px 0;
-            color: #cccccc;
+            color: var(--text-muted);
         }
 
         /* ── Lecture Card Grid ── */
@@ -176,9 +236,9 @@
         }
 
         .lec-card {
-            background: #0d0d0d;
-            border: 1px solid #1e1e1e;
-            border-top: 2px solid #00ff88;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 2px solid var(--accent);
             border-radius: 6px;
             padding: 18px 20px 16px;
             display: flex;
@@ -194,7 +254,7 @@
         }
 
         .lec-card:hover {
-            border-color: #00ff88;
+            border-color: var(--accent);
             box-shadow: 0 4px 24px rgba(0, 255, 136, 0.08);
             transform: translateY(-3px);
         }
@@ -210,9 +270,9 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            border: 1px solid #00ff88;
-            color: #00ff88;
-            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-family: var(--font-mono);
             font-size: 0.72rem;
             font-weight: 700;
             display: flex;
@@ -222,10 +282,10 @@
         }
 
         .lec-card__title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 600;
-            color: #e0e0e0;
+            color: var(--text);
             line-height: 1.4;
         }
 
@@ -241,7 +301,7 @@
             gap: 6px;
             padding: 6px 12px;
             border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.75rem;
             font-weight: 600;
             text-decoration: none;
@@ -250,7 +310,7 @@
 
         .lec-link--notes {
             background: rgba(0, 255, 136, 0.08);
-            color: #00ff88;
+            color: var(--accent);
             border: 1px solid rgba(0, 255, 136, 0.25);
         }
 
@@ -262,12 +322,12 @@
         .lec-link--sol {
             background: rgba(255, 255, 255, 0.04);
             color: #aaaaaa;
-            border: 1px solid #2a2a2a;
+            border: 1px solid var(--border-strong);
         }
 
         .lec-link--sol:hover {
             background: rgba(255, 255, 255, 0.08);
-            color: #cccccc;
+            color: var(--text-muted);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -330,12 +390,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #00ff88;
+            border: 1px solid var(--accent);
             background: rgba(0, 255, 136, 0.1);
-            color: #00ff88;
+            color: var(--accent);
             border-radius: 6px;
             padding: 8px 14px;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 700;
             cursor: pointer;
@@ -344,7 +404,7 @@
         }
 
         .print-btn:hover {
-            border-color: #ffffff;
+            border-color: var(--text);
             background: rgba(255, 255, 255, 0.06);
             transform: translateY(-1px);
         }
@@ -354,15 +414,15 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            color: #cccccc;
+            color: var(--text-muted);
             text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.9rem;
             transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .nav-back:hover {
-            color: #00ff88;
+            color: var(--accent);
             transform: translateX(-4px);
         }
 
@@ -425,6 +485,16 @@
 
 <body>
 
+    <!-- Anti-flash: apply saved theme before first paint -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('calc2-theme');
+            if (saved === 'manuscript') {
+                document.documentElement.setAttribute('data-theme', 'manuscript');
+            }
+        })();
+    </script>
+
     <div class="container">
         <a href="year1.html" class="nav-back">← Back to Year 1</a>
 
@@ -442,6 +512,10 @@
                 <button class="print-btn" type="button" onclick="window.print()">Print Full PDF</button>
                 <a href="resources.html#calculus" class="print-btn" style="margin-left: 10px; text-decoration: none;">📹
                     Video Lectures</a>
+                <button id="theme-toggle" class="print-btn no-print" type="button"
+                        style="margin-left: 10px;">
+                  📜 Manuscript
+                </button>
             </div>
         </header>
 
@@ -1205,6 +1279,35 @@
                 setTimeout(handleHash, 50);
             }
             window.addEventListener('hashchange', handleHash);
+        })();
+
+        /* ── Theme Toggle ── */
+        (function () {
+            var KEY = 'calc2-theme';
+            var html = document.documentElement;
+            var btn  = document.getElementById('theme-toggle');
+
+            function apply(theme) {
+                if (theme === 'manuscript') {
+                    html.setAttribute('data-theme', 'manuscript');
+                    btn.textContent = '\u{1F4BB} Terminal';
+                } else {
+                    html.removeAttribute('data-theme');
+                    btn.textContent = '\u{1F4DC} Manuscript';
+                }
+            }
+
+            /* Sync button label with whatever the anti-flash script already set */
+            var saved = localStorage.getItem(KEY) || 'terminal';
+            apply(saved);
+
+            btn.addEventListener('click', function () {
+                var next = html.getAttribute('data-theme') === 'manuscript'
+                    ? 'terminal'
+                    : 'manuscript';
+                localStorage.setItem(KEY, next);
+                apply(next);
+            });
         })();
     </script>
 
