@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculus II Mock Exam covering integration, u-substitution, integration by parts, and trigonometric substitutions.">
+  <title>Calculus II — Mock Exam 2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/math-style.css">
+</head>
+
+<body>
+    <script>if(localStorage.getItem('calc2-theme')==='manuscript')document.documentElement.setAttribute('data-theme','manuscript');</script>
+  <div class="container">
+    <a href="year1sem2calc2.html" class="nav-back" style="margin:20px 0 0 20px;display:inline-flex">← Back to Calculus
+      2</a>
+    <header>
+      <h1>📐 Calculus II — Mock Exam 2</h1>
+      <p>Integration · u-Substitution · IBP · Trig &amp; Hyperbolic Substitution</p>
+      <div class="meta">
+        <span>60 Integration Problems</span>
+        <span>15 Multiple Choice</span>
+        <span>15 True / False</span>
+        <span>Dr. Hiba Omer · Dr. Mohamed Ali</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    </header>
+
+    <div class="content">
+      <!-- ═══════════════════════════════════════
+         PART A — INTEGRATION PROBLEMS (Q1–60)
+    ════════════════════════════════════════ -->
+      <div class="part-title">Part A — Integration Problems <span class="section-badge">60 Questions</span></div>
+      <p class="part-intro">Show full working. Include +C for indefinite integrals. Expand solutions using <em>▸ show
+          solution</em>.</p>
+
+      <!-- Q1 -->
+      <div class="exam-q" id="q1">
+        <div class="q-label">QUESTION 01 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{\sqrt{x}(1+x)} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sqrt{x}\)</p>
+            <div class="ans">\[2 \arctan(\sqrt{x}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q2 -->
+      <div class="exam-q" id="q2">
+        <div class="q-label">QUESTION 02 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sec^2 t}{1+\tan t} dt\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 1+	an t\)</p>
+            <div class="ans">\[\ln|1+\tan t| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q3 -->
+      <div class="exam-q" id="q3">
+        <div class="q-label">QUESTION 03 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \sin x \sec x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \tan x dx\)</p>
+            <div class="ans">\[\ln|\sec x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q4 -->
+      <div class="exam-q" id="q4">
+        <div class="q-label">QUESTION 04 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\csc x \cot x}{1+\csc^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \csc x\)</p>
+            <div class="ans">\[-\frac{1}{2}\ln(1+\csc^2 x) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q5 -->
+      <div class="exam-q" id="q5">
+        <div class="q-label">QUESTION 05 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\tan \theta}{\cos^2 \theta} d\theta\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \tan \theta \sec^2 \theta d\theta\)</p>
+            <div class="ans">\[\frac{1}{2}\tan^2 \theta + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q6 -->
+      <div class="exam-q" id="q6">
+        <div class="q-label">QUESTION 06 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \csc^4 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \csc^2 x (\cot^2 x + 1) dx\)</p>
+            <div class="ans">\[-\frac{1}{3}\cot^3 x - \cot x + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q7 -->
+      <div class="exam-q" id="q7">
+        <div class="q-label">QUESTION 07 · IBP & TRIG</div>
+        <p>Evaluate: \(\displaystyle\int x \tan^2 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int x(\sec^2 x - 1) dx\)</p>
+            <div class="ans">\[x \tan x - \ln|\sec x| - \frac{1}{2}x^2 + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q8 -->
+      <div class="exam-q" id="q8">
+        <div class="q-label">QUESTION 08 · IBP & TRIG</div>
+        <p>Evaluate: \(\displaystyle\int x^2 \cos^2 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Half angle } \frac{1+\cos 2x}{2}\)</p>
+            <div class="ans">\[\frac{x^3}{6} + \frac{x^2 \sin 2x}{4} + \frac{x \cos 2x}{4} - \frac{\sin 2x}{8} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q9 -->
+      <div class="exam-q" id="q9">
+        <div class="q-label">QUESTION 09 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x^5 \sqrt{2-x^3} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 2-x^3\)</p>
+            <div class="ans">\[-\frac{2}{9}(2-x^3)^{3/2} + \frac{2}{15}(2-x^3)^{5/2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q10 -->
+      <div class="exam-q" id="q10">
+        <div class="q-label">QUESTION 10 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{\sqrt{x^2+4}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 2	an	heta\)</p>
+            <div class="ans">\[\ln(x+\sqrt{x^2+4}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q11 -->
+      <div class="exam-q" id="q11">
+        <div class="q-label">QUESTION 11 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^2}{\sqrt{25+x^2}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 5	an	heta\)</p>
+            <div class="ans">\[\frac{25}{2}\ln|x+\sqrt{25+x^2}| - \frac{1}{2}x\sqrt{25+x^2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q12 -->
+      <div class="exam-q" id="q12">
+        <div class="q-label">QUESTION 12 · U-SUBSTITUTION & TRIG SUB</div>
+        <p>Evaluate: \(\displaystyle\int (\cos x)\sqrt{4-\sin^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sin x\)</p>
+            <div class="ans">\[\frac{1}{2}\sin x \sqrt{4-\sin^2 x} + 2\arcsin(\frac{\sin x}{2}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q13 -->
+      <div class="exam-q" id="q13">
+        <div class="q-label">QUESTION 13 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{x^2-x+1} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete the square}\)</p>
+            <div class="ans">\[\frac{2}{\sqrt{3}}\arctan(\frac{2x-1}{\sqrt{3}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q14 -->
+      <div class="exam-q" id="q14">
+        <div class="q-label">QUESTION 14 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{x^2+x+1} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete the square}\)</p>
+            <div class="ans">\[\frac{2x+1}{4}\sqrt{x^2+x+1} + \frac{3}{8}\ln(2x+1+2\sqrt{x^2+x+1}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q15 -->
+      <div class="exam-q" id="q15">
+        <div class="q-label">QUESTION 15 · PARTIAL FRACTIONS/ALGEBRA</div>
+        <p>Evaluate: \(\displaystyle\int \frac{5x+31}{3x^2-4x+11} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Split and complete square}\)</p>
+            <div class="ans">\[\frac{5}{6}\ln|3x^2-4x+11| + \frac{103}{3\sqrt{29}}\arctan(\frac{3x-2}{\sqrt{29}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q16 -->
+      <div class="exam-q" id="q16">
+        <div class="q-label">QUESTION 16 · ALGEBRAIC MANIPULATION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^4+1}{x^2+2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Polynomial long division}\)</p>
+            <div class="ans">\[\frac{x^3}{3} - 2x + \frac{5}{\sqrt{2}}\arctan(\frac{x}{\sqrt{2}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q17 -->
+      <div class="exam-q" id="q17">
+        <div class="q-label">QUESTION 17 · WEIERSTRASS SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{5+4\cos\theta} d\theta\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \tan(\theta/2)\)</p>
+            <div class="ans">\[\frac{2}{3}\arctan(\frac{\tan(\theta/2)}{3}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q18 -->
+      <div class="exam-q" id="q18">
+        <div class="q-label">QUESTION 18 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sqrt{x}}{1+x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sqrt{x}\)</p>
+            <div class="ans">\[2\sqrt{x} - 2\arctan(\sqrt{x}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q19 -->
+      <div class="exam-q" id="q19">
+        <div class="q-label">QUESTION 19 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\cos x}{\sqrt{4-\sin^2 x}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sin x\)</p>
+            <div class="ans">\[\arcsin(\frac{\sin x}{2}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q20 -->
+      <div class="exam-q" id="q20">
+        <div class="q-label">QUESTION 20 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\cos 2x}{\cos x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\frac{2\cos^2 x - 1}{\cos x}\)</p>
+            <div class="ans">\[2\sin x - \ln|\sec x + \tan x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q21 -->
+      <div class="exam-q" id="q21">
+        <div class="q-label">QUESTION 21 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\tan x}{\ln(\cos x)} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \ln(\cos x)\)</p>
+            <div class="ans">\[-\ln|\ln(\cos x)| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q22 -->
+      <div class="exam-q" id="q22">
+        <div class="q-label">QUESTION 22 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^7}{\sqrt{1-x^4}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 1-x^4\)</p>
+            <div class="ans">\[-\frac{1}{6}(x^4+2)\sqrt{1-x^4} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q23 -->
+      <div class="exam-q" id="q23">
+        <div class="q-label">QUESTION 23 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int \ln(1+x) dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{IBP: } u=\ln(1+x)\)</p>
+            <div class="ans">\[(x+1)\ln(x+1) - x + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q24 -->
+      <div class="exam-q" id="q24">
+        <div class="q-label">QUESTION 24 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int x \sec^{-1} x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{IBP}\)</p>
+            <div class="ans">\[\frac{x^2}{2}\sec^{-1} x - \frac{1}{2}\sqrt{x^2-1} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q25 -->
+      <div class="exam-q" id="q25">
+        <div class="q-label">QUESTION 25 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{x^2+9} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 3	an	heta\)</p>
+            <div class="ans">\[\frac{x}{2}\sqrt{x^2+9} + \frac{9}{2}\ln(x+\sqrt{x^2+9}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q26 -->
+      <div class="exam-q" id="q26">
+        <div class="q-label">QUESTION 26 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^2}{\sqrt{4-x^2}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 2\sin	heta\)</p>
+            <div class="ans">\[2\arcsin(\frac{x}{2}) - \frac{x}{2}\sqrt{4-x^2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q27 -->
+      <div class="exam-q" id="q27">
+        <div class="q-label">QUESTION 27 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{2x-x^2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete square } 1-(x-1)^2\)</p>
+            <div class="ans">\[\frac{x-1}{2}\sqrt{2x-x^2} + \frac{1}{2}\arcsin(x-1) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q28 -->
+      <div class="exam-q" id="q28">
+        <div class="q-label">QUESTION 28 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int \frac{4x-2}{x^3-x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Partial Fractions}\)</p>
+            <div class="ans">\[2\ln|x| - \ln|x-1| - \ln|x+1| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q29 -->
+      <div class="exam-q" id="q29">
+        <div class="q-label">QUESTION 29 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^4}{x^2-2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Long division}\)</p>
+            <div class="ans">\[\frac{x^3}{3} + 2x + \sqrt{2}\ln|\frac{x-\sqrt{2}}{x+\sqrt{2}}| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q30 -->
+      <div class="exam-q" id="q30">
+        <div class="q-label">QUESTION 30 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sec x \tan x}{\sec x + \sec^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sec x\)</p>
+            <div class="ans">\[\ln|1+\sec x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q31 -->
+      <div class="exam-q" id="q31">
+        <div class="q-label">QUESTION 31 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{\sqrt{x}(1+x)} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sqrt{x}\)</p>
+            <div class="ans">\[2 \arctan(\sqrt{x}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q32 -->
+      <div class="exam-q" id="q32">
+        <div class="q-label">QUESTION 32 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sec^2 t}{1+\tan t} dt\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 1+	an t\)</p>
+            <div class="ans">\[\ln|1+\tan t| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q33 -->
+      <div class="exam-q" id="q33">
+        <div class="q-label">QUESTION 33 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \sin x \sec x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \tan x dx\)</p>
+            <div class="ans">\[\ln|\sec x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q34 -->
+      <div class="exam-q" id="q34">
+        <div class="q-label">QUESTION 34 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\csc x \cot x}{1+\csc^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \csc x\)</p>
+            <div class="ans">\[-\frac{1}{2}\ln(1+\csc^2 x) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q35 -->
+      <div class="exam-q" id="q35">
+        <div class="q-label">QUESTION 35 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\tan \theta}{\cos^2 \theta} d\theta\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \tan \theta \sec^2 \theta d\theta\)</p>
+            <div class="ans">\[\frac{1}{2}\tan^2 \theta + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q36 -->
+      <div class="exam-q" id="q36">
+        <div class="q-label">QUESTION 36 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \csc^4 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int \csc^2 x (\cot^2 x + 1) dx\)</p>
+            <div class="ans">\[-\frac{1}{3}\cot^3 x - \cot x + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q37 -->
+      <div class="exam-q" id="q37">
+        <div class="q-label">QUESTION 37 · IBP & TRIG</div>
+        <p>Evaluate: \(\displaystyle\int x \tan^2 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\int x(\sec^2 x - 1) dx\)</p>
+            <div class="ans">\[x \tan x - \ln|\sec x| - \frac{1}{2}x^2 + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q38 -->
+      <div class="exam-q" id="q38">
+        <div class="q-label">QUESTION 38 · IBP & TRIG</div>
+        <p>Evaluate: \(\displaystyle\int x^2 \cos^2 x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Half angle } \frac{1+\cos 2x}{2}\)</p>
+            <div class="ans">\[\frac{x^3}{6} + \frac{x^2 \sin 2x}{4} + \frac{x \cos 2x}{4} - \frac{\sin 2x}{8} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q39 -->
+      <div class="exam-q" id="q39">
+        <div class="q-label">QUESTION 39 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int x^5 \sqrt{2-x^3} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 2-x^3\)</p>
+            <div class="ans">\[-\frac{2}{9}(2-x^3)^{3/2} + \frac{2}{15}(2-x^3)^{5/2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q40 -->
+      <div class="exam-q" id="q40">
+        <div class="q-label">QUESTION 40 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{\sqrt{x^2+4}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 2	an	heta\)</p>
+            <div class="ans">\[\ln(x+\sqrt{x^2+4}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q41 -->
+      <div class="exam-q" id="q41">
+        <div class="q-label">QUESTION 41 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^2}{\sqrt{25+x^2}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 5	an	heta\)</p>
+            <div class="ans">\[\frac{25}{2}\ln|x+\sqrt{25+x^2}| - \frac{1}{2}x\sqrt{25+x^2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q42 -->
+      <div class="exam-q" id="q42">
+        <div class="q-label">QUESTION 42 · U-SUBSTITUTION & TRIG SUB</div>
+        <p>Evaluate: \(\displaystyle\int (\cos x)\sqrt{4-\sin^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sin x\)</p>
+            <div class="ans">\[\frac{1}{2}\sin x \sqrt{4-\sin^2 x} + 2\arcsin(\frac{\sin x}{2}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q43 -->
+      <div class="exam-q" id="q43">
+        <div class="q-label">QUESTION 43 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{x^2-x+1} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete the square}\)</p>
+            <div class="ans">\[\frac{2}{\sqrt{3}}\arctan(\frac{2x-1}{\sqrt{3}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q44 -->
+      <div class="exam-q" id="q44">
+        <div class="q-label">QUESTION 44 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{x^2+x+1} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete the square}\)</p>
+            <div class="ans">\[\frac{2x+1}{4}\sqrt{x^2+x+1} + \frac{3}{8}\ln(2x+1+2\sqrt{x^2+x+1}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q45 -->
+      <div class="exam-q" id="q45">
+        <div class="q-label">QUESTION 45 · PARTIAL FRACTIONS/ALGEBRA</div>
+        <p>Evaluate: \(\displaystyle\int \frac{5x+31}{3x^2-4x+11} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Split and complete square}\)</p>
+            <div class="ans">\[\frac{5}{6}\ln|3x^2-4x+11| + \frac{103}{3\sqrt{29}}\arctan(\frac{3x-2}{\sqrt{29}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q46 -->
+      <div class="exam-q" id="q46">
+        <div class="q-label">QUESTION 46 · ALGEBRAIC MANIPULATION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^4+1}{x^2+2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Polynomial long division}\)</p>
+            <div class="ans">\[\frac{x^3}{3} - 2x + \frac{5}{\sqrt{2}}\arctan(\frac{x}{\sqrt{2}}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q47 -->
+      <div class="exam-q" id="q47">
+        <div class="q-label">QUESTION 47 · WEIERSTRASS SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{1}{5+4\cos\theta} d\theta\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \tan(\theta/2)\)</p>
+            <div class="ans">\[\frac{2}{3}\arctan(\frac{\tan(\theta/2)}{3}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q48 -->
+      <div class="exam-q" id="q48">
+        <div class="q-label">QUESTION 48 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sqrt{x}}{1+x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sqrt{x}\)</p>
+            <div class="ans">\[2\sqrt{x} - 2\arctan(\sqrt{x}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q49 -->
+      <div class="exam-q" id="q49">
+        <div class="q-label">QUESTION 49 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\cos x}{\sqrt{4-\sin^2 x}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sin x\)</p>
+            <div class="ans">\[\arcsin(\frac{\sin x}{2}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q50 -->
+      <div class="exam-q" id="q50">
+        <div class="q-label">QUESTION 50 · TRIGONOMETRIC</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\cos 2x}{\cos x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\frac{2\cos^2 x - 1}{\cos x}\)</p>
+            <div class="ans">\[2\sin x - \ln|\sec x + \tan x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q51 -->
+      <div class="exam-q" id="q51">
+        <div class="q-label">QUESTION 51 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\tan x}{\ln(\cos x)} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \ln(\cos x)\)</p>
+            <div class="ans">\[-\ln|\ln(\cos x)| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q52 -->
+      <div class="exam-q" id="q52">
+        <div class="q-label">QUESTION 52 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^7}{\sqrt{1-x^4}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = 1-x^4\)</p>
+            <div class="ans">\[-\frac{1}{6}(x^4+2)\sqrt{1-x^4} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q53 -->
+      <div class="exam-q" id="q53">
+        <div class="q-label">QUESTION 53 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int \ln(1+x) dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{IBP: } u=\ln(1+x)\)</p>
+            <div class="ans">\[(x+1)\ln(x+1) - x + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q54 -->
+      <div class="exam-q" id="q54">
+        <div class="q-label">QUESTION 54 · IBP</div>
+        <p>Evaluate: \(\displaystyle\int x \sec^{-1} x dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{IBP}\)</p>
+            <div class="ans">\[\frac{x^2}{2}\sec^{-1} x - \frac{1}{2}\sqrt{x^2-1} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q55 -->
+      <div class="exam-q" id="q55">
+        <div class="q-label">QUESTION 55 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{x^2+9} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 3	an	heta\)</p>
+            <div class="ans">\[\frac{x}{2}\sqrt{x^2+9} + \frac{9}{2}\ln(x+\sqrt{x^2+9}) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q56 -->
+      <div class="exam-q" id="q56">
+        <div class="q-label">QUESTION 56 · TRIG SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^2}{\sqrt{4-x^2}} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(x = 2\sin	heta\)</p>
+            <div class="ans">\[2\arcsin(\frac{x}{2}) - \frac{x}{2}\sqrt{4-x^2} + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q57 -->
+      <div class="exam-q" id="q57">
+        <div class="q-label">QUESTION 57 · COMPLETING THE SQUARE</div>
+        <p>Evaluate: \(\displaystyle\int \sqrt{2x-x^2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Complete square } 1-(x-1)^2\)</p>
+            <div class="ans">\[\frac{x-1}{2}\sqrt{2x-x^2} + \frac{1}{2}\arcsin(x-1) + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q58 -->
+      <div class="exam-q" id="q58">
+        <div class="q-label">QUESTION 58 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int \frac{4x-2}{x^3-x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Partial Fractions}\)</p>
+            <div class="ans">\[2\ln|x| - \ln|x-1| - \ln|x+1| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q59 -->
+      <div class="exam-q" id="q59">
+        <div class="q-label">QUESTION 59 · PARTIAL FRACTIONS</div>
+        <p>Evaluate: \(\displaystyle\int \frac{x^4}{x^2-2} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(\text{Long division}\)</p>
+            <div class="ans">\[\frac{x^3}{3} + 2x + \sqrt{2}\ln|\frac{x-\sqrt{2}}{x+\sqrt{2}}| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Q60 -->
+      <div class="exam-q" id="q60">
+        <div class="q-label">QUESTION 60 · U-SUBSTITUTION</div>
+        <p>Evaluate: \(\displaystyle\int \frac{\sec x \tan x}{\sec x + \sec^2 x} dx\)</p>
+        <details>
+          <summary></summary>
+          <div class="solution">
+            <p><strong>Hint/Step:</strong> \(u = \sec x\)</p>
+            <div class="ans">\[\ln|1+\sec x| + C\]</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+         PART B — MULTIPLE CHOICE
+    ════════════════════════════════════════ -->
+      <div class="part-title">Part B — Multiple Choice <span class="section-badge">15 Questions</span></div>
+
+    <!-- MCQ 1 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 61</div>
+      <p>Evaluate \(\displaystyle\int e^{2x} dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m1"> A) \(\frac{1}{2}e^{2x} + C\)</label>
+        <label><input type="radio" name="m1"> B) \(2e^{2x} + C\)</label>
+        <label><input type="radio" name="m1"> C) \(e^{2x} + C\)</label>
+        <label><input type="radio" name="m1"> D) \(\frac{1}{2}e^{x} + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 2 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 62</div>
+      <p>Evaluate \(\displaystyle\int \frac{1}{x^2+9} dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m2"> A) \(\frac{1}{3}\arctan(x/3) + C\)</label>
+        <label><input type="radio" name="m2"> B) \(\arctan(x/3) + C\)</label>
+        <label><input type="radio" name="m2"> C) \(\frac{1}{9}\arctan(x) + C\)</label>
+        <label><input type="radio" name="m2"> D) \(\ln(x^2+9) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 3 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 63</div>
+      <p>Evaluate \(\displaystyle\int \sin^2 x dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m3"> A) \(\frac{x}{2} - \frac{\sin 2x}{4} + C\)</label>
+        <label><input type="radio" name="m3"> B) \(\frac{\sin^3 x}{3} + C\)</label>
+        <label><input type="radio" name="m3"> C) \(\frac{x}{2} + \frac{\sin 2x}{4} + C\)</label>
+        <label><input type="radio" name="m3"> D) \(-\cos^2 x + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 4 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 64</div>
+      <p>Evaluate \(\displaystyle\int \frac{dx}{\sqrt{1-4x^2}}\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m4"> A) \(\frac{1}{2}\arcsin(2x) + C\)</label>
+        <label><input type="radio" name="m4"> B) \(\arcsin(2x) + C\)</label>
+        <label><input type="radio" name="m4"> C) \(\frac{1}{2}\arccos(2x) + C\)</label>
+        <label><input type="radio" name="m4"> D) \(\arcsin(4x) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 5 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 65</div>
+      <p>Evaluate \(\displaystyle\int \tan^2 x dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m5"> A) \(\tan x - x + C\)</label>
+        <label><input type="radio" name="m5"> B) \(\frac{\tan^3 x}{3} + C\)</label>
+        <label><input type="radio" name="m5"> C) \(\sec^2 x + C\)</label>
+        <label><input type="radio" name="m5"> D) \(\sec x \tan x + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 6 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 66</div>
+      <p>Evaluate \(\displaystyle\text{Substitution for } \sqrt{x^2-16}\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m6"> A) \(x = 4\sec\theta\)</label>
+        <label><input type="radio" name="m6"> B) \(x = 4\sin\theta\)</label>
+        <label><input type="radio" name="m6"> C) \(x = 4\tan\theta\)</label>
+        <label><input type="radio" name="m6"> D) \(x = 16\sin\theta\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 7 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 67</div>
+      <p>Evaluate \(\displaystyle\int_0^1 x e^x dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m7"> A) \(1\)</label>
+        <label><input type="radio" name="m7"> B) \(e\)</label>
+        <label><input type="radio" name="m7"> C) \(e-1\)</label>
+        <label><input type="radio" name="m7"> D) \(0\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 8 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 68</div>
+      <p>Evaluate \(\displaystyle\int \cos^3 x dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m8"> A) \(\sin x - \frac{\sin^3 x}{3} + C\)</label>
+        <label><input type="radio" name="m8"> B) \(\frac{\cos^4 x}{4} + C\)</label>
+        <label><input type="radio" name="m8"> C) \(\sin x + \frac{\sin^3 x}{3} + C\)</label>
+        <label><input type="radio" name="m8"> D) \(\frac{\sin^4 x}{4} + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 9 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 69</div>
+      <p>Evaluate \(\displaystyle\text{Partial fractions form for } \frac{1}{x^2(x-1)}\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m9"> A) \(\frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-1}\)</label>
+        <label><input type="radio" name="m9"> B) \(\frac{A}{x^2} + \frac{B}{x-1}\)</label>
+        <label><input type="radio" name="m9"> C) \(\frac{Ax+B}{x^2} + \frac{C}{x-1}\)</label>
+        <label><input type="radio" name="m9"> D) \(\frac{A}{x} + \frac{B}{x-1}\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 10 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 70</div>
+      <p>Evaluate \(\displaystyle\int \frac{\ln x}{x} dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m10"> A) \(\frac{(\ln x)^2}{2} + C\)</label>
+        <label><input type="radio" name="m10"> B) \(\ln(\ln x) + C\)</label>
+        <label><input type="radio" name="m10"> C) \(\frac{1}{x^2} + C\)</label>
+        <label><input type="radio" name="m10"> D) \(x\ln x - x + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 11 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 71</div>
+      <p>Evaluate \(\displaystyle\int \sec^2(3x) dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m11"> A) \(\frac{1}{3}\tan(3x) + C\)</label>
+        <label><input type="radio" name="m11"> B) \(3\tan(3x) + C\)</label>
+        <label><input type="radio" name="m11"> C) \(\tan(3x) + C\)</label>
+        <label><input type="radio" name="m11"> D) \(\frac{1}{3}\sec^3(3x) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 12 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 72</div>
+      <p>Evaluate \(\displaystyle\int \frac{e^x}{1+e^{2x}} dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m12"> A) \(\arctan(e^x) + C\)</label>
+        <label><input type="radio" name="m12"> B) \(\frac{1}{2}\ln(1+e^{2x}) + C\)</label>
+        <label><input type="radio" name="m12"> C) \(\ln(1+e^{2x}) + C\)</label>
+        <label><input type="radio" name="m12"> D) \(\arcsin(e^x) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 13 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 73</div>
+      <p>Evaluate \(\displaystyle\text{Evaluate } \int_{-1}^1 x^3 dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m13"> A) \(0\)</label>
+        <label><input type="radio" name="m13"> B) \(1/2\)</label>
+        <label><input type="radio" name="m13"> C) \(2\)</label>
+        <label><input type="radio" name="m13"> D) \(1/4\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 14 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 74</div>
+      <p>Evaluate \(\displaystyle\int \sinh(2x) dx\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m14"> A) \(\frac{1}{2}\cosh(2x) + C\)</label>
+        <label><input type="radio" name="m14"> B) \(2\cosh(2x) + C\)</label>
+        <label><input type="radio" name="m14"> C) \(-\frac{1}{2}\cosh(2x) + C\)</label>
+        <label><input type="radio" name="m14"> D) \(\frac{1}{2}\sinh(2x) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+    <!-- MCQ 15 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 75</div>
+      <p>Evaluate \(\displaystyle\int \frac{dx}{x^2+2x+2}\)</p>
+      <div class="mcq-opts">
+        <label><input type="radio" name="m15"> A) \(\arctan(x+1) + C\)</label>
+        <label><input type="radio" name="m15"> B) \(\ln|x^2+2x+2| + C\)</label>
+        <label><input type="radio" name="m15"> C) \(\arcsin(x+1) + C\)</label>
+        <label><input type="radio" name="m15"> D) \(\frac{1}{2}\arctan(x) + C\)</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <div class="ans">A)</div>
+      </div></details>
+    </div>
+
+      <!-- ═══════════════════════════════════════
+         PART C — TRUE / FALSE
+    ════════════════════════════════════════ -->
+      <div class="part-title">Part C — True / False <span class="section-badge">15 Questions</span></div>
+
+    <!-- TF 1 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 76</div>
+      <p>\(\displaystyle\int e^{x^2} dx = \frac{e^{x^2}}{2x} + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t1"> True</label>
+        <label><input type="radio" name="t1"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Requires special functions (error function) to integrate.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 2 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 77</div>
+      <p>\(\displaystyle\int \frac{1}{x} dx = \ln|x| + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t2"> True</label>
+        <label><input type="radio" name="t2"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Standard integral.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 3 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 78</div>
+      <p>\(\displaystyle\text{Integration by parts is based on the chain rule.}\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t3"> True</label>
+        <label><input type="radio" name="t3"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>It is based on the product rule.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 4 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 79</div>
+      <p>\(\displaystyle\int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t4"> True</label>
+        <label><input type="radio" name="t4"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Additivity property of definite integrals.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 5 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 80</div>
+      <p>\(\displaystyle\int \cos^2 x dx = \frac{\cos^3 x}{3} + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t5"> True</label>
+        <label><input type="radio" name="t5"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Must use half-angle identity.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 6 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 81</div>
+      <p>\(\displaystyle\text{Partial fractions can only be applied to proper rational functions.}\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t6"> True</label>
+        <label><input type="radio" name="t6"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>If improper, use long division first.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 7 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 82</div>
+      <p>\(\displaystyle\int \sec x dx = \ln|\sec x + \tan x| + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t7"> True</label>
+        <label><input type="radio" name="t7"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Standard integral.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 8 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 83</div>
+      <p>\(\displaystyle\text{The substitution } x = 3\sin\theta \text{ is used for } \sqrt{x^2-9}\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t8"> True</label>
+        <label><input type="radio" name="t8"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Used for $\sqrt{9-x^2}$. Use $3\sec\theta$ for $\sqrt{x^2-9}$.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 9 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 84</div>
+      <p>\(\displaystyle\int_0^{\pi/2} \sin x dx = 1\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t9"> True</label>
+        <label><input type="radio" name="t9"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Area under one lobe of sine is 2, half is 1.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 10 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 85</div>
+      <p>\(\displaystyle\int f(g(x))g\'(x) dx = \int f(u) du\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t10"> True</label>
+        <label><input type="radio" name="t10"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>This is the substitution rule.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 11 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 86</div>
+      <p>\(\displaystyle\int \frac{dx}{x^2-1} = \arctan x + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t11"> True</label>
+        <label><input type="radio" name="t11"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>It equals $\frac{1}{2}\ln|\frac{x-1}{x+1}| + C$.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 12 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 87</div>
+      <p>\(\displaystyle\int x \ln x dx = \frac{1}{2}x^2 \ln x - \frac{1}{4}x^2 + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t12"> True</label>
+        <label><input type="radio" name="t12"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Via IBP.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 13 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 88</div>
+      <p>\(\displaystyle\int \tan x dx = \ln|\sec x| + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t13"> True</label>
+        <label><input type="radio" name="t13"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Standard integral.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+
+    <!-- TF 14 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 89</div>
+      <p>\(\displaystyle\int_0^1 \frac{1}{x} dx \text{ converges.}\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t14"> True</label>
+        <label><input type="radio" name="t14"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>It is an improper integral that diverges.</p>
+        <div class="ans">False</div>
+      </div></details>
+    </div>
+
+    <!-- TF 15 -->
+    <div class="exam-q">
+      <div class="q-label">QUESTION 90</div>
+      <p>\(\displaystyle\int \sinh x dx = \cosh x + C\)</p>
+      <div class="tf-opts">
+        <label><input type="radio" name="t15"> True</label>
+        <label><input type="radio" name="t15"> False</label>
+      </div>
+      <details><summary></summary><div class="solution">
+        <p>Standard integral.</p>
+        <div class="ans">True</div>
+      </div></details>
+    </div>
+</div><!-- end .content -->
+
+    <footer>Calculus II Mock Exam · Compiled by Abdelrazieg Mohamed · linktr.ee/prodbyabdo</footer>
+  </div><!-- end .container -->
+    <script src="assets/js/math-scripts.js"></script>
+</body>
+
+</html>
