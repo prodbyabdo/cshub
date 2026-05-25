@@ -59,5 +59,17 @@ test_solver_adhoc.py
 requirements.txt
 *.pyc
 
+# Big Files
+*.pdf
+*.pptx
+*.docx
+*.mp4
+*.zip
+*.tar.gz
+*.rar
+*.iso
+*.csv
+*.mp3
+*.wav
 
-marker/
+/marker/
