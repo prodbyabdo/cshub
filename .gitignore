@@ -58,3 +58,6 @@ reprocess_lectures.py
 test_solver_adhoc.py
 requirements.txt
 *.pyc
+
+
+/marker

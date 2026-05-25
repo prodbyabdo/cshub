@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Scripts Command Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-primary: #00ff88;
+            --accent-hover: #00cc6a;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --success-color: #00ff88;
+            --border-color: #333333;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-image: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 255, 136, 0.05);
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border-right: 1px solid var(--border-color);
+            padding-right: 2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-btn.active {
+            background: var(--accent-dim);
+            color: var(--accent-primary);
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .script-section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .script-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .script-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .script-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .script-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-dim);
+        }
+
+        /* File Input Styling */
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .file-drop-area:hover, .file-drop-area.dragover {
+            background: var(--accent-dim);
+            border-color: var(--accent-primary);
+        }
+
+        .file-drop-area input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-msg {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .file-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Checkbox Styling */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        /* Command Output Area */
+        .output-container {
+            margin-top: 1rem;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .output-header span {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .copy-btn {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent-primary);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-hover);
+            color: #000;
+            border-color: var(--accent-hover);
+        }
+
+        .copy-btn.copied {
+            background: var(--success-color);
+            color: #000;
+            border-color: var(--success-color);
+        }
+
+        pre {
+            margin: 0;
+            padding: 1.25rem 1rem;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* Option Prefix setting */
+        .prefix-badge {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 1.5rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <header style="text-align: left; margin-bottom: 30px;">
+                <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin: 0 0 5px 0; background: linear-gradient(to right, #ffffff, #a0a0a0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">CS HUB</h1>
+                <div style="color: var(--accent-primary); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Command Tools</div>
+            </header>
+            <button class="nav-btn active" onclick="switchTab('cmd_tab')">convert_to_md.py</button>
+            <button class="nav-btn" onclick="switchTab('gc_tab')">generate_course.py</button>
+            <button class="nav-btn" onclick="switchTab('pmp_tab')">process_math_pdf.py</button>
+            <button class="nav-btn" onclick="switchTab('bp_tab')">batch_process.py</button>
+            
+            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                <div class="form-group" style="margin-bottom:0;">
+                    <label style="font-size:0.8rem; color: var(--text-secondary);">Python Executable (Optional)</label>
+                    <input type="text" id="global_python_exec" class="form-control" placeholder="python" value="python" oninput="updateAllCommands()" style="padding:0.5rem; font-size:0.85rem;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Convert to MD Script -->
+            <div id="cmd_tab" class="script-section active">
+                <div class="script-header">
+                    <h3>convert_to_md.py <span style="font-size: 0.75rem; background: rgba(59, 130, 246, 0.2); color: var(--accent-primary); padding: 3px 8px; border-radius: 12px; vertical-align: middle; margin-left: 8px;">Main Converter</span></h3>
+                    <p>Extract text from PDF or PPTX files and convert directly to Markdown.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Input File (.pdf or .pptx)</label>
+                    <div class="file-drop-area">
+                        <span class="file-icon">📄</span>
+                        <span class="file-msg" id="cmd_file_msg">Choose a PDF or PPTX file</span>
+                        <input type="file" id="cmd_input" accept=".pdf,.pptx" onchange="handleFileChange(this, 'cmd_file_msg')">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Output MD Path (--output) <i>[Optional]</i></label>
+                    <input type="text" id="cmd_output" class="form-control" placeholder="e.g. output.md (auto-generated if empty)">
+                </div>
+
+                <button class="nav-btn active" style="width: 100%; text-align: center; margin-top: 10px; background: var(--accent-primary); color: #000; font-weight: 600;" onclick="updateCMDCommand()">Generate Command</button>
+            </div>
+
+            <!-- Generate Course Script -->
+            <div id="gc_tab" class="script-section">
+                <div class="script-header">
+                    <h3>generate_course.py</h3>
+                    <p>Generate a Study Guide HTML from a PDF lecture file.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Input PDF (--pdf)</label>
+                    <div class="file-drop-area">
+                        <span class="file-icon">📄</span>
+                        <span class="file-msg" id="gc_file_msg">Choose a PDF file or drag it here</span>
+                        <input type="file" id="gc_pdf_input" accept=".pdf" onchange="handleFileChange(this, 'gc_file_msg')">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject Name (--subject)</label>
+                    <input type="text" id="gc_subject" class="form-control" placeholder="e.g. Calculus 1">
+                </div>
+
+                <div class="form-group">
+                    <label>Output Directory / File (--output)</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="gc_output" class="form-control" placeholder="e.g. output.html">
+                        <input type="file" id="gc_output_dir" webkitdirectory directory style="display:none;" onchange="if(this.files.length > 0) document.getElementById('gc_output').value = this.files[0].webkitRelativePath.split('/')[0] + '/'">
+                        <button class="nav-btn" style="white-space: nowrap; border: 1px solid var(--border-color);" onclick="document.getElementById('gc_output_dir').click()">Select Dir</button>
+                    </div>
+                </div>
+
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="gc_save_json">
+                    <span>Save intermediate JSON (--save-json)</span>
+                </label>
+
+                <button class="nav-btn active" style="width: 100%; text-align: center; margin-top: 20px; background: var(--accent-primary); color: #000; font-weight: 600;" onclick="updateGCCommand()">Generate Command</button>
+            </div>
+
+            <!-- Process Math PDF Script -->
+            <div id="pmp_tab" class="script-section">
+                <div class="script-header">
+                    <h3>process_math_pdf.py</h3>
+                    <p>Extract and process mathematical concepts from a PDF or Directory.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Input (PDF File or Directory)</label>
+                    <div class="file-drop-area">
+                        <span class="file-icon">📁</span>
+                        <span class="file-msg" id="pmp_file_msg">Choose a file or directory</span>
+                        <input type="file" id="pmp_input" multiple webkitdirectory directory onchange="handleFileChange(this, 'pmp_file_msg')">
+                    </div>
+                    <small style="color:var(--text-secondary); margin-top:5px; display:block;">Note: File inputs only capture filenames. Ensure you run the command in the appropriate directory.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject (--subject)</label>
+                    <select id="pmp_subject" class="form-control">
+                        <option value="Calculus">Calculus</option>
+                        <option value="LinearAlgebra">LinearAlgebra</option>
+                        <option value="Generic">Generic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Output Directory (--output)</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="pmp_output" class="form-control" placeholder="output_math_tool" value="output_math_tool">
+                        <input type="file" id="pmp_output_dir" webkitdirectory directory style="display:none;" onchange="if(this.files.length > 0) document.getElementById('pmp_output').value = this.files[0].webkitRelativePath.split('/')[0]">
+                        <button class="nav-btn" style="white-space: nowrap; border: 1px solid var(--border-color);" onclick="document.getElementById('pmp_output_dir').click()">Select Dir</button>
+                    </div>
+                </div>
+
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="pmp_solve">
+                    <span>Attempt to solve extracted exercises (--solve)</span>
+                </label>
+
+                <button class="nav-btn active" style="width: 100%; text-align: center; margin-top: 20px; background: var(--accent-primary); color: #000; font-weight: 600;" onclick="updatePMPCommand()">Generate Command</button>
+            </div>
+
+            <!-- Batch Process Script -->
+            <div id="bp_tab" class="script-section">
+                <div class="script-header">
+                    <h3>batch_process.py</h3>
+                    <p>Process multiple PDFs inside the `uni data` directory structure.</p>
+                </div>
+
+                <div class="prefix-badge">
+                    ℹ️ This script is hardcoded to look for a `uni data` folder in the current directory. It does not take arguments.
+                </div>
+
+                <button class="nav-btn active" style="width: 100%; text-align: center; margin-top: 20px; background: var(--accent-primary); color: #000; font-weight: 600;" onclick="updateBPCommand()">Generate Command</button>
+            </div>
+
+            <!-- Global Output Area -->
+            <div class="output-container">
+                <div class="output-header">
+                    <span>Generated Command</span>
+                    <button class="copy-btn" id="copyBtn" onclick="copyCommand()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy
+                    </button>
+                </div>
+                <pre><code id="generated_cmd">python convert_to_md.py</code></pre>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let currentActiveTab = 'gc_tab';
+
+        function switchTab(tabId) {
+            // Update UI buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update visible section
+            document.querySelectorAll('.script-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            currentActiveTab = tabId;
+            updateAllCommands();
+        }
+
+        function handleFileChange(input, msgId) {
+            const msgEl = document.getElementById(msgId);
+            if (input.files && input.files.length > 0) {
+                if(input.files.length === 1) {
+                    msgEl.textContent = input.files[0].name;
+                } else {
+                    // For process_math_pdf directory selection, getting path of dir if possible
+                    if(input.files[0].webkitRelativePath) {
+                        const dirName = input.files[0].webkitRelativePath.split('/')[0];
+                        msgEl.textContent = "Directory: " + dirName;
+                    } else {
+                        msgEl.textContent = input.files.length + " files selected";
+                    }
+                }
+            } else {
+                msgEl.textContent = "Choose a file or drag it here";
+            }
+        }
+
+        function getPythonPrefix() {
+            return document.getElementById('global_python_exec').value.trim() || 'python';
+        }
+
+        function getFilenameFromInput(inputId) {
+            const el = document.getElementById(inputId);
+            if (el && el.files && el.files.length > 0) {
+                if(el.files[0].webkitRelativePath) {
+                    // It's a directory
+                    return `"${el.files[0].webkitRelativePath.split('/')[0]}"`;
+                }
+                return `"${el.files[0].name}"`;
+            }
+            return "";
+        }
+
+        function updateGCCommand() {
+            if(currentActiveTab !== 'gc_tab') return;
+            
+            const py = getPythonPrefix();
+            let cmd = `${py} generate_course.py`;
+            
+            const pdf = getFilenameFromInput('gc_pdf_input') || '"<input.pdf>"';
+            const subject = document.getElementById('gc_subject').value.trim() || '<subject>';
+            const output = document.getElementById('gc_output').value.trim() || '<output.html>';
+            const saveJson = document.getElementById('gc_save_json').checked;
+
+            cmd += ` --pdf ${pdf} --subject "${subject}" --output "${output}"`;
+            if(saveJson) cmd += ` --save-json`;
+
+            document.getElementById('generated_cmd').textContent = cmd;
+            resetCopyButton();
+        }
+
+        function updatePMPCommand() {
+            if(currentActiveTab !== 'pmp_tab') return;
+
+            const py = getPythonPrefix();
+            let cmd = `${py} process_math_pdf.py`;
+
+            const input = getFilenameFromInput('pmp_input') || '"<input_pdf_or_dir>"';
+            const output = document.getElementById('pmp_output').value.trim();
+            const subject = document.getElementById('pmp_subject').value;
+            const solve = document.getElementById('pmp_solve').checked;
+
+            cmd += ` ${input}`;
+            if(output && output !== "output_math_tool") cmd += ` --output "${output}"`;
+            if(subject && subject !== "Calculus") cmd += ` --subject "${subject}"`;
+            if(solve) cmd += ` --solve`;
+
+            document.getElementById('generated_cmd').textContent = cmd;
+            resetCopyButton();
+        }
+
+        function updateBPCommand() {
+            if(currentActiveTab !== 'bp_tab') return;
+            const py = getPythonPrefix();
+            document.getElementById('generated_cmd').textContent = `${py} batch_process.py`;
+            resetCopyButton();
+        }
+
+        function updateCMDCommand() {
+            if(currentActiveTab !== 'cmd_tab') return;
+            
+            const py = getPythonPrefix();
+            let cmd = `${py} convert_to_md.py`;
+            
+            const input = getFilenameFromInput('cmd_input') || '"<input.pdf_or_pptx>"';
+            const output = document.getElementById('cmd_output').value.trim();
+
+            cmd += ` ${input}`;
+            if(output) cmd += ` --output "${output}"`;
+
+            document.getElementById('generated_cmd').textContent = cmd;
+            resetCopyButton();
+        }
+
+        function updateAllCommands() {
+            if (currentActiveTab === 'cmd_tab') updateCMDCommand();
+            else if (currentActiveTab === 'gc_tab') updateGCCommand();
+            else if (currentActiveTab === 'pmp_tab') updatePMPCommand();
+            else if (currentActiveTab === 'bp_tab') updateBPCommand();
+        }
+
+        function resetCopyButton() {
+            const btn = document.getElementById('copyBtn');
+            btn.classList.remove('copied');
+            btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy`;
+        }
+
+        function copyCommand() {
+            const cmd = document.getElementById('generated_cmd').textContent;
+            navigator.clipboard.writeText(cmd).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.classList.add('copied');
+                btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+                
+                setTimeout(() => {
+                    resetCopyButton();
+                }, 2000);
+            });
+        }
+
+        // Initialize drag and drop visual cues
+        document.querySelectorAll('.file-drop-area').forEach(dropArea => {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => dropArea.classList.add('dragover'), false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => dropArea.classList.remove('dragover'), false);
+            });
+        });
+
+        // initial generation
+        updateAllCommands();
+    </script>
+</body>
+</html>

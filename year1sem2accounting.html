@@ -1,0 +1,5133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Study Dashboard | CS Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --border-color: #333333;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        .nav-back { 
+            display: inline-block; margin-bottom: 20px; color: var(--text-secondary); 
+            text-decoration: none; font-family: var(--font-mono); 
+        }
+        .nav-back:hover { color: var(--accent-color); }
+        
+        /* Typography */
+        h1 { font-size: 2.5rem; color: var(--accent-color); margin-top: 50px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+        h1:first-of-type { margin-top: 0; }
+        h2 { font-size: 1.8rem; color: var(--text-primary); margin-top: 40px; border-left: 4px solid var(--accent-color); padding-left: 15px; }
+        h3 { font-size: 1.3rem; color: var(--text-secondary); font-family: var(--font-mono); margin-top: 30px; }
+        p { margin-bottom: 20px; }
+        
+        strong { color: var(--accent-color); }
+        em { color: var(--text-secondary); }
+        
+        /* Blockquote for callouts */
+        blockquote {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Code blocks */
+        pre {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        code {
+            font-family: var(--font-mono);
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-color);
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        /* Table Styling (crucial for ledgers) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        thead {
+            background: rgba(0, 255, 136, 0.05);
+            border-bottom: 2px solid var(--border-color);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            color: var(--accent-color);
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        td {
+            color: var(--text-primary);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        /* Horizontal Rule */
+        hr {
+            border: none;
+            border-top: 1px dashed var(--border-color);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="year1.html" class="nav-back">← Back to Year 1</a>
+        <div class="content">
+            <h1>📊 Accounting Exam Study Dashboard</h1>
+<h3>Frank Wood's Business Accounting — Chapters 1–6 Complete Exam Prep</h3>
+<hr />
+<h1>SECTION 1 — THE DECIPHER KEY</h1>
+<h3>Translating Exam Language into Double-Entry Logic</h3>
+<blockquote>
+<p><strong>Master Rule:</strong> Every transaction has TWO sides. Ask yourself: <em>What is being exchanged?</em> and <em>How is it being settled?</em></p>
+</blockquote>
+<hr />
+<h2>1.1 Ownership &amp; People Phrases</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>What It Means</th>
+<th>Double-Entry Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Proprietor"</strong></td>
+<td>The owner of the business</td>
+<td>Their investment = Capital (Cr); their withdrawals = Drawings (Dr)</td>
+</tr>
+<tr>
+<td><strong>"The business"</strong></td>
+<td>The entity itself (separate from the owner)</td>
+<td>All transactions are from the business's perspective</td>
+</tr>
+<tr>
+<td><strong>"Started in business with..."</strong></td>
+<td>Owner introducing capital</td>
+<td>Dr Bank/Cash — Cr Capital</td>
+</tr>
+<tr>
+<td><strong>"Owner introduced further capital"</strong></td>
+<td>More money put in by owner</td>
+<td>Dr Bank/Cash — Cr Capital</td>
+</tr>
+<tr>
+<td><strong>"Proprietor withdrew cash for private use"</strong></td>
+<td>Owner taking money out</td>
+<td>Dr Drawings — Cr Cash/Bank</td>
+</tr>
+<tr>
+<td><strong>"Owner took goods for own use"</strong></td>
+<td>Owner taking stock</td>
+<td>Dr Drawings — Cr Purchases</td>
+</tr>
+<tr>
+<td><strong>"Lent us £X by cash/cheque"</strong></td>
+<td>Someone outside the firm gives a loan</td>
+<td>Dr Cash/Bank — Cr Loan from [Name]</td>
+</tr>
+<tr>
+<td><strong>"We borrowed £X from..."</strong></td>
+<td>Same as above</td>
+<td>Dr Cash/Bank — Cr Loan from [Name]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1.2 Buying Phrases</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>What It Means</th>
+<th>Debit</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Bought goods on time from X"</strong></td>
+<td>Credit purchase of goods for resale</td>
+<td>Purchases</td>
+<td>X (supplier account)</td>
+</tr>
+<tr>
+<td><strong>"Bought goods on credit from X"</strong></td>
+<td>Same as above</td>
+<td>Purchases</td>
+<td>X (supplier account)</td>
+</tr>
+<tr>
+<td><strong>"Purchased goods from X"</strong></td>
+<td>Same — check if cash or credit</td>
+<td>Purchases</td>
+<td>X or Cash/Bank</td>
+</tr>
+<tr>
+<td><strong>"Bought goods for cash"</strong></td>
+<td>Immediate cash payment for stock</td>
+<td>Purchases</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td><strong>"Bought goods by cheque"</strong></td>
+<td>Immediate bank payment for stock</td>
+<td>Purchases</td>
+<td>Bank</td>
+</tr>
+<tr>
+<td><strong>"Bought a van on time from X"</strong></td>
+<td>Credit purchase of a NON-CURRENT ASSET</td>
+<td>Van</td>
+<td>X (supplier account)</td>
+</tr>
+<tr>
+<td><strong>"Bought machinery paying by cheque"</strong></td>
+<td>Cash purchase of asset — never "Purchases" account</td>
+<td>Machinery</td>
+<td>Bank</td>
+</tr>
+<tr>
+<td><strong>"Bought shop fixtures on time from X"</strong></td>
+<td>Credit purchase of fixture — not Purchases account</td>
+<td>Shop Fixtures</td>
+<td>X (supplier account)</td>
+</tr>
+<tr>
+<td><strong>"Bought stationery by cheque"</strong></td>
+<td>Expense, not goods for resale</td>
+<td>Stationery</td>
+<td>Bank</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Critical Rule:</strong> "Purchases" ONLY means goods bought for resale. A van, computer, or fixture is NEVER entered in the Purchases account — it gets its own asset account.</p>
+</blockquote>
+<hr />
+<h2>1.3 Selling Phrases</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>What It Means</th>
+<th>Debit</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Sold goods on time to X"</strong></td>
+<td>Credit sale of goods</td>
+<td>X (customer account)</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><strong>"Cash sales"</strong></td>
+<td>Immediate cash received for goods</td>
+<td>Cash</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><strong>"Sold goods by cheque"</strong></td>
+<td>Immediate bank receipt for goods</td>
+<td>Bank</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><strong>"Sold van for cash"</strong></td>
+<td>Disposing of a NON-CURRENT ASSET — never "Sales" account</td>
+<td>Cash</td>
+<td>Van</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Critical Rule:</strong> "Sales" ONLY refers to goods the business normally deals in. Selling a van or computer is credited to that asset's own account, not Sales.</p>
+</blockquote>
+<hr />
+<h2>1.4 Payments &amp; Receipts</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>What It Means</th>
+<th>Debit</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Paid X by cheque"</strong></td>
+<td>Business pays a creditor via bank</td>
+<td>X (creditor account)</td>
+<td>Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid X in cash"</strong></td>
+<td>Business pays using cash</td>
+<td>X (creditor account)</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td><strong>"X paid us by cheque"</strong></td>
+<td>Debtor settles their account via bank</td>
+<td>Bank</td>
+<td>X (debtor account)</td>
+</tr>
+<tr>
+<td><strong>"X paid us in cash"</strong></td>
+<td>Debtor settles in cash</td>
+<td>Cash</td>
+<td>X (debtor account)</td>
+</tr>
+<tr>
+<td><strong>"Received cheque from X"</strong></td>
+<td>Same as debtor paying by cheque</td>
+<td>Bank</td>
+<td>X (debtor account)</td>
+</tr>
+<tr>
+<td><strong>"We settled our account with X"</strong></td>
+<td>Business pays full amount owed</td>
+<td>X (creditor)</td>
+<td>Bank/Cash</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1.5 Returns Phrases</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>What It Means</th>
+<th>Debit</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"We returned goods to X"</strong></td>
+<td>Business returns to supplier</td>
+<td>X (supplier account)</td>
+<td>Returns Outwards</td>
+</tr>
+<tr>
+<td><strong>"Returned goods to supplier X"</strong></td>
+<td>Same</td>
+<td>X (supplier account)</td>
+<td>Returns Outwards</td>
+</tr>
+<tr>
+<td><strong>"X returned goods to us"</strong></td>
+<td>Customer returns to business</td>
+<td>Returns Inwards</td>
+<td>X (customer account)</td>
+</tr>
+<tr>
+<td><strong>"Goods returned by X"</strong></td>
+<td>Same</td>
+<td>Returns Inwards</td>
+<td>X (customer account)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧠 <strong>Memory Trick:</strong> Returns OUT → goods going OUT to supplier → Credits reduce our liability. Returns IN → goods coming IN from customer → Debits increase our "cost."</p>
+</blockquote>
+<hr />
+<h2>1.6 Expense Phrases</h2>
+<table>
+<thead>
+<tr>
+<th>Exam Phrase</th>
+<th>Account Name</th>
+<th>Debit</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Paid rent by cash/cheque"</strong></td>
+<td>Rent</td>
+<td>Rent</td>
+<td>Cash/Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid wages in cash"</strong></td>
+<td>Wages</td>
+<td>Wages</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td><strong>"Paid business rates by cheque"</strong></td>
+<td>Business Rates</td>
+<td>Business Rates</td>
+<td>Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid electricity by cheque"</strong></td>
+<td>Electricity</td>
+<td>Electricity</td>
+<td>Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid carriage in cash"</strong></td>
+<td>Carriage</td>
+<td>Carriage</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td><strong>"Paid motor expenses"</strong></td>
+<td>Motor Expenses</td>
+<td>Motor Expenses</td>
+<td>Cash/Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid insurance"</strong></td>
+<td>Insurance</td>
+<td>Insurance</td>
+<td>Cash/Bank</td>
+</tr>
+<tr>
+<td><strong>"Paid repairs"</strong></td>
+<td>Repairs</td>
+<td>Repairs</td>
+<td>Cash/Bank</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>SECTION 2 — MCQ CHEATSHEET</h1>
+<h3>Essential Definitions, Rules &amp; Quick-Fire Facts</h3>
+<hr />
+<h2>2.1 The Master Equation</h2>
+<pre><code>ASSETS = CAPITAL + LIABILITIES
+</code></pre>
+<ul>
+<li><strong>Assets</strong> = what the business OWNS</li>
+<li><strong>Capital</strong> = what the OWNER invested (also = Assets − Liabilities)</li>
+<li><strong>Liabilities</strong> = what the business OWES to outsiders</li>
+</ul>
+<hr />
+<h2>2.2 The Two Axioms (Never Fail)</h2>
+<table>
+<thead>
+<tr>
+<th>Axiom</th>
+<th>Rule</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Axiom 1</strong></td>
+<td>Any INCREASE in a Possession (Asset or Expense)</td>
+<td>→ Always <strong>DEBIT</strong></td>
+</tr>
+<tr>
+<td><strong>Axiom 2</strong></td>
+<td>Any INCREASE in Capital or Liability</td>
+<td>→ Always <strong>CREDIT</strong></td>
+</tr>
+<tr>
+<td><strong>Reverse</strong></td>
+<td>The OPPOSITE circumstance</td>
+<td>→ Opposite entry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2.3 Asset Classification</h2>
+<h3>Non-Current Assets (Long-term, NOT for resale)</h3>
+<ul>
+<li>Land &amp; Buildings, Motor Vans, Machinery, Equipment, Furniture, Fixtures, Computers</li>
+</ul>
+<h3>Current Assets (Short-term, change within 12 months)</h3>
+<ul>
+<li>Inventory (Stock), Accounts Receivable (Debtors), Cash, Bank Balance, Prepaid Expenses</li>
+</ul>
+<hr />
+<h2>2.4 Liability Classification</h2>
+<h3>Current Liabilities (Due within 1 year)</h3>
+<ul>
+<li>Accounts Payable (Creditors), Bank Overdraft, Short-term loans</li>
+</ul>
+<h3>Non-Current Liabilities (Due after 1 year)</h3>
+<ul>
+<li>Long-term bank loans, Mortgages</li>
+</ul>
+<hr />
+<h2>2.5 The Four Inventory Accounts</h2>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Side</th>
+<th>When Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purchases</strong></td>
+<td>Dr</td>
+<td>Buying goods FOR RESALE</td>
+</tr>
+<tr>
+<td><strong>Sales</strong></td>
+<td>Cr</td>
+<td>Selling goods the business normally deals in</td>
+</tr>
+<tr>
+<td><strong>Returns Inwards</strong> (Sales Returns)</td>
+<td>Dr</td>
+<td>Customer returns goods TO us</td>
+</tr>
+<tr>
+<td><strong>Returns Outwards</strong> (Purchases Returns)</td>
+<td>Cr</td>
+<td>We return goods TO supplier</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2.6 Trial Balance Quick Rules</h2>
+<table>
+<thead>
+<tr>
+<th>Always on DEBIT side</th>
+<th>Always on CREDIT side</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assets</td>
+<td>Liabilities</td>
+</tr>
+<tr>
+<td>Expenses</td>
+<td>Capital</td>
+</tr>
+<tr>
+<td>Drawings</td>
+<td>Revenues (Sales)</td>
+</tr>
+<tr>
+<td>Returns Inwards</td>
+<td>Returns Outwards</td>
+</tr>
+<tr>
+<td>Losses</td>
+<td>Profits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Purpose:</strong> Proves Total Debits = Total Credits<br />
+<strong>Limitation:</strong> Does NOT catch errors of omission, commission, or compensating errors</p>
+<hr />
+<h2>2.7 Balance c/d and b/d Logic</h2>
+<pre><code>Step 1: Total both sides (mentally)
+Step 2: Find the difference = the balance
+Step 3: Write Balance c/d on the SMALLER side (to make both sides equal)
+Step 4: Rule off with totals level on both sides
+Step 5: Write Balance b/d on the OPPOSITE side, dated 1st of next month
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Account Type</th>
+<th>Balance Type</th>
+<th>Where is b/d?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assets (Cash, Van, Debtors)</td>
+<td><strong>Debit</strong> balance</td>
+<td>Left (Dr) side</td>
+</tr>
+<tr>
+<td>Expenses (Rent, Wages)</td>
+<td><strong>Debit</strong> balance</td>
+<td>Left (Dr) side</td>
+</tr>
+<tr>
+<td>Liabilities (Loans, Creditors)</td>
+<td><strong>Credit</strong> balance</td>
+<td>Right (Cr) side</td>
+</tr>
+<tr>
+<td>Capital</td>
+<td><strong>Credit</strong> balance</td>
+<td>Right (Cr) side</td>
+</tr>
+<tr>
+<td>Revenue (Sales)</td>
+<td><strong>Credit</strong> balance</td>
+<td>Right (Cr) side</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2.8 Key Definitions Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accounting</strong></td>
+<td>Identifying, measuring, and communicating economic information for decision-making</td>
+</tr>
+<tr>
+<td><strong>Bookkeeping</strong></td>
+<td>The recording part of accounting</td>
+</tr>
+<tr>
+<td><strong>Debit</strong></td>
+<td>Entry on the LEFT side of an account</td>
+</tr>
+<tr>
+<td><strong>Credit</strong></td>
+<td>Entry on the RIGHT side of an account</td>
+</tr>
+<tr>
+<td><strong>Drawings</strong></td>
+<td>Resources taken by the owner for private use</td>
+</tr>
+<tr>
+<td><strong>Carriage Inwards</strong></td>
+<td>Transport costs on goods PURCHASED (Dr — adds to cost of purchases)</td>
+</tr>
+<tr>
+<td><strong>Carriage Outwards</strong></td>
+<td>Transport costs on goods SOLD to customers (Dr — an expense)</td>
+</tr>
+<tr>
+<td><strong>Gross Profit</strong></td>
+<td>Sales Revenue − Cost of Goods Sold</td>
+</tr>
+<tr>
+<td><strong>Net Profit</strong></td>
+<td>Gross Profit − All other expenses</td>
+</tr>
+<tr>
+<td><strong>"On Time"</strong></td>
+<td>Credit transaction — no immediate cash exchange</td>
+</tr>
+<tr>
+<td><strong>Bank Overdraft</strong></td>
+<td>Current Liability (bank owes you nothing; you owe the bank)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>SECTION 3 — PRACTICE EXAM</h1>
+<hr />
+<h2>SECTION A — 60 Multiple Choice Questions (Chapters 1–6)</h2>
+<p><strong>Instructions:</strong> Choose the ONE best answer for each question.</p>
+<hr />
+<p><strong>Q1.</strong> What is the fundamental Accounting Equation?<br />
+(A) Capital = Assets + Liabilities<br />
+(B) <strong>Assets = Capital + Liabilities</strong> ✓<br />
+(C) Assets = Capital − Liabilities<br />
+(D) Liabilities = Assets + Capital</p>
+<p><strong>Q2.</strong> "Assets" are best described as:<br />
+(A) Things the business owes to others<br />
+(B) <strong>Actual resources owned by a business</strong> ✓<br />
+(C) Money provided only by the bank<br />
+(D) The owner's personal wealth</p>
+<p><strong>Q3.</strong> Which of the following is a LIABILITY?<br />
+(A) Inventory of goods<br />
+(B) <strong>A loan from K. Harris</strong> ✓<br />
+(C) Cash at bank<br />
+(D) Accounts receivable</p>
+<p><strong>Q4.</strong> "Non-current assets" are acquired:<br />
+(A) For immediate resale<br />
+(B) <strong>For long-term use to provide a service, not held for resale</strong> ✓<br />
+(C) To change value within 12 months<br />
+(D) Such as cash and inventory</p>
+<p><strong>Q5.</strong> Which is a CURRENT ASSET?<br />
+(A) Office buildings<br />
+(B) Machinery<br />
+(C) <strong>Inventory held for resale</strong> ✓<br />
+(D) A 5-year bank loan</p>
+<p><strong>Q6.</strong> "Capital" is also called:<br />
+(A) Total assets<br />
+(B) Total liabilities<br />
+(C) <strong>Owner's equity or net worth</strong> ✓<br />
+(D) A current asset</p>
+<p><strong>Q7.</strong> A Trial Balance is prepared to:<br />
+(A) Calculate net profit<br />
+(B) <strong>Check that total debits equal total credits</strong> ✓<br />
+(C) List only assets<br />
+(D) Replace the Statement of Financial Position</p>
+<p><strong>Q8.</strong> Which of the following statements about the Trial Balance is CORRECT?<br />
+(A) It proves there are no errors at all<br />
+(B) It shows the profit of the business<br />
+(C) <strong>It proves only that total debits equal total credits</strong> ✓<br />
+(D) It replaces the ledger</p>
+<p><strong>Q9.</strong> "Purchases" in accounting means:<br />
+(A) Any item bought for the business<br />
+(B) Goods bought by cheque only<br />
+(C) <strong>Goods bought with the sole intention of resale</strong> ✓<br />
+(D) Any time the owner spends money</p>
+<p><strong>Q10.</strong> "Sales" in accounting means:<br />
+(A) Selling the office furniture<br />
+(B) <strong>Sale of goods the business normally deals in, bought for resale</strong> ✓<br />
+(C) Any income received<br />
+(D) Money borrowed from a bank</p>
+<p><strong>Q11.</strong> "Returns Inwards" refers to:<br />
+(A) Goods the business returns to suppliers<br />
+(B) <strong>Goods returned TO the business BY customers</strong> ✓<br />
+(C) Goods bought on credit<br />
+(D) Cash sales refunded</p>
+<p><strong>Q12.</strong> "Returns Outwards" refers to:<br />
+(A) Goods customers return to us<br />
+(B) <strong>Goods the business returns TO its suppliers</strong> ✓<br />
+(C) Credit sales<br />
+(D) Inventory sold for cash</p>
+<p><strong>Q13.</strong> Axiom 1 of Double Entry states:<br />
+(A) An increase in a liability is a debit<br />
+(B) <strong>Any increase in a possession (asset/expense) is always a DEBIT</strong> ✓<br />
+(C) An increase in capital is a debit<br />
+(D) A decrease in an asset is a debit</p>
+<p><strong>Q14.</strong> Axiom 2 of Double Entry states:<br />
+(A) An increase in an asset is a credit<br />
+(B) A decrease in an expense is a credit<br />
+(C) <strong>Any increase in capital or liabilities is always a CREDIT</strong> ✓<br />
+(D) A decrease in a liability is a credit</p>
+<p><strong>Q15.</strong> A "Debit" entry is placed on the:<br />
+(A) Right side of an account<br />
+(B) <strong>Left side of an account</strong> ✓<br />
+(C) Bottom of an account<br />
+(D) Top of an account</p>
+<p><strong>Q16.</strong> "On Time" in an accounting exam means:<br />
+(A) The transaction happened at noon<br />
+(B) A cash transaction<br />
+(C) <strong>A credit transaction — no immediate cash</strong> ✓<br />
+(D) A discounted payment</p>
+<p><strong>Q17.</strong> When a business buys a van paying by cheque, the entries are:<br />
+(A) Dr Purchases / Cr Bank<br />
+(B) Dr Van / Cr Capital<br />
+(C) <strong>Dr Van / Cr Bank</strong> ✓<br />
+(D) Dr Bank / Cr Van</p>
+<p><strong>Q18.</strong> If you sell goods "on time" to a customer, you:<br />
+(A) Dr Sales / Cr Customer<br />
+(B) <strong>Dr Customer / Cr Sales</strong> ✓<br />
+(C) Dr Bank / Cr Sales<br />
+(D) Dr Sales / Cr Bank</p>
+<p><strong>Q19.</strong> "Carriage Inwards" is:<br />
+(A) Transport costs for goods sent to customers<br />
+(B) <strong>Transport costs on goods purchased — added to cost of purchases</strong> ✓<br />
+(C) The cost of a delivery van<br />
+(D) Rent paid for a warehouse</p>
+<p><strong>Q20.</strong> A "Debit Balance" occurs when:<br />
+(A) The credit side is larger<br />
+(B) Both sides are equal<br />
+(C) <strong>The total of the debit side exceeds the total of the credit side</strong> ✓<br />
+(D) The account is for a creditor</p>
+<p><strong>Q21.</strong> "Balance c/d" stands for:<br />
+(A) Balance cash daily<br />
+(B) <strong>Balance carried down</strong> ✓<br />
+(C) Balance credit debit<br />
+(D) Balance calculated down</p>
+<p><strong>Q22.</strong> "Balance b/d" is placed:<br />
+(A) Above the totals on the smaller side<br />
+(B) On the same side as the c/d entry<br />
+(C) <strong>Below the totals on the OPPOSITE side to the c/d entry</strong> ✓<br />
+(D) Only on the credit side</p>
+<p><strong>Q23.</strong> If the debit side of a Cash account is £600 and the credit side is £50, the balance is:<br />
+(A) £650 debit<br />
+(B) £650 credit<br />
+(C) <strong>£550 debit</strong> ✓<br />
+(D) £550 credit</p>
+<p><strong>Q24.</strong> When goods are returned TO a supplier, the credit entry is to:<br />
+(A) Purchases<br />
+(B) <strong>Returns Outwards</strong> ✓<br />
+(C) Returns Inwards<br />
+(D) Sales</p>
+<p><strong>Q25.</strong> When goods are returned BY a customer, the debit entry is to:<br />
+(A) Sales<br />
+(B) Purchases<br />
+(C) <strong>Returns Inwards</strong> ✓<br />
+(D) Returns Outwards</p>
+<p><strong>Q26.</strong> "Drawings" taken by the owner are always:<br />
+(A) Credit to Drawings, Debit to Capital<br />
+(B) <strong>Debit to Drawings, Credit to Cash/Bank</strong> ✓<br />
+(C) Debit to Capital, Credit to Drawings<br />
+(D) Debit to Sales, Credit to Cash</p>
+<p><strong>Q27.</strong> If an owner takes GOODS for private use:<br />
+(A) Dr Sales / Cr Drawings<br />
+(B) <strong>Dr Drawings / Cr Purchases</strong> ✓<br />
+(C) Dr Drawings / Cr Sales<br />
+(D) Dr Purchases / Cr Cash</p>
+<p><strong>Q28.</strong> An account with a "Credit Balance" typically represents:<br />
+(A) An Asset<br />
+(B) An Expense<br />
+(C) Returns Inwards<br />
+(D) <strong>A Liability or Capital</strong> ✓</p>
+<p><strong>Q29.</strong> An account with a "Debit Balance" typically represents:<br />
+(A) A Liability<br />
+(B) Capital<br />
+(C) <strong>An Asset or an Expense</strong> ✓<br />
+(D) Revenue</p>
+<p><strong>Q30.</strong> If a business pays a creditor by cheque, the effect is:<br />
+(A) Increase Asset, Increase Liability<br />
+(B) <strong>Decrease Asset (Bank), Decrease Liability (Accounts Payable)</strong> ✓<br />
+(C) Decrease Capital, Increase Asset<br />
+(D) No effect</p>
+<p><strong>Q31.</strong> Which of the following statements is INCORRECT?<br />
+(A) Assets − Capital = Liabilities<br />
+(B) Liabilities + Capital = Assets<br />
+(C) <strong>Liabilities + Assets = Capital</strong> ✓<br />
+(D) Assets − Liabilities = Capital</p>
+<p><strong>Q32.</strong> Which of the following is NOT an asset?<br />
+(A) Buildings<br />
+(B) Cash balance<br />
+(C) Accounts receivable<br />
+(D) <strong>Loan from K. Harris</strong> ✓</p>
+<p><strong>Q33.</strong> A debtor paid us £90 in cash. The correct entries are:<br />
+(A) Dr Debtor / Cr Cash<br />
+(B) Dr Sales / Cr Cash<br />
+(C) <strong>Dr Cash / Cr Debtor (Accounts Receivable)</strong> ✓<br />
+(D) Dr Bank / Cr Debtor</p>
+<p><strong>Q34.</strong> Bought goods on time from a supplier. The effect is:<br />
+(A) Increase Asset, Decrease Capital<br />
+(B) <strong>Increase Asset (Inventory/Purchases), Increase Liability (Creditor)</strong> ✓<br />
+(C) Decrease Liability, Increase Capital<br />
+(D) Increase Asset, Increase Capital</p>
+<p><strong>Q35.</strong> Which of the following would NOT appear on the debit side of a Trial Balance?<br />
+(A) Motor Van<br />
+(B) Rent<br />
+(C) Drawings<br />
+(D) <strong>Returns Outwards</strong> ✓</p>
+<p><strong>Q36.</strong> Which of the following would NOT appear on the credit side of a Trial Balance?<br />
+(A) Capital<br />
+(B) Sales<br />
+(C) Creditors<br />
+(D) <strong>Carriage Inwards</strong> ✓</p>
+<p><strong>Q37.</strong> Which error is NOT detected by a Trial Balance?<br />
+(A) Entering only the debit side of a transaction<br />
+(B) Adding a column incorrectly<br />
+(C) <strong>Omitting a transaction altogether</strong> ✓<br />
+(D) Using two different figures for Dr and Cr</p>
+<p><strong>Q38.</strong> A bank overdraft is classified as a:<br />
+(A) Current Asset<br />
+(B) Non-current Asset<br />
+(C) Capital item<br />
+(D) <strong>Current Liability</strong> ✓</p>
+<p><strong>Q39.</strong> "Profit" increases:<br />
+(A) Liabilities<br />
+(B) Assets<br />
+(C) <strong>Capital</strong> ✓<br />
+(D) Drawings</p>
+<p><strong>Q40.</strong> A "Loss" decreases:<br />
+(A) Liabilities<br />
+(B) Assets<br />
+(C) <strong>Capital</strong> ✓<br />
+(D) Drawings</p>
+<p><strong>Q41.</strong> "Gross Profit" is calculated as:<br />
+(A) Sales minus all expenses<br />
+(B) <strong>Sales Revenue minus Cost of Goods Sold</strong> ✓<br />
+(C) Total revenue plus total assets<br />
+(D) Net Profit plus expenses</p>
+<p><strong>Q42.</strong> "Net Profit" is:<br />
+(A) Sales minus returns<br />
+(B) Gross Profit plus expenses<br />
+(C) <strong>Gross Profit minus all other expenses</strong> ✓<br />
+(D) Capital plus drawings</p>
+<p><strong>Q43.</strong> Which of the following transactions involves NO personal (debtor/creditor) account?<br />
+(A) Sold goods on time to J. Brown<br />
+(B) Bought goods on time from A. Smith<br />
+(C) <strong>Paid rent by cash</strong> ✓<br />
+(D) A. Dean paid us by cheque</p>
+<p><strong>Q44.</strong> If J. Hall lends us £500 by cheque, the entries are:<br />
+(A) Dr Loan from Hall / Cr Bank<br />
+(B) <strong>Dr Bank / Cr Loan from J. Hall</strong> ✓<br />
+(C) Dr Capital / Cr Bank<br />
+(D) Dr Bank / Cr Capital</p>
+<p><strong>Q45.</strong> "Bookkeeping" is concerned with:<br />
+(A) Interpreting data for future planning<br />
+(B) Auditing the books<br />
+(C) <strong>Recording data relating to accounting transactions</strong> ✓<br />
+(D) Calculating the owner's tax</p>
+<p><strong>Q46.</strong> "Inventory" is classified as a:<br />
+(A) Non-current asset<br />
+(B) <strong>Current asset</strong> ✓<br />
+(C) Current liability<br />
+(D) Revenue item</p>
+<p><strong>Q47.</strong> When a business buys goods for resale by cheque:<br />
+(A) Dr Bank / Cr Purchases<br />
+(B) Dr Inventory / Cr Bank<br />
+(C) <strong>Dr Purchases / Cr Bank</strong> ✓<br />
+(D) Dr Purchases / Cr Capital</p>
+<p><strong>Q48.</strong> The Statement of Financial Position shows:<br />
+(A) Total sales for the year<br />
+(B) All entries in the ledger<br />
+(C) The profit of the business<br />
+(D) <strong>The financial position of a business at a specific date</strong> ✓</p>
+<p><strong>Q49.</strong> Which of the following correctly describes "Carriage Outwards"?<br />
+(A) <strong>Transport costs charged on goods sent out to customers</strong> ✓<br />
+(B) Transport costs on goods purchased<br />
+(C) The cost of the delivery van itself<br />
+(D) Import duties on bought goods</p>
+<p><strong>Q50.</strong> An owner introduces £5,000 cash into the business bank account. The effect on the equation is:<br />
+(A) Increase Asset, Decrease Capital<br />
+(B) Decrease Asset, Increase Capital<br />
+(C) <strong>Increase Asset (Bank), Increase Capital</strong> ✓<br />
+(D) No effect</p>
+<p><strong>Q51.</strong> Which of the following are BOTH always on the Debit side of a Trial Balance?<br />
+(A) Sales and Capital<br />
+(B) <strong>Rent and Motor Van</strong> ✓<br />
+(C) Creditors and Loan<br />
+(D) Returns Outwards and Sales</p>
+<p><strong>Q52.</strong> Sold van for cash £2,000. The correct entries are:<br />
+(A) Dr Sales / Cr Van<br />
+(B) Dr Van / Cr Cash<br />
+(C) <strong>Dr Cash / Cr Van</strong> ✓<br />
+(D) Dr Cash / Cr Sales</p>
+<p><strong>Q53.</strong> Returned office equipment to Suppliers Ltd. The entries are:<br />
+(A) <strong>Dr Suppliers Ltd / Cr Office Equipment</strong> ✓<br />
+(B) Dr Office Equipment / Cr Suppliers Ltd<br />
+(C) Dr Returns Outwards / Cr Suppliers Ltd<br />
+(D) Dr Suppliers Ltd / Cr Returns Outwards</p>
+<p><strong>Q54.</strong> The balance c/d is written on:<br />
+(A) The larger side<br />
+(B) <strong>The smaller side, to make both sides equal</strong> ✓<br />
+(C) Below the totals<br />
+(D) Only the debit side</p>
+<p><strong>Q55.</strong> Which of the following is an EXPENSE account?<br />
+(A) Motor Van<br />
+(B) Accounts Receivable<br />
+(C) <strong>Electricity</strong> ✓<br />
+(D) Inventory</p>
+<p><strong>Q56.</strong> When a business repays part of a loan from C. Charles by cheque:<br />
+(A) Dr Bank / Cr Loan from C. Charles<br />
+(B) <strong>Dr Loan from C. Charles / Cr Bank</strong> ✓<br />
+(C) Dr Capital / Cr Bank<br />
+(D) Dr Bank / Cr Capital</p>
+<p><strong>Q57.</strong> Which of the following is INCORRECT when recording "Sold van for cash"?<br />
+(A) Dr Cash<br />
+(B) <strong>Cr Sales</strong> ✓ (Incorrect — should be Cr Van, not Sales)<br />
+(C) Cr Van<br />
+(D) Dr Cash and Cr Van</p>
+<p><strong>Q58.</strong> Bought machinery on time from Betterways Ltd. Correct entries:<br />
+(A) Dr Betterways Ltd / Cr Machinery<br />
+(B) Dr Purchases / Cr Betterways Ltd<br />
+(C) <strong>Dr Machinery / Cr Betterways Ltd</strong> ✓<br />
+(D) Dr Machinery / Cr Bank</p>
+<p><strong>Q59.</strong> What is the balance on C. De Freitas account given: Dr Sales May 1 £205, May 14 £360, May 30 £180 | Cr Cash May 17 £300, Returns May 28 £50?<br />
+(A) Credit balance £395<br />
+(B) Debit balance £380<br />
+(C) <strong>Debit balance £395</strong> ✓<br />
+(D) Nil balance</p>
+<p><strong>Q60.</strong> A "Current Liability" is best described as:<br />
+(A) A 10-year bank loan<br />
+(B) Office furniture<br />
+(C) Motor van<br />
+(D) <strong>A debt that must be paid within one year</strong> ✓</p>
+<hr />
+<h2>SECTION B — Long-Form Solving Questions</h2>
+<hr />
+<h3>Question B1 — Statement of Financial Position</h3>
+<p><strong>B. Wise</strong> is setting up a new business. Before trading commences:
+- Bought a <strong>van</strong> for £4,500 and a <strong>market stall</strong> for £2,000
+- Purchased <strong>stock of goods</strong> for £1,500, still owing £1,000 of this
+- <strong>Borrowed</strong> £5,000 from C. Fox
+- Has <strong>£400 cash in hand</strong> and <strong>£1,100 cash at bank</strong></p>
+<p><strong>Required:</strong> Prepare a Statement of Financial Position and calculate B. Wise's Capital.</p>
+<hr />
+<h3>Question B2 — Trial Balance</h3>
+<p><strong>F. Flint</strong> is starting a business. The following occurred before trading:
+- Bought <strong>fixtures</strong> for £1,200 and a <strong>van</strong> for £6,000 (both paid)
+- Acquired <strong>stock of goods</strong> for £2,800 (owes £1,600 for some of it)
+- <strong>B. Rub lent</strong> him £2,500
+- Has <strong>£200 in the bank</strong> and <strong>£175 cash in hand</strong></p>
+<p><strong>Required:</strong> Calculate F. Flint's Capital using the Accounting Equation.</p>
+<hr />
+<h2>SECTION C — THE KHARTOUM CHALLENGE</h2>
+<hr />
+<h3>Version A — The Original (16 Transactions)</h3>
+<p><strong>Khartoum Trading Co. — January Transactions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Transaction</th>
+<th>Amount (£)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 1</td>
+<td>Started in business with money in the bank</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>Bought goods on time from: J. Small £580; F. Brown £2,400; T. Rae £1,220; R. Charles £1,060</td>
+<td>5,260</td>
+</tr>
+<tr>
+<td>Jan 3</td>
+<td>Cash sales</td>
+<td>2,440</td>
+</tr>
+<tr>
+<td>Jan 4</td>
+<td>Paid rent by cheque</td>
+<td>800</td>
+</tr>
+<tr>
+<td>Jan 5</td>
+<td>Paid business rates by cheque</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>Sold goods on time to: T. Potts £170; J. Field £96; T. Gray £3,280</td>
+<td>3,546</td>
+</tr>
+<tr>
+<td>Jan 8</td>
+<td>Paid wages by cash</td>
+<td>580</td>
+</tr>
+<tr>
+<td>Jan 12</td>
+<td>We returned goods to: J. Small £36; R. Charles £54</td>
+<td>90</td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>Bought goods on time from: R. Charles £220; T. Rae £640; F. Jack £330</td>
+<td>1,190</td>
+</tr>
+<tr>
+<td>Jan 15</td>
+<td>Goods returned to us by: J. Field £12; T. Potts £28</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Jan 16</td>
+<td>Bought van on time from Turnkey Motors</td>
+<td>9,900</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>Paid by cheque: J. Small £544; F. Brown £2,400; T. Rae £1,000</td>
+<td>3,944</td>
+</tr>
+<tr>
+<td>Jan 20</td>
+<td>Bought another van paying by cheque</td>
+<td>15,400</td>
+</tr>
+<tr>
+<td>Jan 25</td>
+<td>Received a loan in cash from B. Bennet</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td>Jan 26</td>
+<td>Received cheques from: T. Potts £142; J. Field £84</td>
+<td>226</td>
+</tr>
+<tr>
+<td>Jan 30</td>
+<td>Proprietor brings further amount into bank</td>
+<td>5,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required:</strong> Enter all transactions in T-accounts, balance off, and extract a Trial Balance as at 31 January.</p>
+<hr />
+<h3>Version B — Sudan Central Trade (13 Transactions)</h3>
+<p><strong>Sudan Central Trade — February Transactions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Transaction</th>
+<th>Amount (£)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 1</td>
+<td>Started business with money in the bank</td>
+<td>45,000</td>
+</tr>
+<tr>
+<td>Feb 2</td>
+<td>Bought goods on time from: K. Adams £900; M. Ross £1,500</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td>Feb 3</td>
+<td>Cash sales</td>
+<td>2,100</td>
+</tr>
+<tr>
+<td>Feb 5</td>
+<td>Paid rent by cheque</td>
+<td>600</td>
+</tr>
+<tr>
+<td>Feb 8</td>
+<td>Sold goods on time to: P. West £250; L. East £1,200</td>
+<td>1,450</td>
+</tr>
+<tr>
+<td>Feb 10</td>
+<td>Paid wages by cash</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Feb 12</td>
+<td>Returned goods to K. Adams</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Feb 15</td>
+<td>L. East returned goods to us</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Feb 18</td>
+<td>Bought machinery on time from TechSupplies Ltd</td>
+<td>8,000</td>
+</tr>
+<tr>
+<td>Feb 21</td>
+<td>Paid M. Ross £1,000 by cheque</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Feb 24</td>
+<td>Received a loan in cash from S. Nile</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Feb 26</td>
+<td>Received cheque from P. West for full amount owing</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Owner introduced further capital into the bank</td>
+<td>3,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required:</strong> Enter all transactions in T-accounts, balance off, and extract a Trial Balance as at 28 February.</p>
+<hr />
+<h3>Version C — Blue Nile Systems (11 Transactions) ⭐ <em>Smallest Version</em></h3>
+<p><strong>Blue Nile Systems — March Transactions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Transaction</th>
+<th>Amount (£)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mar 1</td>
+<td>Started business with money in the bank</td>
+<td>30,000</td>
+</tr>
+<tr>
+<td>Mar 2</td>
+<td>Bought goods on time from S. Jali</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>Mar 4</td>
+<td>Cash sales</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Mar 5</td>
+<td>Paid electricity by cheque</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Mar 8</td>
+<td>Sold goods on time to B. Nur</td>
+<td>1,400</td>
+</tr>
+<tr>
+<td>Mar 12</td>
+<td>Returned goods to S. Jali</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Mar 15</td>
+<td>B. Nur returned goods to us</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Mar 20</td>
+<td>Bought a motor van paying by cheque</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td>Mar 25</td>
+<td>Paid S. Jali £1,100 by cheque</td>
+<td>1,100</td>
+</tr>
+<tr>
+<td>Mar 28</td>
+<td>B. Nur paid us by cheque</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Mar 30</td>
+<td>Owner withdrew £500 cash for private use</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required:</strong> Enter all transactions in T-accounts, balance off, and extract a Trial Balance as at 31 March.</p>
+<hr />
+<h1>SECTION 4 — THE ANSWER HUB</h1>
+<hr />
+<h2>MCQ Answer Key</h2>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>13</td>
+<td>B</td>
+<td>25</td>
+<td>C</td>
+<td>37</td>
+<td>C</td>
+<td>49</td>
+<td>A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>14</td>
+<td>C</td>
+<td>26</td>
+<td>B</td>
+<td>38</td>
+<td>D</td>
+<td>50</td>
+<td>C</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>15</td>
+<td>B</td>
+<td>27</td>
+<td>B</td>
+<td>39</td>
+<td>C</td>
+<td>51</td>
+<td>B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>16</td>
+<td>C</td>
+<td>28</td>
+<td>D</td>
+<td>40</td>
+<td>C</td>
+<td>52</td>
+<td>C</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C</td>
+<td>17</td>
+<td>C</td>
+<td>29</td>
+<td>C</td>
+<td>41</td>
+<td>B</td>
+<td>53</td>
+<td>A</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td>18</td>
+<td>B</td>
+<td>30</td>
+<td>B</td>
+<td>42</td>
+<td>C</td>
+<td>54</td>
+<td>B</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>19</td>
+<td>B</td>
+<td>31</td>
+<td>C</td>
+<td>43</td>
+<td>C</td>
+<td>55</td>
+<td>C</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td>20</td>
+<td>C</td>
+<td>32</td>
+<td>D</td>
+<td>44</td>
+<td>B</td>
+<td>56</td>
+<td>B</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C</td>
+<td>21</td>
+<td>B</td>
+<td>33</td>
+<td>C</td>
+<td>45</td>
+<td>C</td>
+<td>57</td>
+<td>B</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>22</td>
+<td>C</td>
+<td>34</td>
+<td>B</td>
+<td>46</td>
+<td>B</td>
+<td>58</td>
+<td>C</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>23</td>
+<td>C</td>
+<td>35</td>
+<td>D</td>
+<td>47</td>
+<td>C</td>
+<td>59</td>
+<td>C</td>
+</tr>
+<tr>
+<td>12</td>
+<td>B</td>
+<td>24</td>
+<td>B</td>
+<td>36</td>
+<td>D</td>
+<td>48</td>
+<td>D</td>
+<td>60</td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Section B — Detailed Solutions</h2>
+<hr />
+<h3>B1 — B. Wise: Statement of Financial Position</h3>
+<p><strong>Step 1 — Identify ALL Assets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>£</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Van</td>
+<td>4,500</td>
+</tr>
+<tr>
+<td>Market Stall</td>
+<td>2,000</td>
+</tr>
+<tr>
+<td>Inventory (Stock of goods)</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Cash in hand</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Cash at bank</td>
+<td>1,100</td>
+</tr>
+<tr>
+<td><strong>Total Assets</strong></td>
+<td><strong>£9,500</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2 — Identify ALL Liabilities:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Liability</th>
+<th>£</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amount still owed for stock</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Loan from C. Fox</td>
+<td>5,000</td>
+</tr>
+<tr>
+<td><strong>Total Liabilities</strong></td>
+<td><strong>£6,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 3 — Apply the Equation:</strong></p>
+<pre><code>Capital = Assets − Liabilities
+Capital = £9,500 − £6,000 = £3,500
+</code></pre>
+<p><strong>Statement of Financial Position of B. Wise</strong></p>
+<pre><code>Non-Current Assets                      £
+  Van                               4,500
+  Market Stall                      2,000
+                                   ------
+                                    6,500
+
+Current Assets
+  Inventory                         1,500
+  Bank                              1,100
+  Cash                                400
+                                   ------
+                                    3,000
+                                   ------
+Total Assets                        9,500
+                                   ======
+
+Current Liabilities
+  Accounts Payable (stock owed)     1,000
+
+Non-Current Liabilities
+  Loan from C. Fox                  5,000
+                                   ------
+Total Liabilities                   6,000
+                                   ------
+NET ASSETS (= Capital)              3,500
+                                   ======
+
+Capital                             3,500
+                                   ======
+</code></pre>
+<hr />
+<h3>B2 — F. Flint: Capital Calculation</h3>
+<p><strong>Step 1 — Identify ALL Assets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>£</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixtures</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>Van</td>
+<td>6,000</td>
+</tr>
+<tr>
+<td>Inventory (Stock of goods)</td>
+<td>2,800</td>
+</tr>
+<tr>
+<td>Bank</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Cash in hand</td>
+<td>175</td>
+</tr>
+<tr>
+<td><strong>Total Assets</strong></td>
+<td><strong>£10,375</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2 — Identify ALL Liabilities:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Liability</th>
+<th>£</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accounts Payable (goods still owed)</td>
+<td>1,600</td>
+</tr>
+<tr>
+<td>Loan from B. Rub</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td><strong>Total Liabilities</strong></td>
+<td><strong>£4,100</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 3 — Apply the Equation:</strong></p>
+<pre><code>Capital = £10,375 − £4,100 = £6,275
+</code></pre>
+<hr />
+<h2>Section C — Full Ledger Solutions</h2>
+<hr />
+<h3>VERSION A — Khartoum Trading Co. (Full T-Account Workings)</h3>
+<h4>Step 1: Double-Entry Breakdown</h4>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Dr Account</th>
+<th>Cr Account</th>
+<th>Amount £</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 1</td>
+<td>Bank</td>
+<td>Capital</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>J. Small</td>
+<td>580</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>F. Brown</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>T. Rae</td>
+<td>1,220</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>R. Charles</td>
+<td>1,060</td>
+</tr>
+<tr>
+<td>Jan 3</td>
+<td>Cash</td>
+<td>Sales</td>
+<td>2,440</td>
+</tr>
+<tr>
+<td>Jan 4</td>
+<td>Rent</td>
+<td>Bank</td>
+<td>800</td>
+</tr>
+<tr>
+<td>Jan 5</td>
+<td>Business Rates</td>
+<td>Bank</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>T. Potts</td>
+<td>Sales</td>
+<td>170</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>J. Field</td>
+<td>Sales</td>
+<td>96</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>T. Gray</td>
+<td>Sales</td>
+<td>3,280</td>
+</tr>
+<tr>
+<td>Jan 8</td>
+<td>Wages</td>
+<td>Cash</td>
+<td>580</td>
+</tr>
+<tr>
+<td>Jan 12</td>
+<td>J. Small</td>
+<td>Returns Outwards</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Jan 12</td>
+<td>R. Charles</td>
+<td>Returns Outwards</td>
+<td>54</td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>R. Charles</td>
+<td>220</td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>T. Rae</td>
+<td>640</td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>F. Jack</td>
+<td>330</td>
+</tr>
+<tr>
+<td>Jan 15</td>
+<td>Returns Inwards</td>
+<td>J. Field</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Jan 15</td>
+<td>Returns Inwards</td>
+<td>T. Potts</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Jan 16</td>
+<td>Van</td>
+<td>Turnkey Motors</td>
+<td>9,900</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>J. Small</td>
+<td>Bank</td>
+<td>544</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>F. Brown</td>
+<td>Bank</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>T. Rae</td>
+<td>Bank</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Jan 20</td>
+<td>Van</td>
+<td>Bank</td>
+<td>15,400</td>
+</tr>
+<tr>
+<td>Jan 25</td>
+<td>Cash</td>
+<td>Loan — B. Bennet</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td>Jan 26</td>
+<td>Bank</td>
+<td>T. Potts</td>
+<td>142</td>
+</tr>
+<tr>
+<td>Jan 26</td>
+<td>Bank</td>
+<td>J. Field</td>
+<td>84</td>
+</tr>
+<tr>
+<td>Jan 30</td>
+<td>Bank</td>
+<td>Capital</td>
+<td>5,000</td>
+</tr>
+</tbody>
+</table>
+<h4>Step 2: T-Accounts</h4>
+<hr />
+<p><strong>BANK</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 1</td>
+<td>Capital</td>
+<td>60,000</td>
+<td></td>
+<td>Jan 4</td>
+<td>Rent</td>
+<td>800</td>
+</tr>
+<tr>
+<td>Jan 26</td>
+<td>T. Potts</td>
+<td>142</td>
+<td></td>
+<td>Jan 5</td>
+<td>Business Rates</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Jan 26</td>
+<td>J. Field</td>
+<td>84</td>
+<td></td>
+<td>Jan 18</td>
+<td>J. Small</td>
+<td>544</td>
+</tr>
+<tr>
+<td>Jan 30</td>
+<td>Capital</td>
+<td>5,000</td>
+<td></td>
+<td>Jan 18</td>
+<td>F. Brown</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 18</td>
+<td>T. Rae</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 20</td>
+<td>Van</td>
+<td>15,400</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>44,782</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>65,226</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>65,226</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>44,782</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>CASH</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 3</td>
+<td>Sales</td>
+<td>2,440</td>
+<td></td>
+<td>Jan 8</td>
+<td>Wages</td>
+<td>580</td>
+</tr>
+<tr>
+<td>Jan 25</td>
+<td>Loan — B. Bennet</td>
+<td>2,500</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>4,360</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>4,940</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>4,940</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>4,360</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>CAPITAL</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>65,000</td>
+<td></td>
+<td>Jan 1</td>
+<td>Bank</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 30</td>
+<td>Bank</td>
+<td>5,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>65,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>65,000</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>65,000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>PURCHASES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>J. Small</td>
+<td>580</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>6,450</td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>F. Brown</td>
+<td>2,400</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>T. Rae</td>
+<td>1,220</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Jan 2</td>
+<td>R. Charles</td>
+<td>1,060</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>R. Charles</td>
+<td>220</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>T. Rae</td>
+<td>640</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Jan 13</td>
+<td>F. Jack</td>
+<td>330</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>6,450</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>6,450</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>6,450</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>SALES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>5,986</td>
+<td></td>
+<td>Jan 3</td>
+<td>Cash</td>
+<td>2,440</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 7</td>
+<td>T. Potts</td>
+<td>170</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 7</td>
+<td>J. Field</td>
+<td>96</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 7</td>
+<td>T. Gray</td>
+<td>3,280</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>5,986</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>5,986</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>5,986</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 4</td>
+<td>Bank</td>
+<td>800</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>800</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>800</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>800</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>800</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>BUSINESS RATES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 5</td>
+<td>Bank</td>
+<td>300</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>300</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>300</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>300</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>300</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>WAGES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 8</td>
+<td>Cash</td>
+<td>580</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>580</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>580</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>580</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>580</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RETURNS OUTWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>90</td>
+<td></td>
+<td>Jan 12</td>
+<td>J. Small</td>
+<td>36</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 12</td>
+<td>R. Charles</td>
+<td>54</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>90</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>90</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RETURNS INWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 15</td>
+<td>J. Field</td>
+<td>12</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Jan 15</td>
+<td>T. Potts</td>
+<td>28</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>40</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>40</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>40</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>VAN</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 16</td>
+<td>Turnkey Motors</td>
+<td>9,900</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>25,300</td>
+</tr>
+<tr>
+<td>Jan 20</td>
+<td>Bank</td>
+<td>15,400</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>25,300</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>25,300</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>25,300</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>LOAN — B. BENNET</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>2,500</td>
+<td></td>
+<td>Jan 25</td>
+<td>Cash</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,500</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,500</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>2,500</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>J. SMALL</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 12</td>
+<td>Returns Outwards</td>
+<td>36</td>
+<td></td>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>580</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>Bank</td>
+<td>544</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>580</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>580</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Zero balance — fully settled)</em></p>
+<hr />
+<p><strong>F. BROWN</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>Bank</td>
+<td>2,400</td>
+<td></td>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,400</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,400</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Zero balance — fully settled)</em></p>
+<hr />
+<p><strong>T. RAE</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 18</td>
+<td>Bank</td>
+<td>1,000</td>
+<td></td>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>1,220</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>860</td>
+<td></td>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>640</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,860</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,860</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>860</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>R. CHARLES</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 12</td>
+<td>Returns Outwards</td>
+<td>54</td>
+<td></td>
+<td>Jan 2</td>
+<td>Purchases</td>
+<td>1,060</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>1,226</td>
+<td></td>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>220</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,280</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,280</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>1,226</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>F. JACK</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>330</td>
+<td></td>
+<td>Jan 13</td>
+<td>Purchases</td>
+<td>330</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>330</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>330</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>330</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>TURNKEY MOTORS</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>9,900</td>
+<td></td>
+<td>Jan 16</td>
+<td>Van</td>
+<td>9,900</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>9,900</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>9,900</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>9,900</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>T. POTTS</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>Sales</td>
+<td>170</td>
+<td></td>
+<td>Jan 15</td>
+<td>Returns Inwards</td>
+<td>28</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 26</td>
+<td>Bank</td>
+<td>142</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>170</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>170</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Zero balance — fully settled)</em></p>
+<hr />
+<p><strong>J. FIELD</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>Sales</td>
+<td>96</td>
+<td></td>
+<td>Jan 15</td>
+<td>Returns Inwards</td>
+<td>12</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Jan 26</td>
+<td>Bank</td>
+<td>84</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>96</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>96</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Zero balance — fully settled)</em></p>
+<hr />
+<p><strong>T. GRAY</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Jan 7</td>
+<td>Sales</td>
+<td>3,280</td>
+<td></td>
+<td>Jan 31</td>
+<td>Balance c/d</td>
+<td>3,280</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,280</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,280</strong></td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Balance b/d</td>
+<td>3,280</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>Trial Balance — Version A (Khartoum Trading Co.) as at 31 January</h4>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Dr £</th>
+<th>Cr £</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bank</td>
+<td>44,782</td>
+<td></td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>4,360</td>
+<td></td>
+</tr>
+<tr>
+<td>Capital</td>
+<td></td>
+<td>65,000</td>
+</tr>
+<tr>
+<td>Purchases</td>
+<td>6,450</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales</td>
+<td></td>
+<td>5,986</td>
+</tr>
+<tr>
+<td>Rent</td>
+<td>800</td>
+<td></td>
+</tr>
+<tr>
+<td>Business Rates</td>
+<td>300</td>
+<td></td>
+</tr>
+<tr>
+<td>Wages</td>
+<td>580</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Inwards</td>
+<td>40</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Outwards</td>
+<td></td>
+<td>90</td>
+</tr>
+<tr>
+<td>Van</td>
+<td>25,300</td>
+<td></td>
+</tr>
+<tr>
+<td>Loan — B. Bennet</td>
+<td></td>
+<td>2,500</td>
+</tr>
+<tr>
+<td>T. Rae (creditor)</td>
+<td></td>
+<td>860</td>
+</tr>
+<tr>
+<td>R. Charles (creditor)</td>
+<td></td>
+<td>1,226</td>
+</tr>
+<tr>
+<td>F. Jack (creditor)</td>
+<td></td>
+<td>330</td>
+</tr>
+<tr>
+<td>Turnkey Motors (creditor)</td>
+<td></td>
+<td>9,900</td>
+</tr>
+<tr>
+<td>T. Gray (debtor)</td>
+<td>3,280</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOTALS</strong></td>
+<td><strong>85,892</strong></td>
+<td><strong>85,892</strong> ✓</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>VERSION B — Sudan Central Trade (13 Transactions) — T-Accounts &amp; Trial Balance</h3>
+<h4>Step 1: Double-Entry Breakdown</h4>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Dr Account</th>
+<th>Cr Account</th>
+<th>£</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 1</td>
+<td>Bank</td>
+<td>Capital</td>
+<td>45,000</td>
+</tr>
+<tr>
+<td>Feb 2</td>
+<td>Purchases</td>
+<td>K. Adams</td>
+<td>900</td>
+</tr>
+<tr>
+<td>Feb 2</td>
+<td>Purchases</td>
+<td>M. Ross</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Feb 3</td>
+<td>Cash</td>
+<td>Sales</td>
+<td>2,100</td>
+</tr>
+<tr>
+<td>Feb 5</td>
+<td>Rent</td>
+<td>Bank</td>
+<td>600</td>
+</tr>
+<tr>
+<td>Feb 8</td>
+<td>P. West</td>
+<td>Sales</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Feb 8</td>
+<td>L. East</td>
+<td>Sales</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>Feb 10</td>
+<td>Wages</td>
+<td>Cash</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Feb 12</td>
+<td>K. Adams</td>
+<td>Returns Outwards</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Feb 15</td>
+<td>Returns Inwards</td>
+<td>L. East</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Feb 18</td>
+<td>Machinery</td>
+<td>TechSupplies Ltd</td>
+<td>8,000</td>
+</tr>
+<tr>
+<td>Feb 21</td>
+<td>M. Ross</td>
+<td>Bank</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Feb 24</td>
+<td>Cash</td>
+<td>Loan — S. Nile</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Feb 26</td>
+<td>Bank</td>
+<td>P. West</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Bank</td>
+<td>Capital</td>
+<td>3,000</td>
+</tr>
+</tbody>
+</table>
+<h4>Step 2: T-Accounts</h4>
+<hr />
+<p><strong>BANK</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Feb 1</td>
+<td>Capital</td>
+<td>45,000</td>
+<td></td>
+<td>Feb 5</td>
+<td>Rent</td>
+<td>600</td>
+</tr>
+<tr>
+<td>Feb 26</td>
+<td>P. West</td>
+<td>250</td>
+<td></td>
+<td>Feb 21</td>
+<td>M. Ross</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Capital</td>
+<td>3,000</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>46,650</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>48,250</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>48,250</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>46,650</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>CASH</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Feb 3</td>
+<td>Sales</td>
+<td>2,100</td>
+<td></td>
+<td>Feb 10</td>
+<td>Wages</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Feb 24</td>
+<td>Loan — S. Nile</td>
+<td>1,500</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>3,200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,600</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,600</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>3,200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>CAPITAL</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>48,000</td>
+<td></td>
+<td>Feb 1</td>
+<td>Bank</td>
+<td>45,000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 28</td>
+<td>Bank</td>
+<td>3,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>48,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>48,000</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>48,000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>PURCHASES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Feb 2</td>
+<td>K. Adams</td>
+<td>900</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>2,400</td>
+</tr>
+<tr>
+<td>Feb 2</td>
+<td>M. Ross</td>
+<td>1,500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,400</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,400</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>2,400</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>SALES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>3,550</td>
+<td></td>
+<td>Feb 3</td>
+<td>Cash</td>
+<td>2,100</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 8</td>
+<td>P. West</td>
+<td>250</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 8</td>
+<td>L. East</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,550</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>3,550</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>3,550</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 5</td>
+<td>Bank</td>
+<td>600</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>600</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>600</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>600</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>600</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>WAGES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 10</td>
+<td>Cash</td>
+<td>400</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>400</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>400</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>400</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>400</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RETURNS OUTWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>50</td>
+<td></td>
+<td>Feb 12</td>
+<td>K. Adams</td>
+<td>50</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>50</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>50</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RETURNS INWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 15</td>
+<td>L. East</td>
+<td>30</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>30</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>30</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>MACHINERY</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 18</td>
+<td>TechSupplies Ltd</td>
+<td>8,000</td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>8,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>8,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>8,000</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>8,000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>LOAN — S. NILE</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>1,500</td>
+<td></td>
+<td>Feb 24</td>
+<td>Cash</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>1,500</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>K. ADAMS</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 12</td>
+<td>Returns Outwards</td>
+<td>50</td>
+<td></td>
+<td>Feb 2</td>
+<td>Purchases</td>
+<td>900</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>850</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>900</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>900</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>850</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>M. ROSS</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 21</td>
+<td>Bank</td>
+<td>1,000</td>
+<td></td>
+<td>Feb 2</td>
+<td>Purchases</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>TECHSUPPLIES LTD</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>8,000</td>
+<td></td>
+<td>Feb 18</td>
+<td>Machinery</td>
+<td>8,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>8,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>8,000</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>8,000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>P. WEST</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 8</td>
+<td>Sales</td>
+<td>250</td>
+<td></td>
+<td>Feb 26</td>
+<td>Bank</td>
+<td>250</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>250</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>250</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Zero balance — fully settled)</em></p>
+<hr />
+<p><strong>L. EAST</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feb 8</td>
+<td>Sales</td>
+<td>1,200</td>
+<td></td>
+<td>Feb 15</td>
+<td>Returns Inwards</td>
+<td>30</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Feb 28</td>
+<td>Balance c/d</td>
+<td>1,170</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Balance b/d</td>
+<td>1,170</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>Trial Balance — Version B (Sudan Central Trade) as at 28 February</h4>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Dr £</th>
+<th>Cr £</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bank</td>
+<td>46,650</td>
+<td></td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>3,200</td>
+<td></td>
+</tr>
+<tr>
+<td>Capital</td>
+<td></td>
+<td>48,000</td>
+</tr>
+<tr>
+<td>Purchases</td>
+<td>2,400</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales</td>
+<td></td>
+<td>3,550</td>
+</tr>
+<tr>
+<td>Rent</td>
+<td>600</td>
+<td></td>
+</tr>
+<tr>
+<td>Wages</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Inwards</td>
+<td>30</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Outwards</td>
+<td></td>
+<td>50</td>
+</tr>
+<tr>
+<td>Machinery</td>
+<td>8,000</td>
+<td></td>
+</tr>
+<tr>
+<td>Loan — S. Nile</td>
+<td></td>
+<td>1,500</td>
+</tr>
+<tr>
+<td>K. Adams (creditor)</td>
+<td></td>
+<td>850</td>
+</tr>
+<tr>
+<td>M. Ross (creditor)</td>
+<td></td>
+<td>500</td>
+</tr>
+<tr>
+<td>TechSupplies Ltd (creditor)</td>
+<td></td>
+<td>8,000</td>
+</tr>
+<tr>
+<td>L. East (debtor)</td>
+<td>1,170</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOTALS</strong></td>
+<td><strong>62,450</strong></td>
+<td><strong>62,450</strong> ✓</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>VERSION C ⭐ — Blue Nile Systems (11 Transactions) — FULL STEP-BY-STEP SOLUTION</h3>
+<hr />
+<h4>Step 1: Identify Every Double Entry</h4>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Transaction</th>
+<th>Dr Account</th>
+<th>Dr £</th>
+<th>Cr Account</th>
+<th>Cr £</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mar 1</td>
+<td>Started with £30,000 in bank</td>
+<td>Bank</td>
+<td>30,000</td>
+<td>Capital</td>
+<td>30,000</td>
+<td>Axiom 1: Bank (asset) increases → Dr. Axiom 2: Capital increases → Cr</td>
+</tr>
+<tr>
+<td>Mar 2</td>
+<td>Bought goods on time from S. Jali £1,200</td>
+<td>Purchases</td>
+<td>1,200</td>
+<td>S. Jali</td>
+<td>1,200</td>
+<td>Axiom 1: Purchases (possession) increases → Dr. Axiom 2: Liability (creditor) increases → Cr</td>
+</tr>
+<tr>
+<td>Mar 4</td>
+<td>Cash sales £1,500</td>
+<td>Cash</td>
+<td>1,500</td>
+<td>Sales</td>
+<td>1,500</td>
+<td>Axiom 1: Cash (asset) increases → Dr. Axiom 2: Revenue (source of capital) increases → Cr</td>
+</tr>
+<tr>
+<td>Mar 5</td>
+<td>Paid electricity by cheque £200</td>
+<td>Electricity</td>
+<td>200</td>
+<td>Bank</td>
+<td>200</td>
+<td>Axiom 1: Expense (possession used up) increases → Dr. Reverse Axiom 1: Bank (asset) decreases → Cr</td>
+</tr>
+<tr>
+<td>Mar 8</td>
+<td>Sold goods on time to B. Nur £1,400</td>
+<td>B. Nur</td>
+<td>1,400</td>
+<td>Sales</td>
+<td>1,400</td>
+<td>Axiom 1: Debtor (asset) increases → Dr. Reverse: Sales revenue increases → Cr</td>
+</tr>
+<tr>
+<td>Mar 12</td>
+<td>Returned goods to S. Jali £100</td>
+<td>S. Jali</td>
+<td>100</td>
+<td>Returns Outwards</td>
+<td>100</td>
+<td>Reverse Axiom 2: Liability (S. Jali) decreases → Dr. Axiom 2: Returns Outwards (reduces possession cost) → Cr</td>
+</tr>
+<tr>
+<td>Mar 15</td>
+<td>B. Nur returned goods to us £200</td>
+<td>Returns Inwards</td>
+<td>200</td>
+<td>B. Nur</td>
+<td>200</td>
+<td>Axiom 1: Returns Inwards increases → Dr. Reverse Axiom 1: Debtor (B. Nur) decreases → Cr</td>
+</tr>
+<tr>
+<td>Mar 20</td>
+<td>Bought motor van by cheque £10,000</td>
+<td>Motor Van</td>
+<td>10,000</td>
+<td>Bank</td>
+<td>10,000</td>
+<td>Axiom 1: Asset (van) increases → Dr. Reverse: Bank (asset) decreases → Cr. Note: Van ≠ Purchases</td>
+</tr>
+<tr>
+<td>Mar 25</td>
+<td>Paid S. Jali £1,100 by cheque</td>
+<td>S. Jali</td>
+<td>1,100</td>
+<td>Bank</td>
+<td>1,100</td>
+<td>Reverse Axiom 2: Liability decreases → Dr. Reverse: Bank decreases → Cr</td>
+</tr>
+<tr>
+<td>Mar 28</td>
+<td>B. Nur paid us £1,000 by cheque</td>
+<td>Bank</td>
+<td>1,000</td>
+<td>B. Nur</td>
+<td>1,000</td>
+<td>Axiom 1: Bank increases → Dr. Reverse: Debtor (asset) decreases → Cr</td>
+</tr>
+<tr>
+<td>Mar 30</td>
+<td>Owner withdrew £500 cash for private use</td>
+<td>Drawings</td>
+<td>500</td>
+<td>Cash</td>
+<td>500</td>
+<td>Drawings = capital reduction → Dr. Cash decreases → Cr</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>Step 2: Full T-Accounts</h4>
+<hr />
+<p><strong>BANK</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 1</td>
+<td>Capital</td>
+<td>30,000</td>
+<td></td>
+<td>Mar 5</td>
+<td>Electricity</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Mar 28</td>
+<td>B. Nur</td>
+<td>1,000</td>
+<td></td>
+<td>Mar 20</td>
+<td>Motor Van</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 25</td>
+<td>S. Jali</td>
+<td>1,100</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>19,700</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>31,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>31,000</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>19,700</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Workings: Dr = 30,000 + 1,000 = 31,000 | Cr = 200 + 10,000 + 1,100 = 11,300 | Balance = 31,000 − 11,300 = 19,700 Dr ✓</em></p>
+<hr />
+<p><strong>CASH</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 4</td>
+<td>Sales</td>
+<td>1,500</td>
+<td></td>
+<td>Mar 30</td>
+<td>Drawings</td>
+<td>500</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,500</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>1,000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Workings: Dr = 1,500 | Cr = 500 | Balance = 1,000 Dr ✓</em></p>
+<hr />
+<p><strong>CAPITAL</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>30,000</td>
+<td></td>
+<td>Mar 1</td>
+<td>Bank</td>
+<td>30,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>30,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>30,000</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>30,000</td>
+</tr>
+</tbody>
+</table>
+<p><em>Cr only account — balance c/d on Dr side, b/d reopens on Cr side ✓</em></p>
+<hr />
+<p><strong>PURCHASES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 2</td>
+<td>S. Jali</td>
+<td>1,200</td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>1,200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Dr only account — balance c/d on Cr side, b/d reopens on Dr side ✓</em></p>
+<hr />
+<p><strong>SALES</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>2,900</td>
+<td></td>
+<td>Mar 4</td>
+<td>Cash</td>
+<td>1,500</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 8</td>
+<td>B. Nur</td>
+<td>1,400</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,900</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>2,900</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>2,900</td>
+</tr>
+</tbody>
+</table>
+<p><em>Cr only account ✓</em></p>
+<hr />
+<p><strong>ELECTRICITY</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 5</td>
+<td>Bank</td>
+<td>200</td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>200</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>200</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RETURNS OUTWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>100</td>
+<td></td>
+<td>Mar 12</td>
+<td>S. Jali</td>
+<td>100</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>100</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>100</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><em>Cr only account ✓</em></p>
+<hr />
+<p><strong>RETURNS INWARDS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 15</td>
+<td>B. Nur</td>
+<td>200</td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>200</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>200</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Dr only account ✓</em></p>
+<hr />
+<p><strong>MOTOR VAN</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 20</td>
+<td>Bank</td>
+<td>10,000</td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>10,000</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>10,000</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>10,000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>DRAWINGS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 30</td>
+<td>Cash</td>
+<td>500</td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>500</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>500</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>S. JALI</strong> (Creditor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 12</td>
+<td>Returns Outwards</td>
+<td>100</td>
+<td></td>
+<td>Mar 2</td>
+<td>Purchases</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>Mar 25</td>
+<td>Bank</td>
+<td>1,100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,200</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Zero balance — S. Jali fully settled. No b/d needed ✓</em></p>
+<hr />
+<p><strong>B. NUR</strong> (Debtor)</p>
+<table>
+<thead>
+<tr>
+<th>Dr</th>
+<th></th>
+<th></th>
+<th></th>
+<th>Cr</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td></td>
+<td>£</td>
+<td></td>
+<td>2017</td>
+<td></td>
+<td>£</td>
+</tr>
+<tr>
+<td>Mar 8</td>
+<td>Sales</td>
+<td>1,400</td>
+<td></td>
+<td>Mar 15</td>
+<td>Returns Inwards</td>
+<td>200</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 28</td>
+<td>Bank</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Mar 31</td>
+<td>Balance c/d</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,400</strong></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>1,400</strong></td>
+</tr>
+<tr>
+<td>Apr 1</td>
+<td>Balance b/d</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Workings: Dr = 1,400 | Cr = 200 + 1,000 = 1,200 | Balance = 200 Dr ✓</em></p>
+<hr />
+<h4>Step 3: Trial Balance — Version C (Blue Nile Systems) as at 31 March</h4>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Dr £</th>
+<th>Cr £</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bank</td>
+<td>19,700</td>
+<td></td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>1,000</td>
+<td></td>
+</tr>
+<tr>
+<td>Capital</td>
+<td></td>
+<td>30,000</td>
+</tr>
+<tr>
+<td>Purchases</td>
+<td>1,200</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales</td>
+<td></td>
+<td>2,900</td>
+</tr>
+<tr>
+<td>Electricity</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Inwards</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>Returns Outwards</td>
+<td></td>
+<td>100</td>
+</tr>
+<tr>
+<td>Motor Van</td>
+<td>10,000</td>
+<td></td>
+</tr>
+<tr>
+<td>Drawings</td>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>B. Nur (debtor)</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOTALS</strong></td>
+<td><strong>33,000</strong></td>
+<td><strong>33,000</strong> ✓</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> S. Jali does not appear in the Trial Balance — the account was fully settled (zero balance).</p>
+</blockquote>
+<hr />
+<h4>Verification Workings</h4>
+<pre><code>Dr side check:
+  Bank       19,700
+  Cash        1,000
+  Purchases   1,200
+  Electricity   200
+  Ret. In       200
+  Motor Van  10,000
+  Drawings      500
+  B. Nur        200
+  ─────────────────
+  TOTAL      33,000  ✓
+
+Cr side check:
+  Capital    30,000
+  Sales       2,900
+  Ret. Out      100
+  ─────────────────
+  TOTAL      33,000  ✓
+</code></pre>
+<hr />
+<p><em>End of Accounting Study Dashboard — Chapters 1–6</em>
+<em>Based on Frank Wood's Business Accounting</em></p>
+        </div>
+    </div>
+</body>
+</html>
