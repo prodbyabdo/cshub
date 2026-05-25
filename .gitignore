@@ -60,4 +60,4 @@ requirements.txt
 *.pyc
 
 
-/marker
+marker/
