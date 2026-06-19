@@ -95,24 +95,24 @@
             </div>
         </header>
 
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('lectures', this)">Lecture Notes</button>
-            <button class="tab-btn" onclick="openTab('definitions', this)">Definitions</button>
-            <button class="tab-btn" onclick="openTab('exam', this)">Mock Exam</button>
+        <div class="tabs" role="tablist" aria-label="Introduction to Computer Science sections">
+            <button type="button" id="tab-lectures" class="tab-btn active" role="tab" aria-selected="true" aria-controls="lectures" tabindex="0" onclick="openTab('lectures', this)">Lecture Notes</button>
+            <button type="button" id="tab-definitions" class="tab-btn" role="tab" aria-selected="false" aria-controls="definitions" tabindex="-1" onclick="openTab('definitions', this)">Definitions</button>
+            <button type="button" id="tab-exam" class="tab-btn" role="tab" aria-selected="false" aria-controls="exam" tabindex="-1" onclick="openTab('exam', this)">Mock Exam</button>
         </div>
 
         <!-- Lectures Tab -->
-        <div id="lectures" class="tab-content active">
+        <div id="lectures" class="tab-content active" role="tabpanel" aria-labelledby="tab-lectures" tabindex="0">
             <div class="card"><h3>Algorithms & Programming</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"></div></div><div class="card"><h3>Formative Assessment (Quiz)</h3><div class="lecture-content" style="max-height: 500px; overflow-y: auto;"></div></div>
         </div>
 
         <!-- Definitions Tab -->
-        <div id="definitions" class="tab-content">
+        <div id="definitions" class="tab-content" role="tabpanel" aria-labelledby="tab-definitions" tabindex="0" hidden>
             
         </div>
 
         <!-- Exam Tab -->
-        <div id="exam" class="tab-content">
+        <div id="exam" class="tab-content" role="tabpanel" aria-labelledby="tab-exam" tabindex="0" hidden>
             <p># Introduction to Computer Science - Mock Exam
 
 ## Part 1: Multiple Choice (20 Questions)
@@ -351,19 +351,23 @@
 
         <script>
         function openTab(tabName, clickedEl) {
-            document.querySelectorAll('.tab-content').forEach(function(c) {
-                c.classList.remove('active');
+            document.querySelectorAll('.tab-content').forEach(function (panel) {
+                var isActive = panel.id === tabName;
+                panel.classList.toggle('active', isActive);
+                panel.hidden = !isActive;
+                panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
             });
-            document.querySelectorAll('.tab-btn').forEach(function(b) {
-                b.classList.remove('active');
+            document.querySelectorAll('[role="tab"]').forEach(function (tab) {
+                var isActive = tab.getAttribute('aria-controls') === tabName;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                tab.setAttribute('tabindex', isActive ? '0' : '-1');
             });
 
-            var target = document.getElementById(tabName);
-            if (target) target.classList.add('active');
-
-            var activeBtn = clickedEl
-                || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
-            if (activeBtn) activeBtn.classList.add('active');
+            var activeBtn = clickedEl || document.querySelector('[role="tab"][aria-controls="' + tabName + '"]');
+            if (activeBtn) {
+                activeBtn.focus({ preventScroll: true });
+            }
         }
     </script>
     <!-- Deep Linking Script -->

@@ -72,15 +72,15 @@
             <div class="subtitle">HMS123 Resources & Expanded Study Guide</div>
         </header>
 
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('grammar', this)">Grammar</button>
-            <button class="tab-btn" onclick="openTab('vocabulary', this)">Vocabulary</button>
-            <button class="tab-btn" onclick="openTab('guide', this)">Study Guide</button>
-            <button class="tab-btn" onclick="openTab('mock-exam', this)">Mock Exam</button>
+        <div class="tabs" role="tablist" aria-label="English for Specific Purpose II sections">
+            <button type="button" id="tab-grammar" class="tab-btn active" role="tab" aria-selected="true" aria-controls="grammar" tabindex="0" onclick="openTab('grammar', this)">Grammar</button>
+            <button type="button" id="tab-vocabulary" class="tab-btn" role="tab" aria-selected="false" aria-controls="vocabulary" tabindex="-1" onclick="openTab('vocabulary', this)">Vocabulary</button>
+            <button type="button" id="tab-guide" class="tab-btn" role="tab" aria-selected="false" aria-controls="guide" tabindex="-1" onclick="openTab('guide', this)">Study Guide</button>
+            <button type="button" id="tab-mock-exam" class="tab-btn" role="tab" aria-selected="false" aria-controls="mock-exam" tabindex="-1" onclick="openTab('mock-exam', this)">Mock Exam</button>
         </div>
 
         <!-- ===== GRAMMAR TAB ===== -->
-        <div id="grammar" class="tab-content active">
+        <div id="grammar" class="tab-content active" role="tabpanel" aria-labelledby="tab-grammar" tabindex="0">
 
             <h2>The Passive Voice</h2>
             <div class="grammar-box">
@@ -142,7 +142,7 @@
         </div>
 
         <!-- ===== VOCABULARY TAB ===== -->
-        <div id="vocabulary" class="tab-content">
+        <div id="vocabulary" class="tab-content" role="tabpanel" aria-labelledby="tab-vocabulary" tabindex="0" hidden>
             
             <h2>Diplomacy Terms</h2>
             <div class="card definition"><div class="term">Declare</div><div>To state something officially, formally, and publicly.</div></div>
@@ -196,7 +196,7 @@
         </div>
 
         <!-- ===== STUDY GUIDE TAB ===== -->
-        <div id="guide" class="tab-content">
+        <div id="guide" class="tab-content" role="tabpanel" aria-labelledby="tab-guide" tabindex="0" hidden>
             
             <h2>Exam Sections Breakdown</h2>
             <div class="card">
@@ -222,23 +222,23 @@
                 <div class="video-card">
                     <div class="video-title">Conditionals Masterclass</div>
                     <div class="video-desc">Detailed walkthrough of Zero, First, Second, and Third conditionals.</div>
-                    <a href="https://www.youtube.com/results?search_query=Conditional+Sentences+English+Grammar" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                    <a href="https://www.youtube.com/results?search_query=Conditional+Sentences+English+Grammar" target="_blank" rel="noopener noreferrer" class="watch-btn">▶ Watch Lessons</a>
                 </div>
                 <div class="video-card">
                     <div class="video-title">Passive Voice in Academics</div>
                     <div class="video-desc">Learn when and how to appropriately use the passive voice.</div>
-                    <a href="https://www.youtube.com/results?search_query=Passive+Voice+in+Academic+Writing" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                    <a href="https://www.youtube.com/results?search_query=Passive+Voice+in+Academic+Writing" target="_blank" rel="noopener noreferrer" class="watch-btn">▶ Watch Lessons</a>
                 </div>
                 <div class="video-card">
                     <div class="video-title">Summary Writing Technique</div>
                     <div class="video-desc">How to write a professional 100-word summary efficiently.</div>
-                    <a href="https://www.youtube.com/results?search_query=How+to+write+a+summary" target="_blank" class="watch-btn">▶ Watch Lessons</a>
+                    <a href="https://www.youtube.com/results?search_query=How+to+write+a+summary" target="_blank" rel="noopener noreferrer" class="watch-btn">▶ Watch Lessons</a>
                 </div>
             </div>
         </div>
 
         <!-- ===== FULL EXAM TAB ===== -->
-        <div id="mock-exam" class="tab-content">
+        <div id="mock-exam" class="tab-content" role="tabpanel" aria-labelledby="tab-mock-exam" tabindex="0" hidden>
             
             <h2>FULL SIMULATED FINAL EXAM</h2>
             <p style="color:var(--text-secondary); margin-bottom: 20px;">This massive mock exam tests all required grammar (including conditionals and passive voice), comprehensive vocabulary, reading comprehension, and summary writing skills.</p>
@@ -462,19 +462,23 @@
 
         <script>
         function openTab(tabName, clickedEl) {
-            document.querySelectorAll('.tab-content').forEach(function(c) {
-                c.classList.remove('active');
+            document.querySelectorAll('.tab-content').forEach(function (panel) {
+                var isActive = panel.id === tabName;
+                panel.classList.toggle('active', isActive);
+                panel.hidden = !isActive;
+                panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
             });
-            document.querySelectorAll('.tab-btn').forEach(function(b) {
-                b.classList.remove('active');
+            document.querySelectorAll('[role="tab"]').forEach(function (tab) {
+                var isActive = tab.getAttribute('aria-controls') === tabName;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                tab.setAttribute('tabindex', isActive ? '0' : '-1');
             });
 
-            var target = document.getElementById(tabName);
-            if (target) target.classList.add('active');
-
-            var activeBtn = clickedEl
-                || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
-            if (activeBtn) activeBtn.classList.add('active');
+            var activeBtn = clickedEl || document.querySelector('[role="tab"][aria-controls="' + tabName + '"]');
+            if (activeBtn) {
+                activeBtn.focus({ preventScroll: true });
+            }
         }
     </script>
     <!-- Deep Linking Script -->

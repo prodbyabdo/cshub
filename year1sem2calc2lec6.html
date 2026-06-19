@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus II - Lecture 6: Trig and Clever Substitution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            color: #00ff88;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.75;
+            font-weight: 700;
+            color: #00ff88;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 10px 0 20px 20px;
+            color: #cccccc;
+            text-decoration: none;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-back:hover {
+            color: #00ff88;
+            transform: translateX(-4px);
+        }
+
+        .section {
+            margin-bottom: 24px;
+            padding: 24px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .section h2 {
+            font-size: 1.35rem;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 800;
+            color: #00ff88;
+            letter-spacing: 0.5px;
+        }
+
+        .section p,
+        .section li {
+            color: #cccccc;
+        }
+
+        .note,
+        .status-card {
+            background: #000000;
+            border: 1px solid #1a1a1a;
+            border-left: 2px solid #00ff88;
+            padding: 18px 20px;
+        }
+
+        .status-label {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .status-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .status-copy {
+            color: #cccccc;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            border-radius: 6px;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-family: "Inter", sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .action-link:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .details-list {
+            margin: 12px 0 0 22px;
+        }
+
+        .details-list li {
+            margin: 8px 0;
+        }
+
+        .muted {
+            color: #aaaaaa;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border: none;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .nav-back {
+                margin-left: 0;
+            }
+        }
+
+        @media print {
+            @page {
+                margin: 14mm;
+            }
+
+            * {
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 0;
+            }
+
+            .container,
+            .section,
+            .note,
+            .status-card {
+                background: #ffffff !important;
+                color: #000000 !important;
+                border-color: #777777 !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            header {
+                background: #ffffff !important;
+                color: #000000 !important;
+                border-bottom: 2px solid #000000 !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            strong {
+                color: #000000 !important;
+            }
+
+            .nav-back,
+            .action-link {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="year1sem2calc2.html" class="nav-back">&larr; Back to Calculus II</a>
+
+    <div class="container">
+        <header>
+            <h1>Calculus II - Lecture 6</h1>
+            <p>Trig and Clever Substitution</p>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <h2>Notes Status</h2>
+                <div class="status-card">
+                    <div class="status-label">Unavailable</div>
+                    <div class="status-title">Lecture 6 notes are not published yet.</div>
+                    <p class="status-copy">
+                        This route is live so the Lecture 6 link does not land on a blank page, but the actual notes
+                        content has not been added yet.
+                    </p>
+                    <ul class="details-list">
+                        <li>Topic: trig substitution and related substitutions</li>
+                        <li>Status: placeholder notes page with navigation only</li>
+                        <li>Next step: add the full lecture notes when available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Available Navigation</h2>
+                <div class="note">
+                    <p class="muted">
+                        You can return to the course overview or open the Lecture 6 solutions page.
+                    </p>
+                    <div class="actions">
+                        <a href="year1sem2calc2.html" class="action-link">Back to Calculus II</a>
+                        <a href="year1sem2calc2lec6sol.html" class="action-link">Open Lecture 6 Solutions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

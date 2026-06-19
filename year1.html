@@ -118,6 +118,9 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
+            color: inherit;
+            font: inherit;
         }
 
         .semester-btn:hover {
@@ -167,10 +170,27 @@
             background: var(--accent-dim);
         }
 
+        .semester-btn:focus-visible,
+        .back-to-semesters:focus-visible,
+        .btn:focus-visible,
+        .nav-back:focus-visible,
+        .search-input:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 3px;
+        }
+
         .search-box {
             flex: 1;
             min-width: 250px;
             position: relative;
+        }
+
+        .search-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
         }
 
         .search-input {
@@ -186,7 +206,6 @@
         }
 
         .search-input:focus {
-            outline: none;
             border-color: var(--accent-color);
         }
 
@@ -296,6 +315,10 @@
             cursor: not-allowed;
         }
 
+        .btn-disabled[aria-disabled="true"] {
+            pointer-events: none;
+        }
+
         .btn-disabled:hover {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
@@ -309,6 +332,18 @@
             color: var(--text-secondary);
             font-family: var(--font-mono);
             grid-column: 1 / -1;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
@@ -324,25 +359,26 @@
 
         <!-- VIEW 1: SEMESTER PROMPT -->
         <div id="view-semesters" class="view-section active">
-            <div class="semester-prompts">
-                <div class="semester-btn" onclick="openSemester('sem1')">
+            <div class="semester-prompts" role="group" aria-label="Choose a year one semester">
+                <button type="button" class="semester-btn" data-semester="sem1" aria-controls="view-subjects" aria-pressed="false" onclick="openSemester('sem1', this)">
                     <h2>Semester One</h2>
                     <p>Select to view subjects</p>
-                </div>
-                <div class="semester-btn" onclick="openSemester('sem2')">
+                </button>
+                <button type="button" class="semester-btn" data-semester="sem2" aria-controls="view-subjects" aria-pressed="false" onclick="openSemester('sem2', this)">
                     <h2>Semester Two</h2>
                     <p>Select to view subjects</p>
-                </div>
+                </button>
             </div>
         </div>
 
         <!-- VIEW 2: SUBJECTS PROMPT & SEARCH -->
         <div id="view-subjects" class="view-section">
             <div class="subjects-header">
-                <button class="back-to-semesters" onclick="goBackToSemesters()">← Choose Semester</button>
+                <button type="button" class="back-to-semesters" onclick="goBackToSemesters()"><- Choose Semester</button>
                 <div class="search-box">
+                    <label class="search-label" for="subjectSearch">Search subjects</label>
                     <input type="text" id="subjectSearch" class="search-input"
-                        placeholder="Search for a subject or code..." onkeyup="filterSubjects()">
+                        placeholder="Search for a subject or code..." oninput="filterSubjects()">
                 </div>
             </div>
 
@@ -364,7 +400,7 @@
                         <div class="subject-name">Principles of Information Systems</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <span class="btn btn-disabled" aria-disabled="true">Resources unavailable</span>
                     </div>
                 </div>
 
@@ -374,7 +410,7 @@
                         <div class="subject-name">English for Specific Purpose I</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <span class="btn btn-disabled" aria-disabled="true">Resources unavailable</span>
                     </div>
                 </div>
 
@@ -417,7 +453,7 @@
                         <div class="subject-name">Principles of Economic</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <span class="btn btn-disabled" aria-disabled="true">Resources unavailable</span>
                     </div>
                 </div>
 
@@ -469,7 +505,7 @@
                         <div class="subject-name">Principles of Accounting</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <span class="btn btn-disabled" aria-disabled="true">Resources unavailable</span>
                     </div>
                 </div>
 
@@ -489,7 +525,7 @@
                         <div class="subject-name">Algebra and Geometry</div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" class="btn btn-disabled stretched-link">Resources</a>
+                        <span class="btn btn-disabled" aria-disabled="true">Resources unavailable</span>
                     </div>
                 </div>
 
@@ -512,8 +548,16 @@
         <script>
             let currentSemester = '';
 
-            function openSemester(semester) {
+            function setSemesterButtons(activeSemester) {
+                document.querySelectorAll('.semester-btn').forEach(button => {
+                    const buttonSemester = button.getAttribute('data-semester');
+                    button.setAttribute('aria-pressed', buttonSemester === activeSemester ? 'true' : 'false');
+                });
+            }
+
+            function openSemester(semester, button) {
                 currentSemester = semester;
+                setSemesterButtons(semester);
 
                 // Hide semester prompt
                 document.getElementById('view-semesters').classList.remove('active');
@@ -534,6 +578,7 @@
 
             function goBackToSemesters() {
                 currentSemester = '';
+                setSemesterButtons('');
 
                 // Hide subjects view
                 document.getElementById('view-subjects').classList.remove('active');
@@ -620,3 +665,4 @@
 </body>
 
 </html>
+

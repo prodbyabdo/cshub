@@ -521,14 +521,14 @@
             </div>
         </header>
 
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('summary', this)">Subject Summary</button>
-            <button class="tab-btn" onclick="openTab('final-exam', this)">Final Exam</button>
-            <button class="tab-btn" onclick="openTab('answer-sheet', this)">Answer Sheet</button>
+        <div class="tabs" role="tablist" aria-label="Introduction to Database Systems sections">
+            <button type="button" id="tab-summary" class="tab-btn active" role="tab" aria-selected="true" aria-controls="summary" tabindex="0" onclick="openTab('summary', this)">Subject Summary</button>
+            <button type="button" id="tab-final-exam" class="tab-btn" role="tab" aria-selected="false" aria-controls="final-exam" tabindex="-1" onclick="openTab('final-exam', this)">Final Exam</button>
+            <button type="button" id="tab-answer-sheet" class="tab-btn" role="tab" aria-selected="false" aria-controls="answer-sheet" tabindex="-1" onclick="openTab('answer-sheet', this)">Answer Sheet</button>
         </div>
 
         <!-- ════════════════ SUMMARY TAB ════════════════ -->
-        <div id="summary" class="tab-content active">
+        <div id="summary" class="tab-content active" role="tabpanel" aria-labelledby="tab-summary" tabindex="0">
             <h2>Course Overview</h2>
             <p>Comprehensive study material covering 6 lectures + MS Access practical for HMS-113 Introduction to Database. <strong>Exam Date: 18 April 2026</strong></p>
 
@@ -790,7 +790,7 @@
         </div>
 
         <!-- ════════════════ EXAM TAB ════════════════ -->
-        <div id="final-exam" class="tab-content">
+        <div id="final-exam" class="tab-content" role="tabpanel" aria-labelledby="tab-final-exam" tabindex="0" hidden>
             <h2>Final Exam</h2>
             <h3>Section I: Multiple Choice Questions (40)</h3>
             
@@ -902,7 +902,7 @@
         </div>
 
         <!-- ════════════════ ANSWER SHEET TAB ════════════════ -->
-        <div id="answer-sheet" class="tab-content">
+        <div id="answer-sheet" class="tab-content" role="tabpanel" aria-labelledby="tab-answer-sheet" tabindex="0" hidden>
             <h2>Answer Sheet</h2>
             <h3>MCQ Key (40)</h3>
             <div class="answer-grid">
@@ -956,19 +956,23 @@
 
         <script>
         function openTab(tabName, clickedEl) {
-            document.querySelectorAll('.tab-content').forEach(function(c) {
-                c.classList.remove('active');
+            document.querySelectorAll('.tab-content').forEach(function (panel) {
+                var isActive = panel.id === tabName;
+                panel.classList.toggle('active', isActive);
+                panel.hidden = !isActive;
+                panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
             });
-            document.querySelectorAll('.tab-btn').forEach(function(b) {
-                b.classList.remove('active');
+            document.querySelectorAll('[role="tab"]').forEach(function (tab) {
+                var isActive = tab.getAttribute('aria-controls') === tabName;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                tab.setAttribute('tabindex', isActive ? '0' : '-1');
             });
 
-            var target = document.getElementById(tabName);
-            if (target) target.classList.add('active');
-
-            var activeBtn = clickedEl
-                || document.querySelector('.tab-btn[onclick*="' + tabName + '"]');
-            if (activeBtn) activeBtn.classList.add('active');
+            var activeBtn = clickedEl || document.querySelector('[role="tab"][aria-controls="' + tabName + '"]');
+            if (activeBtn) {
+                activeBtn.focus({ preventScroll: true });
+            }
         }
     </script>
     <!-- Deep Linking Script -->

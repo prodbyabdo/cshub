@@ -192,14 +192,14 @@
         </div>
     </header>
 
-    <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('summary', this)">Subject Summary</button>
-        <button class="tab-btn" onclick="openTab('schedule', this)">Schedule</button>
-        <button class="tab-btn" onclick="openTab('exam-prep', this)">Exam Prep</button>
+    <div class="tabs" role="tablist" aria-label="Computer Maintenance sections">
+        <button type="button" id="tab-summary" class="tab-btn active" role="tab" aria-selected="true" aria-controls="summary" tabindex="0" onclick="openTab('summary', this)">Subject Summary</button>
+        <button type="button" id="tab-schedule" class="tab-btn" role="tab" aria-selected="false" aria-controls="schedule" tabindex="-1" onclick="openTab('schedule', this)">Schedule</button>
+        <button type="button" id="tab-exam-prep" class="tab-btn" role="tab" aria-selected="false" aria-controls="exam-prep" tabindex="-1" onclick="openTab('exam-prep', this)">Exam Prep</button>
     </div>
 
     <!-- ══════════════════ SUMMARY TAB ══════════════════ -->
-    <div id="summary" class="tab-content active">
+    <div id="summary" class="tab-content active" role="tabpanel" aria-labelledby="tab-summary" tabindex="0">
         <h2>Course Overview</h2>
         <p>Study material for INF-128 Computer Maintenance covering 15 lectures, 13 practicals and 6 formative assessments. <strong>Final Exam: June 6, 2026.</strong></p>
 
@@ -500,7 +500,7 @@
     </div><!-- /summary tab -->
 
     <!-- ══════════════════ SCHEDULE TAB ══════════════════ -->
-    <div id="schedule" class="tab-content">
+    <div id="schedule" class="tab-content" role="tabpanel" aria-labelledby="tab-schedule" tabindex="0" hidden>
         <h2>Course Schedule</h2>
         <p style="color:var(--text-secondary);margin-bottom:30px;">Full schedule for INF-128 · May 17 – June 6, 2026. Colour coding: <span class="badge badge-blue">CL</span> Lecture &nbsp; <span class="badge badge-green">P</span> Practical &nbsp; <span class="badge badge-gold">T</span> Test</p>
 
@@ -581,7 +581,7 @@
     </div><!-- /schedule tab -->
 
     <!-- ══════════════════ EXAM PREP TAB ══════════════════ -->
-    <div id="exam-prep" class="tab-content">
+    <div id="exam-prep" class="tab-content" role="tabpanel" aria-labelledby="tab-exam-prep" tabindex="0" hidden>
         <h2>Exam Prep</h2>
         <p style="color:var(--text-secondary);margin-bottom:30px;">Practice questions based on lecture notes and common computer maintenance scenarios.</p>
 
@@ -613,21 +613,26 @@
 <!-- Tabs Script -->
 <script>
     function openTab(tabId, element) {
-        // Hide all tabs
         const contents = document.querySelectorAll('.tab-content');
         contents.forEach(content => {
-            content.classList.remove('active');
+            const isActive = content.id === tabId;
+            content.classList.toggle('active', isActive);
+            content.hidden = !isActive;
+            content.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         });
 
-        // Deactivate all buttons
-        const buttons = document.querySelectorAll('.tab-btn');
+        const buttons = document.querySelectorAll('[role="tab"]');
         buttons.forEach(btn => {
-            btn.classList.remove('active');
+            const isActive = btn.getAttribute('aria-controls') === tabId;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            btn.setAttribute('tabindex', isActive ? '0' : '-1');
         });
 
-        // Show active tab
-        document.getElementById(tabId).classList.add('active');
-        element.classList.add('active');
+        const activeTab = element || document.querySelector('[role="tab"][aria-controls="' + tabId + '"]');
+        if (activeTab) {
+            activeTab.focus({ preventScroll: true });
+        }
     }
 </script>
 
