@@ -360,11 +360,13 @@
         <!-- VIEW 1: SEMESTER PROMPT -->
         <div id="view-semesters" class="view-section active">
             <div class="semester-prompts" role="group" aria-label="Choose a year one semester">
-                <button type="button" class="semester-btn" data-semester="sem1" aria-controls="view-subjects" aria-pressed="false" onclick="openSemester('sem1', this)">
+                <button type="button" class="semester-btn" data-semester="sem1" aria-controls="view-subjects"
+                    aria-pressed="false" onclick="openSemester('sem1', this)">
                     <h2>Semester One</h2>
                     <p>Select to view subjects</p>
                 </button>
-                <button type="button" class="semester-btn" data-semester="sem2" aria-controls="view-subjects" aria-pressed="false" onclick="openSemester('sem2', this)">
+                <button type="button" class="semester-btn" data-semester="sem2" aria-controls="view-subjects"
+                    aria-pressed="false" onclick="openSemester('sem2', this)">
                     <h2>Semester Two</h2>
                     <p>Select to view subjects</p>
                 </button>
@@ -374,12 +376,13 @@
         <!-- VIEW 2: SUBJECTS PROMPT & SEARCH -->
         <div id="view-subjects" class="view-section">
             <div class="subjects-header">
-                <button type="button" class="back-to-semesters" onclick="goBackToSemesters()"><- Choose Semester</button>
-                <div class="search-box">
-                    <label class="search-label" for="subjectSearch">Search subjects</label>
-                    <input type="text" id="subjectSearch" class="search-input"
-                        placeholder="Search for a subject or code..." oninput="filterSubjects()">
-                </div>
+                <button type="button" class="back-to-semesters" onclick="goBackToSemesters()"><- Choose
+                        Semester</button>
+                        <div class="search-box">
+                            <label class="search-label" for="subjectSearch">Search subjects</label>
+                            <input type="text" id="subjectSearch" class="search-input"
+                                placeholder="Search for a subject or code..." oninput="filterSubjects()">
+                        </div>
             </div>
 
             <div class="grid" id="subjectsGrid">
@@ -527,7 +530,8 @@
                         <div class="subject-name">Algebra and Geometry</div>
                     </div>
                     <div class="card-actions">
-                        <a href="year1sem2alg.html" class="btn btn-primary stretched-link">Final Exam Summary</a>
+                        <a href="year1sem2alg.html" class="btn btn-primary">Resources</a>
+                        <a href="year1sem2alg_exam.html" class="btn btn-primary stretched-link">Final Exam Summary</a>
                     </div>
                 </div>
 
@@ -667,4 +671,3 @@
 </body>
 
 </html>
-
